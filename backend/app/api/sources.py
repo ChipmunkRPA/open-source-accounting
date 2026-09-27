@@ -3,7 +3,7 @@ from sqlalchemy import select, or_
 from ..auth import fresh_user, current_user, session, require_admin
 from ..schemas import SourceCreate, RightsApproval
 from ..models import Source, Audit
-from ..services import rights, output_rights
+from ..services import rights, output_rights, counsel
 from ..errors import fail
 
 router = APIRouter(tags=['sources'])
@@ -74,7 +74,7 @@ def submit_source(payload: SourceCreate, user=Depends(fresh_user), db=Depends(se
 @router.post('/admin/sources/{source_id}/approve')
 def approve_source(source_id: str, payload: RightsApproval, user=Depends(fresh_user), db=Depends(session)):
     require_admin(user, approve=True)
-    row = db.scalar(select(Source).where(Source.id == source_id).with_for_update())
+    row = counsel.lock_source(db, source_id)
     if not row:
         fail('NOT_FOUND', 'Source not found.', 404)
     if row.created_by == user.id:
@@ -82,6 +82,8 @@ def approve_source(source_id: str, payload: RightsApproval, user=Depends(fresh_u
     if (payload.expected_policy_version != row.policy_version
             or payload.expected_rights_revision != rights.revision(row)):
         fail('REVISION_CONFLICT', 'Reload the source: the rights revision changed.', 409)
+    if row.policy.get('basis') == 'reviewed_use':
+        counsel.activate(db, row, user.id)
     row.reviewed, row.approved_by = True, user.id
     row.policy_version += 1  # Previously saved evidence must not revive after a new approval.
     rights.record_approval(row, user.id)
@@ -94,7 +96,7 @@ def approve_source(source_id: str, payload: RightsApproval, user=Depends(fresh_u
 @router.post('/admin/sources/{source_id}/disable')
 def disable_source(source_id: str, user=Depends(fresh_user), db=Depends(session)):
     require_admin(user)
-    row = db.scalar(select(Source).where(Source.id == source_id).with_for_update())
+    row = counsel.lock_source(db, source_id)
     if not row:
         fail('NOT_FOUND', 'Source not found.', 404)
     row.enabled, row.policy_version = False, row.policy_version+1

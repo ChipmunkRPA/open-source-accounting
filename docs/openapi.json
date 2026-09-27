@@ -2938,6 +2938,212 @@
           }
         }
       }
+    },
+    "/api/v1/admin/sources/{source_id}/counsel-records": {
+      "get": {
+        "tags": [
+          "counsel"
+        ],
+        "summary": "Records",
+        "operationId": "records_api_v1_admin_sources__source_id__counsel_records_get",
+        "parameters": [
+          {
+            "name": "source_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Source Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "counsel"
+        ],
+        "summary": "Submit",
+        "operationId": "submit_api_v1_admin_sources__source_id__counsel_records_post",
+        "parameters": [
+          {
+            "name": "source_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Source Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CounselSubmission"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/sources/{source_id}/counsel-records/{record_id}/review": {
+      "post": {
+        "tags": [
+          "counsel"
+        ],
+        "summary": "Review",
+        "operationId": "review_api_v1_admin_sources__source_id__counsel_records__record_id__review_post",
+        "parameters": [
+          {
+            "name": "source_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Source Id"
+            }
+          },
+          {
+            "name": "record_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Record Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CounselReview"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/sources/{source_id}/counsel-records/{record_id}/revoke": {
+      "post": {
+        "tags": [
+          "counsel"
+        ],
+        "summary": "Revoke",
+        "operationId": "revoke_api_v1_admin_sources__source_id__counsel_records__record_id__revoke_post",
+        "parameters": [
+          {
+            "name": "source_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Source Id"
+            }
+          },
+          {
+            "name": "record_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Record Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CounselRevocation"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -3151,6 +3357,186 @@
         "additionalProperties": false,
         "type": "object",
         "title": "Context"
+      },
+      "CounselAssessments": {
+        "properties": {
+          "purpose": {
+            "type": "string",
+            "pattern": "^ev_[A-Za-z0-9_-]{8,120}$",
+            "title": "Purpose"
+          },
+          "nature": {
+            "type": "string",
+            "pattern": "^ev_[A-Za-z0-9_-]{8,120}$",
+            "title": "Nature"
+          },
+          "amount_and_substantiality": {
+            "type": "string",
+            "pattern": "^ev_[A-Za-z0-9_-]{8,120}$",
+            "title": "Amount And Substantiality"
+          },
+          "output_and_reconstruction": {
+            "type": "string",
+            "pattern": "^ev_[A-Za-z0-9_-]{8,120}$",
+            "title": "Output And Reconstruction"
+          },
+          "market_effect": {
+            "type": "string",
+            "pattern": "^ev_[A-Za-z0-9_-]{8,120}$",
+            "title": "Market Effect"
+          },
+          "access_route_and_terms": {
+            "type": "string",
+            "pattern": "^ev_[A-Za-z0-9_-]{8,120}$",
+            "title": "Access Route And Terms"
+          },
+          "jurisdiction": {
+            "type": "string",
+            "pattern": "^ev_[A-Za-z0-9_-]{8,120}$",
+            "title": "Jurisdiction"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "purpose",
+          "nature",
+          "amount_and_substantiality",
+          "output_and_reconstruction",
+          "market_effect",
+          "access_route_and_terms",
+          "jurisdiction"
+        ],
+        "title": "CounselAssessments"
+      },
+      "CounselReview": {
+        "properties": {
+          "expected_record_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Expected Record Sha256"
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "approved",
+              "rejected"
+            ],
+            "title": "Decision"
+          },
+          "confirm_actual_independent_counsel_review": {
+            "type": "boolean",
+            "const": true,
+            "title": "Confirm Actual Independent Counsel Review"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "expected_record_sha256",
+          "decision",
+          "confirm_actual_independent_counsel_review"
+        ],
+        "title": "CounselReview"
+      },
+      "CounselRevocation": {
+        "properties": {
+          "expected_record_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Expected Record Sha256"
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "withdrawn",
+              "scope_changed",
+              "evidence_invalid",
+              "terms_changed",
+              "operator_hold"
+            ],
+            "title": "Reason"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "expected_record_sha256",
+          "reason"
+        ],
+        "title": "CounselRevocation"
+      },
+      "CounselSubmission": {
+        "properties": {
+          "expected_policy_version": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Expected Policy Version"
+          },
+          "expected_rights_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Expected Rights Revision"
+          },
+          "operations": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "acquire",
+                "store_raw",
+                "extract",
+                "store_text",
+                "embed",
+                "model_input",
+                "display_full",
+                "quote",
+                "export",
+                "redistribute",
+                "train"
+              ]
+            },
+            "type": "array",
+            "maxItems": 11,
+            "minItems": 1,
+            "title": "Operations"
+          },
+          "evidence_ref": {
+            "type": "string",
+            "pattern": "^ev_[A-Za-z0-9_-]{8,120}$",
+            "title": "Evidence Ref"
+          },
+          "evidence_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Evidence Sha256"
+          },
+          "assessments": {
+            "$ref": "#/components/schemas/CounselAssessments"
+          },
+          "effective_at": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Effective At"
+          },
+          "expires_at": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Expires At"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "expected_policy_version",
+          "expected_rights_revision",
+          "operations",
+          "evidence_ref",
+          "evidence_sha256",
+          "assessments",
+          "effective_at",
+          "expires_at"
+        ],
+        "title": "CounselSubmission"
       },
       "DemoRequest": {
         "properties": {

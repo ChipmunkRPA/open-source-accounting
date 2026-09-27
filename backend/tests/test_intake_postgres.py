@@ -170,3 +170,84 @@ def test_postgres_output_limit_serializes_across_accounts(pg_url, duplicate):
             if process.is_alive(): process.terminate()
             process.join(5)
         database.engine.dispose()
+
+
+def counsel_worker(url, source_id, record_id, fingerprint, actor, approval, mode, start, results):
+    from app.api.sources import approve_source
+    from app.api.counsel import revoke
+    from app.schemas import RightsApproval
+    from app.counsel_schemas import CounselRevocation
+    database = Database(url)
+    try:
+        assert start.wait(15)
+        with database.Session() as session:
+            user = session.get(User, actor)
+            if mode == 'approve':
+                approve_source(source_id, RightsApproval.model_validate(approval), user=user, db=session)
+            else:
+                revoke(source_id, record_id, CounselRevocation(expected_record_sha256=fingerprint,
+                       reason='operator_hold'), user=user, db=session)
+            results.put((mode, 200))
+    except HTTPException as error:
+        results.put((mode, error.status_code))
+    finally:
+        database.engine.dispose()
+
+
+@pytest.mark.parametrize('revoking', [False, True])
+def test_postgres_counsel_activation_and_revocation_serialize(pg_url, revoking):
+    from app.counsel_schemas import CounselSubmission
+    from app.models import CounselRecord, now
+    from app.services import counsel
+    database = Database(pg_url)
+    author, approver, reviewer = [str(uuid4()) for _ in range(3)]
+    context = {'route': 'hosted_agent', 'audience': 'workspace', 'jurisdiction': 'synthetic'}
+    with database.Session() as session:
+        session.add_all([User(id=author, role='admin'), User(id=approver, role='rights_approver'),
+                         User(id=reviewer, role='counsel_reviewer')]); session.commit()
+        source = Source(title='Synthetic counsel race', publisher='Test only', text='Synthetic fixture',
+            created_by=author, enabled=True, reviewed=False, policy={'basis': 'reviewed_use',
+            'model_input': True, 'commercial_use': True, 'license_evidence_ref': 'ev_synthetic_bundle',
+            'scope': {k: [v] for k, v in context.items()}, 'output_control': {'mode': 'bounded',
+            'group_id': str(uuid4()), 'max_chars_per_response': 100, 'max_chars_total': 100}})
+        session.add(source); session.flush()
+        approval = {'expected_rights_revision': rights.revision(source),
+                    'expected_policy_version': source.policy_version, 'confirm_actual_rights_review': True}
+        proposal = {k: v for k, v in approval.items() if k != 'confirm_actual_rights_review'}
+        proposal.update(operations=['model_input'], evidence_ref='ev_synthetic_bundle', evidence_sha256='a'*64,
+            assessments={key: 'ev_synthetic_' + key for key in ('purpose', 'nature', 'amount_and_substantiality',
+                'output_and_reconstruction', 'market_effect', 'access_route_and_terms', 'jurisdiction')},
+            effective_at=now()-10, expires_at=now()+3600)
+        record = counsel.submit(session, source, CounselSubmission.model_validate(proposal), author)
+        record.status, record.reviewed_by, record.reviewed_at = 'approved', reviewer, now()
+        session.commit()
+        source_id, record_id, fingerprint = source.id, record.id, record.record_sha256
+    ctx = multiprocessing.get_context('spawn')
+    start, results = ctx.Event(), ctx.Queue()
+    modes = ['approve', 'revoke' if revoking else 'approve']
+    workers = [ctx.Process(target=counsel_worker, args=(pg_url, source_id, record_id, fingerprint,
+                approver, approval, mode, start, results)) for mode in modes]
+    try:
+        for process in workers: process.start()
+        start.set()
+        outcomes = [results.get(timeout=20) for _ in workers]
+        for process in workers:
+            process.join(10)
+            assert process.exitcode == 0
+        with database.Session() as session:
+            source = session.get(Source, source_id)
+            record = session.get(CounselRecord, record_id)
+            if revoking:
+                assert ('revoke', 200) in outcomes
+                assert any(mode == 'approve' and status in {200, 403} for mode, status in outcomes)
+                assert record.status == 'revoked'
+                assert not rights.allowed(source, 'model_input', context=context)
+            else:
+                assert sorted(status for _, status in outcomes) == [200, 409]
+                assert source.policy_version == record.activated_policy_version == 2
+                assert rights.allowed(source, 'model_input', context=context)
+    finally:
+        for process in workers:
+            if process.is_alive(): process.terminate()
+            process.join(5)
+        database.engine.dispose()

@@ -36,7 +36,7 @@
       "acceptance": "Unknown operations fail closed; expiry/revocation and upload/mirror/subscription bypass tests pass; human license/legal blockers remain explicit.",
       "progress_required": true,
       "scheduled": false,
-      "implementation_note": "Revision-bound rights, authorized intake, trusted runtime scope and per-model-call checks implemented; dependent slice adds server notices and global reviewed output ledgers with PostgreSQL serialization. Real output terms/grouping, counsel records, seats/retention/jurisdiction, cross-corpus reconstruction and derived deletion remain. See progress.md."
+      "implementation_note": "Revision-bound rights, authorized intake, runtime checks, server notices and global output ledgers implemented. Reviewed-use now requires persisted exact-revision counsel decisions, independent roles, atomic activation and revocation. Real counsel evidence/identities, publisher seats/retention/jurisdiction, output amendments, cross-corpus reconstruction and derived deletion remain. See progress.md."
     },
     {
       "id": "INGEST",

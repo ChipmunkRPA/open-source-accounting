@@ -354,3 +354,21 @@ class OutputRelease(Base):
     payload_sha256: Mapped[str] = mapped_column(String(64), primary_key=True)
     character_count: Mapped[int] = mapped_column(Integer)
     created_at: Mapped[int] = mapped_column(Integer, default=now)
+
+
+class CounselRecord(Base):
+    """Immutable proposal plus review lifecycle; legal analysis stays in a restricted vault."""
+    __tablename__ = 'source_counsel_records'
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
+    source_id: Mapped[str] = mapped_column(ForeignKey('sources.id'), index=True)
+    proposal: Mapped[dict] = mapped_column(JSON)
+    record_sha256: Mapped[str] = mapped_column(String(64))
+    submitted_by: Mapped[str] = mapped_column(ForeignKey('users.id'))
+    submitted_at: Mapped[int] = mapped_column(Integer, default=now)
+    status: Mapped[str] = mapped_column(String(20), default='pending')
+    reviewed_by: Mapped[str | None] = mapped_column(ForeignKey('users.id'))
+    reviewed_at: Mapped[int | None] = mapped_column(Integer)
+    activated_policy_version: Mapped[int | None] = mapped_column(Integer)
+    revoked_by: Mapped[str | None] = mapped_column(ForeignKey('users.id'))
+    revoked_at: Mapped[int | None] = mapped_column(Integer)
+    revocation_reason: Mapped[str | None] = mapped_column(String(30))

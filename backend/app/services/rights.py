@@ -72,6 +72,10 @@ def allowed(source: Source, action: str, *, context: dict | None = None, _visite
                 OutputControl.model_validate(control)
             except ValueError:
                 return False
+    if policy.get('basis') == 'reviewed_use':
+        from .counsel import permitted
+        if not permitted(source, action):
+            return False
     # Missing context denies a scoped grant. A paid plan cannot satisfy source seat rights.
     scope = policy.get('scope', {})
     if not isinstance(scope, dict):
