@@ -52,3 +52,14 @@ def upload(client, text='Fictional contract: annual subscription fee is 12000. I
                 data={'authorization_basis': 'own_original'})
     assert response.status_code == 201, response.text
     return response.json()
+
+
+def rights_approval(client, source_id):
+    """Synthetic test attestation only; never professional or legal approval."""
+    from app.models import Source
+    from app.services.rights import revision
+    with client.app.state.db.Session() as db:
+        source = db.get(Source, source_id)
+        return {'expected_policy_version': source.policy_version,
+                'expected_rights_revision': revision(source),
+                'confirm_actual_rights_review': True}

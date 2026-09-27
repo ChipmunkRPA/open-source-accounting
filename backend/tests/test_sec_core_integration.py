@@ -1,3 +1,4 @@
+from conftest import rights_approval
 from pathlib import Path
 from types import SimpleNamespace
 import hashlib
@@ -18,7 +19,7 @@ def staged(client):
 
 
 def approve(client,sid):
-    assert client.post(f'/api/v1/admin/sources/{sid}/approve',headers={'X-Dev-User':'approver'}).status_code==200
+    assert client.post(f'/api/v1/admin/sources/{sid}/approve',json=rights_approval(client,sid),headers={'X-Dev-User':'approver'}).status_code==200
     with client.app.state.db.Session() as db:
         s=db.get(Source,sid)
         body=dict(expected_policy_version=s.policy_version,content_sha256=hashlib.sha256(s.text.encode()).hexdigest(),decision='approved',review_note='TEST ONLY: fixture approval; no real professional review.',checked_reference_ids=['sec-cfi-nongaap'],confirm_actual_review_performed=True)

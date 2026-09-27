@@ -1,0 +1,30 @@
+# Operation rights implementation and remaining gates
+
+Issue #7 is in progress, not complete. The 11 recognized operations are `acquire`, `store_raw`, `extract`, `store_text`, `embed`, `model_input`, `display_full`, `quote`, `export`, `redistribute`, and `train`. Unknown actions, truthy non-booleans, expired/not-yet-effective grants, unreviewed revisions and missing scope context deny access. A reference-only record never authorizes body operations. HTTP approval now requires the exact rights revision, policy version and an explicit reviewer attestation, in addition to the existing fresh MFA, scoped role and separation-of-duties checks.
+
+The revision binds work title/publisher/URL/version, body hash, grants, scope, evidence reference and attribution. Editorial/applicability annotations remain separate. Each new approval increments the policy version so old saved evidence cannot revive. Existing records without a bound rights approval fail closed and must be re-reviewed; no data migration invents approval. Synthetic local seed accounts are marked as demo fixtures and are prohibited in production.
+
+`license_evidence_ref` is an opaque reference to a restricted evidence system, not the legal advice or agreement itself. Its presence does not verify a license. Authorized reviewers must validate the evidence. Scoped grants require exact route/workspace/seat/audience/provider/region/retention/jurisdiction context; the current legacy retrieval callers do not supply that context and therefore cannot use scoped text yet. They retain safe reference metadata where supported.
+
+## Pending implementation
+
+- Connect the 11 operations to unified intake and raw/extracted stores (#8); legacy SEC CLI intake has its own operator flag and is not yet a unified policy client. Do not run it as a license-grant mechanism.
+- Introduce a pre-acquisition policy record so restricted bodies need not be submitted before storage authorization; the admin HTTP route now rejects bodies declared as licensed/reviewed-use sources. Existing staging is for the supplied original/selected-source pack, not permission to ingest new proprietary bodies.
+- Connect trusted workspace/seat and provider/region/retention context end-to-end (#25/#26/#29/#34). No client field may self-assert an entitlement.
+- Build bounded counsel-review records, cumulative quotation/reconstruction accounting and retention-aware revocation/deletion across all derived indexes/caches/articles. Current source-backed output paths recheck rights; this is not complete cross-corpus deletion.
+- Verify and render attribution obligations through all output formats before enabling restricted-source grants.
+- Obtain real operation-specific permissions and independent review. Nine request packets are drafts only. No fair-use approval or publisher license was fabricated.
+
+## Policy-page observations, 2026-09-27
+
+Seven official policy pages were read using web retrieval. These are discovery notes, not saved original HTTP artifacts, legal advice, acquisition permissions or source-corpus additions. No publisher standard or commercial explanatory body was downloaded. Exact HTTP-body hashes and response headers are unavailable in this discovery pass and are not invented.
+
+- The [Copyright Office fair-use explanation](https://www.copyright.gov/fair-use/more-info.html), factors and concluding paragraph, describes a case-specific inquiry without a guaranteed word-count formula.
+- [IFRS intellectual property](https://www.ifrs.org/legal/intellectual-property/), Licensing, points ongoing product/service use to a license agreement and licensee questionnaire.
+- [AICPA terms](https://www.aicpa-cima.com/resources/article/terms-of-service), ownership/personal-use paragraphs, do not establish permission for this public commercial AI service.
+- [IFAC intellectual property](https://www.ifac.org/ifac-intellectual-property), use rules and request route, requires written permission beyond individual reference and identifies OPRI. Actual edition ownership remains to be checked.
+- [IIA licensing](https://www.theiia.org/en/about-us/licensing/), licensing scope FAQ, excludes public AI inclusion under the described license. Specific compatible authorization remains required.
+- [DART terms](https://dart.deloitte.com/USDART/obj/vsid/441069), section 2.9, restrict AI/ML and automated collection; separate compatible authorization is unresolved.
+- [PCAOB terms](https://pcaobus.org/privacypolicy), Authorized Use and Intellectual Property Rights (displayed update September 9, 2021), separate restrictions on automated collection from conditional Public Materials reuse.
+
+FAF/COSO/ISACA and other product-specific terms/contact routes still need verification. The all-family matrix preserves all 32 recipes without granting any text operation.

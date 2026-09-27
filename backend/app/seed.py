@@ -1,8 +1,8 @@
 """Local demonstration data only: original teaching prose, reference metadata, no scraped standards."""
-from sqlalchemy import select
 from .models import User, Workspace, Membership, Source
 from .config import Settings
 from .db import Database
+from .services.rights import record_approval
 
 ORIGINAL_POLICY = {'basis': 'original', 'commercial_use': True, 'model_input': True,
                    'store_text': True, 'display_full': True, 'quote': True, 'export': True,
@@ -50,9 +50,12 @@ def seed(db):
         db.add(Membership(workspace_id='reviewer-private', user_id='reviewer', role='owner'))
     for source_id, title, text in SAMPLES:
         if not db.get(Source, source_id):
-            db.add(Source(id=source_id, title=title, publisher='Open Source Accounting · original demonstration material',
+            row = Source(id=source_id, title=title, publisher='Open Source Accounting · original demonstration material',
                           text=text, kind='original_commentary', framework='BOTH', policy=ORIGINAL_POLICY,
-                          reviewed=True, created_by='admin', approved_by='approver', version_label='Demo 1'))
+                          reviewed=True, created_by='admin', approved_by='approver', version_label='Demo 1')
+            db.add(row)
+            db.flush()
+            record_approval(row, 'approver')  # Synthetic local demo only; production prohibits seed().
     for source_id, title, publisher, url in [
         ('ref-asc606', 'ASC 606 — Revenue from Contracts with Customers', 'FAF / FASB', 'https://asc.fasb.org/'),
         ('ref-asc842', 'ASC 842 — Leases', 'FAF / FASB', 'https://asc.fasb.org/'),

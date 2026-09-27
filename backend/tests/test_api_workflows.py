@@ -1,3 +1,4 @@
+from conftest import rights_approval
 import json
 from sqlalchemy import select
 from app.models import Run, Evidence, Source, Job, Idempotency, User, Subscription, now
@@ -161,10 +162,10 @@ def test_source_two_person_approval(client):
           'policy':{'basis':'original','commercial_use':True,'store_text':True,'model_input':True,'display_full':True,'quote':True,'export':True,'review_note':'Original material created solely for this automated test.'}}
     row=client.post('/api/v1/admin/sources',json=body,headers={'X-Dev-User':'approver'}).json()
     assert client.get('/api/v1/sources/'+row['id']).status_code==404
-    assert client.post('/api/v1/admin/sources/'+row['id']+'/approve',headers={'X-Dev-User':'approver'}).status_code==403
+    assert client.post('/api/v1/admin/sources/'+row['id']+'/approve',json=rights_approval(client,row['id']),headers={'X-Dev-User':'approver'}).status_code==403
     with client.app.state.db.Session() as db:
         db.get(User,'admin').role='rights_approver';db.commit()
-    assert client.post('/api/v1/admin/sources/'+row['id']+'/approve',headers={'X-Dev-User':'admin'}).status_code==200
+    assert client.post('/api/v1/admin/sources/'+row['id']+'/approve',json=rights_approval(client,row['id']),headers={'X-Dev-User':'admin'}).status_code==200
     assert client.get('/api/v1/sources/'+row['id']).json()['text']==body['text']
 
 

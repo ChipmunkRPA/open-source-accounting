@@ -54,7 +54,8 @@ class EditorialDecision(Strict):
 def editorial_sources(user=Depends(current_user), db=Depends(session)):
     require_editor(user)
     rows = db.scalars(select(Source).where(Source.enabled.is_(True)).order_by(Source.created_at.desc()).limit(2000))
-    return {'items': [{**rights.metadata(s), 'policy': s.policy, 'text': s.text,
+    return {'items': [{**rights.metadata(s), 'policy': s.policy,
+                       'text': s.text if rights.allowed(s, 'display_full') else None,
                        'created_by': s.created_by} for s in rows
                       if (s.policy or {}).get('requires_technical_review')]}
 

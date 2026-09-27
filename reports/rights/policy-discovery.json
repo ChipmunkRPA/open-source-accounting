@@ -1,0 +1,93 @@
+{
+  "observed_date": "2026-09-27",
+  "method": "web_tool_policy_page_text",
+  "original_http_artifacts_retained": 0,
+  "permissions_granted": 0,
+  "publisher_body_documents_acquired": 0,
+  "pages": [
+    {
+      "publisher": "US Copyright Office",
+      "url": "https://www.copyright.gov/fair-use/more-info.html",
+      "locator": "Four factors and concluding no-formula paragraph",
+      "displayed_date": null,
+      "issued_at": null,
+      "publicly_available_at": null,
+      "effective_at": null,
+      "raw_sha256": null,
+      "status": "discovery_only_not_legal_approval",
+      "missing_artifact_reason": "Web text observation; original HTTP bytes and headers unavailable in this pass."
+    },
+    {
+      "publisher": "IFRS Foundation",
+      "url": "https://www.ifrs.org/legal/intellectual-property/",
+      "locator": "Licensing; ongoing product/service use",
+      "displayed_date": null,
+      "issued_at": null,
+      "publicly_available_at": null,
+      "effective_at": null,
+      "raw_sha256": null,
+      "status": "discovery_only_not_legal_approval",
+      "missing_artifact_reason": "Web text observation; original HTTP bytes and headers unavailable in this pass."
+    },
+    {
+      "publisher": "AICPA",
+      "url": "https://www.aicpa-cima.com/resources/article/terms-of-service",
+      "locator": "Ownership, personal-use and consent paragraphs",
+      "displayed_date": "2023-09-14",
+      "issued_at": null,
+      "publicly_available_at": null,
+      "effective_at": null,
+      "raw_sha256": null,
+      "status": "discovery_only_not_legal_approval",
+      "missing_artifact_reason": "Web text observation; original HTTP bytes and headers unavailable in this pass."
+    },
+    {
+      "publisher": "IFAC",
+      "url": "https://www.ifac.org/ifac-intellectual-property",
+      "locator": "Rules for use; OPRI request route",
+      "displayed_date": null,
+      "issued_at": null,
+      "publicly_available_at": null,
+      "effective_at": null,
+      "raw_sha256": null,
+      "status": "discovery_only_not_legal_approval",
+      "missing_artifact_reason": "Web text observation; original HTTP bytes and headers unavailable in this pass."
+    },
+    {
+      "publisher": "IIA",
+      "url": "https://www.theiia.org/en/about-us/licensing/",
+      "locator": "Licensing terms & scope; restrictions FAQ",
+      "displayed_date": null,
+      "issued_at": null,
+      "publicly_available_at": null,
+      "effective_at": null,
+      "raw_sha256": null,
+      "status": "discovery_only_not_legal_approval",
+      "missing_artifact_reason": "Web text observation; original HTTP bytes and headers unavailable in this pass."
+    },
+    {
+      "publisher": "Deloitte DART",
+      "url": "https://dart.deloitte.com/USDART/obj/vsid/441069",
+      "locator": "Section 2.9 AI/ML and automated-collection restrictions",
+      "displayed_date": null,
+      "issued_at": null,
+      "publicly_available_at": null,
+      "effective_at": null,
+      "raw_sha256": null,
+      "status": "discovery_only_not_legal_approval",
+      "missing_artifact_reason": "Web text observation; original HTTP bytes and headers unavailable in this pass."
+    },
+    {
+      "publisher": "PCAOB",
+      "url": "https://pcaobus.org/privacypolicy",
+      "locator": "Terms of Use: Authorized Use; Intellectual Property Rights",
+      "displayed_date": "2021-09-09",
+      "issued_at": null,
+      "publicly_available_at": null,
+      "effective_at": null,
+      "raw_sha256": null,
+      "status": "discovery_only_not_legal_approval",
+      "missing_artifact_reason": "Web text observation; original HTTP bytes and headers unavailable in this pass."
+    }
+  ]
+}

@@ -26,7 +26,7 @@
       "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/7",
       "priority": "P0",
       "lane": "foundation",
-      "status": "queued",
+      "status": "in_progress",
       "depends_on_issues": [
         6
       ],
@@ -35,7 +35,8 @@
       "work": "Separate fetching, storage, indexing, model input, display, quotations, export, redistribution and training. Draft permission requests and scope-limited legal review packets; never assume agentic use is automatically fair use.",
       "acceptance": "Unknown operations fail closed; expiry/revocation and upload/mirror/subscription bypass tests pass; human license/legal blockers remain explicit.",
       "progress_required": true,
-      "scheduled": false
+      "scheduled": false,
+      "implementation_note": "Strict operation gates, revision-bound approval and nine unsent permission drafts implemented; pre-acquisition policies, cumulative reconstruction, trusted scope propagation and full revocation remain. See docs/rights/README.md."
     },
     {
       "id": "INGEST",

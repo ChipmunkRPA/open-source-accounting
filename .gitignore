@@ -21,3 +21,5 @@ terraform.tfvars
 runtime.env.yaml
 .DS_Store
 frontend/dist/
+
+.ruff_cache/

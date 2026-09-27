@@ -1,3 +1,4 @@
+from conftest import rights_approval
 """Original content validation, staging, editorial separation, and public API tests."""
 import hashlib
 import json
@@ -145,10 +146,11 @@ def source_and_payload(client,pack):
 def test_both_approval_gates_and_exact_hash(client,pack):
     sid,payload=source_and_payload(client,pack)
     assert client.post(f'/api/v1/editorial/sources/{sid}/review',headers={'X-Dev-User':'editor'},json=payload).status_code==409
-    assert client.post(f'/api/v1/admin/sources/{sid}/approve',headers={'X-Dev-User':'approver'}).status_code==200
+    assert client.post(f'/api/v1/admin/sources/{sid}/approve',json=rights_approval(client,sid),headers={'X-Dev-User':'approver'}).status_code==200
     with client.app.state.db.Session() as db:
         source=db.get(Source,sid)
         assert allowed(source,'display_full') and not allowed(source,'model_input')
+        payload = decision(source)
     r=client.post(f'/api/v1/editorial/sources/{sid}/review',headers={'X-Dev-User':'editor'},json=payload)
     assert r.status_code==200,r.text
     assert r.json()['editorial_status']=='approved'
@@ -166,12 +168,14 @@ def test_technical_review_separate_role(client,pack,principal):
 
 def test_technical_reviewer_cannot_grant_rights(client,pack):
     sid,_=source_and_payload(client,pack)
-    assert client.post(f'/api/v1/admin/sources/{sid}/approve',headers={'X-Dev-User':'editor'}).status_code==403
+    assert client.post(f'/api/v1/admin/sources/{sid}/approve',json=rights_approval(client,sid),headers={'X-Dev-User':'editor'}).status_code==403
 
 @pytest.mark.parametrize('change,expected',[({'content_sha256':'0'*64},409),({'expected_policy_version':999},409),({'checked_reference_ids':['invented']},422),({'checked_reference_ids':['fasb-asc']},422),({'confirm_actual_review_performed':False},422)])
 def test_review_validation(client,pack,change,expected):
     sid,payload=source_and_payload(client,pack)
-    client.post(f'/api/v1/admin/sources/{sid}/approve',headers={'X-Dev-User':'approver'})
+    client.post(f'/api/v1/admin/sources/{sid}/approve',json=rights_approval(client,sid),headers={'X-Dev-User':'approver'})
+    with client.app.state.db.Session() as db:
+        payload = decision(db.get(Source, sid))
     payload.update(change)
     assert client.post(f'/api/v1/editorial/sources/{sid}/review',headers={'X-Dev-User':'editor'},json=payload).status_code==expected
 

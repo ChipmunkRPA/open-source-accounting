@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy import select, or_
 from ..auth import fresh_user, current_user, session, require_admin
-from ..schemas import SourceCreate
-from ..models import Source, Audit, now
+from ..schemas import SourceCreate, RightsApproval
+from ..models import Source, Audit
 from ..services import rights
 from ..errors import fail
 
@@ -39,7 +39,7 @@ def topics(db=Depends(session)):
 @router.get('/admin/sources')
 def admin_sources(user=Depends(current_user), db=Depends(session)):
     require_admin(user)
-    return {'items': [{**rights.metadata(s), 'policy': s.policy, 'created_by': s.created_by,
+    return {'items': [{**rights.metadata(s), 'policy': s.policy, 'rights_revision': rights.revision(s), 'created_by': s.created_by,
                        'approved_by': s.approved_by} for s in db.scalars(select(Source).order_by(Source.created_at.desc()).limit(500))]}
 
 
@@ -48,6 +48,10 @@ def submit_source(payload: SourceCreate, user=Depends(fresh_user), db=Depends(se
     require_admin(user)
     # References are never silently turned into a license. Legal evidence belongs in a restricted system.
     data = payload.model_dump(mode='json')
+    if payload.text:
+        # An independent rights decision does not professionally approve the new prose.
+        data['policy']['requires_technical_review'] = True
+        data['policy']['technical_review_status'] = 'unreviewed'
     row = Source(**data, created_by=user.id, reviewed=False)
     db.add(row)
     db.flush()
@@ -57,16 +61,21 @@ def submit_source(payload: SourceCreate, user=Depends(fresh_user), db=Depends(se
 
 
 @router.post('/admin/sources/{source_id}/approve')
-def approve_source(source_id: str, user=Depends(fresh_user), db=Depends(session)):
+def approve_source(source_id: str, payload: RightsApproval, user=Depends(fresh_user), db=Depends(session)):
     require_admin(user, approve=True)
-    row = db.get(Source, source_id)
+    row = db.scalar(select(Source).where(Source.id == source_id).with_for_update())
     if not row:
         fail('NOT_FOUND', 'Source not found.', 404)
     if row.created_by == user.id:
         fail('SEPARATION_OF_DUTIES', 'Another authorized reviewer must approve this source.', 403)
+    if (payload.expected_policy_version != row.policy_version
+            or payload.expected_rights_revision != rights.revision(row)):
+        fail('REVISION_CONFLICT', 'Reload the source: the rights revision changed.', 409)
     row.reviewed, row.approved_by = True, user.id
+    row.policy_version += 1  # Previously saved evidence must not revive after a new approval.
+    rights.record_approval(row, user.id)
     db.add(Audit(actor_id=user.id, action='source.approved', target_id=row.id,
-                 detail={'policy_version': row.policy_version}))
+                 detail={'policy_version': row.policy_version, 'rights_revision': rights.revision(row)}))
     db.commit()
     return rights.metadata(row)
 
@@ -74,7 +83,7 @@ def approve_source(source_id: str, user=Depends(fresh_user), db=Depends(session)
 @router.post('/admin/sources/{source_id}/disable')
 def disable_source(source_id: str, user=Depends(fresh_user), db=Depends(session)):
     require_admin(user)
-    row = db.get(Source, source_id)
+    row = db.scalar(select(Source).where(Source.id == source_id).with_for_update())
     if not row:
         fail('NOT_FOUND', 'Source not found.', 404)
     row.enabled, row.policy_version = False, row.policy_version+1

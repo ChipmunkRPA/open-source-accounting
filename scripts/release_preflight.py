@@ -12,7 +12,7 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 MANIFEST='release-manifest.json'
-SKIP_DIRS={'.git','.venv','node_modules','.next','__pycache__','.pytest_cache','data','.qa-data','.terraform'}
+SKIP_DIRS={'.git','.venv','node_modules','.next','__pycache__','.pytest_cache','.ruff_cache','data','.qa-data','.terraform'}
 PATTERNS={
  'private_key':re.compile(r'(?m)^-----BEGIN (?:RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----'),
  'github_token':re.compile(r'\bgh[pousr]_[A-Za-z0-9]{30,}\b|\bgithub_pat_[A-Za-z0-9_]{40,}\b'),
@@ -31,7 +31,7 @@ def excluded(relative: Path):
     # Preserve current compact validation and library previews. Prior exports/coverage
     # are historical QA artifacts, not runtime dependencies for this source release.
     if relative.parts[:2] == ('frontend', 'dist'):return True
-    if relative.parts[0]=='reports' and 'bootstrap' not in relative.parts and name != 'README.md' and not (name.startswith('content-') or name.startswith('library-') or name.startswith('release-') or name.startswith('sec-core-')):return True
+    if relative.parts[0]=='reports' and not {'bootstrap', 'rights'} & set(relative.parts) and name != 'README.md' and not (name.startswith('content-') or name.startswith('library-') or name.startswith('release-') or name.startswith('sec-core-')):return True
     return False
 
 

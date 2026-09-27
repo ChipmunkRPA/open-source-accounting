@@ -1,0 +1,811 @@
+{
+  "schema_version": 1,
+  "record_type": "planning_not_runtime_grants",
+  "families": [
+    {
+      "family_id": "SEC_RULES",
+      "issues": [
+        1
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "SEC_SAB",
+      "issues": [
+        1
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "SEC_FRM",
+      "issues": [
+        1
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "SEC_CFI",
+      "issues": [
+        1
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "SEC_FORMS",
+      "issues": [
+        1
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "SEC_FILINGS",
+      "issues": [
+        2
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "SEC_CORRESPONDENCE",
+      "issues": [
+        2
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "SEC_XBRL",
+      "issues": [
+        2
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "SEC_AUDIT_ENFORCEMENT",
+      "issues": [
+        3
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "FASB",
+      "issues": [
+        9
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "GASB",
+      "issues": [
+        10
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "PCAOB",
+      "issues": [
+        11
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "AICPA",
+      "issues": [
+        12
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "IFRS",
+      "issues": [
+        13
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "IAASB",
+      "issues": [
+        14
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "IESBA",
+      "issues": [
+        14
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "IPSASB",
+      "issues": [
+        14
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "GAO",
+      "issues": [
+        15
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "FASAB",
+      "issues": [
+        15
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "OMB_TREASURY",
+      "issues": [
+        15
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "FEDERAL_LAW",
+      "issues": [
+        16
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "COURTS",
+      "issues": [
+        16
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "STATE_LOCAL_LAW",
+      "issues": [
+        16,
+        10
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "COSO",
+      "issues": [
+        17
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "IIA_ISACA",
+      "issues": [
+        17
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "NIST",
+      "issues": [
+        17
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "PUBLISHERS",
+      "issues": [
+        18
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "OPEN_LITERATURE",
+      "issues": [
+        19
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "REGULATORS",
+      "issues": [
+        20
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "LOCAL_FRAMEWORKS",
+      "issues": [
+        21
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "ORIGINAL",
+      "issues": [
+        22,
+        23
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    },
+    {
+      "family_id": "PRIVATE_UPLOADS",
+      "issues": [
+        24,
+        29,
+        31,
+        34
+      ],
+      "policy_status": "requires_work_version_operation_review",
+      "granted_operations": [],
+      "unknown_operations": [
+        "acquire",
+        "store_raw",
+        "extract",
+        "store_text",
+        "embed",
+        "model_input",
+        "display_full",
+        "quote",
+        "export",
+        "redistribute",
+        "train"
+      ],
+      "owner": null,
+      "permission_evidence_ref": null,
+      "professional_review": false,
+      "safe_fallback": "reference metadata and independently original drafts; no body acquisition authorized by this matrix"
+    }
+  ]
+}

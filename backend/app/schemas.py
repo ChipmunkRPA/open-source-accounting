@@ -1,7 +1,7 @@
 """Shared validated HTTP and model contracts; unknown fields never grant capabilities."""
 from datetime import date
 from typing import Literal
-from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, field_validator, model_validator
 
 
 class Strict(BaseModel):
@@ -162,16 +162,43 @@ class ReviewCreate(Strict):
 
 class SourcePolicy(Strict):
     basis: Literal['original', 'government_work', 'license', 'reviewed_use', 'reference_only']
-    commercial_use: bool = False
-    model_input: bool = False
-    store_text: bool = False
-    display_full: bool = False
-    quote: bool = False
-    export: bool = False
-    embed: bool = False
-    train: bool = False
-    expires_at: int | None = None
+    commercial_use: StrictBool = False
+    acquire: StrictBool = False
+    store_raw: StrictBool = False
+    extract: StrictBool = False
+    model_input: StrictBool = False
+    store_text: StrictBool = False
+    display_full: StrictBool = False
+    quote: StrictBool = False
+    export: StrictBool = False
+    embed: StrictBool = False
+    redistribute: StrictBool = False
+    train: StrictBool = False
+    effective_at: StrictInt | None = Field(default=None, ge=0)
+    expires_at: StrictInt | None = Field(default=None, ge=0)
+    license_evidence_ref: str | None = Field(default=None, max_length=250)
+    attribution: str = Field(default='', max_length=2000)
+    scope: dict[Literal['route', 'workspace_id', 'seat_id', 'audience', 'provider', 'region', 'retention', 'jurisdiction'], list[str]] = Field(default_factory=dict)
     review_note: str = Field(min_length=10, max_length=3000)
+
+    @model_validator(mode='after')
+    def validate_rights(self):
+        from .services.rights import OPERATIONS
+        if self.effective_at is not None and self.expires_at is not None and self.effective_at >= self.expires_at:
+            raise ValueError('Rights expiry must follow the effective date.')
+        if any(not values or any(not value.strip() for value in values) for values in self.scope.values()):
+            raise ValueError('Scope restrictions require explicit nonempty values.')
+        if self.basis == 'reference_only' and any(getattr(self, op) for op in OPERATIONS):
+            raise ValueError('Reference-only metadata cannot grant body operations.')
+        if self.basis in {'license', 'reviewed_use'} and any(getattr(self, op) for op in OPERATIONS) and not self.license_evidence_ref:
+            raise ValueError('Operation grants require a restricted license/review evidence reference.')
+        return self
+
+
+class RightsApproval(Strict):
+    expected_policy_version: int = Field(ge=1)
+    expected_rights_revision: str = Field(pattern=r'^[a-f0-9]{64}$')
+    confirm_actual_rights_review: Literal[True]
 
 
 class SourceCreate(Strict):
@@ -196,6 +223,8 @@ class SourceCreate(Strict):
             raise ValueError('This policy does not permit storage of the submitted source text.')
         if self.policy.basis == 'reference_only' and self.text:
             raise ValueError('Reference-only sources cannot contain source text.')
+        if self.text and self.policy.basis in {'license', 'reviewed_use'}:
+            raise ValueError('Submit restricted works as metadata only until a separately authorized intake is available.')
         if self.effective_from and self.effective_to and self.effective_from > self.effective_to:
             raise ValueError('Invalid effective-date range.')
         return self

@@ -1850,6 +1850,16 @@
             }
           }
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RightsApproval"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -3155,6 +3165,33 @@
         ],
         "title": "ReviewCreate"
       },
+      "RightsApproval": {
+        "properties": {
+          "expected_policy_version": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Expected Policy Version"
+          },
+          "expected_rights_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Expected Rights Revision"
+          },
+          "confirm_actual_rights_review": {
+            "type": "boolean",
+            "const": true,
+            "title": "Confirm Actual Rights Review"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "expected_policy_version",
+          "expected_rights_revision",
+          "confirm_actual_rights_review"
+        ],
+        "title": "RightsApproval"
+      },
       "RunCreate": {
         "properties": {
           "workspace_id": {
@@ -3371,6 +3408,21 @@
             "title": "Commercial Use",
             "default": false
           },
+          "acquire": {
+            "type": "boolean",
+            "title": "Acquire",
+            "default": false
+          },
+          "store_raw": {
+            "type": "boolean",
+            "title": "Store Raw",
+            "default": false
+          },
+          "extract": {
+            "type": "boolean",
+            "title": "Extract",
+            "default": false
+          },
           "model_input": {
             "type": "boolean",
             "title": "Model Input",
@@ -3401,21 +3453,79 @@
             "title": "Embed",
             "default": false
           },
+          "redistribute": {
+            "type": "boolean",
+            "title": "Redistribute",
+            "default": false
+          },
           "train": {
             "type": "boolean",
             "title": "Train",
             "default": false
           },
+          "effective_at": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Effective At"
+          },
           "expires_at": {
             "anyOf": [
               {
-                "type": "integer"
+                "type": "integer",
+                "minimum": 0.0
               },
               {
                 "type": "null"
               }
             ],
             "title": "Expires At"
+          },
+          "license_evidence_ref": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 250
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "License Evidence Ref"
+          },
+          "attribution": {
+            "type": "string",
+            "maxLength": 2000,
+            "title": "Attribution",
+            "default": ""
+          },
+          "scope": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "propertyNames": {
+              "enum": [
+                "route",
+                "workspace_id",
+                "seat_id",
+                "audience",
+                "provider",
+                "region",
+                "retention",
+                "jurisdiction"
+              ]
+            },
+            "type": "object",
+            "title": "Scope"
           },
           "review_note": {
             "type": "string",
