@@ -23,3 +23,5 @@ backend/.venv/bin/python scripts/release_preflight.py --check
 ```
 
 No frontend source changed and no new local browser/MFA/build result is asserted. CI separately exercises the real frontend build, clean Python installs, PostgreSQL and Docker. Dedicated parser-review UI and actual independent review remain open. Parser records cannot establish accounting correctness, historical applicability or source permission. Runtime provenance checks do not read the full raw object on every request; new packets/decisions do verify bytes.
+
+Implementation f06bebfe3def5e9dd86343f192bde4e0f9479964 passed main CI 36357313071: both Python 3.11/3.13 clean installs, real frontend, backend, migrations/PostgreSQL and Docker.
