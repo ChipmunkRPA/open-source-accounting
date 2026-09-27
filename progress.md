@@ -1,5 +1,19 @@
 # Open Source Accounting — current implementation progress
 
+## 2026-09-27 · #23 exact dependency binding interface (parent #5)
+
+Implementation: technical-review source picker for every listed reference, multiple passage selection, exact text/edition/locator/revision/notices and per-selection relationship confirmation. Changing selection clears confirmation; duplicate/partial sets rejected; no prior binding transfer. Empty sets remain technical-only. Readable private history cards show decisions, findings, reviewer/expiry and exact bindings, with expandable full records. Current picker uses the bounded editorial worklist; broader search/pagination remains open.
+
+Actual validation: TypeScript typecheck, **16 mocked auth tests**, real Identity Platform build and **16 dependency API tests passed**. Browser synthetic case rejected unconfirmed selection, then saved a confirmed binding with a request-changes decision. Found clipped raw JSON in history, replaced it with readable cards, rebuilt and repeated the successful browser journey. Screenshot `reports/intake/dependency-ui.png`; JUnit `dependency-ui-backend.xml`; commands/limits `DEPENDENCY_UI.md`. Temporary servers/tabs stopped. No new full backend/migration/PostgreSQL/live-provider result; frontend-only changes. One upstream Starlette/httpx warning, no test failures.
+
+Coverage unchanged: **32 families / 47 topics; 63 original drafts / 63 verified hashes / 0 professional approvals / 0 Agent admissions; 58 questions / 26 references**. SEC **34 targets / 28 selected excerpts / 7 excerpted sources / 0 full original HTTP documents / 0 technical or applicability approvals / 0 approved production index / 0 human-adjudicated evaluations**. Real acquired/parsed/reviewed/indexed units added **0**. Synthetic records excluded. Source packs, parser `source-intake-1/sec-core-0.7.0`, discovery `html-index-1/crossref-works-1`, requested `gemini-3.8-flash` and cost catalog unchanged. No live inference, paid resources, deployment, billing/SMS or notifications.
+
+Remaining gates: dependent output counters/notices, affected-content reports, real rights/primary text/reviewers, conditional/jurisdiction/industry applicability, all-family acquisition/indexing/evaluation, downloads and broader accessibility. GCP project/region/spend choice, credentials and concrete release approval remain outstanding.
+
+Next resumable task: **#23 derived-output rights accounting and affected-content reports**, preserving each linked source's notices and limits before admitting dependent evidence. Continue authorized all-family acquisition/coverage. Keep main current; full application/content/GCP goal remains active.
+
+---
+
 ## 2026-09-27 · #23 exact linked-publication dependencies (parent #5)
 
 Implementation: technical review payloads bind reference IDs to exact staged source revision/policy/locator. Sorted source locks, complete nonempty sets and duplicate/self/stale target validation. Original-library metadata-only references now block Agent evidence; public draft display/manual export remain separate. Runtime dependency checks propagate disablement, rights/review/version changes and run-specific applicability into retrieval and saved exports. Graphs bounded to ten levels/500 visits. Dependency output controls/mandatory attribution remain withheld pending derived-output accounting. Private review records and packets retain bindings; no approval transfer or source acquisition. Published on main as [bad45bc](https://github.com/ChipmunkRPA/open-source-accounting/commit/bad45bc7db057821f22532fd18262e9f4bb96782); [CI 36359874953](https://github.com/ChipmunkRPA/open-source-accounting/actions/runs/36359874953) passed both Python 3.11/3.13 clean installs, frontend/backend, migrations/PostgreSQL and Docker.

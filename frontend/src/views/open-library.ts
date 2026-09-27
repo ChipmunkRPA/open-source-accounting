@@ -1,3 +1,4 @@
+import {referenceBindings} from './reference-bindings.js';
 import {applicabilityReview} from './applicability-review.js';
 import {api,saveBlob} from '../api.js';
 import {el,button,link,heading,badge,field,notice,card,select,input,empty,textarea,checkbox,modal} from '../ui.js';
@@ -58,16 +59,17 @@ export async function editorialView(app:App){
       const note=textarea('','technical-review-note',5),checked=checkbox('I actually performed this technical review and addressed every listed source and limitation.');
       const decision=select([['changes_requested','Request changes'],['approved','Approve technical content'],['rejected','Reject'],['revoked','Revoke prior review']]);const status=el('div');
       const scope=textarea('','review-scope',3),evidence=input('text','','review-evidence'),evidenceHash=input('text','','review-evidence-hash'),expiry=input('datetime-local');
+      const dependencies=referenceBindings(s,result.items);
       const dialog=modal(s.title,badge('Rights: '+(s.rights_reviewed?'approved':'pending')),badge('Technical: '+s.editorial_status),
         notice('A source link is not proof of primary-text access. Record exactly what you checked. This action never labels original commentary authoritative.','warning'),
-        markdown(s.text||'').element,sourceNotices(s.source_attributions),el('pre',{},JSON.stringify(s.policy.content_reference_ids,null,2)),field('Decision',decision),field('Review scope',scope),field('Findings and authority limitations',note),field('Private supporting-record reference',evidence),field('Supporting-record SHA-256',evidenceHash),field('Review expires at (your local time)',expiry),checked.element,status);
+        markdown(s.text||'').element,sourceNotices(s.source_attributions),el('pre',{},JSON.stringify(s.policy.content_reference_ids,null,2)),dependencies.element,field('Decision',decision),field('Review scope',scope),field('Findings and authority limitations',note),field('Private supporting-record reference',evidence),field('Supporting-record SHA-256',evidenceHash),field('Review expires at (your local time)',expiry),checked.element,status);
       dialog.append(button('Record review',async()=>{try{
         if(!checked.input.checked)throw new Error('Confirm actual review before submitting.');
         if(!expiry.value || !Number.isFinite(new Date(expiry.value).getTime()))throw new Error('Choose an explicit review expiry.');
         await api('/editorial/sources/'+s.id+'/review','POST',{expected_policy_version:s.policy_version,content_sha256:s.content_sha256,
           expected_review_revision:s.review_revision,decision:decision.value,review_scope:scope.value,review_note:note.value,
           evidence_ref:evidence.value,evidence_sha256:evidenceHash.value,expires_at:Math.floor(new Date(expiry.value).getTime()/1000),
-          checked_reference_ids:s.policy.content_reference_ids||[],confirm_actual_review_performed:true});
+          checked_reference_ids:s.policy.content_reference_ids||[],reference_bindings:dependencies.collect(),confirm_actual_review_performed:true});
         dialog.close();await editorialView(app);
       }catch(e){status.replaceChildren(notice((e as Error).message,'error'));}},'secondary'));
     },'secondary');
@@ -107,7 +109,16 @@ export async function editorialView(app:App){
       saveBlob(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),'review-packet.json');
       }catch(e){app.showError(e);}},'quiet');
     const history=button('Review history',async()=>{try{const data:Json=await api('/editorial/sources/'+s.id+'/reviews');
-      modal('Technical review history',notice('Private review records; do not copy confidential advice into public content.'),el('pre',{},JSON.stringify(data,null,2)));
+      modal('Technical review history',notice('Private review records; do not copy confidential advice into public content.'),
+        notice(data.current?'A current technical review exists; other evidence gates still apply.':'No current technical approval.'),
+        ...data.items.map((r:Json)=>card(r.payload.decision.replaceAll('_',' ')+' · '+new Date(r.created_at*1000).toLocaleString(),
+          el('p',{},r.payload.review_scope),el('p',{},r.payload.review_note),
+          el('p',{class:'muted'},'Reviewer: '+r.payload.reviewer_id+' · Expires: '+new Date(r.payload.expires_at*1000).toLocaleString()),
+          el('h3',{},'Exact source bindings'),
+          ...(r.payload.reference_bindings||[]).map((b:Json)=>el('div',{},el('p',{},b.reference_id+' → '+b.locator),
+            el('p',{class:'review-hash'},'Source: '+b.source_id+' · Revision: '+b.review_revision+' · Policy version: '+b.policy_version))),
+          ...(r.payload.reference_bindings?.length?[]:[el('p',{},'No exact source bindings recorded.')]),
+          el('details',{},el('summary',{},'Full private record'),el('pre',{class:'review-text'},JSON.stringify(r,null,2))))));
       }catch(e){app.showError(e);}},'quiet');
     rows.append(card(s.title,badge(s.editorial_status+(s.technical_review_current?' · current':' · no current approval'),'warning'),el('p',{class:'muted'},'Version '+s.version+' · rights '+(s.rights_reviewed?'approved':'pending')),inspect,compare,history,packet,
       button('Review applicability',()=>applicabilityReview(app,s,()=>editorialView(app)),'secondary')));
