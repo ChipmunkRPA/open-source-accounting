@@ -1,8 +1,8 @@
 # Codex issue index
 
-Live master queue: [#5](https://github.com/ChipmunkRPA/open-source-accounting/issues/5). First task: [#6](https://github.com/ChipmunkRPA/open-source-accounting/issues/6).
+Live master queue: [#5](https://github.com/ChipmunkRPA/open-source-accounting/issues/5). Baseline task [#6](https://github.com/ChipmunkRPA/open-source-accounting/issues/6) is complete and integrated into main (2026-09-27); use `queue.json` and live issues for remaining status.
 
-**38 actionable tasks + 1 master issue.** The three existing SEC tasks were expanded; issues #5–#40 were created for this handoff. PR #4 is a separate draft code review, not an issue to execute blindly.
+**38 actionable tasks + 1 master issue.** The three existing SEC tasks were expanded; issues #5–#40 were created for this handoff. The original PR #4 and handoff PR #41 were reconciled into main through PR #53; their former draft status is historical.
 
 Priorities indicate importance, not a flat execution sequence. Respect dependencies. Metadata discovery, licensing-packet drafting and synthetic tests can run independently; actual rights/human approvals never become implied.
 

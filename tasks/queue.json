@@ -10,7 +10,7 @@
       "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/6",
       "priority": "P0",
       "lane": "foundation",
-      "status": "in_review",
+      "status": "complete",
       "depends_on_issues": [],
       "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
       "title": "Reconcile full v0.7 source, PR #4 and clean-install CI",
@@ -18,7 +18,7 @@
       "acceptance": "A clean clone installs, builds and tests; source receipt and current test logs are recorded; full source is verified remotely.",
       "progress_required": true,
       "scheduled": false,
-      "implementation_note": "Local integration and clean-install checks completed; PR and CI review pending. See progress.md."
+      "implementation_note": "Verified baseline and reconciled PR #4/#41 history are on main via PR #53 (67cc6cc). Clean-install Python 3.11/3.13, production frontend, PostgreSQL migrations and Docker checks passed. GitHub issue #6 closed on 2026-09-27. Evidence: reports/bootstrap/, progress.md and main CI 36354813397/36354851277. This milestone does not authorize production or complete content review."
     },
     {
       "id": "RIGHTS",
