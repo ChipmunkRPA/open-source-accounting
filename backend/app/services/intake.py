@@ -57,6 +57,8 @@ def authorize(db, work_id, operations, *, lock=False):
     if manifest['access_mode'] in {'reference_only', 'private'}:
         fail('SOURCE_POLICY_BLOCK', 'This intake record permits reference metadata only.', 403)
     context = {'route': manifest['route'], 'audience': 'internal_ingestion'}
+    if manifest['parser'] == 'crossref_metadata' and 'acquire' in operations:
+        operations = [*operations, 'extract']  # Schema screening before raw storage is separately authorized.
     if not all(rights.allowed(source, operation, context=context) for operation in operations):
         fail('SOURCE_POLICY_BLOCK', 'Current reviewed permissions do not authorize this intake step.', 403)
     return work, source, manifest
@@ -66,6 +68,19 @@ def artifact_metadata(row):
     return {'id': row.id, 'work_id': row.work_id, 'raw_sha256': row.raw_sha256,
             'byte_count': row.byte_count, 'mime': row.mime, 'receipt': row.receipt,
             'status': 'acquired_not_reviewed', 'agent_eligible': False}
+
+
+def validate_metadata_delivery(manifest, raw):
+    if manifest['parser'] != 'crossref_metadata':
+        return
+    try:
+        result = subprocess.run([sys.executable, '-m', 'app.crossref_discovery', manifest['requested_url']],
+            input=raw, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=25,
+            cwd=Path(__file__).resolve().parents[2])
+        if result.returncode:
+            raise ValueError('Invalid metadata')
+    except (ValueError, OSError, subprocess.TimeoutExpired):
+        fail('METADATA_CONTRACT', 'Unexpected metadata fields or invalid page; no raw artifact was stored.', 422)
 
 
 def manual_preflight(database, work_id, request_key):
@@ -96,9 +111,12 @@ def import_manual(database, settings, work_id, actor_id, request_key, raw, mime,
                 or digest(raw) != delivery['raw_sha256']):
             fail('ARTIFACT_INTEGRITY', 'File bytes, size and MIME must match the reviewed delivery.', 422)
         try:
-            reject_access_page(raw)
+            if mime != 'application/json':
+                reject_access_page(raw)
         except Blocked:
             fail('INTAKE_BLOCKED', 'Access-control pages cannot be imported as source documents.', 422)
+        validate_metadata_delivery(manifest, raw)
+        authorize(db, work_id, ['acquire', 'store_raw'])
         if not request_key or len(request_key) > 120:
             fail('IDEMPOTENCY_KEY', 'Supply an idempotency key of 1–120 characters.', 422)
         attempt = db.scalar(select(IntakeAttempt).where(IntakeAttempt.work_id == work_id,
@@ -151,7 +169,11 @@ def make_gateway(settings, manifest):
     if location.startswith('sqlite:///'):
         location = location.removeprefix('sqlite:///')
     budget = RateBudget(location)
-    return Gateway(settings.sec_user_agent, budget, validator=validate, max_bytes=manifest['max_bytes'])
+    gateway = Gateway(settings.sec_user_agent, budget, validator=validate, max_bytes=manifest['max_bytes'])
+    if manifest['parser'] == 'crossref_metadata':
+        from .source_concurrency import CrossrefGateway
+        return CrossrefGateway(gateway, settings.database_url)
+    return gateway
 
 
 def acquire(database, settings, work_id, actor_id, request_key, *, gateway_factory=None):
@@ -192,6 +214,7 @@ def acquire(database, settings, work_id, actor_id, request_key, *, gateway_facto
                 or len(result['raw']) > manifest['max_bytes']):
             raise CoreError('Unexpected or empty source content')
         raw_hash = digest(result['raw'])
+        validate_metadata_delivery(manifest, result['raw'])
         with database.Session() as db:
             work, source, manifest = authorize(db, work_id, ['acquire', 'store_raw'], lock=True)
             attempt = db.get(IntakeAttempt, attempt_id)
@@ -242,6 +265,8 @@ def parse(db, settings, artifact_id, actor_id):
     if not artifact:
         fail('NOT_FOUND', 'Artifact not found.', 404)
     work, source, manifest = authorize(db, artifact.work_id, ['store_raw', 'extract', 'store_text'], lock=True)
+    if manifest['parser'] == 'crossref_metadata':
+        fail('DISCOVERY_ONLY', 'Bibliographic metadata uses discovery; it cannot be staged as source evidence.', 422)
     existing = db.scalar(select(SourceExtraction).where(SourceExtraction.artifact_id == artifact_id,
                                                        SourceExtraction.parser_version == PARSER_VERSION))
     if existing:

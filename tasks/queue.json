@@ -55,7 +55,7 @@
       "acceptance": "Actual artifacts have raw/normalized provenance; blocks are failures, not successful sources; source-unit denominators and retry tests are documented.",
       "progress_required": true,
       "scheduled": false,
-      "implementation_note": "32-family registry; rights-gated HTTP and exact-hash manual delivery; immutable receipts; authorized offline HTML-index discovery snapshots; separate parse/stage; PostgreSQL concurrency tests. Dedicated official API/bulk/edition adapters, live approved smoke, review/index integration, ingestion scopes and deletion reconciliation remain. See docs/SOURCE_INTAKE.md and progress.md."
+      "implementation_note": "32-family registry; rights-gated HTTP/manual intake; immutable HTML/Crossref metadata discovery; shared rate/provider concurrency; separate parse/stage and PostgreSQL tests. Other family API/bulk/edition adapters, approved live smoke, review/index integration, ingestion scopes and deletion remain."
     },
     {
       "id": "SEC_CORE",
@@ -299,7 +299,7 @@
       "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/19",
       "priority": "P1",
       "lane": "content",
-      "status": "queued",
+      "status": "in_progress",
       "depends_on_issues": [
         7,
         8
@@ -309,7 +309,8 @@
       "work": "Discover via official publisher/repository/DOI routes; inspect exact-version licenses including NC/SA/ND and third-party figures.",
       "acceptance": "Attribution/version/retraction and license compatibility tested; open visibility alone never licenses abstracts/full text.",
       "progress_required": true,
-      "scheduled": false
+      "scheduled": false,
+      "implementation_note": "Crossref scoped metadata-only acquisition/discovery adapter and pre-storage screening implemented with synthetic tests. No actual works or full text acquired; real source review, version-specific licenses, OpenStax/OER corpus, technical reviews and evaluations remain. See docs/CROSSREF_INTAKE.md and progress.md."
     },
     {
       "id": "REGULATORS",

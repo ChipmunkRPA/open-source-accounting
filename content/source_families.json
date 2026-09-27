@@ -1118,7 +1118,8 @@
       "seed_urls": [
         "https://openstax.org/subjects/business",
         "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
-        "https://creativecommons.org/share-your-work/cclicenses/"
+        "https://creativecommons.org/share-your-work/cclicenses/",
+        "https://api.crossref.org/"
       ],
       "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
       "default_mode": "license_by_work_version",

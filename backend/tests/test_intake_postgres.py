@@ -699,3 +699,36 @@ def test_postgres_discovery_concurrency_keeps_one_snapshot(pg_url, tmp_path):
                 if process.is_alive(): process.terminate()
                 process.join(5)
         database.engine.dispose()
+
+
+def crossref_slot_worker(url, start, release, results):
+    from app.services.source_concurrency import crossref_slot
+    assert start.wait(15)
+    try:
+        with crossref_slot(url):
+            results.put('entered')
+            assert release.wait(15)
+    except HTTPException as exc:
+        results.put(exc.status_code)
+
+
+def test_postgres_crossref_one_request_across_processes(pg_url):
+    from app.services.source_concurrency import crossref_slot
+    ctx = multiprocessing.get_context('spawn')
+    start, release, results = ctx.Event(), ctx.Event(), ctx.Queue()
+    workers = [ctx.Process(target=crossref_slot_worker, args=(pg_url, start, release, results)) for _ in range(2)]
+    try:
+        for process in workers: process.start()
+        start.set()
+        observed = [results.get(timeout=20), results.get(timeout=20)]
+        assert 'entered' in observed and 409 in observed
+        release.set()
+        for process in workers:
+            process.join(15); assert process.exitcode == 0
+        with crossref_slot(pg_url): pass
+    finally:
+        release.set()
+        for process in workers:
+            if process.pid:
+                if process.is_alive(): process.terminate()
+                process.join(5)

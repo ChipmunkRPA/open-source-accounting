@@ -22,7 +22,7 @@ class ManualDelivery(Strict):
     """Claims requiring independent review, never an authorization by themselves."""
     raw_sha256: str = Field(pattern=r'^[0-9a-f]{64}$')
     byte_count: int = Field(ge=1, le=16_000_000)
-    mime: Literal['application/xml', 'text/xml', 'text/html', 'application/pdf', 'text/plain']
+    mime: Literal['application/xml', 'text/xml', 'text/html', 'application/pdf', 'text/plain', 'application/json']
     method: Literal['publisher_delivery', 'author_original']
     evidence_ref: str = Field(pattern=r'^ev_[A-Za-z0-9_-]{1,120}$')
     evidence_sha256: str = Field(pattern=r'^[0-9a-f]{64}$')
@@ -47,10 +47,10 @@ class IntakeManifest(Strict):
     route: Literal['official_http', 'authorized_manual', 'reference_only']
     requested_url: str = Field(min_length=1, max_length=1500)
     redirect_urls: list[str] = Field(default_factory=list, max_length=3)
-    parser: Literal['ecfr_xml', 'structural_html', 'pdf', 'text']
+    parser: Literal['ecfr_xml', 'structural_html', 'pdf', 'text', 'crossref_metadata']
     parser_family: str = Field(default='generic', max_length=80)
     cfr_title: str = Field(default='17', pattern=r'^\d{1,3}$')
-    allowed_mime: list[Literal['application/xml', 'text/xml', 'text/html', 'application/pdf', 'text/plain']] = Field(min_length=1, max_length=5)
+    allowed_mime: list[Literal['application/xml', 'text/xml', 'text/html', 'application/pdf', 'text/plain', 'application/json']] = Field(min_length=1, max_length=6)
     max_bytes: int = Field(default=2_000_000, ge=1, le=16_000_000)
     issued_at: date | None = None
     publicly_available_at: date | None = None
@@ -73,6 +73,13 @@ class IntakeManifest(Strict):
     def validate_route(self):
         for url in [self.requested_url, *self.redirect_urls]:
             https_url(url)
+        if self.parser == 'crossref_metadata':
+            from .crossref_discovery import query_contract
+            query_contract(self.requested_url)
+            if self.family_id != 'OPEN_LITERATURE' or self.redirect_urls or self.allowed_mime != ['application/json']:
+                raise ValueError('Crossref metadata requires OPEN_LITERATURE, JSON only and no redirects.')
+        elif 'application/json' in self.allowed_mime:
+            raise ValueError('JSON intake requires a dedicated reviewed metadata adapter.')
         if self.access_mode in {'reference_only', 'private'} and self.route != 'reference_only':
             raise ValueError('Private uploads use the workspace pipeline; reference-only records cannot fetch.')
         if self.effective_from and self.effective_to and self.effective_from > self.effective_to:

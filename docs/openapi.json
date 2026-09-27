@@ -4680,7 +4680,8 @@
               "ecfr_xml",
               "structural_html",
               "pdf",
-              "text"
+              "text",
+              "crossref_metadata"
             ],
             "title": "Parser"
           },
@@ -4704,11 +4705,12 @@
                 "text/xml",
                 "text/html",
                 "application/pdf",
-                "text/plain"
+                "text/plain",
+                "application/json"
               ]
             },
             "type": "array",
-            "maxItems": 5,
+            "maxItems": 6,
             "minItems": 1,
             "title": "Allowed Mime"
           },
@@ -4849,7 +4851,8 @@
               "text/xml",
               "text/html",
               "application/pdf",
-              "text/plain"
+              "text/plain",
+              "application/json"
             ],
             "title": "Mime"
           },

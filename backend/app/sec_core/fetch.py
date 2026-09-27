@@ -165,9 +165,13 @@ class Gateway:
                         raise CoreError('Source exceeds byte limit')
                 raw = b''.join(chunks)
                 mime = response.headers.get('Content-Type', '').split(';')[0].strip().lower()
-                headers = {k: response.headers.get(k) for k in ('Content-Type', 'ETag', 'Last-Modified', 'Content-Length')
+                headers = {k: response.headers.get(k) for k in ('Content-Type', 'ETag', 'Last-Modified', 'Content-Length',
+                           'x-rate-limit-limit', 'x-rate-limit-interval', 'x-concurrency-limit', 'x-api-pool')
                            if response.headers.get(k) is not None}
-            reject_access_page(raw)
+            # Structured JSON is checked by its dedicated pre-storage contract;
+            # a bibliographic title containing "CAPTCHA" is not an access block.
+            if mime != 'application/json':
+                reject_access_page(raw)
             if mime not in {'text/html', 'text/xml', 'application/xml', 'text/plain', 'application/pdf', 'application/json'}:
                 raise CoreError('Unsupported Content-Type')
             return {'requested_url': original, 'resolved_url': url, 'raw': raw,
