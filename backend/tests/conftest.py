@@ -63,3 +63,28 @@ def rights_approval(client, source_id):
         return {'expected_policy_version': source.policy_version,
                 'expected_rights_revision': revision(source),
                 'confirm_actual_rights_review': True}
+
+
+def scope_grant(client, source_id='sample-research', user_id='demo', workspace_id='demo-workspace', **changes):
+    """Synthetic independent verification only, never an actual publisher entitlement."""
+    from app.models import Source, now
+    from app.services import rights
+    with client.app.state.db.Session() as db:
+        source = db.get(Source, source_id)
+        settings = client.app.state.settings
+        payload = {'expected_policy_version': source.policy_version,
+            'expected_rights_revision': rights.revision(source), 'subject_user_id': user_id,
+            'workspace_id': workspace_id, 'operations': sorted(op for op in rights.OPERATIONS if source.policy.get(op) is True),
+            'values': {k: v[0] for k, v in source.policy.get('scope', {}).items() if k in {'seat_id', 'jurisdiction', 'retention'}},
+            'provider': settings.model_provider, 'project': settings.google_cloud_project,
+            'region': settings.model_location, 'model_id': settings.model_id,
+            'evidence_ref': 'ev_synthetic_entitlement', 'evidence_sha256': 'b'*64,
+            'effective_at': now()-10, 'expires_at': now()+3600, **changes}
+    endpoint = '/api/v1/admin/sources/' + source_id + '/scope-grants'
+    result = client.post(endpoint, headers={'X-Dev-User': 'admin'}, json=payload)
+    assert result.status_code == 201, result.text
+    row = result.json()
+    result = client.post(endpoint + '/' + row['id'] + '/approve', headers={'X-Dev-User': 'approver'}, json={
+        'expected_record_sha256': row['record_sha256'], 'confirm_actual_entitlement_verification': True})
+    assert result.status_code == 200, result.text
+    return result.json()

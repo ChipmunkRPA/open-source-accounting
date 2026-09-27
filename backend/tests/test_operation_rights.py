@@ -70,7 +70,7 @@ def test_missing_or_wrong_context_denies_scoped_grant(key):
     row = source(scope={key: ['approved']})
     assert not rights.allowed(row, 'model_input')
     assert not rights.allowed(row, 'model_input', context={key: 'other', 'subscription': 'paid'})
-    assert rights.allowed(row, 'model_input', context={key: 'approved'})
+    assert rights.allowed(row, 'model_input', context={key: 'approved'}) == (key not in {'seat_id', 'jurisdiction', 'retention'})
 
 
 @pytest.mark.parametrize('scope', [{'unknown': ['yes']}, {'route': []}, {'route': 'mirror'}, [], None])

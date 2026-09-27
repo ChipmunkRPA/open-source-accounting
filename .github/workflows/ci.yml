@@ -42,7 +42,7 @@ jobs:
         env:
           OSA_MIGRATION_TEST_DATABASE_URL: postgresql+psycopg://osa_test:local_ci_only@localhost:5432/osa_test
         run: backend/.venv/bin/python scripts/check_migrations.py
-      - name: PostgreSQL cross-process intake and rate reservations
+      - name: PostgreSQL intake and rights concurrency contracts
         working-directory: backend
         env:
           OSA_POSTGRES_TEST_URL: postgresql+psycopg://osa_test:local_ci_only@localhost:5432/osa_test

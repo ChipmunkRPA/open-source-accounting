@@ -3144,6 +3144,212 @@
           }
         }
       }
+    },
+    "/api/v1/admin/sources/{source_id}/scope-grants": {
+      "get": {
+        "tags": [
+          "source entitlements"
+        ],
+        "summary": "Grants",
+        "operationId": "grants_api_v1_admin_sources__source_id__scope_grants_get",
+        "parameters": [
+          {
+            "name": "source_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Source Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "source entitlements"
+        ],
+        "summary": "Submit",
+        "operationId": "submit_api_v1_admin_sources__source_id__scope_grants_post",
+        "parameters": [
+          {
+            "name": "source_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Source Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScopeSubmission"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/sources/{source_id}/scope-grants/{record_id}/approve": {
+      "post": {
+        "tags": [
+          "source entitlements"
+        ],
+        "summary": "Approve",
+        "operationId": "approve_api_v1_admin_sources__source_id__scope_grants__record_id__approve_post",
+        "parameters": [
+          {
+            "name": "source_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Source Id"
+            }
+          },
+          {
+            "name": "record_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Record Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScopeApproval"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/sources/{source_id}/scope-grants/{record_id}/revoke": {
+      "post": {
+        "tags": [
+          "source entitlements"
+        ],
+        "summary": "Revoke",
+        "operationId": "revoke_api_v1_admin_sources__source_id__scope_grants__record_id__revoke_post",
+        "parameters": [
+          {
+            "name": "source_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Source Id"
+            }
+          },
+          {
+            "name": "record_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Record Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScopeRevocation"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -4252,6 +4458,220 @@
           "context"
         ],
         "title": "RunUpdate"
+      },
+      "ScopeApproval": {
+        "properties": {
+          "expected_record_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Expected Record Sha256"
+          },
+          "confirm_actual_entitlement_verification": {
+            "type": "boolean",
+            "const": true,
+            "title": "Confirm Actual Entitlement Verification"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "expected_record_sha256",
+          "confirm_actual_entitlement_verification"
+        ],
+        "title": "ScopeApproval"
+      },
+      "ScopeRevocation": {
+        "properties": {
+          "expected_record_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Expected Record Sha256"
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "seat_removed",
+              "scope_changed",
+              "evidence_invalid",
+              "terms_changed",
+              "operator_hold"
+            ],
+            "title": "Reason"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "expected_record_sha256",
+          "reason"
+        ],
+        "title": "ScopeRevocation"
+      },
+      "ScopeSubmission": {
+        "properties": {
+          "expected_policy_version": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Expected Policy Version"
+          },
+          "expected_rights_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Expected Rights Revision"
+          },
+          "subject_user_id": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Subject User Id"
+          },
+          "workspace_id": {
+            "type": "string",
+            "maxLength": 36,
+            "minLength": 1,
+            "title": "Workspace Id"
+          },
+          "operations": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "acquire",
+                "store_raw",
+                "extract",
+                "store_text",
+                "embed",
+                "model_input",
+                "display_full",
+                "quote",
+                "export",
+                "redistribute",
+                "train"
+              ]
+            },
+            "type": "array",
+            "maxItems": 11,
+            "minItems": 1,
+            "title": "Operations"
+          },
+          "values": {
+            "$ref": "#/components/schemas/ScopeValues"
+          },
+          "provider": {
+            "type": "string",
+            "enum": [
+              "google_cloud",
+              "mock"
+            ],
+            "title": "Provider"
+          },
+          "project": {
+            "type": "string",
+            "maxLength": 120,
+            "title": "Project"
+          },
+          "region": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "title": "Region"
+          },
+          "model_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "title": "Model Id"
+          },
+          "evidence_ref": {
+            "type": "string",
+            "pattern": "^ev_[A-Za-z0-9_-]{8,120}$",
+            "title": "Evidence Ref"
+          },
+          "evidence_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Evidence Sha256"
+          },
+          "effective_at": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Effective At"
+          },
+          "expires_at": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Expires At"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "expected_policy_version",
+          "expected_rights_revision",
+          "subject_user_id",
+          "workspace_id",
+          "operations",
+          "values",
+          "provider",
+          "project",
+          "region",
+          "model_id",
+          "evidence_ref",
+          "evidence_sha256",
+          "effective_at",
+          "expires_at"
+        ],
+        "title": "ScopeSubmission"
+      },
+      "ScopeValues": {
+        "properties": {
+          "seat_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 120,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Seat Id"
+          },
+          "jurisdiction": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 120,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Jurisdiction"
+          },
+          "retention": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 120,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Retention"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "ScopeValues"
       },
       "SourceCreate": {
         "properties": {

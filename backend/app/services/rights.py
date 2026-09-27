@@ -80,6 +80,11 @@ def allowed(source: Source, action: str, *, context: dict | None = None, _visite
     scope = policy.get('scope', {})
     if not isinstance(scope, dict):
         return False
+    from .source_scopes import PROTECTED, resolve
+    if set(scope) & PROTECTED:
+        context = resolve(source, action, context)
+        if context is None:
+            return False
     supported = {'route', 'workspace_id', 'seat_id', 'audience', 'provider', 'region', 'retention', 'jurisdiction'}
     for key, values in scope.items():
         if key not in supported or not isinstance(values, list) or not values:
@@ -102,21 +107,21 @@ def require(source, action):
 def runtime_context(db, run, settings=None, *, actor_id=None, require_edit=False):
     """Only server-owned scope values; never merge run.context, prompts or client inputs.
 
-    A workspace member is not automatically a licensed publisher seat. Seat,
-    jurisdiction and retention scopes remain absent until verified records exist.
+    A workspace member is not automatically a licensed publisher seat. Protected
+    scope values are resolved per source/operation from fresh verified records.
     """
-    from ..models import Membership
+    from .source_scopes import RuntimeContext, member
     if not run:
         fail('SOURCE_CHANGED', 'The source execution is unavailable.', 409)
     actor_id = actor_id or db.info.get('rights_actor_id') or run.user_id
     settings = settings or db.info.get('rights_settings')
-    member = db.get(Membership, (run.workspace_id, actor_id))
-    if not member or (require_edit and member.role not in {'owner', 'editor'}):
+    membership = member(db, run.workspace_id, actor_id)
+    if not membership or (require_edit and membership.role not in {'owner', 'editor'}):
         fail('WORKSPACE_ACCESS_REVOKED', 'Current workspace membership is required.', 403)
     context = {'workspace_id': run.workspace_id, 'route': 'hosted_agent', 'audience': 'workspace'}
     if settings is not None:
         context.update(provider=settings.model_provider, region=settings.model_location)
-    return context
+    return RuntimeContext(context, db, actor_id, settings, require_edit)
 
 
 def evidence_allowed(db, evidence: Evidence, action='model_input', *, context=None):

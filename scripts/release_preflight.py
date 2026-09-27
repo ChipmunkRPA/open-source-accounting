@@ -31,7 +31,7 @@ def excluded(relative: Path):
     # Preserve current compact validation and library previews. Prior exports/coverage
     # are historical QA artifacts, not runtime dependencies for this source release.
     if relative.parts[:2] == ('frontend', 'dist'):return True
-    if relative.parts[0]=='reports' and not {'bootstrap', 'rights', 'intake', 'runtime-rights', 'output-rights', 'counsel'} & set(relative.parts) and name != 'README.md' and not (name.startswith('content-') or name.startswith('library-') or name.startswith('release-') or name.startswith('sec-core-')):return True
+    if relative.parts[0]=='reports' and not {'bootstrap', 'rights', 'intake', 'runtime-rights', 'output-rights', 'counsel', 'scopes'} & set(relative.parts) and name != 'README.md' and not (name.startswith('content-') or name.startswith('library-') or name.startswith('release-') or name.startswith('sec-core-')):return True
     return False
 
 

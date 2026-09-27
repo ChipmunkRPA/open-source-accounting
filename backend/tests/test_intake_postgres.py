@@ -245,7 +245,88 @@ def test_postgres_counsel_activation_and_revocation_serialize(pg_url, revoking):
             else:
                 assert sorted(status for _, status in outcomes) == [200, 409]
                 assert source.policy_version == record.activated_policy_version == 2
-                assert rights.allowed(source, 'model_input', context=context)
+                assert counsel.permitted(source, 'model_input')
+                assert not rights.allowed(source, 'model_input', context=context)  # No verified jurisdiction assignment.
+    finally:
+        for process in workers:
+            if process.is_alive(): process.terminate()
+            process.join(5)
+        database.engine.dispose()
+
+
+def scope_worker(url, source_id, record_id, fingerprint, actor, mode, start, results):
+    from app.api.source_scopes import approve, revoke
+    from app.scope_schemas import ScopeApproval, ScopeRevocation
+    database = Database(url)
+    try:
+        assert start.wait(15)
+        with database.Session() as session:
+            user = session.get(User, actor)
+            if mode == 'approve':
+                approve(source_id, record_id, ScopeApproval(expected_record_sha256=fingerprint,
+                    confirm_actual_entitlement_verification=True), user=user, db=session)
+            else:
+                revoke(source_id, record_id, ScopeRevocation(expected_record_sha256=fingerprint,
+                    reason='operator_hold'), user=user, db=session)
+            results.put((mode, 200))
+    except HTTPException as error:
+        results.put((mode, error.status_code))
+    finally:
+        database.engine.dispose()
+
+
+@pytest.mark.parametrize('revoking', [False, True])
+def test_postgres_scope_review_serializes_replacement_and_revocation(pg_url, revoking):
+    from app.models import Workspace, Membership, SourceScopeGrant, now
+    from app.scope_schemas import ScopeSubmission
+    from app.services import source_scopes
+    database = Database(pg_url)
+    author, approver, subject = [str(uuid4()) for _ in range(3)]
+    with database.Session() as session:
+        session.add_all([User(id=author, role='admin'), User(id=approver, role='rights_approver'), User(id=subject)])
+        session.commit()
+        workspace = Workspace(owner_id=subject, name='Synthetic scope race')
+        session.add(workspace); session.flush()
+        session.add(Membership(workspace_id=workspace.id, user_id=subject, role='owner'))
+        source = Source(title='Synthetic scoped work', publisher='Test only', text='Fixture',
+            created_by=author, approved_by=approver, enabled=True, reviewed=True,
+            policy={'basis': 'original', 'commercial_use': True, 'model_input': True,
+                    'scope': {'seat_id': ['synthetic-seat']}})
+        session.add(source); session.flush(); rights.record_approval(source, approver); session.commit()
+        payload = ScopeSubmission(expected_policy_version=source.policy_version,
+            expected_rights_revision=rights.revision(source), subject_user_id=subject, workspace_id=workspace.id,
+            operations=['model_input'], values={'seat_id': 'synthetic-seat'}, provider='mock', project='',
+            region='us', model_id='gemini-3.8-flash', evidence_ref='ev_synthetic_entitlement', evidence_sha256='b'*64,
+            effective_at=now()-10, expires_at=now()+3600)
+        records = [source_scopes.submit(session, source, payload, author) for _ in range(2)]
+        session.commit()
+        source_id = source.id
+        entries = [(r.id, r.record_sha256) for r in records]
+    ctx = multiprocessing.get_context('spawn')
+    start, results = ctx.Event(), ctx.Queue()
+    # Competing distinct approvals exercise supersession + the partial unique index.
+    # Same-record approval/revocation must finish revoked regardless of lock ordering.
+    modes = ['approve', 'revoke' if revoking else 'approve']
+    jobs = [(entries[0], modes[0]), (entries[0] if revoking else entries[1], modes[1])]
+    workers = [ctx.Process(target=scope_worker, args=(pg_url, source_id, record, digest,
+                approver, mode, start, results)) for (record, digest), mode in jobs]
+    try:
+        for process in workers: process.start()
+        start.set()
+        outcomes = [results.get(timeout=20) for _ in workers]
+        for process in workers:
+            process.join(10)
+            assert process.exitcode == 0
+        with database.Session() as session:
+            rows = session.scalars(select(SourceScopeGrant).where(SourceScopeGrant.source_id == source_id)).all()
+            if revoking:
+                assert ('revoke', 200) in outcomes
+                assert any(mode == 'approve' and status in {200, 409} for mode, status in outcomes)
+                assert session.get(SourceScopeGrant, entries[0][0]).status == 'revoked'
+                assert not any(row.status == 'approved' for row in rows)
+            else:
+                assert outcomes == [('approve', 200), ('approve', 200)]
+                assert sorted(row.status for row in rows) == ['approved', 'superseded']
     finally:
         for process in workers:
             if process.is_alive(): process.terminate()

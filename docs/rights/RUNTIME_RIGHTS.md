@@ -20,9 +20,9 @@ artifact even after the execution owner leaves. Source permissions still apply.
 | `audience` | Server constant `workspace` |
 | `provider` | Configured `model_provider`, never a prompt or client field |
 | `region` | Configured `model_location`; this does not prove endpoint availability |
-| `seat_id` | Absent; membership/payment is not a publisher seat grant |
-| `retention` | Absent until the provider/storage retention policy is verified |
-| `jurisdiction` | Absent; a user-supplied accounting jurisdiction is not verified rights scope |
+| `seat_id` | Verified per-source/user/workspace assignment; membership/payment alone is insufficient |
+| `retention` | Verified assignment bound to configured provider/project/region/model; actual provider/storage review remains required |
+| `jurisdiction` | Verified assignment; user-supplied accounting jurisdiction is not trusted |
 
 Absent scope values deny a corresponding scoped grant. No client `Run.context`,
 workflow inputs, header or generated plan can assert one of these rights. Explicit
@@ -62,8 +62,10 @@ between calls, trusted/mismatched scopes, document/memo revision changes, metada
 body smuggling, current-viewer access and cross-workspace document rejection.
 These tests are not professional review, live inference, or proof of a license.
 
-Still required: verified source-seat grants; provider retention and jurisdiction
-records; persisted counsel decisions; cumulative quotation/reconstruction controls;
-mandatory attribution rendering; revocation/deletion across all caches/indexes and
-article dependencies; independent content/applicability reviews; actual endpoint and
-live deployment validation. See `progress.md` for actual commands and counts.
+Still required: actual publisher/provider/jurisdiction evidence, reviewed output-limit
+amendments, public/service context records, broader provenance and reconstruction
+defenses, revocation/deletion across all caches/indexes and article dependencies,
+independent content/applicability reviews, actual endpoint and live deployment validation.
+See `progress.md` for current commands and counts.
+
+Subsequent slices implement [counsel decisions](COUNSEL_RECORDS.md), [output accounting/notices](OUTPUT_RIGHTS.md) and [verified user/workspace scopes](VERIFIED_SCOPES.md). Earlier observations above are historical validation, not new test results. Actual provider evidence, output amendments, public/service scope, cross-corpus provenance and physical deletion remain open.

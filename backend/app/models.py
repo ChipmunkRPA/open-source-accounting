@@ -372,3 +372,23 @@ class CounselRecord(Base):
     revoked_by: Mapped[str | None] = mapped_column(ForeignKey('users.id'))
     revoked_at: Mapped[int | None] = mapped_column(Integer)
     revocation_reason: Mapped[str | None] = mapped_column(String(30))
+
+
+class SourceScopeGrant(Base):
+    __tablename__ = 'source_scope_grants'
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
+    source_id: Mapped[str] = mapped_column(ForeignKey('sources.id'), index=True)
+    subject_user_id: Mapped[str] = mapped_column(ForeignKey('users.id'))
+    workspace_id: Mapped[str] = mapped_column(ForeignKey('workspaces.id'))
+    proposal: Mapped[dict] = mapped_column(JSON)
+    record_sha256: Mapped[str] = mapped_column(String(64))
+    submitted_by: Mapped[str] = mapped_column(ForeignKey('users.id'))
+    submitted_at: Mapped[int] = mapped_column(Integer, default=now)
+    status: Mapped[str] = mapped_column(String(20), default='pending')
+    approved_by: Mapped[str | None] = mapped_column(ForeignKey('users.id'))
+    approved_at: Mapped[int | None] = mapped_column(Integer)
+    revoked_by: Mapped[str | None] = mapped_column(ForeignKey('users.id'))
+    revoked_at: Mapped[int | None] = mapped_column(Integer)
+    revocation_reason: Mapped[str | None] = mapped_column(String(30))
+    __table_args__ = (Index('uq_source_scope_active', 'source_id', 'subject_user_id', 'workspace_id',
+        unique=True, postgresql_where=(status == 'approved'), sqlite_where=(status == 'approved')),)

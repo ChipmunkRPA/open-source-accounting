@@ -3,7 +3,7 @@ import pytest
 from sqlalchemy import select
 from app.models import Source, User, CounselRecord, Audit, Run, Evidence, now
 from app.services import rights, counsel
-from conftest import rights_approval
+from conftest import rights_approval, scope_grant
 
 ADMIN = {'X-Dev-User': 'admin'}
 APPROVER = {'X-Dev-User': 'approver'}
@@ -55,8 +55,11 @@ def review(client, row, headers=COUNSEL, decision='approved'):
 
 
 def activate(client):
-    return client.post('/api/v1/admin/sources/sample-research/approve',
+    response = client.post('/api/v1/admin/sources/sample-research/approve',
                        headers=APPROVER, json=rights_approval(client, 'sample-research'))
+    if response.status_code == 200:
+        scope_grant(client)
+    return response
 
 
 def approved(scoped):
@@ -70,7 +73,10 @@ def approved(scoped):
 
 def allowed(client):
     with client.app.state.db.Session() as db:
-        return rights.allowed(db.get(Source, 'sample-research'), 'model_input', context=CONTEXT)
+        from types import SimpleNamespace
+        run = SimpleNamespace(workspace_id='demo-workspace', user_id='demo')
+        context = rights.runtime_context(db, run, client.app.state.settings)
+        return rights.allowed(db.get(Source, 'sample-research'), 'model_input', context=context)
 
 
 def revoke(client, row):
@@ -158,11 +164,11 @@ def test_record_revocation_invalidates_dependent_outputs_and_is_idempotent(scope
                         locator='fixture', text=source.text, access='licensed_text',
                         policy_version=version, source_kind=source.kind))
         db.commit()
-        context = {**CONTEXT, 'workspace_id': run.workspace_id}
+        context = rights.runtime_context(db, run, client.app.state.settings)
         rights.run_artifact_access(db, run, context=context)
         assert revoke(client, row).status_code == 200
         # A separate API session revoked it; the already-loaded worker row must not revive it.
-        assert not rights.allowed(source, 'model_input', context=CONTEXT)
+        assert not rights.allowed(source, 'model_input', context=context)
         from fastapi import HTTPException
         with pytest.raises(HTTPException): rights.run_artifact_access(db, run, context=context)
     assert revoke(client, row).status_code == 200
