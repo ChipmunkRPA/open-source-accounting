@@ -1,5 +1,9 @@
 # Open Source Accounting — current implementation progress
 
+## 2026-09-27 · Operator correction: keep main current
+
+The operator requested that all completed work be updated on main. The previous issue-linked branch stack followed the original handoff but left main at the bootstrap commit. Verified that PR #53's head contains every open implementation/handoff head: #4, #41 and #42–52. Consolidating this already dependency-ordered history through #53 into main preserves all commits without rebasing, force-pushing or replacing newer work. Repository instructions now require integrating each validated change before starting another task; temporary CI branches must not accumulate. No merge is a production deployment or professional content approval. All content/model/operator gates below remain active.
+
 ## 2026-09-27 · #8 exact-file authorized manual intake (parent #5)
 
 Implementation: fresh-admin API and CLI import exact original/publisher-delivered bytes only after independent acquire/store_raw review of an immutable delivery manifest. The manifest binds file SHA-256, byte count, MIME, delivery method/time and private evidence reference/hash; registration never supplies permission by itself. Source permissions are checked before bounded streaming and again under a row lock; revision changes, expiry, incorrect bodies, access-control pages and private-workspace source families deny import. Existing HTTP manifest hashes are preserved. Manual receipts distinguish actual import time from claimed delivery time and unknown HTTP retrieval; original dates/notices survive. Duplicate keys/artifacts and post-storage crash recovery use existing immutable storage and separate parse/stage gates. No new table or source approval was created. See `docs/SOURCE_INTAKE.md`.
