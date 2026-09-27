@@ -54,14 +54,15 @@ class EditorialDecision(Strict):
 def editorial_sources(user=Depends(current_user), db=Depends(session)):
     require_editor(user)
     rows = db.scalars(select(Source).where(Source.enabled.is_(True)).order_by(Source.created_at.desc()).limit(2000))
-    items = []
+    items, releases = [], []
     for s in rows:
         if not (s.policy or {}).get('requires_technical_review'): continue
         text = s.text if rights.allowed(s, 'display_full') else None
         notes = output_rights.notices(db, [s])
-        if text: output_rights.release(db, [s], {'text': text, 'source_attributions': notes})
+        if text: releases.append(([s], {'text': text, 'source_attributions': notes}))
         items.append({**rights.metadata(s), 'policy': s.policy, 'text': text,
                       'source_attributions': notes, 'created_by': s.created_by})
+    output_rights.release_batch(db, releases)
     db.commit()
     return {'items': items}
 

@@ -62,10 +62,9 @@ between calls, trusted/mismatched scopes, document/memo revision changes, metada
 body smuggling, current-viewer access and cross-workspace document rejection.
 These tests are not professional review, live inference, or proof of a license.
 
-Still required: actual publisher/provider/jurisdiction evidence, reviewed output-limit
-amendments, public/service context records, broader provenance and reconstruction
+Still required: actual publisher/provider/jurisdiction evidence, actual output-amendment evidence, public/service context records, broader provenance and reconstruction
 defenses, revocation/deletion across all caches/indexes and article dependencies,
 independent content/applicability reviews, actual endpoint and live deployment validation.
 See `progress.md` for current commands and counts.
 
-Subsequent slices implement [counsel decisions](COUNSEL_RECORDS.md), [output accounting/notices](OUTPUT_RIGHTS.md) and [verified user/workspace scopes](VERIFIED_SCOPES.md). Earlier observations above are historical validation, not new test results. Actual provider evidence, output amendments, public/service scope, cross-corpus provenance and physical deletion remain open.
+Subsequent slices implement [counsel decisions](COUNSEL_RECORDS.md), [output accounting/notices](OUTPUT_RIGHTS.md) and [verified user/workspace scopes](VERIFIED_SCOPES.md). Earlier observations above are historical validation, not new test results. Actual provider evidence, actual amendment evidence, public/service scope, cross-corpus provenance and physical deletion remain open.

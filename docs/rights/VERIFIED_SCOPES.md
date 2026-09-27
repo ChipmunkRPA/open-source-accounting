@@ -34,4 +34,4 @@ An attested retention label bound to a model/project is not remote-provider rete
 
 No publisher login, license purchase, real reviewer approval, source acquisition, live model or deployment occurred. Synthetic test grants do not authorize production content. Public metadata and general audit details omit private evidence references and scope values; the database and privileged record API remain private operational data.
 
-Cross-corpus aliases, disguised copies, broader provenance, output-limit amendments, service/public scope records and physical derived-data deletion remain open. A provider request already sent and a user download cannot be recalled by revoking a row.
+Cross-corpus aliases, disguised copies, broader provenance, actual output-amendment evidence, service/public scope records and physical derived-data deletion remain open. A provider request already sent and a user download cannot be recalled by revoking a row.

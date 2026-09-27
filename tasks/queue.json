@@ -36,7 +36,7 @@
       "acceptance": "Unknown operations fail closed; expiry/revocation and upload/mirror/subscription bypass tests pass; human license/legal blockers remain explicit.",
       "progress_required": true,
       "scheduled": false,
-      "implementation_note": "Revision-bound rights/intake/runtime checks, output ledgers/notices and independent counsel decisions implemented. Verified per-user/workspace seat/jurisdiction/retention grants now bind exact source operations and provider/project/region/model, with independent approval, atomic replacement and revocation. Actual evidence/identities, provider behavior, public/service context, output amendments, cross-corpus provenance and physical deletion remain. See progress.md."
+      "implementation_note": "Revision-bound rights/intake/runtime checks, output ledgers/notices, independent counsel decisions and verified user/workspace scopes implemented. Independent output-term amendments now preserve all counters/receipts and invalidate affected source/counsel/scope revisions. Actual evidence/identities, provider behavior, public/service context, cross-corpus provenance and physical deletion remain. See progress.md."
     },
     {
       "id": "INGEST",

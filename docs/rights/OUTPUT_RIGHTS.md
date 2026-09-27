@@ -39,9 +39,9 @@ exports of the same memo do not consume another allowance. Different analyses, e
 fragments and representation payloads add their full sizes. The model-result-to-memo
 conversion can conservatively consume another allocation because its payload differs.
 There is no calendar reset, per-account reset, or reset on approval. The group binds
-its original output terms; a conflicting later group policy is blocked. Legal changes
-to a group's limits need a future explicit migration/review workflow and must not be
-worked around by inventing a new group for the same work.
+its reviewed output terms; a conflicting per-source policy is blocked. Independently
+reviewed [amendments](OUTPUT_AMENDMENTS.md) can change those terms while preserving all
+usage and receipts. Never invent a new group for the same work to reset its history.
 
 Migration `0003_output` creates `source_output_budgets` and `source_output_releases`.
 Receipts contain only group ID, payload digest, character count and timestamp, never
@@ -83,7 +83,7 @@ activation of the source-inspection dialog did not produce a dialog or diagnosti
 that interaction is unverified and remains a #35 UI follow-up. API source/evidence
 and export behavior is covered by the backend tests.
 
-Still open: real grouping/terms/counsel evidence, verified seats/retention/jurisdiction,
+Still open: real grouping/terms/counsel evidence and verified seat/retention/jurisdiction evidence,
 independent content/applicability review, manual-upload/cross-corpus provenance and
 reconstruction attacks, full derived-data deletion, broader UI validation, live
 provider and GCP deployment. Restricted grants must not be enabled merely because

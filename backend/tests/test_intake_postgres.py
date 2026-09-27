@@ -332,3 +332,124 @@ def test_postgres_scope_review_serializes_replacement_and_revocation(pg_url, rev
             if process.is_alive(): process.terminate()
             process.join(5)
         database.engine.dispose()
+
+
+def amendment_worker(url, source_id, group, record_id, fingerprint, actor, mode, ready, start, results):
+    from app.api.output_amendments import review
+    from app.output_amendment_schemas import OutputAmendmentReview
+    from app.services.output_rights import release
+    database = Database(url)
+    try:
+        with database.Session() as session:
+            source = session.get(Source, source_id)  # Deliberately retain the pre-amendment snapshot.
+            user = session.get(User, actor)
+            ready.put(True)
+            assert start.wait(15)
+            if mode == 'apply':
+                review(group, record_id, OutputAmendmentReview(expected_record_sha256=fingerprint,
+                    expected_released_chars=7, decision='apply', confirm_actual_terms_review=True,
+                    confirm_counters_preserved=True), user=user, db=session)
+            else:
+                release(session, [source], 'x')
+                session.commit()
+            results.put((mode, 200))
+    except HTTPException as error:
+        results.put((mode, error.detail['code']))
+    finally:
+        database.engine.dispose()
+
+
+@pytest.mark.parametrize('releasing', [False, True])
+def test_postgres_amendment_serializes_usage_and_terms_without_reset(pg_url, releasing):
+    from app.models import OutputBudget, OutputRelease, OutputAmendment, now
+    from app.services import output_rights, output_amendments
+    from app.output_amendment_schemas import OutputAmendmentSubmission
+    database = Database(pg_url)
+    author, approver, group = [str(uuid4()) for _ in range(3)]
+    with database.Session() as session:
+        session.add_all([User(id=author, role='admin'), User(id=approver, role='rights_approver')]);session.commit()
+        source=Source(title='Synthetic amendment race',publisher='Test only',text='Fixture',
+            enabled=True,reviewed=True,created_by=author,approved_by=approver,
+            policy={'basis':'original','commercial_use':True,'quote':True,'output_control':{
+                'mode':'bounded','group_id':group,'max_chars_per_response':10,'max_chars_total':10}})
+        session.add(source);session.flush();rights.record_approval(source,approver);session.commit()
+        output_rights.release(session,[source],'alpha');session.commit()
+        state=output_amendments.preview(session,group)
+        payload=OutputAmendmentSubmission(expected_limits_sha256=state['limits_sha256'],
+            expected_terms_revision=state['terms_revision'],expected_sources_sha256=state['sources_sha256'],
+            new_control={'mode':'bounded','group_id':group,'max_chars_per_response':20,'max_chars_total':20},
+            evidence_ref='ev_synthetic_amendment',evidence_sha256='c'*64,review_expires_at=now()+3600)
+        rows=[output_amendments.submit(session,group,payload,author) for _ in range(2)]
+        session.commit()
+        source_id=source.id
+        records=[(row.id,row.record_sha256) for row in rows]
+    ctx=multiprocessing.get_context('spawn')
+    ready,start,results=ctx.Queue(),ctx.Event(),ctx.Queue()
+    modes=['apply','release' if releasing else 'apply']
+    workers=[ctx.Process(target=amendment_worker,args=(pg_url,source_id,group,rid,digest,approver,mode,
+             ready,start,results)) for (rid,digest),mode in zip(records,modes)]
+    try:
+        for process in workers:process.start()
+        for _ in workers:assert ready.get(timeout=20)
+        start.set()
+        outcomes=[results.get(timeout=20) for _ in workers]
+        for process in workers:
+            process.join(10);assert process.exitcode==0
+        with database.Session() as session:
+            budget=session.get(OutputBudget,group)
+            counted=session.scalar(select(func.sum(OutputRelease.character_count)).where(OutputRelease.group_id==group))
+            assert budget.released_chars==counted
+            applied=session.scalar(select(func.count()).select_from(OutputAmendment).where(
+                OutputAmendment.group_id==group,OutputAmendment.status=='applied'))
+            if releasing:
+                assert set(outcomes) in ({('apply',200),('release','SOURCE_CHANGED')},
+                                        {('apply','REVISION_CONFLICT'),('release',200)})
+                assert (budget.released_chars,budget.terms_revision,applied) in {(7,2,1),(10,1,0)}
+            else:
+                assert sorted(str(result) for _,result in outcomes)==['200','REVISION_CONFLICT']
+                assert budget.released_chars==7 and budget.terms_revision==2 and applied==1
+    finally:
+        start.set()
+        for process in workers:
+            if process.is_alive():process.terminate()
+            process.join(5)
+        database.engine.dispose()
+
+
+def batch_output_worker(url, source_ids, start, results):
+    from app.services.output_rights import release_batch
+    database=Database(url)
+    try:
+        with database.Session() as session:
+            sources=[session.get(Source,sid) for sid in source_ids]
+            assert start.wait(15)
+            release_batch(session,[([source],'alpha') for source in sources])
+            session.commit();results.put('released')
+    finally:
+        database.engine.dispose()
+
+
+def test_postgres_bulk_readers_share_lock_order_despite_opposite_item_order(pg_url):
+    from app.models import OutputBudget
+    database=Database(pg_url)
+    groups=[str(uuid4()),str(uuid4())]
+    with database.Session() as session:
+        sources=[Source(title='Synthetic bulk item',publisher='Test only',policy={'output_control':{
+            'mode':'bounded','group_id':group,'max_chars_per_response':10,'max_chars_total':10}}) for group in groups]
+        session.add_all(sources);session.commit();ids=[s.id for s in sources]
+    ctx=multiprocessing.get_context('spawn')
+    start,results=ctx.Event(),ctx.Queue()
+    workers=[ctx.Process(target=batch_output_worker,args=(pg_url,order,start,results)) for order in (ids,ids[::-1])]
+    try:
+        for process in workers:process.start()
+        start.set()
+        assert [results.get(timeout=20) for _ in workers]==['released','released']
+        for process in workers:
+            process.join(10);assert process.exitcode==0
+        with database.Session() as session:
+            assert [session.get(OutputBudget,group).released_chars for group in groups]==[7,7]
+    finally:
+        for process in workers:
+            if process.is_alive():process.terminate()
+            process.join(5)
+        database.engine.dispose()

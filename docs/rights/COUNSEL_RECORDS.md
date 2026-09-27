@@ -22,7 +22,7 @@ An authorized administrator, rights approver or counsel reviewer may revoke usin
 
 The audit stores action, actor, record/source ID, revision digest or closed reason code, not legal prose or evidence references. The database itself remains private; counsel proposal references are not public source metadata and are not included in general audit responses. The API schema cannot prevent a trusted operator from entering inappropriate data elsewhere; retention, encrypted backups, secure evidence-vault integration and counsel-record deletion policy remain production work.
 
-Revocation does not recall a provider request already transmitted or a file already downloaded. Physical deletion of retained raw/derived data, indexes and backups remains open. Cumulative output accounting is unchanged; this workflow does not provide policy-limit amendments or authorize resetting work counters.
+Revocation does not recall a provider request already transmitted or a file already downloaded. Physical deletion of retained raw/derived data, indexes and backups remains open. Cumulative output accounting is unchanged; this counsel workflow does not itself amend limits or authorize resetting counters; the separate [amendment workflow](OUTPUT_AMENDMENTS.md) preserves usage and requires new counsel decisions for changed revisions.
 
 ## Observed verification
 

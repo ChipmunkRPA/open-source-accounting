@@ -68,14 +68,35 @@ def notice_text(rows):
         f"{r['title']} — {r['publisher']} — {r['version']}\n{r['url']}\n{r['notice']}" for r in rows)
 
 
-def release(db, sources, payload):
+def policy_current(source, control):
+    """An old per-source approval cannot transmit under superseded group terms."""
+    from sqlalchemy.orm import object_session
+    db = object_session(source)
+    if db is None: return False  # A detached object cannot verify current group terms.
+    row = db.execute(select(OutputBudget.limits_sha256).where(OutputBudget.group_id == control['group_id'])).first()
+    return row is None or row[0] == hashlib.sha256(canonical(control).encode()).hexdigest()
+
+
+def release_batch(db, requests):
     """Reserve before response/commit. Caller must authorize body operations separately.
 
     Insert+row-lock serializes PostgreSQL workers; SQLite insert obtains a write lock.
     Store only a group, digest and counts. Never store another copy of source/output text.
     """
-    groups = {}
-    for source in source_lineage(db, sources):
+    from . import rights, counsel
+    lineages = [(source_lineage(db, sources), payload) for sources, payload in requests]
+    lineage = list({source.id: source for sources, _ in lineages for source in sources}.values())
+    # Lock source rows before group rows, as amendments do. Compare the caller's
+    # authorized snapshot with fresh state, including an A->B->A policy transition.
+    snapshots = {s.id: (s.policy_version, rights.revision(s), s.enabled, s.reviewed) for s in lineage}
+    current = []
+    for source_id in sorted(snapshots):
+        source = counsel.lock_source(db, source_id)
+        if snapshots[source_id] != (source.policy_version, rights.revision(source), source.enabled, source.reviewed):
+            fail('SOURCE_CHANGED', 'Source rights changed before output release.', 409)
+        current.append(source)
+    groups, source_groups = {}, {}
+    for source in current:
         raw = source.policy.get('output_control')
         if raw is None:
             if source.policy.get('basis') in {'license', 'reviewed_use'}:
@@ -87,9 +108,8 @@ def release(db, sources, payload):
         if policy.group_id in groups and groups[policy.group_id] != fields:
             fail('OUTPUT_POLICY_CONFLICT', 'Sources disagree on the shared work limits.', 409)
         groups[policy.group_id] = fields
-    serialized = canonical(payload)
-    fingerprint = hashlib.sha256(serialized.encode()).hexdigest()
-    size = len(serialized)
+        source_groups[source.id] = policy.group_id
+    budgets = {}
     for group, control in sorted(groups.items()):
         limits_hash = hashlib.sha256(canonical(control).encode()).hexdigest()
         if db.bind.dialect.name == 'postgresql':
@@ -98,19 +118,36 @@ def release(db, sources, payload):
             from sqlalchemy.dialects.sqlite import insert
         db.execute(insert(OutputBudget).values(group_id=group, limits_sha256=limits_hash, released_chars=0)
                    .on_conflict_do_nothing(index_elements=['group_id']))
-        budget = db.scalar(select(OutputBudget).where(OutputBudget.group_id == group).with_for_update())
+        budget = db.scalar(select(OutputBudget).where(OutputBudget.group_id == group).with_for_update()
+                           .execution_options(populate_existing=True))
         if budget.limits_sha256 != limits_hash:
             fail('OUTPUT_POLICY_CONFLICT', 'Changing a policy cannot reset a work output ledger.', 409)
-        if control['mode'] == 'bounded' and size > control['max_chars_per_response']:
-            fail('SOURCE_OUTPUT_LIMIT', 'The reviewed source output limit would be exceeded.', 403)
-        if db.get(OutputRelease, (group, fingerprint)):
-            continue
-        if control['mode'] == 'bounded' and budget.released_chars + size > control['max_chars_total']:
-            fail('SOURCE_OUTPUT_LIMIT', 'The reviewed cumulative source output limit would be exceeded.', 403)
-        budget.released_chars += size
-        db.add(OutputRelease(group_id=group, payload_sha256=fingerprint, character_count=size))
-        db.flush()
-    return {'payload_sha256': fingerprint, 'accounted_characters': size}
+        budgets[group] = budget
+    results = []
+    for sources, payload in lineages:
+        serialized = canonical(payload)
+        fingerprint = hashlib.sha256(serialized.encode()).hexdigest()
+        size = len(serialized)
+        selected = {source_groups[s.id] for s in sources if s.id in source_groups}
+        for group in sorted(selected):
+            control, budget = groups[group], budgets[group]
+            if control['mode'] == 'bounded' and size > control['max_chars_per_response']:
+                fail('SOURCE_OUTPUT_LIMIT', 'The reviewed source output limit would be exceeded.', 403)
+            if control['mode'] == 'bounded' and budget.released_chars > control['max_chars_total']:
+                fail('SOURCE_OUTPUT_LIMIT', 'Prior releases exceed the current reviewed cumulative limit.', 403)
+            if db.get(OutputRelease, (group, fingerprint)):
+                continue
+            if control['mode'] == 'bounded' and budget.released_chars + size > control['max_chars_total']:
+                fail('SOURCE_OUTPUT_LIMIT', 'The reviewed cumulative source output limit would be exceeded.', 403)
+            budget.released_chars += size
+            db.add(OutputRelease(group_id=group, payload_sha256=fingerprint, character_count=size))
+            db.flush()
+        results.append({'payload_sha256': fingerprint, 'accounted_characters': size})
+    return results
+
+
+def release(db, sources, payload):
+    return release_batch(db, [(sources, payload)])[0]
 
 
 def run_output(db, run):

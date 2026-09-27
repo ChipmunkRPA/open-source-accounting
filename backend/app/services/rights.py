@@ -69,7 +69,10 @@ def allowed(source: Source, action: str, *, context: dict | None = None, _visite
         if control is not None:
             from ..schemas import OutputControl
             try:
-                OutputControl.model_validate(control)
+                normalized = OutputControl.model_validate(control).model_dump(mode='json')
+                from .output_rights import policy_current
+                if not policy_current(source, normalized):
+                    return False
             except ValueError:
                 return False
     if policy.get('basis') == 'reviewed_use':

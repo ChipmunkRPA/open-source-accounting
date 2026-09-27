@@ -3350,6 +3350,153 @@
           }
         }
       }
+    },
+    "/api/v1/admin/output-groups/{group_id}/amendments": {
+      "get": {
+        "tags": [
+          "output amendments"
+        ],
+        "summary": "Records",
+        "operationId": "records_api_v1_admin_output_groups__group_id__amendments_get",
+        "parameters": [
+          {
+            "name": "group_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Group Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "output amendments"
+        ],
+        "summary": "Submit",
+        "operationId": "submit_api_v1_admin_output_groups__group_id__amendments_post",
+        "parameters": [
+          {
+            "name": "group_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Group Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OutputAmendmentSubmission"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/output-groups/{group_id}/amendments/{record_id}/review": {
+      "post": {
+        "tags": [
+          "output amendments"
+        ],
+        "summary": "Review",
+        "operationId": "review_api_v1_admin_output_groups__group_id__amendments__record_id__review_post",
+        "parameters": [
+          {
+            "name": "group_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Group Id"
+            }
+          },
+          {
+            "name": "record_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Record Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OutputAmendmentReview"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -4232,6 +4379,97 @@
           "body"
         ],
         "title": "MemoUpdate"
+      },
+      "OutputAmendmentReview": {
+        "properties": {
+          "expected_record_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Expected Record Sha256"
+          },
+          "expected_released_chars": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Expected Released Chars"
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "apply",
+              "reject"
+            ],
+            "title": "Decision"
+          },
+          "confirm_actual_terms_review": {
+            "type": "boolean",
+            "const": true,
+            "title": "Confirm Actual Terms Review"
+          },
+          "confirm_counters_preserved": {
+            "type": "boolean",
+            "const": true,
+            "title": "Confirm Counters Preserved"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "expected_record_sha256",
+          "expected_released_chars",
+          "decision",
+          "confirm_actual_terms_review",
+          "confirm_counters_preserved"
+        ],
+        "title": "OutputAmendmentReview"
+      },
+      "OutputAmendmentSubmission": {
+        "properties": {
+          "expected_limits_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Expected Limits Sha256"
+          },
+          "expected_terms_revision": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Expected Terms Revision"
+          },
+          "expected_sources_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Expected Sources Sha256"
+          },
+          "new_control": {
+            "$ref": "#/components/schemas/OutputControl"
+          },
+          "evidence_ref": {
+            "type": "string",
+            "pattern": "^ev_[A-Za-z0-9_-]{8,120}$",
+            "title": "Evidence Ref"
+          },
+          "evidence_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Evidence Sha256"
+          },
+          "review_expires_at": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Review Expires At"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "expected_limits_sha256",
+          "expected_terms_revision",
+          "expected_sources_sha256",
+          "new_control",
+          "evidence_ref",
+          "evidence_sha256",
+          "review_expires_at"
+        ],
+        "title": "OutputAmendmentSubmission"
       },
       "OutputControl": {
         "properties": {

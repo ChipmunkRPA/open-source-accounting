@@ -37,12 +37,13 @@ def source(source_id: str, db=Depends(session)):
 def topics(db=Depends(session)):
     rows = db.scalars(select(Source).where(Source.kind == 'original_commentary', Source.enabled.is_(True),
                                            Source.reviewed.is_(True))).all()
-    items = []
+    items, releases = [], []
     for source in rows:
         summary = (source.text or '')[:200] if rights.allowed(source, 'display_full') else ''
         notes = output_rights.notices(db, [source])
-        if summary: output_rights.release(db, [source], {'text': summary, 'source_attributions': notes})
+        if summary: releases.append(([source], {'text': summary, 'source_attributions': notes}))
         items.append({**rights.metadata(source), 'summary': summary, 'source_attributions': notes})
+    output_rights.release_batch(db, releases)
     db.commit()
     return {'items': items}
 

@@ -345,6 +345,7 @@ class OutputBudget(Base):
     __tablename__ = 'source_output_budgets'
     group_id: Mapped[str] = mapped_column(String(120), primary_key=True)
     limits_sha256: Mapped[str] = mapped_column(String(64))
+    terms_revision: Mapped[int] = mapped_column(Integer, default=1, server_default="1")
     released_chars: Mapped[int] = mapped_column(BigInteger, default=0)
 
 
@@ -392,3 +393,18 @@ class SourceScopeGrant(Base):
     revocation_reason: Mapped[str | None] = mapped_column(String(30))
     __table_args__ = (Index('uq_source_scope_active', 'source_id', 'subject_user_id', 'workspace_id',
         unique=True, postgresql_where=(status == 'approved'), sqlite_where=(status == 'approved')),)
+
+
+class OutputAmendment(Base):
+    __tablename__ = 'source_output_amendments'
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
+    group_id: Mapped[str] = mapped_column(ForeignKey('source_output_budgets.group_id'), index=True)
+    proposal: Mapped[dict] = mapped_column(JSON)
+    record_sha256: Mapped[str] = mapped_column(String(64))
+    submitted_by: Mapped[str] = mapped_column(ForeignKey('users.id'))
+    submitted_at: Mapped[int] = mapped_column(Integer, default=now)
+    status: Mapped[str] = mapped_column(String(20), default='pending')
+    reviewed_by: Mapped[str | None] = mapped_column(ForeignKey('users.id'))
+    reviewed_at: Mapped[int | None] = mapped_column(Integer)
+    released_chars_at_apply: Mapped[int | None] = mapped_column(BigInteger)
+    applied_terms_revision: Mapped[int | None] = mapped_column(Integer)
