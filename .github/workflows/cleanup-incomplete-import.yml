@@ -1,0 +1,36 @@
+name: Clean incomplete source transport
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/cleanup-incomplete-import.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: initial-source-import
+  cancel-in-progress: false
+jobs:
+  cleanup:
+    if: github.repository == 'ChipmunkRPA/open-source-accounting'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Refuse to touch a published application
+        run: |
+          if test -f backend/app/main.py; then
+            echo 'Application source exists; manual review required.'
+            exit 1
+          fi
+      - name: Remove only incomplete import transport
+        run: |
+          git rm -rf --ignore-unmatch .release
+          git rm -f --ignore-unmatch .github/workflows/import-source.yml
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Remove incomplete source transport; retain publication status'
+          git push origin HEAD:main
