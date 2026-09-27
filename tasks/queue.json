@@ -36,7 +36,7 @@
       "acceptance": "Unknown operations fail closed; expiry/revocation and upload/mirror/subscription bypass tests pass; human license/legal blockers remain explicit.",
       "progress_required": true,
       "scheduled": false,
-      "implementation_note": "Strict operation gates, revision-bound approval and nine unsent permission drafts implemented; pre-acquisition policies, cumulative reconstruction, trusted scope propagation and full revocation remain. See docs/rights/README.md."
+      "implementation_note": "Operation gates and revision-bound approval in PR #43; pre-acquisition records and parent revocation added in dependent #8 slice. Cumulative reconstruction, trusted model/export scope, counsel persistence and full derived deletion remain."
     },
     {
       "id": "INGEST",
@@ -44,7 +44,7 @@
       "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/8",
       "priority": "P0",
       "lane": "foundation",
-      "status": "queued",
+      "status": "in_progress",
       "depends_on_issues": [
         6,
         7
@@ -54,7 +54,8 @@
       "work": "Generalize SEC intake to all publishers, with discovery, preview, receipts, hashes, safe networking, shared rate budgets, version/date metadata and resumable staging.",
       "acceptance": "Actual artifacts have raw/normalized provenance; blocks are failures, not successful sources; source-unit denominators and retry tests are documented.",
       "progress_required": true,
-      "scheduled": false
+      "scheduled": false,
+      "implementation_note": "32-family metadata registry, separately resumable rights-gated acquire/parse/stage, immutable receipts and PostgreSQL concurrency tests implemented. Live authorized smoke, family adapters, manual import and review/index integration remain. See docs/SOURCE_INTAKE.md and progress.md."
     },
     {
       "id": "SEC_CORE",

@@ -30,6 +30,37 @@ class Storage:
             return storage.Client(project=self.config.google_cloud_project).bucket(self.config.gcs_bucket).blob(key).download_as_bytes()
         return self._path(key).read_bytes()
 
+    def put_immutable(self, key, data, mime):
+        """Create-only storage. Duplicate bytes are idempotent; replacements are rejected."""
+        if self.config.storage_provider == 'gcs':
+            from google.cloud import storage
+            from google.api_core.exceptions import PreconditionFailed
+            blob = storage.Client(project=self.config.google_cloud_project).bucket(self.config.gcs_bucket).blob(key)
+            try:
+                blob.upload_from_string(data, content_type=mime, if_generation_match=0)
+            except PreconditionFailed:
+                if blob.download_as_bytes() != data:
+                    raise ValueError('Immutable object collision.')
+        else:
+            import os
+            import tempfile
+            path = self._path(key)
+            path.parent.mkdir(parents=True, exist_ok=True)
+            # Atomically link a complete temporary file: crash cannot leave a partial final object.
+            fd, temporary = tempfile.mkstemp(dir=path.parent, prefix='.intake-')
+            try:
+                with os.fdopen(fd, 'wb') as handle:
+                    handle.write(data)
+                    handle.flush()
+                    os.fsync(handle.fileno())
+                try:
+                    os.link(temporary, path)
+                except FileExistsError:
+                    if path.read_bytes() != data:
+                        raise ValueError('Immutable object collision.')
+            finally:
+                os.unlink(temporary)
+
     def delete(self, key):
         if self.config.storage_provider == 'gcs':
             from google.cloud import storage

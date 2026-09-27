@@ -1,7 +1,7 @@
 """Relational records. UTC timestamps are integer epoch seconds on both SQLite and PostgreSQL."""
 import time
 import uuid
-from sqlalchemy import String, Text, Integer, Boolean, ForeignKey, JSON, UniqueConstraint, Index
+from sqlalchemy import String, Text, Integer, Boolean, Float, ForeignKey, JSON, UniqueConstraint, Index
 from sqlalchemy.orm import Mapped, mapped_column
 from .db import Base
 
@@ -280,3 +280,62 @@ class Feedback(Base):
 
 
 Index('jobs_due', Job.state, Job.available_at, Job.lease_until)
+
+
+class IntakeWork(Base):
+    """Immutable work/edition/route definition; authorization lives on the metadata-only Source."""
+    __tablename__ = 'intake_works'
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
+    source_id: Mapped[str] = mapped_column(ForeignKey('sources.id'), unique=True)
+    family_id: Mapped[str] = mapped_column(String(80), index=True)
+    work_id: Mapped[str] = mapped_column(String(160))
+    edition: Mapped[str] = mapped_column(String(80))
+    manifest: Mapped[dict] = mapped_column(JSON)
+    manifest_sha256: Mapped[str] = mapped_column(String(64))
+    created_at: Mapped[int] = mapped_column(Integer, default=now)
+    __table_args__ = (UniqueConstraint('family_id', 'work_id', 'edition'),)
+
+
+class SourceArtifact(Base):
+    __tablename__ = 'source_artifacts'
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
+    work_id: Mapped[str] = mapped_column(ForeignKey('intake_works.id'), index=True)
+    raw_sha256: Mapped[str] = mapped_column(String(64))
+    object_key: Mapped[str] = mapped_column(String(250))
+    byte_count: Mapped[int] = mapped_column(Integer)
+    mime: Mapped[str] = mapped_column(String(100))
+    receipt: Mapped[dict] = mapped_column(JSON)
+    acquired_at: Mapped[int] = mapped_column(Integer, default=now)
+    __table_args__ = (UniqueConstraint('work_id', 'raw_sha256'),)
+
+
+class SourceExtraction(Base):
+    __tablename__ = 'source_extractions'
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
+    artifact_id: Mapped[str] = mapped_column(ForeignKey('source_artifacts.id'), index=True)
+    parser_version: Mapped[str] = mapped_column(String(100))
+    normalized_sha256: Mapped[str] = mapped_column(String(64))
+    object_key: Mapped[str] = mapped_column(String(250))
+    passage_count: Mapped[int] = mapped_column(Integer)
+    parsed_at: Mapped[int] = mapped_column(Integer, default=now)
+    __table_args__ = (UniqueConstraint('artifact_id', 'parser_version'),)
+
+
+class IntakeAttempt(Base):
+    __tablename__ = 'intake_attempts'
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
+    work_id: Mapped[str] = mapped_column(ForeignKey('intake_works.id'), index=True)
+    request_key: Mapped[str] = mapped_column(String(120))
+    state: Mapped[str] = mapped_column(String(20), default='fetching')
+    lease_owner: Mapped[str] = mapped_column(String(36))
+    lease_until: Mapped[int] = mapped_column(Integer)
+    artifact_id: Mapped[str | None] = mapped_column(ForeignKey('source_artifacts.id'))
+    error_code: Mapped[str | None] = mapped_column(String(80))
+    created_at: Mapped[int] = mapped_column(Integer, default=now)
+    __table_args__ = (UniqueConstraint('work_id', 'request_key'),)
+
+
+class SourceRequestBudget(Base):
+    __tablename__ = 'sec_request_budget'
+    name: Mapped[str] = mapped_column(Text, primary_key=True)
+    next_at: Mapped[float] = mapped_column(Float, default=0.0)

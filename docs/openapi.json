@@ -2653,6 +2653,291 @@
           }
         }
       }
+    },
+    "/api/v1/admin/intake/families": {
+      "get": {
+        "tags": [
+          "source-intake"
+        ],
+        "summary": "Families",
+        "operationId": "families_api_v1_admin_intake_families_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/intake/works": {
+      "post": {
+        "tags": [
+          "source-intake"
+        ],
+        "summary": "Register",
+        "operationId": "register_api_v1_admin_intake_works_post",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IntakeCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "source-intake"
+        ],
+        "summary": "Works",
+        "operationId": "works_api_v1_admin_intake_works_get",
+        "parameters": [
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "title": "Offset"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/intake/works/{work_id}": {
+      "get": {
+        "tags": [
+          "source-intake"
+        ],
+        "summary": "Preview",
+        "operationId": "preview_api_v1_admin_intake_works__work_id__get",
+        "parameters": [
+          {
+            "name": "work_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Work Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/intake/works/{work_id}/acquire": {
+      "post": {
+        "tags": [
+          "source-intake"
+        ],
+        "summary": "Acquire",
+        "operationId": "acquire_api_v1_admin_intake_works__work_id__acquire_post",
+        "parameters": [
+          {
+            "name": "work_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Work Id"
+            }
+          },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Idempotency-Key"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/intake/artifacts/{artifact_id}/parse": {
+      "post": {
+        "tags": [
+          "source-intake"
+        ],
+        "summary": "Parse",
+        "operationId": "parse_api_v1_admin_intake_artifacts__artifact_id__parse_post",
+        "parameters": [
+          {
+            "name": "artifact_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Artifact Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/intake/extractions/{extraction_id}/stage": {
+      "post": {
+        "tags": [
+          "source-intake"
+        ],
+        "summary": "Stage",
+        "operationId": "stage_api_v1_admin_intake_extractions__extraction_id__stage_post",
+        "parameters": [
+          {
+            "name": "extraction_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Extraction Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/intake/coverage": {
+      "get": {
+        "tags": [
+          "source-intake"
+        ],
+        "summary": "Coverage",
+        "operationId": "coverage_api_v1_admin_intake_coverage_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -3035,6 +3320,245 @@
         },
         "type": "object",
         "title": "HTTPValidationError"
+      },
+      "IntakeCreate": {
+        "properties": {
+          "source": {
+            "$ref": "#/components/schemas/SourceCreate"
+          },
+          "manifest": {
+            "$ref": "#/components/schemas/IntakeManifest"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "source",
+          "manifest"
+        ],
+        "title": "IntakeCreate"
+      },
+      "IntakeManifest": {
+        "properties": {
+          "family_id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Family Id"
+          },
+          "work_id": {
+            "type": "string",
+            "maxLength": 160,
+            "minLength": 1,
+            "title": "Work Id"
+          },
+          "edition": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Edition"
+          },
+          "language": {
+            "type": "string",
+            "maxLength": 40,
+            "minLength": 2,
+            "title": "Language"
+          },
+          "jurisdiction": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Jurisdiction"
+          },
+          "authority_type": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Authority Type"
+          },
+          "coverage_unit": {
+            "type": "string",
+            "maxLength": 300,
+            "minLength": 3,
+            "title": "Coverage Unit"
+          },
+          "access_mode": {
+            "type": "string",
+            "enum": [
+              "public_candidate",
+              "licensed",
+              "reference_only",
+              "private"
+            ],
+            "title": "Access Mode"
+          },
+          "route": {
+            "type": "string",
+            "enum": [
+              "official_http",
+              "authorized_manual",
+              "reference_only"
+            ],
+            "title": "Route"
+          },
+          "requested_url": {
+            "type": "string",
+            "maxLength": 1500,
+            "minLength": 1,
+            "title": "Requested Url"
+          },
+          "redirect_urls": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 3,
+            "title": "Redirect Urls"
+          },
+          "parser": {
+            "type": "string",
+            "enum": [
+              "ecfr_xml",
+              "structural_html",
+              "pdf",
+              "text"
+            ],
+            "title": "Parser"
+          },
+          "parser_family": {
+            "type": "string",
+            "maxLength": 80,
+            "title": "Parser Family",
+            "default": "generic"
+          },
+          "cfr_title": {
+            "type": "string",
+            "pattern": "^\\d{1,3}$",
+            "title": "Cfr Title",
+            "default": "17"
+          },
+          "allowed_mime": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "application/xml",
+                "text/xml",
+                "text/html",
+                "application/pdf",
+                "text/plain"
+              ]
+            },
+            "type": "array",
+            "maxItems": 5,
+            "minItems": 1,
+            "title": "Allowed Mime"
+          },
+          "max_bytes": {
+            "type": "integer",
+            "maximum": 16000000.0,
+            "minimum": 1.0,
+            "title": "Max Bytes",
+            "default": 2000000
+          },
+          "issued_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Issued At"
+          },
+          "publicly_available_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Publicly Available At"
+          },
+          "effective_from": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Effective From"
+          },
+          "effective_to": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Effective To"
+          },
+          "date_notes": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 5,
+            "title": "Date Notes"
+          },
+          "effective_conditions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 30,
+            "title": "Effective Conditions"
+          },
+          "supersedes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 30,
+            "title": "Supersedes"
+          },
+          "notices": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 30,
+            "minItems": 1,
+            "title": "Notices"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "family_id",
+          "work_id",
+          "edition",
+          "language",
+          "jurisdiction",
+          "authority_type",
+          "coverage_unit",
+          "access_mode",
+          "route",
+          "requested_url",
+          "parser",
+          "allowed_mime",
+          "date_notes",
+          "notices"
+        ],
+        "title": "IntakeManifest"
       },
       "MemberAdd": {
         "properties": {

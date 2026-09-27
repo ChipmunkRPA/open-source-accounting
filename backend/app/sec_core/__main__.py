@@ -1,7 +1,6 @@
 """CLI: PYTHONPATH=backend python -m app.sec_core --help"""
 import argparse
 import json
-import os
 from pathlib import Path
 from .core import CorePack, CoreError
 
@@ -45,14 +44,9 @@ def main():
             with Database(settings.database_url).Session() as db:
                 result = stage(db, pack, args.author); db.commit()
         elif args.command == 'acquire':
-            if not args.acknowledge_access_policy:
-                raise CoreError('Read source access terms and explicitly acknowledge the intake scope')
-            entry = pack.entries.get(args.source_id)
-            if entry is None:
-                raise CoreError('Unknown catalog source')
-            from .fetch import RateBudget, Gateway, acquire
-            gateway = Gateway(os.getenv('SEC_USER_AGENT', ''), RateBudget(args.rate_budget))
-            result = acquire(entry, gateway, Path(args.output), args.as_of)
+            raise CoreError('Legacy acquisition cannot grant operation rights. Register the edition in '
+                            'the unified intake registry, obtain independent route/operation approval, '
+                            'then use python -m app.ingest acquire WORK_ID --request-key KEY.')
         print(json.dumps(result, indent=2, ensure_ascii=False))
     except (ValueError, OSError, KeyError) as exc:
         raise SystemExit(f'SEC Core stopped: {exc}') from exc

@@ -16,18 +16,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 from urllib.error import HTTPError
 from urllib.parse import urljoin, urlsplit
-from urllib.request import Request, build_opener, HTTPRedirectHandler, ProxyHandler
+from urllib.request import Request
 from .core import CoreError, canonical, digest, official_url
 from . import parsers
 
 
 class Blocked(CoreError):
     pass
-
-
-class NoRedirect(HTTPRedirectHandler):
-    def redirect_request(self, *args, **kwargs):
-        return None
 
 
 class RateBudget:
@@ -71,28 +66,65 @@ class RateBudget:
         return slot
 
 
-def public_addresses(url):
-    host = urlsplit(official_url(url)).hostname
+def public_addresses(url, validator=official_url):
+    host = urlsplit(validator(url)).hostname
     addresses = socket.getaddrinfo(host, 443, type=socket.SOCK_STREAM)
     if not addresses or any(not ipaddress.ip_address(a[4][0]).is_global for a in addresses):
         raise CoreError('Nonpublic address rejected; production also requires controlled egress')
+    return [a[4][0] for a in addresses]
+
+
+class PinnedHTTPS:
+    """Connect to the checked IP while preserving TLS hostname verification; no proxies/cookies."""
+    def __init__(self, validator):
+        self.validator = validator
+
+    def open(self, request, timeout):
+        import http.client
+        import ssl
+        url = self.validator(request.full_url)
+        parts = urlsplit(url)
+        address = public_addresses(url, self.validator)[0]
+        connection = http.client.HTTPSConnection(parts.hostname, timeout=timeout)
+        sock = socket.create_connection((address, 443), timeout=timeout)
+        try:
+            connection.sock = ssl.create_default_context().wrap_socket(sock, server_hostname=parts.hostname)
+            path = parts.path or '/'
+            if parts.query:
+                path += '?' + parts.query
+            connection.request('GET', path, headers={**dict(request.header_items()), 'Connection': 'close'})
+            response = connection.getresponse()
+            if response.status != 200:
+                response.close()
+                raise HTTPError(url, response.status, 'Source response rejected', response.headers, None)
+            return response
+        except BaseException:
+            sock.close()
+            connection.close()
+            raise
 
 
 class Gateway:
-    def __init__(self, user_agent: str, budget: RateBudget, opener=None, resolver=public_addresses):
+    def __init__(self, user_agent: str, budget: RateBudget, opener=None, resolver=None,
+                 validator=official_url, max_bytes=parsers.MAX_BYTES):
         if (not re.search(r'[^\s@]+@[^\s@]+\.[^\s@]+', user_agent) or
                 any(c in user_agent for c in '\r\n') or len(user_agent) > 250):
             raise CoreError('Set an application-identifying User-Agent with a real operator contact email')
-        self.agent, self.budget, self.resolver = user_agent, budget, resolver
+        self.agent, self.budget = user_agent, budget
+        self.validate, self.max_bytes = validator, max_bytes
+        self.resolver = resolver or (lambda url: public_addresses(url, validator))
         # Ignore environment proxy configuration. No automatic redirects/cookies.
-        self.opener = opener or build_opener(ProxyHandler({}), NoRedirect())
+        self.opener = opener or PinnedHTTPS(validator)
 
     def get(self, url):
-        original = official_url(url)
+        original = self.validate(url)
+        deadline = time.monotonic() + 120
         for redirect in range(4):
-            official_url(url)
+            self.validate(url)
             self.resolver(url)
             self.budget.reserve()
+            if time.monotonic() > deadline:
+                raise CoreError('Acquisition deadline exceeded before request')
             req = Request(url, headers={'User-Agent': self.agent, 'Accept-Encoding': 'identity',
                                         'Accept': 'application/xml,text/html,application/pdf,application/json'})
             try:
@@ -101,7 +133,7 @@ class Gateway:
                 if exc.code in {301, 302, 303, 307, 308} and exc.headers.get('Location'):
                     url = urljoin(url, exc.headers['Location'])
                     # Recheck before making another request, including a new budget reservation.
-                    official_url(url)
+                    self.validate(url)
                     continue
                 if exc.code in {401, 403, 429}:
                     raise Blocked(f'HTTP {exc.code}: stop; operator review/backoff required') from exc
@@ -109,18 +141,34 @@ class Gateway:
             with response:
                 if getattr(response, 'status', 200) != 200:
                     raise CoreError('Unexpected source response')
-                raw = response.read(parsers.MAX_BYTES+1)
+                if response.headers.get('Content-Encoding', 'identity').lower() not in {'', 'identity'}:
+                    raise CoreError('Compressed responses are unsupported; no implicit decompression')
+                chunks, size = [], 0
+                while True:
+                    if time.monotonic() > deadline:
+                        raise CoreError('Acquisition deadline exceeded')
+                    chunk = response.read(min(65536, self.max_bytes + 1 - size))
+                    if not chunk:
+                        break
+                    chunks.append(chunk)
+                    size += len(chunk)
+                    if size > self.max_bytes:
+                        raise CoreError('Source exceeds byte limit')
+                raw = b''.join(chunks)
                 mime = response.headers.get('Content-Type', '').split(';')[0].strip().lower()
-            if len(raw) > parsers.MAX_BYTES:
-                raise CoreError('Source exceeds byte limit')
+                headers = {k: response.headers.get(k) for k in ('Content-Type', 'ETag', 'Last-Modified', 'Content-Length')
+                           if response.headers.get(k) is not None}
             low = raw[:30000].lower()
             if any(x in low for x in (b'undeclared automated tool', b'request rate threshold exceeded',
-                                      b'request access', b'you\xe2\x80\x99ve exceeded', b'<title>access denied')):
+                                      b'request access', b'you\xe2\x80\x99ve exceeded', b'<title>access denied',
+                                      b'captcha', b'type="password"', b"type='password'", b'<title>sign in',
+                                      b'<title>log in', b'<title>login')):
                 raise Blocked('Access-control page, not source content; stopped')
             if mime not in {'text/html', 'text/xml', 'application/xml', 'text/plain', 'application/pdf', 'application/json'}:
                 raise CoreError('Unsupported Content-Type')
             return {'requested_url': original, 'resolved_url': url, 'raw': raw,
-                    'mime': mime, 'retrieved_at': datetime.now(timezone.utc).isoformat()}
+                    'mime': mime, 'method': 'GET', 'status': 200, 'headers': headers,
+                    'retrieved_at': datetime.now(timezone.utc).isoformat()}
         raise CoreError('Too many redirects')
 
 

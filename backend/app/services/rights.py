@@ -9,7 +9,8 @@ from ..errors import fail
 OPERATIONS = frozenset({'acquire', 'store_raw', 'extract', 'store_text', 'embed',
                         'model_input', 'display_full', 'quote', 'export', 'redistribute', 'train'})
 RIGHTS_FIELDS = OPERATIONS | {'basis', 'commercial_use', 'effective_at', 'expires_at',
-    'license_evidence_ref', 'scope', 'attribution', 'requires_technical_review'}
+    'license_evidence_ref', 'scope', 'attribution', 'requires_technical_review',
+    'intake_manifest_sha256', 'intake_parent_id', 'intake_parent_policy_version'}
 
 
 def revision(source: Source) -> str:
@@ -26,7 +27,7 @@ def record_approval(source: Source, reviewer_id: str) -> None:
                      'rights_reviewed_at': now(), 'rights_reviewer_id': reviewer_id}
 
 
-def allowed(source: Source, action: str, *, context: dict | None = None) -> bool:
+def allowed(source: Source, action: str, *, context: dict | None = None, _visited=None) -> bool:
     if action not in OPERATIONS or source.enabled is not True or source.reviewed is not True:
         return False
     policy = source.policy or {}
@@ -37,6 +38,19 @@ def allowed(source: Source, action: str, *, context: dict | None = None) -> bool
         return False
     if policy.get('rights_reviewed_revision') != revision(source):
         return False
+    if policy.get('intake_parent_id'):
+        from sqlalchemy.orm import object_session
+        db = object_session(source)
+        visited = set(_visited or ())
+        if not db or source.id in visited or len(visited) >= 10:
+            return False
+        visited.add(source.id)
+        parent = db.get(Source, policy['intake_parent_id'])
+        if (not parent or parent.policy_version != policy.get('intake_parent_policy_version')
+                or not allowed(parent, action, context=context, _visited=visited)):
+            return False
+        if action in {'model_input', 'embed', 'train'} and policy.get('applicability_review_status') != 'approved':
+            return False
     current = now()
     for key in ('effective_at', 'expires_at'):
         value = policy.get(key)
