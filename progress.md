@@ -21,7 +21,7 @@ Blockers/owners: maintainer review and CI for #6 (owner unassigned); operator pr
 
 Next resumable action: review the #6 integration PR and CI; proceed on a bounded dependent #7 branch with strict operation-level rights and permission-request packets for all families. Keep #6 open until acceptance/CI is confirmed. No unattended continuation is scheduled.
 
-Evidence: `reports/bootstrap/`, `reports/bootstrap/reconciliation.json`. Commit/PR links are recorded after publication below.
+Evidence: `reports/bootstrap/`, `reports/bootstrap/reconciliation.json`. Integration commit: [3b09304](https://github.com/ChipmunkRPA/open-source-accounting/commit/3b09304). Review: [PR #42](https://github.com/ChipmunkRPA/open-source-accounting/pull/42). CI is running; its result is not yet claimed.
 
 ---
 

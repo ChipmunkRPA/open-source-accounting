@@ -1154,8 +1154,8 @@
     },
     {
       "path": "progress.md",
-      "bytes": 17279,
-      "sha256": "822154259c39d6bc30a27e92bcc212e0b8c87e51ee4dddde71e87d0792b17392"
+      "bytes": 17453,
+      "sha256": "dbb0c9ddff8d69d1cb60a7eb1aaf3abe3297f965f2f2b0a273432ca7b0173b81"
     },
     {
       "path": "reports/README.md",
@@ -1423,7 +1423,7 @@
       "sha256": "7dc6a8e77b0db52748481bcb46cf8a25a4050b66febe1d6523cccf4213cbdf69"
     }
   ],
-  "excluded_files": 15058,
+  "excluded_files": 15360,
   "findings": [],
   "limitation": "Heuristic publication screen, not a security audit or professional content review."
 }
