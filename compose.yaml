@@ -1,0 +1,32 @@
+# Local development only. Never expose dev authentication to the public internet.
+services:
+  api:
+    build: .
+    image: open-source-accounting:local
+    ports: ["127.0.0.1:8000:8080"]
+    environment: &app_env
+      APP_ENV: local
+      AUTH_MODE: dev
+      MODEL_PROVIDER: mock
+      DEMO_BILLING_ENABLED: "true"
+      DATABASE_URL: sqlite:////app/data/accounting.db
+      DATA_DIR: /app/data
+      AUTO_CREATE_SCHEMA: "true"
+      AUTO_SEED: "true"
+      APP_ORIGIN: http://localhost:8000
+    volumes: ["accounting-data:/app/data"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8080/api/v1/health')"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  worker:
+    image: open-source-accounting:local
+    command: ["python", "-m", "app.worker"]
+    environment: *app_env
+    volumes: ["accounting-data:/app/data"]
+    depends_on:
+      api:
+        condition: service_healthy
+volumes:
+  accounting-data:

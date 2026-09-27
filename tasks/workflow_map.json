@@ -1,0 +1,335 @@
+{
+  "note": "Baseline implementation flags are historical declarations, not newly validated quality claims. Each task requires its own acceptance.",
+  "workflows": [
+    {
+      "id": "deep_research",
+      "title": "Deep research",
+      "baseline_status": "IMPLEMENTED_BETA",
+      "baseline_enabled": true,
+      "task_issue": 31,
+      "inputs": [
+        "Question",
+        "framework",
+        "entity",
+        "reporting period",
+        "known facts"
+      ],
+      "outputs": [
+        "Issue tree",
+        "evidence map",
+        "alternatives",
+        "conditional conclusion",
+        "open questions"
+      ],
+      "guardrail": "No claim of reviewing unavailable ASC text."
+    },
+    {
+      "id": "memo",
+      "title": "Accounting memo",
+      "baseline_status": "IMPLEMENTED_BETA",
+      "baseline_enabled": true,
+      "task_issue": 31,
+      "inputs": [
+        "Question or completed run",
+        "audience",
+        "framework",
+        "confirmed facts"
+      ],
+      "outputs": [
+        "Issue",
+        "facts",
+        "authority",
+        "application",
+        "alternatives",
+        "conclusion",
+        "references"
+      ],
+      "guardrail": "AI drafting is paid; manual editing and downloading an existing memo remain free."
+    },
+    {
+      "id": "document_gaap",
+      "title": "Documents + GAAP analysis",
+      "baseline_status": "IMPLEMENTED_BETA",
+      "baseline_enabled": true,
+      "task_issue": 31,
+      "inputs": [
+        "Contracts or policies",
+        "relevant amendments",
+        "entity",
+        "period",
+        "question"
+      ],
+      "outputs": [
+        "Clause-to-criterion matrix",
+        "document citations",
+        "gaps",
+        "scenarios",
+        "draft memo"
+      ],
+      "guardrail": "Subscription does not license proprietary standards; surface unavailable primary text."
+    },
+    {
+      "id": "contract_compare",
+      "title": "Contract and amendment comparison",
+      "baseline_status": "IMPLEMENTED_BETA",
+      "baseline_enabled": true,
+      "task_issue": 31,
+      "inputs": [
+        "Two or more versions",
+        "effective dates",
+        "comparison objective"
+      ],
+      "outputs": [
+        "Side-by-side changes",
+        "term extraction",
+        "issue list",
+        "evidence-linked impact assessment"
+      ],
+      "guardrail": "A changed clause is not automatically an accounting modification."
+    },
+    {
+      "id": "memo_review",
+      "title": "Challenge my memo",
+      "baseline_status": "IMPLEMENTED_BETA",
+      "baseline_enabled": true,
+      "task_issue": 31,
+      "inputs": [
+        "Draft memo",
+        "supporting material",
+        "intended framework and period"
+      ],
+      "outputs": [
+        "Claim audit",
+        "counterarguments",
+        "missing evidence",
+        "proposed edits"
+      ],
+      "guardrail": "AI review is not independent professional sign-off."
+    },
+    {
+      "id": "disclosure_review",
+      "title": "Disclosure gap review",
+      "baseline_status": "EXPERIMENTAL",
+      "baseline_enabled": false,
+      "task_issue": 33,
+      "inputs": [
+        "Draft note or report",
+        "entity",
+        "period",
+        "applicable framework"
+      ],
+      "outputs": [
+        "Requirement-to-disclosure map",
+        "missing facts",
+        "candidate edits",
+        "limitations"
+      ],
+      "guardrail": "No compliance certificate; checklist coverage and authoritative access must be explicit."
+    },
+    {
+      "id": "policy_draft",
+      "title": "Accounting policy drafting",
+      "baseline_status": "EXPERIMENTAL",
+      "baseline_enabled": false,
+      "task_issue": 32,
+      "inputs": [
+        "Current policy or questionnaire",
+        "entity choices",
+        "evidence scope"
+      ],
+      "outputs": [
+        "Policy draft",
+        "choices requiring approval",
+        "change log",
+        "references"
+      ],
+      "guardrail": "Do not invent management elections or override approved policies."
+    },
+    {
+      "id": "revenue_workpaper",
+      "title": "Revenue contract workpaper",
+      "baseline_status": "EXPERIMENTAL",
+      "baseline_enabled": false,
+      "task_issue": 32,
+      "inputs": [
+        "Agreement",
+        "amendments",
+        "promised services",
+        "pricing",
+        "timing",
+        "estimates"
+      ],
+      "outputs": [
+        "Contract facts",
+        "issue checklist",
+        "proposed allocation scenarios",
+        "draft entries"
+      ],
+      "guardrail": "Allocation and recognition depend on confirmed inputs; arithmetic uses decimal code."
+    },
+    {
+      "id": "lease_workpaper",
+      "title": "Lease assessment and schedule",
+      "baseline_status": "EXPERIMENTAL",
+      "baseline_enabled": false,
+      "task_issue": 32,
+      "inputs": [
+        "Agreement",
+        "payment dates",
+        "options",
+        "user-confirmed discount rate",
+        "assumptions"
+      ],
+      "outputs": [
+        "Terms register",
+        "questions",
+        "schedule",
+        "proposed entries",
+        "sensitivity comparison"
+      ],
+      "guardrail": "Do not infer a discount rate or make unsupported classification conclusions."
+    },
+    {
+      "id": "disclosure_benchmark",
+      "title": "Disclosure benchmarking",
+      "baseline_status": "EXPERIMENTAL",
+      "baseline_enabled": false,
+      "task_issue": 33,
+      "inputs": [
+        "Topic",
+        "issuer identifiers",
+        "periods",
+        "peer selection",
+        "permitted filing sources"
+      ],
+      "outputs": [
+        "Peer matrix",
+        "excerpt provenance",
+        "presentation differences",
+        "research questions"
+      ],
+      "guardrail": "Company practice is not authoritative approval or proof of compliance."
+    },
+    {
+      "id": "sec_response",
+      "title": "SEC comment response preparation",
+      "baseline_status": "EXPERIMENTAL",
+      "baseline_enabled": false,
+      "task_issue": 33,
+      "inputs": [
+        "Comment letter",
+        "relevant disclosure",
+        "issuer facts",
+        "response objective"
+      ],
+      "outputs": [
+        "Issue list",
+        "comparable correspondence",
+        "draft response",
+        "substantiation checklist"
+      ],
+      "guardrail": "No filing, regulator contact or implication that prior correspondence establishes approval."
+    },
+    {
+      "id": "audit_prep",
+      "title": "Audit preparation pack",
+      "baseline_status": "EXPERIMENTAL",
+      "baseline_enabled": false,
+      "task_issue": 33,
+      "inputs": [
+        "Process",
+        "framework",
+        "audit regime",
+        "risks",
+        "existing evidence"
+      ],
+      "outputs": [
+        "PBC list",
+        "draft procedures",
+        "assertion links",
+        "unresolved scope questions"
+      ],
+      "guardrail": "No audit opinion, automatic sample sufficiency or statement that procedures were performed."
+    },
+    {
+      "id": "controls_review",
+      "title": "Control design review",
+      "baseline_status": "EXPERIMENTAL",
+      "baseline_enabled": false,
+      "task_issue": 33,
+      "inputs": [
+        "Narrative",
+        "risk-control matrix",
+        "walkthrough notes",
+        "known deficiencies"
+      ],
+      "outputs": [
+        "Design questions",
+        "evidence gaps",
+        "proposed control language",
+        "review considerations"
+      ],
+      "guardrail": "Not an operating-effectiveness test or automatic material-weakness determination."
+    },
+    {
+      "id": "close_pack",
+      "title": "Close issue and evidence pack",
+      "baseline_status": "EXPERIMENTAL",
+      "baseline_enabled": false,
+      "task_issue": 32,
+      "inputs": [
+        "Close issue list",
+        "workpapers",
+        "ownership",
+        "reporting period"
+      ],
+      "outputs": [
+        "Issue register",
+        "dependencies",
+        "missing evidence",
+        "owner-ready review pack"
+      ],
+      "guardrail": "Do not post entries, approve reconciliations or mark missing evidence as complete."
+    },
+    {
+      "id": "framework_compare",
+      "title": "U.S. GAAP / IFRS comparison",
+      "baseline_status": "EXPERIMENTAL",
+      "baseline_enabled": false,
+      "task_issue": 32,
+      "inputs": [
+        "Fact pattern",
+        "entity",
+        "periods",
+        "confirmed source coverage in both frameworks"
+      ],
+      "outputs": [
+        "Two-framework matrix",
+        "criteria differences",
+        "conditional impacts",
+        "authority gaps"
+      ],
+      "guardrail": "Do not offer as fully supported until both frameworks have sufficient permitted evidence."
+    },
+    {
+      "id": "standards_watch",
+      "title": "Standards impact watch",
+      "baseline_status": "EXPERIMENTAL",
+      "baseline_enabled": false,
+      "task_issue": 37,
+      "inputs": [
+        "Saved topic/entity profile",
+        "cadence",
+        "notification consent",
+        "approved sources"
+      ],
+      "outputs": [
+        "Change digest",
+        "applicability checklist",
+        "candidate action items",
+        "source links"
+      ],
+      "guardrail": "Opt-in only; bounded jobs; pause at entitlement expiry; no automatic adoption decisions."
+    }
+  ]
+}

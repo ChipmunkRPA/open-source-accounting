@@ -1,0 +1,42 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "issues": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 12,
+      "title": "Issues",
+      "type": "array"
+    },
+    "missing_questions": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 12,
+      "title": "Missing Questions",
+      "type": "array"
+    },
+    "proposed_queries": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 5,
+      "title": "Proposed Queries",
+      "type": "array"
+    },
+    "scope": {
+      "maxLength": 2000,
+      "title": "Scope",
+      "type": "string"
+    }
+  },
+  "required": [
+    "issues",
+    "missing_questions",
+    "proposed_queries",
+    "scope"
+  ],
+  "title": "Plan",
+  "type": "object"
+}

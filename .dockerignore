@@ -1,0 +1,14 @@
+.git
+.venv
+**/.venv
+**/node_modules
+**/__pycache__
+**/.pytest_cache
+**/*.db*
+.qa-data
+data
+.env
+**/.env
+reports
+prior_v3
+frontend/next-host

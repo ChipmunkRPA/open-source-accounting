@@ -1,3 +1,34 @@
+# Open Source Accounting — current implementation progress
+
+## 2026-09-27 · #6 baseline integration (parent #5)
+
+Scope: 277 archive members reconciled file-by-file; 229 missing files imported, generated frontend assets excluded, conflicting root README/progress retained in `docs/archive`. Baseline SHA-256: `3d4f78aa6bfab4323af14ce58cf1b8f77cba2967d984bdbdf378fd9a1ff5529f`. PR #4 head `4ac0b7a539ecaf21ca78695f264d916772be2dfb` and PR #41 head `a257bc767811370342675b879b8a4451e8acb4ab` are preserved in this branch's ancestry; SEC module bytes and data are equivalent. This integration supersedes the standalone-code scope of #4 and includes #41; neither PR nor its issues were closed. Main inspected at `4ffce77dc67a0151077c0e6cdc4caf38c055185c`.
+
+Implementation: native FastAPI/TypeScript application, worker, migrations, fixtures and all-content handoff maps; uppercase root README; Python `uv.lock` plus hash-pinned runtime requirements; Node lock; real Firebase MFA bundle build; Docker vendor-copy correction; read-only clean-install CI with PostgreSQL 17. Retired the old encoded materializer and main-writing cleanup workflow without executing either. Existing license selections are retained and conflicting legacy notice corrected.
+
+Actual local checks (Python 3.11.9, Node 24.5.0, npm 11.5.1, uv 0.10.9, PostgreSQL 17.11):
+- Handoff verifier: PASS, 66 checksummed files, 277 members, 63 item hashes, 32 family recipes, 47 planning areas, 38-task acyclic queue, 16 workflow mappings.
+- Clean `uv sync --project backend --extra dev --frozen`: PASS; 74 installed packages. `uv pip check`: PASS.
+- `npm ci --ignore-scripts`, typecheck, `test:auth` and **production** `build`: PASS; 16 mocked auth tests; registry audit reported zero vulnerabilities. Firebase 12.19.0 exists in the official registry and was retained. No real sign-in or SMS was attempted.
+- Backend `python -m pytest`: **248 passed**, one upstream Starlette/httpx deprecation warning. Initial run was **247 passed / 1 failed** because frontend assets had not finished building; CI now builds the production frontend before backend tests. Both logs retained.
+- Empty local PostgreSQL: upgrade, model/schema parity, downgrade and re-upgrade PASS; 22 application tables. No Cloud SQL or PostgreSQL concurrency claim.
+- Actual API/model schemas regenerated. Content checker PASS: 63 items, 58 educational questions, 26 reference records, three arithmetic examples. Queue/hash and content/SEC progress checks PASS. Publication heuristic found zero configured sensitive-pattern matches; this is not a security audit.
+- Docker daemon unavailable locally; Dockerfile build is assigned to CI. Linux/Python 3.13 and Node 22 validation awaits CI. No historical test counts are presented as rerun results above.
+
+Coverage remains unchanged: 63/63 original items inventoried and hash-verified, 0 professionally reviewed or Agent-admitted; 58 educational questions are not independent benchmark cases. SEC 34 targets, 28 selected parsed excerpts from seven sources; **0 full HTTP source artifacts acquired**, 0 professionally/applicability-approved or production-indexed sources, 0 human-adjudicated evaluations. The 32 family recipes and 47 topic records are planning units; no new publisher body was acquired, license granted, content approved or live model evaluated. All restricted bodies remain reference-only. Source versions remain the supplied v0.7 SEC pack and v0.5/v0.6 original item revisions. Requested model remains `gemini-3.8-flash`; Cloud endpoint, SDK behavior, region, availability and costs are unverified under #26.
+
+Blockers/owners: maintainer review and CI for #6 (owner unassigned); operator project/region/approved credentials and spend for #26–#28; operation-specific rights evidence for #7/#9–#21; real independent technical/applicability reviewers for #22/#23/#36. Local metadata, policy code and synthetic tests remain available. No paid resources, production deployment, live billing, notifications, filings or journal entries were authorized or performed.
+
+Next resumable action: review the #6 integration PR and CI; proceed on a bounded dependent #7 branch with strict operation-level rights and permission-request packets for all families. Keep #6 open until acceptance/CI is confirmed. No unattended continuation is scheduled.
+
+Evidence: `reports/bootstrap/`, `reports/bootstrap/reconciliation.json`. Commit/PR links are recorded after publication below.
+
+---
+
+## Preserved pre-integration progress history
+
+The following entries and historical test counts predate this integration. The current section above controls release status; generated content inventory remains current.
+
 # open-source-accounting — progress
 
 Updated: September 27, 2026. This public tracker distinguishes prepared local work from verified repository publication and live deployment.
@@ -135,3 +166,41 @@ Observed local checks: 248 Python tests passed (203 baseline + 45 new); TypeScri
 Commands: `PYTHONPATH=backend python -m app.sec_core validate`; `python scripts/sec_core_progress.py --write`; `python scripts/sec_core_progress.py --check`. Full details: `docs/sec/README.md`.
 
 <!-- SEC-CORE:END -->
+
+<!-- CONTENT-INVENTORY:START -->
+
+Manifest release **0.6.0**: **63 items**, **58 study questions**. Counts are coverage indicators, not quality scores.
+
+| Topic | Guides | Cases | Templates | Playbooks | Q&A sets | Questions | Human-reviewed items | Next gate |
+|---|---:|---:|---:|---:|---:|---:|---:|---|
+| audit | 0 | 0 | 0 | 1 | 0 | 0 | 0 | Independent technical review; then authority/access validation |
+| audit-evidence | 1 | 0 | 1 | 0 | 0 | 2 | 0 | Independent technical review; then authority/access validation |
+| business-combinations | 1 | 0 | 0 | 0 | 0 | 2 | 0 | Independent technical review; then authority/access validation |
+| cash-flows | 1 | 1 | 0 | 0 | 0 | 2 | 0 | Independent technical review; then authority/access validation |
+| consolidation | 1 | 0 | 0 | 0 | 0 | 2 | 0 | Independent technical review; then authority/access validation |
+| contingencies | 1 | 0 | 0 | 0 | 0 | 2 | 0 | Independent technical review; then authority/access validation |
+| controls | 0 | 0 | 0 | 1 | 0 | 0 | 0 | Independent technical review; then authority/access validation |
+| credit-losses | 1 | 0 | 0 | 0 | 0 | 2 | 0 | Independent technical review; then authority/access validation |
+| debt-and-equity | 1 | 0 | 0 | 0 | 0 | 2 | 0 | Independent technical review; then authority/access validation |
+| disclosures | 0 | 0 | 0 | 3 | 0 | 0 | 0 | Independent technical review; then authority/access validation |
+| documents | 0 | 0 | 0 | 2 | 0 | 0 | 0 | Independent technical review; then authority/access validation |
+| fair-value | 1 | 0 | 0 | 0 | 0 | 2 | 0 | Independent technical review; then authority/access validation |
+| financial-reporting | 3 | 1 | 1 | 0 | 0 | 5 | 0 | Independent technical review; then authority/access validation |
+| foreign-currency | 1 | 1 | 1 | 0 | 0 | 2 | 0 | Independent technical review; then authority/access validation |
+| going-concern | 1 | 1 | 0 | 0 | 0 | 2 | 0 | Independent technical review; then authority/access validation |
+| government-audit | 1 | 0 | 0 | 0 | 0 | 1 | 0 | Independent technical review; then authority/access validation |
+| impairment | 1 | 0 | 0 | 0 | 0 | 2 | 0 | Independent technical review; then authority/access validation |
+| income-taxes | 1 | 0 | 0 | 0 | 0 | 2 | 0 | Independent technical review; then authority/access validation |
+| internal-controls | 1 | 1 | 0 | 0 | 0 | 3 | 0 | Independent technical review; then authority/access validation |
+| inventory | 1 | 0 | 0 | 0 | 0 | 2 | 0 | Independent technical review; then authority/access validation |
+| learning | 0 | 0 | 0 | 0 | 2 | 0 | 0 | Independent technical review; then authority/access validation |
+| leases | 2 | 1 | 0 | 1 | 0 | 4 | 0 | Independent technical review; then authority/access validation |
+| related-parties | 1 | 0 | 0 | 0 | 0 | 2 | 0 | Independent technical review; then authority/access validation |
+| research | 1 | 0 | 4 | 7 | 0 | 4 | 0 | Independent technical review; then authority/access validation |
+| revenue | 3 | 2 | 1 | 1 | 0 | 7 | 0 | Independent technical review; then authority/access validation |
+| software-costs | 1 | 0 | 0 | 0 | 0 | 2 | 0 | Independent technical review; then authority/access validation |
+| stock-compensation | 1 | 0 | 0 | 0 | 0 | 2 | 0 | Independent technical review; then authority/access validation |
+| subsequent-events | 1 | 0 | 1 | 0 | 0 | 2 | 0 | Independent technical review; then authority/access validation |
+
+All draft items remain ineligible for automatic Agent admission. Rights approval and technical review are separate, revision-bound gates.
+<!-- CONTENT-INVENTORY:END -->

@@ -1,0 +1,110 @@
+
+> open-source-accounting-web@0.6.0 test:auth
+> node --test tests/identity.test.mjs
+
+TAP version 13
+# Subtest: OTP rejects nonnumeric or wrong length
+ok 1 - OTP rejects nonnumeric or wrong length
+  ---
+  duration_ms: 2.134823
+  type: 'test'
+  ...
+# Subtest: phone validates international number
+ok 2 - phone validates international number
+  ---
+  duration_ms: 0.344794
+  type: 'test'
+  ...
+# Subtest: first factor alone is enrollment
+ok 3 - first factor alone is enrollment
+  ---
+  duration_ms: 0.473425
+  type: 'test'
+  ...
+# Subtest: factor identifier required
+ok 4 - factor identifier required
+  ---
+  duration_ms: 0.158018
+  type: 'test'
+  ...
+# Subtest: reserved TOTP claims allow ready
+ok 5 - reserved TOTP claims allow ready
+  ---
+  duration_ms: 0.181007
+  type: 'test'
+  ...
+# Subtest: unverified email before enrollment
+ok 6 - unverified email before enrollment
+  ---
+  duration_ms: 0.313206
+  type: 'test'
+  ...
+# Subtest: TOTP QR local and enrollment signs out
+ok 7 - TOTP QR local and enrollment signs out
+  ---
+  duration_ms: 0.338756
+  type: 'test'
+  ...
+# Subtest: expired setup rejected
+ok 8 - expired setup rejected
+  ---
+  duration_ms: 0.298474
+  type: 'test'
+  ...
+# Subtest: SMS requires consent
+ok 9 - SMS requires consent
+  ---
+  duration_ms: 0.405403
+  type: 'test'
+  ...
+# Subtest: SMS enrollment and cooldown
+ok 10 - SMS enrollment and cooldown
+  ---
+  duration_ms: 0.567524
+  type: 'test'
+  ...
+# Subtest: SMS enrollment separate from sign-in
+ok 11 - SMS enrollment separate from sign-in
+  ---
+  duration_ms: 0.455882
+  type: 'test'
+  ...
+# Subtest: TOTP resolver uses chosen factor
+ok 12 - TOTP resolver uses chosen factor
+  ---
+  duration_ms: 0.458255
+  type: 'test'
+  ...
+# Subtest: SMS requires selected factor and request
+ok 13 - SMS requires selected factor and request
+  ---
+  duration_ms: 0.346397
+  type: 'test'
+  ...
+# Subtest: unknown factor rejected
+ok 14 - unknown factor rejected
+  ---
+  duration_ms: 0.120917
+  type: 'test'
+  ...
+# Subtest: cancelled sign-in cannot restore session
+ok 15 - cancelled sign-in cannot restore session
+  ---
+  duration_ms: 1.080224
+  type: 'test'
+  ...
+# Subtest: cancelled secret generation discarded
+ok 16 - cancelled secret generation discarded
+  ---
+  duration_ms: 0.218862
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 75.113597

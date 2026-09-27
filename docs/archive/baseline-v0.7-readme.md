@@ -16,7 +16,7 @@ This is a runnable **development release, v0.7.0**, not a deployed or profession
 | Existing saved deliverables after subscription expiry | Read/manual edit/export remain available, subject to retention and source permissions |
 | Signed-in users | Verified email plus Google Authenticator-compatible TOTP **or SMS** |
 
-The requested generation model is **Gemini 3.8 Flash (`gemini-3.8-flash`)**. Its Cloud availability, endpoint, region and cost remain unverified; local tests use an explicit mock provider. A subscription unlocks application operations, not permission to ingest copyrighted standards. The 30-task monthly allowance remains a proposed operating policy; approve and publish actual limits before enabling real billing.
+Both chat and Agent work are configured for **Gemini 3.8 Flash**. A subscription unlocks application operations, not permission to ingest copyrighted standards. The 30-task monthly allowance remains a proposed operating policy; approve and publish actual limits before enabling real billing.
 
 Application code is MIT-licensed. Original educational content is CC BY 4.0. Hosted pricing does not add a restriction to these open licenses. Third-party standards, brands, and source publications retain their own rights.
 
@@ -40,15 +40,15 @@ See [progress.md](progress.md) for the generated topic inventory, actual status,
 Prerequisites: Python 3.11+, Node 22+ for rebuilding the frontend, and a virtual environment. The default mode is an explicitly insecure **local-only demonstration**, with deterministic mock model output and simulated subscriptions. Never expose it publicly.
 
 ```bash
-python3 -m pip install uv==0.10.9
-uv sync --project backend --extra dev --frozen
-source backend/.venv/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e './backend[dev]'
 cp backend/.env.example backend/.env
 
 # The source repository does not require generated JS to be committed.
 cd frontend
-npm ci --ignore-scripts
-npm run build
+npm install
+npm run build:demo
 cd ..
 bash scripts/dev.sh
 ```
@@ -80,7 +80,7 @@ Build the actual production identity bundle:
 
 ```bash
 cd frontend
-npm ci --ignore-scripts
+npm install
 npm run typecheck
 npm run test:auth
 npm run build
@@ -136,16 +136,16 @@ python -m pytest
 cd ../frontend
 npm run typecheck
 npm run test:auth
-npm run build
+npm run build:demo
 cd ..
 python scripts/check_content.py
 python scripts/content_progress.py --check
 python scripts/release_preflight.py --check
 ```
 
-Local tests exercise mock provider and SDK boundaries. A passing test suite does not establish accounting accuracy, real SMS delivery, successful Google Authenticator scanning, or production authorization. Current bootstrap results are under `reports/bootstrap/`; all other bundled reports are historical and are not new test receipts.
+Local tests exercise mock provider and SDK boundaries. A passing test suite does not establish accounting accuracy, real SMS delivery, successful Google Authenticator scanning, or production authorization. Recorded results are under `reports/release-v06-*`; historical reports remain labeled by their original release.
 
-Known gaps include live cloud/payment/model integration, production identity and recovery exercises, security review, vector retrieval, OCR, spreadsheet ingestion, rich collaborative editing, comprehensive accounting calculation engines, and professional review of the content pack. No audit opinion, autonomous financial posting, tax-law certification or regulatory filing is produced.
+Known gaps include live cloud/payment/model integration, production identity and recovery exercises, clean-install dependency/security checks, vector retrieval, OCR, spreadsheet ingestion, rich collaborative editing, comprehensive accounting calculation engines, and professional review of the content pack. No audit opinion, autonomous financial posting, tax-law certification or regulatory filing is produced.
 
 ## Important files
 
@@ -199,20 +199,3 @@ The complete local release integrates the API, frontend and existing Agent pipel
 - The PR contains the standalone addon, catalog, excerpts, tests, license and tracking. The full local application integration is supplied in the v0.7 archive; **the earlier full application is still not verified on main**.
 - Isolated addon validation passed **41 tests without the full application baseline**. The complete local application passed **248 Python tests**. The compiled SEC UI passed **12 isolated component checks**; the existing MFA controller passed **16 mocked tests**. TypeScript typecheck and demo build passed.
 - No new coverage percentage, deployed browser test, successful live HTTP intake, GitHub CI result, cloud deployment or professional accounting approval is claimed.
-
-## Reconciliation and dependency queue
-
-The verified full v0.7 archive is reconciled with PR #4 and PR #41, preserving both histories. See [the reconciliation receipt](reports/bootstrap/reconciliation.json) and [progress](progress.md). The former bootstrap README is retained under `docs/archive/bootstrap-README.md`. Only uppercase `README.md` is published at the root.
-
-Use `tasks/queue.json`, `tasks/OPERATOR_DECISIONS.md`, and `content/SOURCE_RETRIEVAL_PLAYBOOK.md` for the complete dependency-ordered queue under #5. All 32 source-family recipes, 47 topic plans and 63 original-item mappings are retained; these are inventories, not acquired or approved evidence.
-
-For a disposable **empty PostgreSQL** database, run:
-
-```bash
-# Supply the local test URL through your environment, never a production database.
-export OSA_MIGRATION_TEST_DATABASE_URL=postgresql+psycopg://localhost/osa_test
-python scripts/check_migrations.py
-python scripts/check_queue.py
-```
-
-This check refuses a nonempty database, runs upgrade/downgrade/re-upgrade, and checks model/schema parity. CI uses PostgreSQL 17 with synthetic local credentials and no cloud secrets. Docker builds use the committed Node lock and hash-pinned Python runtime requirements.
