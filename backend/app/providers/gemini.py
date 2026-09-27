@@ -21,10 +21,14 @@ class Gemini:
         self.transport = transport
         self.last_usage = {}
         self.last_model_version = None
+        self.last_http_status = None
+        self.last_dispatch_state = 'not_sent'
 
     def _call(self, system, contents, schema=None, thinking='MEDIUM', output_limit=4000):
         self.last_usage = {}
         self.last_model_version = None
+        self.last_http_status = None
+        self.last_dispatch_state = 'not_sent'
         if self.config.model_provider != 'google_cloud':
             raise ProviderError('Live model adapter is disabled.')
         if thinking not in {'LOW', 'MEDIUM', 'HIGH'} or type(output_limit) is not int or not 1 <= output_limit <= MAX_OUTPUT_TOKENS:
@@ -55,7 +59,10 @@ class Gemini:
             if self.transport is None:
                 data = self._request(url, payload)
             else:
+                self.last_dispatch_state = 'unknown'
                 data = self.transport(url, payload)
+                self.last_http_status = 200
+                self.last_dispatch_state = 'response'
             if not isinstance(data, dict):
                 raise ProviderError('MODEL_RESPONSE_INVALID')
             # Retain non-content usage even when a billed HTTP 200 output is rejected.
@@ -100,8 +107,7 @@ class Gemini:
         except Exception:
             raise ProviderError('MODEL_REQUEST_FAILED') from None
 
-    @staticmethod
-    def _request(url, payload):
+    def _request(self, url, payload):
         import google.auth
         from google.auth.transport.requests import AuthorizedSession
         from requests.exceptions import Timeout
@@ -109,8 +115,11 @@ class Gemini:
             credentials, _ = google.auth.default(scopes=['https://www.googleapis.com/auth/cloud-platform'])
             # No redirect, hidden auth replay or retry of an ambiguously billed request.
             with AuthorizedSession(credentials, max_refresh_attempts=0) as client:
+                self.last_dispatch_state = 'unknown'
                 with client.post(url, json=payload, timeout=(10, 90), stream=True,
                                  allow_redirects=False) as response:
+                    self.last_http_status = response.status_code
+                    self.last_dispatch_state = 'response'
                     if response.status_code != 200:
                         code = {401: 'MODEL_AUTH_REQUIRED', 403: 'MODEL_ACCESS_DENIED',
                                 404: 'MODEL_UNAVAILABLE', 429: 'MODEL_RATE_LIMITED',

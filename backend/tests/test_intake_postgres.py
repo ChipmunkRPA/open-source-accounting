@@ -19,6 +19,107 @@ from app.services import intake, rights
 from test_source_intake import payload, FakeGateway
 
 
+def model_attempt_worker(url, actor, operation_key, entered, release, results):
+    from app.providers.gemini import Gemini
+    from app.schemas import Plan
+    from app.services import model_attempts
+    from app.errors import ProviderError
+    database = Database(url)
+    config = Settings(model_provider='google_cloud', google_cloud_project='test-project', _env_file=None)
+    def transport(*_):
+        results.put(('dispatch',))
+        entered.set()
+        assert release.wait(15)
+        return {'candidates': [{'finishReason': 'STOP', 'content': {'parts': [{'text':
+            '{"issues":[],"missing_questions":[],"proposed_queries":[],"scope":"synthetic"}'}]}}],
+            'usageMetadata': {'promptTokenCount': 10, 'candidatesTokenCount': 5, 'totalTokenCount': 15}}
+    model = Gemini(config, transport)
+    try:
+        model_attempts.invoke(database.Session, config, model, lambda: model.structured(Plan, 'Synthetic', {}),
+            key=operation_key, phase='planning', user_id=actor, thinking='MEDIUM', output_limit=2500,
+            prompt_version='synthetic')
+        results.put(('finished',))
+    except ProviderError as exc:
+        results.put(('error', str(exc)))
+    finally:
+        database.engine.dispose()
+
+
+def test_postgres_model_operation_has_one_dispatch_owner(pg_url):
+    from app.models import ModelAttempt
+    from app.services.model_attempts import operation_key
+    database = Database(pg_url)
+    actor = str(uuid4())
+    with database.Session() as db:
+        db.add(User(id=actor))
+        db.commit()
+    key = operation_key('synthetic-concurrency', actor)
+    ctx = multiprocessing.get_context('spawn')
+    entered, release, results = ctx.Event(), ctx.Event(), ctx.Queue()
+    workers = [ctx.Process(target=model_attempt_worker, args=(pg_url, actor, key, entered, release, results)) for _ in range(2)]
+    try:
+        workers[0].start()
+        assert entered.wait(15)
+        assert results.get(timeout=15) == ('dispatch',)
+        workers[1].start()
+        assert results.get(timeout=15) == ('error', 'MODEL_ATTEMPT_ALREADY_RECORDED')
+        release.set()
+        assert results.get(timeout=15) == ('finished',)
+        for process in workers:
+            process.join(15)
+            assert process.exitcode == 0
+        with database.Session() as db:
+            records = db.scalars(select(ModelAttempt).where(ModelAttempt.operation_key == key)).all()
+            assert len(records) == 1 and records[0].cost_state == 'estimated'
+            assert records[0].usage['totalTokenCount'] == 15
+    finally:
+        release.set()
+        for process in workers:
+            if process.pid:
+                if process.is_alive(): process.terminate()
+                process.join(5)
+        database.engine.dispose()
+
+
+def test_postgres_cost_report_uses_one_snapshot(pg_url, monkeypatch):
+    from app.models import ModelAttempt, Run, Workspace, now
+    from app.services import model_attempts
+    database = Database(pg_url)
+    actor, wid, rid = str(uuid4()), str(uuid4()), str(uuid4())
+    stamp = now()
+    def receipt(key, amount):
+        return ModelAttempt(operation_key=model_attempts.operation_key(key, rid), user_id=actor,
+            workspace_id=wid, run_id=rid, phase='planning', provider='google_cloud', project='test-project',
+            location='us', model_id='gemini-3.8-flash', prompt_version='synthetic', thinking='MEDIUM',
+            output_limit=2500, started_at=stamp, outcome='succeeded', cost_state='estimated',
+            cost_estimate={'estimated_usd': amount})
+    with database.Session() as db:
+        db.add(User(id=actor)); db.flush()
+        db.add(Workspace(id=wid, owner_id=actor, name='Synthetic')); db.flush()
+        db.add(Run(id=rid, user_id=actor, workspace_id=wid, workflow='deep_research', question='Synthetic', state='analyzing'))
+        db.flush()
+        db.add(receipt('before', '1'))
+        db.commit()
+    original = model_attempts.report
+    def concurrent_completion(db, **kwargs):
+        assert db.scalar(select(Run.state).where(Run.id == rid)) == 'analyzing'
+        with database.Session() as other:
+            other.add(receipt('after', '2'))
+            other.get(Run, rid).state = 'completed_with_limitations'
+            other.commit()
+        assert db.scalar(select(Run.state).where(Run.id == rid)) == 'analyzing'
+        # The report must still see this cohort as active until the NEXT snapshot.
+        report = original(db, **kwargs)
+        assert report['agent_cohort']['active_runs'] >= 1
+        assert report['agent_cohort']['estimated_model_usd_per_completed_run'] is None
+        return report
+    monkeypatch.setattr(model_attempts, 'report', concurrent_completion)
+    try:
+        model_attempts.report_snapshot(database, start_at=stamp-10, end_at=stamp+10)
+    finally:
+        database.engine.dispose()
+
+
 @pytest.fixture
 def pg_url():
     url = os.environ.get('OSA_POSTGRES_TEST_URL', '')

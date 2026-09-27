@@ -4,7 +4,7 @@ from sqlalchemy import select, delete
 from ..models import Run, Job, Evidence, RunEvent, User, now
 from ..schemas import Plan, Analysis, Verification
 from ..providers.gemini import get_model
-from ..services import retrieval, rights, memos, output_rights
+from ..services import retrieval, rights, memos, output_rights, model_attempts
 from ..services.entitlements import require_agent, settle
 from ..errors import ProviderError, RunStopped, fail
 from .catalog import get_workflow
@@ -69,7 +69,7 @@ def execute(db_factory, job_id, owner, config):
                             'task': task, 'inputs': run.inputs}
             db.commit()
 
-        def structured(schema, prompt, payload, **kwargs):
+        def structured(schema, prompt, payload, *, phase, **kwargs):
             # A fresh transaction immediately before EVERY provider call, including corrections.
             # Already transmitted requests cannot be recalled after later revocation.
             with db_factory() as db:
@@ -86,9 +86,15 @@ def execute(db_factory, job_id, owner, config):
                     ):
                         fail('SOURCE_CHANGED', 'The selected evidence revision changed.', 409)
                 db.commit()
-            return model.structured(schema, prompt, payload, **kwargs)
+            return model_attempts.invoke(db_factory, config, model,
+                lambda: model.structured(schema, prompt, payload, **kwargs),
+                key=model_attempts.operation_key('run', current.id, current.execution_id or f'legacy-{current.revision}', phase),
+                phase=phase, user_id=current.user_id, workspace_id=current.workspace_id,
+                run_id=current.id, run_revision=current.revision, execution_id=current.execution_id,
+                prompt_version=prompts.PROMPT_VERSION,
+                thinking=kwargs['thinking'], output_limit=kwargs['cap'])
 
-        plan = structured(Plan, prompts.PLAN, request_data, thinking='MEDIUM', cap=2500)
+        plan = structured(Plan, prompts.PLAN, request_data, phase='planning', thinking='MEDIUM', cap=2500)
         usage = dict(model.last_usage)
         with db_factory() as db:
             run = checkpoint(db, run_id, job_id, owner, config)
@@ -127,7 +133,7 @@ def execute(db_factory, job_id, owner, config):
                     'lease': {**deterministic['lease'], 'rows': deterministic['lease']['rows'][:12],
                               'model_preview_only': True}}
             db.commit()
-        analysis = structured(Analysis, prompts.ANALYZE, data, thinking='HIGH', cap=7500)
+        analysis = structured(Analysis, prompts.ANALYZE, data, phase='synthesis', thinking='HIGH', cap=7500)
         usage = merge_usage(usage, model.last_usage)
         findings = structural_verify(analysis, rows)
         with db_factory() as db:
@@ -137,7 +143,7 @@ def execute(db_factory, job_id, owner, config):
             db.commit()
         verification = structured(Verification, prompts.VERIFY,
                     {'draft': analysis.model_dump(), 'evidence': rows, 'context': data['context']},
-                    thinking='HIGH', cap=3500)
+                    phase='verification', thinking='HIGH', cap=3500)
         usage = merge_usage(usage, model.last_usage)
         findings += [x.model_dump() for x in verification.findings]
         blocked = any(x['severity'] == 'block' for x in findings)
@@ -145,11 +151,11 @@ def execute(db_factory, job_id, owner, config):
             # One bounded correction round. Never silently release the original unsupported draft.
             correction = {**data, 'draft': analysis.model_dump(), 'required_corrections': findings}
             analysis = structured(Analysis, prompts.ANALYZE + '\nCorrect or remove every flagged claim.',
-                                        correction, thinking='HIGH', cap=7500)
+                                        correction, phase='correction', thinking='HIGH', cap=7500)
             usage = merge_usage(usage, model.last_usage)
             verification = structured(Verification, prompts.VERIFY,
                     {'draft': analysis.model_dump(), 'evidence': rows, 'context': data['context']},
-                    thinking='HIGH', cap=3500)
+                    phase='reverification', thinking='HIGH', cap=3500)
             usage = merge_usage(usage, model.last_usage)
             findings = structural_verify(analysis, rows) + [x.model_dump() for x in verification.findings]
         if any(x['severity'] == 'block' for x in findings):

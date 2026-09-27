@@ -105,10 +105,13 @@ def start_run(run_id: str, payload: RunStart, request: Request,
     task = get_workflow(run.workflow, config)
     validate_inputs(db, run, task)
     reserve(db, user, run, config)
+    from ..models import uid
+    run.execution_id = uid()  # Explicitly confirmed restart; lease recovery keeps this ID.
     run.state, run.cancel_requested, run.error_code = 'queued', False, None
     job = db.scalar(select(Job).where(Job.run_id == run.id))
     if job:
         job.state, job.attempts, job.lease_until, job.available_at = 'queued', 0, 0, now()
+        job.lease_owner = None
     else:
         db.add(Job(run_id=run.id))
     db.add(RunEvent(run_id=run.id, kind='stage', payload={'state': 'queued'}))

@@ -3497,10 +3497,114 @@
           }
         }
       }
+    },
+    "/api/v1/admin/model-usage": {
+      "get": {
+        "tags": [
+          "model-operations"
+        ],
+        "summary": "Model Usage",
+        "operationId": "model_usage_api_v1_admin_model_usage_get",
+        "parameters": [
+          {
+            "name": "start_at",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "title": "Start At"
+            }
+          },
+          {
+            "name": "end_at",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "title": "End At"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelUsageReport"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "AgentCostCohort": {
+        "properties": {
+          "tracked_runs": {
+            "type": "integer",
+            "title": "Tracked Runs"
+          },
+          "completed_runs": {
+            "type": "integer",
+            "title": "Completed Runs"
+          },
+          "active_runs": {
+            "type": "integer",
+            "title": "Active Runs"
+          },
+          "orphaned_agent_attempts_in_window": {
+            "type": "integer",
+            "title": "Orphaned Agent Attempts In Window"
+          },
+          "unknown_cost_attempts": {
+            "type": "integer",
+            "title": "Unknown Cost Attempts"
+          },
+          "known_estimate_subtotal_usd": {
+            "type": "string",
+            "title": "Known Estimate Subtotal Usd"
+          },
+          "estimated_model_usd_per_completed_run": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Estimated Model Usd Per Completed Run"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "tracked_runs",
+          "completed_runs",
+          "active_runs",
+          "orphaned_agent_attempts_in_window",
+          "unknown_cost_attempts",
+          "known_estimate_subtotal_usd",
+          "estimated_model_usd_per_completed_run"
+        ],
+        "title": "AgentCostCohort"
+      },
       "ApplicabilityReview": {
         "properties": {
           "expected_policy_version": {
@@ -4379,6 +4483,71 @@
           "body"
         ],
         "title": "MemoUpdate"
+      },
+      "ModelUsageReport": {
+        "properties": {
+          "start_at": {
+            "type": "integer",
+            "title": "Start At"
+          },
+          "end_at": {
+            "type": "integer",
+            "title": "End At"
+          },
+          "attempts": {
+            "type": "integer",
+            "title": "Attempts"
+          },
+          "mock_attempts": {
+            "type": "integer",
+            "title": "Mock Attempts"
+          },
+          "pending_attempts": {
+            "type": "integer",
+            "title": "Pending Attempts"
+          },
+          "unknown_cost_attempts": {
+            "type": "integer",
+            "title": "Unknown Cost Attempts"
+          },
+          "known_estimate_subtotal_usd": {
+            "type": "string",
+            "title": "Known Estimate Subtotal Usd"
+          },
+          "complete_estimate_usd": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Complete Estimate Usd"
+          },
+          "agent_cohort": {
+            "$ref": "#/components/schemas/AgentCostCohort"
+          },
+          "basis": {
+            "type": "string",
+            "title": "Basis"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "start_at",
+          "end_at",
+          "attempts",
+          "mock_attempts",
+          "pending_attempts",
+          "unknown_cost_attempts",
+          "known_estimate_subtotal_usd",
+          "complete_estimate_usd",
+          "agent_cohort",
+          "basis"
+        ],
+        "title": "ModelUsageReport"
       },
       "OutputAmendmentReview": {
         "properties": {

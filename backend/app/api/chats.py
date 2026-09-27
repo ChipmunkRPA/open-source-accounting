@@ -5,6 +5,7 @@ from ..models import Chat, ChatMessage, Idempotency, now
 from ..schemas import ChatCreate, ChatSend
 from ..providers.gemini import get_model
 from ..services.idempotency import begin
+from ..services import model_attempts
 from ..errors import fail, ProviderError
 from .common import get_chat
 
@@ -61,7 +62,12 @@ def send(chat_id: str, payload: ChatSend, request: Request, idempotency_key: str
     messages = [{'role': m.role, 'body': m.body} for m in history] + [{'role': 'user', 'body': payload.message}]
     db.commit()
     try:
-        reply = get_model(config).chat(messages)
+        model = get_model(config)
+        reply = model_attempts.invoke(request.app.state.db.Session, config, model,
+            lambda: model.chat(messages),
+            key=model_attempts.operation_key('chat', user.id, chat_id, idempotency_key),
+            phase='chat', user_id=user.id, chat_id=chat_id, prompt_version='free-chat-1',
+            thinking='LOW', output_limit=1800)
     except ProviderError:
         record.response = {'error': 'MODEL_REQUEST_FAILED'}
         db.commit()

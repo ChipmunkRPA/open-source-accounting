@@ -88,12 +88,13 @@ output rate) / 1,000,000`. A synthetic US request with 1,000,000 input and
 rates and $9.90 under the published later rates. These are calculations, not
 measured application costs. No task allowance or subscription price is changed.
 
-Cost per successful Agent task remains **unmeasured**. It must include every
-billable attempt (also schema failures, cancelled/failed tasks and retries) in a
-cohort, divided by completed tasks, plus allocated non-model costs. The existing
-run usage aggregation does not durably retain all failed attempts and must not
-be presented as the true cost ledger. The estimator is an offline utility until
-that ledger, spend reservations and reconciliation are implemented and tested.
+Actual live cost per successful Agent task remains **unmeasured**. It must include
+every billable attempt (also schema failures, cancelled/failed tasks and retries)
+in a cohort, divided by completed tasks, plus allocated non-model costs. The
+[attempt ledger](MODEL_ATTEMPTS.md) now preserves known and unknown costs and
+reports dated estimates for complete tracked cohorts. Legacy run usage alone is
+not a complete cost ledger. Spend reservations and invoice reconciliation remain
+unimplemented; synthetic estimates are not real bills or authorization to spend.
 
 ## Retention is a separate gate
 
@@ -119,8 +120,10 @@ and record endpoint, resolved model version, request configuration, usage, dated
 estimate and observed billing; exercise chat, planning, application-authorized
 tool roundtrip, evidence synthesis and error behavior. No smoke was run here.
 
-Next implementation: durable attempt-level usage/cost records and bounded
-retry/cancellation/spend controls under #26. Independently continue family
+The [durable attempt ledger](MODEL_ATTEMPTS.md) now captures application calls,
+including known usage from rejected outputs, and exposes explicitly incomplete
+cost estimates. Budget reservations, bounded retry/cancellation/spend controls
+remain under #26. Independently continue family
 discovery and authorized import/review/index integration under #8. All 32 content
 families remain required; this technical-document check adds no accounting
 source acquisition, professional review or Agent evidence.

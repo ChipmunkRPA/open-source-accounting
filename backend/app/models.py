@@ -146,6 +146,7 @@ class Run(Base):
     result: Mapped[dict | None] = mapped_column(JSON)
     state: Mapped[str] = mapped_column(String(40), default='draft', index=True)
     revision: Mapped[int] = mapped_column(Integer, default=1)
+    execution_id: Mapped[str | None] = mapped_column(String(36))
     parent_id: Mapped[str | None] = mapped_column(ForeignKey('runs.id'))
     cancel_requested: Mapped[bool] = mapped_column(Boolean, default=False)
     usage_start: Mapped[int | None] = mapped_column(Integer)
@@ -190,6 +191,36 @@ class Job(Base):
     lease_until: Mapped[int] = mapped_column(Integer, default=0)
     lease_owner: Mapped[str | None] = mapped_column(String(36))
     created_at: Mapped[int] = mapped_column(Integer, default=now)
+
+
+class ModelAttempt(Base):
+    """Non-content inference receipts survive application rollback and parent deletion."""
+    __tablename__ = 'model_attempts'
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
+    operation_key: Mapped[str] = mapped_column(String(64), unique=True)
+    user_id: Mapped[str | None] = mapped_column(ForeignKey('users.id', ondelete='SET NULL'))
+    workspace_id: Mapped[str | None] = mapped_column(ForeignKey('workspaces.id', ondelete='SET NULL'))
+    run_id: Mapped[str | None] = mapped_column(ForeignKey('runs.id', ondelete='SET NULL'), index=True)
+    chat_id: Mapped[str | None] = mapped_column(ForeignKey('chats.id', ondelete='SET NULL'))
+    run_revision: Mapped[int | None] = mapped_column(Integer)
+    execution_id: Mapped[str | None] = mapped_column(String(36))
+    phase: Mapped[str] = mapped_column(String(30))
+    provider: Mapped[str] = mapped_column(String(30))
+    project: Mapped[str] = mapped_column(String(30))
+    location: Mapped[str] = mapped_column(String(20))
+    model_id: Mapped[str] = mapped_column(String(80))
+    model_version: Mapped[str | None] = mapped_column(String(128))
+    prompt_version: Mapped[str] = mapped_column(String(80))
+    thinking: Mapped[str] = mapped_column(String(10))
+    output_limit: Mapped[int] = mapped_column(Integer)
+    started_at: Mapped[int] = mapped_column(Integer, default=now, index=True)
+    finished_at: Mapped[int | None] = mapped_column(Integer)
+    outcome: Mapped[str] = mapped_column(String(20), default='pending')
+    error_code: Mapped[str | None] = mapped_column(String(80))
+    http_status: Mapped[int | None] = mapped_column(Integer)
+    usage: Mapped[dict | None] = mapped_column(JSON(none_as_null=True))
+    cost_state: Mapped[str] = mapped_column(String(20), default='unknown')
+    cost_estimate: Mapped[dict | None] = mapped_column(JSON(none_as_null=True))
 
 
 class Memo(Base):
