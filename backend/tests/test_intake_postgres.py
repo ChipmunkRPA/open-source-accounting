@@ -787,3 +787,59 @@ def test_postgres_technical_review_stale_decision_cannot_overwrite(pg_url):
                 if process.is_alive(): process.terminate()
                 process.join(5)
         database.engine.dispose()
+
+
+def parser_review_worker(url, directory, extraction_id, actor, payload, start, results):
+    from app.config import Settings
+    from app.editorial_schemas import ParserDecision
+    from app.services import parser_review
+    database = Database(url)
+    config = Settings(app_env='test', database_url=url, data_dir=directory, _env_file=None)
+    try:
+        assert start.wait(15)
+        with database.Session() as db:
+            try:
+                parser_review.record(db,config,extraction_id,ParserDecision.model_validate(payload),actor)
+                results.put('recorded')
+            except HTTPException as exc: results.put(exc.status_code)
+    finally: database.engine.dispose()
+
+
+def test_postgres_parser_review_serializes_same_extraction(pg_url, tmp_path):
+    from app.config import Settings
+    from app.intake_schemas import IntakeCreate
+    from app.models import SourceExtraction, ParserReview, now
+    from app.services import intake, parser_review
+    from test_source_intake import payload, FakeGateway
+    database = Database(pg_url)
+    actor, creator, approver = (str(uuid4()) for _ in range(3))
+    config = Settings(app_env='test',database_url=pg_url,data_dir=str(tmp_path),_env_file=None)
+    with database.Session() as db:
+        db.add_all([User(id=actor,role='technical_reviewer'),User(id=creator,role='admin'),User(id=approver,role='rights_approver')]);db.commit()
+        request = payload(work_id=str(uuid4()))
+        work = intake.register(db,config,IntakeCreate.model_validate(request),creator)
+        source = db.get(Source,work.source_id);source.reviewed=True;source.approved_by=approver
+        rights.record_approval(source,approver);db.commit();work_id=work.id
+    artifact = intake.acquire(database,config,work_id,creator,'synthetic-parser',gateway_factory=lambda *_:FakeGateway())
+    with database.Session() as db:
+        parsed = intake.parse(db,config,artifact['id'],creator)
+        ex = db.get(SourceExtraction,parsed['id']);revision=parser_review.identity(db,ex)[-1]
+    terms = {'expected_revision':revision,'expected_sequence':0,'decision':'approved',
+             'review_scope':'Synthetic parser concurrency','review_note':'Synthetic test only, not real human review.',
+             'evidence_ref':'ev_synthetic_parser','evidence_sha256':'a'*64,'expires_at':now()+3600,
+             'checked_passage_indices':[0],'confirm_raw_and_citations_checked':True}
+    ctx = multiprocessing.get_context('spawn');start,results=ctx.Event(),ctx.Queue()
+    workers=[ctx.Process(target=parser_review_worker,args=(pg_url,str(tmp_path),parsed['id'],actor,terms,start,results)) for _ in range(2)]
+    try:
+        for process in workers:process.start()
+        start.set();observed=[results.get(timeout=30),results.get(timeout=30)]
+        assert 'recorded' in observed and 409 in observed
+        for process in workers:process.join(15);assert process.exitcode==0
+        with database.Session() as db:
+            assert db.query(ParserReview).filter_by(extraction_id=parsed['id']).count()==1
+    finally:
+        for process in workers:
+            if process.pid:
+                if process.is_alive():process.terminate()
+                process.join(5)
+        database.engine.dispose()

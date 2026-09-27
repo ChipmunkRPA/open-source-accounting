@@ -333,7 +333,9 @@ def stage(db, settings, extraction_id, actor_id):
                       content_sha256=passage['sha256'], content_reference_ids=[parent.id],
                       intake_parent_id=parent.id, intake_parent_policy_version=parent.policy_version,
                       intake_artifact_id=artifact.id, intake_extraction_id=extraction.id,
-                      intake_locator=passage['locator'], applicability_review_status='pending')
+                      intake_locator=passage['locator'], intake_passage_index=index,
+                      intake_extraction_sha256=extraction.normalized_sha256,
+                      intake_parser_version=extraction.parser_version, applicability_review_status='pending')
         row = Source(id=sid, title=(parent.title+' — '+passage['locator'])[:250], publisher=parent.publisher,
                      canonical_url=parent.canonical_url, version_label=parent.version_label, kind=parent.kind,
                      framework=parent.framework, text=passage['text'], policy=policy, created_by=actor_id,

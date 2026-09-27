@@ -385,7 +385,7 @@
       "acceptance": "Stale approval and separation-of-duties tests; zero human reviews remain zero until actual approval; reproducible reports.",
       "progress_required": true,
       "scheduled": false,
-      "implementation_note": "Append-only revision/expiry/revocation technical ledger and concurrent-decision checks implemented. Exportable rights-gated JSON review packets preserve draft hashes, reference metadata snapshots, notices and unresolved checklist without private findings or approvals. Legacy original sources lacking snapshots require new versions/review. Linked-publication dependencies, comparison, parser/applicability workflows, supported-browser download verification and actual human review remain. See docs/EDITORIAL_REVIEWS.md and progress.md."
+      "implementation_note": "Append-only revision/expiry/revocation technical ledger and concurrent-decision checks implemented. Exportable rights-gated JSON review packets preserve draft hashes, reference metadata snapshots, notices and unresolved checklist without private findings or approvals. Legacy original sources lacking snapshots require new versions/review. Linked-publication dependencies, comparison, parser/applicability workflows, supported-browser download verification and actual human review remain. See docs/EDITORIAL_REVIEWS.md and progress.md. Parser/citation review now has independent append-only decisions, original-byte packets, exact passage bindings, expiry/revocation runtime/export gates and PostgreSQL stale-sequence protection. Dedicated parser UI and genuine reviews remain open."
     },
     {
       "id": "PARSERS",

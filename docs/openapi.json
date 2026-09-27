@@ -2535,6 +2535,136 @@
         }
       }
     },
+    "/api/v1/editorial/extractions/{extraction_id}/packet": {
+      "get": {
+        "tags": [
+          "open library"
+        ],
+        "summary": "Parser Packet",
+        "operationId": "parser_packet_api_v1_editorial_extractions__extraction_id__packet_get",
+        "parameters": [
+          {
+            "name": "extraction_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Extraction Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/editorial/extractions/{extraction_id}/review": {
+      "post": {
+        "tags": [
+          "open library"
+        ],
+        "summary": "Parser Decision",
+        "operationId": "parser_decision_api_v1_editorial_extractions__extraction_id__review_post",
+        "parameters": [
+          {
+            "name": "extraction_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Extraction Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ParserDecision"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/editorial/extractions/{extraction_id}/reviews": {
+      "get": {
+        "tags": [
+          "open library"
+        ],
+        "summary": "Parser History",
+        "operationId": "parser_history_api_v1_editorial_extractions__extraction_id__reviews_get",
+        "parameters": [
+          {
+            "name": "extraction_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Extraction Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/sec-core": {
       "get": {
         "tags": [
@@ -5313,6 +5443,84 @@
           "group_id"
         ],
         "title": "OutputControl"
+      },
+      "ParserDecision": {
+        "properties": {
+          "expected_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Expected Revision"
+          },
+          "expected_sequence": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Expected Sequence"
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "approved",
+              "changes_requested",
+              "rejected",
+              "revoked"
+            ],
+            "title": "Decision"
+          },
+          "review_scope": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 10,
+            "title": "Review Scope"
+          },
+          "review_note": {
+            "type": "string",
+            "maxLength": 4000,
+            "minLength": 20,
+            "title": "Review Note"
+          },
+          "evidence_ref": {
+            "type": "string",
+            "pattern": "^ev_[A-Za-z0-9_-]{1,120}$",
+            "title": "Evidence Ref"
+          },
+          "evidence_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Evidence Sha256"
+          },
+          "expires_at": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Expires At"
+          },
+          "checked_passage_indices": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "maxItems": 10000,
+            "title": "Checked Passage Indices"
+          },
+          "confirm_raw_and_citations_checked": {
+            "type": "boolean",
+            "const": true,
+            "title": "Confirm Raw And Citations Checked"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "expected_revision",
+          "expected_sequence",
+          "decision",
+          "review_scope",
+          "review_note",
+          "evidence_ref",
+          "evidence_sha256",
+          "expires_at",
+          "confirm_raw_and_citations_checked"
+        ],
+        "title": "ParserDecision"
       },
       "Preferences": {
         "properties": {

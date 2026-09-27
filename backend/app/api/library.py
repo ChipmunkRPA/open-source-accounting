@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, Query
 from sqlalchemy import select
 from ..auth import fresh_user, settings, session, current_user
 from ..content import Library, ContentError
-from ..editorial_schemas import EditorialDecision
+from ..editorial_schemas import EditorialDecision, ParserDecision
 from ..models import Source, EditorialReview
 from ..errors import fail
 from ..services import rights, output_rights, editorial
@@ -102,3 +102,25 @@ def review_packet(source_id: str,
     result = editorial.packet(db, source)
     db.commit()
     return result
+
+
+@router.get('/editorial/extractions/{extraction_id}/packet')
+def parser_packet(extraction_id: str, config=Depends(settings), user=Depends(current_user), db=Depends(session)):
+    from ..services import parser_review
+    require_editor(user)
+    return parser_review.packet(db, config, extraction_id)
+
+
+@router.post('/editorial/extractions/{extraction_id}/review')
+def parser_decision(extraction_id: str, payload: ParserDecision, config=Depends(settings),
+                    user=Depends(fresh_user), db=Depends(session)):
+    from ..services import parser_review
+    require_editor(user)
+    return parser_review.record(db, config, extraction_id, payload, user.id)
+
+
+@router.get('/editorial/extractions/{extraction_id}/reviews')
+def parser_history(extraction_id: str, config=Depends(settings), user=Depends(current_user), db=Depends(session)):
+    from ..services import parser_review
+    require_editor(user)
+    return parser_review.history(db, config, extraction_id)

@@ -94,6 +94,10 @@ def allowed(source: Source, action: str, *, context: dict | None = None, _visite
             return False
         if not all(isinstance(v, str) and v for v in values) or (context or {}).get(key) not in values:
             return False
+    if action in {'model_input', 'embed', 'train'} and policy.get('intake_extraction_id'):
+        from .parser_review import current
+        if not current(source):
+            return False
     if action in {'model_input', 'embed', 'train'} and policy.get('requires_technical_review'):
         from .editorial import current
         digest = hashlib.sha256((source.text or '').encode()).hexdigest()
@@ -130,6 +134,7 @@ def runtime_context(db, run, settings=None, *, actor_id=None, require_edit=False
 
 def evidence_allowed(db, evidence: Evidence, action='model_input', *, context=None):
     from ..models import Run
+    from .parser_review import current as parser_current
     run = db.get(Run, evidence.run_id)
     if not run:
         return False
@@ -142,7 +147,9 @@ def evidence_allowed(db, evidence: Evidence, action='model_input', *, context=No
             return bool(source and source.enabled and not evidence.text)
         return bool(source and source.policy_version == evidence.policy_version
                     and evidence.text and evidence.text in (source.text or '')
-                    and allowed(source, action, context=context))
+                    and allowed(source, action, context=context)
+                    and (not source.policy.get('intake_extraction_id')
+                         or parser_current(source)))
     if evidence.document_id:
         doc = db.get(Document, evidence.document_id)
         return bool(doc and doc.status == 'ready' and doc.workspace_id == run.workspace_id
