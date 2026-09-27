@@ -70,6 +70,37 @@ export async function editorialView(app:App){
         dialog.close();await editorialView(app);
       }catch(e){status.replaceChildren(notice((e as Error).message,'error'));}},'secondary'));
     },'secondary');
+    const compare=button('Compare versions',()=>{
+      const versions=select([['','Choose a staged version'],...result.items.filter((other:Json)=>other.id!==s.id).map((other:Json):[string,string]=>[other.id,other.title+' · '+other.version+' · '+other.id.slice(0,8)])]);
+      const output=el('div');
+      const dialog=modal('Compare exact versions',notice('Select a baseline for this version. Only the same explicit item or work/passage identity can be compared; permissions are checked for both.'),
+        el('p',{},'Comparison target: '+s.title+' · '+s.version),field('Comparison baseline',versions),output);
+      const run=button('Show changes',async()=>{
+        run.disabled=true;output.replaceChildren();
+        try{
+          const before=result.items.find((other:Json)=>other.id===versions.value);
+          if(!before)throw new Error('Choose a baseline version.');
+          const data:Json=await api('/editorial/compare','POST',{before_source_id:before.id,after_source_id:s.id,
+            before_revision:before.review_revision,after_revision:s.review_revision,
+            before_policy_version:before.policy_version,after_policy_version:s.policy_version});
+          if(!dialog.isConnected)return;
+          const c=data.comparison;
+          output.replaceChildren(notice(c.notice),sourceNotices(c.source_attributions),
+            el('h3',{},c.body_changed?'Text changes':'Text is identical'),
+            ...c.line_changes.map((change:Json)=>el('div',{class:'grid two'},
+              card('Before · line '+change.before_start_line,el('pre',{class:'review-text'},change.before_lines.join('')||'(no lines)')),
+              card('After · line '+change.after_start_line,el('pre',{class:'review-text'},change.after_lines.join('')||'(no lines)')))),
+            el('h3',{},'Metadata changes'),
+            ...c.metadata_changes.map((change:Json)=>card(change.field.replaceAll('_',' '),
+              el('div',{class:'grid two'},el('div',{},el('h4',{},'Before'),el('pre',{class:'review-text'},JSON.stringify(change.before,null,2))),
+                el('div',{},el('h4',{},'After'),el('pre',{class:'review-text'},JSON.stringify(change.after,null,2)))))),
+            ...(c.metadata_changes.length?[]:[el('p',{},'No compared metadata fields changed.')]),
+            el('p',{class:'muted review-hash'},'Before body SHA-256 '+c.before.body_sha256),
+            el('p',{class:'muted review-hash'},'After body SHA-256 '+c.after.body_sha256),
+            notice('No approval was transferred. Inspect missing source context and applicability separately.'));
+        }catch(e){if(dialog.isConnected)output.replaceChildren(notice((e as Error).message,'error'));}finally{run.disabled=false;}
+      },'secondary');dialog.append(run);
+    },'quiet');
     const packet=button('Download review packet',async()=>{try{
       const data:Json=await api('/editorial/sources/'+s.id+'/packet?expected_review_revision='+encodeURIComponent(s.review_revision)+'&expected_policy_version='+s.policy_version);
       saveBlob(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),'review-packet.json');
@@ -77,7 +108,7 @@ export async function editorialView(app:App){
     const history=button('Review history',async()=>{try{const data:Json=await api('/editorial/sources/'+s.id+'/reviews');
       modal('Technical review history',notice('Private review records; do not copy confidential advice into public content.'),el('pre',{},JSON.stringify(data,null,2)));
       }catch(e){app.showError(e);}},'quiet');
-    rows.append(card(s.title,badge(s.editorial_status+(s.technical_review_current?' · current':' · no current approval'),'warning'),el('p',{class:'muted'},'Version '+s.version+' · rights '+(s.rights_reviewed?'approved':'pending')),inspect,history,packet));
+    rows.append(card(s.title,badge(s.editorial_status+(s.technical_review_current?' · current':' · no current approval'),'warning'),el('p',{class:'muted'},'Version '+s.version+' · rights '+(s.rights_reviewed?'approved':'pending')),inspect,compare,history,packet));
   }
   app.content.replaceChildren(heading('Technical content review','Reviews are recorded against the exact source hash and policy revision.'),
     notice('Importing a content pack does not approve it. Source rights approval and a separate technical-review action are both required.'),

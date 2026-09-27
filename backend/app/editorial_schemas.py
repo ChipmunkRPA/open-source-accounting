@@ -29,3 +29,12 @@ class ParserDecision(Strict):
     expires_at: int = Field(ge=1)
     checked_passage_indices: list[int] = Field(default_factory=list, max_length=10000)
     confirm_raw_and_citations_checked: Literal[True]
+
+
+class RevisionComparison(Strict):
+    before_source_id: str = Field(min_length=1, max_length=128)
+    after_source_id: str = Field(min_length=1, max_length=128)
+    before_revision: str = Field(pattern=r'^[a-f0-9]{64}$')
+    after_revision: str = Field(pattern=r'^[a-f0-9]{64}$')
+    before_policy_version: int = Field(ge=1)
+    after_policy_version: int = Field(ge=1)

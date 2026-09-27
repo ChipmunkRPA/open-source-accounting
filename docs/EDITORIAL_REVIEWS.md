@@ -43,3 +43,15 @@ The runtime checks database provenance and staged text; it does not reread the e
 Legacy staged intake passages lack the new ordinal/hash/parser binding and remain blocked; do not fabricate or silently backfill historical approval. Register/reparse a new immutable edition and obtain its reviews. The bundled selected SEC excerpt workflow is distinct from acquired intake extractions and is not falsely counted as parser-reviewed full publications. Coverage reconciliation, general applicability decisions, revision comparison and actual independent reviews remain open.
 
 The parser worklist (`GET /editorial/extractions`) is reviewer-only metadata, with bounded pagination and no artifact reads. It reports the last recorded decision, not a promise of current admission. Raw and extracted text remain gated by the existing packet endpoint. The UI renders passages/findings as literal text and downloads original bytes as application/octet-stream, never executable inline markup. Large-corpus usability, broader accessibility and actual browser download completion remain validation tasks; see reports/intake/PARSER_UI.md.
+
+## Comparing staged revisions
+
+From **Content review**, choose **Compare versions**, select a baseline and select **Show changes**. The current card is the comparison target. The reviewer chooses direction explicitly; the application does not guess which edition is authoritative or chronologically applicable.
+
+`POST /editorial/compare` uses the `RevisionComparison` schema with both source IDs, expected review revisions and expected policy versions. Both sources are locked in ID order and must currently permit full display. Both sources' output notices and budgets apply. This is a display operation; no comparison export or grant transfer is provided.
+
+Supported identity pairs are the same original content item, the same intake family/work/exact passage locator, or the same bundled SEC source/passage ID. Edition/snapshot differences are retained. Matching a URL alone is insufficient. Renumbered or restructured passages require separate reconciliation; this endpoint will not invent a relationship. It compares two existing staged versions and cannot reconstruct an overwritten historical body.
+
+Results preserve exact changed lines (including newline differences), one-based starting line numbers, body/review hashes, metadata differences and source notices. Reference metadata changes are visible even if the article body is identical. Date values are displayed as claims, not newly reviewed applicability. Private technical/applicability findings are excluded. Text and metadata are rendered literally in the UI.
+
+The endpoint rejects inputs larger than 200,000 characters or 2,000 lines per version before diffing. No silent truncation occurs; review narrower source units or the separate full packets. The comparison SHA-256 covers its canonical JSON `comparison` object. Identical content or a clean diff never grants authority, rights, review or Agent admission.

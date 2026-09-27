@@ -2719,6 +2719,45 @@
         }
       }
     },
+    "/api/v1/editorial/compare": {
+      "post": {
+        "tags": [
+          "open library"
+        ],
+        "summary": "Compare Revisions",
+        "operationId": "compare_revisions_api_v1_editorial_compare_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RevisionComparison"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/sec-core": {
       "get": {
         "tags": [
@@ -5623,6 +5662,53 @@
           "expected_revision"
         ],
         "title": "ReviewCreate"
+      },
+      "RevisionComparison": {
+        "properties": {
+          "before_source_id": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Before Source Id"
+          },
+          "after_source_id": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "After Source Id"
+          },
+          "before_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Before Revision"
+          },
+          "after_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "After Revision"
+          },
+          "before_policy_version": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Before Policy Version"
+          },
+          "after_policy_version": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "After Policy Version"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "before_source_id",
+          "after_source_id",
+          "before_revision",
+          "after_revision",
+          "before_policy_version",
+          "after_policy_version"
+        ],
+        "title": "RevisionComparison"
       },
       "RightsApproval": {
         "properties": {

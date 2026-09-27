@@ -385,7 +385,7 @@
       "acceptance": "Stale approval and separation-of-duties tests; zero human reviews remain zero until actual approval; reproducible reports.",
       "progress_required": true,
       "scheduled": false,
-      "implementation_note": "Independent technical and parser ledgers, exact revision/expiry/revocation gates, private history and rights-gated review packets implemented. Parser workbench now provides metadata pagination, explicit passage checks, safe plain-text inspection, decision entry/history and fresh download authorization. Synthetic UI/API validation grants zero real approvals. Revision comparison, linked-publication dependencies, general applicability, full coverage reconciliation, supported-browser download verification and genuine reviews remain. See docs/EDITORIAL_REVIEWS.md and progress.md."
+      "implementation_note": "Independent technical/parser ledgers, revision/expiry/revocation gates, private history, rights-gated packets and parser workbench implemented. Exact-version comparison now shows body/citation/reference/date-claim changes with both-source permissions and bounded, untruncated output; no automatic equivalence or approval transfer. Linked-publication dependencies, general applicability, full coverage reconciliation, supported-browser downloads and genuine reviews remain. See docs/EDITORIAL_REVIEWS.md and progress.md."
     },
     {
       "id": "PARSERS",

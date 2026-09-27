@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, Query
 from sqlalchemy import select
 from ..auth import fresh_user, settings, session, current_user
 from ..content import Library, ContentError
-from ..editorial_schemas import EditorialDecision, ParserDecision
+from ..editorial_schemas import EditorialDecision, ParserDecision, RevisionComparison
 from ..models import Source, EditorialReview
 from ..errors import fail
 from ..services import rights, output_rights, editorial
@@ -151,3 +151,10 @@ def parser_extractions(offset: int = Query(0, ge=0), limit: int = Query(30, ge=1
             'packet_permitted':all(rights.allowed(source, op, context=context)
                 for op in ('store_raw','store_text','display_full','export'))})
     return {'items':items, 'offset':offset, 'next_offset':offset+limit if len(rows)>limit else None}
+
+
+@router.post('/editorial/compare')
+def compare_revisions(payload: RevisionComparison, user=Depends(current_user), db=Depends(session)):
+    from ..services import review_comparison
+    require_editor(user)
+    return review_comparison.compare(db, payload)
