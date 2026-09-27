@@ -14,7 +14,7 @@ Coverage unchanged: original drafts **63 inventoried / 63 hash-verified / 0 prof
 
 Remaining #7 work (not marked complete): pre-acquisition authorization records and #8 adapter integration; trusted scope propagation through retrieval/model/export; cumulative quotation/reconstruction controls; attribution enforcement; counsel-review persistence; revocation/deletion across derived indexes/caches/articles. Scoped policies currently deny legacy callers that cannot supply trusted context. This is a safe limitation, not a completed licensed intake system. Real rights evidence and reviewers are blocked on operator action (owner unassigned); code and synthetic contracts remain unblocked. Broader MFA/Cloud/billing/production gates remain unchanged and require approved secure configuration and explicit authorization.
 
-Next resumable task: finish the pre-acquisition policy record and policy-aware intake boundary under **#7 → #8**, preserving the 32-family matrix, before acquiring any new body text. Review/merge #42 before its dependent rights PR. No unattended execution is scheduled. Rights commit/PR links follow after publication.
+Next resumable task: finish the pre-acquisition policy record and policy-aware intake boundary under **#7 → #8**, preserving the 32-family matrix, before acquiring any new body text. Review/merge #42 before its dependent rights PR. No unattended execution is scheduled. Rights implementation: [d85048b](https://github.com/ChipmunkRPA/open-source-accounting/commit/d85048b8d05144d18d034f9dcef83d7ea4d0050c), [PR #43](https://github.com/ChipmunkRPA/open-source-accounting/pull/43), stacked on #42. Rights CI is pending; local validation above is complete.
 
 ---
 
