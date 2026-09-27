@@ -193,6 +193,23 @@ class Job(Base):
     created_at: Mapped[int] = mapped_column(Integer, default=now)
 
 
+class ModelBudget(Base):
+    """One explicit spending authorization. No reset, renewal or automatic refill."""
+    __tablename__ = 'model_budgets'
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
+    terms: Mapped[dict] = mapped_column(JSON)
+    terms_sha256: Mapped[str] = mapped_column(String(64), unique=True)
+    authorized_by: Mapped[str | None] = mapped_column(ForeignKey('users.id', ondelete='SET NULL'))
+    created_at: Mapped[int] = mapped_column(Integer, default=now)
+    expires_at: Mapped[int] = mapped_column(Integer)
+    active: Mapped[bool] = mapped_column(Boolean, default=True)
+    limit_nanos: Mapped[int] = mapped_column(BigInteger)
+    per_call_nanos: Mapped[int] = mapped_column(BigInteger)
+    held_nanos: Mapped[int] = mapped_column(BigInteger, default=0)
+    committed_nanos: Mapped[int] = mapped_column(BigInteger, default=0)
+    revoked_at: Mapped[int | None] = mapped_column(Integer)
+
+
 class ModelAttempt(Base):
     """Non-content inference receipts survive application rollback and parent deletion."""
     __tablename__ = 'model_attempts'
@@ -221,6 +238,9 @@ class ModelAttempt(Base):
     usage: Mapped[dict | None] = mapped_column(JSON(none_as_null=True))
     cost_state: Mapped[str] = mapped_column(String(20), default='unknown')
     cost_estimate: Mapped[dict | None] = mapped_column(JSON(none_as_null=True))
+    budget_id: Mapped[str | None] = mapped_column(ForeignKey('model_budgets.id'), index=True)
+    reserved_nanos: Mapped[int | None] = mapped_column(BigInteger)
+    budget_state: Mapped[str | None] = mapped_column(String(20))
 
 
 class Memo(Base):

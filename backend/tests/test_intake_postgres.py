@@ -19,13 +19,16 @@ from app.services import intake, rights
 from test_source_intake import payload, FakeGateway
 
 
-def model_attempt_worker(url, actor, operation_key, entered, release, results):
+def model_attempt_worker(url, actor, operation_key, entered, release, results, start=None):
     from app.providers.gemini import Gemini
     from app.schemas import Plan
     from app.services import model_attempts
+    from app.services import model_budgets
+    import time
+    model_budgets.REVIEW_DEADLINE = int(time.time())+30*86400  # Synthetic quote freshness in this test process.
     from app.errors import ProviderError
     database = Database(url)
-    config = Settings(model_provider='google_cloud', google_cloud_project='test-project', _env_file=None)
+    config = Settings(model_provider='google_cloud', google_cloud_project='test-project', model_budget_id=actor, _env_file=None)
     def transport(*_):
         results.put(('dispatch',))
         entered.set()
@@ -35,6 +38,8 @@ def model_attempt_worker(url, actor, operation_key, entered, release, results):
             'usageMetadata': {'promptTokenCount': 10, 'candidatesTokenCount': 5, 'totalTokenCount': 15}}
     model = Gemini(config, transport)
     try:
+        if start is not None:
+            assert start.wait(15)
         model_attempts.invoke(database.Session, config, model, lambda: model.structured(Plan, 'Synthetic', {}),
             key=operation_key, phase='planning', user_id=actor, thinking='MEDIUM', output_limit=2500,
             prompt_version='synthetic')
@@ -45,14 +50,52 @@ def model_attempt_worker(url, actor, operation_key, entered, release, results):
         database.engine.dispose()
 
 
+def test_postgres_model_budget_admits_only_one_competing_call(pg_url):
+    from app.models import ModelBudget, ModelAttempt
+    from app.services.model_attempts import operation_key
+    from conftest import synthetic_model_budget
+    database = Database(pg_url)
+    actor = str(uuid4())
+    with database.Session() as db:
+        db.add(User(id=actor, role='admin')); db.commit()
+    synthetic_model_budget(database, budget_id=actor, actor=actor, limit='3')
+    ctx = multiprocessing.get_context('spawn')
+    entered, release, start, results = ctx.Event(), ctx.Event(), ctx.Event(), ctx.Queue()
+    workers = [ctx.Process(target=model_attempt_worker, args=(pg_url, actor,
+        operation_key('budget-race', actor, index), entered, release, results, start)) for index in range(2)]
+    try:
+        for process in workers: process.start()
+        start.set()
+        events = [results.get(timeout=20), results.get(timeout=20)]
+        assert ('dispatch',) in events
+        assert ('error', 'MODEL_BUDGET_EXHAUSTED_OR_INACTIVE') in events
+        release.set()
+        assert results.get(timeout=20) == ('finished',)
+        for process in workers:
+            process.join(15); assert process.exitcode == 0
+        with database.Session() as db:
+            budget = db.get(ModelBudget, actor)
+            assert budget.held_nanos == 0 and budget.committed_nanos == 3_000_000_000
+            assert db.scalar(select(func.count()).select_from(ModelAttempt).where(ModelAttempt.budget_id == actor)) == 1
+    finally:
+        release.set()
+        for process in workers:
+            if process.pid:
+                if process.is_alive(): process.terminate()
+                process.join(5)
+        database.engine.dispose()
+
+
 def test_postgres_model_operation_has_one_dispatch_owner(pg_url):
     from app.models import ModelAttempt
     from app.services.model_attempts import operation_key
     database = Database(pg_url)
     actor = str(uuid4())
     with database.Session() as db:
-        db.add(User(id=actor))
+        db.add(User(id=actor, role='admin'))
         db.commit()
+    from conftest import synthetic_model_budget
+    synthetic_model_budget(database, budget_id=actor, actor=actor)
     key = operation_key('synthetic-concurrency', actor)
     ctx = multiprocessing.get_context('spawn')
     entered, release, results = ctx.Event(), ctx.Event(), ctx.Queue()
@@ -121,7 +164,9 @@ def test_postgres_cost_report_uses_one_snapshot(pg_url, monkeypatch):
 
 
 @pytest.fixture
-def pg_url():
+def pg_url(monkeypatch):
+    import time
+    monkeypatch.setattr('app.services.model_budgets.REVIEW_DEADLINE', int(time.time())+30*86400)
     url = os.environ.get('OSA_POSTGRES_TEST_URL', '')
     if not url:
         pytest.skip('Requires explicitly supplied migrated disposable PostgreSQL database')

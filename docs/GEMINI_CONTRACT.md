@@ -93,8 +93,9 @@ every billable attempt (also schema failures, cancelled/failed tasks and retries
 in a cohort, divided by completed tasks, plus allocated non-model costs. The
 [attempt ledger](MODEL_ATTEMPTS.md) now preserves known and unknown costs and
 reports dated estimates for complete tracked cohorts. Legacy run usage alone is
-not a complete cost ledger. Spend reservations and invoice reconciliation remain
-unimplemented; synthetic estimates are not real bills or authorization to spend.
+not a complete cost ledger. [Conservative spending reservations](MODEL_BUDGETS.md)
+now gate live application dispatch; invoice reconciliation remains unimplemented.
+Synthetic estimates are not real bills or authorization to spend.
 
 ## Retention is a separate gate
 
@@ -122,8 +123,9 @@ tool roundtrip, evidence synthesis and error behavior. No smoke was run here.
 
 The [durable attempt ledger](MODEL_ATTEMPTS.md) now captures application calls,
 including known usage from rejected outputs, and exposes explicitly incomplete
-cost estimates. Budget reservations, bounded retry/cancellation/spend controls
-remain under #26. Independently continue family
+cost estimates. [Budget reservations](MODEL_BUDGETS.md) now require explicit
+operator funding; reconciliation and bounded retry/cancellation remain under #26.
+Independently continue family
 discovery and authorized import/review/index integration under #8. All 32 content
 families remain required; this technical-document check adds no accounting
 source acquisition, professional review or Agent evidence.

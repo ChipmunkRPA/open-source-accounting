@@ -13,6 +13,7 @@ from ..errors import ProviderError, fail
 from ..models import ModelAttempt, Run, now
 from ..providers.gemini_contract import usage_counts
 from ..providers.gemini_costs import estimate_usd
+from . import model_budgets
 
 PHASES = {'chat', 'planning', 'synthesis', 'verification', 'correction', 'reverification'}
 SAFE_ERRORS = {
@@ -21,6 +22,7 @@ SAFE_ERRORS = {
     'MODEL_CONFIG_INVALID', 'MODEL_RESPONSE_INVALID', 'MODEL_USAGE_INVALID',
     'MODEL_UNEXPECTED_TOOL', 'MODEL_OUTPUT_INCOMPLETE', 'MODEL_OUTPUT_BLOCKED',
     'MODEL_EMPTY_OUTPUT', 'MODEL_OUTPUT_LIMIT', 'MODEL_SCHEMA_INVALID',
+    'MODEL_BUDGET_EXHAUSTED_OR_INACTIVE', 'MODEL_BUDGET_SCOPE',
 }
 
 
@@ -40,9 +42,14 @@ def prepare(db_factory, config, *, key, phase, user_id, thinking, output_limit,
         prompt_version=prompt_version, thinking=thinking, output_limit=output_limit)
     try:
         with db_factory() as db:
+            if db.scalar(select(ModelAttempt.id).where(ModelAttempt.operation_key == key)):
+                raise ProviderError('MODEL_ATTEMPT_ALREADY_RECORDED')
+            model_budgets.reserve(db, config, row)
             db.add(row)
             db.commit()
             return row.id
+    except ProviderError:
+        raise
     except IntegrityError:
         # A unique operation key is the network ownership boundary on both DBs.
         # A pending/finished receipt never licenses another request or stores a reply.
@@ -97,7 +104,10 @@ def settle(db_factory, attempt_id, model, *, succeeded, error_code):
                     cost_estimate=estimate, model_version=version))
             if changed.rowcount != 1:
                 raise ProviderError('MODEL_ATTEMPT_ALREADY_SETTLED')
+            overrun = model_budgets.settle(db, row, cost_state, estimate)
             db.commit()
+            if overrun:
+                raise ProviderError('MODEL_BUDGET_OVERRUN')
     except ProviderError:
         raise
     except Exception:
@@ -110,8 +120,11 @@ def invoke(db_factory, config, model, call, **metadata):
     if config.model_provider != 'mock':
         # Defensive reset for any adapter. Gemini sets dispatch state explicitly.
         model.last_usage, model.last_model_version = {}, None
-        model.last_http_status, model.last_dispatch_state = None, 'unknown'
+        model.last_http_status, model.last_dispatch_state = None, 'not_sent'
     try:
+        model_budgets.dispatch_allowed(db_factory, config, attempt_id)
+        if config.model_provider != 'mock':
+            model.last_dispatch_state = 'unknown'
         result = call()
     except Exception as exc:
         settle(db_factory, attempt_id, model, succeeded=False, error_code=str(exc) if isinstance(exc, ProviderError) else '')

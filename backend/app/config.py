@@ -19,6 +19,7 @@ class Settings(BaseSettings):
     model_id: Literal['gemini-3.8-flash'] = MODEL_ID
     model_location: str = 'us'
     google_cloud_project: str = ''
+    model_budget_id: str = ''  # Explicit operator authorization; empty denies live app inference.
     firebase_project_id: str = ''
     firebase_auth_domain: str = ''
     firebase_tenant_id: str = ''

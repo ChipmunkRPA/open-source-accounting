@@ -12,7 +12,7 @@ from app.providers.gemini import Gemini, MockGemini
 from app.schemas import Plan
 from app.services import model_attempts as ledger
 from app.worker import tick
-from conftest import activate, create_run, key, complete_run
+from conftest import activate, create_run, key, complete_run, synthetic_model_budget
 from test_gemini_contract import response, fake_http
 
 
@@ -22,7 +22,12 @@ def metadata(token='one'):
 
 
 def settings():
-    return Settings(model_provider='google_cloud', google_cloud_project='test-project', _env_file=None)
+    return Settings(model_provider='google_cloud', google_cloud_project='test-project', model_budget_id='synthetic-budget', _env_file=None)
+
+
+@pytest.fixture(autouse=True)
+def budget(client):
+    synthetic_model_budget(client.app.state.db)
 
 
 def rows(client):

@@ -7,7 +7,11 @@ from app.worker import tick
 
 
 @pytest.fixture
-def client(tmp_path):
+def client(tmp_path, monkeypatch):
+    # Synthetic quote freshness, never live catalog validation. Expired-catalog
+    # denial has its own test; clean offline tests must not expire with wall time.
+    import time
+    monkeypatch.setattr('app.services.model_budgets.REVIEW_DEADLINE', int(time.time())+30*86400)
     config = Settings(app_env='test', database_url=f'sqlite:///{tmp_path}/test.db', data_dir=str(tmp_path),
                       auth_mode='dev', model_provider='mock', demo_billing_enabled=True,
                       auto_seed=True, auto_create_schema=True, _env_file=None)
@@ -17,6 +21,23 @@ def client(tmp_path):
 
 def key(value=None):
     return {'Idempotency-Key': value or str(uuid.uuid4())}
+
+
+def synthetic_model_budget(database, *, budget_id='synthetic-budget', actor='admin', limit='1000', per_call='3',
+                           location='us', project='test-project'):
+    """Synthetic spend attestation ONLY. Never use this helper on an operator database."""
+    import hashlib
+    from app.model_budget_schemas import BudgetAuthorization
+    from app.services.model_budgets import authorize
+    from app.models import now
+    with database.Session() as db:
+        row = authorize(db, BudgetAuthorization(project=project, location=location,
+            provider='google_cloud', model_id='gemini-3.8-flash', limit_usd=limit, per_call_usd=per_call,
+            expires_at=now()+3600, evidence_ref='ev_synthetic_budget',
+            evidence_sha256=hashlib.sha256(budget_id.encode()).hexdigest(), confirm_operator_spend_authorization=True), actor)
+        row.id = budget_id
+        db.commit()
+    return budget_id
 
 
 def activate(client):

@@ -3550,6 +3550,141 @@
           }
         }
       }
+    },
+    "/api/v1/admin/model-budgets": {
+      "post": {
+        "tags": [
+          "model-operations"
+        ],
+        "summary": "Authorize",
+        "operationId": "authorize_api_v1_admin_model_budgets_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BudgetAuthorization"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BudgetView"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/model-budgets/{budget_id}": {
+      "get": {
+        "tags": [
+          "model-operations"
+        ],
+        "summary": "Read",
+        "operationId": "read_api_v1_admin_model_budgets__budget_id__get",
+        "parameters": [
+          {
+            "name": "budget_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Budget Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BudgetView"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/model-budgets/{budget_id}/revoke": {
+      "post": {
+        "tags": [
+          "model-operations"
+        ],
+        "summary": "Revoke",
+        "operationId": "revoke_api_v1_admin_model_budgets__budget_id__revoke_post",
+        "parameters": [
+          {
+            "name": "budget_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Budget Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BudgetRevocation"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BudgetView"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -3681,6 +3816,157 @@
           "authorization_basis"
         ],
         "title": "Body_upload_document_api_v1_workspaces__workspace_id__documents_post"
+      },
+      "BudgetAuthorization": {
+        "properties": {
+          "project": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{4,28}[a-z0-9]$",
+            "title": "Project"
+          },
+          "location": {
+            "type": "string",
+            "enum": [
+              "us",
+              "eu",
+              "global"
+            ],
+            "title": "Location"
+          },
+          "model_id": {
+            "type": "string",
+            "const": "gemini-3.8-flash",
+            "title": "Model Id"
+          },
+          "provider": {
+            "type": "string",
+            "const": "google_cloud",
+            "title": "Provider"
+          },
+          "catalog_version": {
+            "type": "string",
+            "const": "google-cloud-gemini-3.8-flash-standard-2026-09-27",
+            "title": "Catalog Version",
+            "default": "google-cloud-gemini-3.8-flash-standard-2026-09-27"
+          },
+          "limit_usd": {
+            "type": "string",
+            "pattern": "^[0-9]{1,7}(\\.[0-9]{1,6})?$",
+            "title": "Limit Usd"
+          },
+          "per_call_usd": {
+            "type": "string",
+            "pattern": "^[0-9]{1,7}(\\.[0-9]{1,6})?$",
+            "title": "Per Call Usd"
+          },
+          "expires_at": {
+            "type": "integer",
+            "title": "Expires At"
+          },
+          "evidence_ref": {
+            "type": "string",
+            "pattern": "^ev_[A-Za-z0-9_-]{8,100}$",
+            "title": "Evidence Ref"
+          },
+          "evidence_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Evidence Sha256"
+          },
+          "confirm_operator_spend_authorization": {
+            "type": "boolean",
+            "const": true,
+            "title": "Confirm Operator Spend Authorization"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "project",
+          "location",
+          "model_id",
+          "provider",
+          "limit_usd",
+          "per_call_usd",
+          "expires_at",
+          "evidence_ref",
+          "evidence_sha256",
+          "confirm_operator_spend_authorization"
+        ],
+        "title": "BudgetAuthorization"
+      },
+      "BudgetRevocation": {
+        "properties": {
+          "expected_terms_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Expected Terms Sha256"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "expected_terms_sha256"
+        ],
+        "title": "BudgetRevocation"
+      },
+      "BudgetView": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "terms": {
+            "$ref": "#/components/schemas/BudgetAuthorization"
+          },
+          "terms_sha256": {
+            "type": "string",
+            "title": "Terms Sha256"
+          },
+          "active": {
+            "type": "boolean",
+            "title": "Active"
+          },
+          "expires_at": {
+            "type": "integer",
+            "title": "Expires At"
+          },
+          "limit_usd": {
+            "type": "string",
+            "title": "Limit Usd"
+          },
+          "per_call_usd": {
+            "type": "string",
+            "title": "Per Call Usd"
+          },
+          "held_usd": {
+            "type": "string",
+            "title": "Held Usd"
+          },
+          "committed_usd": {
+            "type": "string",
+            "title": "Committed Usd"
+          },
+          "available_usd": {
+            "type": "string",
+            "title": "Available Usd"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "terms",
+          "terms_sha256",
+          "active",
+          "expires_at",
+          "limit_usd",
+          "per_call_usd",
+          "held_usd",
+          "committed_usd",
+          "available_usd"
+        ],
+        "title": "BudgetView"
       },
       "ChatCreate": {
         "properties": {

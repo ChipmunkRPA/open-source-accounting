@@ -24,6 +24,13 @@ with engine.begin() as connection:
                        {'g': 'synthetic-migration-fixture', 'h': 'a'*64})
     connection.execute(text("INSERT INTO source_output_releases (group_id, payload_sha256, character_count, created_at) VALUES (:g, :h, 7, 1234)"),
                        {'g': 'synthetic-migration-fixture', 'h': 'b'*64})
+subprocess.run([sys.executable, '-m', 'alembic', 'upgrade', '0007_attempts'], cwd=ROOT/'backend', env=env, check=True)
+with engine.begin() as connection:
+    connection.execute(text("""INSERT INTO model_attempts
+        (id, operation_key, phase, provider, project, location, model_id, prompt_version,
+         thinking, output_limit, started_at, outcome, cost_state)
+        VALUES ('synthetic-legacy-attempt', :key, 'planning', 'google_cloud', 'legacy-migration',
+                'us', 'gemini-3.8-flash', 'synthetic', 'MEDIUM', 2500, 1234, 'pending', 'unknown')"""), {'key': 'c'*64})
 for args in [('upgrade', 'head'), ('check',), ('downgrade', 'base')]:
     subprocess.run([sys.executable, '-m', 'alembic', *args], cwd=ROOT/'backend', env=env, check=True)
     if args == ('upgrade', 'head'):
@@ -34,6 +41,10 @@ for args in [('upgrade', 'head'), ('check',), ('downgrade', 'base')]:
                                          {'g': 'synthetic-migration-fixture'}).one()
             if tuple(budget) != ('a'*64, 7, 1) or tuple(receipt) != ('b'*64, 7, 1234):
                 raise SystemExit('Upgrade changed an existing output counter, hash or receipt.')
+            legacy = connection.execute(text("SELECT cost_state, budget_id, reserved_nanos, budget_state FROM model_attempts WHERE id='synthetic-legacy-attempt'")).one()
+            if tuple(legacy) != ('unknown', None, None, None) or connection.execute(text('SELECT count(*) FROM model_budgets')).scalar() != 0:
+                raise SystemExit('Upgrade invented a budget or changed an unknown model liability.')
+        print('PASS legacy model liability preserved without funding authorization', flush=True)
         print('PASS existing output ledger preserved across upgrade', flush=True)
     print('PASS alembic ' + ' '.join(args), flush=True)
 if set(inspect(engine).get_table_names()) - {'alembic_version'}:

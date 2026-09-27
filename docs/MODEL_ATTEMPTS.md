@@ -88,8 +88,9 @@ is generated. Migration downgrade removes receipts, so production rollback must
 preserve/export accounting records under an approved recovery procedure; the
 round-trip test only uses an empty disposable database with synthetic fixtures.
 
-Next: approved, immutable operator budget records and atomic admission/reservations
-against known plus unresolved liabilities; bounded retry/backoff/total deadlines;
+The [operator budget layer](MODEL_BUDGETS.md) now adds immutable spending
+authorizations and atomic reservations, retaining unknown liabilities. Next:
+invoice-backed reconciliation; bounded retry/backoff/total deadlines;
 documented reconciliation of unknown outcomes and actual invoice costs. Keep
 default mock mode and all paid calls/resources disabled until authorized staging.
 The GCP project, approved region/spend, identity, retention evidence and live model
