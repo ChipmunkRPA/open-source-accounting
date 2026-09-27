@@ -85,3 +85,20 @@ def review_history(source_id: str, user=Depends(current_user), db=Depends(sessio
     output_rights.release(db, [source], result)
     db.commit()
     return result
+
+
+@router.get('/editorial/sources/{source_id}/packet')
+def review_packet(source_id: str,
+                  expected_review_revision: str = Query(pattern=r'^[a-f0-9]{64}$'),
+                  expected_policy_version: int = Query(ge=1),
+                  user=Depends(current_user), db=Depends(session)):
+    require_editor(user)
+    source = db.scalar(select(Source).where(Source.id == source_id).with_for_update())
+    if not source or not (source.policy or {}).get('requires_technical_review'):
+        fail('NOT_FOUND', 'Reviewable source not found.', 404)
+    if (expected_review_revision != editorial.revision(source)
+            or expected_policy_version != source.policy_version):
+        fail('REVISION_CONFLICT', 'Reload the source before exporting this review packet.', 409)
+    result = editorial.packet(db, source)
+    db.commit()
+    return result

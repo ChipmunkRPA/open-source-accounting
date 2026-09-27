@@ -8,6 +8,7 @@ technical approval. Remote URLs are metadata, never automatically fetched.
 """
 from __future__ import annotations
 import argparse
+import copy
 import hashlib
 import json
 import re
@@ -166,10 +167,16 @@ def stage_library(db, library: Library, author_id: str):
     created, existing = [], []
     for item in library.items.values():
         sid = str(uuid5(NAMESPACE, item.id + '@' + item.version))
+        references = [copy.deepcopy(library.references[r]) for r in sorted(item.source_ids)]
+        from .sec_core.core import canonical, digest
+        references_hash = digest(canonical(references))
         old = db.get(Source, sid)
         if old:
             if (old.policy or {}).get('content_sha256') != item.sha256:
                 raise ContentError('An immutable item version changed; publish a new version.')
+            if ((old.policy or {}).get('content_references_sha256') != references_hash
+                    or (old.policy or {}).get('content_reference_snapshot') != references):
+                raise ContentError('Reference metadata changed or was never captured; publish a new item version.')
             existing.append(sid)
             continue
         policy = dict(basis='original', commercial_use=True, model_input=True, store_text=True,
@@ -177,6 +184,7 @@ def stage_library(db, library: Library, author_id: str):
                       review_note='CC BY 4.0 original draft; independent rights and technical approval required.',
                       content_item_id=item.id, content_version=item.version, content_sha256=item.sha256,
                       content_license=item.license, content_reference_ids=item.source_ids,
+                      content_reference_snapshot=references, content_references_sha256=references_hash,
                       requires_technical_review=True, technical_review_status='unreviewed',
                       technical_reviewer_id=None, technical_reviewed_at=None,
                       public_library_notice='AI-assisted editorial draft; not authoritative.')
