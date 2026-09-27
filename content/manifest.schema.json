@@ -1,0 +1,216 @@
+{
+  "$defs": {
+    "Item": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 120,
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 250,
+          "minLength": 4,
+          "title": "Title",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "guide",
+            "case",
+            "template",
+            "playbook",
+            "qa_set"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "topic": {
+          "maxLength": 60,
+          "minLength": 1,
+          "title": "Topic",
+          "type": "string"
+        },
+        "framework": {
+          "enum": [
+            "US_GAAP",
+            "IFRS",
+            "BOTH",
+            "AUDIT"
+          ],
+          "title": "Framework",
+          "type": "string"
+        },
+        "summary": {
+          "maxLength": 1500,
+          "minLength": 10,
+          "title": "Summary",
+          "type": "string"
+        },
+        "path": {
+          "title": "Path",
+          "type": "string"
+        },
+        "version": {
+          "maxLength": 40,
+          "minLength": 1,
+          "title": "Version",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "published_at": {
+          "title": "Published At",
+          "type": "string"
+        },
+        "updated_at": {
+          "title": "Updated At",
+          "type": "string"
+        },
+        "author": {
+          "title": "Author",
+          "type": "string"
+        },
+        "license": {
+          "const": "CC-BY-4.0",
+          "title": "License",
+          "type": "string"
+        },
+        "source_ids": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        },
+        "technical_review": {
+          "$ref": "#/$defs/Review"
+        },
+        "primary_text_gap": {
+          "title": "Primary Text Gap",
+          "type": "boolean"
+        },
+        "public_visibility": {
+          "enum": [
+            "editorial_draft",
+            "reviewed_article"
+          ],
+          "title": "Public Visibility",
+          "type": "string"
+        },
+        "agent_eligible_by_default": {
+          "const": false,
+          "title": "Agent Eligible By Default",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "kind",
+        "topic",
+        "framework",
+        "summary",
+        "path",
+        "version",
+        "sha256",
+        "published_at",
+        "updated_at",
+        "author",
+        "license",
+        "source_ids",
+        "technical_review",
+        "primary_text_gap",
+        "public_visibility",
+        "agent_eligible_by_default"
+      ],
+      "title": "Item",
+      "type": "object"
+    },
+    "Review": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "unreviewed",
+            "reviewed"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "reviewer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewer"
+        },
+        "reviewed_at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewed At"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "Review",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "release": {
+      "title": "Release",
+      "type": "string"
+    },
+    "generated_at": {
+      "title": "Generated At",
+      "type": "string"
+    },
+    "publication_state": {
+      "title": "Publication State",
+      "type": "string"
+    },
+    "items": {
+      "items": {
+        "$ref": "#/$defs/Item"
+      },
+      "maxItems": 2000,
+      "minItems": 1,
+      "title": "Items",
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "release",
+    "generated_at",
+    "publication_state",
+    "items"
+  ],
+  "title": "Manifest",
+  "type": "object"
+}

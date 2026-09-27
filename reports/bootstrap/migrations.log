@@ -1,0 +1,6 @@
+PASS alembic upgrade head
+No new upgrade operations detected.
+PASS alembic check
+PASS alembic downgrade base
+No new upgrade operations detected.
+PASS re-upgrade and schema parity: 22 application tables

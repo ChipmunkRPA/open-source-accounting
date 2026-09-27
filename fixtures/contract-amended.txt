@@ -1,0 +1,7 @@
+FICTIONAL TEST AMENDMENT — ORIGINAL DEMONSTRATION MATERIAL
+Customer: Example Customer. Provider: Example Software.
+The subscription term is extended by six months. The additional subscription fee
+is USD 6,300. Implementation now includes additional migration support at a fee
+of USD 800. The original contract is otherwise unchanged, subject to facts not
+provided in this fixture. The researcher must identify missing terms and avoid
+assuming whether a modification is a separate contract.

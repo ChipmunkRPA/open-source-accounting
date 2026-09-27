@@ -1,0 +1,20 @@
+{
+  "release": "0.6.0",
+  "date": "2026-09-27",
+  "python_tests": 203,
+  "python_tests_passed": true,
+  "authentication_controller_tests": 16,
+  "authentication_controller_tests_passed": true,
+  "typescript_typecheck": true,
+  "demo_frontend_build": true,
+  "content_items": 63,
+  "qa_records": 58,
+  "source_reference_records": 26,
+  "professional_content_review": false,
+  "live_google_mfa_test": false,
+  "live_cloud_deployment": false,
+  "live_gemini_or_stripe_test": false,
+  "production_identity_bundle_built": false,
+  "dependency_install": "Blocked: npm DNS EAI_AGAIN",
+  "git_publication": "Verify actual remote commit; package alone is not publication"
+}

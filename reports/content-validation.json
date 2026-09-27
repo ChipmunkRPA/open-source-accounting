@@ -1,0 +1,12 @@
+{
+  "release": "0.5.0",
+  "items": 42,
+  "references": 22,
+  "words": 16822,
+  "unreviewed": 42,
+  "proprietary_full_text_files": 0,
+  "qa_records": 30,
+  "arithmetic_examples_checked": 3,
+  "technical_accounting_review_performed": false,
+  "external_link_check_performed": false
+}

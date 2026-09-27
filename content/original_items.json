@@ -1,0 +1,4080 @@
+{
+  "schema_version": 1,
+  "baseline_sha256": "3d4f78aa6bfab4323af14ce58cf1b8f77cba2967d984bdbdf378fd9a1ff5529f",
+  "scope": "All original manifest entries; structural/hash/reference-route audit, not professional accounting approval.",
+  "count": 63,
+  "items": [
+    {
+      "id": "authority-and-period",
+      "title": "Build an authority and reporting-period map",
+      "kind": "guide",
+      "topic": "research",
+      "framework": "BOTH",
+      "path": "content/guides/authority-and-period.md",
+      "version": "0.5.0",
+      "sha256": "ff50fe1debf847ed658432cbb29a4716492bc1c8b61255e92b935e1fe1ebdfd8",
+      "hash_checked_this_handoff": true,
+      "word_count": 529,
+      "headings": [
+        "Build an authority and reporting-period map",
+        "The issue",
+        "Research workflow",
+        "Evidence map",
+        "Example",
+        "Agent output and stop conditions",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": false,
+      "agent_eligible": false,
+      "source_families": [
+        "AICPA",
+        "FASB",
+        "IFRS",
+        "PCAOB",
+        "SEC_FRM"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "sec-frm",
+          "url": "https://www.sec.gov/about/divisions-offices/division-corporation-finance/financial-reporting-manual",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_FRM"
+        },
+        {
+          "source_id": "pcaob-as1105",
+          "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS1105",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        }
+      ],
+      "issue_numbers": [
+        1,
+        9,
+        11,
+        12,
+        13,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "The source hierarchy is framework-specific. References and retrieved source bodies are separate evidence states.",
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "revenue-research-map",
+      "title": "Revenue recognition: assemble the five-step evidence file",
+      "kind": "guide",
+      "topic": "revenue",
+      "framework": "US_GAAP",
+      "path": "content/guides/revenue-research-map.md",
+      "version": "0.5.0",
+      "sha256": "3dd33e802692705075e54676282cf4f4abb4863ed6d00f1d84c443b1adb81018",
+      "hash_checked_this_handoff": true,
+      "word_count": 544,
+      "headings": [
+        "Revenue recognition: assemble the five-step evidence file",
+        "Scope and conceptual starting point",
+        "Evidence to assemble",
+        "Original worked scenario",
+        "Common traps",
+        "Deliverable",
+        "Review checklist",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-revenue-project",
+          "url": "https://fasb.org/projects/recently-completed-projects/revenue-recognition-summary",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "saas-implementation",
+      "title": "SaaS implementation fees: investigate the promise before the price",
+      "kind": "guide",
+      "topic": "revenue",
+      "framework": "US_GAAP",
+      "path": "content/guides/saas-implementation.md",
+      "version": "0.5.0",
+      "sha256": "de0ff15d303eb6ccad235fd4438de7485eaa2e5093444ef86cfff995c804b7c4",
+      "hash_checked_this_handoff": true,
+      "word_count": 503,
+      "headings": [
+        "SaaS implementation fees: investigate the promise before the price",
+        "Decision to investigate",
+        "Fact questions",
+        "Two comparison scenarios",
+        "Analysis matrix",
+        "Model answer boundaries",
+        "Reviewer package",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "fasb-revenue-project",
+          "url": "https://fasb.org/projects/recently-completed-projects/revenue-recognition-summary",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "customer-payments",
+      "title": "Payments to customers: route the arrangement before choosing an expense account",
+      "kind": "guide",
+      "topic": "revenue",
+      "framework": "US_GAAP",
+      "path": "content/guides/customer-payments.md",
+      "version": "0.5.0",
+      "sha256": "393dcc091b96c3b99c78185deedab51c0d7df554c4bd5bb801d66945e741e532",
+      "hash_checked_this_handoff": true,
+      "word_count": 462,
+      "headings": [
+        "Payments to customers: route the arrangement before choosing an expense account",
+        "Research boundary",
+        "Intake questions",
+        "Original scenario",
+        "Evidence schedule",
+        "Output and review",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "fasb-customer-equity",
+          "url": "https://fasb.org/news-and-meetings/in-the-news/fasb-improves-guidance-on-share-based-consideration-payable-to-a-customer-421949",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "lease-identification",
+      "title": "Lease identification: examine assets, substitution, and decision rights",
+      "kind": "guide",
+      "topic": "leases",
+      "framework": "US_GAAP",
+      "path": "content/guides/lease-identification.md",
+      "version": "0.5.0",
+      "sha256": "78624e0a6c98409a0143cac8af6bd0a873f0a306d347086320b581645334dd11",
+      "hash_checked_this_handoff": true,
+      "word_count": 465,
+      "headings": [
+        "Lease identification: examine assets, substitution, and decision rights",
+        "Purpose",
+        "Contract-reading worksheet",
+        "Original examples",
+        "Evidence requested",
+        "Agent result",
+        "Stop conditions",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "fasb-leases-pir",
+          "url": "https://fasb.org/news-and-meetings/in-the-news/fasb-issues-post-implementation-review-report-for-its-leases-standard-423362",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "lease-measurement",
+      "title": "Lessee measurement: reconcile inputs before calculating",
+      "kind": "guide",
+      "topic": "leases",
+      "framework": "US_GAAP",
+      "path": "content/guides/lease-measurement.md",
+      "version": "0.5.0",
+      "sha256": "ec49252b1a57f970e26de1d83d411a69a7073c957d3e5d20f67c767053e1d13b",
+      "hash_checked_this_handoff": true,
+      "word_count": 461,
+      "headings": [
+        "Lessee measurement: reconcile inputs before calculating",
+        "Scope",
+        "Required inputs",
+        "Original mathematical illustration",
+        "Reconciliation and sensitivity",
+        "Matters outside the basic calculator",
+        "Review output",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "fasb-leases-pir",
+          "url": "https://fasb.org/news-and-meetings/in-the-news/fasb-issues-post-implementation-review-report-for-its-leases-standard-423362",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "share-based-award-intake",
+      "title": "Share-based compensation: build the award fact file",
+      "kind": "guide",
+      "topic": "stock-compensation",
+      "framework": "US_GAAP",
+      "path": "content/guides/share-based-award-intake.md",
+      "version": "0.5.0",
+      "sha256": "fcd176cd3f655bb609d1fa1890f6c134c93f80b8c55e049ac2336b0d42fc25e4",
+      "hash_checked_this_handoff": true,
+      "word_count": 462,
+      "headings": [
+        "Share-based compensation: build the award fact file",
+        "Research starting point",
+        "Award intake",
+        "Original scenario",
+        "Valuation and classification workpapers",
+        "Common mistakes",
+        "Output",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB",
+        "SEC_SAB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "sec-sab14",
+          "url": "https://www.sec.gov/interps/account/sabcodet14.htm",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_SAB"
+        }
+      ],
+      "issue_numbers": [
+        1,
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "loss-contingencies",
+      "title": "Loss contingencies: recognition, disclosure, and classification are separate questions",
+      "kind": "guide",
+      "topic": "contingencies",
+      "framework": "US_GAAP",
+      "path": "content/guides/loss-contingencies.md",
+      "version": "0.5.0",
+      "sha256": "5663ceb28c3baa14546863083a3a0fdad3c9ca610dbceab4ab1c732b1cd0eb17",
+      "hash_checked_this_handoff": true,
+      "word_count": 491,
+      "headings": [
+        "Loss contingencies: recognition, disclosure, and classification are separate questions",
+        "Establish the applicable model",
+        "Core conceptual analysis",
+        "File structure",
+        "Original scenario",
+        "Current versus noncurrent",
+        "Reviewer deliverable",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB",
+        "SEC_RULES",
+        "SEC_SAB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "sec-sab99",
+          "url": "https://www.sec.gov/interps/account/sab99.htm",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_SAB"
+        }
+      ],
+      "issue_numbers": [
+        1,
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Materiality reference is not the current ASC recognition/classification source; distinguish loss contingencies and income-tax uncertainty.",
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "materiality",
+      "title": "Materiality: use a threshold to begin the analysis, not end it",
+      "kind": "guide",
+      "topic": "financial-reporting",
+      "framework": "US_GAAP",
+      "path": "content/guides/materiality.md",
+      "version": "0.5.0",
+      "sha256": "26aa441390a949a8592dda22d7b27be2aa22de0fdc16089bcebc14e7ee57352d",
+      "hash_checked_this_handoff": true,
+      "word_count": 422,
+      "headings": [
+        "Materiality: use a threshold to begin the analysis, not end it",
+        "Source-based principle",
+        "Build the workpaper",
+        "Original scenario",
+        "Questions for the reviewer",
+        "Output restrictions",
+        "Update triggers",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": false,
+      "agent_eligible": false,
+      "source_families": [
+        "SEC_SAB"
+      ],
+      "source_references": [
+        {
+          "source_id": "sec-sab99",
+          "url": "https://www.sec.gov/interps/account/sab99.htm",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_SAB"
+        }
+      ],
+      "issue_numbers": [
+        1,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Verify each substantive proposition, source version and applicability; this metadata audit is not independent technical review."
+      ]
+    },
+    {
+      "id": "error-measurement",
+      "title": "Misstatement measurement: reconcile current-year effects and accumulated balances",
+      "kind": "guide",
+      "topic": "financial-reporting",
+      "framework": "US_GAAP",
+      "path": "content/guides/error-measurement.md",
+      "version": "0.5.0",
+      "sha256": "0e84725a4ba0e5260b28dd0142d6a7ca15c067faf79549b27ef835f5473e6a7e",
+      "hash_checked_this_handoff": true,
+      "word_count": 460,
+      "headings": [
+        "Misstatement measurement: reconcile current-year effects and accumulated balances",
+        "Source-based principle",
+        "Prepare an error bridge",
+        "Original example",
+        "Distinct judgments",
+        "Agent deliverable",
+        "Stop conditions",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB",
+        "SEC_SAB"
+      ],
+      "source_references": [
+        {
+          "source_id": "sec-sab108",
+          "url": "https://www.sec.gov/rules-regulations/staff-guidance/staff-accounting-bulletins/staff-accounting-bulletin-no-108",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_SAB"
+        },
+        {
+          "source_id": "sec-sab99",
+          "url": "https://www.sec.gov/interps/account/sab99.htm",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_SAB"
+        },
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        1,
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "icfr-deficiencies",
+      "title": "ICFR deficiencies: evaluate potential exposure and remediation evidence",
+      "kind": "guide",
+      "topic": "internal-controls",
+      "framework": "AUDIT",
+      "path": "content/guides/icfr-deficiencies.md",
+      "version": "0.5.0",
+      "sha256": "21c47b3306330ca680fd6650d18971676d95fa3a6568f3beec1bb931e9028f04",
+      "hash_checked_this_handoff": true,
+      "word_count": 398,
+      "headings": [
+        "ICFR deficiencies: evaluate potential exposure and remediation evidence",
+        "Source-based principle",
+        "Define the deficiency",
+        "Original scenario",
+        "Evaluation matrix",
+        "Remediation is its own workstream",
+        "Deliverable and boundary",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": false,
+      "agent_eligible": false,
+      "source_families": [
+        "PCAOB"
+      ],
+      "source_references": [
+        {
+          "source_id": "pcaob-as2201",
+          "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2201",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        }
+      ],
+      "issue_numbers": [
+        11,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Verify each substantive proposition, source version and applicability; this metadata audit is not independent technical review."
+      ]
+    },
+    {
+      "id": "electronic-audit-evidence",
+      "title": "Electronic audit evidence: trace the data before trusting the analysis",
+      "kind": "guide",
+      "topic": "audit-evidence",
+      "framework": "AUDIT",
+      "path": "content/guides/electronic-audit-evidence.md",
+      "version": "0.5.0",
+      "sha256": "c8edb9b97d501551e2d0b920aeb24e7622d2e85bd6e7aa4489947298fcaed399",
+      "hash_checked_this_handoff": true,
+      "word_count": 447,
+      "headings": [
+        "Electronic audit evidence: trace the data before trusting the analysis",
+        "Current research entry point",
+        "Evidence quality",
+        "Data lineage checklist",
+        "Original scenario",
+        "Procedure design",
+        "Agent output",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": false,
+      "agent_eligible": false,
+      "source_families": [
+        "PCAOB"
+      ],
+      "source_references": [
+        {
+          "source_id": "pcaob-as1105",
+          "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS1105",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        },
+        {
+          "source_id": "pcaob-tech-amendments",
+          "url": "https://pcaobus.org/oversight/standards/standard-setting-research-projects/amendments-related-to-certain-aspects-of-designing-and-performing-audit-procedures-that-involve-technology-assisted-data-analysis",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        },
+        {
+          "source_id": "pcaob-electronic-policy",
+          "url": "https://pcaobus.org/news-events/news-releases/news-release-detail/pcaob-posts-board-policy-statement-on-evaluating-the-reliability-of-external-electronic-information-provided-by-the-company",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        }
+      ],
+      "issue_numbers": [
+        11,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Verify each substantive proposition, source version and applicability; this metadata audit is not independent technical review."
+      ]
+    },
+    {
+      "id": "non-gaap-review",
+      "title": "Non-GAAP measures: review the adjustment, label, reconciliation, and presentation",
+      "kind": "guide",
+      "topic": "financial-reporting",
+      "framework": "US_GAAP",
+      "path": "content/guides/non-gaap-review.md",
+      "version": "0.5.0",
+      "sha256": "b9eed05ea8c446e45988b095b9071caa38c0a098510c440159265764a0ff969f",
+      "hash_checked_this_handoff": true,
+      "word_count": 384,
+      "headings": [
+        "Non-GAAP measures: review the adjustment, label, reconciliation, and presentation",
+        "Source-based principle",
+        "Start with the actual proposed disclosure",
+        "Review matrix",
+        "Original scenario",
+        "Reconciliation controls",
+        "Deliverable",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": false,
+      "agent_eligible": false,
+      "source_families": [
+        "SEC_CFI",
+        "SEC_RULES"
+      ],
+      "source_references": [
+        {
+          "source_id": "sec-nongaap",
+          "url": "https://www.sec.gov/rules-regulations/staff-guidance/corporation-finance-interpretations/non-gaap-financial-measures",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_CFI"
+        }
+      ],
+      "issue_numbers": [
+        1,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "The CFI reference alone does not replace Regulation G and S-K Item10(e) requirements."
+      ]
+    },
+    {
+      "id": "yellow-book-scope",
+      "title": "Government auditing: determine the Yellow Book engagement and version",
+      "kind": "guide",
+      "topic": "government-audit",
+      "framework": "AUDIT",
+      "path": "content/guides/yellow-book-scope.md",
+      "version": "0.5.0",
+      "sha256": "cf0dece7557f2a6f5daa7338c2bec21fc3f88978f114dcebd54ef4504c1369e4",
+      "hash_checked_this_handoff": true,
+      "word_count": 430,
+      "headings": [
+        "Government auditing: determine the Yellow Book engagement and version",
+        "Scope",
+        "Applicability note",
+        "Intake worksheet",
+        "Original planning scenario",
+        "Evidence and review",
+        "Agent boundary",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": false,
+      "agent_eligible": false,
+      "source_families": [
+        "GAO"
+      ],
+      "source_references": [
+        {
+          "source_id": "gao-yellowbook",
+          "url": "https://www.gao.gov/yellowbook",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "GAO"
+        },
+        {
+          "source_id": "gao-yellowbook-2024",
+          "url": "https://www.gao.gov/products/gao-24-106786",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "GAO"
+        },
+        {
+          "source_id": "gao-qm-faq",
+          "url": "https://files.gao.gov/reports/GAO-26-108710/index.html",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "GAO"
+        }
+      ],
+      "issue_numbers": [
+        15,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Verify each substantive proposition, source version and applicability; this metadata audit is not independent technical review."
+      ]
+    },
+    {
+      "id": "case-ssp-allocation",
+      "title": "Worked case: allocate a fixed price using confirmed standalone prices",
+      "kind": "case",
+      "topic": "revenue",
+      "framework": "US_GAAP",
+      "path": "content/cases/case-ssp-allocation.md",
+      "version": "0.5.0",
+      "sha256": "854f04b6571a0cffb7a630d281fe94fe9a5573f806828b202aeaf895eb8f1f1c",
+      "hash_checked_this_handoff": true,
+      "word_count": 342,
+      "headings": [
+        "Worked case: allocate a fixed price using confirmed standalone prices",
+        "Confirmed hypothetical assumptions",
+        "Calculation",
+        "Timing remains separate",
+        "Inputs that change the case",
+        "Expected output",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification.",
+        "Recompute stipulated arithmetic separately; mathematical correctness does not establish the accounting recognition/classification conclusion."
+      ]
+    },
+    {
+      "id": "case-lease-present-value",
+      "title": "Worked case: a three-payment present-value schedule",
+      "kind": "case",
+      "topic": "leases",
+      "framework": "US_GAAP",
+      "path": "content/cases/case-lease-present-value.md",
+      "version": "0.5.0",
+      "sha256": "bada27c4c46fb7107730acbbac0c0a1d12bbac5ebee2ae958976cafc40ad4061",
+      "hash_checked_this_handoff": true,
+      "word_count": 361,
+      "headings": [
+        "Worked case: a three-payment present-value schedule",
+        "Hypothetical input contract",
+        "Calculation and rounding",
+        "Boundary",
+        "Reviewer questions",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification.",
+        "Recompute stipulated arithmetic separately; mathematical correctness does not establish the accounting recognition/classification conclusion."
+      ]
+    },
+    {
+      "id": "case-implementation-alternatives",
+      "title": "Worked case: the same implementation fee, different missing facts",
+      "kind": "case",
+      "topic": "revenue",
+      "framework": "US_GAAP",
+      "path": "content/cases/case-implementation-alternatives.md",
+      "version": "0.5.0",
+      "sha256": "b08b5f230e6c5879650b424ab0af7e56f11926a890fdce77d0275965a0787e59",
+      "hash_checked_this_handoff": true,
+      "word_count": 357,
+      "headings": [
+        "Worked case: the same implementation fee, different missing facts",
+        "Shared facts",
+        "Scenario A: retained deliverable",
+        "Scenario B: internal activation",
+        "Required agent answer",
+        "Evaluation conditions",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "fasb-revenue-project",
+          "url": "https://fasb.org/projects/recently-completed-projects/revenue-recognition-summary",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification.",
+        "Recompute stipulated arithmetic separately; mathematical correctness does not establish the accounting recognition/classification conclusion."
+      ]
+    },
+    {
+      "id": "case-accumulated-error",
+      "title": "Worked case: a liability error accumulates over three years",
+      "kind": "case",
+      "topic": "financial-reporting",
+      "framework": "US_GAAP",
+      "path": "content/cases/case-accumulated-error.md",
+      "version": "0.5.0",
+      "sha256": "6963bfa909fc288d956e2abdda2724baf7ae0d42cad75e1d982f33201dc5606a",
+      "hash_checked_this_handoff": true,
+      "word_count": 339,
+      "headings": [
+        "Worked case: a liability error accumulates over three years",
+        "Hypothetical facts",
+        "Arithmetic",
+        "Research task",
+        "Missing information",
+        "Expected agent result",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": false,
+      "agent_eligible": false,
+      "source_families": [
+        "SEC_SAB"
+      ],
+      "source_references": [
+        {
+          "source_id": "sec-sab108",
+          "url": "https://www.sec.gov/rules-regulations/staff-guidance/staff-accounting-bulletins/staff-accounting-bulletin-no-108",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_SAB"
+        },
+        {
+          "source_id": "sec-sab99",
+          "url": "https://www.sec.gov/interps/account/sab99.htm",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_SAB"
+        }
+      ],
+      "issue_numbers": [
+        1,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Recompute stipulated arithmetic separately; mathematical correctness does not establish the accounting recognition/classification conclusion."
+      ]
+    },
+    {
+      "id": "case-control-remediation",
+      "title": "Worked case: a redesigned review control has not yet operated",
+      "kind": "case",
+      "topic": "internal-controls",
+      "framework": "AUDIT",
+      "path": "content/cases/case-control-remediation.md",
+      "version": "0.5.0",
+      "sha256": "a023ef3ba466541b3138ae91f695abb7a1f1464498ddcf47183bfc26c8164d0b",
+      "hash_checked_this_handoff": true,
+      "word_count": 325,
+      "headings": [
+        "Worked case: a redesigned review control has not yet operated",
+        "Hypothetical facts",
+        "Research questions",
+        "Source relationship",
+        "Agent output",
+        "Evaluation failure conditions",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": false,
+      "agent_eligible": false,
+      "source_families": [
+        "PCAOB"
+      ],
+      "source_references": [
+        {
+          "source_id": "pcaob-as2201",
+          "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2201",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        }
+      ],
+      "issue_numbers": [
+        11,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Recompute stipulated arithmetic separately; mathematical correctness does not establish the accounting recognition/classification conclusion."
+      ]
+    },
+    {
+      "id": "technical-memo-template",
+      "title": "Technical accounting memorandum",
+      "kind": "template",
+      "topic": "research",
+      "framework": "BOTH",
+      "path": "content/templates/technical-memo-template.md",
+      "version": "0.5.0",
+      "sha256": "abf80ddbfae5a2709166b4c68288afef867eee6e735398d481b6fbd38d4ecadf",
+      "hash_checked_this_handoff": true,
+      "word_count": 306,
+      "headings": [
+        "Technical accounting memorandum",
+        "Cover and review state",
+        "Issue",
+        "Confirmed facts and assumptions",
+        "Applicable requirements",
+        "Analysis and alternatives",
+        "Calculations and draft entries",
+        "Conditional conclusion",
+        "Review and changes",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "clause-evidence-template",
+      "title": "Contract clause-to-criterion matrix",
+      "kind": "template",
+      "topic": "revenue",
+      "framework": "US_GAAP",
+      "path": "content/templates/clause-evidence-template.md",
+      "version": "0.5.0",
+      "sha256": "fe8fd56dbbc00eb5dfca0ebe966963979e6bc3a099d52026722f17e51d2ded5f",
+      "hash_checked_this_handoff": true,
+      "word_count": 240,
+      "headings": [
+        "Contract clause-to-criterion matrix",
+        "Purpose",
+        "Matrix",
+        "Document control",
+        "Review rules",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "audit-evidence-template",
+      "title": "Audit evidence request and procedure tracker",
+      "kind": "template",
+      "topic": "audit-evidence",
+      "framework": "AUDIT",
+      "path": "content/templates/audit-evidence-template.md",
+      "version": "0.5.0",
+      "sha256": "c2e7493ccc558a7b3011b05f85a1ab4c3176eabf857c1015f4a7c98768ec46e7",
+      "hash_checked_this_handoff": true,
+      "word_count": 213,
+      "headings": [
+        "Audit evidence request and procedure tracker",
+        "Engagement context",
+        "Request matrix",
+        "Procedure tracker",
+        "Data limitations",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": false,
+      "agent_eligible": false,
+      "source_families": [
+        "PCAOB"
+      ],
+      "source_references": [
+        {
+          "source_id": "pcaob-as1105",
+          "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS1105",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        }
+      ],
+      "issue_numbers": [
+        11,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Verify each substantive proposition, source version and applicability; this metadata audit is not independent technical review."
+      ]
+    },
+    {
+      "id": "disclosure-review-template",
+      "title": "Disclosure review issue log",
+      "kind": "template",
+      "topic": "financial-reporting",
+      "framework": "US_GAAP",
+      "path": "content/templates/disclosure-review-template.md",
+      "version": "0.5.0",
+      "sha256": "a321f5732603abe89740af88e0a711f92c84e7cfa821364250486748330d5c78",
+      "hash_checked_this_handoff": true,
+      "word_count": 203,
+      "headings": [
+        "Disclosure review issue log",
+        "Scope",
+        "Issue log",
+        "Cross-checks",
+        "Release rules",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": false,
+      "agent_eligible": false,
+      "source_families": [
+        "SEC_FRM"
+      ],
+      "source_references": [
+        {
+          "source_id": "sec-frm",
+          "url": "https://www.sec.gov/about/divisions-offices/division-corporation-finance/financial-reporting-manual",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_FRM"
+        }
+      ],
+      "issue_numbers": [
+        1,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Verify each substantive proposition, source version and applicability; this metadata audit is not independent technical review."
+      ]
+    },
+    {
+      "id": "content-review-template",
+      "title": "Technical and rights review for a contributed article",
+      "kind": "template",
+      "topic": "research",
+      "framework": "BOTH",
+      "path": "content/templates/content-review-template.md",
+      "version": "0.5.0",
+      "sha256": "15f136d791385ccc50e83f2ed0f24525a4890b6140ed74ac355319a9ed2f4deb",
+      "hash_checked_this_handoff": true,
+      "word_count": 227,
+      "headings": [
+        "Technical and rights review for a contributed article",
+        "Submission",
+        "Rights review",
+        "Technical review",
+        "Publication decision",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": false,
+      "agent_eligible": false,
+      "source_families": [
+        "FEDERAL_LAW",
+        "OPEN_LITERATURE"
+      ],
+      "source_references": [
+        {
+          "source_id": "fair-use",
+          "url": "https://www.copyright.gov/fair-use/more-info.html",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FEDERAL_LAW"
+        },
+        {
+          "source_id": "cc-by-4",
+          "url": "https://creativecommons.org/licenses/by/4.0/",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "OPEN_LITERATURE"
+        }
+      ],
+      "issue_numbers": [
+        16,
+        19,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Verify each substantive proposition, source version and applicability; this metadata audit is not independent technical review."
+      ]
+    },
+    {
+      "id": "source-onboarding-template",
+      "title": "Source onboarding and acquisition checklist",
+      "kind": "template",
+      "topic": "research",
+      "framework": "BOTH",
+      "path": "content/templates/source-onboarding-template.md",
+      "version": "0.5.0",
+      "sha256": "9f137235eeecc349ecfe2da24f4ed51692831469a7eff7894cc5dfcc991f2c25",
+      "hash_checked_this_handoff": true,
+      "word_count": 269,
+      "headings": [
+        "Source onboarding and acquisition checklist",
+        "Source identity",
+        "Permission matrix",
+        "Operational checks",
+        "Version controls",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": false,
+      "agent_eligible": false,
+      "source_families": [
+        "PCAOB",
+        "SEC_FILINGS"
+      ],
+      "source_references": [
+        {
+          "source_id": "sec-reuse",
+          "url": "https://www.sec.gov/about/webmaster-frequently-asked-questions",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_FILINGS"
+        },
+        {
+          "source_id": "pcaob-terms",
+          "url": "https://pcaobus.org/privacypolicy",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        }
+      ],
+      "issue_numbers": [
+        2,
+        11,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Verify each substantive proposition, source version and applicability; this metadata audit is not independent technical review."
+      ]
+    },
+    {
+      "id": "playbook-deep-research",
+      "title": "Deep research — Agent playbook",
+      "kind": "playbook",
+      "topic": "research",
+      "framework": "BOTH",
+      "path": "content/playbooks/playbook-deep-research.md",
+      "version": "0.5.0",
+      "sha256": "4246559afddf3279a1b15d71015e92b561db21f16b84fee6abc3179ff7389845",
+      "hash_checked_this_handoff": true,
+      "word_count": 375,
+      "headings": [
+        "Deep research — Agent playbook",
+        "Purpose and application status",
+        "Required intake",
+        "Execution plan",
+        "Expected deliverable",
+        "Stop or qualify the answer",
+        "Reviewer handoff",
+        "Data and rights boundaries",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB",
+        "SEC_FRM"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "sec-frm",
+          "url": "https://www.sec.gov/about/divisions-offices/division-corporation-finance/financial-reporting-manual",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_FRM"
+        }
+      ],
+      "issue_numbers": [
+        1,
+        9,
+        22,
+        23,
+        31
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification.",
+        "A workflow description is not proof of live implementation, real retrieved sources or professional quality."
+      ]
+    },
+    {
+      "id": "playbook-memo",
+      "title": "Accounting memorandum — Agent playbook",
+      "kind": "playbook",
+      "topic": "research",
+      "framework": "BOTH",
+      "path": "content/playbooks/playbook-memo.md",
+      "version": "0.5.0",
+      "sha256": "090e6637b786a8b6534a7cf8ac789441babf155f4e1baae27c72ec906cfbd4b6",
+      "hash_checked_this_handoff": true,
+      "word_count": 375,
+      "headings": [
+        "Accounting memorandum — Agent playbook",
+        "Purpose and application status",
+        "Required intake",
+        "Execution plan",
+        "Expected deliverable",
+        "Stop or qualify the answer",
+        "Reviewer handoff",
+        "Data and rights boundaries",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB",
+        "SEC_FRM"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "sec-frm",
+          "url": "https://www.sec.gov/about/divisions-offices/division-corporation-finance/financial-reporting-manual",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_FRM"
+        }
+      ],
+      "issue_numbers": [
+        1,
+        9,
+        22,
+        23,
+        31
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification.",
+        "A workflow description is not proof of live implementation, real retrieved sources or professional quality."
+      ]
+    },
+    {
+      "id": "playbook-document-gaap",
+      "title": "Uploaded documents plus GAAP — Agent playbook",
+      "kind": "playbook",
+      "topic": "documents",
+      "framework": "US_GAAP",
+      "path": "content/playbooks/playbook-document-gaap.md",
+      "version": "0.5.0",
+      "sha256": "905c139da02c38fc11a89f0af2e2c3823e976416a11d12508f8521df85062a20",
+      "hash_checked_this_handoff": true,
+      "word_count": 367,
+      "headings": [
+        "Uploaded documents plus GAAP — Agent playbook",
+        "Purpose and application status",
+        "Required intake",
+        "Execution plan",
+        "Expected deliverable",
+        "Stop or qualify the answer",
+        "Reviewer handoff",
+        "Data and rights boundaries",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB",
+        "PCAOB",
+        "PRIVATE_UPLOADS"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "pcaob-as1105",
+          "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS1105",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        11,
+        22,
+        23,
+        24,
+        29,
+        31,
+        34
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Document possession does not authorize every downstream AI operation; enforce workspace/privacy and publisher restrictions.",
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification.",
+        "A workflow description is not proof of live implementation, real retrieved sources or professional quality."
+      ]
+    },
+    {
+      "id": "playbook-contract-compare",
+      "title": "Contract and amendment comparison — Agent playbook",
+      "kind": "playbook",
+      "topic": "documents",
+      "framework": "US_GAAP",
+      "path": "content/playbooks/playbook-contract-compare.md",
+      "version": "0.5.0",
+      "sha256": "a1c22fdb48a090bf959df09710c7f9a97488b7fcd2033daeac38dde580789aef",
+      "hash_checked_this_handoff": true,
+      "word_count": 346,
+      "headings": [
+        "Contract and amendment comparison — Agent playbook",
+        "Purpose and application status",
+        "Required intake",
+        "Execution plan",
+        "Expected deliverable",
+        "Stop or qualify the answer",
+        "Reviewer handoff",
+        "Data and rights boundaries",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB",
+        "PRIVATE_UPLOADS"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23,
+        24,
+        29,
+        31,
+        34
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "A textual clause change is not itself an accounting modification conclusion.",
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification.",
+        "A workflow description is not proof of live implementation, real retrieved sources or professional quality."
+      ]
+    },
+    {
+      "id": "playbook-memo-review",
+      "title": "Challenge my memo — Agent playbook",
+      "kind": "playbook",
+      "topic": "research",
+      "framework": "BOTH",
+      "path": "content/playbooks/playbook-memo-review.md",
+      "version": "0.5.0",
+      "sha256": "2d6e853db8c7d98f1045e84365197cabc96784cd3fa1251380902cb788d5448f",
+      "hash_checked_this_handoff": true,
+      "word_count": 364,
+      "headings": [
+        "Challenge my memo — Agent playbook",
+        "Purpose and application status",
+        "Required intake",
+        "Execution plan",
+        "Expected deliverable",
+        "Stop or qualify the answer",
+        "Reviewer handoff",
+        "Data and rights boundaries",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB",
+        "PRIVATE_UPLOADS",
+        "SEC_FRM"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "sec-frm",
+          "url": "https://www.sec.gov/about/divisions-offices/division-corporation-finance/financial-reporting-manual",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_FRM"
+        }
+      ],
+      "issue_numbers": [
+        1,
+        9,
+        22,
+        23,
+        24,
+        29,
+        31,
+        34
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "AI critique is not an independent professional review; separate observed gaps from unsupported replacements.",
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification.",
+        "A workflow description is not proof of live implementation, real retrieved sources or professional quality."
+      ]
+    },
+    {
+      "id": "playbook-disclosure-review",
+      "title": "Disclosure gap review — Agent playbook",
+      "kind": "playbook",
+      "topic": "disclosures",
+      "framework": "US_GAAP",
+      "path": "content/playbooks/playbook-disclosure-review.md",
+      "version": "0.5.0",
+      "sha256": "d2a0875a1c07030267da34bf1e487a78c2fa1d4defe90168de8d95a3c1ddb14a",
+      "hash_checked_this_handoff": true,
+      "word_count": 369,
+      "headings": [
+        "Disclosure gap review — Agent playbook",
+        "Purpose and application status",
+        "Required intake",
+        "Execution plan",
+        "Expected deliverable",
+        "Stop or qualify the answer",
+        "Reviewer handoff",
+        "Data and rights boundaries",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB",
+        "SEC_CFI",
+        "SEC_FRM"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "sec-frm",
+          "url": "https://www.sec.gov/about/divisions-offices/division-corporation-finance/financial-reporting-manual",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_FRM"
+        },
+        {
+          "source_id": "sec-nongaap",
+          "url": "https://www.sec.gov/rules-regulations/staff-guidance/corporation-finance-interpretations/non-gaap-financial-measures",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_CFI"
+        }
+      ],
+      "issue_numbers": [
+        1,
+        9,
+        22,
+        23,
+        33
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification.",
+        "A workflow description is not proof of live implementation, real retrieved sources or professional quality."
+      ]
+    },
+    {
+      "id": "playbook-policy-draft",
+      "title": "Accounting policy drafting — Agent playbook",
+      "kind": "playbook",
+      "topic": "research",
+      "framework": "BOTH",
+      "path": "content/playbooks/playbook-policy-draft.md",
+      "version": "0.5.0",
+      "sha256": "94a8d40cebfb5bcf18f8f9876753cab7149846891b2e0ca9de1b13e31f942c40",
+      "hash_checked_this_handoff": true,
+      "word_count": 332,
+      "headings": [
+        "Accounting policy drafting — Agent playbook",
+        "Purpose and application status",
+        "Required intake",
+        "Execution plan",
+        "Expected deliverable",
+        "Stop or qualify the answer",
+        "Reviewer handoff",
+        "Data and rights boundaries",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23,
+        32
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification.",
+        "A workflow description is not proof of live implementation, real retrieved sources or professional quality."
+      ]
+    },
+    {
+      "id": "playbook-revenue-workpaper",
+      "title": "Revenue contract workpaper — Agent playbook",
+      "kind": "playbook",
+      "topic": "revenue",
+      "framework": "US_GAAP",
+      "path": "content/playbooks/playbook-revenue-workpaper.md",
+      "version": "0.5.0",
+      "sha256": "cbefb8812d3b2e0971689a4629e4ef1bca213af73f58cc1f68772e03320613e1",
+      "hash_checked_this_handoff": true,
+      "word_count": 355,
+      "headings": [
+        "Revenue contract workpaper — Agent playbook",
+        "Purpose and application status",
+        "Required intake",
+        "Execution plan",
+        "Expected deliverable",
+        "Stop or qualify the answer",
+        "Reviewer handoff",
+        "Data and rights boundaries",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "fasb-revenue-project",
+          "url": "https://fasb.org/projects/recently-completed-projects/revenue-recognition-summary",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23,
+        32
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification.",
+        "A workflow description is not proof of live implementation, real retrieved sources or professional quality."
+      ]
+    },
+    {
+      "id": "playbook-lease-workpaper",
+      "title": "Lease assessment and schedule — Agent playbook",
+      "kind": "playbook",
+      "topic": "leases",
+      "framework": "US_GAAP",
+      "path": "content/playbooks/playbook-lease-workpaper.md",
+      "version": "0.5.0",
+      "sha256": "2d135df01f0e54aed6066cb7a56617a7e405f83bccf24c2d19891ffe94d3e1f6",
+      "hash_checked_this_handoff": true,
+      "word_count": 361,
+      "headings": [
+        "Lease assessment and schedule — Agent playbook",
+        "Purpose and application status",
+        "Required intake",
+        "Execution plan",
+        "Expected deliverable",
+        "Stop or qualify the answer",
+        "Reviewer handoff",
+        "Data and rights boundaries",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "fasb-leases-pir",
+          "url": "https://fasb.org/news-and-meetings/in-the-news/fasb-issues-post-implementation-review-report-for-its-leases-standard-423362",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23,
+        32
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification.",
+        "A workflow description is not proof of live implementation, real retrieved sources or professional quality."
+      ]
+    },
+    {
+      "id": "playbook-disclosure-benchmark",
+      "title": "Disclosure benchmarking — Agent playbook",
+      "kind": "playbook",
+      "topic": "disclosures",
+      "framework": "US_GAAP",
+      "path": "content/playbooks/playbook-disclosure-benchmark.md",
+      "version": "0.5.0",
+      "sha256": "21259a2a43fe7e1bfb74077a198f02e41729c6800d0cdc50e8aa3b8054e2b211",
+      "hash_checked_this_handoff": true,
+      "word_count": 335,
+      "headings": [
+        "Disclosure benchmarking — Agent playbook",
+        "Purpose and application status",
+        "Required intake",
+        "Execution plan",
+        "Expected deliverable",
+        "Stop or qualify the answer",
+        "Reviewer handoff",
+        "Data and rights boundaries",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": false,
+      "agent_eligible": false,
+      "source_families": [
+        "SEC_FILINGS",
+        "SEC_FRM",
+        "SEC_XBRL"
+      ],
+      "source_references": [
+        {
+          "source_id": "sec-frm",
+          "url": "https://www.sec.gov/about/divisions-offices/division-corporation-finance/financial-reporting-manual",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_FRM"
+        },
+        {
+          "source_id": "sec-reuse",
+          "url": "https://www.sec.gov/about/webmaster-frequently-asked-questions",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_FILINGS"
+        }
+      ],
+      "issue_numbers": [
+        1,
+        2,
+        22,
+        23,
+        33
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "A playbook is not a real company-practice collection. Acquire a declared issuer/period pilot and original disclosure locators.",
+        "A workflow description is not proof of live implementation, real retrieved sources or professional quality."
+      ]
+    },
+    {
+      "id": "playbook-sec-response",
+      "title": "SEC comment-response preparation — Agent playbook",
+      "kind": "playbook",
+      "topic": "disclosures",
+      "framework": "US_GAAP",
+      "path": "content/playbooks/playbook-sec-response.md",
+      "version": "0.5.0",
+      "sha256": "290c3b9bcadd356d6b224901825cf90f99caed92076f6eb534c441877b5eecb6",
+      "hash_checked_this_handoff": true,
+      "word_count": 342,
+      "headings": [
+        "SEC comment-response preparation — Agent playbook",
+        "Purpose and application status",
+        "Required intake",
+        "Execution plan",
+        "Expected deliverable",
+        "Stop or qualify the answer",
+        "Reviewer handoff",
+        "Data and rights boundaries",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": false,
+      "agent_eligible": false,
+      "source_families": [
+        "SEC_AUDIT_ENFORCEMENT",
+        "SEC_CORRESPONDENCE",
+        "SEC_FILINGS",
+        "SEC_FRM"
+      ],
+      "source_references": [
+        {
+          "source_id": "sec-frm",
+          "url": "https://www.sec.gov/about/divisions-offices/division-corporation-finance/financial-reporting-manual",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_FRM"
+        },
+        {
+          "source_id": "sec-reuse",
+          "url": "https://www.sec.gov/about/webmaster-frequently-asked-questions",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_FILINGS"
+        }
+      ],
+      "issue_numbers": [
+        1,
+        2,
+        3,
+        22,
+        23,
+        33
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Acquire actual complete/incomplete comment-response threads; do not infer SEC approval from closure.",
+        "A workflow description is not proof of live implementation, real retrieved sources or professional quality."
+      ]
+    },
+    {
+      "id": "playbook-audit-prep",
+      "title": "Audit preparation pack — Agent playbook",
+      "kind": "playbook",
+      "topic": "audit",
+      "framework": "BOTH",
+      "path": "content/playbooks/playbook-audit-prep.md",
+      "version": "0.5.0",
+      "sha256": "ad5356618bdc1fcf91d498d0ace326600773ed9e6d1a809bf8ad70ff7d6eda38",
+      "hash_checked_this_handoff": true,
+      "word_count": 333,
+      "headings": [
+        "Audit preparation pack — Agent playbook",
+        "Purpose and application status",
+        "Required intake",
+        "Execution plan",
+        "Expected deliverable",
+        "Stop or qualify the answer",
+        "Reviewer handoff",
+        "Data and rights boundaries",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": false,
+      "agent_eligible": false,
+      "source_families": [
+        "AICPA",
+        "GAO",
+        "IAASB",
+        "PCAOB"
+      ],
+      "source_references": [
+        {
+          "source_id": "pcaob-as1105",
+          "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS1105",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        },
+        {
+          "source_id": "pcaob-as2201",
+          "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2201",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        }
+      ],
+      "issue_numbers": [
+        11,
+        12,
+        14,
+        15,
+        22,
+        23,
+        33
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current references are PCAOB-focused. Add distinct regime routes before nonissuer/international/government claims.",
+        "A workflow description is not proof of live implementation, real retrieved sources or professional quality."
+      ]
+    },
+    {
+      "id": "playbook-controls-review",
+      "title": "Control design and deficiency review — Agent playbook",
+      "kind": "playbook",
+      "topic": "controls",
+      "framework": "BOTH",
+      "path": "content/playbooks/playbook-controls-review.md",
+      "version": "0.5.0",
+      "sha256": "549e0ea086b5a2e312f725ba3a4dfc3ecd01853cd2f5c173b2912e76deee0ce8",
+      "hash_checked_this_handoff": true,
+      "word_count": 319,
+      "headings": [
+        "Control design and deficiency review — Agent playbook",
+        "Purpose and application status",
+        "Required intake",
+        "Execution plan",
+        "Expected deliverable",
+        "Stop or qualify the answer",
+        "Reviewer handoff",
+        "Data and rights boundaries",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": false,
+      "agent_eligible": false,
+      "source_families": [
+        "COSO",
+        "IIA_ISACA",
+        "NIST",
+        "PCAOB"
+      ],
+      "source_references": [
+        {
+          "source_id": "pcaob-as2201",
+          "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2201",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        }
+      ],
+      "issue_numbers": [
+        11,
+        17,
+        22,
+        23,
+        33
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Separate design observations from performed operating-effectiveness procedures; framework references need their own permissions.",
+        "A workflow description is not proof of live implementation, real retrieved sources or professional quality."
+      ]
+    },
+    {
+      "id": "playbook-close-pack",
+      "title": "Close issue and evidence pack — Agent playbook",
+      "kind": "playbook",
+      "topic": "research",
+      "framework": "BOTH",
+      "path": "content/playbooks/playbook-close-pack.md",
+      "version": "0.5.0",
+      "sha256": "e0ce97636dfedb01bb204bc0a62db7c0fb314e8f9a8b3c8462b299e47020f7b9",
+      "hash_checked_this_handoff": true,
+      "word_count": 381,
+      "headings": [
+        "Close issue and evidence pack — Agent playbook",
+        "Purpose and application status",
+        "Required intake",
+        "Execution plan",
+        "Expected deliverable",
+        "Stop or qualify the answer",
+        "Reviewer handoff",
+        "Data and rights boundaries",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB",
+        "SEC_SAB"
+      ],
+      "source_references": [
+        {
+          "source_id": "sec-sab99",
+          "url": "https://www.sec.gov/interps/account/sab99.htm",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_SAB"
+        },
+        {
+          "source_id": "sec-sab108",
+          "url": "https://www.sec.gov/rules-regulations/staff-guidance/staff-accounting-bulletins/staff-accounting-bulletin-no-108",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_SAB"
+        },
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        1,
+        9,
+        22,
+        23,
+        32
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification.",
+        "A workflow description is not proof of live implementation, real retrieved sources or professional quality."
+      ]
+    },
+    {
+      "id": "playbook-framework-compare",
+      "title": "U.S. GAAP and IFRS issue comparison — Agent playbook",
+      "kind": "playbook",
+      "topic": "research",
+      "framework": "BOTH",
+      "path": "content/playbooks/playbook-framework-compare.md",
+      "version": "0.5.0",
+      "sha256": "29f9ec951baaae0352bd76ba188fe6aca2a6862083c4bbebbc028bf944c813ff",
+      "hash_checked_this_handoff": true,
+      "word_count": 339,
+      "headings": [
+        "U.S. GAAP and IFRS issue comparison — Agent playbook",
+        "Purpose and application status",
+        "Required intake",
+        "Execution plan",
+        "Expected deliverable",
+        "Stop or qualify the answer",
+        "Reviewer handoff",
+        "Data and rights boundaries",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB",
+        "IFRS"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        13,
+        22,
+        23,
+        32
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "The current reference list contains only FASB. Add an actual IASB/IFRS reference and adoption map before claiming a two-framework comparison.",
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification.",
+        "A workflow description is not proof of live implementation, real retrieved sources or professional quality."
+      ]
+    },
+    {
+      "id": "playbook-standards-watch",
+      "title": "Opt-in standards impact watch — Agent playbook",
+      "kind": "playbook",
+      "topic": "research",
+      "framework": "BOTH",
+      "path": "content/playbooks/playbook-standards-watch.md",
+      "version": "0.5.0",
+      "sha256": "c6df5c0471bc24f3bd6ce85a0c59bed5aafe45dccc5975adaa5d807ee1f8c8a1",
+      "hash_checked_this_handoff": true,
+      "word_count": 360,
+      "headings": [
+        "Opt-in standards impact watch — Agent playbook",
+        "Purpose and application status",
+        "Required intake",
+        "Execution plan",
+        "Expected deliverable",
+        "Stop or qualify the answer",
+        "Reviewer handoff",
+        "Data and rights boundaries",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB",
+        "GAO"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "gao-yellowbook",
+          "url": "https://www.gao.gov/yellowbook",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "GAO"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        15,
+        22,
+        23,
+        37
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification.",
+        "A workflow description is not proof of live implementation, real retrieved sources or professional quality."
+      ]
+    },
+    {
+      "id": "research-study-questions",
+      "title": "30 research and accounting study questions",
+      "kind": "qa_set",
+      "topic": "learning",
+      "framework": "BOTH",
+      "path": "content/qa/research-study-questions.md",
+      "version": "0.5.0",
+      "sha256": "2c25516d646e3464bccfdb5965e83a0a9750306e5608f98bccae1132493842c5",
+      "hash_checked_this_handoff": true,
+      "word_count": 1529,
+      "headings": [
+        "30 research and accounting study questions",
+        "How to use this set",
+        "qa-001: Does an ASC citation prove that the agent read the standard?",
+        "qa-002: Is the SEC Financial Reporting Manual itself authoritative?",
+        "qa-003: Can a peer disclosure establish the correct accounting?",
+        "qa-004: Does a nonrefundable implementation fee prove immediate revenue?",
+        "qa-005: What evidence helps assess implementation services?",
+        "qa-006: What is a relative-SSP allocation with an agreed 80:20 ratio and 90,000 price?",
+        "qa-007: Does invoicing identify the revenue date?",
+        "qa-008: Can one generic percentage allocation be used for every contract?",
+        "qa-009: How should a payment to a customer be researched?",
+        "qa-010: What additional issue arises with equity paid to a customer?",
+        "qa-011: Does a contract calling an arrangement a service exclude a lease?",
+        "qa-012: Does a three-year lease schedule establish classification?",
+        "qa-013: What is the PV of three year-end 10,000 payments at 6%?",
+        "qa-014: Why might a displayed schedule differ by one cent?",
+        "qa-015: Is an award’s headline grant value enough to book compensation?",
+        "qa-016: Does a modification automatically preserve the original expense pattern?",
+        "qa-017: Can a legal-loss reserve be classified using an internal label alone?",
+        "qa-018: Should income-tax uncertainty and other loss contingencies be treated as identical?",
+        "qa-019: Is 5% an automatic immateriality rule?",
+        "qa-020: Is a small amount always immaterial?",
+        "qa-021: Why calculate errors in more than one way?",
+        "qa-022: If a fictional error adds 12,000 per year for three years, what is accumulated?",
+        "qa-023: Does an ICFR deficiency require an actual misstatement?",
+        "qa-024: Does a compensating control automatically eliminate a deficiency?",
+        "qa-025: Does installing a new control prove remediation?",
+        "qa-026: Is more evidence always better evidence?",
+        "qa-027: What should be checked for an external electronic report supplied by management?",
+        "qa-028: Can explanatory notes cure every misleading non-GAAP measure?",
+        "qa-029: When does the 2024 Yellow Book generally apply?",
+        "qa-030: Does paying for Agent license proprietary accounting standards?",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB",
+        "GAO",
+        "PCAOB",
+        "SEC_CFI",
+        "SEC_FRM",
+        "SEC_SAB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "sec-frm",
+          "url": "https://www.sec.gov/about/divisions-offices/division-corporation-finance/financial-reporting-manual",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_FRM"
+        },
+        {
+          "source_id": "fasb-customer-equity",
+          "url": "https://fasb.org/news-and-meetings/in-the-news/fasb-improves-guidance-on-share-based-consideration-payable-to-a-customer-421949",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "sec-sab14",
+          "url": "https://www.sec.gov/interps/account/sabcodet14.htm",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_SAB"
+        },
+        {
+          "source_id": "sec-sab99",
+          "url": "https://www.sec.gov/interps/account/sab99.htm",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_SAB"
+        },
+        {
+          "source_id": "sec-sab108",
+          "url": "https://www.sec.gov/rules-regulations/staff-guidance/staff-accounting-bulletins/staff-accounting-bulletin-no-108",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_SAB"
+        },
+        {
+          "source_id": "pcaob-as2201",
+          "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2201",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        },
+        {
+          "source_id": "pcaob-as1105",
+          "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS1105",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        },
+        {
+          "source_id": "pcaob-electronic-policy",
+          "url": "https://pcaobus.org/news-events/news-releases/news-release-detail/pcaob-posts-board-policy-statement-on-evaluating-the-reliability-of-external-electronic-information-provided-by-the-company",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        },
+        {
+          "source_id": "sec-nongaap",
+          "url": "https://www.sec.gov/rules-regulations/staff-guidance/corporation-finance-interpretations/non-gaap-financial-measures",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "SEC_CFI"
+        },
+        {
+          "source_id": "gao-yellowbook",
+          "url": "https://www.gao.gov/yellowbook",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "GAO"
+        },
+        {
+          "source_id": "pcaob-terms",
+          "url": "https://pcaobus.org/privacypolicy",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        }
+      ],
+      "issue_numbers": [
+        1,
+        9,
+        11,
+        15,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification.",
+        "Educational questions are not an adjudicated benchmark; expected authority, alternatives and abstention need real independent review."
+      ]
+    },
+    {
+      "id": "cash-flow-workbook",
+      "title": "Cash flows: reconcile before classifying",
+      "kind": "guide",
+      "topic": "cash-flows",
+      "framework": "US_GAAP",
+      "path": "content/guides/cash-flow-workbook.md",
+      "version": "0.6.0",
+      "sha256": "c998919501ab87854350a38ccc14b5b16f142da1b562014fddefcf074ef73705",
+      "hash_checked_this_handoff": true,
+      "word_count": 477,
+      "headings": [
+        "Cash flows: reconcile before classifying",
+        "Scope and authority map",
+        "Intake and missing facts",
+        "Reconciliation and evidence controls",
+        "Analysis workstream",
+        "A failure mode to test",
+        "Deliverable and review gate",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "receivable-loss-workbook",
+      "title": "Receivable losses: turn aging data into an evidence file",
+      "kind": "guide",
+      "topic": "credit-losses",
+      "framework": "US_GAAP",
+      "path": "content/guides/receivable-loss-workbook.md",
+      "version": "0.6.0",
+      "sha256": "0ec20317faf211c6ed152dd8aa38ace62c521451b00b85c02c4c0f689d04ce00",
+      "hash_checked_this_handoff": true,
+      "word_count": 491,
+      "headings": [
+        "Receivable losses: turn aging data into an evidence file",
+        "Scope and authority map",
+        "Intake and missing facts",
+        "Reconciliation and evidence controls",
+        "Analysis workstream",
+        "A failure mode to test",
+        "Deliverable and review gate",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB",
+        "PCAOB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "pcaob-as2501",
+          "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2501",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        11,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "inventory-workbook",
+      "title": "Inventory: connect quantities, costing, and recoverability",
+      "kind": "guide",
+      "topic": "inventory",
+      "framework": "US_GAAP",
+      "path": "content/guides/inventory-workbook.md",
+      "version": "0.6.0",
+      "sha256": "ef5af6e4a0834a95be255b88a12f0836d98ca34d6d839cea396838e13460bfd7",
+      "hash_checked_this_handoff": true,
+      "word_count": 464,
+      "headings": [
+        "Inventory: connect quantities, costing, and recoverability",
+        "Scope and authority map",
+        "Intake and missing facts",
+        "Reconciliation and evidence controls",
+        "Analysis workstream",
+        "A failure mode to test",
+        "Deliverable and review gate",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "impairment-workbook",
+      "title": "Impairment: choose the model before the valuation",
+      "kind": "guide",
+      "topic": "impairment",
+      "framework": "US_GAAP",
+      "path": "content/guides/impairment-workbook.md",
+      "version": "0.6.0",
+      "sha256": "75873c65d0207670ff9a15b9be96de1ddbe930f0ac772315ae2263561af6bc9b",
+      "hash_checked_this_handoff": true,
+      "word_count": 478,
+      "headings": [
+        "Impairment: choose the model before the valuation",
+        "Scope and authority map",
+        "Intake and missing facts",
+        "Reconciliation and evidence controls",
+        "Analysis workstream",
+        "A failure mode to test",
+        "Deliverable and review gate",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB",
+        "PCAOB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "pcaob-as2501",
+          "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2501",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        11,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "fair-value-workbook",
+      "title": "Fair value: document the market and the significant inputs",
+      "kind": "guide",
+      "topic": "fair-value",
+      "framework": "US_GAAP",
+      "path": "content/guides/fair-value-workbook.md",
+      "version": "0.6.0",
+      "sha256": "e62596c5063a71f62f109edd253705edf16b432ac2062ab72475952ac4c82dc6",
+      "hash_checked_this_handoff": true,
+      "word_count": 482,
+      "headings": [
+        "Fair value: document the market and the significant inputs",
+        "Scope and authority map",
+        "Intake and missing facts",
+        "Reconciliation and evidence controls",
+        "Analysis workstream",
+        "A failure mode to test",
+        "Deliverable and review gate",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB",
+        "PCAOB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "pcaob-as2501",
+          "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2501",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        11,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "acquisition-workbook",
+      "title": "Acquisitions: map the transaction before allocating price",
+      "kind": "guide",
+      "topic": "business-combinations",
+      "framework": "US_GAAP",
+      "path": "content/guides/acquisition-workbook.md",
+      "version": "0.6.0",
+      "sha256": "9752efa6a6eaf3beb72a282c94c5672907b2050a3467f52dc68a53589a404201",
+      "hash_checked_this_handoff": true,
+      "word_count": 430,
+      "headings": [
+        "Acquisitions: map the transaction before allocating price",
+        "Scope and authority map",
+        "Intake and missing facts",
+        "Reconciliation and evidence controls",
+        "Analysis workstream",
+        "A failure mode to test",
+        "Deliverable and review gate",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB",
+        "SEC_FRM",
+        "SEC_RULES"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        1,
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Acquisition accounting is distinct from registrant significance, acquired financial statements and pro forma reporting requirements.",
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "consolidation-workbook",
+      "title": "Consolidation: connect control rights to evidence",
+      "kind": "guide",
+      "topic": "consolidation",
+      "framework": "US_GAAP",
+      "path": "content/guides/consolidation-workbook.md",
+      "version": "0.6.0",
+      "sha256": "82f16ffd1ed7744e66205088d01293143a864d8ba89a39b0add249b0e2578610",
+      "hash_checked_this_handoff": true,
+      "word_count": 428,
+      "headings": [
+        "Consolidation: connect control rights to evidence",
+        "Scope and authority map",
+        "Intake and missing facts",
+        "Reconciliation and evidence controls",
+        "Analysis workstream",
+        "A failure mode to test",
+        "Deliverable and review gate",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "income-tax-workbook",
+      "title": "Income taxes: reconcile the provision without mixing tax regimes",
+      "kind": "guide",
+      "topic": "income-taxes",
+      "framework": "US_GAAP",
+      "path": "content/guides/income-tax-workbook.md",
+      "version": "0.6.0",
+      "sha256": "705650063f6bfa8f7ad51fa0903d9712e5ab68d2ad8913f97573900a8e67d956",
+      "hash_checked_this_handoff": true,
+      "word_count": 453,
+      "headings": [
+        "Income taxes: reconcile the provision without mixing tax regimes",
+        "Scope and authority map",
+        "Intake and missing facts",
+        "Reconciliation and evidence controls",
+        "Analysis workstream",
+        "A failure mode to test",
+        "Deliverable and review gate",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB",
+        "REGULATORS"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        20,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Separate GAAP provision criteria from jurisdiction/year-specific tax law; avoid generic rates and current-law assumptions.",
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "foreign-currency-workbook",
+      "title": "Foreign currency: separate measurement, translation, and rate policy",
+      "kind": "guide",
+      "topic": "foreign-currency",
+      "framework": "US_GAAP",
+      "path": "content/guides/foreign-currency-workbook.md",
+      "version": "0.6.0",
+      "sha256": "d777fa71d4071ae5007a190c6714fa91256b17bc1c88f5482ea88368dea054ba",
+      "hash_checked_this_handoff": true,
+      "word_count": 450,
+      "headings": [
+        "Foreign currency: separate measurement, translation, and rate policy",
+        "Scope and authority map",
+        "Intake and missing facts",
+        "Reconciliation and evidence controls",
+        "Analysis workstream",
+        "A failure mode to test",
+        "Deliverable and review gate",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "going-concern-workbook",
+      "title": "Going concern: separate management assessment from audit work",
+      "kind": "guide",
+      "topic": "going-concern",
+      "framework": "US_GAAP",
+      "path": "content/guides/going-concern-workbook.md",
+      "version": "0.6.0",
+      "sha256": "69927897531826cf595aa3b594c6ef8da2b50ee27e71627af6f653b0052abc0b",
+      "hash_checked_this_handoff": true,
+      "word_count": 470,
+      "headings": [
+        "Going concern: separate management assessment from audit work",
+        "Scope and authority map",
+        "Intake and missing facts",
+        "Reconciliation and evidence controls",
+        "Analysis workstream",
+        "A failure mode to test",
+        "Deliverable and review gate",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "AICPA",
+        "FASB",
+        "PCAOB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "pcaob-as2415",
+          "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2415",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        11,
+        12,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Do not equate management assessment horizon with every auditing regime; identify the actual applicable dates and facts.",
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "subsequent-events-workbook",
+      "title": "Subsequent events: build a chronology, not a keyword label",
+      "kind": "guide",
+      "topic": "subsequent-events",
+      "framework": "US_GAAP",
+      "path": "content/guides/subsequent-events-workbook.md",
+      "version": "0.6.0",
+      "sha256": "80e501e9968f4772cc804273728b36f1473237210986c0873227ea4c52ef641c",
+      "hash_checked_this_handoff": true,
+      "word_count": 459,
+      "headings": [
+        "Subsequent events: build a chronology, not a keyword label",
+        "Scope and authority map",
+        "Intake and missing facts",
+        "Reconciliation and evidence controls",
+        "Analysis workstream",
+        "A failure mode to test",
+        "Deliverable and review gate",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "AICPA",
+        "FASB",
+        "PCAOB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "pcaob-as2801",
+          "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2801",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        11,
+        12,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Management versus auditor responsibilities and issuance/available-for-issuance facts require separate framework treatment.",
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "related-party-workbook",
+      "title": "Related parties: connect relationships, transactions, and disclosures",
+      "kind": "guide",
+      "topic": "related-parties",
+      "framework": "US_GAAP",
+      "path": "content/guides/related-party-workbook.md",
+      "version": "0.6.0",
+      "sha256": "ccc95011d2556ff4c067895f9ddf532cc8ded033e33eb72f6fc7f3da276cf92c",
+      "hash_checked_this_handoff": true,
+      "word_count": 448,
+      "headings": [
+        "Related parties: connect relationships, transactions, and disclosures",
+        "Scope and authority map",
+        "Intake and missing facts",
+        "Reconciliation and evidence controls",
+        "Analysis workstream",
+        "A failure mode to test",
+        "Deliverable and review gate",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB",
+        "PCAOB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "pcaob-as2410",
+          "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2410",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        11,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "software-cost-workbook",
+      "title": "Software costs: organize the project facts before choosing a model",
+      "kind": "guide",
+      "topic": "software-costs",
+      "framework": "US_GAAP",
+      "path": "content/guides/software-cost-workbook.md",
+      "version": "0.6.0",
+      "sha256": "628f89b04c886c8db887b735291ca73b114e7098be10fc6d89f18b76a2cf472f",
+      "hash_checked_this_handoff": true,
+      "word_count": 439,
+      "headings": [
+        "Software costs: organize the project facts before choosing a model",
+        "Scope and authority map",
+        "Intake and missing facts",
+        "Reconciliation and evidence controls",
+        "Analysis workstream",
+        "A failure mode to test",
+        "Deliverable and review gate",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Verify current amendments, adoption date and internal-use versus external-sale/software scope; do not rely on old phase shorthand.",
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "debt-workbook",
+      "title": "Debt and equity-linked instruments: read the complete terms",
+      "kind": "guide",
+      "topic": "debt-and-equity",
+      "framework": "US_GAAP",
+      "path": "content/guides/debt-workbook.md",
+      "version": "0.6.0",
+      "sha256": "a2c912dce30b0790d31b2c44a048c0edd897d8ad2ea75a03feffd6c848546d40",
+      "hash_checked_this_handoff": true,
+      "word_count": 436,
+      "headings": [
+        "Debt and equity-linked instruments: read the complete terms",
+        "Scope and authority map",
+        "Intake and missing facts",
+        "Reconciliation and evidence controls",
+        "Analysis workstream",
+        "A failure mode to test",
+        "Deliverable and review gate",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "case-cash-flow-bridge",
+      "title": "Worked case: a balance-sheet movement is not a cash-flow line",
+      "kind": "case",
+      "topic": "cash-flows",
+      "framework": "US_GAAP",
+      "path": "content/cases/case-cash-flow-bridge.md",
+      "version": "0.6.0",
+      "sha256": "f68e50019a072797517d09b6a2cce45eebea1cd16eb4334253563a89075da70a",
+      "hash_checked_this_handoff": true,
+      "word_count": 313,
+      "headings": [
+        "Worked case: a balance-sheet movement is not a cash-flow line",
+        "Facts",
+        "Reproduce the bridge",
+        "What remains unresolved",
+        "Expected Agent behavior",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification.",
+        "Recompute stipulated arithmetic separately; mathematical correctness does not establish the accounting recognition/classification conclusion."
+      ]
+    },
+    {
+      "id": "case-fx-payable",
+      "title": "Worked case: an explicitly assumed foreign-currency payable",
+      "kind": "case",
+      "topic": "foreign-currency",
+      "framework": "US_GAAP",
+      "path": "content/cases/case-fx-payable.md",
+      "version": "0.6.0",
+      "sha256": "956bb367677096be2c889189f19b39fe2f41699175e32542410b2b0ef46c7bce",
+      "hash_checked_this_handoff": true,
+      "word_count": 295,
+      "headings": [
+        "Worked case: an explicitly assumed foreign-currency payable",
+        "Stipulated inputs",
+        "Calculation",
+        "Counterexample and control",
+        "Reviewer and Agent tests",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification.",
+        "Recompute stipulated arithmetic separately; mathematical correctness does not establish the accounting recognition/classification conclusion."
+      ]
+    },
+    {
+      "id": "case-liquidity-timing",
+      "title": "Worked case: positive ending cash can conceal a funding gap",
+      "kind": "case",
+      "topic": "going-concern",
+      "framework": "US_GAAP",
+      "path": "content/cases/case-liquidity-timing.md",
+      "version": "0.6.0",
+      "sha256": "48e2ca31249ddffc41f2d78ac9f45079c1e3952c941bf0ad309953eda8c3f7dd",
+      "hash_checked_this_handoff": true,
+      "word_count": 294,
+      "headings": [
+        "Worked case: positive ending cash can conceal a funding gap",
+        "Facts and assumptions",
+        "Reproduce the schedule",
+        "Research needed",
+        "Expected deliverable",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB",
+        "PCAOB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        },
+        {
+          "source_id": "pcaob-as2415",
+          "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2415",
+          "baseline_verification": "publisher_page_examined",
+          "source_body_included": false,
+          "handoff_retrieval_family": "PCAOB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        11,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification.",
+        "Recompute stipulated arithmetic separately; mathematical correctness does not establish the accounting recognition/classification conclusion."
+      ]
+    },
+    {
+      "id": "estimate-register-template",
+      "title": "Template: accounting estimate and sensitivity register",
+      "kind": "template",
+      "topic": "research",
+      "framework": "US_GAAP",
+      "path": "content/templates/estimate-register-template.md",
+      "version": "0.6.0",
+      "sha256": "71925ce41328dd0bce8cc34f4ccd0b20ef8c10e39c261ce7b6d7db820750eca5",
+      "hash_checked_this_handoff": true,
+      "word_count": 362,
+      "headings": [
+        "Template: accounting estimate and sensitivity register",
+        "Purpose",
+        "Workpaper fields",
+        "Completion procedure",
+        "Reviewer questions",
+        "Release checklist",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "subsequent-event-register-template",
+      "title": "Template: subsequent-event chronology",
+      "kind": "template",
+      "topic": "subsequent-events",
+      "framework": "US_GAAP",
+      "path": "content/templates/subsequent-event-register-template.md",
+      "version": "0.6.0",
+      "sha256": "29d3a1f12a5ec6d49f0d95e1138107eba854722e295fadff3e15733ff299dc2d",
+      "hash_checked_this_handoff": true,
+      "word_count": 352,
+      "headings": [
+        "Template: subsequent-event chronology",
+        "Purpose",
+        "Workpaper fields",
+        "Completion procedure",
+        "Reviewer questions",
+        "Release checklist",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "currency-policy-template",
+      "title": "Template: currency and exchange-rate policy evidence",
+      "kind": "template",
+      "topic": "foreign-currency",
+      "framework": "US_GAAP",
+      "path": "content/templates/currency-policy-template.md",
+      "version": "0.6.0",
+      "sha256": "afa7e81c1e8a37dde8a142854758973bc0816b0312fef3eac9f0c3892182f9c5",
+      "hash_checked_this_handoff": true,
+      "word_count": 372,
+      "headings": [
+        "Template: currency and exchange-rate policy evidence",
+        "Purpose",
+        "Workpaper fields",
+        "Completion procedure",
+        "Reviewer questions",
+        "Release checklist",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification."
+      ]
+    },
+    {
+      "id": "research-study-questions-v06",
+      "title": "Expanded study questions: evidence and model selection",
+      "kind": "qa_set",
+      "topic": "learning",
+      "framework": "US_GAAP",
+      "path": "content/qa/research-study-questions-v06.md",
+      "version": "0.6.0",
+      "sha256": "22e30e3693c5079d616c6c926301e3f5c850c480c5ea8a5cc6281dd48bf6e3dd",
+      "hash_checked_this_handoff": true,
+      "word_count": 1982,
+      "headings": [
+        "Expanded study questions: evidence and model selection",
+        "qa-031 — What is the first research step for cash flows?",
+        "qa-032 — What should the Agent deliver for the cash flows workbook?",
+        "qa-033 — What is the first research step for receivable losses?",
+        "qa-034 — What should the Agent deliver for the credit losses workbook?",
+        "qa-035 — What is the first research step for inventory?",
+        "qa-036 — What should the Agent deliver for the inventory workbook?",
+        "qa-037 — What is the first research step for impairment?",
+        "qa-038 — What should the Agent deliver for the impairment workbook?",
+        "qa-039 — What is the first research step for fair value?",
+        "qa-040 — What should the Agent deliver for the fair value workbook?",
+        "qa-041 — What is the first research step for acquisitions?",
+        "qa-042 — What should the Agent deliver for the business combinations workbook?",
+        "qa-043 — What is the first research step for consolidation?",
+        "qa-044 — What should the Agent deliver for the consolidation workbook?",
+        "qa-045 — What is the first research step for income taxes?",
+        "qa-046 — What should the Agent deliver for the income taxes workbook?",
+        "qa-047 — What is the first research step for foreign currency?",
+        "qa-048 — What should the Agent deliver for the foreign currency workbook?",
+        "qa-049 — What is the first research step for going concern?",
+        "qa-050 — What should the Agent deliver for the going concern workbook?",
+        "qa-051 — What is the first research step for subsequent events?",
+        "qa-052 — What should the Agent deliver for the subsequent events workbook?",
+        "qa-053 — What is the first research step for related parties?",
+        "qa-054 — What should the Agent deliver for the related parties workbook?",
+        "qa-055 — What is the first research step for software costs?",
+        "qa-056 — What should the Agent deliver for the software costs workbook?",
+        "qa-057 — What is the first research step for debt and equity-linked instruments?",
+        "qa-058 — What should the Agent deliver for the debt and equity workbook?",
+        "Sources and verification"
+      ],
+      "baseline_technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "baseline_declared_primary_text_gap": true,
+      "agent_eligible": false,
+      "source_families": [
+        "FASB"
+      ],
+      "source_references": [
+        {
+          "source_id": "fasb-asc",
+          "url": "https://asc.fasb.org/",
+          "baseline_verification": "reference_only",
+          "source_body_included": false,
+          "handoff_retrieval_family": "FASB"
+        }
+      ],
+      "issue_numbers": [
+        9,
+        22,
+        23
+      ],
+      "disposition": "retain immutable version; technical disposition pending actual review",
+      "next_actions": [
+        "Revalidate listed official reference URLs and applicable version.",
+        "Use the family retrieval recipe and actual operation policy; do not fetch restricted body by default.",
+        "Build claim-to-evidence support, assumptions and counterexamples; record unresolved primary-text gaps.",
+        "Prepare independent-review packet and publish a new version for substantive corrections."
+      ],
+      "specific_review_gaps": [
+        "Current ASC primary text is reference-only in this baseline; project announcements and an item-level gap flag do not prove paragraph-level verification.",
+        "Educational questions are not an adjudicated benchmark; expected authority, alternatives and abstention need real independent review."
+      ]
+    }
+  ]
+}

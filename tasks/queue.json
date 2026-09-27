@@ -1,0 +1,719 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-09-27",
+  "master_issue": "https://github.com/ChipmunkRPA/open-source-accounting/issues/5",
+  "execution_mode": "human-initiated Codex sessions; no automatic schedule",
+  "tasks": [
+    {
+      "id": "BOOTSTRAP",
+      "issue_number": 6,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/6",
+      "priority": "P0",
+      "lane": "foundation",
+      "status": "in_review",
+      "depends_on_issues": [],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Reconcile full v0.7 source, PR #4 and clean-install CI",
+      "work": "Diff the verified archive against current Git history; publish ordinary source without overwriting user work; reconcile README casing, dependency locks, migrations and actual CI.",
+      "acceptance": "A clean clone installs, builds and tests; source receipt and current test logs are recorded; full source is verified remotely.",
+      "progress_required": true,
+      "scheduled": false,
+      "implementation_note": "Local integration and clean-install checks completed; PR and CI review pending. See progress.md."
+    },
+    {
+      "id": "RIGHTS",
+      "issue_number": 7,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/7",
+      "priority": "P0",
+      "lane": "foundation",
+      "status": "in_progress",
+      "depends_on_issues": [
+        6
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Operation-level permissions and licensing",
+      "work": "Separate fetching, storage, indexing, model input, display, quotations, export, redistribution and training. Draft permission requests and scope-limited legal review packets; never assume agentic use is automatically fair use.",
+      "acceptance": "Unknown operations fail closed; expiry/revocation and upload/mirror/subscription bypass tests pass; human license/legal blockers remain explicit.",
+      "progress_required": true,
+      "scheduled": false,
+      "implementation_note": "Revision-bound rights/intake/runtime checks, output ledgers/notices, independent counsel decisions and verified user/workspace scopes implemented. Independent output-term amendments now preserve all counters/receipts and invalidate affected source/counsel/scope revisions. Actual evidence/identities, provider behavior, public/service context, cross-corpus provenance and physical deletion remain. See progress.md."
+    },
+    {
+      "id": "INGEST",
+      "issue_number": 8,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/8",
+      "priority": "P0",
+      "lane": "foundation",
+      "status": "in_progress",
+      "depends_on_issues": [
+        6,
+        7
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Unified acquisition and immutable source registry",
+      "work": "Generalize SEC intake to all publishers, with discovery, preview, receipts, hashes, safe networking, shared rate budgets, version/date metadata and resumable staging.",
+      "acceptance": "Actual artifacts have raw/normalized provenance; blocks are failures, not successful sources; source-unit denominators and retry tests are documented.",
+      "progress_required": true,
+      "scheduled": false,
+      "implementation_note": "32-family registry, rights-gated HTTP and exact-hash manual publisher/original delivery, immutable receipts, separate parse/stage and PostgreSQL concurrency tests implemented. Live authorized smoke, family discovery adapters, review/index integration, scoped ingestion grants and deletion reconciliation remain. See docs/SOURCE_INTAKE.md and progress.md."
+    },
+    {
+      "id": "SEC_CORE",
+      "issue_number": 1,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/1",
+      "priority": "P1",
+      "lane": "content",
+      "status": "in_progress",
+      "depends_on_issues": [
+        6,
+        7,
+        8
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Complete SEC Core",
+      "work": "Acquire full S-X, relevant S-K, Regulation G, SABs, FRM, CFIs and form instructions using official routes and exact versioned locators.",
+      "acceptance": "Defined document scope acquired/parsed/reviewed/indexed/evaluated; selected excerpts are never counted as full documents.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "SEC_PRACTICE",
+      "issue_number": 2,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/2",
+      "priority": "P2",
+      "lane": "content",
+      "status": "queued",
+      "depends_on_issues": [
+        1,
+        8
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "SEC filings, correspondence and structured facts",
+      "work": "Declare issuer/form/year pilot; acquire filings, link UPLOAD/CORRESP threads and amendments, preserve notes/tables, and reconcile XBRL facts to filings.",
+      "acceptance": "Actual traceable disclosures and thread completeness, issuer-practice labeling, source rights and contextual facts pass tests.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "SEC_AUDIT_ENFORCEMENT",
+      "issue_number": 3,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/3",
+      "priority": "P2",
+      "lane": "content",
+      "status": "queued",
+      "depends_on_issues": [
+        1,
+        2,
+        8
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "SEC audit guidance and enforcement",
+      "work": "Acquire OCA independence/staff material, AAER underlying records, releases and procedural history.",
+      "acceptance": "Rules versus staff positions and allegations/settlements/findings remain distinct; exact citations and later-history gaps are recorded.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "FASB",
+      "issue_number": 9,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/9",
+      "priority": "P1",
+      "lane": "content",
+      "status": "queued",
+      "depends_on_issues": [
+        7,
+        8
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "FASB ASC references, ASUs and permission-gated text",
+      "work": "Build reference and amendment maps now; obtain appropriate rights before ASC/ASU/Concepts text ingestion; use original analysis and synthetic cases meanwhile.",
+      "acceptance": "Reference-only mode is truthful; version/adoption/entitlement rules tested; no source body without operation permission.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "GASB",
+      "issue_number": 10,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/10",
+      "priority": "P2",
+      "lane": "content",
+      "status": "queued",
+      "depends_on_issues": [
+        7,
+        8
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "GASB governmental-accounting references",
+      "work": "Build statements/codification/Q&A metadata and licensing request; distinguish GASB from FASAB and separately review governmental report examples.",
+      "acceptance": "Framework routing, reference map, licensed-adapter fixtures and explicit acquisition/review blockers.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "PCAOB",
+      "issue_number": 11,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/11",
+      "priority": "P1",
+      "lane": "content",
+      "status": "queued",
+      "depends_on_issues": [
+        7,
+        8
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "PCAOB standards, inspections and enforcement",
+      "work": "Use authorized feed or documented manual import; website automated extraction restrictions remain independent of Public Materials reuse.",
+      "acceptance": "Notices, standard versions, exact AS/QC locators, scope, public-only inspection records and operation rights preserved.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "AICPA",
+      "issue_number": 12,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/12",
+      "priority": "P1",
+      "lane": "content",
+      "status": "queued",
+      "depends_on_issues": [
+        7,
+        8
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "AICPA nonissuer standards and guides",
+      "work": "Map AU-C, AT-C, AR-C, quality management, ethics and relevant guides; license text operations explicitly; no member-login reuse.",
+      "acceptance": "Engagement/version routing and reference-only fallback; no blanket AI use through membership.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "IFRS",
+      "issue_number": 13,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/13",
+      "priority": "P1",
+      "lane": "content",
+      "status": "queued",
+      "depends_on_issues": [
+        7,
+        8
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "IASB/ISSB standards and adoption history",
+      "work": "Map IAS/IFRS/IFRIC/SIC/SMEs and sustainability, editions/languages/adoption; license service uses before body ingestion.",
+      "acceptance": "Required/issued/local-adoption versions distinguished; standards/taxonomy rights separate; truthful primary-text gaps.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "INTL_ASSURANCE",
+      "issue_number": 14,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/14",
+      "priority": "P2",
+      "lane": "content",
+      "status": "queued",
+      "depends_on_issues": [
+        7,
+        8
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "IAASB, IESBA and IPSASB",
+      "work": "Discover current handbooks from official roots; verify title/language/current rights owner; permission-gated import and separate framework maps.",
+      "acceptance": "Three board registries, version/language/paragraph fidelity, license scope and human-review gates.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "GOVERNMENT",
+      "issue_number": 15,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/15",
+      "priority": "P1",
+      "lane": "content",
+      "status": "queued",
+      "depends_on_issues": [
+        7,
+        8
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "GAO, FASAB, OMB and Treasury",
+      "work": "Acquire source-cleared Yellow/Green Books, FASAB Handbook, appropriate circulars/supplements/regulations/manuals with paragraph/table/period provenance.",
+      "acceptance": "Original artifacts, authorship/third-party screening, fiscal-year and effective-date tests; real review before Agent admission.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "LEGAL",
+      "issue_number": 16,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/16",
+      "priority": "P1",
+      "lane": "content",
+      "status": "queued",
+      "depends_on_issues": [
+        7,
+        8
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Official law and judicial opinions",
+      "work": "Use U.S. Code, eCFR, Federal Register, govinfo/court sources and separate state review; no proprietary headnotes or paid citator feeds.",
+      "acceptance": "Jurisdiction/docket/disposition/version/locator accuracy and original briefs; later-history coverage explicitly bounded.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "CONTROLS",
+      "issue_number": 17,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/17",
+      "priority": "P2",
+      "lane": "content",
+      "status": "queued",
+      "depends_on_issues": [
+        7,
+        8
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "COSO, IIA, COBIT and government IT guidance",
+      "work": "Keep proprietary frameworks reference-only until software/public-AI authorization; source-clear government NIST/GAO material; create original control matrices.",
+      "acceptance": "No generic license bypass; design versus operating effectiveness distinguished; original evidence-backed controls examples.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "PUBLISHERS",
+      "issue_number": 18,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/18",
+      "priority": "P2",
+      "lane": "content",
+      "status": "queued",
+      "depends_on_issues": [
+        7,
+        8
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Big Four and commercial literature",
+      "work": "Create permitted metadata/links and rights packets; keep restricted bodies out of retrieval/model; independently authored analysis, not disguised paraphrase.",
+      "acceptance": "No mirrors/upload/login loopholes; third-party inserts checked; publisher-attributed claims supported by authorized source evidence.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "OPEN_LITERATURE",
+      "issue_number": 19,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/19",
+      "priority": "P1",
+      "lane": "content",
+      "status": "queued",
+      "depends_on_issues": [
+        7,
+        8
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Open textbooks, papers and contributions",
+      "work": "Discover via official publisher/repository/DOI routes; inspect exact-version licenses including NC/SA/ND and third-party figures.",
+      "acceptance": "Attribution/version/retraction and license compatibility tested; open visibility alone never licenses abstracts/full text.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "REGULATORS",
+      "issue_number": 20,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/20",
+      "priority": "P2",
+      "lane": "content",
+      "status": "queued",
+      "depends_on_issues": [
+        7,
+        8
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Banking, tax, nonprofit and industry regulators",
+      "work": "Declare pilots for FFIEC/FDIC/OCC/Fed, IRS/Treasury, EBSA/FERC and others; NAIC privately owned material needs separate rights.",
+      "acceptance": "Regulatory versus GAAP scope, jurisdiction/reporting quarter and precise instructions/facts preserved.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "LOCAL_FRAMEWORKS",
+      "issue_number": 21,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/21",
+      "priority": "P3",
+      "lane": "content",
+      "status": "queued",
+      "depends_on_issues": [
+        7,
+        8,
+        13,
+        14
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "National standards, adoption and translations",
+      "work": "Build explicit jurisdiction pilots from official national bodies and legal endorsements; verify local rights, amendments, language and specialist interpretation.",
+      "acceptance": "No as-issued/as-adopted conflation; licensed translations and reviewed local cases; unsupported countries stay out of scope.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "ORIGINAL_CONTENT",
+      "issue_number": 22,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/22",
+      "priority": "P1",
+      "lane": "content",
+      "status": "queued",
+      "depends_on_issues": [
+        6
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Review every item and deepen topic coverage",
+      "work": "Disposition every original item, preserve versions, link actual source routes, build scope/decision/case/template/evaluation depth and expose primary-text gaps.",
+      "acceptance": "All 63 baseline items mapped; no fabricated review; new revisions with provenance and topic-specific acceptance.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "EDITORIAL",
+      "issue_number": 23,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/23",
+      "priority": "P0",
+      "lane": "platform",
+      "status": "queued",
+      "depends_on_issues": [
+        6,
+        7,
+        8
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Review administration and progress tracking",
+      "work": "Implement independent rights/parser/technical/applicability decisions, revision hashing, correction and source-disable propagation; generate coverage.",
+      "acceptance": "Stale approval and separation-of-duties tests; zero human reviews remain zero until actual approval; reproducible reports.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "PARSERS",
+      "issue_number": 24,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/24",
+      "priority": "P0",
+      "lane": "platform",
+      "status": "queued",
+      "depends_on_issues": [
+        6,
+        7,
+        8
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Secure multiformat parsing and exact locators",
+      "work": "Extend HTML/XML/inline XBRL/PDF/DOCX/XLSX/CSV, tables, footnotes, formulas/caches, quarantine and scoped OCR only after extraction failure.",
+      "acceptance": "Golden permitted/synthetic fixtures, numeric reconciliation, malicious/unsupported-file tests and exact source mappings.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "RETRIEVAL",
+      "issue_number": 25,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/25",
+      "priority": "P0",
+      "lane": "platform",
+      "status": "queued",
+      "depends_on_issues": [
+        6,
+        7,
+        8,
+        23,
+        24
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Scalable search and evidence verification",
+      "work": "Replace capped scans with exact/lexical/semantic indexes, separate embedding endpoint, rights/tenant/date filters and relational authority edges.",
+      "acceptance": "Measured scope/recall/latency; exact claim-support checks, cross-tenant, stale/version/conflict/rights tests.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "GEMINI",
+      "issue_number": 26,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/26",
+      "priority": "P0",
+      "lane": "platform",
+      "status": "in_progress",
+      "depends_on_issues": [
+        6,
+        7
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Verify requested model on Google Cloud",
+      "work": "Use gemini-3.8-flash via backend ADC; verify SDK/endpoint/region/settings/costs, bounded tools and schema validation; no silent fallback.",
+      "acceptance": "Mock contracts plus authorized live staging evidence, actual usage costs and provider-retention review; missing credentials marked blocked.",
+      "progress_required": true,
+      "scheduled": false,
+      "implementation_note": "PRs #50\u2013#52 implement verified public Cloud REST contracts, dated estimates, durable attempt accounting and conservative operator-budget reservations. Invoice reconciliation, bounded retries/deadlines/cancellation, actual project access and operator-authorized staging remain. See docs/GEMINI_CONTRACT.md, docs/MODEL_BUDGETS.md and progress.md; no live approval or goal completion is claimed."
+    },
+    {
+      "id": "MFA",
+      "issue_number": 27,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/27",
+      "priority": "P0",
+      "lane": "platform",
+      "status": "queued",
+      "depends_on_issues": [
+        6
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Real TOTP/SMS authentication and recovery",
+      "work": "Build actual Firebase identity bundle and validate Google Authenticator/SMS, reserved claims, revocation, tenant/session/step-up, backup and controlled recovery.",
+      "acceptance": "Real authorized device/phone staging tests; no email-only bypass or client boolean; production fail-closed.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "GCP",
+      "issue_number": 28,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/28",
+      "priority": "P0",
+      "lane": "platform",
+      "status": "queued",
+      "depends_on_issues": [
+        6
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Cloud infrastructure and deployment pipeline",
+      "work": "Maintain one frontend path, Cloud Run/SQL/GCS/Tasks/Identity, WIF CI, migration/worker retry/backup/networking/rollback and preview-first infrastructure.",
+      "acceptance": "Reproducible plans and approved staging receipts; no resources or costs without authorization; clean production builds.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "SECURITY",
+      "issue_number": 29,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/29",
+      "priority": "P0",
+      "lane": "platform",
+      "status": "queued",
+      "depends_on_issues": [
+        6
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Privacy, workspace isolation and security",
+      "work": "Threat-model uploads/model/retrieval/exports, enforce permissions, quarantine, prompt-injection defenses, deletion/retention and secrets/telemetry protection.",
+      "acceptance": "Negative isolation/adversarial tests, remediation and reviewed policies; no compliance-certification claims from unit tests.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "BILLING",
+      "issue_number": 30,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/30",
+      "priority": "P0",
+      "lane": "platform",
+      "status": "queued",
+      "depends_on_issues": [
+        6,
+        27
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Annual Agent subscription and free boundary",
+      "work": "Verify USD8999 annual Stripe product, signed/replayed/out-of-order webhooks, entitlement/task ledgers and expiry; retain manual artifact access.",
+      "acceptance": "Test-mode lifecycle and PostgreSQL concurrency; no live charges/overage/monthly plan; actual usage/grace/legal terms require approval.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "CORE_AGENTS",
+      "issue_number": 31,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/31",
+      "priority": "P1",
+      "lane": "workflows",
+      "status": "queued",
+      "depends_on_issues": [
+        6,
+        7,
+        24,
+        25,
+        26,
+        30
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Five primary Agent workflows",
+      "work": "Complete task intake/scope, facts versus assumptions, approved evidence, durable bounded execution, revision/follow-up/reconnect and task-specific outputs.",
+      "acceptance": "Deep research/memo/docs+GAAP/contract compare/memo critique have evaluated scope, negative scenarios and cost records.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "ACCOUNTING_AGENTS",
+      "issue_number": 32,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/32",
+      "priority": "P2",
+      "lane": "workflows",
+      "status": "queued",
+      "depends_on_issues": [
+        31
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Accounting policy, revenue, lease, close and comparison Agents",
+      "work": "Build actual typed workflows and reviewed scoped Decimal engines; separate calculations from recognition judgments and primary-source gaps.",
+      "acceptance": "Normal/edge numerical and scope tests; assumptions/inputs/version persist; no posting or universal schedule shortcuts.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "AUDIT_DISCLOSURE_AGENTS",
+      "issue_number": 33,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/33",
+      "priority": "P2",
+      "lane": "workflows",
+      "status": "queued",
+      "depends_on_issues": [
+        31
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Disclosure and audit/control Agents",
+      "work": "Complete disclosure gap/peer benchmark/SEC response/audit prep/control design with actual evidence and matrices; route correct auditing regime.",
+      "acceptance": "Missing evidence, incomplete correspondence and procedural assertions tested; no audit opinions or claims procedures were performed.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "MEMOS_WORKSPACES",
+      "issue_number": 34,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/34",
+      "priority": "P1",
+      "lane": "product",
+      "status": "queued",
+      "depends_on_issues": [
+        6,
+        7,
+        27,
+        29
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Editors, review collaboration and exports",
+      "work": "Stable sections/citations, autosave/concurrency/revision-bound review, permissions/invites and safe rights-checked MD/DOCX/PDF/scoped workpaper exports.",
+      "acceptance": "Role/revocation/conflict/expired access tests, export rendering and no silent AI edits; human reviews tied to exact revision.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "UI_UX",
+      "issue_number": 35,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/35",
+      "priority": "P1",
+      "lane": "product",
+      "status": "queued",
+      "depends_on_issues": [
+        6
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Complete responsive screens and browser journeys",
+      "work": "Free chat/Agent/library/coverage/workspace/editor/admin/billing/MFA with mobile/keyboard/contrast/error states and real underlying actions.",
+      "acceptance": "Deployed-origin journeys and manual accessibility checks; correct evidence/price/review labels; bridge tests not represented as end-to-end.",
+      "progress_required": true,
+      "scheduled": false,
+      "implementation_note": "Output-rights slice added notice components and verified inline Topics rendering with synthetic data. Source-inspection dialog did not activate through IAB controls despite API tests passing and no console diagnostic; cause unconfirmed. Recheck full source/evidence/memo browser journeys under this issue."
+    },
+    {
+      "id": "EVALUATION",
+      "issue_number": 36,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/36",
+      "priority": "P0",
+      "lane": "quality",
+      "status": "queued",
+      "depends_on_issues": [
+        6,
+        23,
+        25
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Professional benchmarks and regression gates",
+      "work": "Separate fixtures/educational questions/gold cases; human adjudication packets; holdouts, source/citation/numeric/security/cost measurement.",
+      "acceptance": "Executable harness and honest mock/live/human reports; operator-approved thresholds; no fake reviews or copied exam-bank data.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "WATCHES",
+      "issue_number": 37,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/37",
+      "priority": "P2",
+      "lane": "workflows",
+      "status": "queued",
+      "depends_on_issues": [
+        8,
+        23,
+        25,
+        30
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Standards change and consented impact monitoring",
+      "work": "Use permitted sources to detect issued/effective/withdrawn changes, stage review, flag dependent work and deliver opt-in deduplicated impact notices.",
+      "acceptance": "No automatic schedule activation or MFA-consent reuse for alerts; replay/no-change/expiry/rights/review tests.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "OPERATIONS",
+      "issue_number": 38,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/38",
+      "priority": "P1",
+      "lane": "quality",
+      "status": "queued",
+      "depends_on_issues": [
+        28,
+        29
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Observability, costs, freshness, restore and support",
+      "work": "Non-content metrics, actual admission caps, source-change/expiry/provider runbooks, backup/restore/RPO/RTO and incident/support ownership.",
+      "acceptance": "Load/failure/restore/circuit-breaker measurements; no claiming budgets alert as hard cap or on-call staffing from config.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "OPEN_SOURCE",
+      "issue_number": 39,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/39",
+      "priority": "P1",
+      "lane": "quality",
+      "status": "queued",
+      "depends_on_issues": [
+        6,
+        7
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Contributor, licensing and reproducible release docs",
+      "work": "AGENTS/developer/content guides, actual license notices, dependency/SBOM/locks/manifests/changelog, README casing and clean releases.",
+      "acceptance": "Verified setup, artifact-to-commit hashes, public/private license separation, no secret or proprietary-source publication.",
+      "progress_required": true,
+      "scheduled": false
+    },
+    {
+      "id": "RELEASE",
+      "issue_number": 40,
+      "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/40",
+      "priority": "P0",
+      "lane": "release",
+      "status": "queued",
+      "depends_on_issues": [
+        6,
+        7,
+        8,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        34,
+        35,
+        36,
+        38,
+        39
+      ],
+      "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
+      "title": "Operator-approved scoped production release",
+      "work": "Assemble real validation, licensed/reviewed launch corpus, supported workflows, security/recovery/legal/usage/billing approvals and rollback readiness.",
+      "acceptance": "Maintainer authorizes exact release and spend; unsupported later sources/workflows remain explicitly out of scope; no fabricated approvals.",
+      "progress_required": true,
+      "scheduled": false
+    }
+  ]
+}

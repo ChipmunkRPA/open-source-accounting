@@ -1,0 +1,1591 @@
+{
+  "schema_version": 1,
+  "note": "Editorial planning map, not an exhaustive standards inventory or a correctness claim. Extend through issues as gaps are found.",
+  "topics": [
+    {
+      "id": "authority",
+      "title": "Authority hierarchy, reporting period, and accounting policies",
+      "source_families": [
+        "FASB",
+        "SEC_RULES",
+        "SEC_FRM",
+        "AICPA",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        1,
+        9,
+        12,
+        13,
+        22
+      ],
+      "existing_broad_topic_matches": [
+        "authority-and-period",
+        "technical-memo-template",
+        "content-review-template",
+        "source-onboarding-template",
+        "playbook-deep-research",
+        "playbook-memo",
+        "playbook-memo-review",
+        "playbook-policy-draft",
+        "playbook-close-pack",
+        "playbook-framework-compare",
+        "playbook-standards-watch",
+        "estimate-register-template"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "revenue",
+      "title": "Revenue, contract promises, SSP, variable consideration and modifications",
+      "source_families": [
+        "FASB",
+        "SEC_CFI",
+        "SEC_FILINGS",
+        "SEC_CORRESPONDENCE",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        1,
+        2,
+        9,
+        13,
+        22,
+        32
+      ],
+      "existing_broad_topic_matches": [
+        "revenue-research-map",
+        "saas-implementation",
+        "customer-payments",
+        "case-ssp-allocation",
+        "case-implementation-alternatives",
+        "clause-evidence-template",
+        "playbook-revenue-workpaper"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "leases",
+      "title": "Lease scope, classification, measurement and modifications",
+      "source_families": [
+        "FASB",
+        "IFRS",
+        "GASB"
+      ],
+      "issue_numbers": [
+        9,
+        10,
+        13,
+        22,
+        32
+      ],
+      "existing_broad_topic_matches": [
+        "lease-identification",
+        "lease-measurement",
+        "case-lease-present-value",
+        "playbook-lease-workpaper"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "share-compensation",
+      "title": "Employee/nonemployee/customer share-based awards",
+      "source_families": [
+        "FASB",
+        "SEC_SAB",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        1,
+        9,
+        13,
+        22
+      ],
+      "existing_broad_topic_matches": [
+        "share-based-award-intake"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "contingencies",
+      "title": "Loss contingencies, commitments and classification",
+      "source_families": [
+        "FASB",
+        "SEC_SAB",
+        "SEC_RULES",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        1,
+        9,
+        13,
+        22
+      ],
+      "existing_broad_topic_matches": [
+        "loss-contingencies"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "materiality-errors",
+      "title": "Materiality, errors, changes in policy/estimates",
+      "source_families": [
+        "FASB",
+        "SEC_SAB",
+        "SEC_FILINGS",
+        "AICPA",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        1,
+        2,
+        9,
+        12,
+        13,
+        22
+      ],
+      "existing_broad_topic_matches": [
+        "materiality",
+        "error-measurement",
+        "non-gaap-review",
+        "case-accumulated-error",
+        "disclosure-review-template"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "cash-flows",
+      "title": "Cash flows, classifications and reconciliations",
+      "source_families": [
+        "FASB",
+        "SEC_FILINGS",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        2,
+        9,
+        13,
+        22
+      ],
+      "existing_broad_topic_matches": [
+        "cash-flow-workbook",
+        "case-cash-flow-bridge"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "credit-losses",
+      "title": "Receivables, credit-loss scope and estimation",
+      "source_families": [
+        "FASB",
+        "PCAOB",
+        "REGULATORS",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        9,
+        11,
+        13,
+        20,
+        22
+      ],
+      "existing_broad_topic_matches": [
+        "receivable-loss-workbook"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "inventory",
+      "title": "Inventory costing, quantities, cutoff and recoverability",
+      "source_families": [
+        "FASB",
+        "IFRS",
+        "PCAOB",
+        "AICPA"
+      ],
+      "issue_numbers": [
+        9,
+        11,
+        12,
+        13,
+        22
+      ],
+      "existing_broad_topic_matches": [
+        "inventory-workbook"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "ppe",
+      "title": "PP&E, capitalization, depreciation and asset retirement",
+      "source_families": [
+        "FASB",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        9,
+        13,
+        22
+      ],
+      "existing_broad_topic_matches": [],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "impairment",
+      "title": "Impairment: long-lived assets and distinct models",
+      "source_families": [
+        "FASB",
+        "PCAOB",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        9,
+        11,
+        13,
+        22
+      ],
+      "existing_broad_topic_matches": [
+        "impairment-workbook"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "intangibles-goodwill",
+      "title": "Intangibles, goodwill and alternatives",
+      "source_families": [
+        "FASB",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        9,
+        13,
+        22
+      ],
+      "existing_broad_topic_matches": [],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "fair-value",
+      "title": "Fair value measurement, hierarchy and disclosures",
+      "source_families": [
+        "FASB",
+        "PCAOB",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        9,
+        11,
+        13,
+        22
+      ],
+      "existing_broad_topic_matches": [
+        "fair-value-workbook"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "investments",
+      "title": "Investments and financial instruments",
+      "source_families": [
+        "FASB",
+        "IFRS",
+        "REGULATORS"
+      ],
+      "issue_numbers": [
+        9,
+        13,
+        20,
+        22
+      ],
+      "existing_broad_topic_matches": [],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "acquisitions",
+      "title": "Business combinations and acquired-business SEC reporting",
+      "source_families": [
+        "FASB",
+        "SEC_RULES",
+        "SEC_FRM",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        1,
+        9,
+        13,
+        22
+      ],
+      "existing_broad_topic_matches": [
+        "acquisition-workbook"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "consolidation",
+      "title": "Consolidation, control and variable interests",
+      "source_families": [
+        "FASB",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        9,
+        13,
+        22
+      ],
+      "existing_broad_topic_matches": [
+        "consolidation-workbook"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "income-tax",
+      "title": "Tax provisions, deferred taxes and uncertainty",
+      "source_families": [
+        "FASB",
+        "REGULATORS",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        9,
+        13,
+        20,
+        22
+      ],
+      "existing_broad_topic_matches": [
+        "income-tax-workbook"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "foreign-currency",
+      "title": "Functional currency, remeasurement and translation",
+      "source_families": [
+        "FASB",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        9,
+        13,
+        22
+      ],
+      "existing_broad_topic_matches": [
+        "foreign-currency-workbook",
+        "case-fx-payable",
+        "currency-policy-template"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "debt-equity",
+      "title": "Debt/equity, convertibles, covenants and modifications",
+      "source_families": [
+        "FASB",
+        "SEC_RULES",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        1,
+        9,
+        13,
+        22
+      ],
+      "existing_broad_topic_matches": [
+        "debt-workbook"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "derivatives",
+      "title": "Derivatives and hedge accounting",
+      "source_families": [
+        "FASB",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        9,
+        13,
+        22
+      ],
+      "existing_broad_topic_matches": [],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "segments",
+      "title": "Segment reporting",
+      "source_families": [
+        "FASB",
+        "SEC_FILINGS",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        2,
+        9,
+        13,
+        22
+      ],
+      "existing_broad_topic_matches": [],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "eps",
+      "title": "Earnings per share",
+      "source_families": [
+        "FASB",
+        "SEC_RULES",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        1,
+        9,
+        13,
+        22
+      ],
+      "existing_broad_topic_matches": [],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "employee-benefits",
+      "title": "Pensions, benefits and compensation",
+      "source_families": [
+        "FASB",
+        "IFRS",
+        "REGULATORS"
+      ],
+      "issue_numbers": [
+        9,
+        13,
+        20,
+        22
+      ],
+      "existing_broad_topic_matches": [],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "software-rd",
+      "title": "Internal-use software, sale software and R&D",
+      "source_families": [
+        "FASB",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        9,
+        13,
+        22
+      ],
+      "existing_broad_topic_matches": [
+        "software-cost-workbook"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "related-parties",
+      "title": "Related parties and disclosure",
+      "source_families": [
+        "FASB",
+        "PCAOB",
+        "AICPA",
+        "SEC_RULES",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        1,
+        9,
+        11,
+        12,
+        13,
+        22
+      ],
+      "existing_broad_topic_matches": [
+        "related-party-workbook"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "subsequent-events",
+      "title": "Subsequent events and issuance chronology",
+      "source_families": [
+        "FASB",
+        "PCAOB",
+        "AICPA",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        9,
+        11,
+        12,
+        13,
+        22
+      ],
+      "existing_broad_topic_matches": [
+        "subsequent-events-workbook",
+        "subsequent-event-register-template"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "going-concern",
+      "title": "Going concern, liquidity and reporting",
+      "source_families": [
+        "FASB",
+        "PCAOB",
+        "AICPA",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        9,
+        11,
+        12,
+        13,
+        22
+      ],
+      "existing_broad_topic_matches": [
+        "going-concern-workbook",
+        "case-liquidity-timing"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "nonprofit",
+      "title": "Not-for-profit reporting and donor/grant issues",
+      "source_families": [
+        "FASB",
+        "REGULATORS"
+      ],
+      "issue_numbers": [
+        9,
+        20,
+        22
+      ],
+      "existing_broad_topic_matches": [],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "government-accounting",
+      "title": "State/local and federal governmental accounting",
+      "source_families": [
+        "GASB",
+        "FASAB",
+        "OMB_TREASURY",
+        "IPSASB"
+      ],
+      "issue_numbers": [
+        10,
+        14,
+        15,
+        22
+      ],
+      "existing_broad_topic_matches": [],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "industry",
+      "title": "Selected banking, plan, utility, insurance and other industry scopes",
+      "source_families": [
+        "REGULATORS",
+        "FASB",
+        "SEC_RULES"
+      ],
+      "issue_numbers": [
+        1,
+        9,
+        20,
+        22
+      ],
+      "existing_broad_topic_matches": [],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "presentation-disclosures",
+      "title": "Financial statement presentation, filing and disclosures",
+      "source_families": [
+        "FASB",
+        "SEC_RULES",
+        "SEC_FORMS",
+        "SEC_FRM",
+        "SEC_FILINGS",
+        "IFRS"
+      ],
+      "issue_numbers": [
+        1,
+        2,
+        9,
+        13,
+        22,
+        33
+      ],
+      "existing_broad_topic_matches": [
+        "materiality",
+        "error-measurement",
+        "non-gaap-review",
+        "case-accumulated-error",
+        "disclosure-review-template",
+        "playbook-disclosure-review",
+        "playbook-disclosure-benchmark",
+        "playbook-sec-response"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "audit-risk",
+      "title": "Audit planning, risk assessment and fraud",
+      "source_families": [
+        "PCAOB",
+        "AICPA",
+        "IAASB"
+      ],
+      "issue_numbers": [
+        11,
+        12,
+        14,
+        22,
+        33
+      ],
+      "existing_broad_topic_matches": [
+        "playbook-audit-prep"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "audit-evidence",
+      "title": "Audit evidence, data reliability and documentation",
+      "source_families": [
+        "PCAOB",
+        "AICPA",
+        "IAASB"
+      ],
+      "issue_numbers": [
+        11,
+        12,
+        14,
+        22,
+        33
+      ],
+      "existing_broad_topic_matches": [
+        "electronic-audit-evidence",
+        "audit-evidence-template"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "audit-sampling",
+      "title": "Audit sampling and substantive procedures",
+      "source_families": [
+        "PCAOB",
+        "AICPA",
+        "IAASB"
+      ],
+      "issue_numbers": [
+        11,
+        12,
+        14,
+        22
+      ],
+      "existing_broad_topic_matches": [],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "audit-estimates",
+      "title": "Auditing estimates and specialist evidence",
+      "source_families": [
+        "PCAOB",
+        "AICPA",
+        "IAASB"
+      ],
+      "issue_numbers": [
+        11,
+        12,
+        14,
+        22
+      ],
+      "existing_broad_topic_matches": [],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "audit-reporting",
+      "title": "Auditor reporting, modifications and communication",
+      "source_families": [
+        "PCAOB",
+        "AICPA",
+        "IAASB"
+      ],
+      "issue_numbers": [
+        11,
+        12,
+        14,
+        22
+      ],
+      "existing_broad_topic_matches": [],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "independence",
+      "title": "Independence, ethics and professional conduct",
+      "source_families": [
+        "PCAOB",
+        "AICPA",
+        "IESBA",
+        "SEC_AUDIT_ENFORCEMENT"
+      ],
+      "issue_numbers": [
+        3,
+        11,
+        12,
+        14,
+        22
+      ],
+      "existing_broad_topic_matches": [],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "quality-management",
+      "title": "Audit quality management and monitoring",
+      "source_families": [
+        "PCAOB",
+        "AICPA",
+        "IAASB",
+        "GAO"
+      ],
+      "issue_numbers": [
+        11,
+        12,
+        14,
+        15,
+        22
+      ],
+      "existing_broad_topic_matches": [],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "attestation-review",
+      "title": "Attestation, review, compilation and other engagements",
+      "source_families": [
+        "AICPA",
+        "IAASB",
+        "PCAOB"
+      ],
+      "issue_numbers": [
+        11,
+        12,
+        14,
+        22
+      ],
+      "existing_broad_topic_matches": [],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "government-audit",
+      "title": "Government auditing and federal awards",
+      "source_families": [
+        "GAO",
+        "OMB_TREASURY"
+      ],
+      "issue_numbers": [
+        15,
+        22
+      ],
+      "existing_broad_topic_matches": [
+        "yellow-book-scope"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "icfr",
+      "title": "ICFR, control deficiencies and remediation",
+      "source_families": [
+        "PCAOB",
+        "SEC_RULES",
+        "COSO",
+        "AICPA"
+      ],
+      "issue_numbers": [
+        1,
+        11,
+        12,
+        17,
+        22
+      ],
+      "existing_broad_topic_matches": [
+        "icfr-deficiencies",
+        "case-control-remediation",
+        "playbook-controls-review"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "internal-it-audit",
+      "title": "Internal audit, ITGC, integrations and finance-system governance",
+      "source_families": [
+        "IIA_ISACA",
+        "COSO",
+        "NIST",
+        "GAO"
+      ],
+      "issue_numbers": [
+        15,
+        17,
+        22
+      ],
+      "existing_broad_topic_matches": [],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "enforcement-liability",
+      "title": "Enforcement, audit liability and procedural history",
+      "source_families": [
+        "SEC_AUDIT_ENFORCEMENT",
+        "COURTS",
+        "FEDERAL_LAW",
+        "STATE_LOCAL_LAW"
+      ],
+      "issue_numbers": [
+        3,
+        16,
+        22
+      ],
+      "existing_broad_topic_matches": [],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "sustainability",
+      "title": "Selected sustainability reporting/assurance",
+      "source_families": [
+        "IFRS",
+        "IAASB",
+        "LOCAL_FRAMEWORKS"
+      ],
+      "issue_numbers": [
+        13,
+        14,
+        21,
+        22
+      ],
+      "existing_broad_topic_matches": [],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "international",
+      "title": "International framework differences and local adoption",
+      "source_families": [
+        "IFRS",
+        "IAASB",
+        "IESBA",
+        "IPSASB",
+        "LOCAL_FRAMEWORKS"
+      ],
+      "issue_numbers": [
+        13,
+        14,
+        21,
+        22
+      ],
+      "existing_broad_topic_matches": [],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "research-workflows",
+      "title": "Research, memo, documents and review workflows",
+      "source_families": [
+        "ORIGINAL",
+        "PRIVATE_UPLOADS"
+      ],
+      "issue_numbers": [
+        22,
+        31,
+        34
+      ],
+      "existing_broad_topic_matches": [
+        "authority-and-period",
+        "technical-memo-template",
+        "content-review-template",
+        "source-onboarding-template",
+        "playbook-deep-research",
+        "playbook-memo",
+        "playbook-document-gaap",
+        "playbook-contract-compare",
+        "playbook-memo-review",
+        "playbook-policy-draft",
+        "playbook-close-pack",
+        "playbook-framework-compare",
+        "playbook-standards-watch",
+        "estimate-register-template"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    },
+    {
+      "id": "learning",
+      "title": "Educational questions and independent benchmarks",
+      "source_families": [
+        "ORIGINAL",
+        "OPEN_LITERATURE"
+      ],
+      "issue_numbers": [
+        19,
+        22,
+        36
+      ],
+      "existing_broad_topic_matches": [
+        "research-study-questions",
+        "research-study-questions-v06"
+      ],
+      "mapping_note": "Broad topic tags indicate candidate starting material, not verified coverage of every named subissue. Read and review each file.",
+      "minimum_scope_packet": [
+        "explicit scope/entity/framework/period",
+        "actual source map and primary-text gaps",
+        "original decision/research checklist",
+        "supported criteria and exceptions",
+        "normal and counterexample cases",
+        "presentation/disclosure where applicable",
+        "deterministic calculation checks where applicable",
+        "template where useful",
+        "educational Q&A distinct from human-adjudicated evaluations",
+        "real technical and rights/applicability review"
+      ],
+      "technical_approval": "pending",
+      "production_coverage": "not established"
+    }
+  ]
+}

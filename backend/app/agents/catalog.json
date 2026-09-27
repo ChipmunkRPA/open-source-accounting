@@ -1,0 +1,629 @@
+[
+  {
+    "id": "deep_research",
+    "code": "AG-01",
+    "title": "Deep research",
+    "category": "Research",
+    "phase": "Launch",
+    "requires_subscription": true,
+    "requires_documents": false,
+    "description": "Resolve a scoped accounting question across permitted sources.",
+    "inputs": [
+      "Question",
+      "framework",
+      "entity",
+      "reporting period",
+      "known facts"
+    ],
+    "outputs": [
+      "Issue tree",
+      "evidence map",
+      "alternatives",
+      "conditional conclusion",
+      "open questions"
+    ],
+    "guardrail": "No claim of reviewing unavailable ASC text.",
+    "result_screen": "Evidence map",
+    "budget_profile": "RESEARCH",
+    "capability": "agent.execute",
+    "status": "IMPLEMENTED_BETA",
+    "implementation": "bounded_pipeline",
+    "enabled_by_default": true,
+    "sections": [
+      "Issue",
+      "Confirmed facts",
+      "Applicable authority",
+      "Analysis",
+      "Alternatives",
+      "Conditional conclusion"
+    ],
+    "min_documents": 0,
+    "max_queries": 4,
+    "max_evidence": 12
+  },
+  {
+    "id": "memo",
+    "code": "AG-02",
+    "title": "Accounting memo",
+    "category": "Document",
+    "phase": "Launch",
+    "requires_subscription": true,
+    "requires_documents": false,
+    "description": "Turn confirmed facts and cited analysis into an editable technical memo.",
+    "inputs": [
+      "Question or completed run",
+      "audience",
+      "framework",
+      "confirmed facts"
+    ],
+    "outputs": [
+      "Issue",
+      "facts",
+      "authority",
+      "application",
+      "alternatives",
+      "conclusion",
+      "references"
+    ],
+    "guardrail": "AI drafting is paid; manual editing and downloading an existing memo remain free.",
+    "result_screen": "Memo editor",
+    "budget_profile": "MEMO",
+    "capability": "agent.execute",
+    "status": "IMPLEMENTED_BETA",
+    "implementation": "bounded_pipeline",
+    "enabled_by_default": true,
+    "sections": [
+      "Issue",
+      "Facts",
+      "Relevant authority",
+      "Analysis",
+      "Alternative views",
+      "Conclusion",
+      "Open items"
+    ],
+    "min_documents": 0,
+    "max_queries": 4,
+    "max_evidence": 12
+  },
+  {
+    "id": "document_gaap",
+    "code": "AG-03",
+    "title": "Documents + GAAP analysis",
+    "category": "Document",
+    "phase": "Launch",
+    "requires_subscription": true,
+    "requires_documents": true,
+    "description": "Compare your documents with permitted guidance and our original research content.",
+    "inputs": [
+      "Contracts or policies",
+      "relevant amendments",
+      "entity",
+      "period",
+      "question"
+    ],
+    "outputs": [
+      "Clause-to-criterion matrix",
+      "document citations",
+      "gaps",
+      "scenarios",
+      "draft memo"
+    ],
+    "guardrail": "Subscription does not license proprietary standards; surface unavailable primary text.",
+    "result_screen": "Document workbench",
+    "budget_profile": "RESEARCH",
+    "capability": "agent.execute",
+    "status": "IMPLEMENTED_BETA",
+    "implementation": "bounded_pipeline",
+    "enabled_by_default": true,
+    "sections": [
+      "Document scope",
+      "Relevant clauses",
+      "Criteria and authority gaps",
+      "Clause-to-criterion analysis",
+      "Missing evidence",
+      "Conditional conclusion"
+    ],
+    "min_documents": 1,
+    "max_queries": 4,
+    "max_evidence": 12
+  },
+  {
+    "id": "contract_compare",
+    "code": "AG-04",
+    "title": "Contract and amendment comparison",
+    "category": "Document",
+    "phase": "Launch",
+    "requires_subscription": true,
+    "requires_documents": true,
+    "description": "Identify changed terms and the accounting questions those changes create.",
+    "inputs": [
+      "Two or more versions",
+      "effective dates",
+      "comparison objective"
+    ],
+    "outputs": [
+      "Side-by-side changes",
+      "term extraction",
+      "issue list",
+      "evidence-linked impact assessment"
+    ],
+    "guardrail": "A changed clause is not automatically an accounting modification.",
+    "result_screen": "Comparison matrix",
+    "budget_profile": "RESEARCH",
+    "capability": "agent.execute",
+    "status": "IMPLEMENTED_BETA",
+    "implementation": "bounded_pipeline",
+    "enabled_by_default": true,
+    "sections": [
+      "Versions compared",
+      "Changed terms",
+      "Accounting questions",
+      "Effective-date considerations",
+      "Review checklist"
+    ],
+    "min_documents": 2,
+    "max_queries": 4,
+    "max_evidence": 12
+  },
+  {
+    "id": "memo_review",
+    "code": "AG-05",
+    "title": "Challenge my memo",
+    "category": "Review",
+    "phase": "Launch",
+    "requires_subscription": true,
+    "requires_documents": true,
+    "description": "Test a draft for unsupported claims, inconsistent facts and missing alternatives.",
+    "inputs": [
+      "Draft memo",
+      "supporting material",
+      "intended framework and period"
+    ],
+    "outputs": [
+      "Claim audit",
+      "counterarguments",
+      "missing evidence",
+      "proposed edits"
+    ],
+    "guardrail": "AI review is not independent professional sign-off.",
+    "result_screen": "Review findings",
+    "budget_profile": "RESEARCH",
+    "capability": "agent.execute",
+    "status": "IMPLEMENTED_BETA",
+    "implementation": "bounded_pipeline",
+    "enabled_by_default": true,
+    "sections": [
+      "Claim audit",
+      "counterarguments",
+      "missing evidence",
+      "proposed edits"
+    ],
+    "min_documents": 1,
+    "max_queries": 4,
+    "max_evidence": 12
+  },
+  {
+    "id": "disclosure_review",
+    "code": "AG-06",
+    "title": "Disclosure gap review",
+    "category": "Review",
+    "phase": "Next",
+    "requires_subscription": true,
+    "requires_documents": true,
+    "description": "Compare a disclosure draft with a reviewed, scoped requirements checklist.",
+    "inputs": [
+      "Draft note or report",
+      "entity",
+      "period",
+      "applicable framework"
+    ],
+    "outputs": [
+      "Requirement-to-disclosure map",
+      "missing facts",
+      "candidate edits",
+      "limitations"
+    ],
+    "guardrail": "No compliance certificate; checklist coverage and authoritative access must be explicit.",
+    "result_screen": "Gap matrix",
+    "budget_profile": "RESEARCH",
+    "capability": "agent.execute",
+    "status": "EXPERIMENTAL",
+    "implementation": "bounded_pipeline",
+    "enabled_by_default": false,
+    "sections": [
+      "Requirement-to-disclosure map",
+      "missing facts",
+      "candidate edits",
+      "limitations"
+    ],
+    "min_documents": 1,
+    "max_queries": 4,
+    "max_evidence": 12
+  },
+  {
+    "id": "policy_draft",
+    "code": "AG-07",
+    "title": "Accounting policy drafting",
+    "category": "Document",
+    "phase": "Next",
+    "requires_subscription": true,
+    "requires_documents": false,
+    "description": "Draft or update an entity-specific policy using approved evidence.",
+    "inputs": [
+      "Current policy or questionnaire",
+      "entity choices",
+      "evidence scope"
+    ],
+    "outputs": [
+      "Policy draft",
+      "choices requiring approval",
+      "change log",
+      "references"
+    ],
+    "guardrail": "Do not invent management elections or override approved policies.",
+    "result_screen": "Policy editor",
+    "budget_profile": "MEMO",
+    "capability": "agent.execute",
+    "status": "EXPERIMENTAL",
+    "implementation": "bounded_pipeline",
+    "enabled_by_default": false,
+    "sections": [
+      "Policy draft",
+      "choices requiring approval",
+      "change log",
+      "references"
+    ],
+    "min_documents": 0,
+    "max_queries": 4,
+    "max_evidence": 12
+  },
+  {
+    "id": "revenue_workpaper",
+    "code": "AG-08",
+    "title": "Revenue contract workpaper",
+    "category": "Workpaper",
+    "phase": "Next",
+    "requires_subscription": true,
+    "requires_documents": true,
+    "description": "Organize a revenue-contract assessment into a documented workpaper.",
+    "inputs": [
+      "Agreement",
+      "amendments",
+      "promised services",
+      "pricing",
+      "timing",
+      "estimates"
+    ],
+    "outputs": [
+      "Contract facts",
+      "issue checklist",
+      "proposed allocation scenarios",
+      "draft entries"
+    ],
+    "guardrail": "Allocation and recognition depend on confirmed inputs; arithmetic uses decimal code.",
+    "result_screen": "Revenue workpaper",
+    "budget_profile": "RESEARCH",
+    "capability": "agent.execute",
+    "status": "EXPERIMENTAL",
+    "implementation": "bounded_pipeline",
+    "enabled_by_default": false,
+    "sections": [
+      "Contract facts",
+      "issue checklist",
+      "proposed allocation scenarios",
+      "draft entries"
+    ],
+    "min_documents": 1,
+    "max_queries": 4,
+    "max_evidence": 12
+  },
+  {
+    "id": "lease_workpaper",
+    "code": "AG-09",
+    "title": "Lease assessment and schedule",
+    "category": "Workpaper",
+    "phase": "Next",
+    "requires_subscription": true,
+    "requires_documents": true,
+    "description": "Extract lease terms and prepare reviewable assessment scenarios and schedules.",
+    "inputs": [
+      "Agreement",
+      "payment dates",
+      "options",
+      "user-confirmed discount rate",
+      "assumptions"
+    ],
+    "outputs": [
+      "Terms register",
+      "questions",
+      "schedule",
+      "proposed entries",
+      "sensitivity comparison"
+    ],
+    "guardrail": "Do not infer a discount rate or make unsupported classification conclusions.",
+    "result_screen": "Schedule and assumptions",
+    "budget_profile": "RESEARCH",
+    "capability": "agent.execute",
+    "status": "EXPERIMENTAL",
+    "implementation": "bounded_pipeline",
+    "enabled_by_default": false,
+    "sections": [
+      "Terms register",
+      "questions",
+      "schedule",
+      "proposed entries",
+      "sensitivity comparison"
+    ],
+    "min_documents": 1,
+    "max_queries": 4,
+    "max_evidence": 12
+  },
+  {
+    "id": "disclosure_benchmark",
+    "code": "AG-10",
+    "title": "Disclosure benchmarking",
+    "category": "Research",
+    "phase": "Next",
+    "requires_subscription": true,
+    "requires_documents": false,
+    "description": "Compare selected issuer disclosures and explain differences in presentation.",
+    "inputs": [
+      "Topic",
+      "issuer identifiers",
+      "periods",
+      "peer selection",
+      "permitted filing sources"
+    ],
+    "outputs": [
+      "Peer matrix",
+      "excerpt provenance",
+      "presentation differences",
+      "research questions"
+    ],
+    "guardrail": "Company practice is not authoritative approval or proof of compliance.",
+    "result_screen": "Peer matrix",
+    "budget_profile": "RESEARCH",
+    "capability": "agent.execute",
+    "status": "EXPERIMENTAL",
+    "implementation": "bounded_pipeline",
+    "enabled_by_default": false,
+    "sections": [
+      "Peer matrix",
+      "excerpt provenance",
+      "presentation differences",
+      "research questions"
+    ],
+    "min_documents": 0,
+    "max_queries": 4,
+    "max_evidence": 12
+  },
+  {
+    "id": "sec_response",
+    "code": "AG-11",
+    "title": "SEC comment response preparation",
+    "category": "Research",
+    "phase": "Next",
+    "requires_subscription": true,
+    "requires_documents": true,
+    "description": "Research an accounting comment and assemble an evidence-supported response draft.",
+    "inputs": [
+      "Comment letter",
+      "relevant disclosure",
+      "issuer facts",
+      "response objective"
+    ],
+    "outputs": [
+      "Issue list",
+      "comparable correspondence",
+      "draft response",
+      "substantiation checklist"
+    ],
+    "guardrail": "No filing, regulator contact or implication that prior correspondence establishes approval.",
+    "result_screen": "Response editor",
+    "budget_profile": "MEMO",
+    "capability": "agent.execute",
+    "status": "EXPERIMENTAL",
+    "implementation": "bounded_pipeline",
+    "enabled_by_default": false,
+    "sections": [
+      "Issue list",
+      "comparable correspondence",
+      "draft response",
+      "substantiation checklist"
+    ],
+    "min_documents": 1,
+    "max_queries": 4,
+    "max_evidence": 12
+  },
+  {
+    "id": "audit_prep",
+    "code": "AG-12",
+    "title": "Audit preparation pack",
+    "category": "Workpaper",
+    "phase": "Next",
+    "requires_subscription": true,
+    "requires_documents": false,
+    "description": "Turn a scoped risk or transaction into a draft evidence request and work program.",
+    "inputs": [
+      "Process",
+      "framework",
+      "audit regime",
+      "risks",
+      "existing evidence"
+    ],
+    "outputs": [
+      "PBC list",
+      "draft procedures",
+      "assertion links",
+      "unresolved scope questions"
+    ],
+    "guardrail": "No audit opinion, automatic sample sufficiency or statement that procedures were performed.",
+    "result_screen": "Audit preparation board",
+    "budget_profile": "RESEARCH",
+    "capability": "agent.execute",
+    "status": "EXPERIMENTAL",
+    "implementation": "bounded_pipeline",
+    "enabled_by_default": false,
+    "sections": [
+      "PBC list",
+      "draft procedures",
+      "assertion links",
+      "unresolved scope questions"
+    ],
+    "min_documents": 0,
+    "max_queries": 4,
+    "max_evidence": 12
+  },
+  {
+    "id": "controls_review",
+    "code": "AG-13",
+    "title": "Control design review",
+    "category": "Review",
+    "phase": "Next",
+    "requires_subscription": true,
+    "requires_documents": true,
+    "description": "Map documented risks, assertions, controls and evidence gaps.",
+    "inputs": [
+      "Narrative",
+      "risk-control matrix",
+      "walkthrough notes",
+      "known deficiencies"
+    ],
+    "outputs": [
+      "Design questions",
+      "evidence gaps",
+      "proposed control language",
+      "review considerations"
+    ],
+    "guardrail": "Not an operating-effectiveness test or automatic material-weakness determination.",
+    "result_screen": "Risk-control matrix",
+    "budget_profile": "RESEARCH",
+    "capability": "agent.execute",
+    "status": "EXPERIMENTAL",
+    "implementation": "bounded_pipeline",
+    "enabled_by_default": false,
+    "sections": [
+      "Design questions",
+      "evidence gaps",
+      "proposed control language",
+      "review considerations"
+    ],
+    "min_documents": 1,
+    "max_queries": 4,
+    "max_evidence": 12
+  },
+  {
+    "id": "close_pack",
+    "code": "AG-14",
+    "title": "Close issue and evidence pack",
+    "category": "Workpaper",
+    "phase": "Later",
+    "requires_subscription": true,
+    "requires_documents": true,
+    "description": "Organize unresolved accounting matters and supporting records for review.",
+    "inputs": [
+      "Close issue list",
+      "workpapers",
+      "ownership",
+      "reporting period"
+    ],
+    "outputs": [
+      "Issue register",
+      "dependencies",
+      "missing evidence",
+      "owner-ready review pack"
+    ],
+    "guardrail": "Do not post entries, approve reconciliations or mark missing evidence as complete.",
+    "result_screen": "Close issue board",
+    "budget_profile": "RESEARCH",
+    "capability": "agent.execute",
+    "status": "EXPERIMENTAL",
+    "implementation": "bounded_pipeline",
+    "enabled_by_default": false,
+    "sections": [
+      "Issue register",
+      "dependencies",
+      "missing evidence",
+      "owner-ready review pack"
+    ],
+    "min_documents": 1,
+    "max_queries": 4,
+    "max_evidence": 12
+  },
+  {
+    "id": "framework_compare",
+    "code": "AG-15",
+    "title": "U.S. GAAP / IFRS comparison",
+    "category": "Research",
+    "phase": "Later",
+    "requires_subscription": true,
+    "requires_documents": false,
+    "description": "Compare a particular issue under two explicitly separated frameworks.",
+    "inputs": [
+      "Fact pattern",
+      "entity",
+      "periods",
+      "confirmed source coverage in both frameworks"
+    ],
+    "outputs": [
+      "Two-framework matrix",
+      "criteria differences",
+      "conditional impacts",
+      "authority gaps"
+    ],
+    "guardrail": "Do not offer as fully supported until both frameworks have sufficient permitted evidence.",
+    "result_screen": "Framework matrix",
+    "budget_profile": "RESEARCH",
+    "capability": "agent.execute",
+    "status": "EXPERIMENTAL",
+    "implementation": "bounded_pipeline",
+    "enabled_by_default": false,
+    "sections": [
+      "Two-framework matrix",
+      "criteria differences",
+      "conditional impacts",
+      "authority gaps"
+    ],
+    "min_documents": 0,
+    "max_queries": 4,
+    "max_evidence": 12
+  },
+  {
+    "id": "standards_watch",
+    "code": "AG-16",
+    "title": "Standards impact watch",
+    "category": "Monitoring",
+    "phase": "Later",
+    "requires_subscription": true,
+    "requires_documents": false,
+    "description": "Check approved updates for relevance to a saved entity profile.",
+    "inputs": [
+      "Saved topic/entity profile",
+      "cadence",
+      "notification consent",
+      "approved sources"
+    ],
+    "outputs": [
+      "Change digest",
+      "applicability checklist",
+      "candidate action items",
+      "source links"
+    ],
+    "guardrail": "Opt-in only; bounded jobs; pause at entitlement expiry; no automatic adoption decisions.",
+    "result_screen": "Watch inbox",
+    "budget_profile": "RESEARCH",
+    "capability": "agent.execute",
+    "status": "EXPERIMENTAL",
+    "implementation": "deterministic_update_watch",
+    "enabled_by_default": false,
+    "sections": [
+      "Change digest",
+      "applicability checklist",
+      "candidate action items",
+      "source links"
+    ],
+    "min_documents": 0,
+    "max_queries": 4,
+    "max_evidence": 12
+  }
+]

@@ -1,0 +1,14 @@
+........................................................................ [ 15%]
+........................................................................ [ 30%]
+...................sssssssssss.......................................... [ 45%]
+........................................................................ [ 61%]
+........................................................................ [ 76%]
+........................................................................ [ 91%]
+........................................                                 [100%]
+=============================== warnings summary ===============================
+backend/.venv/lib/python3.11/site-packages/fastapi/testclient.py:1
+  /Users/raysang/Documents/ChatGPT/open-source-accounting/backend/.venv/lib/python3.11/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+461 passed, 11 skipped, 1 warning in 18.41s

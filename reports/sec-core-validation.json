@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "release": "0.7.0",
+  "sources_inventoried": 34,
+  "sources_with_excerpts": 7,
+  "selected_excerpts": 28,
+  "excerpt_words": 3514,
+  "complete_source_documents": 0,
+  "original_http_artifacts": 0,
+  "professional_reviewed": 0,
+  "agent_approved": 0,
+  "families": [
+    {
+      "family": "cfi",
+      "inventoried": 2,
+      "excerpted": 1,
+      "excerpts": 12,
+      "full_documents": 0,
+      "professionally_reviewed": 0,
+      "agent_approved": 0
+    },
+    {
+      "family": "forms",
+      "inventoried": 9,
+      "excerpted": 1,
+      "excerpts": 2,
+      "full_documents": 0,
+      "professionally_reviewed": 0,
+      "agent_approved": 0
+    },
+    {
+      "family": "frm",
+      "inventoried": 11,
+      "excerpted": 2,
+      "excerpts": 4,
+      "full_documents": 0,
+      "professionally_reviewed": 0,
+      "agent_approved": 0
+    },
+    {
+      "family": "reg_g",
+      "inventoried": 1,
+      "excerpted": 0,
+      "excerpts": 0,
+      "full_documents": 0,
+      "professionally_reviewed": 0,
+      "agent_approved": 0
+    },
+    {
+      "family": "reg_sk",
+      "inventoried": 2,
+      "excerpted": 1,
+      "excerpts": 6,
+      "full_documents": 0,
+      "professionally_reviewed": 0,
+      "agent_approved": 0
+    },
+    {
+      "family": "reg_sx",
+      "inventoried": 1,
+      "excerpted": 0,
+      "excerpts": 0,
+      "full_documents": 0,
+      "professionally_reviewed": 0,
+      "agent_approved": 0
+    },
+    {
+      "family": "sab",
+      "inventoried": 8,
+      "excerpted": 2,
+      "excerpts": 4,
+      "full_documents": 0,
+      "professionally_reviewed": 0,
+      "agent_approved": 0
+    }
+  ],
+  "notice": "Selected official-source transcriptions; pending independent review. Not full SEC coverage."
+}

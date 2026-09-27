@@ -1,0 +1,20 @@
+{
+  "passed": 11,
+  "checks": [
+    "library heading",
+    "first-page 24 articles",
+    "pagination",
+    "case filter",
+    "empty search",
+    "safe Markdown table",
+    "source provenance",
+    "draft disclosure",
+    "390px no page overflow",
+    "HTML/script and unsafe link rendered inert",
+    "no network requests"
+  ],
+  "mode": "offline compiled-component rendering with local library fixture",
+  "deployed_origin_tested": false,
+  "browser_navigation": "Local URL navigation was blocked by environment policy; no policy was changed.",
+  "download_flow_tested": false
+}

@@ -1,0 +1,1697 @@
+{
+  "schema_version": 1,
+  "release": "0.6.0",
+  "generated_at": "2026-09-27",
+  "publication_state": "public_editorial_draft",
+  "items": [
+    {
+      "id": "authority-and-period",
+      "title": "Build an authority and reporting-period map",
+      "kind": "guide",
+      "topic": "research",
+      "framework": "BOTH",
+      "summary": "Separate authoritative requirements, staff guidance, company practice, and assumptions before drafting a conclusion.",
+      "path": "guides/authority-and-period.md",
+      "version": "0.5.0",
+      "sha256": "ff50fe1debf847ed658432cbb29a4716492bc1c8b61255e92b935e1fe1ebdfd8",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "sec-frm",
+        "pcaob-as1105"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": false,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "revenue-research-map",
+      "title": "Revenue recognition: assemble the five-step evidence file",
+      "kind": "guide",
+      "topic": "revenue",
+      "framework": "US_GAAP",
+      "summary": "A practical evidence plan for customer contracts, performance obligations, pricing, allocation, and recognition.",
+      "path": "guides/revenue-research-map.md",
+      "version": "0.5.0",
+      "sha256": "3dd33e802692705075e54676282cf4f4abb4863ed6d00f1d84c443b1adb81018",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-revenue-project",
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "saas-implementation",
+      "title": "SaaS implementation fees: investigate the promise before the price",
+      "kind": "guide",
+      "topic": "revenue",
+      "framework": "US_GAAP",
+      "summary": "Distinguish customer deliverables from setup activity and build a conditional performance-obligation analysis.",
+      "path": "guides/saas-implementation.md",
+      "version": "0.5.0",
+      "sha256": "de0ff15d303eb6ccad235fd4438de7485eaa2e5093444ef86cfff995c804b7c4",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "fasb-revenue-project"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "customer-payments",
+      "title": "Payments to customers: route the arrangement before choosing an expense account",
+      "kind": "guide",
+      "topic": "revenue",
+      "framework": "US_GAAP",
+      "summary": "Organize rebates, marketing payments, and customer equity incentives without assuming their classification.",
+      "path": "guides/customer-payments.md",
+      "version": "0.5.0",
+      "sha256": "393dcc091b96c3b99c78185deedab51c0d7df554c4bd5bb801d66945e741e532",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "fasb-customer-equity"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "lease-identification",
+      "title": "Lease identification: examine assets, substitution, and decision rights",
+      "kind": "guide",
+      "topic": "leases",
+      "framework": "US_GAAP",
+      "summary": "A contract-reading checklist for potential embedded leases and service arrangements.",
+      "path": "guides/lease-identification.md",
+      "version": "0.5.0",
+      "sha256": "78624e0a6c98409a0143cac8af6bd0a873f0a306d347086320b581645334dd11",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "fasb-leases-pir"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "lease-measurement",
+      "title": "Lessee measurement: reconcile inputs before calculating",
+      "kind": "guide",
+      "topic": "leases",
+      "framework": "US_GAAP",
+      "summary": "Separate a payment present-value calculation from the broader lease-accounting analysis.",
+      "path": "guides/lease-measurement.md",
+      "version": "0.5.0",
+      "sha256": "ec49252b1a57f970e26de1d83d411a69a7073c957d3e5d20f67c767053e1d13b",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "fasb-leases-pir"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "share-based-award-intake",
+      "title": "Share-based compensation: build the award fact file",
+      "kind": "guide",
+      "topic": "stock-compensation",
+      "framework": "US_GAAP",
+      "summary": "Capture grant, vesting, settlement, valuation, and modification facts without confusing employee tax with issuer accounting.",
+      "path": "guides/share-based-award-intake.md",
+      "version": "0.5.0",
+      "sha256": "fcd176cd3f655bb609d1fa1890f6c134c93f80b8c55e049ac2336b0d42fc25e4",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "sec-sab14"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "loss-contingencies",
+      "title": "Loss contingencies: recognition, disclosure, and classification are separate questions",
+      "kind": "guide",
+      "topic": "contingencies",
+      "framework": "US_GAAP",
+      "summary": "Build an issue register that separates probability, estimation, disclosure, and expected settlement.",
+      "path": "guides/loss-contingencies.md",
+      "version": "0.5.0",
+      "sha256": "5663ceb28c3baa14546863083a3a0fdad3c9ca610dbceab4ab1c732b1cd0eb17",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "sec-sab99"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "materiality",
+      "title": "Materiality: use a threshold to begin the analysis, not end it",
+      "kind": "guide",
+      "topic": "financial-reporting",
+      "framework": "US_GAAP",
+      "summary": "A practical workpaper for quantitative and qualitative misstatement evaluation.",
+      "path": "guides/materiality.md",
+      "version": "0.5.0",
+      "sha256": "26aa441390a949a8592dda22d7b27be2aa22de0fdc16089bcebc14e7ee57352d",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "sec-sab99"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": false,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "error-measurement",
+      "title": "Misstatement measurement: reconcile current-year effects and accumulated balances",
+      "kind": "guide",
+      "topic": "financial-reporting",
+      "framework": "US_GAAP",
+      "summary": "A practical SAB 108 worksheet with a separate prior-period assessment.",
+      "path": "guides/error-measurement.md",
+      "version": "0.5.0",
+      "sha256": "0e84725a4ba0e5260b28dd0142d6a7ca15c067faf79549b27ef835f5473e6a7e",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "sec-sab108",
+        "sec-sab99",
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "icfr-deficiencies",
+      "title": "ICFR deficiencies: evaluate potential exposure and remediation evidence",
+      "kind": "guide",
+      "topic": "internal-controls",
+      "framework": "AUDIT",
+      "summary": "Build a risk-and-evidence analysis without treating a clean financial statement as proof of effective controls.",
+      "path": "guides/icfr-deficiencies.md",
+      "version": "0.5.0",
+      "sha256": "21c47b3306330ca680fd6650d18971676d95fa3a6568f3beec1bb931e9028f04",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "pcaob-as2201"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": false,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "electronic-audit-evidence",
+      "title": "Electronic audit evidence: trace the data before trusting the analysis",
+      "kind": "guide",
+      "topic": "audit-evidence",
+      "framework": "AUDIT",
+      "summary": "Evaluate provenance, completeness, accuracy, and the limits of technology-assisted procedures.",
+      "path": "guides/electronic-audit-evidence.md",
+      "version": "0.5.0",
+      "sha256": "c8edb9b97d501551e2d0b920aeb24e7622d2e85bd6e7aa4489947298fcaed399",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "pcaob-as1105",
+        "pcaob-tech-amendments",
+        "pcaob-electronic-policy"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": false,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "non-gaap-review",
+      "title": "Non-GAAP measures: review the adjustment, label, reconciliation, and presentation",
+      "kind": "guide",
+      "topic": "financial-reporting",
+      "framework": "US_GAAP",
+      "summary": "A structured review for proposed non-GAAP disclosure without promising SEC compliance.",
+      "path": "guides/non-gaap-review.md",
+      "version": "0.5.0",
+      "sha256": "b9eed05ea8c446e45988b095b9071caa38c0a098510c440159265764a0ff969f",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "sec-nongaap"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": false,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "yellow-book-scope",
+      "title": "Government auditing: determine the Yellow Book engagement and version",
+      "kind": "guide",
+      "topic": "government-audit",
+      "framework": "AUDIT",
+      "summary": "Identify engagement type, applicability dates, and quality-management review tasks.",
+      "path": "guides/yellow-book-scope.md",
+      "version": "0.5.0",
+      "sha256": "cf0dece7557f2a6f5daa7338c2bec21fc3f88978f114dcebd54ef4504c1369e4",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "gao-yellowbook",
+        "gao-yellowbook-2024",
+        "gao-qm-faq"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": false,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "case-ssp-allocation",
+      "title": "Worked case: allocate a fixed price using confirmed standalone prices",
+      "kind": "case",
+      "topic": "revenue",
+      "framework": "US_GAAP",
+      "summary": "Reproducible arithmetic for a two-item allocation after accounting assumptions are confirmed.",
+      "path": "cases/case-ssp-allocation.md",
+      "version": "0.5.0",
+      "sha256": "854f04b6571a0cffb7a630d281fe94fe9a5573f806828b202aeaf895eb8f1f1c",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "case-lease-present-value",
+      "title": "Worked case: a three-payment present-value schedule",
+      "kind": "case",
+      "topic": "leases",
+      "framework": "US_GAAP",
+      "summary": "An exact decimal example showing payment timing and the difference between arithmetic and accounting.",
+      "path": "cases/case-lease-present-value.md",
+      "version": "0.5.0",
+      "sha256": "bada27c4c46fb7107730acbbac0c0a1d12bbac5ebee2ae958976cafc40ad4061",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "case-implementation-alternatives",
+      "title": "Worked case: the same implementation fee, different missing facts",
+      "kind": "case",
+      "topic": "revenue",
+      "framework": "US_GAAP",
+      "summary": "Compare two possible arrangements without manufacturing a definitive ASC conclusion.",
+      "path": "cases/case-implementation-alternatives.md",
+      "version": "0.5.0",
+      "sha256": "b08b5f230e6c5879650b424ab0af7e56f11926a890fdce77d0275965a0787e59",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "fasb-revenue-project"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "case-accumulated-error",
+      "title": "Worked case: a liability error accumulates over three years",
+      "kind": "case",
+      "topic": "financial-reporting",
+      "framework": "US_GAAP",
+      "summary": "Quantify a 36,000 accumulated error and a 12,000 current-year effect without deciding materiality.",
+      "path": "cases/case-accumulated-error.md",
+      "version": "0.5.0",
+      "sha256": "6963bfa909fc288d956e2abdda2724baf7ae0d42cad75e1d982f33201dc5606a",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "sec-sab108",
+        "sec-sab99"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": false,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "case-control-remediation",
+      "title": "Worked case: a redesigned review control has not yet operated",
+      "kind": "case",
+      "topic": "internal-controls",
+      "framework": "AUDIT",
+      "summary": "Separate a remediation plan from evidence of effective operation.",
+      "path": "cases/case-control-remediation.md",
+      "version": "0.5.0",
+      "sha256": "a023ef3ba466541b3138ae91f695abb7a1f1464498ddcf47183bfc26c8164d0b",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "pcaob-as2201"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": false,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "technical-memo-template",
+      "title": "Technical accounting memorandum",
+      "kind": "template",
+      "topic": "research",
+      "framework": "BOTH",
+      "summary": "Reusable original worksheet with evidence and review fields.",
+      "path": "templates/technical-memo-template.md",
+      "version": "0.5.0",
+      "sha256": "abf80ddbfae5a2709166b4c68288afef867eee6e735398d481b6fbd38d4ecadf",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "clause-evidence-template",
+      "title": "Contract clause-to-criterion matrix",
+      "kind": "template",
+      "topic": "revenue",
+      "framework": "US_GAAP",
+      "summary": "Reusable original worksheet with evidence and review fields.",
+      "path": "templates/clause-evidence-template.md",
+      "version": "0.5.0",
+      "sha256": "fe8fd56dbbc00eb5dfca0ebe966963979e6bc3a099d52026722f17e51d2ded5f",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "audit-evidence-template",
+      "title": "Audit evidence request and procedure tracker",
+      "kind": "template",
+      "topic": "audit-evidence",
+      "framework": "AUDIT",
+      "summary": "Reusable original worksheet with evidence and review fields.",
+      "path": "templates/audit-evidence-template.md",
+      "version": "0.5.0",
+      "sha256": "c2e7493ccc558a7b3011b05f85a1ab4c3176eabf857c1015f4a7c98768ec46e7",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "pcaob-as1105"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": false,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "disclosure-review-template",
+      "title": "Disclosure review issue log",
+      "kind": "template",
+      "topic": "financial-reporting",
+      "framework": "US_GAAP",
+      "summary": "Reusable original worksheet with evidence and review fields.",
+      "path": "templates/disclosure-review-template.md",
+      "version": "0.5.0",
+      "sha256": "a321f5732603abe89740af88e0a711f92c84e7cfa821364250486748330d5c78",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "sec-frm"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": false,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "content-review-template",
+      "title": "Technical and rights review for a contributed article",
+      "kind": "template",
+      "topic": "research",
+      "framework": "BOTH",
+      "summary": "Reusable original worksheet with evidence and review fields.",
+      "path": "templates/content-review-template.md",
+      "version": "0.5.0",
+      "sha256": "15f136d791385ccc50e83f2ed0f24525a4890b6140ed74ac355319a9ed2f4deb",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fair-use",
+        "cc-by-4"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": false,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "source-onboarding-template",
+      "title": "Source onboarding and acquisition checklist",
+      "kind": "template",
+      "topic": "research",
+      "framework": "BOTH",
+      "summary": "Reusable original worksheet with evidence and review fields.",
+      "path": "templates/source-onboarding-template.md",
+      "version": "0.5.0",
+      "sha256": "9f137235eeecc349ecfe2da24f4ed51692831469a7eff7894cc5dfcc991f2c25",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "sec-reuse",
+        "pcaob-terms"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": false,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "playbook-deep-research",
+      "title": "Deep research — Agent playbook",
+      "kind": "playbook",
+      "topic": "research",
+      "framework": "BOTH",
+      "summary": "A conditional conclusion; facts matrix; authority map; application; alternative treatments; unresolved evidence; source/version list.",
+      "path": "playbooks/playbook-deep-research.md",
+      "version": "0.5.0",
+      "sha256": "4246559afddf3279a1b15d71015e92b561db21f16b84fee6abc3179ff7389845",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "sec-frm"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "playbook-memo",
+      "title": "Accounting memorandum — Agent playbook",
+      "kind": "playbook",
+      "topic": "research",
+      "framework": "BOTH",
+      "summary": "Issue; executive conclusion with conditions; facts; applicable authority; analysis; alternatives; conclusion; example entries if supported; open items; references; review history.",
+      "path": "playbooks/playbook-memo.md",
+      "version": "0.5.0",
+      "sha256": "090e6637b786a8b6534a7cf8ac789441babf155f4e1baae27c72ec906cfbd4b6",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "sec-frm"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "playbook-document-gaap",
+      "title": "Uploaded documents plus GAAP — Agent playbook",
+      "kind": "playbook",
+      "topic": "documents",
+      "framework": "US_GAAP",
+      "summary": "Clause-to-criterion matrix; confirmed/unconfirmed facts; conditional treatments; missing-document list; evidence-linked memo.",
+      "path": "playbooks/playbook-document-gaap.md",
+      "version": "0.5.0",
+      "sha256": "905c139da02c38fc11a89f0af2e2c3823e976416a11d12508f8521df85062a20",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "pcaob-as1105"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "playbook-contract-compare",
+      "title": "Contract and amendment comparison — Agent playbook",
+      "kind": "playbook",
+      "topic": "documents",
+      "framework": "US_GAAP",
+      "summary": "Old/new clause table; change summary; affected-accounting issue queue; unchanged assumptions; documents requiring legal confirmation.",
+      "path": "playbooks/playbook-contract-compare.md",
+      "version": "0.5.0",
+      "sha256": "a1c22fdb48a090bf959df09710c7f9a97488b7fcd2033daeac38dde580789aef",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "playbook-memo-review",
+      "title": "Challenge my memo — Agent playbook",
+      "kind": "playbook",
+      "topic": "research",
+      "framework": "BOTH",
+      "summary": "Findings classified as unsupported, inconsistent, missing fact, outdated, calculation issue, or stylistic; evidence links; proposed wording; unresolved review checklist.",
+      "path": "playbooks/playbook-memo-review.md",
+      "version": "0.5.0",
+      "sha256": "2d6e853db8c7d98f1045e84365197cabc96784cd3fa1251380902cb788d5448f",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "sec-frm"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "playbook-disclosure-review",
+      "title": "Disclosure gap review — Agent playbook",
+      "kind": "playbook",
+      "topic": "disclosures",
+      "framework": "US_GAAP",
+      "summary": "Disclosure matrix; potential omissions; inconsistencies; proposed edits; exclusions and authority gaps.",
+      "path": "playbooks/playbook-disclosure-review.md",
+      "version": "0.5.0",
+      "sha256": "d2a0875a1c07030267da34bf1e487a78c2fa1d4defe90168de8d95a3c1ddb14a",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "sec-frm",
+        "sec-nongaap"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "playbook-policy-draft",
+      "title": "Accounting policy drafting — Agent playbook",
+      "kind": "playbook",
+      "topic": "research",
+      "framework": "BOTH",
+      "summary": "Policy draft; scope; decision register; procedures; control evidence; examples; approvals; unresolved authority and elections.",
+      "path": "playbooks/playbook-policy-draft.md",
+      "version": "0.5.0",
+      "sha256": "94a8d40cebfb5bcf18f8f9876753cab7149846891b2e0ca9de1b13e31f942c40",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "playbook-revenue-workpaper",
+      "title": "Revenue contract workpaper — Agent playbook",
+      "kind": "playbook",
+      "topic": "revenue",
+      "framework": "US_GAAP",
+      "summary": "Fact file; step-by-step issue assessment; relative-SSP calculation where appropriate; conditional recognition schedule; draft entries; evidence gaps.",
+      "path": "playbooks/playbook-revenue-workpaper.md",
+      "version": "0.5.0",
+      "sha256": "cbefb8812d3b2e0971689a4629e4ef1bca213af73f58cc1f68772e03320613e1",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "fasb-revenue-project"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "playbook-lease-workpaper",
+      "title": "Lease assessment and schedule — Agent playbook",
+      "kind": "playbook",
+      "topic": "leases",
+      "framework": "US_GAAP",
+      "summary": "Lease-question checklist; confirmed inputs; simple liability schedule; timing assumptions; unsupported-feature list; draft memo.",
+      "path": "playbooks/playbook-lease-workpaper.md",
+      "version": "0.5.0",
+      "sha256": "2d135df01f0e54aed6066cb7a56617a7e405f83bccf24c2d19891ffe94d3e1f6",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "fasb-leases-pir"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "playbook-disclosure-benchmark",
+      "title": "Disclosure benchmarking — Agent playbook",
+      "kind": "playbook",
+      "topic": "disclosures",
+      "framework": "US_GAAP",
+      "summary": "Peer-selection rationale; comparable-company matrix; disclosure examples; factual differences; source provenance.",
+      "path": "playbooks/playbook-disclosure-benchmark.md",
+      "version": "0.5.0",
+      "sha256": "21259a2a43fe7e1bfb74077a198f02e41729c6800d0cdc50e8aa3b8054e2b211",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "sec-frm",
+        "sec-reuse"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": false,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "playbook-sec-response",
+      "title": "SEC comment-response preparation — Agent playbook",
+      "kind": "playbook",
+      "topic": "disclosures",
+      "framework": "US_GAAP",
+      "summary": "Comment tracker; evidence checklist; draft response; proposed filing changes; approval and unresolved-items register.",
+      "path": "playbooks/playbook-sec-response.md",
+      "version": "0.5.0",
+      "sha256": "290c3b9bcadd356d6b224901825cf90f99caed92076f6eb534c441877b5eecb6",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "sec-frm",
+        "sec-reuse"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": false,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "playbook-audit-prep",
+      "title": "Audit preparation pack — Agent playbook",
+      "kind": "playbook",
+      "topic": "audit",
+      "framework": "BOTH",
+      "summary": "PBC request list; risk/assertion/evidence matrix; suggested procedures; evidence-quality checks; outstanding questions.",
+      "path": "playbooks/playbook-audit-prep.md",
+      "version": "0.5.0",
+      "sha256": "ad5356618bdc1fcf91d498d0ace326600773ed9e6d1a809bf8ad70ff7d6eda38",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "pcaob-as1105",
+        "pcaob-as2201"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": false,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "playbook-controls-review",
+      "title": "Control design and deficiency review — Agent playbook",
+      "kind": "playbook",
+      "topic": "controls",
+      "framework": "BOTH",
+      "summary": "Risk-control matrix; design questions; evidence gaps; deficiency-analysis worksheet; remediation plan and testing prerequisites.",
+      "path": "playbooks/playbook-controls-review.md",
+      "version": "0.5.0",
+      "sha256": "549e0ea086b5a2e312f725ba3a4dfc3ecd01853cd2f5c173b2912e76deee0ce8",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "pcaob-as2201"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": false,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "playbook-close-pack",
+      "title": "Close issue and evidence pack — Agent playbook",
+      "kind": "playbook",
+      "topic": "research",
+      "framework": "BOTH",
+      "summary": "Close issue register; conditional memo links; evidence gaps; dependencies; draft entry list; sign-off status.",
+      "path": "playbooks/playbook-close-pack.md",
+      "version": "0.5.0",
+      "sha256": "e0ce97636dfedb01bb204bc0a62db7c0fb314e8f9a8b3c8462b299e47020f7b9",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "sec-sab99",
+        "sec-sab108",
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "playbook-framework-compare",
+      "title": "U.S. GAAP and IFRS issue comparison — Agent playbook",
+      "kind": "playbook",
+      "topic": "research",
+      "framework": "BOTH",
+      "summary": "Two-framework evidence table; verified similarities/differences; applicability conditions; explicit source gaps.",
+      "path": "playbooks/playbook-framework-compare.md",
+      "version": "0.5.0",
+      "sha256": "29f9ec951baaae0352bd76ba188fe6aca2a6862083c4bbebbc028bf944c813ff",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "playbook-standards-watch",
+      "title": "Opt-in standards impact watch — Agent playbook",
+      "kind": "playbook",
+      "topic": "research",
+      "framework": "BOTH",
+      "summary": "In-app change notification; document/version link; possible affected workspaces; adoption questions; review deadline supplied or approved by user.",
+      "path": "playbooks/playbook-standards-watch.md",
+      "version": "0.5.0",
+      "sha256": "c6df5c0471bc24f3bd6ce85a0c59bed5aafe45dccc5975adaa5d807ee1f8c8a1",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "gao-yellowbook"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "research-study-questions",
+      "title": "30 research and accounting study questions",
+      "kind": "qa_set",
+      "topic": "learning",
+      "framework": "BOTH",
+      "summary": "Research habits, hypothetical arithmetic, and clearly qualified accounting questions.",
+      "path": "qa/research-study-questions.md",
+      "version": "0.5.0",
+      "sha256": "2c25516d646e3464bccfdb5965e83a0a9750306e5608f98bccae1132493842c5",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "sec-frm",
+        "fasb-customer-equity",
+        "sec-sab14",
+        "sec-sab99",
+        "sec-sab108",
+        "pcaob-as2201",
+        "pcaob-as1105",
+        "pcaob-electronic-policy",
+        "sec-nongaap",
+        "gao-yellowbook",
+        "pcaob-terms"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "cash-flow-workbook",
+      "title": "Cash flows: reconcile before classifying",
+      "kind": "guide",
+      "topic": "cash-flows",
+      "framework": "US_GAAP",
+      "summary": "Build a transaction-level classification file rather than infer cash flows from balance-sheet changes.",
+      "path": "guides/cash-flow-workbook.md",
+      "version": "0.6.0",
+      "sha256": "c998919501ab87854350a38ccc14b5b16f142da1b562014fddefcf074ef73705",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "receivable-loss-workbook",
+      "title": "Receivable losses: turn aging data into an evidence file",
+      "kind": "guide",
+      "topic": "credit-losses",
+      "framework": "US_GAAP",
+      "summary": "Prepare the inputs and judgments for a credit-loss analysis without treating an aging matrix as an automatic GAAP conclusion.",
+      "path": "guides/receivable-loss-workbook.md",
+      "version": "0.6.0",
+      "sha256": "0ec20317faf211c6ed152dd8aa38ace62c521451b00b85c02c4c0f689d04ce00",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "pcaob-as2501"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "inventory-workbook",
+      "title": "Inventory: connect quantities, costing, and recoverability",
+      "kind": "guide",
+      "topic": "inventory",
+      "framework": "US_GAAP",
+      "summary": "Build a reviewable inventory workpaper that distinguishes existence, ownership, cost, and valuation questions.",
+      "path": "guides/inventory-workbook.md",
+      "version": "0.6.0",
+      "sha256": "ef5af6e4a0834a95be255b88a12f0836d98ca34d6d839cea396838e13460bfd7",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "impairment-workbook",
+      "title": "Impairment: choose the model before the valuation",
+      "kind": "guide",
+      "topic": "impairment",
+      "framework": "US_GAAP",
+      "summary": "Separate asset type, unit of account, triggering events, and measurement before generating an impairment conclusion.",
+      "path": "guides/impairment-workbook.md",
+      "version": "0.6.0",
+      "sha256": "75873c65d0207670ff9a15b9be96de1ddbe930f0ac772315ae2263561af6bc9b",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "pcaob-as2501"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "fair-value-workbook",
+      "title": "Fair value: document the market and the significant inputs",
+      "kind": "guide",
+      "topic": "fair-value",
+      "framework": "US_GAAP",
+      "summary": "Distinguish the reason for fair-value measurement from the valuation method and the reliability of its inputs.",
+      "path": "guides/fair-value-workbook.md",
+      "version": "0.6.0",
+      "sha256": "e62596c5063a71f62f109edd253705edf16b432ac2062ab72475952ac4c82dc6",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "pcaob-as2501"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "acquisition-workbook",
+      "title": "Acquisitions: map the transaction before allocating price",
+      "kind": "guide",
+      "topic": "business-combinations",
+      "framework": "US_GAAP",
+      "summary": "Organize acquisition facts, scope decisions, measurement questions, and disclosures without turning a purchase agreement into an automatic journal entry.",
+      "path": "guides/acquisition-workbook.md",
+      "version": "0.6.0",
+      "sha256": "9752efa6a6eaf3beb72a282c94c5672907b2050a3467f52dc68a53589a404201",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "consolidation-workbook",
+      "title": "Consolidation: connect control rights to evidence",
+      "kind": "guide",
+      "topic": "consolidation",
+      "framework": "US_GAAP",
+      "summary": "Prepare a rights-and-economics record before selecting a consolidation conclusion.",
+      "path": "guides/consolidation-workbook.md",
+      "version": "0.6.0",
+      "sha256": "82f16ffd1ed7744e66205088d01293143a864d8ba89a39b0add249b0e2578610",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "income-tax-workbook",
+      "title": "Income taxes: reconcile the provision without mixing tax regimes",
+      "kind": "guide",
+      "topic": "income-taxes",
+      "framework": "US_GAAP",
+      "summary": "Build a jurisdiction-specific accounting evidence file and keep income-tax accounting distinct from unrelated tax obligations.",
+      "path": "guides/income-tax-workbook.md",
+      "version": "0.6.0",
+      "sha256": "705650063f6bfa8f7ad51fa0903d9712e5ab68d2ad8913f97573900a8e67d956",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "foreign-currency-workbook",
+      "title": "Foreign currency: separate measurement, translation, and rate policy",
+      "kind": "guide",
+      "topic": "foreign-currency",
+      "framework": "US_GAAP",
+      "summary": "Create a currency map before explaining exchange differences or proposing reclassification entries.",
+      "path": "guides/foreign-currency-workbook.md",
+      "version": "0.6.0",
+      "sha256": "d777fa71d4071ae5007a190c6714fa91256b17bc1c88f5482ea88368dea054ba",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "going-concern-workbook",
+      "title": "Going concern: separate management assessment from audit work",
+      "kind": "guide",
+      "topic": "going-concern",
+      "framework": "US_GAAP",
+      "summary": "Build a dated liquidity evidence file and distinguish the responsibilities and evaluation horizons of management and auditors.",
+      "path": "guides/going-concern-workbook.md",
+      "version": "0.6.0",
+      "sha256": "69927897531826cf595aa3b594c6ef8da2b50ee27e71627af6f653b0052abc0b",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "pcaob-as2415"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "subsequent-events-workbook",
+      "title": "Subsequent events: build a chronology, not a keyword label",
+      "kind": "guide",
+      "topic": "subsequent-events",
+      "framework": "US_GAAP",
+      "summary": "Organize evidence about post-period events while keeping recognition, disclosure, and audit responsibilities distinct.",
+      "path": "guides/subsequent-events-workbook.md",
+      "version": "0.6.0",
+      "sha256": "80e501e9968f4772cc804273728b36f1473237210986c0873227ea4c52ef641c",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "pcaob-as2801"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "related-party-workbook",
+      "title": "Related parties: connect relationships, transactions, and disclosures",
+      "kind": "guide",
+      "topic": "related-parties",
+      "framework": "US_GAAP",
+      "summary": "Build a relationship map and assess evidence without assuming that management labels establish arm’s-length terms.",
+      "path": "guides/related-party-workbook.md",
+      "version": "0.6.0",
+      "sha256": "ccc95011d2556ff4c067895f9ddf532cc8ded033e33eb72f6fc7f3da276cf92c",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "pcaob-as2410"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "software-cost-workbook",
+      "title": "Software costs: organize the project facts before choosing a model",
+      "kind": "guide",
+      "topic": "software-costs",
+      "framework": "US_GAAP",
+      "summary": "Separate internal-use software, software for sale, and hosted-service arrangements before analyzing cost treatment.",
+      "path": "guides/software-cost-workbook.md",
+      "version": "0.6.0",
+      "sha256": "628f89b04c886c8db887b735291ca73b114e7098be10fc6d89f18b76a2cf472f",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "debt-workbook",
+      "title": "Debt and equity-linked instruments: read the complete terms",
+      "kind": "guide",
+      "topic": "debt-and-equity",
+      "framework": "US_GAAP",
+      "summary": "Build a term-level research file for financing arrangements without classifying instruments from their names.",
+      "path": "guides/debt-workbook.md",
+      "version": "0.6.0",
+      "sha256": "a2c912dce30b0790d31b2c44a048c0edd897d8ad2ea75a03feffd6c848546d40",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "case-cash-flow-bridge",
+      "title": "Worked case: a balance-sheet movement is not a cash-flow line",
+      "kind": "case",
+      "topic": "cash-flows",
+      "framework": "US_GAAP",
+      "summary": "A fictional reconciliation exercise with stipulated classifications; the arithmetic is not a GAAP classification opinion.",
+      "path": "cases/case-cash-flow-bridge.md",
+      "version": "0.6.0",
+      "sha256": "f68e50019a072797517d09b6a2cce45eebea1cd16eb4334253563a89075da70a",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "case-fx-payable",
+      "title": "Worked case: an explicitly assumed foreign-currency payable",
+      "kind": "case",
+      "topic": "foreign-currency",
+      "framework": "US_GAAP",
+      "summary": "A unit-checked numerical scenario; all accounting classification assumptions require separate confirmation.",
+      "path": "cases/case-fx-payable.md",
+      "version": "0.6.0",
+      "sha256": "956bb367677096be2c889189f19b39fe2f41699175e32542410b2b0ef46c7bce",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "case-liquidity-timing",
+      "title": "Worked case: positive ending cash can conceal a funding gap",
+      "kind": "case",
+      "topic": "going-concern",
+      "framework": "US_GAAP",
+      "summary": "A fictional liquidity scheduling exercise, not a prediction of solvency or an assurance conclusion.",
+      "path": "cases/case-liquidity-timing.md",
+      "version": "0.6.0",
+      "sha256": "48e2ca31249ddffc41f2d78ac9f45079c1e3952c941bf0ad309953eda8c3f7dd",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc",
+        "pcaob-as2415"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "estimate-register-template",
+      "title": "Template: accounting estimate and sensitivity register",
+      "kind": "template",
+      "topic": "research",
+      "framework": "US_GAAP",
+      "summary": "Separate the estimate, evidence, model, and management judgment before review.",
+      "path": "templates/estimate-register-template.md",
+      "version": "0.6.0",
+      "sha256": "71925ce41328dd0bce8cc34f4ccd0b20ef8c10e39c261ce7b6d7db820750eca5",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "subsequent-event-register-template",
+      "title": "Template: subsequent-event chronology",
+      "kind": "template",
+      "topic": "subsequent-events",
+      "framework": "US_GAAP",
+      "summary": "Preserve condition, event, discovery, and evaluation dates separately.",
+      "path": "templates/subsequent-event-register-template.md",
+      "version": "0.6.0",
+      "sha256": "29d3a1f12a5ec6d49f0d95e1138107eba854722e295fadff3e15733ff299dc2d",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "currency-policy-template",
+      "title": "Template: currency and exchange-rate policy evidence",
+      "kind": "template",
+      "topic": "foreign-currency",
+      "framework": "US_GAAP",
+      "summary": "Link currency conclusions and rate selections to facts before configuring finance systems.",
+      "path": "templates/currency-policy-template.md",
+      "version": "0.6.0",
+      "sha256": "afa7e81c1e8a37dde8a142854758973bc0816b0312fef3eac9f0c3892182f9c5",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "research-study-questions-v06",
+      "title": "Expanded study questions: evidence and model selection",
+      "kind": "qa_set",
+      "topic": "learning",
+      "framework": "US_GAAP",
+      "summary": "Twenty-eight new questions extend the original thirty; these are educational drafts, not adjudicated benchmark answers.",
+      "path": "qa/research-study-questions-v06.md",
+      "version": "0.6.0",
+      "sha256": "22e30e3693c5079d616c6c926301e3f5c850c480c5ea8a5cc6281dd48bf6e3dd",
+      "published_at": "2026-09-27",
+      "updated_at": "2026-09-27",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    }
+  ]
+}

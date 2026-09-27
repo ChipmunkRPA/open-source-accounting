@@ -1,0 +1,1330 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-09-27",
+  "family_count": 32,
+  "important": "This is a discovery and implementation specification, not a grant of rights. A seed URL or prior web inspection is not authorized corpus ingestion. Recheck current exact endpoints/terms.",
+  "families": [
+    {
+      "id": "SEC_RULES",
+      "title": "Regulation S-X, S-K and Regulation G",
+      "issue_numbers": [
+        1
+      ],
+      "seed_urls": [
+        "https://www.ecfr.gov/developers/documentation/api/v1",
+        "https://www.ecfr.gov/current/title-17/chapter-II/part-210",
+        "https://www.ecfr.gov/current/title-17/chapter-II/part-229",
+        "https://www.ecfr.gov/current/title-17/chapter-II/part-244"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "public_work_candidate",
+      "unit_of_coverage": "part + dated section inventory; do not double count sections and whole parts",
+      "retrieval_steps": [
+        "Resolve a documented as-of date and use the eCFR versioner full XML endpoint for Title 17 parts 210/229/244; inspect current API docs before using the existing template.",
+        "Persist original XML and HTTP receipt; enumerate actual sections and nested provisions, definitions, exceptions, tables and appendices.",
+        "Link amended regulations and Federal Register records; distinguish current-effective from historical-known-at-date research."
+      ],
+      "locator_requirements": [
+        "CFR title/part/section/subparagraph",
+        "as-of version",
+        "table/footnote"
+      ],
+      "rights_and_quality_limits": "Official reuse and third-party incorporations still require screening; regulations are not a source license for private standards.",
+      "first_deliverable": "Acquire and parse one complete declared part with exact locator and version tests, then expand.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "SEC_SAB",
+      "title": "Staff Accounting Bulletins and codification",
+      "issue_numbers": [
+        1
+      ],
+      "seed_urls": [
+        "https://www.sec.gov/rules-regulations/staff-guidance/selected-staff-accounting-bulletins/sec-staff-accounting-bulletin-codification-staff-accounting-bulletins",
+        "https://www.sec.gov/rules-regulations/staff-guidance/staff-accounting-bulletins"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "public_work_candidate",
+      "unit_of_coverage": "bulletin and codified topic/version, linked not double counted",
+      "retrieval_steps": [
+        "Discover every bulletin/topic from the official index; resolve current original publication and codified destination.",
+        "Download through the shared identifiable SEC gateway; retain facts/question/interpretive response/notes together.",
+        "Record issuance, amendment/rescission and applicability; replace the selected SAB99/108/14 references with reviewed actual source units."
+      ],
+      "locator_requirements": [
+        "SAB number",
+        "Topic/subtopic",
+        "question/response",
+        "issued/rescinded relationship"
+      ],
+      "rights_and_quality_limits": "Staff interpretation is not a Commission rule; do not silently treat rescinded text as current.",
+      "first_deliverable": "Inventory all codified topics and retrieve scoped complete documents; test a rescission relationship.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "SEC_FRM",
+      "title": "Financial Reporting Manual",
+      "issue_numbers": [
+        1
+      ],
+      "seed_urls": [
+        "https://www.sec.gov/about/divisions-offices/division-corporation-finance/financial-reporting-manual"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "public_work_candidate",
+      "unit_of_coverage": "dated FRM section with explicit topic coverage",
+      "retrieval_steps": [
+        "Follow current FRM topic and update links from the official landing page; build complete topic/section enumeration.",
+        "Acquire original HTML/downloads, retaining section labels, tables, exceptions, links and revision notes.",
+        "Separate revisions, aliases and former section identifiers; maintain non-authoritative staff label in retrieval/UI/export."
+      ],
+      "locator_requirements": [
+        "topic/section",
+        "revision date",
+        "table/note"
+      ],
+      "rights_and_quality_limits": "A landing page link is not the manual; current HTML does not alone establish historical availability.",
+      "first_deliverable": "Replace introduction/Topic1-only excerpt seed with a declared reviewed section collection.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "SEC_CFI",
+      "title": "Corporation Finance Interpretations / historical C&DIs",
+      "issue_numbers": [
+        1
+      ],
+      "seed_urls": [
+        "https://www.sec.gov/rules-regulations/staff-guidance/corporation-finance-interpretations"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "public_work_candidate",
+      "unit_of_coverage": "interpretation collection + numbered Q&A version",
+      "retrieval_steps": [
+        "Enumerate relevant S-X/S-K/non-GAAP/form/reporting interpretation categories through current official navigation.",
+        "Acquire each Q&A with question, complete answer, notes and last-change date; preserve historical C&DI aliases.",
+        "Map renumbered/withdrawn questions rather than assuming permanent numbering."
+      ],
+      "locator_requirements": [
+        "collection",
+        "question number",
+        "revision date"
+      ],
+      "rights_and_quality_limits": "Current names/identifiers must be rechecked; staff interpretations are distinct from underlying rules.",
+      "first_deliverable": "Acquire full selected non-GAAP collection and exact Q&A citations, then cover other categories.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "SEC_FORMS",
+      "title": "Official filing forms and instructions",
+      "issue_numbers": [
+        1
+      ],
+      "seed_urls": [
+        "https://www.sec.gov/submit-filings/forms-index"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "public_work_candidate",
+      "unit_of_coverage": "form edition and instruction/item",
+      "retrieval_steps": [
+        "Resolve the actual official form download from the form index, not guessed PDF filenames.",
+        "Prioritize 10-K/10-Q/8-K/S-1/S-3/S-4/20-F/6-K/F-1 and relevant amendment instructions.",
+        "Retain edition/date, instructions, items, appendices and page labels; compare tables to rendered PDFs before review."
+      ],
+      "locator_requirements": [
+        "form",
+        "general instruction/item",
+        "printed and physical page",
+        "edition"
+      ],
+      "rights_and_quality_limits": "A blank form does not count as issuer practice or full text of an incorporated private standard.",
+      "first_deliverable": "Acquire a complete form and general-instruction/item parser fixture; enumerate remaining editions.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "SEC_FILINGS",
+      "title": "EDGAR issuer filings and disclosure examples",
+      "issue_numbers": [
+        2
+      ],
+      "seed_urls": [
+        "https://www.sec.gov/about/developer-resources",
+        "https://www.sec.gov/search-filings/edgar-application-programming-interfaces"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "public_filing_screening_required",
+      "unit_of_coverage": "CIK/accession/document + declared issuers/forms/periods",
+      "retrieval_steps": [
+        "Declare a pilot issuer/form/period universe and resolve CIKs. Use documented submissions/older index files to enumerate accessions.",
+        "Resolve each official primary document and relevant exhibits from archive metadata; acquire actual HTML/PDF with amendment links.",
+        "Extract policy/footnote/MD&A/ICFR/earnings-release examples with context, tables and public availability."
+      ],
+      "locator_requirements": [
+        "CIK/accession",
+        "form/document",
+        "item/note/table/footnote",
+        "report period"
+      ],
+      "rights_and_quality_limits": "Issuer-authored filings are not federal-authored works merely by submission; screen embedded third-party material and label practice, not authority.",
+      "first_deliverable": "A source-screened pilot in revenue/non-GAAP/acquisition/ICFR with actual disclosure evidence.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "SEC_CORRESPONDENCE",
+      "title": "SEC comment letters and issuer responses",
+      "issue_numbers": [
+        2
+      ],
+      "seed_urls": [
+        "https://www.sec.gov/search-filings/edgar-search-assistance/how-search-edgar-correspondence"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "public_filing_screening_required",
+      "unit_of_coverage": "numbered comment and linked correspondence thread",
+      "retrieval_steps": [
+        "Discover UPLOAD and CORRESP accessions plus responses included in other filings using official EDGAR metadata.",
+        "Link original filing, numbered comment, issuer response, follow-up and revised disclosure; store uncertainty/missing links explicitly.",
+        "Preserve letter, filing, public-release and ingestion dates independently; curate a defined issue/company pilot."
+      ],
+      "locator_requirements": [
+        "accession",
+        "comment number",
+        "thread/event",
+        "page/paragraph"
+      ],
+      "rights_and_quality_limits": "Thread closure is not SEC approval; correspondence availability is not instantaneous.",
+      "first_deliverable": "Complete and intentionally incomplete thread fixtures with cited gap indicators.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "SEC_XBRL",
+      "title": "XBRL Company Facts and financial-statement/notes datasets",
+      "issue_numbers": [
+        2
+      ],
+      "seed_urls": [
+        "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "https://www.sec.gov/data-research/sec-markets-data/financial-statement-data-sets",
+        "https://www.sec.gov/data-research/sec-markets-data/financial-statement-notes-data-sets"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "public_dataset_candidate",
+      "unit_of_coverage": "accession/concept/context/unit/period and dataset vintage",
+      "retrieval_steps": [
+        "Use documented Company Facts endpoints and official bulk dataset download links; record dataset release/vintage.",
+        "Preserve entity, contexts/dimensions, currency/units, scale/sign/decimals, period, taxonomy, custom tags and amendments.",
+        "Reconcile selected extracted records to original filing narratives/tables; do not assume Company Facts includes every custom/dimensional disclosure."
+      ],
+      "locator_requirements": [
+        "CIK/accession",
+        "concept/context/unit",
+        "period",
+        "note/table"
+      ],
+      "rights_and_quality_limits": "Structured facts are not a complete narrative corpus; keep original filings and dataset limitations.",
+      "first_deliverable": "A reproducible pilot with fact-to-filing reconciliation and notes context.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "SEC_AUDIT_ENFORCEMENT",
+      "title": "OCA, disclosures guidance, AAER and reporting releases",
+      "issue_numbers": [
+        3
+      ],
+      "seed_urls": [
+        "https://www.sec.gov/about/divisions-offices/office-chief-accountant",
+        "https://www.sec.gov/rules-regulations/staff-guidance/office-chief-accountant-staff-letters",
+        "https://www.sec.gov/rules-regulations/staff-guidance/disclosure-guidance",
+        "https://www.sec.gov/enforcement-litigation/accounting-auditing-enforcement-releases",
+        "https://www.ecfr.gov/current/title-17/chapter-II/part-211"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "public_work_candidate",
+      "unit_of_coverage": "guidance Q&A/release and case document/event",
+      "retrieval_steps": [
+        "Navigate OCA independence/current staff publications and link underlying rules; enumerate a defined guidance period.",
+        "Follow AAER and release records to original complaints/orders/judgments and later dispositions; index document-level procedural state.",
+        "Acquire original allowed artifacts, parse exact locators, and require case-history and technical review."
+      ],
+      "locator_requirements": [
+        "release/docket",
+        "Q&A/paragraph/page",
+        "event/date",
+        "disposition"
+      ],
+      "rights_and_quality_limits": "AAER list is not exhaustive; distinguish allegations, settlements, adjudicated findings and speeches/staff positions.",
+      "first_deliverable": "Source-screened independence pilot and a small complete enforcement-history collection.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "FASB",
+      "title": "FASB ASC, ASUs, Concepts and implementation material",
+      "issue_numbers": [
+        9
+      ],
+      "seed_urls": [
+        "https://asc.fasb.org/",
+        "https://www.fasb.org/",
+        "https://www.accountingfoundation.org/"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "reference_only_until_scope_cleared",
+      "unit_of_coverage": "ASC reference/version and ASU/amendment record",
+      "retrieval_steps": [
+        "Navigate official current pages for references, ASUs, concepts, agendas and taxonomies; detailed dynamic pages need verification.",
+        "Build independently maintained IDs/links/adoption metadata; draft FAF service-license request covering public paid AI use.",
+        "After specific clearance only, use approved feed/manual import with paragraph/exception/table/version preservation; keep licensed raw text outside public Git.",
+        "Build original explanations and examples from legitimately examined evidence while blocked; never reconstruct ASC through publisher mirrors."
+      ],
+      "locator_requirements": [
+        "Topic/Subtopic/Section/Paragraph",
+        "ASU number",
+        "effective entity/transition"
+      ],
+      "rights_and_quality_limits": "Free reading does not license processing; ASU announcements/project summaries do not verify every current ASC criterion.",
+      "first_deliverable": "Reference map for five core topics plus explicit rights request and disabled licensed adapter.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "GASB",
+      "title": "GASB standards and implementation Q&As",
+      "issue_numbers": [
+        10
+      ],
+      "seed_urls": [
+        "https://www.gasb.org/",
+        "https://www.accountingfoundation.org/"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "reference_only_until_scope_cleared",
+      "unit_of_coverage": "statement/codification/Q&A edition",
+      "retrieval_steps": [
+        "Use official navigation to inventory statements, codification, implementation guides and transitions.",
+        "Obtain actual FAF/GASB permissions for intended text operations; use metadata and original teaching material before clearance.",
+        "Upon clearance preserve required/application material, paragraph IDs and entity-period applicability; government annual reports are a separately reviewed practice corpus."
+      ],
+      "locator_requirements": [
+        "statement/paragraph",
+        "implementation Q&A",
+        "edition/effective date"
+      ],
+      "rights_and_quality_limits": "State/local accounting subject does not make GASB a federal government work.",
+      "first_deliverable": "Governmental-accounting reference directory and scoped licensed-import fixtures.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "PCAOB",
+      "title": "PCAOB auditing, quality, ethics, inspections and enforcement",
+      "issue_numbers": [
+        11
+      ],
+      "seed_urls": [
+        "https://pcaobus.org/oversight/standards",
+        "https://pcaobus.org/oversight/inspections",
+        "https://pcaobus.org/oversight/enforcement",
+        "https://pcaobus.org/privacypolicy"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "authorized_route_required",
+      "unit_of_coverage": "standard/paragraph/version or public inspection/case document",
+      "retrieval_steps": [
+        "Inventory actual current/archived AS, attestation, ethics/independence and quality standards via official indexes.",
+        "Use documented manual downloads or explicitly authorized feeds; do not enable a website crawler contrary to extraction terms.",
+        "Review Public Materials conditions, AI transmission and normalization/display obligations; preserve original notices and excluded third-party components.",
+        "Parse standard IDs, SEC approval/effective periods, public inspection findings and case dispositions."
+      ],
+      "locator_requirements": [
+        "AS/QC/paragraph",
+        "edition/approval/effective date",
+        "report period",
+        "case/release"
+      ],
+      "rights_and_quality_limits": "Conditional publication reuse is separate from automated acquisition and model-training permission; do not seek nonpublic inspection material.",
+      "first_deliverable": "Approved-route standard import and exact-version fixtures with reference-only fallback.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "AICPA",
+      "title": "AU-C, AT-C, AR-C, ethics, quality and guides",
+      "issue_numbers": [
+        12
+      ],
+      "seed_urls": [
+        "https://www.aicpa-cima.com/",
+        "https://www.aicpa-cima.com/resources/article/terms-of-service"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "reference_only_until_scope_cleared",
+      "unit_of_coverage": "codified section/paragraph and guide edition",
+      "retrieval_steps": [
+        "Navigate official standards/ASB resources for SAS/AU-C, SSAE/AT-C, SSARS/AR-C, ethics, quality management and guides.",
+        "Draft use-specific permission request; membership/personal access is not public-service AI authorization.",
+        "On clearance import approved feed/files with required/application/example distinctions, engagement regime, dates and exact locators."
+      ],
+      "locator_requirements": [
+        "AU-C/AT-C/AR-C/paragraph",
+        "edition",
+        "engagement type"
+      ],
+      "rights_and_quality_limits": "Do not scrape member products or reuse credentials; user SOC reports are private inputs.",
+      "first_deliverable": "Complete scoped reference inventory and original nonissuer decision aids, licensed fixture adapter only.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "IFRS",
+      "title": "IASB/ISSB, IFRIC/SIC, SMEs and adoption",
+      "issue_numbers": [
+        13
+      ],
+      "seed_urls": [
+        "https://www.ifrs.org/issued-standards/",
+        "https://www.ifrs.org/legal/intellectual-property/",
+        "https://www.ifrs.org/products-and-services/ifrs-accounting-licensing/"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "reference_only_until_scope_cleared",
+      "unit_of_coverage": "standard/paragraph/language/edition/adoption",
+      "retrieval_steps": [
+        "Discover official issued standards, agenda decisions, examples/basis, SMEs, ISSB and taxonomy publications.",
+        "Prepare the licensing questionnaire/request with the actual free/paid service and AI processing scope; do not submit without authorization.",
+        "After clearance import appropriate editions, languages, effective/adoption rules, exceptions and locators; taxonomy license separate.",
+        "Author comparison matrices from independently verified criteria rather than copied third-party tables."
+      ],
+      "locator_requirements": [
+        "IAS/IFRS/IFRIC/SIC/paragraph",
+        "required vs issued edition",
+        "jurisdiction/language"
+      ],
+      "rights_and_quality_limits": "ISSB, SMEs and local endorsed IFRS are distinct scopes; mere download availability is not a public AI license.",
+      "first_deliverable": "Core reference map plus declared comparison scope and rights/adoption blockers.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "IAASB",
+      "title": "IAASB assurance and quality standards",
+      "issue_numbers": [
+        14
+      ],
+      "seed_urls": [
+        "https://www.iaasb.org/",
+        "https://www.ifac.org/ifac-intellectual-property"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "reference_only_until_scope_cleared",
+      "unit_of_coverage": "standard/paragraph/edition/language",
+      "retrieval_steps": [
+        "From the official root discover the current handbook and ISA/ISQM/ISAE/ISRE/ISRS and relevant sustainability assurance; verify title, language and edition. Generic publication pages may resolve to unrelated translations.",
+        "Verify the actual rights owner for the edition; prepare an explicit public paid AI/RAG permission request rather than assuming IFAC grants everything.",
+        "Only approved feeds/files may enter text processing; preserve paragraph/application distinctions, notices, local adoption and language versions."
+      ],
+      "locator_requirements": [
+        "standard/paragraph",
+        "edition/language",
+        "effective/local adoption"
+      ],
+      "rights_and_quality_limits": "Free handbook access is not a blanket open license; do not mix frameworks.",
+      "first_deliverable": "Board-specific reference registry, license packet and synthetic parser/connector tests.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "IESBA",
+      "title": "IESBA ethics and independence",
+      "issue_numbers": [
+        14
+      ],
+      "seed_urls": [
+        "https://www.ethicsboard.org/",
+        "https://www.ifac.org/ifac-intellectual-property"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "reference_only_until_scope_cleared",
+      "unit_of_coverage": "standard/paragraph/edition/language",
+      "retrieval_steps": [
+        "From the official root discover the current handbook and Code/requirements/application and independence provisions; verify title, language and edition. Generic publication pages may resolve to unrelated translations.",
+        "Verify the actual rights owner for the edition; prepare an explicit public paid AI/RAG permission request rather than assuming IFAC grants everything.",
+        "Only approved feeds/files may enter text processing; preserve paragraph/application distinctions, notices, local adoption and language versions."
+      ],
+      "locator_requirements": [
+        "standard/paragraph",
+        "edition/language",
+        "effective/local adoption"
+      ],
+      "rights_and_quality_limits": "Free handbook access is not a blanket open license; do not mix frameworks.",
+      "first_deliverable": "Board-specific reference registry, license packet and synthetic parser/connector tests.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "IPSASB",
+      "title": "IPSASB public-sector standards",
+      "issue_numbers": [
+        14
+      ],
+      "seed_urls": [
+        "https://www.ipsasb.org/",
+        "https://www.ifac.org/ifac-intellectual-property"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "reference_only_until_scope_cleared",
+      "unit_of_coverage": "standard/paragraph/edition/language",
+      "retrieval_steps": [
+        "From the official root discover the current handbook and IPSAS and current related public-sector implementation material; verify title, language and edition. Generic publication pages may resolve to unrelated translations.",
+        "Verify the actual rights owner for the edition; prepare an explicit public paid AI/RAG permission request rather than assuming IFAC grants everything.",
+        "Only approved feeds/files may enter text processing; preserve paragraph/application distinctions, notices, local adoption and language versions."
+      ],
+      "locator_requirements": [
+        "standard/paragraph",
+        "edition/language",
+        "effective/local adoption"
+      ],
+      "rights_and_quality_limits": "Free handbook access is not a blanket open license; do not mix frameworks.",
+      "first_deliverable": "Board-specific reference registry, license packet and synthetic parser/connector tests.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "GAO",
+      "title": "GAO Yellow Book, Green Book and related guidance",
+      "issue_numbers": [
+        15
+      ],
+      "seed_urls": [
+        "https://www.gao.gov/yellowbook",
+        "https://www.gao.gov/greenbook",
+        "https://www.gao.gov/copyright"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "public_work_candidate",
+      "unit_of_coverage": "publication edition/chapter/paragraph and erratum",
+      "retrieval_steps": [
+        "Follow current landing pages to official original editions, historical copies, errata and implementation guidance.",
+        "Check government authorship/reuse terms and third-party inclusions; download via permitted route retaining original bytes/notices.",
+        "Parse chapter/paragraph/table/page; distinguish engagement-type effective triggers and compare rendered tables."
+      ],
+      "locator_requirements": [
+        "book/edition",
+        "chapter/paragraph",
+        "physical/printed page"
+      ],
+      "rights_and_quality_limits": "Guidance/FAQs are not automatically equal to standards; keep Yellow versus Green purposes and versions clear.",
+      "first_deliverable": "Full source-cleared editions with exact citation and visual extraction checks.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "FASAB",
+      "title": "Federal Accounting Standards Advisory Board",
+      "issue_numbers": [
+        15
+      ],
+      "seed_urls": [
+        "https://fasab.gov/accounting-standards/"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "public_work_candidate",
+      "unit_of_coverage": "SFFAS/SFFAC/interpretation/technical publication version",
+      "retrieval_steps": [
+        "Enumerate official Handbook, standards/concepts, interpretations, technical bulletins/releases and amendments.",
+        "Verify each original publication notice/rights and download routes; preserve hierarchy and effective-date scope.",
+        "Parse actual paragraph/section locators and create original federal accounting examples with specialist review."
+      ],
+      "locator_requirements": [
+        "publication number",
+        "paragraph",
+        "edition/effective date"
+      ],
+      "rights_and_quality_limits": "Federal FASAB framework is not GASB; verify work-specific rights and reused content.",
+      "first_deliverable": "Handbook inventory and a complete scoped source import with exact locators.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "OMB_TREASURY",
+      "title": "OMB circulars, grants and Treasury reporting guidance",
+      "issue_numbers": [
+        15
+      ],
+      "seed_urls": [
+        "https://www.whitehouse.gov/omb/",
+        "https://www.ecfr.gov/current/title-2/subtitle-A/chapter-II/part-200",
+        "https://tfm.fiscal.treasury.gov/"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "public_work_candidate",
+      "unit_of_coverage": "circular/supplement/manual edition, fiscal year and program",
+      "retrieval_steps": [
+        "Resolve current official navigation to relevant A-123/A-136 circulars, annual Compliance Supplements and Treasury manuals.",
+        "Acquire regulations and circulars as distinct authority classes; preserve fiscal-year/program/appendix context and revisions.",
+        "Parse compliance matrices/schedules and reconcile tables; maintain old annual versions separately."
+      ],
+      "locator_requirements": [
+        "circular/chapter/appendix",
+        "program",
+        "fiscal year",
+        "table/paragraph"
+      ],
+      "rights_and_quality_limits": "Do not collapse annual supplements or represent agency examples as universal GAAP.",
+      "first_deliverable": "Documented pilot annual edition and version-aware compliance-table fixtures.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "FEDERAL_LAW",
+      "title": "Federal statutes and regulations",
+      "issue_numbers": [
+        16
+      ],
+      "seed_urls": [
+        "https://uscode.house.gov/download/download.shtml",
+        "https://www.govinfo.gov/bulkdata/",
+        "https://www.ecfr.gov/developers/documentation/api/v1",
+        "https://www.federalregister.gov/developers/documentation/api/v1"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "public_work_candidate",
+      "unit_of_coverage": "title/section or dated regulation/release",
+      "retrieval_steps": [
+        "Use official bulk/API docs for securities/SOX/accounting-related law and relevant regulations.",
+        "Preserve statutory version, regulation effective dates, proposed/final distinction and amendments.",
+        "Screen privately incorporated material and keep exact section/subparagraph locators."
+      ],
+      "locator_requirements": [
+        "USC/CFR title/section",
+        "paragraph",
+        "edition/effective date"
+      ],
+      "rights_and_quality_limits": "Official publication does not erase every embedded private copyright; proposals are not operative rules.",
+      "first_deliverable": "Scoped authoritative-law corpus with amendments and applicability tests.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "COURTS",
+      "title": "Official court opinions and procedural history",
+      "issue_numbers": [
+        16
+      ],
+      "seed_urls": [
+        "https://www.govinfo.gov/app/collection/USCOURTS",
+        "https://www.supremecourt.gov/opinions/opinions.aspx"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "official_opinion_candidate",
+      "unit_of_coverage": "court/docket/opinion version and procedural event",
+      "retrieval_steps": [
+        "Discover official opinions from court/govinfo sources for declared subject/jurisdiction/year scope.",
+        "Preserve docket, court, date, precedential designation where stated, pages and actual disposition; retrieve amended and later official records when available.",
+        "Write original case briefs with facts/arguments/holding/reasoning clearly separated from procedural records."
+      ],
+      "locator_requirements": [
+        "court/docket",
+        "decision date",
+        "page/paragraph",
+        "opinion version"
+      ],
+      "rights_and_quality_limits": "No Westlaw/Lexis headnotes or proprietary citator data; no fee-incurring PACER retrieval without approval; do not claim exhaustive later history.",
+      "first_deliverable": "Pilot with actual opinions and disclosed later-history gaps, expert reviewed.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "STATE_LOCAL_LAW",
+      "title": "State/local statutes, opinions and public reports",
+      "issue_numbers": [
+        16,
+        10
+      ],
+      "seed_urls": [
+        "https://www.usa.gov/state-governments"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "per_jurisdiction_review",
+      "unit_of_coverage": "jurisdiction/document/version",
+      "retrieval_steps": [
+        "Choose an explicit state/local pilot, identify its authentic legislature/court/regulator source and permissions.",
+        "Verify official government-edict versus other-agency/contractor content status; do not apply federal section105 universally.",
+        "Acquire only through permitted routes and retain jurisdiction/version/exact citations."
+      ],
+      "locator_requirements": [
+        "jurisdiction",
+        "statute/case/report",
+        "paragraph/page",
+        "date"
+      ],
+      "rights_and_quality_limits": "Government-adjacent content or issuer reports need separate rights assessment.",
+      "first_deliverable": "Metadata map and reviewed source-specific route for one pilot.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "COSO",
+      "title": "COSO IC/ERM and thought papers",
+      "issue_numbers": [
+        17
+      ],
+      "seed_urls": [
+        "https://www.coso.org/guidance-on-ic",
+        "https://www.coso.org/"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "reference_only_until_scope_cleared",
+      "unit_of_coverage": "framework/publication/edition/principle",
+      "retrieval_steps": [
+        "Discover core frameworks and free downloads with exact applicable licensing terms.",
+        "Request software/public AI/paid-service permission; distinguish distributing an intact free download from embedding its contents in software.",
+        "Until cleared, create independent risk-control explanations and link references; no copied diagrams/framework prose."
+      ],
+      "locator_requirements": [
+        "framework/edition",
+        "principle/section",
+        "page"
+      ],
+      "rights_and_quality_limits": "Free downloads are not automatic software-use permission.",
+      "first_deliverable": "Reference map and licensing packet plus original control examples.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "IIA_ISACA",
+      "title": "IIA internal audit and ISACA/COBIT",
+      "issue_numbers": [
+        17
+      ],
+      "seed_urls": [
+        "https://www.theiia.org/en/standards",
+        "https://www.theiia.org/en/about-us/licensing/",
+        "https://www.theiia.org/en/copyright-notice/",
+        "https://www.isaca.org/"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "reference_only_until_scope_cleared",
+      "unit_of_coverage": "framework/standard/requirement/edition",
+      "retrieval_steps": [
+        "Inventory current and historical IIA standards/topical requirements and relevant COBIT/ISACA publications separately.",
+        "Review exact software and AI clauses. IIA published licensing materials require specific AI authorization and do not generally authorize public AI use.",
+        "Build metadata and independent internal-audit/ITGC examples; licensed ingestion only after explicit compatible permission."
+      ],
+      "locator_requirements": [
+        "standard/requirement",
+        "framework/edition",
+        "section/page"
+      ],
+      "rights_and_quality_limits": "A generic software license does not establish AI authorization; do not infer performed audit work from documents.",
+      "first_deliverable": "Permission-specific reference layers and original control-design cases.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "NIST",
+      "title": "NIST government IT/security/control guidance",
+      "issue_numbers": [
+        17
+      ],
+      "seed_urls": [
+        "https://csrc.nist.gov/publications"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "public_work_candidate",
+      "unit_of_coverage": "publication/control identifier/version",
+      "retrieval_steps": [
+        "Discover official CSF, SP and AI risk guidance relevant to finance systems; check publication notices and external components.",
+        "Acquire permitted official formats, preserving version, control IDs, withdrawn/superseded status and tables.",
+        "Map guidance to original ITGC examples without calling NIST a GAAP/COSO requirement."
+      ],
+      "locator_requirements": [
+        "publication/version",
+        "control/section",
+        "page"
+      ],
+      "rights_and_quality_limits": "Government guidance scope and private incorporated material must be distinguished.",
+      "first_deliverable": "One reviewed publication-to-control map with precise citations.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "PUBLISHERS",
+      "title": "Big Four, other firms, textbooks and proprietary research",
+      "issue_numbers": [
+        18
+      ],
+      "seed_urls": [
+        "https://dart.deloitte.com/USDART/obj/vsid/441069",
+        "https://viewpoint.pwc.com/",
+        "https://www.ey.com/",
+        "https://kpmg.com/"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "reference_only_until_scope_cleared",
+      "unit_of_coverage": "publisher/product/article/edition",
+      "retrieval_steps": [
+        "Discover official metadata and source terms only through allowed routes; check embedded FAF/AICPA/COSO rights.",
+        "Prepare permission packets. Do not fetch restricted body text into AI, scrape user accounts, or use search/mirror/upload as a bypass.",
+        "Write genuine original teaching material, not mass paraphrases; licensed body adapters stay disabled until exact operation rights are established."
+      ],
+      "locator_requirements": [
+        "publisher/product",
+        "title/edition",
+        "section/page"
+      ],
+      "rights_and_quality_limits": "No DART AI use absent appropriate separate permission; learning ideas is distinct from copying protected expression.",
+      "first_deliverable": "Reference directory, blocked-source tests and per-product permission requests.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "OPEN_LITERATURE",
+      "title": "Open textbooks, academic articles and OER",
+      "issue_numbers": [
+        19
+      ],
+      "seed_urls": [
+        "https://openstax.org/subjects/business",
+        "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
+        "https://creativecommons.org/share-your-work/cclicenses/"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "license_by_work_version",
+      "unit_of_coverage": "book/chapter or DOI/manuscript version",
+      "retrieval_steps": [
+        "Discover works through official publishers, DOI metadata and institutional repositories; inspect actual full-text version and license.",
+        "Check CC0/BY/SA/NC/ND obligations and third-party figures per edition; NC is not automatically compatible with the paid Agent.",
+        "Acquire allowed text preserving chapter/page/attribution/modification notices, manuscript-vs-record version, corrections and retractions."
+      ],
+      "locator_requirements": [
+        "DOI/version",
+        "chapter/page",
+        "license/attribution"
+      ],
+      "rights_and_quality_limits": "DOI/abstract/search availability is not permission; empirical research/textbooks are not authoritative standards.",
+      "first_deliverable": "A license-verified scoped collection, attribution/export tests and retraction handling.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "REGULATORS",
+      "title": "Banking, tax, plan, utility and industry reporting",
+      "issue_numbers": [
+        20
+      ],
+      "seed_urls": [
+        "https://www.ffiec.gov/",
+        "https://www.fdic.gov/",
+        "https://www.occ.treas.gov/",
+        "https://www.federalreserve.gov/",
+        "https://www.irs.gov/irb",
+        "https://www.irs.gov/forms-instructions",
+        "https://www.dol.gov/agencies/ebsa",
+        "https://www.ferc.gov/",
+        "https://content.naic.org/"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "per_publication_review",
+      "unit_of_coverage": "regulator/report/schedule/jurisdiction/period",
+      "retrieval_steps": [
+        "Select specific regulator/industry pilots and resolve current official reporting instructions/APIs/downloads.",
+        "Check work authorship/private rights; NAIC material is not federal public domain. Separate tax law/instructions from GAAP.",
+        "Acquire permitted versions and structured reports with schedules, units, periods and historical amendments."
+      ],
+      "locator_requirements": [
+        "regulator/report/schedule",
+        "tax or fiscal year",
+        "paragraph/page"
+      ],
+      "rights_and_quality_limits": "Specialist/jurisdiction scope and source rights must be explicit; no filing or tax-rate assumptions.",
+      "first_deliverable": "One report-instruction pilot per approved industry, reviewed before production routing.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "LOCAL_FRAMEWORKS",
+      "title": "National standards, legal adoption and translations",
+      "issue_numbers": [
+        21
+      ],
+      "seed_urls": [
+        "https://www.frc.org.uk/",
+        "https://www.aasb.gov.au/",
+        "https://www.auasb.gov.au/",
+        "https://www.frascanada.ca/",
+        "https://eur-lex.europa.eu/",
+        "https://www.ifrs.org/use-around-the-world/"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "per_jurisdiction_review",
+      "unit_of_coverage": "standard/language/local adoption/version",
+      "retrieval_steps": [
+        "Choose one jurisdiction at a time and navigate official standard-setter/regulator/legislative sources.",
+        "Record local modifications, endorsement law, required date and language; inspect translation and narrative reuse rights.",
+        "Acquire only under compatible rights; use specialist-reviewed original comparisons while text is blocked."
+      ],
+      "locator_requirements": [
+        "local standard/paragraph",
+        "jurisdiction/adoption date",
+        "language/version"
+      ],
+      "rights_and_quality_limits": "IFRS as issued is not always local-endorsed IFRS; machine translation is not authoritative local text.",
+      "first_deliverable": "Explicit opt-in pilot with reference/rights/adoption matrix.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "ORIGINAL",
+      "title": "Our guides, cases, templates, questions and playbooks",
+      "issue_numbers": [
+        22,
+        23
+      ],
+      "seed_urls": [
+        "repo:content/manifest.json",
+        "repo:content/references/sources.json",
+        "repo:content/qa/questions.json"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "original_content_review_required",
+      "unit_of_coverage": "immutable content item/version and independently adjudicated question",
+      "retrieval_steps": [
+        "Read each actual file, verify manifest hash and referenced sources, and record retain/revise/supersede disposition.",
+        "Author original source-supported scope/decision/case/template material; never copy exam banks or replace a publisher passage with synonyms.",
+        "Generate new immutable versions and content progress; require actual independent review for Agent admission."
+      ],
+      "locator_requirements": [
+        "item ID/version/hash",
+        "section",
+        "source references"
+      ],
+      "rights_and_quality_limits": "Public draft availability does not establish technical correctness or primary-text verification; contributors grant only rights held.",
+      "first_deliverable": "Complete all63 item retrieval/review mapping, then deepen core topics.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "PRIVATE_UPLOADS",
+      "title": "User contracts, memos, workpapers and private reports",
+      "issue_numbers": [
+        24,
+        29,
+        31,
+        34
+      ],
+      "seed_urls": [
+        "repo:backend/app/services/documents.py",
+        "repo:backend/app/api/workspaces.py"
+      ],
+      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "default_mode": "workspace_private_authorization_required",
+      "unit_of_coverage": "workspace/document/version/page/clause/cell",
+      "retrieval_steps": [
+        "Accept only authorized files through authenticated MFA workspace; validate formats and quarantine before parsing.",
+        "Check publisher-specific restrictions even for user-provided files, and constrain model/provider retention.",
+        "Keep private source and derivatives isolated; citations resolve only within authorized workspace; delete derivatives on deletion."
+      ],
+      "locator_requirements": [
+        "workspace/document/hash",
+        "page/clause/sheet/cell",
+        "revision"
+      ],
+      "rights_and_quality_limits": "No public Git, cross-workspace retrieval, shared cache, training or public content ingestion; upload checkbox is not a blanket license.",
+      "first_deliverable": "Secure private parsing-to-evidence flow with permission and deletion tests.",
+      "raw_text_authorized_by_this_file": false,
+      "completion_gates": [
+        "inventoried",
+        "acquisition route and operations reviewed",
+        "acquired original artifact",
+        "parsed with locators",
+        "rights approved",
+        "technically reviewed",
+        "applicability reviewed",
+        "indexed",
+        "evaluated",
+        "maintenance configured"
+      ],
+      "scheduled": false
+    }
+  ]
+}
