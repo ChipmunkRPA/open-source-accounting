@@ -1,6 +1,7 @@
 import {api} from '../api.js';
 import {el,button,link,heading,badge,field,notice,card,select,input,empty,textarea,checkbox,modal} from '../ui.js';
 import {markdown} from '../markdown.js';
+import {sourceNotices} from '../source-notices.js';
 import type {App,Json} from '../types.js';
 function saveMarkdown(name:string,text:string){const url=URL.createObjectURL(new Blob([text],{type:'text/markdown;charset=utf-8'}));
   const a=el('a',{href:url,download:name});document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
@@ -57,7 +58,7 @@ export async function editorialView(app:App){
       const decision=select([['changes_requested','Request changes'],['approved','Approve technical content']]);const status=el('div');
       const dialog=modal(s.title,badge('Rights: '+(s.rights_reviewed?'approved':'pending')),badge('Technical: '+s.editorial_status),
         notice('A source link is not proof of primary-text access. Record exactly what you checked. This action never labels original commentary authoritative.','warning'),
-        markdown(s.text||'').element,el('pre',{},JSON.stringify(s.policy.content_reference_ids,null,2)),field('Decision',decision),field('Review scope, findings, and authority limitations',note),checked.element,status);
+        markdown(s.text||'').element,sourceNotices(s.source_attributions),el('pre',{},JSON.stringify(s.policy.content_reference_ids,null,2)),field('Decision',decision),field('Review scope, findings, and authority limitations',note),checked.element,status);
       dialog.append(button('Record review',async()=>{try{
         if(!checked.input.checked)throw new Error('Confirm actual review before submitting.');
         await api('/editorial/sources/'+s.id+'/review','POST',{expected_policy_version:s.policy_version,content_sha256:s.policy.content_sha256,
