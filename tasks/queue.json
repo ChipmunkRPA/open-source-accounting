@@ -431,7 +431,7 @@
       "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/26",
       "priority": "P0",
       "lane": "platform",
-      "status": "queued",
+      "status": "in_progress",
       "depends_on_issues": [
         6,
         7
@@ -441,7 +441,8 @@
       "work": "Use gemini-3.8-flash via backend ADC; verify SDK/endpoint/region/settings/costs, bounded tools and schema validation; no silent fallback.",
       "acceptance": "Mock contracts plus authorized live staging evidence, actual usage costs and provider-retention review; missing credentials marked blocked.",
       "progress_required": true,
-      "scheduled": false
+      "scheduled": false,
+      "implementation_note": "PRs #50–#52 implement verified public Cloud REST contracts, dated estimates, durable attempt accounting and conservative operator-budget reservations. Invoice reconciliation, bounded retries/deadlines/cancellation, actual project access and operator-authorized staging remain. See docs/GEMINI_CONTRACT.md, docs/MODEL_BUDGETS.md and progress.md; no live approval or goal completion is claimed."
     },
     {
       "id": "MFA",
