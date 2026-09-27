@@ -22,7 +22,11 @@ def approve(client,sid):
     assert client.post(f'/api/v1/admin/sources/{sid}/approve',json=rights_approval(client,sid),headers={'X-Dev-User':'approver'}).status_code==200
     with client.app.state.db.Session() as db:
         s=db.get(Source,sid)
-        body=dict(expected_policy_version=s.policy_version,content_sha256=hashlib.sha256(s.text.encode()).hexdigest(),decision='approved',review_note='TEST ONLY: fixture approval; no real professional review.',checked_reference_ids=['sec-cfi-nongaap'],confirm_actual_review_performed=True)
+        from app.services.editorial import revision
+        from app.models import now
+        body=dict(expected_policy_version=s.policy_version,expected_review_revision=revision(s),
+                  review_scope='Synthetic SEC technical scope', evidence_ref='ev_synthetic_sec', evidence_sha256='a'*64,
+                  expires_at=now()+3600, content_sha256=hashlib.sha256(s.text.encode()).hexdigest(),decision='approved',review_note='TEST ONLY: fixture approval; no real professional review.',checked_reference_ids=['sec-cfi-nongaap'],confirm_actual_review_performed=True)
     r=client.post(f'/api/v1/editorial/sources/{sid}/review',headers={'X-Dev-User':'editor'},json=body)
     assert r.status_code==200,r.text
 

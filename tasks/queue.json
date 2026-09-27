@@ -373,7 +373,7 @@
       "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/23",
       "priority": "P0",
       "lane": "platform",
-      "status": "queued",
+      "status": "in_progress",
       "depends_on_issues": [
         6,
         7,
@@ -384,7 +384,8 @@
       "work": "Implement independent rights/parser/technical/applicability decisions, revision hashing, correction and source-disable propagation; generate coverage.",
       "acceptance": "Stale approval and separation-of-duties tests; zero human reviews remain zero until actual approval; reproducible reports.",
       "progress_required": true,
-      "scheduled": false
+      "scheduled": false,
+      "implementation_note": "Append-only technical-review ledger, revision/expiry/revocation runtime gates, private history UI and PostgreSQL concurrent-decision protection implemented. Legacy flags alone deny admission. Synthetic validation creates zero real approvals. Reviewer packets, linked-reference snapshots, parser/applicability workflows and actual human review remain. See docs/EDITORIAL_REVIEWS.md and progress.md."
     },
     {
       "id": "PARSERS",

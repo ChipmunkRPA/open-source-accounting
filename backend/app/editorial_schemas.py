@@ -1,0 +1,18 @@
+"""Human technical-review attestations. No model may manufacture these decisions."""
+from typing import Literal
+from pydantic import Field
+from .schemas import Strict
+
+
+class EditorialDecision(Strict):
+    expected_policy_version: int = Field(ge=1)
+    expected_review_revision: str = Field(pattern=r'^[a-f0-9]{64}$')
+    content_sha256: str = Field(pattern=r'^[a-f0-9]{64}$')
+    decision: Literal['approved', 'changes_requested', 'rejected', 'revoked']
+    review_scope: str = Field(min_length=10, max_length=2000)
+    review_note: str = Field(min_length=20, max_length=4000)
+    evidence_ref: str = Field(pattern=r'^ev_[A-Za-z0-9_-]{1,120}$')
+    evidence_sha256: str = Field(pattern=r'^[a-f0-9]{64}$')
+    expires_at: int = Field(ge=1)
+    checked_reference_ids: list[str] = Field(default_factory=list, max_length=100)
+    confirm_actual_review_performed: Literal[True]

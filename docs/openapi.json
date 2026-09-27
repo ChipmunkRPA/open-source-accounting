@@ -2435,6 +2435,46 @@
         }
       }
     },
+    "/api/v1/editorial/sources/{source_id}/reviews": {
+      "get": {
+        "tags": [
+          "open library"
+        ],
+        "summary": "Review History",
+        "operationId": "review_history_api_v1_editorial_sources__source_id__reviews_get",
+        "parameters": [
+          {
+            "name": "source_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Source Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/sec-core": {
       "get": {
         "tags": [
@@ -4439,6 +4479,11 @@
             "minimum": 1.0,
             "title": "Expected Policy Version"
           },
+          "expected_review_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Expected Review Revision"
+          },
           "content_sha256": {
             "type": "string",
             "pattern": "^[a-f0-9]{64}$",
@@ -4448,9 +4493,17 @@
             "type": "string",
             "enum": [
               "approved",
-              "changes_requested"
+              "changes_requested",
+              "rejected",
+              "revoked"
             ],
             "title": "Decision"
+          },
+          "review_scope": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 10,
+            "title": "Review Scope"
           },
           "review_note": {
             "type": "string",
@@ -4458,13 +4511,27 @@
             "minLength": 20,
             "title": "Review Note"
           },
+          "evidence_ref": {
+            "type": "string",
+            "pattern": "^ev_[A-Za-z0-9_-]{1,120}$",
+            "title": "Evidence Ref"
+          },
+          "evidence_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Evidence Sha256"
+          },
+          "expires_at": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Expires At"
+          },
           "checked_reference_ids": {
             "items": {
               "type": "string"
             },
             "type": "array",
             "maxItems": 100,
-            "minItems": 1,
             "title": "Checked Reference Ids"
           },
           "confirm_actual_review_performed": {
@@ -4477,10 +4544,14 @@
         "type": "object",
         "required": [
           "expected_policy_version",
+          "expected_review_revision",
           "content_sha256",
           "decision",
+          "review_scope",
           "review_note",
-          "checked_reference_ids",
+          "evidence_ref",
+          "evidence_sha256",
+          "expires_at",
           "confirm_actual_review_performed"
         ],
         "title": "EditorialDecision"

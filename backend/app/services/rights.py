@@ -95,9 +95,10 @@ def allowed(source: Source, action: str, *, context: dict | None = None, _visite
         if not all(isinstance(v, str) and v for v in values) or (context or {}).get(key) not in values:
             return False
     if action in {'model_input', 'embed', 'train'} and policy.get('requires_technical_review'):
+        from .editorial import current
         digest = hashlib.sha256((source.text or '').encode()).hexdigest()
         if (policy.get('technical_review_status') != 'approved'
-                or policy.get('technical_reviewed_sha256') != digest):
+                or policy.get('technical_reviewed_sha256') != digest or not current(source)):
             return False
     return True
 

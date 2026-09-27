@@ -6,10 +6,8 @@ import shutil
 from decimal import Decimal, getcontext
 from pathlib import Path
 import pytest
-from sqlalchemy import select
-from app.config import Settings
 from app.content import Library, ContentError, stage_library
-from app.models import Source, User, Run
+from app.models import Source, Run
 from app.services.rights import allowed
 from app.services.retrieval import search
 
@@ -132,7 +130,11 @@ def test_non_admin_cannot_stage(client,pack):
 
 
 def decision(s,**changes):
-    data={'expected_policy_version':s.policy_version,'content_sha256':s.policy['content_sha256'],
+    from app.services.editorial import revision
+    from app.models import now
+    data={'expected_policy_version':s.policy_version,'expected_review_revision':revision(s),
+          'review_scope':'Synthetic technical scope only', 'evidence_ref':'ev_synthetic_technical',
+          'evidence_sha256':'a'*64, 'expires_at':now()+3600, 'content_sha256':s.policy['content_sha256'],
           'decision':'approved','review_note':'TEST FIXTURE ONLY: simulated review for permissions tests, not an accounting review.',
           'checked_reference_ids':s.policy['content_reference_ids'],'confirm_actual_review_performed':True}
     data.update(changes);return data

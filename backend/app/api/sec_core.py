@@ -1,5 +1,6 @@
 """Public SEC source-excerpt reading and MFA-protected applicability review."""
 from pathlib import Path
+from ..services.editorial import current as technical_current
 from datetime import date
 from typing import Literal
 import hashlib
@@ -80,7 +81,7 @@ def applicability(source_id: str, payload: ApplicabilityReview,
     if source.created_by == user.id:
         fail('SEPARATION_OF_DUTIES', 'A different reviewer must validate applicability.', 403)
     if (not source.enabled or not source.reviewed or
-            source.policy.get('technical_review_status') != 'approved'):
+            source.policy.get('technical_review_status') != 'approved' or not technical_current(source)):
         fail('REVIEW_REQUIRED', 'Rights and technical reviews must be completed first.', 409)
     actual = hashlib.sha256((source.text or '').encode()).hexdigest()
     if (payload.content_sha256 != actual or payload.expected_policy_version != source.policy_version or

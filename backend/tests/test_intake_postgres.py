@@ -732,3 +732,58 @@ def test_postgres_crossref_one_request_across_processes(pg_url):
             if process.pid:
                 if process.is_alive(): process.terminate()
                 process.join(5)
+
+
+def editorial_worker(url, source_id, actor, payload, start, results):
+    from app.editorial_schemas import EditorialDecision
+    from app.services import editorial
+    database = Database(url)
+    try:
+        assert start.wait(15)
+        with database.Session() as db:
+            source = db.scalar(select(Source).where(Source.id == source_id).with_for_update())
+            try:
+                editorial.record(db, source, EditorialDecision.model_validate(payload), actor)
+                results.put('recorded')
+            except HTTPException as exc:
+                results.put(exc.status_code)
+    finally:
+        database.engine.dispose()
+
+
+def test_postgres_technical_review_stale_decision_cannot_overwrite(pg_url):
+    from app.services import editorial
+    from app.models import EditorialReview, now
+    from app.sec_core.core import digest
+    database = Database(pg_url)
+    actor, creator, approver, sid = (str(uuid4()) for _ in range(4))
+    with database.Session() as db:
+        db.add_all([User(id=actor,role='technical_reviewer'),User(id=creator,role='admin'),User(id=approver,role='rights_approver')]); db.commit()
+        source = Source(id=sid,title='Synthetic review source',publisher='Test author',canonical_url='',
+            text='Original synthetic example only.',kind='original_commentary',created_by=creator,reviewed=True,
+            approved_by=approver,policy={'basis':'original','commercial_use':True,'display_full':True,
+            'model_input':True,'requires_technical_review':True,'content_reference_ids':[]})
+        db.add(source); db.flush(); rights.record_approval(source, approver); db.commit()
+        payload = {'expected_policy_version':source.policy_version, 'expected_review_revision':editorial.revision(source),
+            'content_sha256':digest(source.text),'decision':'approved','review_scope':'Synthetic scope only',
+            'review_note':'Synthetic test attestation; not actual professional review.',
+            'evidence_ref':'ev_synthetic_review','evidence_sha256':'a'*64,'expires_at':now()+3600,
+            'checked_reference_ids':[],'confirm_actual_review_performed':True}
+    ctx = multiprocessing.get_context('spawn')
+    start, results = ctx.Event(), ctx.Queue()
+    workers = [ctx.Process(target=editorial_worker,args=(pg_url,sid,actor,payload,start,results)) for _ in range(2)]
+    try:
+        for process in workers: process.start()
+        start.set()
+        observed = [results.get(timeout=20),results.get(timeout=20)]
+        assert 'recorded' in observed and 409 in observed
+        for process in workers:
+            process.join(15); assert process.exitcode == 0
+        with database.Session() as db:
+            assert db.scalar(select(func.count()).select_from(EditorialReview).where(EditorialReview.source_id==sid)) == 1
+    finally:
+        for process in workers:
+            if process.pid:
+                if process.is_alive(): process.terminate()
+                process.join(5)
+        database.engine.dispose()

@@ -164,7 +164,7 @@ Known gaps include live cloud/payment/model integration, production identity and
 
 ## Publishing and releases
 
-The canonical repository is `ChipmunkRPA/open-source-accounting`. Work on a branch, run checks and submit a pull request. Do not recreate the repository, force-push unrelated history, or publish data/secrets. The legacy `scripts/publish_github.py` is only for a new absent target and refuses this existing repository; use normal Git for subsequent releases.
+The canonical repository is `ChipmunkRPA/open-source-accounting`. Keep validated work on main, following the operator update in AGENTS.md. Use a short-lived branch/PR only when needed; integrate it before starting the next task. Do not recreate the repository, force-push unrelated history, or publish data/secrets. The legacy `scripts/publish_github.py` is only for a new absent target and refuses this existing repository; use normal Git for subsequent releases.
 
 GitHub publication is not public website deployment. The repository's current remote files and CI results, rather than this source archive, establish publication status. See [PUBLISHING.md](PUBLISHING.md).
 
@@ -216,3 +216,5 @@ python scripts/check_queue.py
 ```
 
 This check refuses a nonempty database, runs upgrade/downgrade/re-upgrade, and checks model/schema parity. CI uses PostgreSQL 17 with synthetic local credentials and no cloud secrets. Docker builds use the committed Node lock and hash-pinned Python runtime requirements.
+
+Technical reviewers: see [the review-record workflow](docs/EDITORIAL_REVIEWS.md) for exact revisions, supporting evidence, expiry, revocation and private history.

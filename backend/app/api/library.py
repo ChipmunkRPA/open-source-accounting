@@ -1,15 +1,13 @@
 """Public educational drafts. This router does not charge, crawl, or call a model."""
 import hashlib
-from typing import Literal
 from fastapi import APIRouter, Depends, Query
-from pydantic import Field
 from sqlalchemy import select
 from ..auth import fresh_user, settings, session, current_user
 from ..content import Library, ContentError
-from ..schemas import Strict
-from ..models import Source, Audit, now
+from ..editorial_schemas import EditorialDecision
+from ..models import Source, EditorialReview
 from ..errors import fail
-from ..services import rights, output_rights
+from ..services import rights, output_rights, editorial
 
 router = APIRouter(tags=['open library'])
 
@@ -41,15 +39,6 @@ def require_editor(user):
         fail('FORBIDDEN', 'An assigned technical reviewer is required.', 403)
 
 
-class EditorialDecision(Strict):
-    expected_policy_version: int = Field(ge=1)
-    content_sha256: str = Field(pattern=r'^[a-f0-9]{64}$')
-    decision: Literal['approved', 'changes_requested']
-    review_note: str = Field(min_length=20, max_length=4000)
-    checked_reference_ids: list[str] = Field(min_length=1, max_length=100)
-    confirm_actual_review_performed: Literal[True]
-
-
 @router.get('/editorial/sources')
 def editorial_sources(user=Depends(current_user), db=Depends(session)):
     require_editor(user)
@@ -61,7 +50,9 @@ def editorial_sources(user=Depends(current_user), db=Depends(session)):
         notes = output_rights.notices(db, [s])
         if text: releases.append(([s], {'text': text, 'source_attributions': notes}))
         items.append({**rights.metadata(s), 'policy': s.policy, 'text': text,
-                      'source_attributions': notes, 'created_by': s.created_by})
+                      'content_sha256': hashlib.sha256((s.text or '').encode()).hexdigest(),
+                      'source_attributions': notes, 'created_by': s.created_by,
+                      'review_revision': editorial.revision(s), 'technical_review_current': editorial.current(s)})
     output_rights.release_batch(db, releases)
     db.commit()
     return {'items': items}
@@ -74,26 +65,23 @@ def editorial_review(source_id: str, payload: EditorialDecision,
     source = db.scalar(select(Source).where(Source.id == source_id).with_for_update())
     if not source or not (source.policy or {}).get('requires_technical_review'):
         fail('NOT_FOUND', 'Reviewable library source not found.', 404)
-    if source.created_by == user.id:
-        fail('SEPARATION_OF_DUTIES', 'You cannot technically approve your own submission.', 403)
-    if not source.enabled or not source.reviewed:
-        fail('RIGHTS_REVIEW_REQUIRED', 'The source must first receive independent rights approval.', 409)
-    digest = hashlib.sha256((source.text or '').encode()).hexdigest()
-    if payload.expected_policy_version != source.policy_version or payload.content_sha256 != digest:
-        fail('REVISION_CONFLICT', 'Reload the source: the version or content changed.', 409)
-    refs = set(source.policy.get('content_reference_ids', []))
-    if not set(payload.checked_reference_ids).issubset(refs):
-        fail('UNKNOWN_REFERENCE', 'The review contains a reference absent from this article.', 422)
-    if payload.decision == 'approved' and set(payload.checked_reference_ids) != refs:
-        fail('INCOMPLETE_REVIEW', 'Address every listed reference, including its limitations, before approval.', 422)
-    source.policy = {**source.policy, 'technical_review_status': payload.decision,
-                     'technical_reviewer_id': user.id, 'technical_reviewed_at': now(),
-                     'technical_review_note': payload.review_note,
-                     'technical_reviewed_sha256': digest,
-                     'checked_reference_ids': payload.checked_reference_ids}
-    source.policy_version += 1
-    db.add(Audit(actor_id=user.id, action='content.technical_review', target_id=source.id,
-                 detail={'decision': payload.decision, 'sha256': digest,
-                         'policy_version': source.policy_version}))
+    row = editorial.record(db, source, payload, user.id)
+    return {**rights.metadata(source), 'review_record_id': row.id,
+            'review_revision': editorial.revision(source), 'technical_review_current': editorial.current(source)}
+
+
+@router.get('/editorial/sources/{source_id}/reviews')
+def review_history(source_id: str, user=Depends(current_user), db=Depends(session)):
+    require_editor(user)
+    source = db.scalar(select(Source).where(Source.id == source_id).with_for_update())
+    if not source or not rights.allowed(source, 'display_full'):
+        fail('SOURCE_POLICY_BLOCK', 'Current source display permission is required to read review findings.', 403)
+    rows = db.scalars(select(EditorialReview).where(EditorialReview.source_id == source_id)
+                      .order_by(EditorialReview.created_at.desc(), EditorialReview.id).limit(100)).all()
+    result = {'source_id': source_id, 'current_record_id': source.policy.get('technical_review_record_id'),
+              'current': editorial.current(source), 'items': [{'id': row.id, 'created_at': row.created_at,
+              'payload_sha256': row.payload_sha256, 'payload': row.payload} for row in rows]}
+    # Findings may contain source-derived text; normal output budgets still apply.
+    output_rights.release(db, [source], result)
     db.commit()
-    return rights.metadata(source)
+    return result

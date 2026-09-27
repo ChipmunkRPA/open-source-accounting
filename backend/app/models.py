@@ -373,6 +373,19 @@ class SourceExtraction(Base):
     __table_args__ = (UniqueConstraint('artifact_id', 'parser_version'),)
 
 
+class EditorialReview(Base):
+    __tablename__ = 'editorial_reviews'
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
+    source_id: Mapped[str] = mapped_column(ForeignKey('sources.id'), index=True)
+    reviewer_id: Mapped[str | None] = mapped_column(ForeignKey('users.id', ondelete='SET NULL'))
+    decision: Mapped[str] = mapped_column(String(30))
+    review_revision: Mapped[str] = mapped_column(String(64))
+    payload: Mapped[dict] = mapped_column(JSON)
+    payload_sha256: Mapped[str] = mapped_column(String(64))
+    expires_at: Mapped[int] = mapped_column(Integer)
+    created_at: Mapped[int] = mapped_column(Integer, default=now)
+
+
 class SourceDiscovery(Base):
     __tablename__ = 'source_discoveries'
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
