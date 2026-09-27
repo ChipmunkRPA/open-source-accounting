@@ -599,3 +599,52 @@ def test_postgres_bulk_readers_share_lock_order_despite_opposite_item_order(pg_u
             if process.is_alive():process.terminate()
             process.join(5)
         database.engine.dispose()
+
+
+def manual_import_worker(url, directory, work_id, actor, key, start, results):
+    from test_source_intake import RAW
+    database = Database(url)
+    settings = Settings(app_env='test', database_url=url, data_dir=directory, _env_file=None)
+    try:
+        preflight = intake.manual_preflight(database, work_id, key)
+        assert start.wait(15)
+        artifact = intake.import_manual(database, settings, work_id, actor, key, RAW, 'application/xml', preflight)
+        results.put(artifact['id'])
+    finally:
+        database.engine.dispose()
+
+
+@pytest.mark.parametrize('same_key', [True, False])
+def test_postgres_manual_imports_register_one_artifact(pg_url, tmp_path, same_key):
+    from test_manual_intake import manual_payload
+    database = Database(pg_url)
+    settings = Settings(app_env='test', database_url=pg_url, data_dir=str(tmp_path), _env_file=None)
+    actor, approver = str(uuid4()), str(uuid4())
+    with database.Session() as session:
+        session.add_all([User(id=actor, role='admin'), User(id=approver, role='rights_approver')]); session.commit()
+        body = manual_payload(work_id=str(uuid4()))
+        work = intake.register(session, settings, IntakeCreate.model_validate(body), actor)
+        source = session.get(Source, work.source_id)
+        source.reviewed, source.approved_by = True, approver
+        rights.record_approval(source, approver)
+        session.commit()
+        work_id = work.id
+    ctx = multiprocessing.get_context('spawn')
+    start, results = ctx.Event(), ctx.Queue()
+    workers = [ctx.Process(target=manual_import_worker, args=(pg_url, str(tmp_path), work_id, actor,
+        'same' if same_key else str(index), start, results)) for index in range(2)]
+    try:
+        for process in workers: process.start()
+        start.set()
+        assert results.get(timeout=25) == results.get(timeout=25)
+        for process in workers:
+            process.join(15); assert process.exitcode == 0
+        with database.Session() as session:
+            assert session.scalar(select(func.count()).select_from(SourceArtifact).where(SourceArtifact.work_id == work_id)) == 1
+            assert session.scalar(select(func.count()).select_from(IntakeAttempt).where(IntakeAttempt.work_id == work_id)) == (1 if same_key else 2)
+    finally:
+        for process in workers:
+            if process.pid:
+                if process.is_alive(): process.terminate()
+                process.join(5)
+        database.engine.dispose()

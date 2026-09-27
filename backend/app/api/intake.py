@@ -1,6 +1,8 @@
 """Privileged, explicit intake steps; listing family recipes never performs network I/O."""
+import asyncio
 from fastapi import APIRouter, Depends, Header, Request
 from sqlalchemy import select, func
+from starlette.concurrency import run_in_threadpool
 from ..auth import current_user, fresh_user, session, require_admin
 from ..intake_schemas import IntakeCreate
 from ..models import IntakeWork, SourceArtifact, SourceExtraction, IntakeAttempt, Source
@@ -64,6 +66,29 @@ def acquire(work_id: str, request: Request, idempotency_key: str = Header(alias=
 def parse(artifact_id: str, request: Request, user=Depends(fresh_user), db=Depends(session)):
     require_admin(user)
     return intake.parse(db, request.app.state.settings, artifact_id, user.id)
+
+
+@router.post('/admin/intake/works/{work_id}/import')
+async def manual_import(work_id: str, request: Request,
+                        request_key: str = Header(default='', alias='Idempotency-Key'), user=Depends(fresh_user)):
+    require_admin(user)
+    database = request.app.state.db
+    preflight = await run_in_threadpool(intake.manual_preflight, database, work_id, request_key)
+    delivery = preflight['manifest']['manual_delivery']
+    mime = request.headers.get('content-type', '')
+    if mime != delivery['mime'] or request.headers.get('content-encoding'):
+        fail('ARTIFACT_INTEGRITY', 'Send the exact reviewed MIME and unencoded file bytes.', 422)
+    raw = bytearray()
+    try:
+        async with asyncio.timeout(120):
+            async for chunk in request.stream():
+                if len(raw) + len(chunk) > delivery['byte_count']:
+                    fail('BODY_TOO_LARGE', 'Import exceeds the reviewed file size.', 413)
+                raw.extend(chunk)
+    except TimeoutError:
+        fail('IMPORT_TIMEOUT', 'Import exceeded the body-receive deadline.', 408)
+    return await run_in_threadpool(intake.import_manual, database, request.app.state.settings,
+                                  work_id, user.id, request_key, bytes(raw), mime, preflight)
 
 
 @router.post('/admin/intake/extractions/{extraction_id}/stage')

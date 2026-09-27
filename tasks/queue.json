@@ -55,7 +55,7 @@
       "acceptance": "Actual artifacts have raw/normalized provenance; blocks are failures, not successful sources; source-unit denominators and retry tests are documented.",
       "progress_required": true,
       "scheduled": false,
-      "implementation_note": "32-family metadata registry, separately resumable rights-gated acquire/parse/stage, immutable receipts and PostgreSQL concurrency tests implemented. Live authorized smoke, family adapters, manual import and review/index integration remain. See docs/SOURCE_INTAKE.md and progress.md."
+      "implementation_note": "32-family registry, rights-gated HTTP and exact-hash manual publisher/original delivery, immutable receipts, separate parse/stage and PostgreSQL concurrency tests implemented. Live authorized smoke, family discovery adapters, review/index integration, scoped ingestion grants and deletion reconciliation remain. See docs/SOURCE_INTAKE.md and progress.md."
     },
     {
       "id": "SEC_CORE",
@@ -442,7 +442,7 @@
       "acceptance": "Mock contracts plus authorized live staging evidence, actual usage costs and provider-retention review; missing credentials marked blocked.",
       "progress_required": true,
       "scheduled": false,
-      "implementation_note": "PRs #50–#52 implement verified public Cloud REST contracts, dated estimates, durable attempt accounting and conservative operator-budget reservations. Invoice reconciliation, bounded retries/deadlines/cancellation, actual project access and operator-authorized staging remain. See docs/GEMINI_CONTRACT.md, docs/MODEL_BUDGETS.md and progress.md; no live approval or goal completion is claimed."
+      "implementation_note": "PRs #50\u2013#52 implement verified public Cloud REST contracts, dated estimates, durable attempt accounting and conservative operator-budget reservations. Invoice reconciliation, bounded retries/deadlines/cancellation, actual project access and operator-authorized staging remain. See docs/GEMINI_CONTRACT.md, docs/MODEL_BUDGETS.md and progress.md; no live approval or goal completion is claimed."
     },
     {
       "id": "MFA",

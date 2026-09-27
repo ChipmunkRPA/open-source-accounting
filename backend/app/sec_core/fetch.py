@@ -25,6 +25,15 @@ class Blocked(CoreError):
     pass
 
 
+def reject_access_page(raw):
+    low = raw[:30000].lower()
+    if any(x in low for x in (b'undeclared automated tool', b'request rate threshold exceeded',
+                              b'request access', b'you\xe2\x80\x99ve exceeded', b'<title>access denied',
+                              b'captcha', b'type="password"', b"type='password'", b'<title>sign in',
+                              b'<title>log in', b'<title>login')):
+        raise Blocked('Access-control page, not source content; stopped')
+
+
 class RateBudget:
     """A reservation clock shared across processes. PostgreSQL requires pre-created table."""
     def __init__(self, location: str, rate=4.0, clock=time.time, sleeper=time.sleep):
@@ -158,12 +167,7 @@ class Gateway:
                 mime = response.headers.get('Content-Type', '').split(';')[0].strip().lower()
                 headers = {k: response.headers.get(k) for k in ('Content-Type', 'ETag', 'Last-Modified', 'Content-Length')
                            if response.headers.get(k) is not None}
-            low = raw[:30000].lower()
-            if any(x in low for x in (b'undeclared automated tool', b'request rate threshold exceeded',
-                                      b'request access', b'you\xe2\x80\x99ve exceeded', b'<title>access denied',
-                                      b'captcha', b'type="password"', b"type='password'", b'<title>sign in',
-                                      b'<title>log in', b'<title>login')):
-                raise Blocked('Access-control page, not source content; stopped')
+            reject_access_page(raw)
             if mime not in {'text/html', 'text/xml', 'application/xml', 'text/plain', 'application/pdf', 'application/json'}:
                 raise CoreError('Unsupported Content-Type')
             return {'requested_url': original, 'resolved_url': url, 'raw': raw,

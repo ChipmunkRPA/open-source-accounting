@@ -8,7 +8,7 @@ from ..models import Source, IntakeWork, SourceArtifact, SourceExtraction, Intak
 from ..errors import fail
 from ..intake_schemas import IntakeCreate, IntakeManifest, https_url
 from ..sec_core.core import canonical, digest, CoreError
-from ..sec_core.fetch import Gateway, RateBudget, Blocked
+from ..sec_core.fetch import Gateway, RateBudget, Blocked, reject_access_page
 from . import rights
 from .storage import Storage
 
@@ -21,7 +21,7 @@ def families(settings):
 
 
 def register(db, settings, payload: IntakeCreate, actor_id):
-    manifest = payload.manifest.model_dump(mode='json')
+    manifest = payload.manifest.canonical_metadata()
     if manifest['family_id'] not in families(settings):
         fail('UNKNOWN_FAMILY', 'Choose a registered source family.', 422)
     if db.scalar(select(IntakeWork).where(IntakeWork.family_id == manifest['family_id'],
@@ -50,7 +50,7 @@ def authorize(db, work_id, operations, *, lock=False):
         fail('NOT_FOUND', 'Intake work not found.', 404)
     query = select(Source).where(Source.id == work.source_id)
     source = db.scalar(query.with_for_update() if lock else query)
-    manifest = IntakeManifest.model_validate(work.manifest).model_dump(mode='json')
+    manifest = IntakeManifest.model_validate(work.manifest).canonical_metadata()
     if (digest(canonical(manifest)) != work.manifest_sha256
             or not source or source.policy.get('intake_manifest_sha256') != work.manifest_sha256):
         fail('INTAKE_REVISION', 'Intake metadata changed; register and review a new edition.', 409)
@@ -66,6 +66,76 @@ def artifact_metadata(row):
     return {'id': row.id, 'work_id': row.work_id, 'raw_sha256': row.raw_sha256,
             'byte_count': row.byte_count, 'mime': row.mime, 'receipt': row.receipt,
             'status': 'acquired_not_reviewed', 'agent_eligible': False}
+
+
+def manual_preflight(database, work_id, request_key):
+    if not request_key or len(request_key) > 120:
+        fail('IDEMPOTENCY_KEY', 'Supply an idempotency key of 1–120 characters.', 422)
+    with database.Session() as db:
+        work, source, manifest = authorize(db, work_id, ['acquire', 'store_raw'])
+        if manifest['route'] != 'authorized_manual' or not manifest.get('manual_delivery'):
+            fail('CONNECTOR_DISABLED', 'Register and independently review an exact manual delivery first.', 403)
+        if work.family_id == 'PRIVATE_UPLOADS':
+            fail('SOURCE_POLICY_BLOCK', 'Private uploads require the workspace pipeline.', 403)
+        return {'manifest': manifest, 'rights_revision': rights.revision(source),
+                'policy_version': source.policy_version}
+
+
+def import_manual(database, settings, work_id, actor_id, request_key, raw, mime, preflight):
+    """A completed body is bound to reviewed delivery evidence; never fetch or infer rights."""
+    from datetime import datetime, timezone
+    with database.Session() as db:
+        work, source, manifest = authorize(db, work_id, ['acquire', 'store_raw'], lock=True)
+        if (manifest != preflight['manifest'] or rights.revision(source) != preflight['rights_revision']
+                or source.policy_version != preflight['policy_version']):
+            fail('INTAKE_REVISION', 'Rights changed during import; repeat preview and review.', 409)
+        if manifest['route'] != 'authorized_manual' or work.family_id == 'PRIVATE_UPLOADS':
+            fail('SOURCE_POLICY_BLOCK', 'This record does not permit manual intake.', 403)
+        delivery = manifest.get('manual_delivery')
+        if (not delivery or len(raw) != delivery['byte_count'] or mime != delivery['mime']
+                or digest(raw) != delivery['raw_sha256']):
+            fail('ARTIFACT_INTEGRITY', 'File bytes, size and MIME must match the reviewed delivery.', 422)
+        try:
+            reject_access_page(raw)
+        except Blocked:
+            fail('INTAKE_BLOCKED', 'Access-control pages cannot be imported as source documents.', 422)
+        if not request_key or len(request_key) > 120:
+            fail('IDEMPOTENCY_KEY', 'Supply an idempotency key of 1–120 characters.', 422)
+        attempt = db.scalar(select(IntakeAttempt).where(IntakeAttempt.work_id == work_id,
+                                                        IntakeAttempt.request_key == request_key))
+        if attempt:
+            if attempt.state == 'acquired':
+                return artifact_metadata(db.get(SourceArtifact, attempt.artifact_id))
+            fail('INTAKE_BUSY', 'Inspect the existing attempt before resuming.', 409)
+        attempt = IntakeAttempt(work_id=work_id, request_key=request_key, lease_owner=uid(), lease_until=0)
+        db.add(attempt)
+        db.flush()
+        row = db.scalar(select(SourceArtifact).where(SourceArtifact.work_id == work_id,
+                                                     SourceArtifact.raw_sha256 == delivery['raw_sha256']))
+        if not row:
+            key = f"sources/{work_id}/raw/{delivery['raw_sha256']}.bin"
+            Storage(settings).put_immutable(key, raw, mime)
+            # Storage can take time; expiry still applies at registration.
+            authorize(db, work_id, ['acquire', 'store_raw'])
+            receipt = {'requested_url': manifest['requested_url'], 'resolved_url': None,
+                       'method': 'MANUAL_IMPORT', 'status': None, 'headers': {}, 'mime': mime,
+                       'retrieved_at': None, 'imported_at': datetime.now(timezone.utc).isoformat(),
+                       'manual_delivery': delivery, 'raw_sha256': delivery['raw_sha256'],
+                       'manifest_sha256': work.manifest_sha256, 'rights_revision': rights.revision(source),
+                       'policy_version': source.policy_version, 'operator_id': actor_id,
+                       'attempt_id': attempt.id, 'acquisition_method': 'authorized_manual',
+                       'source_dates': {k: manifest[k] for k in ('issued_at', 'publicly_available_at',
+                           'effective_from', 'effective_to', 'date_notes', 'effective_conditions')},
+                       'notices': manifest['notices'], 'redistribution_authorized': False}
+            row = SourceArtifact(work_id=work_id, raw_sha256=delivery['raw_sha256'], object_key=key,
+                                 byte_count=len(raw), mime=mime, receipt=receipt)
+            db.add(row)
+            db.flush()
+        attempt.state, attempt.artifact_id = 'acquired', row.id
+        db.add(Audit(actor_id=actor_id, action='intake.manual_import_unreviewed', target_id=row.id,
+                     detail={'work_id': work_id, 'attempt_id': attempt.id, 'raw_sha256': row.raw_sha256}))
+        db.commit()
+        return artifact_metadata(row)
 
 
 def make_gateway(settings, manifest):

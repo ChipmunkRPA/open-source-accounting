@@ -95,11 +95,11 @@ separately; overlapping units never become a percentage-complete claim.
 - Live smoke downloads require an identified operator contact and real rights review
   of each exact manifest. None were performed for this slice. Tests use original
   synthetic bytes and synthetic attestations; no publisher license is represented.
-- `authorized_manual` is reserved metadata, with acquisition disabled. Private records
-  remain reference-only here; private documents use the workspace upload pipeline.
-- Family API/bulk discovery adapters, manual import, persisted legal decisions,
-  applicability/entity-adoption review, review/index commands, cumulative quotation
-  limits, trusted model/export scope propagation, deletion and reconciliation remain.
+- Manual imports require exact reviewed delivery evidence, as described below. Private
+  records remain reference-only here; private documents use the workspace upload pipeline.
+- Family API/bulk discovery adapters, applicability/entity-adoption review, review/index
+  commands, deletion and reconciliation remain. Shared counsel decisions, output limits
+  and model/export scope controls are documented separately; they do not approve intake.
 - Route/audience scope is supplied by server intake. Other scoped grants fail closed
   until the relevant trusted context is implemented. An ingestion-only grant cannot
   automatically authorize public reading or model access.
@@ -107,3 +107,15 @@ separately; overlapping units never become a percentage-complete claim.
   Source approvals and technical/accounting judgments still require real people.
 - GCS, live identity, model endpoints and production network behavior have not been
   exercised by these local tests. See `progress.md` for exact validation receipts.
+
+## Authorized manual delivery (#8)
+
+`POST /api/v1/admin/intake/works/{id}/import` accepts unencoded raw bytes with the exact reviewed Content-Type and an Idempotency-Key. The CLI equivalent is `python -m app.ingest import WORK_ID --file /private/path/original.xml --mime application/xml --request-key DELIVERY_KEY`. Keep source files and delivery/license evidence outside public Git; authentication uses the existing secret environment channel.
+
+Before import, register an `authorized_manual` manifest containing `manual_delivery`: lowercase `raw_sha256`, exact `byte_count`, `mime`, `method` (`publisher_delivery` or `author_original`), opaque private `evidence_ref` beginning `ev_`, delivery-evidence `evidence_sha256`, and timezone-aware `received_at`. An author-original delivery requires the original-work policy basis. Evidence describes how the exact edition was lawfully delivered; it is not a license grant. The independent rights approver must actually examine that evidence and separately authorize acquire/store_raw for this manifest revision. Upload access, subscription credentials and an uploader's claim do not establish permission. Mirrors, caches, user-account downloads and private workspace documents are not supported acquisition methods here. PRIVATE_UPLOADS cannot enter this global pipeline.
+
+Permissions are checked before body reception and under a source-row lock before registration. Body reception has a 120-second deadline and the exact declared size limit (maximum 16 MB, also subject to the server upload cap). Hash, byte count, MIME and current revision must match. Shared access-page screening rejects login/CAPTCHA/error bodies; this heuristic is not proof of document completeness or authenticity. Parsing remains a separate bounded operation. New manual records without delivery evidence are rejected; old records remain readable but cannot import until a new reviewed edition is registered. Existing HTTP manifest hashes remain unchanged.
+
+Receipts record actual `imported_at`, claimed `manual_delivery.received_at`, delivery evidence hashes, source dates/notices, actor, rights revision and manifest hash. HTTP status, resolved URL and retrieved_at are null: importing does not invent an HTTP observation. One work/hash yields one artifact, with separate attempt records for distinct keys. Retries after a storage/transaction crash reuse immutable bytes. A failed transaction can still leave an unreferenced private object; physical retention/deletion reconciliation remains required. Revocation/expiry blocks retries, and expiry after storage prevents registration. No import grants technical, applicability, model-input or indexing approval.
+
+All current manual-import tests are synthetic original fixtures. No publisher delivery, real license review or full-source acquisition is claimed by this implementation.

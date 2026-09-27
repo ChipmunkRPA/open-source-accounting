@@ -2880,6 +2880,56 @@
         }
       }
     },
+    "/api/v1/admin/intake/works/{work_id}/import": {
+      "post": {
+        "tags": [
+          "source-intake"
+        ],
+        "summary": "Manual Import",
+        "operationId": "manual_import_api_v1_admin_intake_works__work_id__import_post",
+        "parameters": [
+          {
+            "name": "work_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Work Id"
+            }
+          },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "",
+              "title": "Idempotency-Key"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/admin/intake/extractions/{extraction_id}/stage": {
       "post": {
         "tags": [
@@ -4667,6 +4717,16 @@
             "maxItems": 30,
             "minItems": 1,
             "title": "Notices"
+          },
+          "manual_delivery": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ManualDelivery"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "additionalProperties": false,
@@ -4688,6 +4748,68 @@
           "notices"
         ],
         "title": "IntakeManifest"
+      },
+      "ManualDelivery": {
+        "properties": {
+          "raw_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Raw Sha256"
+          },
+          "byte_count": {
+            "type": "integer",
+            "maximum": 16000000.0,
+            "minimum": 1.0,
+            "title": "Byte Count"
+          },
+          "mime": {
+            "type": "string",
+            "enum": [
+              "application/xml",
+              "text/xml",
+              "text/html",
+              "application/pdf",
+              "text/plain"
+            ],
+            "title": "Mime"
+          },
+          "method": {
+            "type": "string",
+            "enum": [
+              "publisher_delivery",
+              "author_original"
+            ],
+            "title": "Method"
+          },
+          "evidence_ref": {
+            "type": "string",
+            "pattern": "^ev_[A-Za-z0-9_-]{1,120}$",
+            "title": "Evidence Ref"
+          },
+          "evidence_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Evidence Sha256"
+          },
+          "received_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Received At"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "raw_sha256",
+          "byte_count",
+          "mime",
+          "method",
+          "evidence_ref",
+          "evidence_sha256",
+          "received_at"
+        ],
+        "title": "ManualDelivery",
+        "description": "Claims requiring independent review, never an authorization by themselves."
       },
       "MemberAdd": {
         "properties": {

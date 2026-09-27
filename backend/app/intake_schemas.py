@@ -1,5 +1,5 @@
 """Metadata-only contracts. Registering an official URL never authorizes a download."""
-from datetime import date
+from datetime import date, datetime, timezone
 from typing import Literal
 from urllib.parse import urlsplit
 from pydantic import Field, model_validator
@@ -16,6 +16,23 @@ def https_url(value: str) -> str:
     except ValueError as exc:
         raise ValueError('Use a credential-free HTTPS URL without fragments or nonstandard ports.') from exc
     return value
+
+
+class ManualDelivery(Strict):
+    """Claims requiring independent review, never an authorization by themselves."""
+    raw_sha256: str = Field(pattern=r'^[0-9a-f]{64}$')
+    byte_count: int = Field(ge=1, le=16_000_000)
+    mime: Literal['application/xml', 'text/xml', 'text/html', 'application/pdf', 'text/plain']
+    method: Literal['publisher_delivery', 'author_original']
+    evidence_ref: str = Field(pattern=r'^ev_[A-Za-z0-9_-]{1,120}$')
+    evidence_sha256: str = Field(pattern=r'^[0-9a-f]{64}$')
+    received_at: datetime
+
+    @model_validator(mode='after')
+    def actual_time(self):
+        if self.received_at.tzinfo is None or self.received_at > datetime.now(timezone.utc):
+            raise ValueError('Delivery time must be timezone-aware and not in the future.')
+        return self
 
 
 class IntakeManifest(Strict):
@@ -43,6 +60,14 @@ class IntakeManifest(Strict):
     effective_conditions: list[str] = Field(default_factory=list, max_length=30)
     supersedes: list[str] = Field(default_factory=list, max_length=30)
     notices: list[str] = Field(min_length=1, max_length=30)
+    manual_delivery: ManualDelivery | None = None
+
+    def canonical_metadata(self):
+        data = self.model_dump(mode='json')
+        # Preserve hashes of previously registered manifests and their rights reviews.
+        if self.manual_delivery is None:
+            data.pop('manual_delivery')
+        return data
 
     @model_validator(mode='after')
     def validate_route(self):
@@ -52,6 +77,11 @@ class IntakeManifest(Strict):
             raise ValueError('Private uploads use the workspace pipeline; reference-only records cannot fetch.')
         if self.effective_from and self.effective_to and self.effective_from > self.effective_to:
             raise ValueError('Invalid applicability interval.')
+        if self.manual_delivery is not None:
+            if (self.route != 'authorized_manual' or self.redirect_urls
+                    or self.manual_delivery.byte_count > self.max_bytes
+                    or self.manual_delivery.mime not in self.allowed_mime):
+                raise ValueError('Manual delivery must match the approved route, MIME and byte limit.')
         return self
 
 
@@ -61,6 +91,13 @@ class IntakeCreate(Strict):
 
     @model_validator(mode='after')
     def metadata_only(self):
+        if self.manifest.route == 'authorized_manual' and self.manifest.manual_delivery is None:
+            raise ValueError('New manual records require exact delivery evidence before review.')
+        if self.manifest.family_id == 'PRIVATE_UPLOADS' and self.manifest.route != 'reference_only':
+            raise ValueError('Private uploads require the workspace pipeline.')
+        if (self.manifest.manual_delivery and self.manifest.manual_delivery.method == 'author_original'
+                and self.source.policy.basis != 'original'):
+            raise ValueError('Author-original delivery requires the original-work basis.')
         if self.source.text:
             raise ValueError('Intake registration is metadata only.')
         if self.source.canonical_url != self.manifest.requested_url or self.source.version_label != self.manifest.edition:
