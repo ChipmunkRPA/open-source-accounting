@@ -21,7 +21,7 @@ backend/.venv/bin/python scripts/sec_core_progress.py --check
 backend/.venv/bin/python scripts/release_preflight.py --check
 ```
 
-Database URL above is a reproducible placeholder for the observed disposable Unix-socket database, not a credential or assertion that a production database was tested. No new local frontend/browser/live-provider check this slice. CI results will be recorded after observation. Prior documentation main c5e9712 passed CI 36358366377.
+Database URL above is a reproducible placeholder for the observed disposable Unix-socket database, not a credential or assertion that a production database was tested. No new local frontend/browser/live-provider check this slice. Implementation a0ae67910320aade9f5b684d926c5c1be8c92924 passed main CI 36358792516: both Python 3.11/3.13 clean installs, real frontend, backend, migrations/PostgreSQL and Docker. Prior documentation main c5e9712 passed CI 36358366377.
 
 All fixtures, reviewers, rights and evidence references are synthetic. Zero actual acquired/parsed/reviewed/indexed units added. Tests exercise missing review, actual public versus import dates, entity/framework/audit scope, bounded/open-ended intervals, unresolved conditions, expiry/revocation, stale content/technical/payload changes, private history and saved-export withholding. They do not prove accounting correctness, licensing, actual reviewer identity or case-specific conditional applicability.
 
