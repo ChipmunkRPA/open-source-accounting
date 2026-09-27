@@ -1,7 +1,7 @@
 from io import BytesIO
 from html import escape
 from sqlalchemy import select
-from ..models import Memo, MemoRevision, Run, Evidence, Review, now
+from ..models import Memo, MemoRevision, Run, Evidence, Review
 from .rights import run_artifact_access
 
 
@@ -48,9 +48,9 @@ def serial(db, memo):
                          'revision': r.revision, 'created_at': r.created_at} for r in reviews]}
 
 
-def verify_access(db, memo, action='quote'):
+def verify_access(db, memo, action='quote', *, context=None):
     if memo.run_id:
-        run_artifact_access(db, db.get(Run, memo.run_id), action)
+        run_artifact_access(db, db.get(Run, memo.run_id), action, context=context)
 
 
 def export_bytes(memo, format):

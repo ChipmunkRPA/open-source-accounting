@@ -4,13 +4,12 @@ Issue #7 is in progress, not complete. The 11 recognized operations are `acquire
 
 The revision binds work title/publisher/URL/version, body hash, grants, scope, evidence reference and attribution. Editorial/applicability annotations remain separate. Each new approval increments the policy version so old saved evidence cannot revive. Existing records without a bound rights approval fail closed and must be re-reviewed; no data migration invents approval. Synthetic local seed accounts are marked as demo fixtures and are prohibited in production.
 
-`license_evidence_ref` is an opaque reference to a restricted evidence system, not the legal advice or agreement itself. Its presence does not verify a license. Authorized reviewers must validate the evidence. Scoped grants require exact route/workspace/seat/audience/provider/region/retention/jurisdiction context; the current legacy retrieval callers do not supply that context and therefore cannot use scoped text yet. They retain safe reference metadata where supported.
+`license_evidence_ref` is an opaque reference to a restricted evidence system, not the legal advice or agreement itself. Its presence does not verify a license. Authorized reviewers must validate the evidence. Scoped grants require exact route/workspace/seat/audience/provider/region/retention/jurisdiction context; Agent retrieval/model/output paths now supply server-derived workspace, route, audience, provider and region context. Seat, retention and jurisdiction scopes still deny access until verified records exist. See [runtime checks](RUNTIME_RIGHTS.md).
 
 ## Pending implementation
 
-- Connect the 11 operations to unified intake and raw/extracted stores (#8); legacy SEC CLI intake has its own operator flag and is not yet a unified policy client. Do not run it as a license-grant mechanism.
-- Introduce a pre-acquisition policy record so restricted bodies need not be submitted before storage authorization; the admin HTTP route now rejects bodies declared as licensed/reviewed-use sources. Existing staging is for the supplied original/selected-source pack, not permission to ingest new proprietary bodies.
-- Connect trusted workspace/seat and provider/region/retention context end-to-end (#25/#26/#29/#34). No client field may self-assert an entitlement.
+- Complete family adapters, live authorized smoke, manual import and review/index integration in #8. The metadata-only pre-acquisition registry and rights-gated raw/parsed storage are implemented; legacy acquisition entry points are disabled. See [intake scope](../SOURCE_INTAKE.md).
+- Add verified publisher-seat grants, retention and jurisdiction records (#25/#26/#29/#34). Runtime workspace/provider/region scope and per-model-call checks are implemented; no client field may self-assert an entitlement.
 - Build bounded counsel-review records, cumulative quotation/reconstruction accounting and retention-aware revocation/deletion across all derived indexes/caches/articles. Current source-backed output paths recheck rights; this is not complete cross-corpus deletion.
 - Verify and render attribution obligations through all output formats before enabling restricted-source grants.
 - Obtain real operation-specific permissions and independent review. Nine request packets are drafts only. No fair-use approval or publisher license was fabricated.

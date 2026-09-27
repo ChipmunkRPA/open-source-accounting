@@ -5,8 +5,8 @@ from ..models import Run, Job, Evidence, RunEvent, User, now
 from ..schemas import Plan, Analysis, Verification
 from ..providers.gemini import get_model
 from ..services import retrieval, rights, memos
-from ..services.entitlements import require_agent, settle, TERMINAL_STATES
-from ..errors import ProviderError, RunStopped
+from ..services.entitlements import require_agent, settle
+from ..errors import ProviderError, RunStopped, fail
 from .catalog import get_workflow
 from .workflows import preprocess
 from .verification import structural_verify
@@ -25,9 +25,29 @@ def checkpoint(db, run_id, job_id, owner, settings):
     job = db.scalar(select(Job).where(Job.id == job_id).with_for_update())
     if not job or job.lease_owner != owner or run.cancel_requested:
         raise RunStopped('CANCELLED_OR_LEASE_LOST')
+    db.info.update(rights_actor_id=run.user_id, rights_settings=settings)
+    rights.runtime_context(db, run, require_edit=True)
     require_agent(db, db.get(User, run.user_id), settings)
     job.lease_until = now() + settings.worker_lease_seconds
     return run
+
+
+def input_revision(db, run):
+    """Bind in-memory preprocessed inputs to the current authorized document/memo revision."""
+    import hashlib
+    from ..models import Document, Memo
+    snapshot = []
+    for doc_id in run.document_ids:
+        doc = db.get(Document, doc_id)
+        if not doc or doc.workspace_id != run.workspace_id or doc.status != 'ready':
+            fail('DOCUMENT_UNAVAILABLE', 'Selected document is no longer available.', 409)
+        snapshot.append([doc.id, doc.checksum, doc.chunks])
+    if run.inputs.get('memo_id'):
+        memo = db.get(Memo, run.inputs['memo_id'])
+        if not memo or memo.workspace_id != run.workspace_id:
+            fail('SOURCE_CHANGED', 'The input memo is unavailable.', 409)
+        snapshot.append([memo.id, memo.revision, memo.title, memo.body])
+    return hashlib.sha256(json.dumps(snapshot, sort_keys=True).encode()).hexdigest()
 
 
 def execute(db_factory, job_id, owner, config):
@@ -41,12 +61,34 @@ def execute(db_factory, job_id, owner, config):
         with db_factory() as db:
             run = checkpoint(db, run_id, job_id, owner, config)
             task = get_workflow(run.workflow, config)
-            deterministic = preprocess(db, run, task)
+            context = rights.runtime_context(db, run)
+            deterministic = preprocess(db, run, task, rights_context=context)
+            original_inputs = input_revision(db, run)
             emit(db, run, 'planning')
             request_data = {'question': run.question, 'context': run.context, 'facts': run.facts,
                             'task': task, 'inputs': run.inputs}
             db.commit()
-        plan = model.structured(Plan, prompts.PLAN, request_data, thinking='MEDIUM', cap=2500)
+
+        def structured(schema, prompt, payload, **kwargs):
+            # A fresh transaction immediately before EVERY provider call, including corrections.
+            # Already transmitted requests cannot be recalled after later revocation.
+            with db_factory() as db:
+                current = checkpoint(db, run_id, job_id, owner, config)
+                context = rights.runtime_context(db, current)
+                if input_revision(db, current) != original_inputs:
+                    fail('SOURCE_CHANGED', 'Input documents or memo changed during execution.', 409)
+                rights.run_artifact_access(db, current, 'model_input', context=context)
+                for packet in payload.get('evidence', []):
+                    record = db.get(Evidence, packet['id'])
+                    if not record or record.run_id != run_id or any(
+                        getattr(record, k) != packet.get(k) for k in
+                        ('source_id', 'document_id', 'text', 'locator', 'access', 'policy_version')
+                    ):
+                        fail('SOURCE_CHANGED', 'The selected evidence revision changed.', 409)
+                db.commit()
+            return model.structured(schema, prompt, payload, **kwargs)
+
+        plan = structured(Plan, prompts.PLAN, request_data, thinking='MEDIUM', cap=2500)
         usage = dict(model.last_usage)
         with db_factory() as db:
             run = checkpoint(db, run_id, job_id, owner, config)
@@ -56,7 +98,8 @@ def execute(db_factory, job_id, owner, config):
             selected, seen = [], set()
             queries = [run.question] + plan.proposed_queries[:task['max_queries'] - 1]
             for query in queries:
-                for row in retrieval.search(db, run, query, task['max_evidence']):
+                for row in retrieval.search(db, run, query, task['max_evidence'],
+                                            rights_context=rights.runtime_context(db, run)):
                     key = (row['source_id'], row['document_id'], row['locator'])
                     if key not in seen:
                         seen.add(key)
@@ -84,7 +127,7 @@ def execute(db_factory, job_id, owner, config):
                     'lease': {**deterministic['lease'], 'rows': deterministic['lease']['rows'][:12],
                               'model_preview_only': True}}
             db.commit()
-        analysis = model.structured(Analysis, prompts.ANALYZE, data, thinking='HIGH', cap=7500)
+        analysis = structured(Analysis, prompts.ANALYZE, data, thinking='HIGH', cap=7500)
         usage = merge_usage(usage, model.last_usage)
         findings = structural_verify(analysis, rows)
         with db_factory() as db:
@@ -92,7 +135,7 @@ def execute(db_factory, job_id, owner, config):
             rights.run_artifact_access(db, run, 'model_input')
             emit(db, run, 'verifying', check='citations_and_applicability')
             db.commit()
-        verification = model.structured(Verification, prompts.VERIFY,
+        verification = structured(Verification, prompts.VERIFY,
                     {'draft': analysis.model_dump(), 'evidence': rows, 'context': data['context']},
                     thinking='HIGH', cap=3500)
         usage = merge_usage(usage, model.last_usage)
@@ -101,10 +144,10 @@ def execute(db_factory, job_id, owner, config):
         if blocked:
             # One bounded correction round. Never silently release the original unsupported draft.
             correction = {**data, 'draft': analysis.model_dump(), 'required_corrections': findings}
-            analysis = model.structured(Analysis, prompts.ANALYZE + '\nCorrect or remove every flagged claim.',
+            analysis = structured(Analysis, prompts.ANALYZE + '\nCorrect or remove every flagged claim.',
                                         correction, thinking='HIGH', cap=7500)
             usage = merge_usage(usage, model.last_usage)
-            verification = model.structured(Verification, prompts.VERIFY,
+            verification = structured(Verification, prompts.VERIFY,
                     {'draft': analysis.model_dump(), 'evidence': rows, 'context': data['context']},
                     thinking='HIGH', cap=3500)
             usage = merge_usage(usage, model.last_usage)
@@ -113,6 +156,8 @@ def execute(db_factory, job_id, owner, config):
             raise ProviderError('VERIFICATION_BLOCKED')
         with db_factory() as db:
             run = checkpoint(db, run_id, job_id, owner, config)
+            if input_revision(db, run) != original_inputs:
+                fail('SOURCE_CHANGED', 'Input documents or memo changed before release.', 409)
             rights.run_artifact_access(db, run, 'quote')
             result = analysis.model_dump()
             result['limitations'] = list(dict.fromkeys(result['limitations'] + verification.limitations + [
@@ -148,7 +193,7 @@ def execute(db_factory, job_id, owner, config):
                 return
             state = 'cancelled' if run.cancel_requested else ('blocked' if code in {
                 'SUBSCRIPTION_REQUIRED', 'SOURCE_CHANGED', 'SOURCE_POLICY_BLOCK', 'FEATURE_NOT_ENABLED',
-                'DOCUMENT_UNAVAILABLE'} else 'failed')
+                'DOCUMENT_UNAVAILABLE', 'WORKSPACE_ACCESS_REVOKED'} else 'failed')
             emit(db, run, state, error_code=code)
             run.error_code = code
             settle(db, run, released=False)

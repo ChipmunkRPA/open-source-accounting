@@ -36,7 +36,7 @@
       "acceptance": "Unknown operations fail closed; expiry/revocation and upload/mirror/subscription bypass tests pass; human license/legal blockers remain explicit.",
       "progress_required": true,
       "scheduled": false,
-      "implementation_note": "Operation gates and revision-bound approval in PR #43; pre-acquisition records and parent revocation added in dependent #8 slice. Cumulative reconstruction, trusted model/export scope, counsel persistence and full derived deletion remain."
+      "implementation_note": "Revision-bound operation gates, authorized intake/parent revocation and server-derived runtime context implemented in dependent PR slices. Every Agent model call and retained output rechecks permissions. Verified seats/retention/jurisdiction, cumulative reconstruction, attribution, counsel persistence and full derived deletion remain. See progress.md."
     },
     {
       "id": "INGEST",

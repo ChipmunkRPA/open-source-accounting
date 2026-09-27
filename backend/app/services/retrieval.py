@@ -24,7 +24,7 @@ def score(query, text):
     return sum((1 + math.log(1 + counts[t])) for t in terms if t in counts) / math.sqrt(size / 100 + 1)
 
 
-def search(db, run, query, limit=12):
+def search(db, run, query, limit=12, *, rights_context=None):
     candidates = []
     period = run.context.get('period_end')
     framework = run.context.get('framework', 'US_GAAP')
@@ -35,7 +35,7 @@ def search(db, run, query, limit=12):
         # Staged content is not an approved source, even when its metadata is public.
         if not source.reviewed:
             continue
-        if (source.policy or {}).get('requires_technical_review') and not allowed(source, 'model_input'):
+        if (source.policy or {}).get('requires_technical_review') and not allowed(source, 'model_input', context=rights_context):
             continue
         if framework not in {'BOTH', 'UNKNOWN'} and source.framework not in {framework, 'BOTH', 'AUDIT'}:
             continue
@@ -44,7 +44,7 @@ def search(db, run, query, limit=12):
             continue
         if (source.policy or {}).get('sec_core'):
             from ..sec_core.integration import evidence_for
-            evidence = evidence_for(source, run)
+            evidence = evidence_for(source, run, rights_context=rights_context)
             if evidence is not None:
                 candidates.append({**evidence, '_score': score(query, source.title + '\n' + (source.text or ''))})
             continue
@@ -52,7 +52,7 @@ def search(db, run, query, limit=12):
             from datetime import datetime, timezone
             if datetime.fromtimestamp(source.created_at, timezone.utc).date().isoformat() > knowledge_date:
                 continue
-        if allowed(source, 'model_input') and allowed(source, 'store_text') and allowed(source, 'quote'):
+        if allowed(source, 'model_input', context=rights_context) and allowed(source, 'store_text', context=rights_context) and allowed(source, 'quote', context=rights_context):
             for i, para in enumerate(re.split(r'\n\s*\n', source.text or '')):
                 if not para.strip():
                     continue

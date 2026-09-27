@@ -25,6 +25,7 @@ class Identity:
 
 def session(request: Request):
     with request.app.state.db.Session() as db:
+        db.info['rights_settings'] = request.app.state.settings
         try:
             yield db
         except Exception:
@@ -101,6 +102,7 @@ def current_user(request: Request, identity: Identity = Depends(verified_identit
             fail('VERIFY_EMAIL', 'Verify your email before setting up a second factor.', 403)
         if not identity.mfa_verified:
             fail('MFA_REQUIRED', 'Verify with an authenticator app or text message to continue.', 403)
+    db.info['rights_actor_id'] = identity.uid
     user = db.get(User, identity.uid)
     if not user:
         if identity.mode == 'dev':

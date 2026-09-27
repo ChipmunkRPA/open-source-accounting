@@ -46,7 +46,7 @@ def stage(db, pack, author_id):
             'status': 'independent_rights_and_technical_review_required'}
 
 
-def evidence_for(source, run):
+def evidence_for(source, run, *, rights_context=None):
     """Return exact source locator only when existing rights/review checks have passed.
 
 Historical/as-of questions fail closed until an applicability interval and public
@@ -54,7 +54,7 @@ availability have actually been reviewed. The retrieval/import timestamp is NEVE
 used as an effective/public-availability date for this source family.
 """
     from ..services.rights import allowed
-    if not all(allowed(source, op) for op in ['store_text', 'model_input', 'quote']):
+    if not all(allowed(source, op, context=rights_context) for op in ['store_text', 'model_input', 'quote']):
         return None
     m = (source.policy or {}).get('sec_core')
     if not m:

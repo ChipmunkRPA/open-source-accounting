@@ -85,25 +85,67 @@ def require(source, action):
         fail('SOURCE_POLICY_BLOCK', 'The current source policy does not permit this operation.', 403)
 
 
-def evidence_allowed(db, evidence: Evidence, action='model_input'):
+def runtime_context(db, run, settings=None, *, actor_id=None, require_edit=False):
+    """Only server-owned scope values; never merge run.context, prompts or client inputs.
+
+    A workspace member is not automatically a licensed publisher seat. Seat,
+    jurisdiction and retention scopes remain absent until verified records exist.
+    """
+    from ..models import Membership
+    if not run:
+        fail('SOURCE_CHANGED', 'The source execution is unavailable.', 409)
+    actor_id = actor_id or db.info.get('rights_actor_id') or run.user_id
+    settings = settings or db.info.get('rights_settings')
+    member = db.get(Membership, (run.workspace_id, actor_id))
+    if not member or (require_edit and member.role not in {'owner', 'editor'}):
+        fail('WORKSPACE_ACCESS_REVOKED', 'Current workspace membership is required.', 403)
+    context = {'workspace_id': run.workspace_id, 'route': 'hosted_agent', 'audience': 'workspace'}
+    if settings is not None:
+        context.update(provider=settings.model_provider, region=settings.model_location)
+    return context
+
+
+def evidence_allowed(db, evidence: Evidence, action='model_input', *, context=None):
+    from ..models import Run
+    run = db.get(Run, evidence.run_id)
+    if not run:
+        return False
+    context = context or runtime_context(db, run)
+    if context.get('workspace_id') != run.workspace_id:
+        return False
     if evidence.source_id:
         source = db.get(Source, evidence.source_id)
         if evidence.access == 'reference_only':
-            return bool(source and source.enabled)
-        return bool(source and source.policy_version == evidence.policy_version and allowed(source, action))
+            return bool(source and source.enabled and not evidence.text)
+        return bool(source and source.policy_version == evidence.policy_version
+                    and evidence.text and evidence.text in (source.text or '')
+                    and allowed(source, action, context=context))
     if evidence.document_id:
         doc = db.get(Document, evidence.document_id)
-        return bool(doc and doc.status == 'ready')
+        return bool(doc and doc.status == 'ready' and doc.workspace_id == run.workspace_id
+                    and doc.id in run.document_ids and any(
+                        part.get('locator') == evidence.locator and part.get('text') == evidence.text
+                        for part in doc.chunks))
     return False
 
 
-def run_artifact_access(db, run, action='quote', _visited=None):
+def run_artifact_access(db, run, action='quote', _visited=None, *, context=None):
     """Conservative: hide dependent generated content after a rights or deletion change.
 
     This does not pretend to remove already downloaded exports from users' devices.
     """
     from sqlalchemy import select
     from ..models import Memo, Run
+    if not run:
+        fail('SOURCE_CHANGED', 'The source execution is unavailable.', 409)
+    context = context or runtime_context(db, run)
+    if context.get('workspace_id') != run.workspace_id:
+        fail('SOURCE_CHANGED', 'Cross-workspace source dependency is unavailable.', 409)
+    # Deterministic preprocessing can include a selected file absent from the retrieval subset.
+    for document_id in run.document_ids:
+        document = db.get(Document, document_id)
+        if not document or document.status != 'ready' or document.workspace_id != run.workspace_id:
+            fail('SOURCE_CHANGED', 'A selected document is no longer available.', 409)
     visited = set() if _visited is None else set(_visited)
     if run.id in visited or len(visited) >= 20:
         fail('DEPENDENCY_CYCLE', 'Artifact dependency chain requires review.', 409)
@@ -117,9 +159,9 @@ def run_artifact_access(db, run, action='quote', _visited=None):
             parent = db.get(Run, memo.run_id)
             if not parent:
                 fail('SOURCE_CHANGED', 'The input memo evidence is no longer available.', 409)
-            run_artifact_access(db, parent, action, visited)
+            run_artifact_access(db, parent, action, visited, context=context)
     items = db.scalars(select(Evidence).where(Evidence.run_id == run.id)).all()
-    if any(not evidence_allowed(db, item, action) for item in items):
+    if any(not evidence_allowed(db, item, action, context=context) for item in items):
         fail('SOURCE_CHANGED', 'A source was disabled, changed, or deleted. This artifact requires review.', 409)
 
 

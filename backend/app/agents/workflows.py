@@ -5,7 +5,7 @@ from ..errors import fail
 from .calculations import allocate_revenue, lease_schedule, check_journal
 
 
-def validate_inputs(db, run, task):
+def validate_inputs(db, run, task, *, rights_context=None):
     docs = []
     for doc_id in run.document_ids:
         doc = db.get(Document, doc_id)
@@ -18,7 +18,7 @@ def validate_inputs(db, run, task):
         if not saved_memo or saved_memo.workspace_id != run.workspace_id:
             fail('NOT_FOUND', 'Memo not found in this workspace.', 404)
         from ..services.memos import verify_access
-        verify_access(db, saved_memo, 'model_input')
+        verify_access(db, saved_memo, 'model_input', context=rights_context)
     if len(docs) < task['min_documents'] and not (run.workflow == 'memo_review' and saved_memo):
         fail('DOCUMENT_REQUIRED', f'This task requires at least {task["min_documents"]} document(s).', 422)
     if run.workflow == 'framework_compare' and run.context.get('framework') != 'BOTH':
@@ -28,8 +28,8 @@ def validate_inputs(db, run, task):
     return docs
 
 
-def preprocess(db, run, task):
-    docs = validate_inputs(db, run, task)
+def preprocess(db, run, task, *, rights_context=None):
+    docs = validate_inputs(db, run, task, rights_context=rights_context)
     result = {'workflow_guardrail': task['guardrail']}
     if run.workflow == 'memo_review' and run.inputs.get('memo_id'):
         memo = db.get(Memo, run.inputs['memo_id'])
