@@ -124,3 +124,30 @@ def parser_history(extraction_id: str, config=Depends(settings), user=Depends(cu
     from ..services import parser_review
     require_editor(user)
     return parser_review.history(db, config, extraction_id)
+
+
+@router.get('/editorial/extractions')
+def parser_extractions(offset: int = Query(0, ge=0), limit: int = Query(30, ge=1, le=100),
+                       user=Depends(current_user), db=Depends(session)):
+    from ..models import SourceExtraction, SourceArtifact, IntakeWork
+    from ..services import parser_review
+    require_editor(user)
+    rows = db.execute(select(SourceExtraction, SourceArtifact, IntakeWork, Source)
+        .join(SourceArtifact, SourceArtifact.id == SourceExtraction.artifact_id)
+        .join(IntakeWork, IntakeWork.id == SourceArtifact.work_id)
+        .join(Source, Source.id == IntakeWork.source_id)
+        .order_by(SourceExtraction.parsed_at.desc(), SourceExtraction.id)
+        .offset(offset).limit(limit+1)).all()
+    items = []
+    for ex, artifact, work, source in rows[:limit]:
+        last = parser_review.latest(db, ex.id)
+        context = {'route':work.manifest['route'], 'audience':'internal_ingestion'}
+        items.append({'id':ex.id, 'title':source.title, 'edition':source.version_label,
+            'family_id':work.family_id, 'parser_version':ex.parser_version,
+            'passage_count':ex.passage_count, 'parsed_at':ex.parsed_at,
+            'review_sequence':last.sequence if last else 0,
+            'last_decision':last.payload.get('decision') if last else None,
+            'review_expires_at':last.payload.get('expires_at') if last else None,
+            'packet_permitted':all(rights.allowed(source, op, context=context)
+                for op in ('store_raw','store_text','display_full','export'))})
+    return {'items':items, 'offset':offset, 'next_offset':offset+limit if len(rows)>limit else None}

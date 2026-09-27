@@ -7,6 +7,7 @@ import {chatView} from './views/chat.js';
 import {studioView,taskView,runView} from './views/research.js';
 import {memoView,workspacesView,documentsView} from './views/work.js';
 import {pricingView,billingView} from './views/billing.js';
+import {parserReviewView} from './views/parser-review.js';
 import {openLibraryView,editorialView} from './views/open-library.js';
 import {sourcesView,topicsView,settingsView,adminView,watchesView} from './views/library.js';
 
@@ -50,7 +51,7 @@ export async function mount(root:HTMLElement){
     if(app.me){
       account.append(badge(app.me.access.agent_allowed?'Agent':'Free',app.me.access.agent_allowed?'paid':'neutral'),
                      el('span',{class:'account-name'},app.me.name));
-      if(app.me.role==='technical_reviewer')account.append(link(app,'Content review','/editorial'));
+      if(app.me.role==='technical_reviewer')account.append(link(app,'Content review','/editorial'),link(app,'Parser review','/parser-review'));
       if(['admin','rights_approver'].includes(app.me.role))account.append(link(app,'Source admin','/admin'));
       document.documentElement.classList.toggle('reduced-motion',!!app.me.preferences.reduced_motion);
       document.documentElement.classList.toggle('compact',!!app.me.preferences.compact);
@@ -88,6 +89,7 @@ export async function mount(root:HTMLElement){
         case 'documents':page('Documents');await documentsView(app);break;
         case 'sec-core':page('SEC Core');await secCoreView(app);break;
         case 'library':page('Open library');await openLibraryView(app,path[1]);break;
+        case 'parser-review':page('Parser review');await parserReviewView(app);break;
         case 'editorial':page('Technical review');await editorialView(app);break;
         case 'sources':page('Sources');await sourcesView(app);break;
         case 'topics':page('Topics');await topicsView(app);break;

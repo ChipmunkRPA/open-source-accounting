@@ -22,3 +22,7 @@
 
 /* SEC Core: long source text must remain readable on narrow screens. */
 .sec-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:20px 0}.sec-stats strong{font-size:28px}.sec-search{display:grid;grid-template-columns:minmax(0,1fr) 210px auto;gap:16px;align-items:end;margin:24px 0}.sec-text{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;line-height:1.65;max-height:52vh;overflow:auto;padding:16px;background:#f5f7fa}.sec-hash{overflow-wrap:anywhere;font-family:monospace;font-size:12px}@media(max-width:760px){.sec-stats{grid-template-columns:1fr 1fr}.sec-search{grid-template-columns:1fr}.sec-text{padding:10px}}
+
+/* Source text is shown literally; long citations and hashes must stay readable. */
+.review-text{white-space:pre-wrap;overflow-wrap:anywhere;max-height:32rem;overflow:auto;}
+.review-hash{overflow-wrap:anywhere;}
