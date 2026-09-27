@@ -3641,6 +3641,58 @@
         ],
         "title": "MemoUpdate"
       },
+      "OutputControl": {
+        "properties": {
+          "mode": {
+            "type": "string",
+            "enum": [
+              "bounded",
+              "unrestricted"
+            ],
+            "title": "Mode"
+          },
+          "group_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "title": "Group Id"
+          },
+          "max_chars_per_response": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 2000000000.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max Chars Per Response"
+          },
+          "max_chars_total": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 2000000000.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max Chars Total"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "mode",
+          "group_id"
+        ],
+        "title": "OutputControl"
+      },
       "Preferences": {
         "properties": {
           "reduced_motion": {
@@ -4028,6 +4080,16 @@
             "maxLength": 2000,
             "title": "Attribution",
             "default": ""
+          },
+          "output_control": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/OutputControl"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "scope": {
             "additionalProperties": {

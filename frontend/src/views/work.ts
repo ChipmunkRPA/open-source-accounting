@@ -1,3 +1,4 @@
+import {sourceNotices} from '../source-notices.js';
 import {api,requestKey,download} from '../api.js';
 import {el,button,link,heading,badge,textarea,field,busy,notice,card,select,input,table,modal,dateText,empty} from '../ui.js';
 import type {App,Json} from '../types.js';
@@ -90,7 +91,7 @@ export async function memoView(app:App,id?:string){
   },'secondary');
   const exportSelect=select([['md','Markdown'],['docx','Word DOCX'],['pdf','PDF'],['html','HTML']],'md','export-format');exportSelect.setAttribute('aria-label','Export format');
   const exportButton=button('Download',async()=>{try{await saveNow();if(dirty)throw new Error('Save your changes before export.');await download(`/memos/${id}/export?format=${exportSelect.value}`,`accounting-memo.${exportSelect.value}`);}catch(e){app.showError(e);}},'secondary');
-  const history=button('Revision history',async()=>{try{const revisions=(await api(`/memos/${id}/revisions`)).items;modal('Memo revision history',...revisions.map((r:Json)=>el('details',{},el('summary',{},`Revision ${r.revision} · ${dateText(r.created_at)}`),el('pre',{class:'source-text'},r.body))));}catch(e){app.showError(e);}},'quiet');
+  const history=button('Revision history',async()=>{try{const revisions=(await api(`/memos/${id}/revisions`)).items;modal('Memo revision history',...revisions.map((r:Json)=>el('details',{},el('summary',{},`Revision ${r.revision} · ${dateText(r.created_at)}`),el('pre',{class:'source-text'},r.body),sourceNotices(r.source_attributions))));}catch(e){app.showError(e);}},'quiet');
   const critique=button('Challenge this memo · Agent',async()=>{
     if(!app.me?.access.agent_allowed){app.upgrade('AI memo critique');return;}
     await saveNow();if(dirty)return;
@@ -101,6 +102,6 @@ export async function memoView(app:App,id?:string){
   app.content.replaceChildren(heading('Memo editor','Manual editing and downloading existing work do not require an active subscription.',reviewBadge),
     el('div',{class:'editor-toolbar'},save,review,history,exportSelect,exportButton,critique),
     notice('AI-assisted research draft — verify sources and obtain appropriate professional review. Exports use the saved revision.'),
-    field('Memo title',title),field('Memo content (Markdown)',editor),el('div',{class:'editor-status'},status,
+    sourceNotices(memo.source_attributions),field('Memo title',title),field('Memo content (Markdown)',editor),el('div',{class:'editor-status'},status,
       button('Reload saved revision',()=>{if(!dirty||confirm('Discard unsaved changes and reload?'))app.navigate('/memos/'+id);},'quiet')));
 }

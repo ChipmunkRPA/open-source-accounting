@@ -10,8 +10,8 @@ The revision binds work title/publisher/URL/version, body hash, grants, scope, e
 
 - Complete family adapters, live authorized smoke, manual import and review/index integration in #8. The metadata-only pre-acquisition registry and rights-gated raw/parsed storage are implemented; legacy acquisition entry points are disabled. See [intake scope](../SOURCE_INTAKE.md).
 - Add verified publisher-seat grants, retention and jurisdiction records (#25/#26/#29/#34). Runtime workspace/provider/region scope and per-model-call checks are implemented; no client field may self-assert an entitlement.
-- Build bounded counsel-review records, cumulative quotation/reconstruction accounting and retention-aware revocation/deletion across all derived indexes/caches/articles. Current source-backed output paths recheck rights; this is not complete cross-corpus deletion.
-- Verify and render attribution obligations through all output formats before enabling restricted-source grants.
+- Persist bounded counsel-review decisions and retention-aware deletion across derived indexes/caches/articles. Conservative work-group output accounting now applies across registered-source output paths; disguised copies/manual uploads still need cross-corpus provenance controls. See [output rights](OUTPUT_RIGHTS.md).
+- Verify actual attribution obligations and work grouping before enabling restricted-source grants. Server notices now render in source/evidence/results/memo views and all four export formats; this is not proof of a license.
 - Obtain real operation-specific permissions and independent review. Nine request packets are drafts only. No fair-use approval or publisher license was fabricated.
 
 ## Policy-page observations, 2026-09-27

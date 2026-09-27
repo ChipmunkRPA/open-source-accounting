@@ -1,8 +1,9 @@
 from sqlalchemy import select
 from ..auth import workspace_access
-from ..models import Run, Memo, Chat, Evidence
+from ..models import Run, Memo, Chat
 from ..errors import fail
 from ..services.rights import run_artifact_access
+from ..services import output_rights
 
 
 def get_run(db, user, run_id, action='read'):
@@ -30,16 +31,20 @@ def get_chat(db, user, chat_id):
 
 def run_json(db, run):
     blocked = False
+    result = run.result
     if run.result:
         try:
             run_artifact_access(db, run)
+            result = output_rights.run_output(db, run)
+            db.commit()
         except Exception:
+            db.rollback()
             blocked = True
     return {'id': run.id, 'workspace_id': run.workspace_id, 'workflow': run.workflow,
             'question': run.question, 'context': run.context, 'facts': run.facts,
             'document_ids': run.document_ids, 'inputs': run.inputs,
             'state': run.state, 'revision': run.revision, 'parent_id': run.parent_id,
-            'plan': run.plan, 'result': None if blocked else run.result,
+            'plan': run.plan, 'result': None if blocked else result,
             'access_blocked': blocked, 'error_code': run.error_code,
             'usage_status': run.usage_status, 'created_at': run.created_at,
             'updated_at': run.updated_at, 'model_id': run.model_id, 'token_usage': run.token_usage,

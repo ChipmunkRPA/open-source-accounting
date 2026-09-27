@@ -1,3 +1,4 @@
+import {sourceNotices} from '../source-notices.js';
 import {api,requestKey,saveBlob} from '../api.js';
 import {el,button,link,heading,badge,textarea,field,busy,notice,card,select,input,checkbox,table,modal,textBlock,dateText,empty} from '../ui.js';
 import type {App,Json} from '../types.js';
@@ -98,6 +99,7 @@ async function showEvidence(id:string){
   const dialog=modal(e.title,badge(e.access,e.access==='reference_only'?'warning':'neutral'),
     el('p',{class:'muted'},`${e.locator} · ${e.source_kind}${e.version?' · version '+e.version:''}`),
     e.text?el('blockquote',{class:'source-text'},e.text):notice('Primary text was not accessed or is no longer available. This is not a verified quotation.','warning'));
+  dialog.append(sourceNotices(e.source_attributions));
   if(e.url){const a=el('a',{href:e.url,target:'_blank',rel:'noopener noreferrer',class:'button secondary'},'Open publisher source ↗');dialog.append(a);}
 }
 
@@ -151,6 +153,7 @@ export async function runView(app:App,id:string){
       const result=run.result,evidence=(await api(`/runs/${id}/evidence`)).items;
       const main=el('section',{class:'analysis-panel'},badge('DRAFT · REVIEW REQUIRED','warning'),el('h2',{},result.title),textBlock(result.summary));
       for(const section of result.sections)main.append(el('section',{class:'analysis-section'},el('h3',{},section.heading),textBlock(section.body)));
+      main.append(sourceNotices(result.source_attributions));
       if(result.claims?.length){main.append(el('h3',{},'Claims and supporting evidence'));
         for(const claim of result.claims)main.append(el('div',{class:'claim'},badge(claim.basis),textBlock(claim.text),
           el('div',{class:'citation-row'},...claim.evidence_ids.map((eid:string,i:number)=>button(`Evidence ${i+1}`,()=>showEvidence(eid),'citation')))));

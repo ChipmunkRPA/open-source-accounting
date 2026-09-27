@@ -9,7 +9,7 @@ from ..content import Library, ContentError
 from ..schemas import Strict
 from ..models import Source, Audit, now
 from ..errors import fail
-from ..services import rights
+from ..services import rights, output_rights
 
 router = APIRouter(tags=['open library'])
 
@@ -54,10 +54,16 @@ class EditorialDecision(Strict):
 def editorial_sources(user=Depends(current_user), db=Depends(session)):
     require_editor(user)
     rows = db.scalars(select(Source).where(Source.enabled.is_(True)).order_by(Source.created_at.desc()).limit(2000))
-    return {'items': [{**rights.metadata(s), 'policy': s.policy,
-                       'text': s.text if rights.allowed(s, 'display_full') else None,
-                       'created_by': s.created_by} for s in rows
-                      if (s.policy or {}).get('requires_technical_review')]}
+    items = []
+    for s in rows:
+        if not (s.policy or {}).get('requires_technical_review'): continue
+        text = s.text if rights.allowed(s, 'display_full') else None
+        notes = output_rights.notices(db, [s])
+        if text: output_rights.release(db, [s], {'text': text, 'source_attributions': notes})
+        items.append({**rights.metadata(s), 'policy': s.policy, 'text': text,
+                      'source_attributions': notes, 'created_by': s.created_by})
+    db.commit()
+    return {'items': items}
 
 
 @router.post('/editorial/sources/{source_id}/review')

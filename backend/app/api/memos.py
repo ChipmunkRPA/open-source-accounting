@@ -4,6 +4,7 @@ from ..auth import current_user, session, workspace_access
 from ..schemas import MemoCreate, MemoUpdate, ReviewCreate
 from ..models import Memo, MemoRevision, Review, Membership, now
 from ..services import memos as service
+from ..services import output_rights
 from ..errors import fail
 from .common import get_memo
 
@@ -59,8 +60,12 @@ def revisions(memo_id: str, user=Depends(current_user), db=Depends(session)):
     service.verify_access(db, memo)
     rows = db.scalars(select(MemoRevision).where(MemoRevision.memo_id == memo_id)
                       .order_by(MemoRevision.number.desc()).limit(100)).all()
-    return {'items': [{'revision': r.number, 'body': r.body, 'title': r.title,
-                       'user_id': r.user_id, 'created_at': r.created_at} for r in rows]}
+    items = []
+    for r in rows:
+        output = output_rights.memo_output(db, memo, body=r.body, title=r.title)
+        items.append({'revision': r.number, **output, 'user_id': r.user_id, 'created_at': r.created_at})
+    db.commit()
+    return {'items': items}
 
 
 @router.post('/memos/{memo_id}/reviews', status_code=201)
@@ -84,7 +89,8 @@ def export(memo_id: str, format: str = 'md', user=Depends(current_user), db=Depe
         fail('EXPORT_FORMAT', 'Choose md, html, docx, or pdf.', 422)
     memo = get_memo(db, user, memo_id)
     service.verify_access(db, memo, 'export')
-    content, mime = service.export_bytes(memo, format)
+    content, mime = service.export_bytes(memo, format, db=db)
+    db.commit()
     return Response(content, media_type=mime,
                     headers={'Content-Disposition': f'attachment; filename="accounting-memo-{memo.id[:8]}.{format}"',
                              'Cache-Control': 'no-store'})

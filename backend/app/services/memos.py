@@ -3,6 +3,7 @@ from html import escape
 from sqlalchemy import select
 from ..models import Memo, MemoRevision, Run, Evidence, Review
 from .rights import run_artifact_access
+from . import output_rights
 
 
 def from_result(db, run):
@@ -39,9 +40,12 @@ def save_revision(db, memo, user_id):
 
 
 def serial(db, memo):
+    verify_access(db, memo)
+    output = output_rights.memo_output(db, memo)
+    db.commit()
     reviews = db.scalars(select(Review).where(Review.memo_id == memo.id, Review.revision == memo.revision)).all()
     return {'id': memo.id, 'workspace_id': memo.workspace_id, 'run_id': memo.run_id,
-            'title': memo.title, 'body': memo.body, 'revision': memo.revision, 'updated_at': memo.updated_at,
+            'title': memo.title, 'body': memo.body, 'source_attributions': output['source_attributions'], 'revision': memo.revision, 'updated_at': memo.updated_at,
             'review_state': 'independently_reviewed' if any(r.kind == 'independent' for r in reviews)
                             else ('self_reviewed' if reviews else 'draft'),
             'reviews': [{'reviewer_id': r.reviewer_id, 'kind': r.kind, 'note': r.note,
@@ -53,10 +57,15 @@ def verify_access(db, memo, action='quote', *, context=None):
         run_artifact_access(db, db.get(Run, memo.run_id), action, context=context)
 
 
-def export_bytes(memo, format):
+def export_bytes(memo, format, *, db=None):
     """Programmatic exports; no remote HTML or user-supplied executable markup."""
+    if memo.run_id and db is None:
+        raise ValueError('Source-backed exports require a current authorized database session.')
+    if db is not None:
+        verify_access(db, memo, 'export')
     footer = '\n\nAI-assisted research draft. Verify authority and obtain professional review before reliance.\n'
-    text = memo.body + footer
+    output = output_rights.memo_output(db, memo) if db is not None else None
+    text = memo.body + (output_rights.notice_text(output['source_attributions']) if output else '') + footer
     if format == 'md':
         return text.encode('utf-8'), 'text/markdown; charset=utf-8'
     if format == 'html':

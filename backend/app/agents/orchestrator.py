@@ -4,7 +4,7 @@ from sqlalchemy import select, delete
 from ..models import Run, Job, Evidence, RunEvent, User, now
 from ..schemas import Plan, Analysis, Verification
 from ..providers.gemini import get_model
-from ..services import retrieval, rights, memos
+from ..services import retrieval, rights, memos, output_rights
 from ..services.entitlements import require_agent, settle
 from ..errors import ProviderError, RunStopped, fail
 from .catalog import get_workflow
@@ -170,6 +170,7 @@ def execute(db_factory, job_id, owner, config):
                            'provider': config.model_provider, 'model_id': config.model_id,
                            'prompt_version': prompts.PROMPT_VERSION, 'evidence_count': len(rows)})
             run.result = result
+            run.result = output_rights.run_output(db, run)
             run.token_usage = usage
             run.error_code = None
             emit(db, run, 'completed_with_limitations')
@@ -193,7 +194,7 @@ def execute(db_factory, job_id, owner, config):
                 return
             state = 'cancelled' if run.cancel_requested else ('blocked' if code in {
                 'SUBSCRIPTION_REQUIRED', 'SOURCE_CHANGED', 'SOURCE_POLICY_BLOCK', 'FEATURE_NOT_ENABLED',
-                'DOCUMENT_UNAVAILABLE', 'WORKSPACE_ACCESS_REVOKED'} else 'failed')
+                'DOCUMENT_UNAVAILABLE', 'WORKSPACE_ACCESS_REVOKED', 'SOURCE_OUTPUT_LIMIT', 'OUTPUT_POLICY_CONFLICT', 'OUTPUT_POLICY_REQUIRED'} else 'failed')
             emit(db, run, state, error_code=code)
             run.error_code = code
             settle(db, run, released=False)

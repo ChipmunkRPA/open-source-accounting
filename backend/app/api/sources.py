@@ -3,7 +3,7 @@ from sqlalchemy import select, or_
 from ..auth import fresh_user, current_user, session, require_admin
 from ..schemas import SourceCreate, RightsApproval
 from ..models import Source, Audit
-from ..services import rights
+from ..services import rights, output_rights
 from ..errors import fail
 
 router = APIRouter(tags=['sources'])
@@ -25,15 +25,26 @@ def source(source_id: str, db=Depends(session)):
     row = db.get(Source, source_id)
     if not row or not row.enabled or not row.reviewed:
         fail('NOT_FOUND', 'Source not found.', 404)
-    return {**rights.metadata(row), 'text': row.text if rights.allowed(row, 'display_full') else None}
+    text = row.text if rights.allowed(row, 'display_full') else None
+    rows = output_rights.notices(db, [row])
+    if text:
+        output_rights.release(db, [row], {'text': text, 'source_attributions': rows})
+        db.commit()
+    return {**rights.metadata(row), 'text': text, 'source_attributions': rows}
 
 
 @router.get('/topics')
 def topics(db=Depends(session)):
     rows = db.scalars(select(Source).where(Source.kind == 'original_commentary', Source.enabled.is_(True),
                                            Source.reviewed.is_(True))).all()
-    return {'items': [{**rights.metadata(s), 'summary': (s.text or '')[:200] if rights.allowed(s, 'display_full') else ''}
-                      for s in rows]}
+    items = []
+    for source in rows:
+        summary = (source.text or '')[:200] if rights.allowed(source, 'display_full') else ''
+        notes = output_rights.notices(db, [source])
+        if summary: output_rights.release(db, [source], {'text': summary, 'source_attributions': notes})
+        items.append({**rights.metadata(source), 'summary': summary, 'source_attributions': notes})
+    db.commit()
+    return {'items': items}
 
 
 @router.get('/admin/sources')

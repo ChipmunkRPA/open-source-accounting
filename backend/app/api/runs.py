@@ -8,9 +8,9 @@ from ..models import Run, Job, RunEvent, Evidence, Document, Source, Membership,
 from ..schemas import RunCreate, RunUpdate, RunStart, FollowUp
 from ..agents.catalog import get_workflow
 from ..agents.workflows import validate_inputs
-from ..services.entitlements import require_agent, reserve, settle, ACTIVE_STATES, TERMINAL_STATES
+from ..services.entitlements import reserve, settle, ACTIVE_STATES, TERMINAL_STATES
 from ..services.idempotency import begin
-from ..services import rights, memos
+from ..services import rights, memos, output_rights
 from ..errors import fail
 from .common import get_run, run_json
 
@@ -33,7 +33,7 @@ def create_run(payload: RunCreate, request: Request, idempotency_key: str = Head
                user=Depends(current_user), db=Depends(session)):
     # Free users may prepare a draft. Nothing invokes a model or processes files here.
     workspace_access(db, user, payload.workspace_id, 'edit')
-    task = get_workflow(payload.workflow, request.app.state.settings)
+    get_workflow(payload.workflow, request.app.state.settings)
     if payload.workflow == 'standards_watch':
         fail('USE_WATCH_SETUP', 'Use watch setup for this workflow.', 422)
     lock_user(db, user.id)
@@ -157,7 +157,12 @@ def follow_up(run_id: str, payload: FollowUp, request: Request, idempotency_key:
 def evidence_json(db, evidence, include_text=False):
     usable = rights.evidence_allowed(db, evidence, 'quote')
     source = db.get(Source, evidence.source_id) if evidence.source_id else None
+    rows = output_rights.notices(db, [source]) if source and usable else []
+    if include_text and usable and source and evidence.text:
+        output_rights.release(db, [source], {'text': evidence.text, 'source_attributions': rows})
+        db.commit()
     return {'id': evidence.id, 'title': evidence.title, 'locator': evidence.locator,
+            'source_attributions': rows,
             'access': evidence.access if usable else 'unavailable', 'source_kind': evidence.source_kind,
             'source_id': evidence.source_id, 'document_id': evidence.document_id,
             'text': evidence.text if include_text and usable else None,

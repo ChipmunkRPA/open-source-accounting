@@ -1,7 +1,7 @@
 """Relational records. UTC timestamps are integer epoch seconds on both SQLite and PostgreSQL."""
 import time
 import uuid
-from sqlalchemy import String, Text, Integer, Boolean, Float, ForeignKey, JSON, UniqueConstraint, Index
+from sqlalchemy import String, Text, Integer, BigInteger, Boolean, Float, ForeignKey, JSON, UniqueConstraint, Index
 from sqlalchemy.orm import Mapped, mapped_column
 from .db import Base
 
@@ -339,3 +339,18 @@ class SourceRequestBudget(Base):
     __tablename__ = 'sec_request_budget'
     name: Mapped[str] = mapped_column(Text, primary_key=True)
     next_at: Mapped[float] = mapped_column(Float, default=0.0)
+
+
+class OutputBudget(Base):
+    __tablename__ = 'source_output_budgets'
+    group_id: Mapped[str] = mapped_column(String(120), primary_key=True)
+    limits_sha256: Mapped[str] = mapped_column(String(64))
+    released_chars: Mapped[int] = mapped_column(BigInteger, default=0)
+
+
+class OutputRelease(Base):
+    __tablename__ = 'source_output_releases'
+    group_id: Mapped[str] = mapped_column(ForeignKey('source_output_budgets.group_id'), primary_key=True)
+    payload_sha256: Mapped[str] = mapped_column(String(64), primary_key=True)
+    character_count: Mapped[int] = mapped_column(Integer)
+    created_at: Mapped[int] = mapped_column(Integer, default=now)

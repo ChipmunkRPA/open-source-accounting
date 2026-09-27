@@ -1,3 +1,4 @@
+import {sourceNotices} from '../source-notices.js';
 import {api} from '../api.js';
 import {el,button,link,heading,badge,textarea,field,notice,card,select,input,checkbox,table,modal,textBlock,dateText,empty} from '../ui.js';
 import type {App,Json} from '../types.js';
@@ -5,9 +6,9 @@ import type {App,Json} from '../types.js';
 export async function sourcesView(app:App){
   const q=input('search','','source-search');q.placeholder='Search source title or publisher';const list=el('div');
   const framework=select([['','All frameworks'],['US_GAAP','U.S. GAAP'],['IFRS','IFRS'],['BOTH','Cross-framework'],['AUDIT','Auditing']]);
-  async function open(id:string){const s=await api('/sources/'+id);modal(s.title,badge(s.access,s.access==='reference_only'?'warning':'neutral'),el('p',{class:'muted'},`${s.publisher} · ${s.version}`),
+  async function open(id:string){try{const s=await api('/sources/'+id);modal(s.title,badge(s.access,s.access==='reference_only'?'warning':'neutral'),el('p',{class:'muted'},`${s.publisher} · ${s.version}`),
     s.text?textBlock(s.text):notice('Reference metadata only. No primary text is reproduced or available to the model.','warning'),
-    s.url?el('a',{href:s.url,target:'_blank',rel:'noopener noreferrer'},'Open publisher source ↗'):el('span'));}
+    sourceNotices(s.source_attributions),s.url?el('a',{href:s.url,target:'_blank',rel:'noopener noreferrer'},'Open publisher source ↗'):el('span'));}catch(error){app.showError(error);}}
   async function refresh(){const rows=(await api(`/sources?q=${encodeURIComponent(q.value)}&framework=${framework.value}`)).items;
     list.replaceChildren(...rows.map((s:Json)=>el('article',{class:'source-row'},el('div',{},el('h2',{},s.title),el('p',{class:'muted'},`${s.publisher} · ${s.kind}`)),badge(s.access,s.access==='reference_only'?'warning':'neutral'),button('Inspect source',()=>open(s.id),'secondary'))));
     if(!rows.length)list.append(empty('No matching sources','Try a broader topic or remove the framework filter.'));
@@ -22,7 +23,7 @@ export async function topicsView(app:App){
   const rows=(await api('/topics')).items;
   app.content.replaceChildren(heading('Learn the research process.','Original educational material. No proprietary standards have been copied into the starter corpus.'),
     link(app,'Browse the full open library →','/library'),
-    el('div',{class:'grid two'},...rows.map((r:Json)=>card(r.title,badge('ORIGINAL CONTENT','free'),el('p',{class:'muted'},r.summary),button('Read guide',async()=>{const s=await api('/sources/'+r.id);modal(s.title,textBlock(s.text||''));},'secondary')))));
+    el('div',{class:'grid two'},...rows.map((r:Json)=>card(r.title,badge('ORIGINAL CONTENT','free'),el('p',{class:'muted'},r.summary),sourceNotices(r.source_attributions),button('Read guide',async()=>{const s=await api('/sources/'+r.id);modal(s.title,textBlock(s.text||''),sourceNotices(s.source_attributions));},'secondary')))));
 }
 
 export async function settingsView(app:App,logout:()=>void){

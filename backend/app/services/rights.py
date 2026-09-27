@@ -9,7 +9,7 @@ from ..errors import fail
 OPERATIONS = frozenset({'acquire', 'store_raw', 'extract', 'store_text', 'embed',
                         'model_input', 'display_full', 'quote', 'export', 'redistribute', 'train'})
 RIGHTS_FIELDS = OPERATIONS | {'basis', 'commercial_use', 'effective_at', 'expires_at',
-    'license_evidence_ref', 'scope', 'attribution', 'requires_technical_review',
+    'license_evidence_ref', 'scope', 'attribution', 'output_control', 'requires_technical_review',
     'intake_manifest_sha256', 'intake_parent_id', 'intake_parent_policy_version'}
 
 
@@ -62,6 +62,16 @@ def allowed(source: Source, action: str, *, context: dict | None = None, _visite
         return False
     if policy.get('basis') in {'license', 'reviewed_use'} and not policy.get('license_evidence_ref'):
         return False
+    if action in {'quote', 'display_full', 'export', 'model_input'}:
+        control = policy.get('output_control')
+        if policy.get('basis') in {'license', 'reviewed_use'} and not control:
+            return False
+        if control is not None:
+            from ..schemas import OutputControl
+            try:
+                OutputControl.model_validate(control)
+            except ValueError:
+                return False
     # Missing context denies a scoped grant. A paid plan cannot satisfy source seat rights.
     scope = policy.get('scope', {})
     if not isinstance(scope, dict):
@@ -175,4 +185,5 @@ def metadata(source):
             'editorial_status': (source.policy or {}).get('technical_review_status', 'not_recorded'),
             'content_item_id': (source.policy or {}).get('content_item_id'),
             'policy_version': source.policy_version,
+            'attribution': (source.policy or {}).get('attribution', ''),
             'source_provenance': (source.policy or {}).get('sec_core')}

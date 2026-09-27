@@ -36,7 +36,7 @@
       "acceptance": "Unknown operations fail closed; expiry/revocation and upload/mirror/subscription bypass tests pass; human license/legal blockers remain explicit.",
       "progress_required": true,
       "scheduled": false,
-      "implementation_note": "Revision-bound operation gates, authorized intake/parent revocation and server-derived runtime context implemented in dependent PR slices. Every Agent model call and retained output rechecks permissions. Verified seats/retention/jurisdiction, cumulative reconstruction, attribution, counsel persistence and full derived deletion remain. See progress.md."
+      "implementation_note": "Revision-bound rights, authorized intake, trusted runtime scope and per-model-call checks implemented; dependent slice adds server notices and global reviewed output ledgers with PostgreSQL serialization. Real output terms/grouping, counsel records, seats/retention/jurisdiction, cross-corpus reconstruction and derived deletion remain. See progress.md."
     },
     {
       "id": "INGEST",
@@ -603,7 +603,8 @@
       "work": "Free chat/Agent/library/coverage/workspace/editor/admin/billing/MFA with mobile/keyboard/contrast/error states and real underlying actions.",
       "acceptance": "Deployed-origin journeys and manual accessibility checks; correct evidence/price/review labels; bridge tests not represented as end-to-end.",
       "progress_required": true,
-      "scheduled": false
+      "scheduled": false,
+      "implementation_note": "Output-rights slice added notice components and verified inline Topics rendering with synthetic data. Source-inspection dialog did not activate through IAB controls despite API tests passing and no console diagnostic; cause unconfirmed. Recheck full source/evidence/memo browser journeys under this issue."
     },
     {
       "id": "EVALUATION",

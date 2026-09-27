@@ -122,3 +122,51 @@ def test_postgres_duplicate_request_has_one_network_owner(pg_url, tmp_path):
                 if process.is_alive(): process.terminate()
                 process.join(5)
         db.engine.dispose()
+
+
+def output_worker(url, source_id, payload, start, results):
+    from app.services.output_rights import release
+    database = Database(url)
+    try:
+        assert start.wait(15)
+        with database.Session() as session:
+            release(session, [session.get(Source, source_id)], payload)
+            session.commit()
+            results.put('released')
+    except HTTPException as error:
+        results.put(error.detail['code'])
+    finally:
+        database.engine.dispose()
+
+
+@pytest.mark.parametrize('duplicate', [False, True])
+def test_postgres_output_limit_serializes_across_accounts(pg_url, duplicate):
+    from app.models import OutputBudget, OutputRelease
+    database = Database(pg_url)
+    group = 'synthetic-'+str(uuid4())
+    with database.Session() as session:
+        source = Source(title='Synthetic concurrency source', publisher='Test author', text='Fixture only',
+                        policy={'output_control': {'mode': 'bounded', 'group_id': group,
+                                'max_chars_per_response': 10, 'max_chars_total': 10}})
+        session.add(source); session.commit(); source_id = source.id
+    ctx = multiprocessing.get_context('spawn')
+    start, results = ctx.Event(), ctx.Queue()
+    payloads = ['alpha']*4 if duplicate else ['alpha', 'beta']
+    workers = [ctx.Process(target=output_worker, args=(pg_url, source_id, p, start, results)) for p in payloads]
+    try:
+        for process in workers: process.start()
+        start.set()
+        states = [results.get(timeout=20) for _ in workers]
+        for process in workers:
+            process.join(10)
+            assert process.exitcode == 0
+        assert states.count('released') == (4 if duplicate else 1)
+        assert states.count('SOURCE_OUTPUT_LIMIT') == (0 if duplicate else 1)
+        with database.Session() as session:
+            assert session.get(OutputBudget, group).released_chars in {6, 7}
+            assert session.scalar(select(func.count()).select_from(OutputRelease).where(OutputRelease.group_id == group)) == 1
+    finally:
+        for process in workers:
+            if process.is_alive(): process.terminate()
+            process.join(5)
+        database.engine.dispose()

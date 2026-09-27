@@ -160,6 +160,24 @@ class ReviewCreate(Strict):
     note: str = Field(default='', max_length=3000)
 
 
+class OutputControl(Strict):
+    mode: Literal['bounded', 'unrestricted']
+    group_id: str = Field(min_length=1, max_length=120, pattern=r'^[A-Za-z0-9_.:-]+$')
+    max_chars_per_response: StrictInt | None = Field(default=None, ge=0, le=2_000_000_000)
+    max_chars_total: StrictInt | None = Field(default=None, ge=0, le=2_000_000_000)
+
+    @model_validator(mode='after')
+    def validate_limits(self):
+        if self.mode == 'bounded':
+            if self.max_chars_per_response is None or self.max_chars_total is None:
+                raise ValueError('Bounded output requires reviewed per-response and cumulative limits.')
+            if self.max_chars_per_response > self.max_chars_total:
+                raise ValueError('Response limit cannot exceed cumulative limit.')
+        elif self.max_chars_per_response is not None or self.max_chars_total is not None:
+            raise ValueError('Unrestricted output cannot specify limits.')
+        return self
+
+
 class SourcePolicy(Strict):
     basis: Literal['original', 'government_work', 'license', 'reviewed_use', 'reference_only']
     commercial_use: StrictBool = False
@@ -178,6 +196,7 @@ class SourcePolicy(Strict):
     expires_at: StrictInt | None = Field(default=None, ge=0)
     license_evidence_ref: str | None = Field(default=None, max_length=250)
     attribution: str = Field(default='', max_length=2000)
+    output_control: OutputControl | None = None
     scope: dict[Literal['route', 'workspace_id', 'seat_id', 'audience', 'provider', 'region', 'retention', 'jurisdiction'], list[str]] = Field(default_factory=dict)
     review_note: str = Field(min_length=10, max_length=3000)
 
