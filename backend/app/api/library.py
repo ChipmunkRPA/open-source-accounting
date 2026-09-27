@@ -4,6 +4,7 @@ from fastapi import APIRouter, Depends, Query
 from sqlalchemy import select
 from ..auth import fresh_user, settings, session, current_user
 from ..content import Library, ContentError
+from ..applicability_schemas import ApplicabilityDecision
 from ..editorial_schemas import EditorialDecision, ParserDecision, RevisionComparison
 from ..models import Source, EditorialReview
 from ..errors import fail
@@ -158,3 +159,23 @@ def compare_revisions(payload: RevisionComparison, user=Depends(current_user), d
     from ..services import review_comparison
     require_editor(user)
     return review_comparison.compare(db, payload)
+
+
+@router.post('/editorial/sources/{source_id}/applicability')
+def applicability_decision(source_id: str, payload: ApplicabilityDecision,
+                           user=Depends(fresh_user), db=Depends(session)):
+    from ..services import applicability
+    require_editor(user)
+    source=db.scalar(select(Source).where(Source.id==source_id).with_for_update())
+    if not source or not source.policy.get('requires_technical_review'):
+        fail('NOT_FOUND','Reviewable source not found.',404)
+    return applicability.record(db,source,payload,user.id)
+
+
+@router.get('/editorial/sources/{source_id}/applicability')
+def applicability_history(source_id: str, user=Depends(current_user), db=Depends(session)):
+    from ..services import applicability
+    require_editor(user)
+    source=db.scalar(select(Source).where(Source.id==source_id).with_for_update())
+    if not source:fail('NOT_FOUND','Source not found.',404)
+    return applicability.history(db,source)

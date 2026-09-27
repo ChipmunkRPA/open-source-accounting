@@ -136,8 +136,12 @@ def test_parser_expiry_blocks_agent_and_saved_exports_with_other_reviews_present
         source.reviewed = True; source.approved_by = 'approver'
         rights.record_approval(source, 'approver');db.commit()
         editorial.record(db, source, EditorialDecision.model_validate(technical_decision(source)), 'editor')
+        from app.applicability_schemas import ApplicabilityDecision
+        from app.services import applicability
+        from test_applicability import applicability_payload, CONTEXT
+        applicability.record(db, source, ApplicabilityDecision.model_validate(applicability_payload(source)), 'editor')
         assert rights.allowed(source,'model_input')
-        run = Run(workspace_id='demo-workspace',user_id='demo',workflow='deep_research',question='Synthetic test')
+        run = Run(workspace_id='demo-workspace',user_id='demo',workflow='deep_research',question='Synthetic test',context=CONTEXT)
         db.add(run); db.flush()
         ev = Evidence(run_id=run.id,source_id=sid,title=source.title,locator=source.policy['intake_locator'],
                       text=source.text,access='full',policy_version=source.policy_version,source_kind=source.kind)

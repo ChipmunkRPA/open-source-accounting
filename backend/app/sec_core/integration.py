@@ -74,7 +74,6 @@ used as an effective/public-availability date for this source family.
 
 def snapshot_pack(snapshot_path, raw_directory, catalog_pack):
     """Reparse a downloaded raw artifact before database staging; never trust JSON alone."""
-    import json
     from pathlib import Path
     from types import SimpleNamespace
     from . import parsers

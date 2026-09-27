@@ -1,8 +1,6 @@
 from datetime import datetime, timezone
 from dateutil.relativedelta import relativedelta
 from fastapi import APIRouter, Depends, Header, Request
-from sqlalchemy import select
-from pydantic import Field
 from typing import Literal
 from ..schemas import Strict
 from ..auth import fresh_user, current_user, session, lock_user

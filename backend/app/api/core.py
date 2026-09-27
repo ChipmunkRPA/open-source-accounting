@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, Request
 from sqlalchemy import select
-from ..auth import current_user, session, workspace_access, verified_identity
+from ..auth import current_user, session, verified_identity
 from ..schemas import Preferences, FeedbackCreate
-from ..models import Subscription, Workspace, Membership, Feedback, Notification
+from ..models import Subscription, Feedback, Notification
 from ..services.entitlements import access, usage_snapshot
 from ..agents.catalog import public_catalog
 from .common import get_run

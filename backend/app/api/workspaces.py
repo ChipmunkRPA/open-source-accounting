@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, Request, UploadFile, File, Form, Respons
 from sqlalchemy import select, func, delete
 from ..auth import fresh_user, current_user, session, workspace_access, lock_user
 from ..schemas import WorkspaceCreate, MemberAdd
-from ..models import Workspace, Membership, User, Document, Run, Evidence, Memo, MemoRevision, Audit, now, uid
+from ..models import Workspace, Membership, User, Document, Run, Evidence, Memo, MemoRevision, Audit, uid
 from ..errors import fail
 from ..services.entitlements import require_agent, ACTIVE_STATES
 from ..services import documents

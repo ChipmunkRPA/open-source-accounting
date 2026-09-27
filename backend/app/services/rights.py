@@ -49,8 +49,6 @@ def allowed(source: Source, action: str, *, context: dict | None = None, _visite
         if (not parent or parent.policy_version != policy.get('intake_parent_policy_version')
                 or not allowed(parent, action, context=context, _visited=visited)):
             return False
-        if action in {'model_input', 'embed', 'train'} and policy.get('applicability_review_status') != 'approved':
-            return False
     current = now()
     for key in ('effective_at', 'expires_at'):
         value = policy.get(key)
@@ -94,6 +92,10 @@ def allowed(source: Source, action: str, *, context: dict | None = None, _visite
             return False
         if not all(isinstance(v, str) and v for v in values) or (context or {}).get(key) not in values:
             return False
+    if action in {'model_input', 'embed', 'train'} and (policy.get('intake_extraction_id') or policy.get('applicability_record_id')):
+        from .applicability import current as applicability_current
+        if applicability_current(source) is None:
+            return False
     if action in {'model_input', 'embed', 'train'} and policy.get('intake_extraction_id'):
         from .parser_review import current
         if not current(source):
@@ -135,6 +137,7 @@ def runtime_context(db, run, settings=None, *, actor_id=None, require_edit=False
 def evidence_allowed(db, evidence: Evidence, action='model_input', *, context=None):
     from ..models import Run
     from .parser_review import current as parser_current
+    from .applicability import applies
     run = db.get(Run, evidence.run_id)
     if not run:
         return False
@@ -147,7 +150,7 @@ def evidence_allowed(db, evidence: Evidence, action='model_input', *, context=No
             return bool(source and source.enabled and not evidence.text)
         return bool(source and source.policy_version == evidence.policy_version
                     and evidence.text and evidence.text in (source.text or '')
-                    and allowed(source, action, context=context)
+                    and allowed(source, action, context=context) and applies(source, run.context)
                     and (not source.policy.get('intake_extraction_id')
                          or parser_current(source)))
     if evidence.document_id:

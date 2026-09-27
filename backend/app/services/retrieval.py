@@ -9,6 +9,7 @@ from collections import Counter
 from sqlalchemy import select
 from ..models import Source, Document
 from .rights import allowed
+from .applicability import applies
 
 
 def tokens(text):
@@ -28,7 +29,6 @@ def search(db, run, query, limit=12, *, rights_context=None):
     candidates = []
     period = run.context.get('period_end')
     framework = run.context.get('framework', 'US_GAAP')
-    knowledge_date = run.context.get('knowledge_date')
     # A concrete first-release corpus bound, surfaced in deployment docs.
     sources = db.scalars(select(Source).where(Source.enabled.is_(True)).limit(2000)).all()
     for source in sources:
@@ -48,10 +48,8 @@ def search(db, run, query, limit=12, *, rights_context=None):
             if evidence is not None:
                 candidates.append({**evidence, '_score': score(query, source.title + '\n' + (source.text or ''))})
             continue
-        if knowledge_date:
-            from datetime import datetime, timezone
-            if datetime.fromtimestamp(source.created_at, timezone.utc).date().isoformat() > knowledge_date:
-                continue
+        if not applies(source, run.context):
+            continue
         if allowed(source, 'model_input', context=rights_context) and allowed(source, 'store_text', context=rights_context) and allowed(source, 'quote', context=rights_context):
             for i, para in enumerate(re.split(r'\n\s*\n', source.text or '')):
                 if not para.strip():

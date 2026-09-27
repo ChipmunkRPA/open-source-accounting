@@ -843,3 +843,53 @@ def test_postgres_parser_review_serializes_same_extraction(pg_url, tmp_path):
                 if process.is_alive():process.terminate()
                 process.join(5)
         database.engine.dispose()
+
+
+def applicability_worker(url,sid,actor,payload,start,results):
+    from app.applicability_schemas import ApplicabilityDecision
+    from app.services import applicability
+    database=Database(url)
+    try:
+        assert start.wait(15)
+        with database.Session() as db:
+            source=db.scalar(select(Source).where(Source.id==sid).with_for_update())
+            try:
+                applicability.record(db,source,ApplicabilityDecision.model_validate(payload),actor)
+                results.put('recorded')
+            except HTTPException as exc:results.put(exc.status_code)
+    finally:database.engine.dispose()
+
+
+def test_postgres_applicability_stale_decision_cannot_overwrite(pg_url):
+    from app.models import ApplicabilityReview
+    from app.editorial_schemas import EditorialDecision
+    from app.services import editorial
+    from test_content_library import decision
+    from test_applicability import applicability_payload
+    from app.sec_core.core import digest
+    database=Database(pg_url)
+    actor,creator,approver,sid=(str(uuid4()) for _ in range(4))
+    with database.Session() as db:
+        db.add_all([User(id=actor,role='technical_reviewer'),User(id=creator,role='admin'),User(id=approver,role='rights_approver')]);db.commit()
+        source=Source(id=sid,title='Synthetic applicability test',publisher='Test author',canonical_url='',
+            text='Synthetic original applicability test.',kind='original_commentary',created_by=creator,reviewed=True,
+            approved_by=approver,policy={'basis':'original','commercial_use':True,'display_full':True,
+                'model_input':True,'requires_technical_review':True,'content_reference_ids':[],
+                'content_sha256':digest('Synthetic original applicability test.')})
+        db.add(source);db.flush();rights.record_approval(source,approver);db.commit()
+        editorial.record(db,source,EditorialDecision.model_validate(decision(source)),actor)
+        payload=applicability_payload(source)
+    ctx=multiprocessing.get_context('spawn');start,results=ctx.Event(),ctx.Queue()
+    workers=[ctx.Process(target=applicability_worker,args=(pg_url,sid,actor,payload,start,results)) for _ in range(2)]
+    try:
+        for process in workers:process.start()
+        start.set();observed=[results.get(timeout=30),results.get(timeout=30)]
+        assert 'recorded' in observed and 409 in observed
+        for process in workers:process.join(15);assert process.exitcode==0
+        with database.Session() as db:assert db.query(ApplicabilityReview).filter_by(source_id=sid).count()==1
+    finally:
+        for process in workers:
+            if process.pid:
+                if process.is_alive():process.terminate()
+                process.join(5)
+        database.engine.dispose()

@@ -2758,6 +2758,94 @@
         }
       }
     },
+    "/api/v1/editorial/sources/{source_id}/applicability": {
+      "post": {
+        "tags": [
+          "open library"
+        ],
+        "summary": "Applicability Decision",
+        "operationId": "applicability_decision_api_v1_editorial_sources__source_id__applicability_post",
+        "parameters": [
+          {
+            "name": "source_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Source Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApplicabilityDecision"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "open library"
+        ],
+        "summary": "Applicability History",
+        "operationId": "applicability_history_api_v1_editorial_sources__source_id__applicability_get",
+        "parameters": [
+          {
+            "name": "source_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Source Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/sec-core": {
       "get": {
         "tags": [
@@ -4192,6 +4280,176 @@
           "estimated_model_usd_per_completed_run"
         ],
         "title": "AgentCostCohort"
+      },
+      "ApplicabilityDecision": {
+        "properties": {
+          "expected_policy_version": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Expected Policy Version"
+          },
+          "expected_review_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Expected Review Revision"
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "approved",
+              "changes_requested",
+              "rejected",
+              "revoked"
+            ],
+            "title": "Decision"
+          },
+          "issued_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Issued At"
+          },
+          "publicly_available_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Publicly Available At"
+          },
+          "effective_from": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Effective From"
+          },
+          "effective_to": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Effective To"
+          },
+          "confirm_open_ended": {
+            "type": "boolean",
+            "title": "Confirm Open Ended",
+            "default": false
+          },
+          "frameworks": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "US_GAAP",
+                "IFRS"
+              ]
+            },
+            "type": "array",
+            "maxItems": 3,
+            "title": "Frameworks"
+          },
+          "entity_types": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "public",
+                "private",
+                "nonprofit"
+              ]
+            },
+            "type": "array",
+            "maxItems": 3,
+            "title": "Entity Types"
+          },
+          "audit_regimes": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "PCAOB",
+                "AICPA",
+                "GAGAS",
+                "NONE"
+              ]
+            },
+            "type": "array",
+            "maxItems": 4,
+            "title": "Audit Regimes"
+          },
+          "conditions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 30,
+            "title": "Conditions"
+          },
+          "review_scope": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 10,
+            "title": "Review Scope"
+          },
+          "review_note": {
+            "type": "string",
+            "maxLength": 4000,
+            "minLength": 20,
+            "title": "Review Note"
+          },
+          "evidence_ref": {
+            "type": "string",
+            "pattern": "^ev_[A-Za-z0-9_-]{1,120}$",
+            "title": "Evidence Ref"
+          },
+          "evidence_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Evidence Sha256"
+          },
+          "expires_at": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Expires At"
+          },
+          "confirm_actual_applicability_review": {
+            "type": "boolean",
+            "const": true,
+            "title": "Confirm Actual Applicability Review"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "expected_policy_version",
+          "expected_review_revision",
+          "decision",
+          "review_scope",
+          "review_note",
+          "evidence_ref",
+          "evidence_sha256",
+          "expires_at",
+          "confirm_actual_applicability_review"
+        ],
+        "title": "ApplicabilityDecision"
       },
       "ApplicabilityReview": {
         "properties": {
