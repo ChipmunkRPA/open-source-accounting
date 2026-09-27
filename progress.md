@@ -1,5 +1,19 @@
 # Open Source Accounting — current implementation progress
 
+## 2026-09-27 · #23 applicability reviewer interface (parent #5)
+
+Implementation: general applicability form in Content review with exact source/revision, separate issued/public/effective dates, framework/entity/audit checkboxes, conditional-scope warning, private findings/evidence/expiry and actual-review attestation. Default request-changes decision; saved forms prevent duplicate submission until reload. Private history reports whether an approval is current. Bundled SEC cards identify the separate workflow; no automatic approval transfer.
+
+Actual validation: TypeScript typecheck, **16 mocked auth tests**, production Identity Platform build and **23 applicability API tests passed**. Manual browser with synthetic local SQLite data saved a change request, disabled repeat submission and displayed private history/no current approval. Screenshot `reports/intake/applicability-ui.png`; test receipt `applicability-ui-backend.xml`; commands/limits `APPLICABILITY_UI.md`. Temporary server/tab stopped. No new full backend/migration/PostgreSQL result asserted for this frontend-only slice; one upstream Starlette/httpx warning. No failures. Content/hash/queue/generated-progress/publication checks passed.
+
+Coverage unchanged: **32 families / 47 topics; 63 original drafts / 63 verified hashes / 0 professional approvals / 0 Agent admissions; 58 questions / 26 references**. SEC **34 targets / 28 selected excerpts / 7 excerpted sources / 0 full original HTTP documents / 0 technical or applicability approvals / 0 approved production index / 0 human-adjudicated evaluations**. Real acquisition/parsing/review/index units added **0**. Source packs, parser `source-intake-1/sec-core-0.7.0`, discovery `html-index-1/crossref-works-1`, requested `gemini-3.8-flash` and cost catalog unchanged. No live inference, paid resources, deployment, billing/SMS or notifications.
+
+Remaining gates: actual rights/primary text/reviewers, conditional applicability resolution, SEC durable-ledger reconciliation, linked-publication dependencies, all-family acquisition/indexing/evaluation, browser download completion and broader accessibility. GCP project/region/spend choice, credentials and concrete release approval remain outstanding.
+
+Next resumable task: **#23 SEC durable applicability records and linked-publication dependency checks**. Keep validated work on main; full application/content/GCP goal remains active.
+
+---
+
 ## 2026-09-27 · #23 general applicability ledger (parent #5)
 
 Implementation: append-only applicability decisions bound to exact content and current technical/parser records, independent reviewer, scope/evidence hash and expiry. Separate issuance/public-availability/effective dates; explicit framework/entity/audit scope; open-ended interval confirmation; stale-source locks and private history. Retrieval and saved evidence exports withhold missing/expired/revoked/out-of-scope or conditional records. Import time no longer substitutes for historical public availability. Migration `0012_applicability` creates no approvals/backfill. General API only; bundled SEC retains its existing separate workflow. Published directly on main as [a0ae679](https://github.com/ChipmunkRPA/open-source-accounting/commit/a0ae67910320aade9f5b684d926c5c1be8c92924). [CI 36358792516](https://github.com/ChipmunkRPA/open-source-accounting/actions/runs/36358792516) passed both Python 3.11/3.13 clean installs, real frontend, backend, migrations/PostgreSQL and Docker.
