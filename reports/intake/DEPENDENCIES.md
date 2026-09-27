@@ -24,3 +24,5 @@ backend/.venv/bin/python scripts/release_preflight.py --check
 No schema change or new local PostgreSQL/frontend/browser/live-provider assertion. All added source text, identities, attestations and rights are synthetic. Binding a fixture to a real reference ID tests software behavior only; it is not primary evidence for that reference.
 
 Tests cover missing exact bindings, source disablement, revision/policy/rights/technical changes, output-control/notice withholding, invalid/self/partial/duplicate/stale bindings, dependency applicability and saved evidence/retrieval invalidation. Actual all-family coverage remains unchanged. Limits: binding picker, propagated output budgets/notices, corpus-scale impact reports and actual primary-source review remain. No paid resource, production, live billing/SMS or external notification.
+
+Implementation bad45bc7db057821f22532fd18262e9f4bb96782 passed main CI 36359874953: Python 3.11/3.13 clean installs, frontend/backend, migrations/PostgreSQL and Docker.
