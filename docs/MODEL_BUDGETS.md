@@ -20,6 +20,9 @@ real authorization merely because the API exists. Tests use synthetic attestatio
 
 Authorization terms and digest are immutable. An identical resubmission returns
 the existing record, including its revoked state, without adding funds. There is
+one envelope per approval-evidence hash, enforced by a database unique constraint.
+Dollar strings are normalized before hashing; different formatting cannot create
+extra funding. Reusing that approval with changed terms is rejected. There is
 no reset, edit, refill, auto-renewal or reactivation endpoint. A different envelope
 requires a new explicit approval and explicit runtime selection; total possible
 spend across envelopes is additive, not a single account-wide cap. Old unknown

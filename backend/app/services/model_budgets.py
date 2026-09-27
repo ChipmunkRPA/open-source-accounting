@@ -38,10 +38,15 @@ def authorize(db, payload, actor_id):
     if not now() < payload.expires_at <= min(now()+30*86400, REVIEW_DEADLINE):
         fail('INVALID_BUDGET_EXPIRY', 'Reverify prices before authorizing a budget beyond the current review window.', 422)
     terms = payload.model_dump()
-    existing = db.scalar(select(ModelBudget).where(ModelBudget.terms_sha256 == digest(terms)))
+    terms['limit_usd'] = format(Decimal(terms['limit_usd']).normalize(), 'f')
+    terms['per_call_usd'] = format(Decimal(terms['per_call_usd']).normalize(), 'f')
+    existing = db.scalar(select(ModelBudget).where(ModelBudget.authorization_sha256 == payload.evidence_sha256))
     if existing:
+        if existing.terms_sha256 != digest(terms):
+            fail('BUDGET_AUTHORIZATION_REUSED', 'This approval already funds an envelope with different terms. Obtain a new approval.', 409)
         return existing  # Retrying authorization never creates additional money or reactivates it.
     row = ModelBudget(terms=terms, terms_sha256=digest(terms), authorized_by=actor_id,
+        authorization_sha256=payload.evidence_sha256,
         expires_at=payload.expires_at, limit_nanos=limit, per_call_nanos=per_call)
     db.add(row)
     db.flush()

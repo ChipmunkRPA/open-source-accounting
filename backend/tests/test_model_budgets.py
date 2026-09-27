@@ -192,3 +192,16 @@ def test_invalid_or_stale_authorization_rejected(client, field, value):
 def test_expired_catalog_cannot_authorize_new_money(client, monkeypatch):
     monkeypatch.setattr(budgets, 'REVIEW_DEADLINE', now()-1)
     assert client.post('/api/v1/admin/model-budgets', json=payload(), headers={'X-Dev-User': 'admin'}).status_code == 422
+
+
+def test_approval_cannot_be_reused_by_changing_amount_format_or_terms(client):
+    route, headers = '/api/v1/admin/model-budgets', {'X-Dev-User': 'admin'}
+    body = payload()
+    first = client.post(route, json=body, headers=headers).json()
+    body['limit_usd'], body['per_call_usd'] = '09.000000', '3.0'
+    assert client.post(route, json=body, headers=headers).json()['id'] == first['id']
+    body['limit_usd'] = '12'
+    assert client.post(route, json=body, headers=headers).status_code == 409
+    body['evidence_sha256'] = 'b'*64  # Separate synthetic approval for additional funds.
+    created = client.post(route, json=body, headers=headers)
+    assert created.status_code == 201 and created.json()['id'] != first['id']

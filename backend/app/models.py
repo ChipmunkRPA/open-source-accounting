@@ -199,6 +199,7 @@ class ModelBudget(Base):
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
     terms: Mapped[dict] = mapped_column(JSON)
     terms_sha256: Mapped[str] = mapped_column(String(64), unique=True)
+    authorization_sha256: Mapped[str] = mapped_column(String(64), unique=True)
     authorized_by: Mapped[str | None] = mapped_column(ForeignKey('users.id', ondelete='SET NULL'))
     created_at: Mapped[int] = mapped_column(Integer, default=now)
     expires_at: Mapped[int] = mapped_column(Integer)

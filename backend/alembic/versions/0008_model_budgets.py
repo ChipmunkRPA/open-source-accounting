@@ -12,6 +12,7 @@ def upgrade():
         sa.Column('id', sa.String(36), primary_key=True),
         sa.Column('terms', sa.JSON(), nullable=False),
         sa.Column('terms_sha256', sa.String(64), nullable=False, unique=True),
+        sa.Column('authorization_sha256', sa.String(64), nullable=False, unique=True),
         sa.Column('authorized_by', sa.String(128), sa.ForeignKey('users.id', ondelete='SET NULL')),
         sa.Column('created_at', sa.Integer(), nullable=False),
         sa.Column('expires_at', sa.Integer(), nullable=False),
