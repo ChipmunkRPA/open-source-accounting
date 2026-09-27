@@ -25,3 +25,5 @@ No new local PostgreSQL, migration, browser or live-provider test in this slice;
 New synthetic cases cover legacy-flag denial, expiry/revocation and saved-export withholding with preserved history, period-start mismatch, entity mismatch and absent period end. Existing SEC tests now require explicit ledger review before evidence admission. Fixtures do not count as human review. Actual SEC coverage remains 28 selected excerpts from seven sources, zero full HTTP original documents and zero real approvals. All-family scope remains unchanged. No paid resources or deployment.
 
 Client migration: old SEC payload fields content_sha256/public_available_at/confirm_source_history_checked are replaced by the shared exact revision, public date, scope, evidence/expiry and attestation contract. Old payloads cannot create approvals. Historical flags are not silently converted to reviewed facts. The existing migration 0012_applicability is required. See docs/EDITORIAL_REVIEWS.md.
+
+Implementation e27830907ddcea0025ba569891cc9890fc3b1d62 passed main CI 36359458338: Python 3.11/3.13 clean installs, frontend/backend, migrations/PostgreSQL and Docker.
