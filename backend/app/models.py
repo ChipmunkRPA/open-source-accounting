@@ -373,6 +373,19 @@ class SourceExtraction(Base):
     __table_args__ = (UniqueConstraint('artifact_id', 'parser_version'),)
 
 
+class SourceDiscovery(Base):
+    __tablename__ = 'source_discoveries'
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
+    artifact_id: Mapped[str] = mapped_column(ForeignKey('source_artifacts.id'), index=True)
+    adapter_version: Mapped[str] = mapped_column(String(100))
+    recipe_sha256: Mapped[str] = mapped_column(String(64))
+    normalized_sha256: Mapped[str] = mapped_column(String(64))
+    object_key: Mapped[str] = mapped_column(String(250))
+    candidate_count: Mapped[int] = mapped_column(Integer)
+    created_at: Mapped[int] = mapped_column(Integer, default=now)
+    __table_args__ = (UniqueConstraint('artifact_id', 'adapter_version', 'recipe_sha256'),)
+
+
 class IntakeAttempt(Base):
     __tablename__ = 'intake_attempts'
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)

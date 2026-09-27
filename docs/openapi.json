@@ -2970,6 +2970,86 @@
         }
       }
     },
+    "/api/v1/admin/intake/artifacts/{artifact_id}/discover": {
+      "post": {
+        "tags": [
+          "source-intake"
+        ],
+        "summary": "Discover",
+        "operationId": "discover_api_v1_admin_intake_artifacts__artifact_id__discover_post",
+        "parameters": [
+          {
+            "name": "artifact_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Artifact Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/intake/discoveries/{discovery_id}": {
+      "get": {
+        "tags": [
+          "source-intake"
+        ],
+        "summary": "Read Discovery",
+        "operationId": "read_discovery_api_v1_admin_intake_discoveries__discovery_id__get",
+        "parameters": [
+          {
+            "name": "discovery_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Discovery Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/admin/intake/coverage": {
       "get": {
         "tags": [

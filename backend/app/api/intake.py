@@ -5,8 +5,8 @@ from sqlalchemy import select, func
 from starlette.concurrency import run_in_threadpool
 from ..auth import current_user, fresh_user, session, require_admin
 from ..intake_schemas import IntakeCreate
-from ..models import IntakeWork, SourceArtifact, SourceExtraction, IntakeAttempt, Source
-from ..services import intake, rights
+from ..models import IntakeWork, SourceArtifact, SourceExtraction, IntakeAttempt, Source, SourceDiscovery
+from ..services import intake, rights, discovery
 from ..errors import fail
 
 router = APIRouter(tags=['source-intake'])
@@ -97,11 +97,24 @@ def stage(extraction_id: str, request: Request, user=Depends(fresh_user), db=Dep
     return intake.stage(db, request.app.state.settings, extraction_id, user.id)
 
 
+@router.post('/admin/intake/artifacts/{artifact_id}/discover')
+def discover(artifact_id: str, request: Request, user=Depends(fresh_user), db=Depends(session)):
+    require_admin(user)
+    return discovery.discover(db, request.app.state.settings, artifact_id, user.id)
+
+
+@router.get('/admin/intake/discoveries/{discovery_id}')
+def read_discovery(discovery_id: str, request: Request, user=Depends(current_user), db=Depends(session)):
+    require_admin(user)
+    return discovery.read(db, request.app.state.settings, discovery_id)
+
+
 @router.get('/admin/intake/coverage')
 def coverage(user=Depends(current_user), db=Depends(session)):
     require_admin(user)
     # Counts use separate units, without claiming overlapping work editions are percent coverage.
     return {'registered_work_editions': db.scalar(select(func.count()).select_from(IntakeWork)),
+            'discovery_snapshots': db.scalar(select(func.count()).select_from(SourceDiscovery)),
             'acquired_raw_artifacts': db.scalar(select(func.count()).select_from(SourceArtifact)),
             'parsed_artifact_versions': db.scalar(select(func.count()).select_from(SourceExtraction)),
             'parsed_passages': db.scalar(select(func.coalesce(func.sum(SourceExtraction.passage_count), 0))),

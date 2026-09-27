@@ -648,3 +648,54 @@ def test_postgres_manual_imports_register_one_artifact(pg_url, tmp_path, same_ke
                 if process.is_alive(): process.terminate()
                 process.join(5)
         database.engine.dispose()
+
+
+def discovery_worker(url, directory, artifact_id, actor, start, results):
+    from app.services import discovery
+    database = Database(url)
+    settings = Settings(app_env='test', database_url=url, data_dir=directory, _env_file=None)
+    try:
+        assert start.wait(15)
+        with database.Session() as db:
+            results.put(discovery.discover(db, settings, artifact_id, actor)['id'])
+    finally:
+        database.engine.dispose()
+
+
+def test_postgres_discovery_concurrency_keeps_one_snapshot(pg_url, tmp_path):
+    from test_manual_intake import manual_payload
+    from test_source_discovery import RAW, BASE
+    from app.sec_core.core import digest
+    from app.models import SourceDiscovery
+    database = Database(pg_url)
+    settings = Settings(app_env='test', database_url=pg_url, data_dir=str(tmp_path), _env_file=None)
+    actor, approver = str(uuid4()), str(uuid4())
+    with database.Session() as db:
+        db.add_all([User(id=actor, role='admin'), User(id=approver, role='rights_approver')]); db.commit()
+        body = manual_payload(work_id=str(uuid4()), requested_url=BASE, allowed_mime=['text/html'], parser='structural_html')
+        body['source']['canonical_url'] = BASE
+        body['manifest']['manual_delivery'].update(raw_sha256=digest(RAW), byte_count=len(RAW), mime='text/html')
+        work = intake.register(db, settings, IntakeCreate.model_validate(body), actor)
+        source = db.get(Source, work.source_id)
+        source.reviewed, source.approved_by = True, approver
+        rights.record_approval(source, approver); db.commit()
+        work_id = work.id
+    preflight = intake.manual_preflight(database, work_id, 'synthetic-index')
+    artifact = intake.import_manual(database, settings, work_id, actor, 'synthetic-index', RAW, 'text/html', preflight)
+    ctx = multiprocessing.get_context('spawn')
+    start, results = ctx.Event(), ctx.Queue()
+    workers = [ctx.Process(target=discovery_worker, args=(pg_url, str(tmp_path), artifact['id'], actor, start, results)) for _ in range(2)]
+    try:
+        for process in workers: process.start()
+        start.set()
+        assert results.get(timeout=25) == results.get(timeout=25)
+        for process in workers:
+            process.join(15); assert process.exitcode == 0
+        with database.Session() as db:
+            assert db.scalar(select(func.count()).select_from(SourceDiscovery).where(SourceDiscovery.artifact_id == artifact['id'])) == 1
+    finally:
+        for process in workers:
+            if process.pid:
+                if process.is_alive(): process.terminate()
+                process.join(5)
+        database.engine.dispose()

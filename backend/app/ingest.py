@@ -16,6 +16,8 @@ def main():
     manual = sub.add_parser('import'); manual.add_argument('id')
     manual.add_argument('--file', required=True); manual.add_argument('--mime', required=True)
     manual.add_argument('--request-key', required=True)
+    sub.add_parser('discover-index').add_argument('id')
+    sub.add_parser('discovery').add_argument('id')
     for step in ('preview', 'acquire', 'parse', 'stage'):
         command = sub.add_parser(step); command.add_argument('id')
         if step == 'acquire':
@@ -44,6 +46,10 @@ def main():
         route += 'works'; verb = 'POST'; body = json.loads(Path(args.file).read_text())
     elif args.step == 'preview':
         route += 'works/' + args.id
+    elif args.step == 'discover-index':
+        route += 'artifacts/' + args.id + '/discover'; verb = 'POST'
+    elif args.step == 'discovery':
+        route += 'discoveries/' + args.id
     elif args.step == 'import':
         from pathlib import Path
         with Path(args.file).open('rb') as handle:

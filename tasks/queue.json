@@ -55,7 +55,7 @@
       "acceptance": "Actual artifacts have raw/normalized provenance; blocks are failures, not successful sources; source-unit denominators and retry tests are documented.",
       "progress_required": true,
       "scheduled": false,
-      "implementation_note": "32-family registry, rights-gated HTTP and exact-hash manual publisher/original delivery, immutable receipts, separate parse/stage and PostgreSQL concurrency tests implemented. Live authorized smoke, family discovery adapters, review/index integration, scoped ingestion grants and deletion reconciliation remain. See docs/SOURCE_INTAKE.md and progress.md."
+      "implementation_note": "32-family registry; rights-gated HTTP and exact-hash manual delivery; immutable receipts; authorized offline HTML-index discovery snapshots; separate parse/stage; PostgreSQL concurrency tests. Dedicated official API/bulk/edition adapters, live approved smoke, review/index integration, ingestion scopes and deletion reconciliation remain. See docs/SOURCE_INTAKE.md and progress.md."
     },
     {
       "id": "SEC_CORE",
