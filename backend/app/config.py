@@ -3,6 +3,7 @@ from pathlib import Path
 from typing import Literal
 from pydantic import model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
+from .providers.gemini_contract import MODEL_ID, endpoint
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -15,7 +16,7 @@ class Settings(BaseSettings):
     content_dir: str = str(ROOT / 'content')
     auth_mode: Literal['dev', 'firebase'] = 'dev'
     model_provider: Literal['mock', 'google_cloud'] = 'mock'
-    model_id: str = 'gemini-3.8-flash'
+    model_id: Literal['gemini-3.8-flash'] = MODEL_ID
     model_location: str = 'us'
     google_cloud_project: str = ''
     firebase_project_id: str = ''
@@ -72,6 +73,8 @@ class Settings(BaseSettings):
             raise ValueError('Choose an explicitly supported model multi-region; no silent fallback.')
         if self.model_provider == 'google_cloud' and not self.google_cloud_project:
             raise ValueError('GOOGLE_CLOUD_PROJECT is required for live inference.')
+        if self.model_provider == 'google_cloud':
+            endpoint(self.google_cloud_project, self.model_location, self.model_id)
         if self.auth_mode == 'firebase':
             if not self.firebase_project_id or not self.mfa_required:
                 raise ValueError('Firebase mode requires a project and mandatory MFA.')

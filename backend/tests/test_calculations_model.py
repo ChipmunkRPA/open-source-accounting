@@ -72,7 +72,8 @@ def test_provider_failure_has_no_fallback_or_secret_leak():
 
 def test_incomplete_provider_output_rejected():
     config=Settings(model_provider='google_cloud',google_cloud_project='project',_env_file=None)
-    def transport(*args):return {'candidates':[{'finishReason':'MAX_TOKENS','content':{'parts':[{'text':'partial'}]}}]}
+    def transport(*args):return {'candidates':[{'finishReason':'MAX_TOKENS','content':{'parts':[{'text':'partial'}]}}],
+                               'usageMetadata':{'promptTokenCount':1,'candidatesTokenCount':1,'totalTokenCount':2}}
     with pytest.raises(ProviderError,match='INCOMPLETE'):Gemini(config,transport).structured(Plan,'x',{})
 
 

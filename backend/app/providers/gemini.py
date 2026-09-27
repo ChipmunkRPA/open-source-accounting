@@ -9,6 +9,8 @@ from typing import TypeVar
 from pydantic import BaseModel
 from ..errors import ProviderError
 from ..schemas import Analysis, Plan, Verification
+from .gemini_contract import (MAX_OUTPUT_TOKENS, MAX_REQUEST_BYTES, MAX_RESPONSE_BYTES,
+                              endpoint, usage_counts)
 
 T = TypeVar('T', bound=BaseModel)
 
@@ -18,49 +20,110 @@ class Gemini:
         self.config = settings
         self.transport = transport
         self.last_usage = {}
+        self.last_model_version = None
 
     def _call(self, system, contents, schema=None, thinking='MEDIUM', output_limit=4000):
+        self.last_usage = {}
+        self.last_model_version = None
         if self.config.model_provider != 'google_cloud':
             raise ProviderError('Live model adapter is disabled.')
-        if sum(len(json.dumps(x)) for x in contents) > 180000:
-            raise ProviderError('MODEL_INPUT_LIMIT')
+        if thinking not in {'LOW', 'MEDIUM', 'HIGH'} or type(output_limit) is not int or not 1 <= output_limit <= MAX_OUTPUT_TOKENS:
+            raise ProviderError('MODEL_CONFIG_INVALID')
+        if not isinstance(system, str) or not system.strip() or not isinstance(contents, list) or not 1 <= len(contents) <= 20:
+            raise ProviderError('MODEL_INPUT_INVALID')
+        for turn in contents:
+            if not isinstance(turn, dict) or set(turn) != {'role', 'parts'} or turn['role'] not in {'user', 'model'}:
+                raise ProviderError('MODEL_INPUT_INVALID')
+            parts = turn['parts']
+            if not isinstance(parts, list) or not parts or any(
+                not isinstance(p, dict) or set(p) != {'text'} or not isinstance(p['text'], str) or not p['text'].strip()
+                for p in parts
+            ):
+                raise ProviderError('MODEL_INPUT_INVALID')
+        if contents[-1]['role'] != 'user':
+            raise ProviderError('MODEL_INPUT_INVALID')
         config = {'maxOutputTokens': output_limit, 'thinkingConfig': {'thinkingLevel': thinking}}
         if schema:
             config.update({'responseMimeType': 'application/json',
                            'responseJsonSchema': schema.model_json_schema()})
         payload = {'systemInstruction': {'parts': [{'text': system}]},
                    'contents': contents, 'generationConfig': config}
-        project = self.config.google_cloud_project
-        location = self.config.model_location
-        # Fixed host: no user-supplied URLs; no fallback to global or Developer API.
-        base = 'aiplatform.googleapis.com' if location == 'global' else f'{location}-aiplatform.googleapis.com'
-        url = f'https://{base}/v1/projects/{project}/locations/{location}/publishers/google/models/{self.config.model_id}:generateContent'
+        if len(json.dumps(payload).encode('utf-8')) > MAX_REQUEST_BYTES:
+            raise ProviderError('MODEL_INPUT_LIMIT')
         try:
+            url = endpoint(self.config.google_cloud_project, self.config.model_location, self.config.model_id)
             if self.transport is None:
-                import google.auth
-                from google.auth.transport.requests import AuthorizedSession
-                credentials, _ = google.auth.default(scopes=['https://www.googleapis.com/auth/cloud-platform'])
-                with AuthorizedSession(credentials) as client:
-                    response = client.post(url, json=payload, timeout=90)
-                    response.raise_for_status()
-                    data = response.json()
+                data = self._request(url, payload)
             else:
                 data = self.transport(url, payload)
+            if not isinstance(data, dict):
+                raise ProviderError('MODEL_RESPONSE_INVALID')
+            # Retain non-content usage even when a billed HTTP 200 output is rejected.
+            try:
+                self.last_usage = usage_counts(data.get('usageMetadata'))
+            except ValueError:
+                raise ProviderError('MODEL_USAGE_INVALID') from None
+            version = data.get('modelVersion')
+            if version is not None:
+                import re
+                if not isinstance(version, str) or not re.fullmatch(r'[a-zA-Z0-9._-]{1,128}', version):
+                    raise ProviderError('MODEL_RESPONSE_INVALID')
+                self.last_model_version = version
+            if self.last_usage['toolUsePromptTokenCount']:
+                raise ProviderError('MODEL_UNEXPECTED_TOOL')
+            if data.get('promptFeedback', {}).get('blockReason') not in {None, 'BLOCKED_REASON_UNSPECIFIED'}:
+                raise ProviderError('MODEL_OUTPUT_BLOCKED')
             candidates = data.get('candidates', [])
-            if not candidates or candidates[0].get('finishReason') not in {None, 'STOP'}:
+            if not isinstance(candidates, list) or len(candidates) != 1 or not isinstance(candidates[0], dict):
                 raise ProviderError('MODEL_OUTPUT_INCOMPLETE')
+            if candidates[0].get('finishReason') != 'STOP':
+                raise ProviderError('MODEL_OUTPUT_INCOMPLETE')
+            if candidates[0].get('groundingMetadata') or candidates[0].get('urlContextMetadata'):
+                raise ProviderError('MODEL_UNEXPECTED_TOOL')
             parts = candidates[0].get('content', {}).get('parts', [])
-            text = ''.join(p.get('text', '') for p in parts if not p.get('thought'))
+            if not isinstance(parts, list) or any(
+                not isinstance(p, dict) or not isinstance(p.get('text'), str)
+                or set(p) - {'text', 'thought', 'thoughtSignature'}
+                or ('thought' in p and type(p['thought']) is not bool) for p in parts
+            ):
+                raise ProviderError('MODEL_RESPONSE_INVALID')
+            text = ''.join(p['text'] for p in parts if not p.get('thought'))
             if not text:
                 raise ProviderError('MODEL_EMPTY_OUTPUT')
-            usage = data.get('usageMetadata', {})
-            self.last_usage = {k: int(usage.get(k, 0)) for k in
-                               ('promptTokenCount', 'candidatesTokenCount', 'thoughtsTokenCount', 'totalTokenCount')}
+            if not self.last_usage['candidatesTokenCount']:
+                raise ProviderError('MODEL_USAGE_INVALID')
+            if len(text.encode('utf-8')) > MAX_RESPONSE_BYTES:
+                raise ProviderError('MODEL_OUTPUT_LIMIT')
             return text
         except ProviderError:
             raise
         except Exception:
             raise ProviderError('MODEL_REQUEST_FAILED') from None
+
+    @staticmethod
+    def _request(url, payload):
+        import google.auth
+        from google.auth.transport.requests import AuthorizedSession
+        from requests.exceptions import Timeout
+        try:
+            credentials, _ = google.auth.default(scopes=['https://www.googleapis.com/auth/cloud-platform'])
+            # No redirect, hidden auth replay or retry of an ambiguously billed request.
+            with AuthorizedSession(credentials, max_refresh_attempts=0) as client:
+                with client.post(url, json=payload, timeout=(10, 90), stream=True,
+                                 allow_redirects=False) as response:
+                    if response.status_code != 200:
+                        code = {401: 'MODEL_AUTH_REQUIRED', 403: 'MODEL_ACCESS_DENIED',
+                                404: 'MODEL_UNAVAILABLE', 429: 'MODEL_RATE_LIMITED',
+                                503: 'MODEL_UNAVAILABLE'}.get(response.status_code, 'MODEL_REQUEST_FAILED')
+                        raise ProviderError(code)
+                    raw = bytearray()
+                    for chunk in response.iter_content(chunk_size=65536):
+                        raw.extend(chunk)
+                        if len(raw) > MAX_RESPONSE_BYTES:
+                            raise ProviderError('MODEL_OUTPUT_LIMIT')
+                    return json.loads(raw)
+        except Timeout:
+            raise ProviderError('MODEL_TIMEOUT') from None
 
     def structured(self, schema: type[T], system: str, data: dict, thinking='MEDIUM', cap=6000) -> T:
         text = self._call(system, [{'role': 'user', 'parts': [{'text': json.dumps(data)}]}],

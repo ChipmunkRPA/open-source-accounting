@@ -15,5 +15,7 @@ Recheck versions and terms during deployment.
 - Cloud Run jobs deployment: https://docs.cloud.google.com/sdk/gcloud/reference/run/jobs/deploy
 - Next installation: https://nextjs.org/docs/app/getting-started/installation
 
-No current price/token estimates, model quality guarantees, tax conclusions, or blanket content reuse
-rights are inferred from these documents.
+The dated #26 endpoint/price/retention verification and its exact limits are in
+[GEMINI_CONTRACT.md](GEMINI_CONTRACT.md). Public documentation does not prove
+project access or measured task cost. No model quality guarantees, tax conclusions,
+or blanket content reuse rights are inferred from these documents.
