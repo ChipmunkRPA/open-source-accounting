@@ -27,7 +27,7 @@ def record_approval(source: Source, reviewer_id: str) -> None:
                      'rights_reviewed_at': now(), 'rights_reviewer_id': reviewer_id}
 
 
-def allowed(source: Source, action: str, *, context: dict | None = None, _visited=None) -> bool:
+def allowed(source: Source, action: str, *, context: dict | None = None, _visited=None, _check_dependencies=True) -> bool:
     if action not in OPERATIONS or source.enabled is not True or source.reviewed is not True:
         return False
     policy = source.policy or {}
@@ -106,6 +106,9 @@ def allowed(source: Source, action: str, *, context: dict | None = None, _visite
         if (policy.get('technical_review_status') != 'approved'
                 or policy.get('technical_reviewed_sha256') != digest or not current(source)):
             return False
+    if _check_dependencies and action in {'model_input','embed','train'}:
+        from .dependencies import allowed as dependencies_allowed
+        if not dependencies_allowed(source,action,context=context,visited=_visited):return False
     return True
 
 
@@ -138,6 +141,7 @@ def evidence_allowed(db, evidence: Evidence, action='model_input', *, context=No
     from ..models import Run
     from .parser_review import current as parser_current
     from .applicability import applies
+    from .dependencies import allowed as dependencies_allowed
     run = db.get(Run, evidence.run_id)
     if not run:
         return False
@@ -151,6 +155,7 @@ def evidence_allowed(db, evidence: Evidence, action='model_input', *, context=No
         return bool(source and source.policy_version == evidence.policy_version
                     and evidence.text and evidence.text in (source.text or '')
                     and allowed(source, action, context=context) and applies(source, run.context)
+                    and dependencies_allowed(source,action,context=context,accounting_context=run.context)
                     and (not source.policy.get('intake_extraction_id')
                          or parser_current(source)))
     if evidence.document_id:

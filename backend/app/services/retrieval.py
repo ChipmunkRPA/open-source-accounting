@@ -10,6 +10,7 @@ from sqlalchemy import select
 from ..models import Source, Document
 from .rights import allowed
 from .applicability import applies
+from .dependencies import allowed as dependencies_allowed
 
 
 def tokens(text):
@@ -48,7 +49,7 @@ def search(db, run, query, limit=12, *, rights_context=None):
             if evidence is not None:
                 candidates.append({**evidence, '_score': score(query, source.title + '\n' + (source.text or ''))})
             continue
-        if not applies(source, run.context):
+        if not applies(source, run.context) or not dependencies_allowed(source,'model_input',context=rights_context,accounting_context=run.context):
             continue
         if allowed(source, 'model_input', context=rights_context) and allowed(source, 'store_text', context=rights_context) and allowed(source, 'quote', context=rights_context):
             for i, para in enumerate(re.split(r'\n\s*\n', source.text or '')):

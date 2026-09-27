@@ -23,7 +23,10 @@ def applicability_payload(source,**changes):
 
 def source_ready(client,pack,technical=True):
     sid,technical_payload=prepared(client,pack)
-    if technical:assert review(client,sid,technical_payload).status_code==200
+    if technical:
+        from dependency_fixtures import bindings
+        technical_payload['reference_bindings']=bindings(client,sid)
+        assert review(client,sid,technical_payload).status_code==200
     with client.app.state.db.Session() as db:body=applicability_payload(db.get(Source,sid))
     return sid,body
 
@@ -99,7 +102,7 @@ def test_expiry_and_revocation_preserve_record_and_block_saved_export(client,pac
     with client.app.state.db.Session() as db:
         assert not applicability.current(db.get(Source,sid))
         assert db.get(ApplicabilityReview,result.json()['record_id']).payload==old
-        assert db.query(ApplicabilityReview).count()==2
+        assert db.query(ApplicabilityReview).filter(ApplicabilityReview.source_id==sid).count()==2
 
 
 def test_stale_decision_history_privacy_and_changed_dates(client,pack):

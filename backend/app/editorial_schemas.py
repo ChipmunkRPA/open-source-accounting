@@ -4,6 +4,14 @@ from pydantic import Field
 from .schemas import Strict
 
 
+class ReferenceBinding(Strict):
+    reference_id: str = Field(min_length=1, max_length=128)
+    source_id: str = Field(min_length=1, max_length=128)
+    review_revision: str = Field(pattern=r'^[a-f0-9]{64}$')
+    policy_version: int = Field(ge=1)
+    locator: str = Field(min_length=1, max_length=2000)
+
+
 class EditorialDecision(Strict):
     expected_policy_version: int = Field(ge=1)
     expected_review_revision: str = Field(pattern=r'^[a-f0-9]{64}$')
@@ -15,6 +23,7 @@ class EditorialDecision(Strict):
     evidence_sha256: str = Field(pattern=r'^[a-f0-9]{64}$')
     expires_at: int = Field(ge=1)
     checked_reference_ids: list[str] = Field(default_factory=list, max_length=100)
+    reference_bindings: list[ReferenceBinding] = Field(default_factory=list, max_length=200)
     confirm_actual_review_performed: Literal[True]
 
 

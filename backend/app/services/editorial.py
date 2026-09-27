@@ -73,6 +73,9 @@ def record(db, source, payload, reviewer_id):
         fail('UNKNOWN_REFERENCE', 'Check only distinct references listed for this revision.', 422)
     if payload.decision == 'approved' and checked != refs:
         fail('INCOMPLETE_REVIEW', 'Address every listed reference and its limitations.', 422)
+    from .dependencies import validate_bindings
+    if payload.reference_bindings:
+        validate_bindings(db, source, payload.reference_bindings)
     terms = {**payload.model_dump(mode='json'), 'reviewer_id': reviewer_id}
     row = EditorialReview(source_id=source.id, reviewer_id=reviewer_id, decision=payload.decision,
         review_revision=payload.expected_review_revision, payload=terms,
@@ -100,6 +103,7 @@ def packet(db, source):
     policy = source.policy or {}
     references = policy.get('content_reference_snapshot')
     captured = references_current(source) and isinstance(references, list)
+    review = db.get(EditorialReview, policy.get('technical_review_record_id')) if policy.get('technical_review_record_id') else None
     content = {
         'schema_version': 1, 'packet_kind': 'technical_review_input',
         'source': {'id': source.id, 'title': source.title, 'publisher': source.publisher,
@@ -111,7 +115,8 @@ def packet(db, source):
                        'metadata_snapshot': references if captured else None,
                        'metadata_sha256': policy.get('content_references_sha256') if captured else None,
                        'status': 'captured_metadata_only' if captured else 'not_captured',
-                       'primary_text_verified_by_packet': False},
+                       'primary_text_verified_by_packet': False,
+                       'recorded_dependency_bindings': review.payload.get('reference_bindings', []) if review else []},
         'provenance': {k: policy.get(k) for k in ('content_item_id', 'content_version', 'content_license',
             'intake_locator', 'intake_extraction_id', 'intake_artifact_id')},
         'sec_provenance': {k: policy.get('sec_core', {}).get(k) for k in (

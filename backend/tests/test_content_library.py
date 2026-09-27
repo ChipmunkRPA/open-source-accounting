@@ -153,6 +153,8 @@ def test_both_approval_gates_and_exact_hash(client,pack):
         source=db.get(Source,sid)
         assert allowed(source,'display_full') and not allowed(source,'model_input')
         payload = decision(source)
+    from dependency_fixtures import bindings
+    payload['reference_bindings']=bindings(client,sid)
     r=client.post(f'/api/v1/editorial/sources/{sid}/review',headers={'X-Dev-User':'editor'},json=payload)
     assert r.status_code==200,r.text
     assert r.json()['editorial_status']=='approved'

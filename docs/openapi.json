@@ -5018,6 +5018,14 @@
             "maxItems": 100,
             "title": "Checked Reference Ids"
           },
+          "reference_bindings": {
+            "items": {
+              "$ref": "#/components/schemas/ReferenceBinding"
+            },
+            "type": "array",
+            "maxItems": 200,
+            "title": "Reference Bindings"
+          },
           "confirm_actual_review_performed": {
             "type": "boolean",
             "const": true,
@@ -5842,6 +5850,48 @@
         "additionalProperties": false,
         "type": "object",
         "title": "Preferences"
+      },
+      "ReferenceBinding": {
+        "properties": {
+          "reference_id": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Reference Id"
+          },
+          "source_id": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Source Id"
+          },
+          "review_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Review Revision"
+          },
+          "policy_version": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Policy Version"
+          },
+          "locator": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Locator"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "reference_id",
+          "source_id",
+          "review_revision",
+          "policy_version",
+          "locator"
+        ],
+        "title": "ReferenceBinding"
       },
       "ReviewCreate": {
         "properties": {

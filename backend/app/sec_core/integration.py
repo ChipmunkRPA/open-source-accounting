@@ -60,7 +60,8 @@ used as an effective/public-availability date for this source family.
     if not m:
         return None
     from ..services.applicability import applies
-    if not applies(source,run.context):
+    from ..services.dependencies import allowed as dependencies_allowed
+    if not applies(source,run.context) or not dependencies_allowed(source,'model_input',context=rights_context,accounting_context=run.context):
         return None
     return {'source_id': source.id, 'document_id': None, 'title': source.title,
             'locator': m['locator'], 'text': source.text, 'access': 'primary_text_reviewed',

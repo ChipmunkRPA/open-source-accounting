@@ -1,5 +1,19 @@
 # Open Source Accounting — current implementation progress
 
+## 2026-09-27 · #23 exact linked-publication dependencies (parent #5)
+
+Implementation: technical review payloads bind reference IDs to exact staged source revision/policy/locator. Sorted source locks, complete nonempty sets and duplicate/self/stale target validation. Original-library metadata-only references now block Agent evidence; public draft display/manual export remain separate. Runtime dependency checks propagate disablement, rights/review/version changes and run-specific applicability into retrieval and saved exports. Graphs bounded to ten levels/500 visits. Dependency output controls/mandatory attribution remain withheld pending derived-output accounting. Private review records and packets retain bindings; no approval transfer or source acquisition.
+
+Actual validation: **772 backend passed / 21 optional PostgreSQL skipped**; final targeted **16 dependency cases passed** (two added after the full run, including attribution and saved-export/retrieval). Final SEC integration rerun **9 passed** after adding dependency-context checks to its retrieval path. Initial targeted failures exposed three positive fixtures lacking exact dependencies; supplied synthetic reviewed targets. Subsequent count assertion included a new dependency review; scoped it to the parent. Lint F, API/content/hash/queue/generated-progress/publication checks passed; one upstream Starlette/httpx warning. No new local frontend/browser/migration/PostgreSQL result; schema unchanged. Commands/receipts: `reports/intake/DEPENDENCIES.md` and dependencies JUnit files.
+
+Coverage unchanged: **32 families / 47 topics; 63 original drafts / 63 verified hashes / 0 professional approvals / 0 Agent admissions; 58 questions / 26 references**. SEC **34 targets / 28 selected excerpts / 7 excerpted sources / 0 full original HTTP documents / 0 technical or applicability approvals / 0 approved production index / 0 human-adjudicated evaluations**. Real acquired/parsed/reviewed/indexed units added **0**. Synthetic fixtures excluded. Source packs, parser `source-intake-1/sec-core-0.7.0`, discovery `html-index-1/crossref-works-1`, requested `gemini-3.8-flash` and cost catalog unchanged. No live inference, paid resources, deployment, billing/SMS or notifications.
+
+Remaining gates: binding picker and affected-content reports, dependent output counters/notices, real rights/primary artifacts/reviewers, conditional/industry/jurisdiction applicability, all-family acquisition/indexing/evaluation, download completion and broader accessibility. GCP project/region/spend choice, credentials and concrete release approval remain outstanding.
+
+Next resumable task: **#23 dependency binding interface and derived-output rights accounting**, followed by affected-content coverage reports and authorized all-family acquisition. Keep validated work on main; full application/content/GCP goal remains active.
+
+---
+
 ## 2026-09-27 · #23 SEC durable applicability reconciliation (parent #5)
 
 Implementation: SEC and general applicability routes now append to the same private exact-revision ledger. Legacy SEC flags grant no model access; no automatic review backfill. Current technical review, reviewed framework/entity scope, explicit period end, both period endpoints, public availability, conditions, expiry and saved-export checks apply. Existing applicability UI now serves SEC too. SEC endpoint accepts the full shared contract; old partial payloads are rejected. Public excerpt reading unchanged; actual selected excerpts remain distinct from full acquired/parser-reviewed publications. Published on main as [e278309](https://github.com/ChipmunkRPA/open-source-accounting/commit/e27830907ddcea0025ba569891cc9890fc3b1d62); [CI 36359458338](https://github.com/ChipmunkRPA/open-source-accounting/actions/runs/36359458338) passed both Python 3.11/3.13 clean installs, frontend/backend, migrations/PostgreSQL and Docker.

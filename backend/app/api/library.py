@@ -63,7 +63,9 @@ def editorial_sources(user=Depends(current_user), db=Depends(session)):
 def editorial_review(source_id: str, payload: EditorialDecision,
                      user=Depends(fresh_user), db=Depends(session)):
     require_editor(user)
-    source = db.scalar(select(Source).where(Source.id == source_id).with_for_update())
+    ids = sorted({source_id, *(b.source_id for b in payload.reference_bindings)})
+    locked = {s.id: s for s in db.scalars(select(Source).where(Source.id.in_(ids)).order_by(Source.id).with_for_update())}
+    source = locked.get(source_id)
     if not source or not (source.policy or {}).get('requires_technical_review'):
         fail('NOT_FOUND', 'Reviewable library source not found.', 404)
     row = editorial.record(db, source, payload, user.id)
