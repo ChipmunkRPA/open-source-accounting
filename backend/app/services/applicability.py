@@ -33,15 +33,14 @@ def current(source):
 
 def applies(source,context):
     policy=source.policy or {}
-    if policy.get('sec_core'):return True  # Existing SEC-specific gate remains separate.
-    required=any(context.get(k) for k in ('period_start','period_end','knowledge_date')) or policy.get('intake_extraction_id') or policy.get('applicability_record_id')
+    required=any(context.get(k) for k in ('period_start','period_end','knowledge_date')) or policy.get('intake_extraction_id') or policy.get('sec_core') or policy.get('applicability_record_id')
     if not required:return True
     row=current(source)
     if row is None:return False
     p=row.payload
     if (context.get('framework') not in p['frameworks'] or context.get('entity_type') not in p['entity_types']
             or p['conditions'] or (p['audit_regimes'] and context.get('audit_regime') not in p['audit_regimes'])):return False
-    if policy.get('intake_extraction_id') and not context.get('period_end'):return False
+    if (policy.get('intake_extraction_id') or policy.get('sec_core')) and not context.get('period_end'):return False
     try:
         for key in ('period_start','period_end'):
             if context.get(key):
@@ -53,8 +52,6 @@ def applies(source,context):
 
 
 def record(db,source,payload,actor_id):
-    if source.policy.get('sec_core'):
-        fail('REVIEW_SCOPE','Use the separate SEC applicability workflow for bundled SEC excerpts.',422)
     if source.created_by==actor_id:fail('SEPARATION_OF_DUTIES','A different reviewer must assess applicability.',403)
     if payload.expected_policy_version!=source.policy_version or payload.expected_review_revision!=editorial.revision(source):
         fail('REVISION_CONFLICT','Reload the source and exact technical revision.',409)

@@ -3021,6 +3021,7 @@
           "SEC Core"
         ],
         "summary": "Applicability",
+        "description": "SEC-specific route uses the same exact-revision ledger and private history.",
         "operationId": "applicability_api_v1_editorial_sec_core__source_id__applicability_post",
         "parameters": [
           {
@@ -3038,7 +3039,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ApplicabilityReview"
+                "$ref": "#/components/schemas/ApplicabilityDecision"
               }
             }
           }
@@ -4450,64 +4451,6 @@
           "confirm_actual_applicability_review"
         ],
         "title": "ApplicabilityDecision"
-      },
-      "ApplicabilityReview": {
-        "properties": {
-          "expected_policy_version": {
-            "type": "integer",
-            "minimum": 1.0,
-            "title": "Expected Policy Version"
-          },
-          "content_sha256": {
-            "type": "string",
-            "pattern": "^[a-f0-9]{64}$",
-            "title": "Content Sha256"
-          },
-          "effective_from": {
-            "type": "string",
-            "format": "date",
-            "title": "Effective From"
-          },
-          "effective_to": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "date"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Effective To"
-          },
-          "public_available_at": {
-            "type": "string",
-            "format": "date",
-            "title": "Public Available At"
-          },
-          "review_note": {
-            "type": "string",
-            "maxLength": 4000,
-            "minLength": 30,
-            "title": "Review Note"
-          },
-          "confirm_source_history_checked": {
-            "type": "boolean",
-            "const": true,
-            "title": "Confirm Source History Checked"
-          }
-        },
-        "additionalProperties": false,
-        "type": "object",
-        "required": [
-          "expected_policy_version",
-          "content_sha256",
-          "effective_from",
-          "public_available_at",
-          "review_note",
-          "confirm_source_history_checked"
-        ],
-        "title": "ApplicabilityReview"
       },
       "Body_upload_document_api_v1_workspaces__workspace_id__documents_post": {
         "properties": {

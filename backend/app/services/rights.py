@@ -92,7 +92,7 @@ def allowed(source: Source, action: str, *, context: dict | None = None, _visite
             return False
         if not all(isinstance(v, str) and v for v in values) or (context or {}).get(key) not in values:
             return False
-    if action in {'model_input', 'embed', 'train'} and (policy.get('intake_extraction_id') or policy.get('applicability_record_id')):
+    if action in {'model_input', 'embed', 'train'} and (policy.get('intake_extraction_id') or policy.get('sec_core') or policy.get('applicability_record_id')):
         from .applicability import current as applicability_current
         if applicability_current(source) is None:
             return False

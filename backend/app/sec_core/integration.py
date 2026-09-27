@@ -59,13 +59,8 @@ used as an effective/public-availability date for this source family.
     m = (source.policy or {}).get('sec_core')
     if not m:
         return None
-    period, known = run.context.get('period_end'), run.context.get('knowledge_date')
-    if period:
-        if m.get('applicability_review_status') != 'approved' or not m.get('effective_from'):
-            return None
-        if period < m['effective_from'] or (m.get('effective_to') and period > m['effective_to']):
-            return None
-    if known and (not m.get('public_available_at') or known < m['public_available_at']):
+    from ..services.applicability import applies
+    if not applies(source,run.context):
         return None
     return {'source_id': source.id, 'document_id': None, 'title': source.title,
             'locator': m['locator'], 'text': source.text, 'access': 'primary_text_reviewed',

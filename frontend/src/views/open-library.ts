@@ -110,7 +110,7 @@ export async function editorialView(app:App){
       modal('Technical review history',notice('Private review records; do not copy confidential advice into public content.'),el('pre',{},JSON.stringify(data,null,2)));
       }catch(e){app.showError(e);}},'quiet');
     rows.append(card(s.title,badge(s.editorial_status+(s.technical_review_current?' · current':' · no current approval'),'warning'),el('p',{class:'muted'},'Version '+s.version+' · rights '+(s.rights_reviewed?'approved':'pending')),inspect,compare,history,packet,
-      s.policy.sec_core?notice('Bundled SEC excerpts use the separate SEC applicability workflow.'):button('Review applicability',()=>applicabilityReview(app,s,()=>editorialView(app)),'secondary')));
+      button('Review applicability',()=>applicabilityReview(app,s,()=>editorialView(app)),'secondary')));
   }
   app.content.replaceChildren(heading('Technical content review','Reviews are recorded against the exact source hash and policy revision.'),
     notice('Importing a content pack does not approve it. Source rights approval and a separate technical-review action are both required.'),

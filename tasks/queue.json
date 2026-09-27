@@ -385,7 +385,7 @@
       "acceptance": "Stale approval and separation-of-duties tests; zero human reviews remain zero until actual approval; reproducible reports.",
       "progress_required": true,
       "scheduled": false,
-      "implementation_note": "Independent technical/parser/general applicability ledgers with revision/expiry/revocation gates, private history, rights-gated packets, parser workbench and exact-version comparison implemented. General applicability binds reviewed public/effective dates and framework/entity/audit scope; unresolved conditions withhold automated evidence. General applicability form/history now implemented; SEC ledger reconciliation, linked-publication dependencies, full coverage reconciliation, supported-browser downloads and genuine reviews remain. See docs/EDITORIAL_REVIEWS.md and progress.md."
+      "implementation_note": "Independent technical/parser/general applicability ledgers with revision/expiry/revocation gates, private history, rights-gated packets, parser workbench and exact-version comparison implemented. General applicability binds reviewed public/effective dates and framework/entity/audit scope; unresolved conditions withhold automated evidence. General/SEC applicability form/history now share a durable ledger; legacy SEC flags cannot grant access. Remaining: linked-publication dependencies, full coverage reconciliation, supported-browser downloads and genuine reviews remain. See docs/EDITORIAL_REVIEWS.md and progress.md."
     },
     {
       "id": "PARSERS",
