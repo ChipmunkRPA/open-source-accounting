@@ -121,3 +121,7 @@ class IntegrityHoldRelease(Strict):
     expected_policy_version: int = Field(ge=1)
     note: str = Field(min_length=10, max_length=2000)
     confirm_reverification_and_stale_evidence: Literal[True]
+
+
+class IntegrityPrecondition(Strict):
+    expected_raw_sha256: str = Field(pattern=r'^[a-f0-9]{64}$')

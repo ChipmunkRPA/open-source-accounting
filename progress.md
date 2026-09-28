@@ -1,5 +1,19 @@
 # Open Source Accounting — current implementation progress
 
+## 2026-09-27 · #8/#23 resumable corpus integrity reconciliation (parent #5)
+
+Implementation: authenticated operator plan/run/report client with paginated inventory, all-family or explicit family partition, 10k artifact bound, private atomic/fsynced locked state, origin/membership/result checksums, and per-artifact expected raw-hash precondition. Runs process 1–25 requests, persist each result and pause on transport/auth/rate/server failures. Rights denials and stale/missing/over-limit units remain explicit; no automatic retries or hold releases. Reports separate raw-byte verified/failed, denied, unobserved, overlapping held-at-observation and observed normalized units; out-of-scope families marked. Operator guide included. No schema/frontend change.
+
+Actual validation: **822 backend passed / 25 optional PostgreSQL skipped**, before final family-partition case; final **9 targeted passed**. Lint F, API contract and CLI help passed. No failures; one upstream Starlette/httpx warning. Plan/run/report tested against application API with synthetic identity/objects and private temporary state, with no token in output. No live token/provider, browser, new migration or local PostgreSQL claim. Receipts/commands/limits: `reports/intake/RECONCILIATION.md`, JUnit and `docs/INTEGRITY_RECONCILIATION.md`.
+
+Coverage unchanged: **32 families / 47 topics; 63 original drafts / 63 verified hashes / 0 professional approvals / 0 Agent admissions; 58 questions / 26 references**. SEC **34 targets / 28 selected excerpts / 7 excerpted sources / 0 full original HTTP documents / 0 technical or applicability approvals / 0 approved production index / 0 human-adjudicated evaluations**. Real acquired/parsed/reviewed/indexed additions **0**; synthetic fixtures excluded. Source packs, parser `source-intake-1/sec-core-0.7.0`, discovery `html-index-1/crossref-works-1`, requested `gemini-3.8-flash` and cost catalog unchanged. No paid resources, production, live inference/billing/SMS/notifications.
+
+Remaining gates: actual authorized primary text and independent reviewers; non-atomic corpus membership/10k family-partition ceiling, normalized-object inventory reconciliation, controlled passage rebinding/re-review, operational recovery, live GCS, conditional applicability, all-family acquisition/index/evaluation and browser downloads. GCP project/region/spend choice, credentials and concrete release approval remain outstanding.
+
+Next resumable task: **#8/#23 controlled passage rebinding after verified recovery**, preserving prior evidence invalidation and requiring fresh applicable reviews; continue authorized all-family retrieval/coverage. Keep main current; full application/content/GCP goal remains active.
+
+---
+
 ## 2026-09-27 · #8/#23 persistent integrity holds (parent #5)
 
 Implementation: failed explicit integrity verification persists per-artifact holds on the owning work, invalidates its policy revision and blocks output/model operations through existing dependent-source checks. Source-first locks preserve concurrent failures; repeated failure does not repeatedly increment a hold. Good checks never clear holds. Fresh-auth rights approver release requires current version/rationale/acknowledgement and rechecks all units, retaining failed observations on denial. Release increments policy revision, preserves other holds, and never restores old evidence/approvals or disabled sources. UI and dependency report expose holds. No schema change. Published on main as [6678cf9](https://github.com/ChipmunkRPA/open-source-accounting/commit/6678cf95d7dc4fc82fdeb9c0b1a5dca798c8151f); [CI 36363181461](https://github.com/ChipmunkRPA/open-source-accounting/actions/runs/36363181461) passed both Python 3.11/3.13 clean installs, frontend/backend, migrations/PostgreSQL and Docker. Content/hash/queue/generated-progress/publication checks passed.

@@ -1,10 +1,10 @@
 """Privileged, explicit intake steps; listing family recipes never performs network I/O."""
 import asyncio
-from fastapi import APIRouter, Depends, Header, Request
+from fastapi import APIRouter, Depends, Header, Request, Query
 from sqlalchemy import select, func
 from starlette.concurrency import run_in_threadpool
 from ..auth import current_user, fresh_user, session, require_admin
-from ..intake_schemas import IntakeCreate, IntegrityHoldRelease
+from ..intake_schemas import IntakeCreate, IntegrityHoldRelease, IntegrityPrecondition
 from ..models import IntakeWork, SourceArtifact, SourceExtraction, IntakeAttempt, Source, SourceDiscovery
 from ..services import intake, rights, discovery
 from ..errors import fail
@@ -122,8 +122,13 @@ def coverage(user=Depends(current_user), db=Depends(session)):
 
 
 @router.post('/admin/intake/artifacts/{artifact_id}/verify')
-def verify_artifact(artifact_id: str, request: Request, user=Depends(fresh_user), db=Depends(session)):
+def verify_artifact(artifact_id: str, request: Request, payload: IntegrityPrecondition | None = None, user=Depends(fresh_user), db=Depends(session)):
     require_admin(user)
+    if payload:
+        artifact=db.get(SourceArtifact,artifact_id)
+        if not artifact:fail('NOT_FOUND','Artifact not found.',404)
+        if artifact.raw_sha256!=payload.expected_raw_sha256:
+            fail('REVISION_CONFLICT','Inventory artifact hash changed; collect a new inventory.',409)
     from ..services.artifact_integrity import verify
     return verify(db, request.app.state.settings, artifact_id, user.id)
 
@@ -134,3 +139,16 @@ def release_integrity_hold(artifact_id: str, payload: IntegrityHoldRelease, requ
     require_admin(user, approve=True)
     from ..services.artifact_integrity import release
     return release(db, request.app.state.settings, artifact_id, payload, user.id)
+
+
+@router.get('/admin/intake/artifacts')
+def artifact_inventory(after: str = Query('',max_length=36),limit: int = Query(100,ge=1,le=100),family: str | None = Query(None,max_length=60),
+                       user=Depends(current_user),db=Depends(session)):
+    require_admin(user)
+    query=select(SourceArtifact,IntakeWork).join(IntakeWork,SourceArtifact.work_id==IntakeWork.id).where(SourceArtifact.id>after)
+    if family:query=query.where(IntakeWork.family_id==family)
+    rows=db.execute(query.order_by(SourceArtifact.id).limit(limit+1)).all()
+    return {'items':[{'artifact_id':a.id,'work_id':w.id,'family_id':w.family_id,'raw_sha256':a.raw_sha256,
+                      'byte_count':a.byte_count,'manifest_sha256':w.manifest_sha256} for a,w in rows[:limit]],
+            'next_after':rows[limit-1][0].id if len(rows)>limit else None,
+            'notice':'Database artifact records collected during a paginated scan; not an atomic corpus snapshot or stored-byte verification.'}

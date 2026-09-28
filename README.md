@@ -224,3 +224,8 @@ Use private administrative descriptions and approved restricted record reference
 never paste licensed text, legal advice or credentials into notes. Disabling a source
 blocks dependent runtime use. Resolving a case does not restore that source or approve
 its content. See [review operations](docs/EDITORIAL_REVIEWS.md) for roles and limits.
+
+Operators can run bounded, resumable all-family or per-family stored-artifact checks
+with the [integrity reconciliation client](docs/INTEGRITY_RECONCILIATION.md).
+Its private state distinguishes verified bytes, failures, denied operations and
+unobserved units; completing a scan does not approve content.
