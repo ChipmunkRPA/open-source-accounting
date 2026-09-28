@@ -492,6 +492,8 @@ Issues: [#15](https://github.com/ChipmunkRPA/open-source-accounting/issues/15). 
 
 ### FEDERAL_LAW — Federal statutes and regulations
 
+Dated cross-family preparation: [legal acquisition packet](../docs/LEGAL_ACQUISITION.md) and [candidate metadata](../reports/intake/legal-candidates.json), observed 2026-09-27. Nine selected units and 14 unexecuted review scenarios; zero original artifacts or approvals. House/Federal Register route blocks remain explicit; do not retry through mirrors or credentials.
+
 Issues: [#16](https://github.com/ChipmunkRPA/open-source-accounting/issues/16). Default: **public_work_candidate**.
 
 **Coverage unit:** title/section or dated regulation/release.

@@ -245,7 +245,7 @@
       "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/16",
       "priority": "P1",
       "lane": "content",
-      "status": "queued",
+      "status": "in_progress",
       "depends_on_issues": [
         7,
         8
@@ -255,7 +255,8 @@
       "work": "Use U.S. Code, eCFR, Federal Register, govinfo/court sources and separate state review; no proprietary headnotes or paid citator feeds.",
       "acceptance": "Jurisdiction/docket/disposition/version/locator accuracy and original briefs; later-history coverage explicitly bounded.",
       "progress_required": true,
-      "scheduled": false
+      "scheduled": false,
+      "implementation_note": "Official discovery/review packet: 9 candidates across federal law, Supreme Court opinions and New York statutes; 14 original unexecuted review scenarios. Exact URLs, publication stages, locators and date ambiguities preserved. House 403 and Federal Register CAPTCHA stopped; no bypass. Zero original artifacts, runtime rights grants, professional approvals or index additions. Annual CFR XML adapter, real authorized acquisition, briefs and later-history review remain. See docs/LEGAL_ACQUISITION.md."
     },
     {
       "id": "CONTROLS",
