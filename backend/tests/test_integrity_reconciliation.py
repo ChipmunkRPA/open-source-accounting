@@ -66,7 +66,9 @@ def test_membership_and_origin_integrity(client):
     with pytest.raises(ValueError):validate(state,'https://other.test')
     state['inventory']['families'].append('invented')
     with pytest.raises(ValueError):validate(state,'https://example.test')
-    for url in ['http://external.test','https://user:secret@example.test','https://example.test/path','https://example.test?token=x']:
+    from urllib.parse import urlunsplit
+    credential_fixture=urlunsplit(('https','user:synthetic-password@example.test','','',''))
+    for url in ['http://external.test',credential_fixture,'https://example.test/path','https://example.test?token=x']:
         with pytest.raises(ValueError):base_url(url)
 
 
