@@ -26,3 +26,14 @@
 /* Source text is shown literally; long citations and hashes must stay readable. */
 .review-text{white-space:pre-wrap;overflow-wrap:anywhere;max-height:32rem;overflow:auto;}
 .review-hash{overflow-wrap:anywhere;}
+
+/* Free ASU reference register and filing reader. */
+.asu-filters{display:flex;gap:1rem;align-items:end;flex-wrap:wrap;margin:1.25rem 0}
+.asu-filters .field{flex:1;min-width:12rem}
+.asu-layout{display:grid;grid-template-columns:minmax(15rem,1fr) minmax(0,1.6fr);gap:1.5rem;align-items:start}
+.asu-register{display:grid;gap:1rem;max-height:70vh;overflow:auto;padding:.2rem}
+.asu-register h2{font-size:1.05rem}
+.asu-detail{min-width:0}
+.asu-detail .card{margin:1rem 0}
+.asu-detail .badge{margin-right:.4rem}
+@media(max-width:850px){.asu-layout{grid-template-columns:1fr}.asu-register{max-height:22rem}.asu-filters{align-items:stretch}}

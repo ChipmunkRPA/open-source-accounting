@@ -1061,3 +1061,31 @@ def test_postgres_edition_creation_and_revision_races(pg_url, same_request):
                         process.join(5)
     finally:
         database.engine.dispose()
+
+
+def test_postgres_asu_refresh_serializes_and_revocation_is_immediate(pg_url):
+    from concurrent.futures import ThreadPoolExecutor
+    from app.models import ASURefresh, ASUMention
+    from app.services import asu_tracking
+    from test_asu_tracking import staged
+    database = Database(pg_url)
+    sid = 'asu-' + uuid4().hex[:25]
+    with database.Session() as db:
+        staged(db, sid)
+        state = db.get(ASURefresh, 'filings')
+        if state:
+            db.delete(state); db.commit()
+    def run(_):
+        with database.Session() as db:
+            return asu_tracking.refresh(db, timestamp=100)
+    try:
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            results = list(pool.map(run, range(2)))
+        assert sorted(results) == [False, True]
+        with database.Session() as db:
+            assert db.scalar(select(func.count()).select_from(ASUMention).where(ASUMention.source_id == sid)) == 1
+            source = db.get(Source, sid)
+            source.enabled = False; db.commit()
+            assert all(x['source_id'] != sid for x in asu_tracking.materials(db, '2025-08')['items'])
+    finally:
+        database.engine.dispose()

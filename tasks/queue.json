@@ -119,14 +119,14 @@
       "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/9",
       "priority": "P1",
       "lane": "content",
-      "status": "queued",
+      "status": "in_progress",
       "depends_on_issues": [
         7,
         8
       ],
       "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
       "title": "FASB ASC references, ASUs and permission-gated text",
-      "work": "Build reference and amendment maps now; obtain appropriate rights before ASC/ASU/Concepts text ingestion; use original analysis and synthetic cases meanwhile.",
+      "work": "Build reference and amendment maps now; obtain appropriate rights before ASC/ASU/Concepts text ingestion; use original analysis and synthetic cases meanwhile. ASU tracking now has a rolling two-year reference module and a daily authorized-corpus refresh; complete official issuance/filing discovery, actual artifacts and independent review remain open (docs/ASU_TRACKING.md).",
       "acceptance": "Reference-only mode is truthful; version/adoption/entitlement rules tested; no source body without operation permission.",
       "progress_required": true,
       "scheduled": false

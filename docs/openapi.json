@@ -6,6 +6,174 @@
     "version": "0.7.0"
   },
   "paths": {
+    "/api/v1/asu-tracking": {
+      "get": {
+        "tags": [
+          "ASU tracking"
+        ],
+        "summary": "Listing",
+        "operationId": "listing_api_v1_asu_tracking_get",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 200,
+              "default": "",
+              "title": "Q"
+            }
+          },
+          {
+            "name": "topic",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 80,
+              "default": "",
+              "title": "Topic"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/asu-tracking/{asu_id}/filings": {
+      "get": {
+        "tags": [
+          "ASU tracking"
+        ],
+        "summary": "Filings",
+        "operationId": "filings_api_v1_asu_tracking__asu_id__filings_get",
+        "parameters": [
+          {
+            "name": "asu_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Asu Id"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 200,
+              "default": "",
+              "title": "Company"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "mentioned",
+                    "not_yet_adopted",
+                    "adopted",
+                    "early_adopted"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Status"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "default": 25,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/asu-tracking/refresh": {
+      "post": {
+        "tags": [
+          "ASU tracking"
+        ],
+        "summary": "Refresh",
+        "operationId": "refresh_api_v1_admin_asu_tracking_refresh_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/health": {
       "get": {
         "tags": [

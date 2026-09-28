@@ -55,12 +55,18 @@ def main():
     if config.auto_create_schema:
         database.create_all()
     from .services.watches import check_watches
+    from .services.asu_tracking import refresh as refresh_asus, refresh_status
     while True:
+        with database.Session() as db:
+            refresh_asus(db)
+            asu_pending = refresh_status(db)['state'] == 'running'
         did_work = tick(database, config)
         if not did_work:
             with database.Session() as db:
                 check_watches(db, config)
             if args.once:
+                if asu_pending:
+                    continue
                 break
             time.sleep(config.worker_poll_seconds)
 

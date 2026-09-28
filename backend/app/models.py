@@ -549,3 +549,26 @@ class IntakeEdition(Base):
     created_by: Mapped[str | None] = mapped_column(ForeignKey('users.id', ondelete='SET NULL'))
     created_at: Mapped[int] = mapped_column(Integer, default=now)
     __table_args__ = (UniqueConstraint('family_id', 'collection_key', 'edition', 'revision'),)
+
+
+class ASUMention(Base):
+    """Derived identifiers only; never retains filing text after source deletion."""
+    __tablename__ = 'asu_mentions'
+    source_id: Mapped[str] = mapped_column(ForeignKey('sources.id', ondelete='CASCADE'), primary_key=True)
+    asu_id: Mapped[str] = mapped_column(String(7), primary_key=True)
+    source_revision: Mapped[str] = mapped_column(String(64))
+    detected_at: Mapped[int] = mapped_column(Integer)
+
+
+class ASURefresh(Base):
+    __tablename__ = 'asu_refresh'
+    id: Mapped[str] = mapped_column(String(20), primary_key=True)
+    cursor: Mapped[str] = mapped_column(String(36), default='')
+    upper_id: Mapped[str] = mapped_column(String(36), default='')
+    state: Mapped[str] = mapped_column(String(20), default='idle')
+    started_at: Mapped[int | None] = mapped_column(Integer)
+    completed_at: Mapped[int | None] = mapped_column(Integer)
+    next_due: Mapped[int] = mapped_column(Integer, default=0)
+    scanned: Mapped[int] = mapped_column(Integer, default=0)
+    eligible: Mapped[int] = mapped_column(Integer, default=0)
+    matches: Mapped[int] = mapped_column(Integer, default=0)

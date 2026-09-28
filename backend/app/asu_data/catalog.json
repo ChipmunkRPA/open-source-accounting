@@ -1,0 +1,320 @@
+{
+  "version": "asu-reference-2026-09-27.1",
+  "checked_on": "2026-09-27",
+  "asus": [
+    {
+      "id": "2024-03",
+      "subject": "Income-statement expense disaggregation",
+      "topic": "220-40",
+      "issued": "2024-11-04",
+      "date_precision": "day",
+      "official_url": "https://fasb.org/page/PageContent?pageId=%2Fprojects%2Frecently-completed-projects%2Fdisaggregation-income-statement-expenses.html",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "2024-04",
+      "subject": "Induced convertible-debt conversions",
+      "topic": "470-20",
+      "issued": "2024-11",
+      "date_precision": "month",
+      "official_url": "https://storage.fasb.org/ASU%202024-04.pdf",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "2025-01",
+      "subject": "Expense-disaggregation effective-date clarification",
+      "topic": "220-40",
+      "issued": "2025",
+      "date_precision": "year",
+      "official_url": "https://xbrl.fasb.org/resources/annualrelease/2026/GAAP_Financial_Reporting_Taxonomy_Release_Notes.pdf",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "2025-02",
+      "subject": "SEC SAB 122 codification amendments",
+      "topic": "405",
+      "issued": "2025",
+      "date_precision": "year",
+      "official_url": "https://xbrl.fasb.org/resources/annualrelease/2026/GAAP_Financial_Reporting_Taxonomy_Release_Notes.pdf",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "2025-03",
+      "subject": "Accounting acquirer in a VIE acquisition",
+      "topic": "805 / 810",
+      "issued": "2025-05-12",
+      "date_precision": "day",
+      "official_url": "https://fasb.org/news-and-meetings/in-the-news/business-combinations-%28topic-805%29-and-consolidation-%28topic-810%29%3A-determining-the-accounting-acquirer-in-the-acquisition-of-a-variable-interest-entity-421871",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "2025-04",
+      "subject": "Share-based consideration payable to a customer",
+      "topic": "718 / 606",
+      "issued": "2025",
+      "date_precision": "year",
+      "official_url": "https://xbrl.fasb.org/resources/annualrelease/2026/GAAP_Financial_Reporting_Taxonomy_Release_Notes.pdf",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "2025-05",
+      "subject": "Receivables and contract-assets credit losses",
+      "topic": "326",
+      "issued": "2025",
+      "date_precision": "year",
+      "official_url": "https://xbrl.fasb.org/resources/annualrelease/2026/GAAP_Financial_Reporting_Taxonomy_Release_Notes.pdf",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "2025-06",
+      "subject": "Internal-use software costs",
+      "topic": "350-40",
+      "issued": "2025",
+      "date_precision": "year",
+      "official_url": "https://xbrl.fasb.org/resources/annualrelease/2026/GAAP_Financial_Reporting_Taxonomy_Release_Notes.pdf",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "2025-07",
+      "subject": "Derivative scope and share-based noncash consideration",
+      "topic": "815 / 606",
+      "issued": "2025-09-29",
+      "date_precision": "day",
+      "official_url": "https://fasb.org/page/PageContent?pageId=%2Fprojects%2Frecently-completed-projects%2Ftopic-815-derivatives-scope-refinements.html",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "2025-08",
+      "subject": "Purchased loans",
+      "topic": "326",
+      "issued": "2025",
+      "date_precision": "year",
+      "official_url": "https://storage.fasb.org/4Q%202025%20Chair%20Report.pdf",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "2025-09",
+      "subject": "Hedge accounting improvements",
+      "topic": "815",
+      "issued": "2025",
+      "date_precision": "year",
+      "official_url": "https://storage.fasb.org/4Q%202025%20Chair%20Report.pdf",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "2025-10",
+      "subject": "Government grants received by businesses",
+      "topic": "832",
+      "issued": "2025",
+      "date_precision": "year",
+      "official_url": "https://storage.fasb.org/4Q%202025%20Chair%20Report.pdf",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "2025-11",
+      "subject": "Interim reporting improvements",
+      "topic": "270",
+      "issued": "2025",
+      "date_precision": "year",
+      "official_url": "https://storage.fasb.org/4Q%202025%20Chair%20Report.pdf",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "2025-12",
+      "subject": "Codification improvements",
+      "topic": "Multiple topics",
+      "issued": "2025",
+      "date_precision": "year",
+      "official_url": "https://storage.fasb.org/4Q%202025%20Chair%20Report.pdf",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "2026-01",
+      "subject": "PIK dividends on equity-classified preferred stock",
+      "topic": "505",
+      "issued": "2026-04-23",
+      "date_precision": "day",
+      "official_url": "https://fasb.org/page/PageContent?pageId=%2Fprojects%2Frecently-completed-projects%2Finitial-measurement-of-paid-in-kind-dividends-on-equity-classified-preferred-stock.html",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "2026-02",
+      "subject": "Environmental credits and obligations",
+      "topic": "818",
+      "issued": "2026-05-19",
+      "date_precision": "day",
+      "official_url": "https://fasb.org/news-and-meetings/in-the-news/fasb-issues-standard-that-improves-financial-accounting-for-and-disclosure-of-environmental-credits-and-environmental-credit-obligations-424442",
+      "checked_on": "2026-09-27"
+    }
+  ],
+  "filings": [
+    {
+      "asu_id": "2024-03",
+      "company": "Comtech Telecommunications Corp.",
+      "cik": "23197",
+      "accession": "0000023197-26-000069",
+      "form": "10-Q",
+      "filed_on": "2026-06-15",
+      "period_end": "2026-04-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/23197/000002319726000069/R8.htm",
+      "locator": "Adoption of Accounting Standards and Updates \u2014 not-yet-adopted standards",
+      "status": "not_yet_adopted",
+      "observation": "Listed among standards not yet adopted.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "asu_id": "2025-01",
+      "company": "Comtech Telecommunications Corp.",
+      "cik": "23197",
+      "accession": "0000023197-26-000069",
+      "form": "10-Q",
+      "filed_on": "2026-06-15",
+      "period_end": "2026-04-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/23197/000002319726000069/R8.htm",
+      "locator": "Adoption of Accounting Standards and Updates \u2014 not-yet-adopted standards",
+      "status": "not_yet_adopted",
+      "observation": "Listed among standards not yet adopted.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "asu_id": "2025-05",
+      "company": "Comtech Telecommunications Corp.",
+      "cik": "23197",
+      "accession": "0000023197-26-000069",
+      "form": "10-Q",
+      "filed_on": "2026-06-15",
+      "period_end": "2026-04-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/23197/000002319726000069/R8.htm",
+      "locator": "Adoption of Accounting Standards and Updates \u2014 not-yet-adopted standards",
+      "status": "not_yet_adopted",
+      "observation": "Listed among standards not yet adopted.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "asu_id": "2025-06",
+      "company": "Comtech Telecommunications Corp.",
+      "cik": "23197",
+      "accession": "0000023197-26-000069",
+      "form": "10-Q",
+      "filed_on": "2026-06-15",
+      "period_end": "2026-04-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/23197/000002319726000069/R8.htm",
+      "locator": "Adoption of Accounting Standards and Updates \u2014 not-yet-adopted standards",
+      "status": "not_yet_adopted",
+      "observation": "Listed among standards not yet adopted.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "asu_id": "2025-07",
+      "company": "Comtech Telecommunications Corp.",
+      "cik": "23197",
+      "accession": "0000023197-26-000069",
+      "form": "10-Q",
+      "filed_on": "2026-06-15",
+      "period_end": "2026-04-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/23197/000002319726000069/R8.htm",
+      "locator": "Adoption of Accounting Standards and Updates \u2014 not-yet-adopted standards",
+      "status": "not_yet_adopted",
+      "observation": "Listed among standards not yet adopted.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "asu_id": "2025-10",
+      "company": "Comtech Telecommunications Corp.",
+      "cik": "23197",
+      "accession": "0000023197-26-000069",
+      "form": "10-Q",
+      "filed_on": "2026-06-15",
+      "period_end": "2026-04-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/23197/000002319726000069/R8.htm",
+      "locator": "Adoption of Accounting Standards and Updates \u2014 not-yet-adopted standards",
+      "status": "not_yet_adopted",
+      "observation": "Listed among standards not yet adopted.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "asu_id": "2025-11",
+      "company": "Comtech Telecommunications Corp.",
+      "cik": "23197",
+      "accession": "0000023197-26-000069",
+      "form": "10-Q",
+      "filed_on": "2026-06-15",
+      "period_end": "2026-04-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/23197/000002319726000069/R8.htm",
+      "locator": "Adoption of Accounting Standards and Updates \u2014 not-yet-adopted standards",
+      "status": "not_yet_adopted",
+      "observation": "Listed among standards not yet adopted.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "asu_id": "2026-01",
+      "company": "Comtech Telecommunications Corp.",
+      "cik": "23197",
+      "accession": "0000023197-26-000069",
+      "form": "10-Q",
+      "filed_on": "2026-06-15",
+      "period_end": "2026-04-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/23197/000002319726000069/R8.htm",
+      "locator": "Adoption of Accounting Standards and Updates \u2014 not-yet-adopted standards",
+      "status": "not_yet_adopted",
+      "observation": "Listed among standards not yet adopted.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "asu_id": "2024-03",
+      "company": "Home BancShares, Inc.",
+      "cik": "1331520",
+      "accession": "0001331520-26-000112",
+      "form": "10-Q",
+      "filed_on": null,
+      "period_end": "2026-06-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/1331520/000133152026000112/R30.htm",
+      "locator": "Recent Accounting Pronouncements",
+      "status": "not_yet_adopted",
+      "observation": "Reported evaluation of a standard not yet adopted.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "asu_id": "2025-01",
+      "company": "Home BancShares, Inc.",
+      "cik": "1331520",
+      "accession": "0001331520-26-000112",
+      "form": "10-Q",
+      "filed_on": null,
+      "period_end": "2026-06-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/1331520/000133152026000112/R30.htm",
+      "locator": "Recent Accounting Pronouncements",
+      "status": "not_yet_adopted",
+      "observation": "Reported evaluation of a standard not yet adopted.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "asu_id": "2025-08",
+      "company": "Home BancShares, Inc.",
+      "cik": "1331520",
+      "accession": "0001331520-26-000112",
+      "form": "10-Q",
+      "filed_on": null,
+      "period_end": "2026-06-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/1331520/000133152026000112/R30.htm",
+      "locator": "Recent Accounting Pronouncements",
+      "status": "early_adopted",
+      "observation": "Reported early adoption effective April 1, 2026, prospectively for acquired loans.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "asu_id": "2025-11",
+      "company": "Home BancShares, Inc.",
+      "cik": "1331520",
+      "accession": "0001331520-26-000112",
+      "form": "10-Q",
+      "filed_on": null,
+      "period_end": "2026-06-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/1331520/000133152026000112/R30.htm",
+      "locator": "Recent Accounting Pronouncements",
+      "status": "not_yet_adopted",
+      "observation": "Reported evaluation of a standard not yet adopted.",
+      "checked_on": "2026-09-27"
+    }
+  ]
+}
