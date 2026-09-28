@@ -1,7 +1,7 @@
 """Relational records. UTC timestamps are integer epoch seconds on both SQLite and PostgreSQL."""
 import time
 import uuid
-from sqlalchemy import String, Text, Integer, BigInteger, Boolean, Float, ForeignKey, JSON, UniqueConstraint, Index
+from sqlalchemy import String, Text, Integer, BigInteger, Boolean, Float, ForeignKey, JSON, UniqueConstraint, Index, func, literal_column
 from sqlalchemy.orm import Mapped, mapped_column
 from .db import Base
 
@@ -112,6 +112,26 @@ class Source(Base):
     approved_by: Mapped[str | None] = mapped_column(ForeignKey('users.id'))
     reviewed: Mapped[bool] = mapped_column(Boolean, default=False)
     created_at: Mapped[int] = mapped_column(Integer, default=now)
+
+
+# Fixed language configuration is part of the index/query contract.
+Source.__table__.append_constraint(Index('ix_sources_title_fts',
+    func.to_tsvector(literal_column("'simple'"), Source.__table__.c.title),
+    postgresql_using='gin').ddl_if(dialect='postgresql'))
+
+
+class SourceSearchIndex(Base):
+    __tablename__ = 'source_search_indexes'
+    source_id: Mapped[str] = mapped_column(ForeignKey('sources.id', ondelete='CASCADE'), primary_key=True)
+    revision: Mapped[str] = mapped_column(String(64))
+    index_version: Mapped[str] = mapped_column(String(80))
+    search_text: Mapped[str] = mapped_column(Text)
+    created_at: Mapped[int] = mapped_column(Integer, default=now)
+
+
+SourceSearchIndex.__table__.append_constraint(Index('ix_source_search_body_fts',
+    func.to_tsvector(literal_column("'simple'"), SourceSearchIndex.__table__.c.search_text),
+    postgresql_using='gin').ddl_if(dialect='postgresql'))
 
 
 class Document(Base):

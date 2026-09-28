@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Depends
+from pydantic import BaseModel, ConfigDict, Field
 from sqlalchemy import select, or_
 from ..auth import fresh_user, current_user, session, require_admin
 from ..schemas import SourceCreate, RightsApproval
@@ -101,6 +102,8 @@ def disable_source(source_id: str, user=Depends(fresh_user), db=Depends(session)
     if not row:
         fail('NOT_FOUND', 'Source not found.', 404)
     row.enabled, row.policy_version = False, row.policy_version+1
+    from ..services import source_search
+    source_search.remove(db,row,user.id)
     db.add(Audit(actor_id=user.id, action='source.disabled', target_id=row.id))
     db.commit()
     return {'disabled': True, 'dependent_outputs_require_review': True}
@@ -112,3 +115,43 @@ def audit(user=Depends(current_user), db=Depends(session)):
     rows = db.scalars(select(Audit).order_by(Audit.id.desc()).limit(200)).all()
     return {'items': [{'id': x.id, 'actor_id': x.actor_id, 'action': x.action, 'target_id': x.target_id,
                        'detail': x.detail, 'created_at': x.created_at} for x in rows]}
+
+
+@router.get('/admin/sources/{source_id}/search-index')
+def search_index_status(source_id: str,user=Depends(current_user),db=Depends(session)):
+    from ..models import SourceSearchIndex
+    from ..services import source_search
+    require_admin(user)
+    row=db.get(Source,source_id)
+    if not row:fail('NOT_FOUND','Source not found.',404)
+    entry=db.get(SourceSearchIndex,source_id)
+    return {'source_id':source_id,'expected_revision':source_search.revision(row),
+        'stored':entry is not None,'current':source_search.current(row,entry),
+        'index_version':entry.index_version if entry else None,
+        'global_index_allowed':source_search.index_allowed(row)}
+
+
+class IndexBuild(BaseModel):
+    model_config=ConfigDict(extra='forbid')
+    expected_revision:str=Field(pattern=r'^[0-9a-f]{64}$')
+
+
+@router.post('/admin/sources/{source_id}/search-index')
+def build_search_index(source_id:str,payload:IndexBuild,user=Depends(fresh_user),db=Depends(session)):
+    from ..services import source_search
+    require_admin(user)
+    row=counsel.lock_source(db,source_id)
+    if not row:fail('NOT_FOUND','Source not found.',404)
+    entry=source_search.rebuild(db,row,payload.expected_revision,user.id)
+    db.commit()
+    return {'source_id':source_id,'revision':entry.revision,'index_version':entry.index_version,'indexed':True}
+
+
+@router.delete('/admin/sources/{source_id}/search-index')
+def delete_search_index(source_id:str,user=Depends(fresh_user),db=Depends(session)):
+    from ..services import source_search
+    require_admin(user)
+    row=counsel.lock_source(db,source_id)
+    if not row:fail('NOT_FOUND','Source not found.',404)
+    source_search.remove(db,row,user.id);db.commit()
+    return {'removed':True,'source_id':source_id}

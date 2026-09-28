@@ -1089,3 +1089,56 @@ def test_postgres_asu_refresh_serializes_and_revocation_is_immediate(pg_url):
             assert all(x['source_id'] != sid for x in asu_tracking.materials(db, '2025-08')['items'])
     finally:
         database.engine.dispose()
+
+
+def test_postgres_indexed_retrieval_beyond_legacy_bound(pg_url):
+    """10,001 original synthetic rows; actual GIN plan, not a corpus-quality claim."""
+    import time
+    from types import SimpleNamespace
+    from app.models import SourceSearchIndex
+    from app.services import source_search, retrieval
+    database=Database(pg_url)
+    actor=str(uuid4());prefix=actor[:8]
+    with database.Session() as db:
+        db.add(User(id=actor,role='admin'));db.flush()
+        rows=[];entries=[]
+        for index in range(10001):
+            source=Source(id=f'{prefix}-{index:05}',title=f'Synthetic scale record {index}',publisher='Tests',
+                text='zephyrquasar exact exception 1250' if index==10000 else f'Ordinary synthetic accounting illustration {index}',
+                canonical_url='',version_label='1',kind='original_commentary',framework='US_GAAP',
+                policy_version=1,enabled=True,reviewed=True,
+                policy={'basis':'original','commercial_use':True,**{op:True for op in rights.OPERATIONS}})
+            rights.record_approval(source,actor)
+            rows.append(source)
+            entries.append(SourceSearchIndex(source_id=source.id,revision=source_search.revision(source),
+                index_version=source_search.VERSION,search_text=source.title+'\n'+source.text))
+        db.add_all(rows);db.flush();db.add_all(entries);db.commit()
+        try:
+            db.execute(text('ANALYZE sources'));db.execute(text('ANALYZE source_search_indexes'))
+            plan=db.execute(text("EXPLAIN (ANALYZE, FORMAT JSON) SELECT source_id FROM source_search_indexes WHERE to_tsvector('simple', search_text) @@ to_tsquery('simple', 'zephyrquasar')")).scalar()[0]
+            assert 'ix_source_search_body_fts' in str(plan),plan
+            run=SimpleNamespace(context={'framework':'US_GAAP'},document_ids=[],workspace_id='synthetic')
+            started=time.perf_counter();hits=retrieval.search(db,run,'zephyrquasar');elapsed=time.perf_counter()-started
+            assert [h['source_id'] for h in hits]==[rows[-1].id]
+            assert hits[0]['text']=='zephyrquasar exact exception 1250'
+            print(f'SYNTHETIC lexical scale: 10001 sources; search={elapsed:.6f}s; GIN={plan["Execution Time"]}ms; recall=1/1 exact planted hit')
+            target=db.get(Source,rows[-1].id)
+            target.policy={**target.policy,'embed':False};rights.record_approval(target,actor);db.commit()
+            assert retrieval.search(db,run,'zephyrquasar')==[]
+            target.policy={**target.policy,'embed':True};target.text='newquasar revised qualification'
+            rights.record_approval(target,actor);db.commit()
+            assert retrieval.search(db,run,'zephyrquasar')==[]
+            assert retrieval.search(db,run,'newquasar')==[]  # No silent index refresh.
+            source_search.rebuild(db,target,source_search.revision(target),actor);db.commit()
+            assert [h['source_id'] for h in retrieval.search(db,run,'newquasar')]==[target.id]
+            source_search.remove(db,target,actor);db.commit()
+            assert retrieval.search(db,run,'newquasar')==[]
+            references=retrieval.search(db,run,'10000')
+            assert len(references)==1 and references[0]['text'] is None and references[0]['access']=='reference_only'
+            run.context={'framework':'IFRS'}
+            assert retrieval.search(db,run,'10000')==[]
+        finally:
+            from sqlalchemy import delete
+            db.execute(delete(Source).where(Source.id.like(prefix+'-%')));db.commit()
+            assert db.scalar(select(func.count()).select_from(SourceSearchIndex).where(SourceSearchIndex.source_id.like(prefix+'-%')))==0
+    database.engine.dispose()

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "snapshot_date": "2026-09-27",
+  "snapshot_date": "2026-09-28",
   "master_issue": "https://github.com/ChipmunkRPA/open-source-accounting/issues/5",
   "execution_mode": "human-initiated Codex sessions; no automatic schedule",
   "tasks": [
@@ -414,7 +414,7 @@
       "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/25",
       "priority": "P0",
       "lane": "platform",
-      "status": "queued",
+      "status": "in_progress",
       "depends_on_issues": [
         6,
         7,
@@ -427,7 +427,8 @@
       "work": "Replace capped scans with exact/lexical/semantic indexes, separate embedding endpoint, rights/tenant/date filters and relational authority edges.",
       "acceptance": "Measured scope/recall/latency; exact claim-support checks, cross-tenant, stale/version/conflict/rights tests.",
       "progress_required": true,
-      "scheduled": false
+      "scheduled": false,
+      "implementation_note": "PostgreSQL GIN lexical lookup replaces the arbitrary 2,000-source scan. Explicit revision-bound admin index build/removal requires current embed/store_text and existing review gates; scoped grants are excluded from the global index. Runtime rejects stale or unauthorized indexed bodies; titles remain reference candidates. Actual 10,001-source synthetic PostgreSQL fixture uses the GIN index and checks rights/rebuild/removal. SQLite is a streaming development fallback. Semantic endpoint/pgvector, authority graph, scoped indexes, transitive physical purge, broad-query latency controls and professionally adjudicated recall/precision remain. See docs/INDEXED_RETRIEVAL.md and progress.md."
     },
     {
       "id": "GEMINI",

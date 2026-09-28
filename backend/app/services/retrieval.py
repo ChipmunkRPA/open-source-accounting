@@ -1,13 +1,12 @@
 """Bounded lexical/exact-reference retrieval, with permissions applied before model input.
 
-This working baseline deliberately does not claim to have a production semantic index.
-The pluggable ranker can be replaced with PostgreSQL FTS + pgvector after evaluation.
+PostgreSQL uses authorized GIN lexical indexes; SQLite streams a development fallback.
+Semantic embeddings and reranker evaluation remain separate, unimplemented gates.
 """
 import math
 import re
 from collections import Counter
-from sqlalchemy import select
-from ..models import Source, Document
+from ..models import Document
 from .rights import allowed
 from .applicability import applies
 from .dependencies import allowed as dependencies_allowed
@@ -31,9 +30,11 @@ def search(db, run, query, limit=12, *, rights_context=None):
     candidates = []
     period = run.context.get('period_end')
     framework = run.context.get('framework', 'US_GAAP')
-    # A concrete first-release corpus bound, surfaced in deployment docs.
-    sources = db.scalars(select(Source).where(Source.enabled.is_(True)).limit(2000)).all()
-    for source in sources:
+    from .source_search import candidates as indexed_candidates
+    for source, body_indexed in indexed_candidates(db, query):
+        # Bound retained ranking candidates without excluding later corpus matches.
+        if len(candidates)>max(limit*4,100):
+            candidates=sorted(candidates,key=lambda x:x["_score"],reverse=True)[:limit]
         # Staged content is not an approved source, even when its metadata is public.
         if not source.reviewed:
             continue
@@ -43,6 +44,11 @@ def search(db, run, query, limit=12, *, rights_context=None):
             continue
         if period and ((source.effective_from and source.effective_from > period) or
                        (source.effective_to and source.effective_to < period)):
+            continue
+        if not body_indexed:
+            candidates.append({"source_id":source.id,"document_id":None,"title":source.title,
+                "locator":source.title,"text":None,"access":"reference_only","source_kind":source.kind,
+                "policy_version":source.policy_version,"_score":score(query,source.title)})
             continue
         if (source.policy or {}).get('sec_core'):
             from ..sec_core.integration import evidence_for
