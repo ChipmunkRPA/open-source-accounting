@@ -4,7 +4,7 @@ from sqlalchemy import select
 from ..models import SourceArtifact, SourceExtraction, Audit, now
 from ..sec_core.core import canonical, digest
 from ..errors import fail
-from . import intake, rights
+from . import intake, rights, counsel
 from .storage import Storage
 
 
@@ -49,9 +49,12 @@ def extraction_check(storage,artifact,extraction):
     return result,passages
 
 
-def verify(db,settings,artifact_id,actor_id):
+def verify(db,settings,artifact_id,actor_id,*,commit=True):
     artifact=db.get(SourceArtifact,artifact_id)
     if not artifact:fail('NOT_FOUND','Artifact not found.',404)
+    from ..models import IntakeWork
+    owner=db.get(IntakeWork,artifact.work_id)
+    counsel.lock_source(db,owner.source_id)
     work,source,manifest=intake.authorize(db,artifact.work_id,['store_raw'],lock=True)
     extractions=db.scalars(select(SourceExtraction).where(SourceExtraction.artifact_id==artifact.id)
                           .order_by(SourceExtraction.id).limit(11)).all()
@@ -67,12 +70,47 @@ def verify(db,settings,artifact_id,actor_id):
     # Expired permissions do not yield a completed verification receipt.
     operations=['store_raw']+(['store_text'] if any(r['status']!='not_authorized' for r in extracted) else [])
     intake.authorize(db,work.id,operations)
+    failures=[{'unit':'raw','status':raw['status']}] if raw['status']!='verified' else []
+    failures += [{'unit':r['extraction_id'],'status':r['status']} for r in extracted if r['status'] not in {'verified','not_authorized'}]
+    holds=dict(source.policy.get('integrity_holds') or {})
+    if failures:
+        if artifact.id not in holds:source.policy_version+=1
+        holds[artifact.id]={'failures':failures,'observed_at':now(),'actor_id':actor_id}
+        source.policy={**source.policy,'integrity_holds':holds}
     data={'artifact_id':artifact.id,'work_id':work.id,'family_id':manifest['family_id'],
           'manifest_sha256':work.manifest_sha256,'policy_version':source.policy_version,
+          'integrity_hold':artifact.id in holds,'work_on_hold':bool(holds),
           'raw':{'expected_sha256':artifact.raw_sha256,'expected_bytes':artifact.byte_count,**raw},
           'extractions':extracted,'observed_at':now(),
-          'notice':'Point-in-time stored-byte integrity only. Not publisher authenticity, complete acquisition, citation accuracy, professional approval or index/evaluation verification. No repair, restore or source approval performed.'}
+          'notice':'Point-in-time stored-byte integrity only. Not publisher authenticity, complete acquisition, citation accuracy, professional approval or index/evaluation verification. Failures place the entire work on hold for output and model use. Successful checks never release holds or restore old evidence. No repair or source approval performed.'}
     result={**data,'observation_sha256':digest(canonical(data))}
     db.add(Audit(actor_id=actor_id,action='intake.integrity_observed',target_id=artifact.id,detail=result))
-    db.commit()
+    if commit:db.commit()
+    else:db.flush()
     return result
+
+
+def release(db,settings,artifact_id,payload,actor_id):
+    from ..models import IntakeWork, Source
+    artifact=db.get(SourceArtifact,artifact_id)
+    if not artifact:fail('NOT_FOUND','Artifact not found.',404)
+    work=db.get(IntakeWork,artifact.work_id)
+    source=counsel.lock_source(db,work.source_id)
+    if source.policy_version!=payload.expected_policy_version:
+        fail('REVISION_CONFLICT','Reload the current work policy version.',409)
+    if artifact.id not in (source.policy.get('integrity_holds') or {}):
+        fail('NO_INTEGRITY_HOLD','This artifact has no active integrity hold.',409)
+    result=verify(db,settings,artifact_id,actor_id,commit=False)
+    if result['raw']['status']!='verified' or any(r['status']!='verified' for r in result['extractions']):
+        # Preserve the failed recheck rather than roll back its observation.
+        db.commit()
+        fail('INTEGRITY_NOT_RESTORED','Every raw/normalized unit must verify with current permissions before release.',409)
+    source=db.get(Source,source.id)
+    holds=dict(source.policy.get('integrity_holds') or {});holds.pop(artifact.id)
+    source.policy={**source.policy,'integrity_holds':holds};source.policy_version+=1
+    db.add(Audit(actor_id=actor_id,action='intake.integrity_hold_released',target_id=artifact.id,
+                 detail={'observation_sha256':result['observation_sha256'],'policy_version':source.policy_version,
+                         'note':payload.note,'old_evidence_restored':False}))
+    db.commit()
+    return {'artifact_id':artifact.id,'policy_version':source.policy_version,'work_on_hold':bool(holds),
+            'old_evidence_restored':False,'approval_granted':False}

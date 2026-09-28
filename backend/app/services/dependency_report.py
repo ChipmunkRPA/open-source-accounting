@@ -61,6 +61,7 @@ def report(db,settings,*,offset=0,limit=50,affected_by=None):
         rights_current=bool(source.reviewed and p.get('rights_reviewed_revision')==rights.revision(source))
         if not rights_current:issues.append('rights_revision_missing_or_stale')
         if not source.enabled:issues.append('source_disabled')
+        if p.get('integrity_holds'):issues.append('integrity_hold')
         if not complete:issues.append('missing_exact_reference_bindings')
         if stale:issues.append('stale_reference_bindings')
         if technical is False:issues.append('no_current_technical_record')

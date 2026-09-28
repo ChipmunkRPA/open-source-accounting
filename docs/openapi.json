@@ -3592,6 +3592,56 @@
         }
       }
     },
+    "/api/v1/admin/intake/artifacts/{artifact_id}/release-hold": {
+      "post": {
+        "tags": [
+          "source-intake"
+        ],
+        "summary": "Release Integrity Hold",
+        "operationId": "release_integrity_hold_api_v1_admin_intake_artifacts__artifact_id__release_hold_post",
+        "parameters": [
+          {
+            "name": "artifact_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Artifact Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IntegrityHoldRelease"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/admin/sources/{source_id}/counsel-records": {
       "get": {
         "tags": [
@@ -5866,6 +5916,34 @@
           "notices"
         ],
         "title": "IntakeManifest"
+      },
+      "IntegrityHoldRelease": {
+        "properties": {
+          "expected_policy_version": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Expected Policy Version"
+          },
+          "note": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 10,
+            "title": "Note"
+          },
+          "confirm_reverification_and_stale_evidence": {
+            "type": "boolean",
+            "const": true,
+            "title": "Confirm Reverification And Stale Evidence"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "expected_policy_version",
+          "note",
+          "confirm_reverification_and_stale_evidence"
+        ],
+        "title": "IntegrityHoldRelease"
       },
       "ManualDelivery": {
         "properties": {

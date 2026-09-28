@@ -319,6 +319,8 @@ def stage(db, settings, extraction_id, actor_id):
         fail('NOT_FOUND', 'Extraction not found.', 404)
     artifact = db.get(SourceArtifact, extraction.artifact_id)
     work, parent, manifest = authorize(db, artifact.work_id, ['store_raw', 'extract', 'store_text'], lock=True)
+    if parent.policy.get('integrity_holds'):
+        fail('INTEGRITY_HOLD', 'Resolve every integrity hold before staging new source passages.', 409)
     raw = Storage(settings).get(artifact.object_key)
     normalized = Storage(settings).get(extraction.object_key)
     if digest(raw) != artifact.raw_sha256 or digest(normalized) != extraction.normalized_sha256:

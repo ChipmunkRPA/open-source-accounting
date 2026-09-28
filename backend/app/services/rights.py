@@ -31,6 +31,8 @@ def allowed(source: Source, action: str, *, context: dict | None = None, _visite
     if action not in OPERATIONS or source.enabled is not True or source.reviewed is not True:
         return False
     policy = source.policy or {}
+    if policy.get('integrity_holds') and action in {'display_full','quote','export','redistribute','model_input','embed','train'}:
+        return False
     if policy.get('basis') not in {'original', 'government_work', 'license', 'reviewed_use',
                                   'government_source_excerpt_pending_review'}:
         return False

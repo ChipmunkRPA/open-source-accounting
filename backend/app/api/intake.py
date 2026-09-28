@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, Header, Request
 from sqlalchemy import select, func
 from starlette.concurrency import run_in_threadpool
 from ..auth import current_user, fresh_user, session, require_admin
-from ..intake_schemas import IntakeCreate
+from ..intake_schemas import IntakeCreate, IntegrityHoldRelease
 from ..models import IntakeWork, SourceArtifact, SourceExtraction, IntakeAttempt, Source, SourceDiscovery
 from ..services import intake, rights, discovery
 from ..errors import fail
@@ -23,7 +23,7 @@ def work_metadata(db, work):
     return {'id': work.id, 'source_id': source.id, 'manifest': work.manifest,
             'manifest_sha256': work.manifest_sha256, 'policy_version': source.policy_version,
             'rights_revision': rights.revision(source), 'rights_reviewed': source.reviewed,
-            'enabled': source.enabled, 'agent_eligible': False}
+            'enabled': source.enabled, 'integrity_holds': source.policy.get('integrity_holds', {}), 'agent_eligible': False}
 
 
 @router.post('/admin/intake/works', status_code=201)
@@ -126,3 +126,11 @@ def verify_artifact(artifact_id: str, request: Request, user=Depends(fresh_user)
     require_admin(user)
     from ..services.artifact_integrity import verify
     return verify(db, request.app.state.settings, artifact_id, user.id)
+
+
+@router.post('/admin/intake/artifacts/{artifact_id}/release-hold')
+def release_integrity_hold(artifact_id: str, payload: IntegrityHoldRelease, request: Request,
+                           user=Depends(fresh_user), db=Depends(session)):
+    require_admin(user, approve=True)
+    from ..services.artifact_integrity import release
+    return release(db, request.app.state.settings, artifact_id, payload, user.id)

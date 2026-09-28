@@ -934,3 +934,38 @@ def test_postgres_correction_actions_serialize(pg_url):
         assert db.get(Source,sid).policy_version==2
         assert db.scalar(select(func.count()).select_from(CorrectionEvent).where(CorrectionEvent.case_id==cid))==1
     database.engine.dispose()
+
+
+def test_postgres_integrity_failures_preserve_both_holds(pg_url,tmp_path,monkeypatch):
+    from concurrent.futures import ThreadPoolExecutor
+    from threading import Barrier
+    from app.services.artifact_integrity import verify
+    from app.services.storage import Storage
+    from app.sec_core.core import digest
+    database=Database(pg_url);actor=str(uuid4())
+    settings=Settings(app_env='test',database_url=pg_url,data_dir=str(tmp_path),_env_file=None)
+    with database.Session() as db:
+        db.add(User(id=actor,role='admin'));db.commit()
+        work=intake.register(db,settings,IntakeCreate.model_validate(payload(work_id=actor)),actor)
+        source=db.get(Source,work.source_id);source.reviewed=True;rights.record_approval(source,actor)
+        sid=source.id;initial=source.policy_version
+        artifacts=[]
+        for value in [b'one',b'two']:
+            checksum=digest(value)
+            row=SourceArtifact(work_id=work.id,raw_sha256=checksum,byte_count=3,mime='application/xml',receipt={},
+                               object_key=f'sources/{work.id}/raw/{checksum}.bin')
+            db.add(row);db.flush();artifacts.append(row.id)
+        db.commit()
+    monkeypatch.setattr(Storage,'get_bounded',lambda *_:b'wrong')
+    barrier=Barrier(2)
+    def check(aid):
+        with database.Session() as db:
+            barrier.wait(timeout=10);return verify(db,settings,aid,actor)
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        futures=[pool.submit(check,aid) for aid in artifacts]
+        assert all(f.result(timeout=20)['integrity_hold'] for f in futures)
+    with database.Session() as db:
+        source=db.get(Source,sid)
+        assert set(source.policy['integrity_holds'])==set(artifacts)
+        assert source.policy_version==initial+2
+    database.engine.dispose()

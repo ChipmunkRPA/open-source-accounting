@@ -115,3 +115,9 @@ class IntakeCreate(Strict):
         if self.source.policy.basis == 'reference_only' and self.manifest.access_mode != 'reference_only':
             raise ValueError('Reference-only policies require reference-only intake mode.')
         return self
+
+
+class IntegrityHoldRelease(Strict):
+    expected_policy_version: int = Field(ge=1)
+    note: str = Field(min_length=10, max_length=2000)
+    confirm_reverification_and_stale_evidence: Literal[True]
