@@ -229,3 +229,29 @@ def list_index_cleanup(before:str=Query(default='',max_length=36),user=Depends(c
     rows=list(db.scalars(query.order_by(SearchIndexSweep.started_at.desc(),SearchIndexSweep.id.desc()).limit(21)))
     return {'items':[index_cleanup.status(row) for row in rows[:20]],
             'next_before':rows[19].id if len(rows)>20 else None}
+
+
+class CitationResolve(BaseModel):
+    model_config=ConfigDict(extra='forbid')
+    expected_revision: str = Field(pattern=r'^[a-f0-9]{64}$')
+    locator: str = Field(min_length=1, max_length=16000)
+    character_start: int = Field(strict=True, ge=0)
+    character_end: int = Field(strict=True, ge=1)
+    passage_text_sha256: str = Field(pattern=r'^[a-f0-9]{64}$')
+
+
+@router.get('/sources/{source_id}/passages')
+def citation_inventory(source_id: str, start: int = Query(0, ge=0), limit: int = Query(20, ge=1, le=100),
+                       db=Depends(session)):
+    from ..services import citation_lookup
+    result=citation_lookup.inventory(db,db.get(Source,source_id),start,limit)
+    db.commit()
+    return result
+
+
+@router.post('/sources/{source_id}/passages/resolve')
+def resolve_citation(source_id: str, payload: CitationResolve, db=Depends(session)):
+    from ..services import citation_lookup
+    result=citation_lookup.resolve(db,db.get(Source,source_id),payload)
+    db.commit()
+    return result

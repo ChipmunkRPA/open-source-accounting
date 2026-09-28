@@ -2583,6 +2583,119 @@
         }
       }
     },
+    "/api/v1/sources/{source_id}/passages": {
+      "get": {
+        "tags": [
+          "sources"
+        ],
+        "summary": "Citation Inventory",
+        "operationId": "citation_inventory_api_v1_sources__source_id__passages_get",
+        "parameters": [
+          {
+            "name": "source_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Source Id"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Start"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "default": 20,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sources/{source_id}/passages/resolve": {
+      "post": {
+        "tags": [
+          "sources"
+        ],
+        "summary": "Resolve Citation",
+        "operationId": "resolve_citation_api_v1_sources__source_id__passages_resolve_post",
+        "parameters": [
+          {
+            "name": "source_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Source Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CitationResolve"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/billing/checkout": {
       "post": {
         "tags": [
@@ -6132,6 +6245,46 @@
           "accepted_annual_terms"
         ],
         "title": "CheckoutRequest"
+      },
+      "CitationResolve": {
+        "properties": {
+          "expected_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Expected Revision"
+          },
+          "locator": {
+            "type": "string",
+            "maxLength": 16000,
+            "minLength": 1,
+            "title": "Locator"
+          },
+          "character_start": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Character Start"
+          },
+          "character_end": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Character End"
+          },
+          "passage_text_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Passage Text Sha256"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "expected_revision",
+          "locator",
+          "character_start",
+          "character_end",
+          "passage_text_sha256"
+        ],
+        "title": "CitationResolve"
       },
       "CleanupAdvance": {
         "properties": {
