@@ -14,3 +14,7 @@ Observed:
 New coverage: 22 synthetic parser/API cases, including actual old-parser normalized bytes stored alongside a separate version-2 extraction; old object hash/bytes unchanged and retry returns the new extraction. Table headers, empty and numeric cells, captions/notes, exact paths, dangerous XML and unsupported layouts are tested. Historical SEC snapshot replay tests remain passing. Temporary JUnit receipts are local, not legal-source or professional-review evidence.
 
 No frontend or database schema changed; local PostgreSQL/migration/frontend checks were not rerun in this slice. CI results recorded separately when observed. Known limits and operator sequence: `docs/ECFR_PARSER.md`.
+
+Published on main as [078d7f8](https://github.com/ChipmunkRPA/open-source-accounting/commit/078d7f829adf7178661f170fa4948ff48ad3e62a). [CI 36369248771](https://github.com/ChipmunkRPA/open-source-accounting/actions/runs/36369248771) passed on Python 3.11 and 3.13: each **918 backend passes / 28 optional skips**, then **28 PostgreSQL passes**, **16 identity tests / zero failures**, frontend production build, **41-table** migration round trip/schema parity, contracts/content/queue/publication checks and Docker build.
+
+Generated-progress checks, publication preflight (601 files; zero heuristic findings), and git diff --check also passed before publication.
