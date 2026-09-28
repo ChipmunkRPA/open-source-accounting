@@ -59,22 +59,24 @@ def search(db, run, query, limit=12, *, rights_context=None):
         if not applies(source, run.context) or not dependencies_allowed(source,'model_input',context=rights_context,accounting_context=run.context):
             continue
         if allowed(source, 'model_input', context=rights_context) and allowed(source, 'store_text', context=rights_context) and allowed(source, 'quote', context=rights_context):
-            for i, para in enumerate(re.split(r'\n\s*\n', source.text or '')):
-                if not para.strip():
-                    continue
-                for offset in range(0, len(para), 3000):
-                    part = para[offset:offset+3000]
-                    sheet = (source.policy or {}).get('intake_spreadsheet')
-                    locator = f'Section {i+1}' + (f' part {offset//3000+1}' if offset else '')
-                    provenance = {}
-                    if sheet:
-                        locator = source.policy['intake_locator'] + f' (paragraph {i+1}, characters {offset+1}–{offset+len(part)})'
-                        provenance = {'extraction_context': source_context(source)}
-                    candidates.append({'source_id': source.id, 'document_id': None,
-                        'title': source.title, 'locator': locator, **provenance,
-                        'text': part, 'access': 'primary_text_reviewed' if source.kind in {'standard', 'rule'} else 'secondary_text_reviewed',
-                        'source_kind': source.kind, 'policy_version': source.policy_version,
-                        '_score': score(query, source.title + '\n' + part)})
+            from . import passage_context
+            for i,offset,start,end,part in passage_context.segments(source.text or ''):
+                sheet = (source.policy or {}).get('intake_spreadsheet')
+                locator = f'Section {i+1}' + (f' part {offset//3000+1}' if offset else '')
+                provenance = {}
+                if sheet:
+                    locator = source.policy['intake_locator'] + f' (paragraph {i+1}, characters {offset+1}–{offset+len(part)})'
+                    provenance = {'extraction_context': source_context(source)}
+                elif passage_context.required(source):
+                    snapshot=passage_context.packet(source,start,end)
+                    if snapshot is None:continue
+                    locator=passage_context.locator(snapshot)
+                    provenance={'extraction_context':snapshot}
+                candidates.append({'source_id': source.id, 'document_id': None,
+                    'title': source.title, 'locator': locator, **provenance,
+                    'text': part, 'access': 'primary_text_reviewed' if source.kind in {'standard', 'rule'} else 'secondary_text_reviewed',
+                    'source_kind': source.kind, 'policy_version': source.policy_version,
+                    '_score': score(query, source.title + '\n' + part)})
         else:
             candidates.append({'source_id': source.id, 'document_id': None, 'title': source.title,
                                'locator': source.title, 'text': None, 'access': 'reference_only',

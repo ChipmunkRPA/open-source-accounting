@@ -56,7 +56,13 @@ def document_context(doc, chunk):
 
 def current(db,evidence, *, action="model_input", context=None):
     from ..models import Source,Document
+    from . import passage_context
     snapshot=evidence.extraction_context or {}
+    if evidence.source_id:
+        source=db.get(Source,evidence.source_id)
+        if evidence.access=="reference_only" and not evidence.text and not snapshot:return True
+        if source and passage_context.required(source):
+            return passage_context.current(source,evidence)
     if not snapshot:
         if evidence.source_id:
             source=db.get(Source,evidence.source_id)

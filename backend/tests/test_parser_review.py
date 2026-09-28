@@ -143,8 +143,11 @@ def test_parser_expiry_blocks_agent_and_saved_exports_with_other_reviews_present
         assert rights.allowed(source,'model_input')
         run = Run(workspace_id='demo-workspace',user_id='demo',workflow='deep_research',question='Synthetic test',context=CONTEXT)
         db.add(run); db.flush()
-        ev = Evidence(run_id=run.id,source_id=sid,title=source.title,locator=source.policy['intake_locator'],
-                      text=source.text,access='full',policy_version=source.policy_version,source_kind=source.kind)
+        from app.services import passage_context
+        snapshot=passage_context.packet(source,0,len(source.text))
+        ev = Evidence(run_id=run.id,source_id=sid,title=source.title,locator=passage_context.locator(snapshot),
+                      text=source.text,access='full',policy_version=source.policy_version,source_kind=source.kind,
+                      extraction_context=snapshot)
         db.add(ev);db.flush()
         assert rights.evidence_allowed(db,ev,'export')
         monkeypatch.setattr(parser_review,'now',lambda:body['expires_at'])
