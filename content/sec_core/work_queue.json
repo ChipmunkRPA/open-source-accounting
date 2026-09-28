@@ -22,14 +22,14 @@
     {
       "id": "SEC-PRACTICE",
       "position": 2,
-      "state": "queued",
+      "state": "in_progress",
       "issue": 2,
       "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/2",
       "depends_on": ["SEC-CORE"],
       "milestone": "Defined issuer/period pilot: filings, UPLOAD/CORRESP threads, notes and XBRL evidence",
       "remaining": [
-        "Set issuer/period denominator",
-        "Filing discovery and versioned accession parsing",
+        "Expand the declared ASU two-issuer pilot to other Practice topics and correspondence",
+        "Acquire authorized submissions snapshots, reconcile older histories and exact filing artifacts",
         "Pair full correspondence threads with explicit missing records",
         "Review company-practice provenance and benchmark Agent workflows"
       ]

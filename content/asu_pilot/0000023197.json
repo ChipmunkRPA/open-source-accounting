@@ -1,0 +1,34 @@
+{
+  "source": {
+    "title": "Comtech Telecommunications Corp. \u2014 EDGAR submissions metadata",
+    "publisher": "U.S. Securities and Exchange Commission",
+    "canonical_url": "https://data.sec.gov/submissions/CIK0000023197.json",
+    "kind": "reference",
+    "version_label": "asu-pilot-reference-2026-09-27",
+    "policy": {
+      "basis": "reference_only",
+      "review_note": "Pilot proposal only. No acquisition, extraction, storage, redistribution, model or professional approval granted."
+    }
+  },
+  "manifest": {
+    "family_id": "SEC_FILINGS",
+    "work_id": "asu-pilot-submissions-0000023197",
+    "edition": "asu-pilot-reference-2026-09-27",
+    "language": "en",
+    "jurisdiction": "US",
+    "authority_type": "filing_index_metadata_not_gaap",
+    "coverage_unit": "One submissions metadata snapshot for CIK 0000023197; linked histories and filing bodies are separate.",
+    "access_mode": "reference_only",
+    "route": "reference_only",
+    "requested_url": "https://data.sec.gov/submissions/CIK0000023197.json",
+    "parser": "sec_submissions",
+    "allowed_mime": [
+      "application/json"
+    ],
+    "max_bytes": 16000000,
+    "date_notes": "Proposal prepared 2026-09-27. Not a retrieval date or source edition date. Actual receipt dates and row filing/acceptance/report dates must be retained on authorized acquisition.",
+    "notices": [
+      "Reference-only pilot. Current SEC access terms and issuer/third-party rights require scoped review; no blanket government-work claim."
+    ]
+  }
+}

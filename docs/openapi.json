@@ -6449,7 +6449,8 @@
               "structural_html",
               "pdf",
               "text",
-              "crossref_metadata"
+              "crossref_metadata",
+              "sec_submissions"
             ],
             "title": "Parser"
           },

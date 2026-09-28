@@ -9,6 +9,7 @@ from ..errors import fail
 from ..models import SourceArtifact, SourceDiscovery, Audit
 from ..source_discovery import VERSION
 from ..crossref_discovery import VERSION as CROSSREF_VERSION
+from ..sec_submissions import VERSION as SUBMISSIONS_VERSION
 from ..sec_core.core import canonical, digest
 from . import intake, rights
 from .storage import Storage
@@ -27,12 +28,15 @@ def discover(db, settings, artifact_id, actor_id):
         fail('NOT_FOUND', 'Index artifact not found.', 404)
     work, source, manifest = intake.authorize(db, artifact.work_id, ['store_raw', 'extract', 'store_text'], lock=True)
     crossref = manifest['parser'] == 'crossref_metadata' and artifact.mime == 'application/json'
-    version = CROSSREF_VERSION if crossref else VERSION
-    if not crossref and artifact.mime != 'text/html':
+    submissions = manifest['parser'] == 'sec_submissions' and artifact.mime == 'application/json'
+    version = SUBMISSIONS_VERSION if submissions else CROSSREF_VERSION if crossref else VERSION
+    if not crossref and not submissions and artifact.mime != 'text/html':
         fail('DISCOVERY_ADAPTER', 'This adapter requires an authorized HTML index; API/XML adapters are separate.', 422)
     recipe = intake.families(settings)[work.family_id]
     recipe_hash = digest(canonical(recipe))
     hosts = sorted({urlsplit(url).hostname for url in recipe['seed_urls'] if urlsplit(url).scheme == 'https'})
+    if submissions:
+        hosts.append('data.sec.gov')  # Exact endpoint independently validated by the manifest and adapter.
     base_url = artifact.receipt.get('resolved_url') or manifest['requested_url']
     if urlsplit(base_url).hostname not in hosts:
         fail('DISCOVERY_ROUTE', 'Index host is outside the family discovery recipe.', 422)
@@ -44,7 +48,8 @@ def discover(db, settings, artifact_id, actor_id):
     if len(raw) != artifact.byte_count or digest(raw) != artifact.raw_sha256:
         fail('ARTIFACT_INTEGRITY', 'Index artifact failed integrity verification.', 409)
     try:
-        command = ([sys.executable, '-m', 'app.crossref_discovery', base_url] if crossref else
+        command = ([sys.executable, '-m', 'app.sec_submissions', base_url] if submissions else
+                   [sys.executable, '-m', 'app.crossref_discovery', base_url] if crossref else
                    [sys.executable, '-m', 'app.source_discovery', base_url, json.dumps(hosts)])
         result = subprocess.run(command,
             input=raw, capture_output=True, timeout=25, cwd=Path(__file__).resolve().parents[2])

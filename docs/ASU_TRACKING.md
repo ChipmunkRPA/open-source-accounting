@@ -33,6 +33,8 @@ Only actual staged passages with consistent intake parent/artifact/extraction/ha
 
 ## Adding current material
 
+The submissions metadata adapter and two reference-only feed proposals are documented in [ASU filing pilot](ASU_FILING_PILOT.md). They do not activate acquisition.
+
 1. Reconcile new ASU identities, issuance precision and official metadata references in the versioned catalog; validate it and publish a normal main commit. This catalog does not automatically crawl FASB. Rights to FASB prose remain separate.
 2. Register SEC filings through the existing intake API with exact accession/document URLs, declared dates, notices and operation-specific authorization. Follow #2 discovery and #8 acquisition instructions. Obtain authorized originals, preserve immutable raw/normalized hashes, parse and stage; no reference link becomes acquired text automatically.
 3. Obtain actual source-operation approvals for the relevant public use. Independent parser, accounting and applicability reviews remain separate; do not manufacture them to make a tracker row appear.

@@ -70,7 +70,7 @@ def authorize(db, work_id, operations, *, lock=False):
     if manifest['access_mode'] in {'reference_only', 'private'}:
         fail('SOURCE_POLICY_BLOCK', 'This intake record permits reference metadata only.', 403)
     context = {'route': manifest['route'], 'audience': 'internal_ingestion'}
-    if manifest['parser'] == 'crossref_metadata' and 'acquire' in operations:
+    if manifest['parser'] in {'crossref_metadata', 'sec_submissions'} and 'acquire' in operations:
         operations = [*operations, 'extract']  # Schema screening before raw storage is separately authorized.
     if not all(rights.allowed(source, operation, context=context) for operation in operations):
         fail('SOURCE_POLICY_BLOCK', 'Current reviewed permissions do not authorize this intake step.', 403)
@@ -84,10 +84,11 @@ def artifact_metadata(row):
 
 
 def validate_metadata_delivery(manifest, raw):
-    if manifest['parser'] != 'crossref_metadata':
+    if manifest['parser'] not in {'crossref_metadata', 'sec_submissions'}:
         return
     try:
-        result = subprocess.run([sys.executable, '-m', 'app.crossref_discovery', manifest['requested_url']],
+        module = 'app.sec_submissions' if manifest['parser'] == 'sec_submissions' else 'app.crossref_discovery'
+        result = subprocess.run([sys.executable, '-m', module, manifest['requested_url']],
             input=raw, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=25,
             cwd=Path(__file__).resolve().parents[2])
         if result.returncode:
@@ -278,8 +279,8 @@ def parse(db, settings, artifact_id, actor_id):
     if not artifact:
         fail('NOT_FOUND', 'Artifact not found.', 404)
     work, source, manifest = authorize(db, artifact.work_id, ['store_raw', 'extract', 'store_text'], lock=True)
-    if manifest['parser'] == 'crossref_metadata':
-        fail('DISCOVERY_ONLY', 'Bibliographic metadata uses discovery; it cannot be staged as source evidence.', 422)
+    if manifest['parser'] in {'crossref_metadata', 'sec_submissions'}:
+        fail('DISCOVERY_ONLY', 'Metadata uses discovery; it cannot be staged as source evidence.', 422)
     version = parser_version(manifest)
     existing = db.scalar(select(SourceExtraction).where(SourceExtraction.artifact_id == artifact_id,
                                                        SourceExtraction.parser_version == version))

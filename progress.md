@@ -1,5 +1,21 @@
 # Open Source Accounting — current implementation progress
 
+## 2026-09-27 · SEC submissions discovery for ASU filing updates · #2/#8/#24 (parent #5)
+
+Implemented `sec-submissions-1` through the existing immutable, rights-gated acquisition/discovery pipeline. The isolated bounded JSON adapter preserves exact columnar rows, row/raw hashes, accession and registrant identity, filing/report/acceptance dates, returned primary filenames, archive/index links and JSON locators. Linked older-history descriptors remain separate unacquired candidates. Amendments are flagged without invented predecessor links; blank primary filenames/report dates stay unresolved. Malformed, unsafe, uneven or mismatched snapshots fail before raw persistence; extraction permission is required for that screening. Metadata cannot be parsed/staged as filing-text evidence. Existing shared rate limits and access-block handling remain.
+
+Prepared **2 reference-only feed registration proposals** for Comtech and Home BancShares, with an explicit forms/filing-date pilot and an unsent operation-authorization packet (`docs/ASU_FILING_PILOT.md`, `content/asu_pilot/`). SEC official API documentation was read to verify the route/metadata structure; no live feed or filing body was acquired. Current real increment is **0 feed artifacts / 0 real discovered rows / 0 filing bodies / 0 parsing, rights, technical, applicability, indexing or evaluation approvals**. The existing ASU register remains **16 ASUs / 12 filing links / 2 filings / 2 companies**, selected and incomplete. Neither feed proposals nor synthetic records are counted as acquired content. SEC Practice moved to in_progress for this metadata implementation; full acceptance remains open.
+
+Actual local validation: **73 targeted submissions/Crossref checks passed; 1019 full backend tests passed / 29 optional PostgreSQL skips**, before three final robustness cases; final **38 submissions tests passed** including those additions. Lint F, actual contract export, content/queue/generated-progress/publication and diff checks passed. No application failures; one upstream Starlette/httpx warning. No frontend/migration code changed or local reruns claimed. CI and commit receipt will follow publication. Source versions: new `sec-submissions-1`; ASU `asu-reference-2026-09-27.1` / `asu-mentions-1`; existing parsers and requested `gemini-3.8-flash` unchanged. No cloud, live inference, billing, texts or notifications.
+
+Broader coverage unchanged: **32 families / 47 topics; 63 original drafts / 63 hashes / 0 professional approvals / 0 Agent admissions; 58 questions / 26 original-library references**. SEC Core **34 targets / 28 excerpts / 7 excerpted sources / 0 full original HTTP artifacts / 0 technical/applicability approvals / 0 approved production index / 0 adjudicated evaluations**. Government 17 and legal 9 overlapping metadata candidates across 3 families each remain unacquired/unparsed/unreviewed/unindexed; 12/14 scenarios remain unadjudicated.
+
+Remaining gates: actual operation evidence, approved contact identity/connector settings, authorized root/history snapshots and full issuer/exhibit originals, history/amendment reconciliation, independent reviews, source-specific reuse and complete ASU/EDGAR coverage. GCP project/region/spend, credentials and concrete production release approval remain outstanding. This adapter is an available implementation, not an activated periodic external feed.
+
+Next resumable action: use the prepared pilot after actual rights/connector gates pass, then reconcile linked histories and exact documents. Continue independent #24 bounded XLSX/CSV ingestion and non-SEC authorized source tasks while blocked. Main-only normal pushes; full application/all-content/GCP goal remains active.
+
+---
+
 ## 2026-09-27 · ASU tracking module · #2/#9/#8/#24/#37 (parent #5)
 
 Implemented the requested free `/asu-tracking` module: rolling two-calendar-year issuance window, explicit year/month/day precision, ASU/subject/topic search, company/CIK and disclosure-status filters, SEC disclosure links and locators, corpus artifact provenance, pagination, freshness and coverage gaps. Starter catalog `asu-reference-2026-09-27.1` includes **16 ASU references, 12 ASU-to-filing links across 2 filings/2 companies; 9 ASUs with examples, 7 without**. Home BancShares' reported early adoption is separate from Comtech's not-yet-adopted disclosures. This selected reference catalog is not a complete FASB/EDGAR universe or retained source corpus. FASB text remains reference-only. See `docs/ASU_TRACKING.md` and `reports/asu/VALIDATION.md`.
@@ -733,7 +749,7 @@ Catalog target units overlap and vary in size; these counts are not a percentage
 | Position | Workstream | State | Dependency |
 |---:|---|---|---|
 | 1 | [SEC-CORE #1](https://github.com/ChipmunkRPA/open-source-accounting/issues/1) | in_progress | None |
-| 2 | [SEC-PRACTICE #2](https://github.com/ChipmunkRPA/open-source-accounting/issues/2) | queued | SEC-CORE |
+| 2 | [SEC-PRACTICE #2](https://github.com/ChipmunkRPA/open-source-accounting/issues/2) | in_progress | SEC-CORE |
 | 3 | [SEC-AUDIT-ENFORCEMENT #3](https://github.com/ChipmunkRPA/open-source-accounting/issues/3) | queued | SEC-CORE, SEC-PRACTICE:pilot |
 
 **Queued means a GitHub development issue, not unattended execution.** No scheduled crawler, cloud job, future delivery or billing action was enabled.

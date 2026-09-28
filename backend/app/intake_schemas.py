@@ -53,7 +53,7 @@ class IntakeManifest(Strict):
     route: Literal['official_http', 'authorized_manual', 'reference_only']
     requested_url: str = Field(min_length=1, max_length=1500)
     redirect_urls: list[str] = Field(default_factory=list, max_length=3)
-    parser: Literal['ecfr_xml', 'annual_cfr_xml', 'structural_html', 'pdf', 'text', 'crossref_metadata']
+    parser: Literal['ecfr_xml', 'annual_cfr_xml', 'structural_html', 'pdf', 'text', 'crossref_metadata', 'sec_submissions']
     annual_cfr: AnnualCfrEdition | None = None
     parser_family: str = Field(default='generic', max_length=80)
     cfr_title: str = Field(default='17', pattern=r'^\d{1,3}$')
@@ -98,6 +98,11 @@ class IntakeManifest(Strict):
             query_contract(self.requested_url)
             if self.family_id != 'OPEN_LITERATURE' or self.redirect_urls or self.allowed_mime != ['application/json']:
                 raise ValueError('Crossref metadata requires OPEN_LITERATURE, JSON only and no redirects.')
+        elif self.parser == 'sec_submissions':
+            from .sec_submissions import endpoint
+            endpoint(self.requested_url)
+            if self.family_id != 'SEC_FILINGS' or self.redirect_urls or self.allowed_mime != ['application/json']:
+                raise ValueError('SEC submissions requires SEC_FILINGS, JSON only and no redirects.')
         elif 'application/json' in self.allowed_mime:
             raise ValueError('JSON intake requires a dedicated reviewed metadata adapter.')
         if self.access_mode in {'reference_only', 'private'} and self.route != 'reference_only':

@@ -82,14 +82,14 @@
       "url": "https://github.com/ChipmunkRPA/open-source-accounting/issues/2",
       "priority": "P2",
       "lane": "content",
-      "status": "queued",
+      "status": "in_progress",
       "depends_on_issues": [
         1,
         8
       ],
       "dependency_semantics": "implementation readiness; metadata research and synthetic contract tests may proceed independently; actual source/credential/human approval gates still apply",
       "title": "SEC filings, correspondence and structured facts",
-      "work": "Declare issuer/form/year pilot; acquire filings, link UPLOAD/CORRESP threads and amendments, preserve notes/tables, and reconcile XBRL facts to filings.",
+      "work": "Declare issuer/form/year pilot; acquire filings, link UPLOAD/CORRESP threads and amendments, preserve notes/tables, and reconcile XBRL facts to filings. ASU two-issuer pilot and bounded submissions metadata discovery are implemented; real acquisition, history reconciliation and review remain open (docs/ASU_FILING_PILOT.md).",
       "acceptance": "Actual traceable disclosures and thread completeness, issuer-practice labeling, source rights and contextual facts pass tests.",
       "progress_required": true,
       "scheduled": false
