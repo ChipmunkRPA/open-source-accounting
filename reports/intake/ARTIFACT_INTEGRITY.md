@@ -1,6 +1,6 @@
 # Stored artifact integrity (#8/#23)
 
-Observed **809 backend passed / 24 optional PostgreSQL skipped**, including **11 new integrity tests**. TypeScript typecheck, production Identity Platform build, lint F, API contract and content/hash/queue/generated-progress checks passed. No test failures; one upstream Starlette/httpx warning. No new schema/migration or local PostgreSQL assertion. CI results recorded after observation.
+Observed **809 backend passed / 24 optional PostgreSQL skipped**, including **11 new integrity tests**. TypeScript typecheck, production Identity Platform build, lint F, API contract and content/hash/queue/generated-progress checks passed. No test failures; one upstream Starlette/httpx warning. No new schema/migration or local PostgreSQL assertion. Implementation [cf232f1](https://github.com/ChipmunkRPA/open-source-accounting/commit/cf232f17b0a34f9d53e2621208a1a6107c718d9d) passed [CI 36362614651](https://github.com/ChipmunkRPA/open-source-accounting/actions/runs/36362614651): both Python 3.11/3.13 clean installs, frontend/backend, migrations/PostgreSQL and Docker. Publication preflight passed.
 
 ```sh
 backend/.venv/bin/python -m pytest backend/tests/test_artifact_integrity.py -q --junitxml=reports/intake/artifact-integrity-targeted.xml
