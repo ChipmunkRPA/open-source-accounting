@@ -269,11 +269,16 @@ def parse(db, settings, artifact_id, actor_id):
         fail('DISCOVERY_ONLY', 'Bibliographic metadata uses discovery; it cannot be staged as source evidence.', 422)
     existing = db.scalar(select(SourceExtraction).where(SourceExtraction.artifact_id == artifact_id,
                                                        SourceExtraction.parser_version == PARSER_VERSION))
-    if existing:
-        return extraction_metadata(existing)
-    raw = Storage(settings).get(artifact.object_key)
-    if len(raw) != artifact.byte_count or digest(raw) != artifact.raw_sha256:
+    from .artifact_integrity import raw_check, extraction_check
+    storage = Storage(settings)
+    raw_result, raw = raw_check(storage, artifact, manifest)
+    if raw_result['status'] != 'verified':
         fail('ARTIFACT_INTEGRITY', 'Raw artifact failed integrity verification.', 409)
+    if existing:
+        parsed_result, _ = extraction_check(storage, artifact, existing)
+        if parsed_result['status'] != 'verified':
+            fail('ARTIFACT_INTEGRITY', 'Existing parsed artifact failed integrity verification.', 409)
+        return extraction_metadata(existing)
     try:
         result = subprocess.run([sys.executable, '-m', 'app.intake_parse', manifest['parser'],
                                  manifest['parser_family'], source.title, manifest['cfr_title']],

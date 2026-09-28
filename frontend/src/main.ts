@@ -1,3 +1,4 @@
+import {artifactIntegrityView} from './views/artifact-integrity.js';
 import {correctionsView} from './views/corrections.js';
 import {dependencyReportView} from './views/dependency-report.js';
 import {secCoreView} from './views/sec-core.js';
@@ -54,7 +55,7 @@ export async function mount(root:HTMLElement){
       account.append(badge(app.me.access.agent_allowed?'Agent':'Free',app.me.access.agent_allowed?'paid':'neutral'),
                      el('span',{class:'account-name'},app.me.name));
       if(app.me.role==='technical_reviewer')account.append(link(app,'Content review','/editorial'),link(app,'Parser review','/parser-review'),link(app,'Dependency coverage','/dependency-report'));
-      if(['admin','rights_approver'].includes(app.me.role))account.append(link(app,'Source admin','/admin'),link(app,'Corrections','/corrections'));
+      if(['admin','rights_approver'].includes(app.me.role))account.append(link(app,'Source admin','/admin'),link(app,'Corrections','/corrections'),link(app,'Artifact integrity','/artifact-integrity'));
       document.documentElement.classList.toggle('reduced-motion',!!app.me.preferences.reduced_motion);
       document.documentElement.classList.toggle('compact',!!app.me.preferences.compact);
     }else account.append(button('Sign in',()=>showAuth(),'secondary'));
@@ -104,6 +105,7 @@ export async function mount(root:HTMLElement){
           ...(config.auth_mode==='firebase'?[button('Reauthenticate and add a backup factor',()=>showAuth(true)),
           el('p',{},'You must sign in with your existing second factor before adding another. Enrollment ends the session; sign in again afterwards.')]:[]),
           el('p',{},'To replace a lost factor, contact the operator through the published support channel. There is no email-only MFA reset or recovery-code bypass in this application.'));break;
+        case 'artifact-integrity':page('Stored artifact integrity');await artifactIntegrityView(app);break;
         case 'corrections':page('Corrections');await correctionsView(app);break;
         case 'admin':page('Source administration');await adminView(app);break;
         case 'watches':page('Watch inbox');await watchesView(app);break;

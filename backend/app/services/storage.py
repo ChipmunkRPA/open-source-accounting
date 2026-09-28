@@ -70,3 +70,27 @@ class Storage:
                 pass
         else:
             self._path(key).unlink(missing_ok=True)
+
+    def get_bounded(self, key, maximum):
+        """Read at most maximum+1 bytes; reject excess before returning any content."""
+        if not 1 <= maximum <= 32_000_000:
+            raise ValueError('Invalid read bound.')
+        if self.config.storage_provider == 'gcs':
+            from google.cloud import storage
+            from google.api_core.exceptions import NotFound
+            try:
+                data = storage.Client(project=self.config.google_cloud_project).bucket(self.config.gcs_bucket).blob(key).download_as_bytes(
+                    start=0, end=maximum, raw_download=True, timeout=30, retry=None)
+            except NotFound as exc:
+                raise FileNotFoundError('Stored object is missing.') from exc
+        else:
+            import os
+            import stat
+            fd = os.open(self._path(key), os.O_RDONLY | os.O_NONBLOCK)
+            with os.fdopen(fd, 'rb') as handle:
+                if not stat.S_ISREG(os.fstat(handle.fileno()).st_mode):
+                    raise ValueError('Stored object is not a regular file.')
+                data = handle.read(maximum+1)
+        if len(data) > maximum:
+            raise OverflowError('Stored object exceeds its read bound.')
+        return data

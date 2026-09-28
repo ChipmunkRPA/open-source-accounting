@@ -55,7 +55,7 @@
       "acceptance": "Actual artifacts have raw/normalized provenance; blocks are failures, not successful sources; source-unit denominators and retry tests are documented.",
       "progress_required": true,
       "scheduled": false,
-      "implementation_note": "32-family registry; rights-gated HTTP/manual intake; immutable HTML/Crossref metadata discovery; shared rate/provider concurrency; separate parse/stage and PostgreSQL tests. Other family API/bulk/edition adapters, approved live smoke, review/index integration, ingestion scopes and deletion remain."
+      "implementation_note": "32-family registry; rights-gated HTTP/manual intake; immutable HTML/Crossref metadata discovery; shared rate/provider concurrency; separate parse/stage and PostgreSQL tests. Other family API/bulk/edition adapters, approved live smoke, review/index integration, ingestion scopes and deletion remain. Explicit stored-byte integrity API/admin UI checks raw and normalized hashes/counts with bounded reads, per-operation rights and private audit observations; parse retries reverify existing objects. Live GCS and corpus-wide reconciliation/remediation remain."
     },
     {
       "id": "SEC_CORE",

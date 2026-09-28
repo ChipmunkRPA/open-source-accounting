@@ -119,3 +119,10 @@ def coverage(user=Depends(current_user), db=Depends(session)):
             'parsed_artifact_versions': db.scalar(select(func.count()).select_from(SourceExtraction)),
             'parsed_passages': db.scalar(select(func.coalesce(func.sum(SourceExtraction.passage_count), 0))),
             'review_and_index_status': 'separate_workflows_not_inferred_from_acquisition'}
+
+
+@router.post('/admin/intake/artifacts/{artifact_id}/verify')
+def verify_artifact(artifact_id: str, request: Request, user=Depends(fresh_user), db=Depends(session)):
+    require_admin(user)
+    from ..services.artifact_integrity import verify
+    return verify(db, request.app.state.settings, artifact_id, user.id)
