@@ -11,6 +11,7 @@ from ..models import Source, Document
 from .rights import allowed
 from .applicability import applies
 from .dependencies import allowed as dependencies_allowed
+from .spreadsheet_context import source_context, document_context
 
 
 def tokens(text):
@@ -62,9 +63,7 @@ def search(db, run, query, limit=12, *, rights_context=None):
                     provenance = {}
                     if sheet:
                         locator = source.policy['intake_locator'] + f' (paragraph {i+1}, characters {offset+1}–{offset+len(part)})'
-                        provenance = {'spreadsheet_extraction': {k: sheet[k] for k in (
-                            'parser_version', 'format', 'sheet', 'date_system', 'sheet_state', 'row_hidden',
-                            'calculated', 'display_rendered', 'units_verified', 'warning') if k in sheet}}
+                        provenance = {'extraction_context': source_context(source)}
                     candidates.append({'source_id': source.id, 'document_id': None,
                         'title': source.title, 'locator': locator, **provenance,
                         'text': part, 'access': 'primary_text_reviewed' if source.kind in {'standard', 'rule'} else 'secondary_text_reviewed',
@@ -83,10 +82,12 @@ def search(db, run, query, limit=12, *, rights_context=None):
         for chunk in doc.chunks:
             candidates.append({'source_id': None, 'document_id': doc.id, 'title': doc.name,
                                'locator': chunk['locator'], 'text': chunk['text'],
+                               'extraction_context': document_context(doc,chunk),
                                'access': 'user_document', 'source_kind': 'user_document', 'policy_version': None,
                                '_score': score(query, chunk['text']) + 0.1})
     ranked = sorted(candidates, key=lambda x: x['_score'], reverse=True)
     selected = [x for x in ranked if x['_score'] > 0][:limit]
     for row in selected:
         row.pop('_score', None)
+        row.setdefault('extraction_context',{})
     return selected

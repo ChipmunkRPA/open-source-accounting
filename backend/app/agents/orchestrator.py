@@ -82,7 +82,7 @@ def execute(db_factory, job_id, owner, config):
                     record = db.get(Evidence, packet['id'])
                     if not record or record.run_id != run_id or any(
                         getattr(record, k) != packet.get(k) for k in
-                        ('source_id', 'document_id', 'text', 'locator', 'access', 'policy_version')
+                        ('source_id', 'document_id', 'text', 'locator', 'access', 'policy_version', 'extraction_context')
                     ):
                         fail('SOURCE_CHANGED', 'The selected evidence revision changed.', 409)
                 db.commit()

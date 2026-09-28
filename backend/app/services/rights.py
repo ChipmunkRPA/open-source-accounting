@@ -147,6 +147,9 @@ def evidence_allowed(db, evidence: Evidence, action='model_input', *, context=No
     from .parser_review import current as parser_current
     from .applicability import applies
     from .dependencies import allowed as dependencies_allowed
+    from .spreadsheet_context import current as context_current
+    if not context_current(db,evidence):
+        return False
     run = db.get(Run, evidence.run_id)
     if not run:
         return False

@@ -111,6 +111,8 @@ def test_retrieval_retains_cell_locator_and_extraction_limits(client, monkeypatc
         run = SimpleNamespace(context={'framework':'BOTH'}, document_ids=[], workspace_id='synthetic')
         rows = retrieval.search(db, run, 'UniqueSheetTest')
         row = next(r for r in rows if r['source_id'] == source.id)
+        from app.models import Evidence
+        assert Evidence(run_id='synthetic', **row).extraction_context['version'] == 'spreadsheet-evidence-context-1'
         assert row['locator'].startswith("'Trial balance'!A2:E2")
-        assert row['spreadsheet_extraction']['calculated'] is False
-        assert row['spreadsheet_extraction']['date_system'] == '1900'
+        assert row['extraction_context']['literal_extraction']['calculated'] is False
+        assert row['extraction_context']['literal_extraction']['date_system'] == '1900'

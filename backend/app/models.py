@@ -165,10 +165,11 @@ class Evidence(Base):
     source_id: Mapped[str | None] = mapped_column(ForeignKey('sources.id'))
     document_id: Mapped[str | None] = mapped_column(ForeignKey('documents.id'))
     title: Mapped[str] = mapped_column(String(250))
-    locator: Mapped[str] = mapped_column(String(160))
+    locator: Mapped[str] = mapped_column(Text)
     text: Mapped[str | None] = mapped_column(Text)
     access: Mapped[str] = mapped_column(String(40))
     policy_version: Mapped[int | None] = mapped_column(Integer)
+    extraction_context: Mapped[dict] = mapped_column(JSON, default=dict)
     source_kind: Mapped[str] = mapped_column(String(40))
 
 
