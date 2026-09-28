@@ -1,3 +1,4 @@
+import {claimCoverage} from './claim-coverage.js';
 import {runRelationships} from './run-relationships.js';
 import {sourceNotices} from '../source-notices.js';
 import {api,requestKey,saveBlob} from '../api.js';
@@ -107,8 +108,8 @@ async function showEvidence(id:string){
 export async function runView(app:App,id:string){
   if(!id){app.navigate('/agents');return;}
   let alive=true,pending=false;
-  let disposeRelationships=()=>{};
-  app.cleanup=()=>{alive=false;clearInterval(timer);disposeRelationships();};
+  let disposeRelationships=()=>{},disposeCoverage=()=>{};
+  app.cleanup=()=>{alive=false;clearInterval(timer);disposeRelationships();disposeCoverage();};
   const body=el('div');app.content.replaceChildren(body);
   let lastState='';
   async function refresh(force=false){
@@ -116,7 +117,7 @@ export async function runView(app:App,id:string){
     try{
       const run=await api('/runs/'+id);if(!alive)return;
       const key=`${run.state}:${run.revision}:${run.access_blocked}`;
-      if(!force && key===lastState)return;lastState=key;disposeRelationships();disposeRelationships=()=>{};
+      if(!force && key===lastState)return;lastState=key;disposeRelationships();disposeRelationships=()=>{};disposeCoverage();disposeCoverage=()=>{};
       const top=heading(run.workflow.replaceAll('_',' '),run.question,link(app,'All work','/workspaces','button quiet'));
       if(['draft','planned','failed','cancelled','blocked'].includes(run.state)&&!run.result){
         const scope=await api(`/runs/${id}/scope`,'POST');
@@ -142,7 +143,7 @@ export async function runView(app:App,id:string){
               el('p',{class:'muted'},'One task is reserved on start; unsuccessful runs release that reservation. The model does not access unrestricted websites.'),confirm.element,msg,start)));
         return;
       }
-      if(run.access_blocked){body.replaceChildren(top,notice('A supporting source changed or was removed. Output is withheld pending review. Payment cannot resolve source permissions.','warning'),link(app,'Review claim history or revoke a decision','/claim-review/'+encodeURIComponent(id),'button secondary'));return;}
+      if(run.access_blocked){const coverage=claimCoverage(app,id);disposeCoverage=coverage.dispose;body.replaceChildren(top,coverage.element,notice('A supporting source changed or was removed. Output is withheld pending review. Payment cannot resolve source permissions.','warning'),link(app,'Review claim history or revoke a decision','/claim-review/'+encodeURIComponent(id),'button secondary'));return;}
       if(!run.result){
         const events=(await api(`/runs/${id}/events`)).items;
         body.replaceChildren(top,badge(run.state,'paid'),card('Research activity',
@@ -162,6 +163,7 @@ export async function runView(app:App,id:string){
           el('div',{class:'citation-row'},...claim.evidence_ids.map((eid:string,i:number)=>button(`Evidence ${i+1}`,()=>showEvidence(eid),'citation'))),
           link(app,'Human review · '+claim.id,'/claim-review/'+encodeURIComponent(id)+'/'+encodeURIComponent(claim.id),'button secondary')));
       }
+      const coverage=claimCoverage(app,id);disposeCoverage=coverage.dispose;main.append(coverage.element);
       const relationships=runRelationships(app,id);disposeRelationships=relationships.dispose;main.append(relationships.element);
       for(const t of result.tables||[])main.append(el('h3',{},t.title),table(t.columns,t.rows));
       const deterministic=result.deterministic||{};
