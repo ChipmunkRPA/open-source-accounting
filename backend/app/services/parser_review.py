@@ -67,6 +67,7 @@ def packet(db, settings, extraction_id):
             'passages': passages, 'source_attributions': output_rights.notices(db, [parent]),
             'notice': 'Original bytes are encoded, not executed. Inspect them safely. Parsing is not accounting or applicability approval.',
             'checklist': ['Compare every normalized passage with the original bytes.',
+                          'For spreadsheets verify sheet/cell ranges, hidden context, units and dates; cached formula results and display formatting are unverified, never recalculated.',
                           'Check section/page locators, tables, footnotes, omitted context and reading order.',
                           'Record limits, exceptions, supporting evidence and explicit expiry.'],
             'approval_granted': False}

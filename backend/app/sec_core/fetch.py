@@ -135,7 +135,7 @@ class Gateway:
             if time.monotonic() > deadline:
                 raise CoreError('Acquisition deadline exceeded before request')
             req = Request(url, headers={'User-Agent': self.agent, 'Accept-Encoding': 'identity',
-                                        'Accept': 'application/xml,text/html,application/pdf,application/json'})
+                                        'Accept': 'application/xml,text/html,application/pdf,application/json,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'})
             try:
                 response = self.opener.open(req, timeout=25)
             except HTTPError as exc:
@@ -172,7 +172,7 @@ class Gateway:
             # a bibliographic title containing "CAPTCHA" is not an access block.
             if mime != 'application/json':
                 reject_access_page(raw)
-            if mime not in {'text/html', 'text/xml', 'application/xml', 'text/plain', 'application/pdf', 'application/json'}:
+            if mime not in {'text/html', 'text/xml', 'application/xml', 'text/plain', 'application/pdf', 'application/json', 'text/csv', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'}:
                 raise CoreError('Unsupported Content-Type')
             return {'requested_url': original, 'resolved_url': url, 'raw': raw,
                     'mime': mime, 'method': 'GET', 'status': 200, 'headers': headers,

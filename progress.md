@@ -1,3 +1,15 @@
+## 2026-09-28 · Authorized source spreadsheet ingestion · #8/#24/#25 (parent #5)
+
+Connected XLSX/CSV to immutable source intake, isolated parsing, staging/recovery, independent parser packets and reviewed-source retrieval. Exact MIME/12 MB contracts, cell/range locators, literal values, formulas versus missing/unverified caches, hidden context and date-system metadata are retained. Unsupported workbooks leave the original intact without partial staging. Source-operation authorization and independent parser/accounting/applicability gates remain; no private upload is published. Version: `source-intake-1/spreadsheet-cells-1`; old parser/manifest identities unchanged. Requested `gemini-3.8-flash` unchanged; no model/cloud/paid resource/notification action.
+
+Observed tests: 71 initial targeted passes; final 11 new integration cases passed (acquisition/staging, MIME/limits, unsafe-content retention, review packet, revocation, transport and retrieval provenance). Initial test incorrectly referenced `storage_key`; corrected to the actual `object_key`. Full backend run before final retrieval change: 1069 passed / 29 optional PostgreSQL skips; final combined run **1070 passed / 29 optional PostgreSQL skips**, 50.90 seconds (`PYTHONPATH=backend backend/.venv/bin/python -m pytest backend/tests --junitxml=/tmp/source-sheets-final.xml`). One existing Starlette/httpx deprecation warning. Actual API export, lint F, content/queue/generated-progress/publication checks and diff checks passed. No frontend or migration changes; no new local frontend/PG run claimed.
+
+Real coverage increment: **0 acquisitions / 0 real parses / 0 rights, parser, technical or applicability approvals / 0 production indexing / 0 adjudicated evaluations**. All 32 content families / 47 topics remain in scope; 63 original drafts remain unapproved. SEC 34 targets / 28 excerpts / 7 excerpted sources / 0 full originals; ASU 16 references / 12 links / 2 companies / 2 filings, plus 2 unapproved feed proposals. Government 17 and legal 9 overlapping candidates remain unacquired. Synthetic fixtures do not add content coverage.
+
+Remaining gates: spreadsheet structured tables/comments/rendering; actual source-family authorization/acquisition and independent review; authorized external ASU updates; GCP project/region/spend, credentials and concrete release approval. Next resumable task: support bounded structured-table metadata and reconcile parser/retrieval evidence without silently dropping table context; continue authorized source pilots when their gates pass. Main-only normal push; full all-content/application/GCP goal stays active. Publication receipt to follow observed CI.
+
+---
+
 # Open Source Accounting — current implementation progress
 
 ## 2026-09-28 · Private XLSX/CSV ingestion · #24/#29/#31 (parent #5)

@@ -57,8 +57,16 @@ def search(db, run, query, limit=12, *, rights_context=None):
                     continue
                 for offset in range(0, len(para), 3000):
                     part = para[offset:offset+3000]
+                    sheet = (source.policy or {}).get('intake_spreadsheet')
+                    locator = f'Section {i+1}' + (f' part {offset//3000+1}' if offset else '')
+                    provenance = {}
+                    if sheet:
+                        locator = source.policy['intake_locator'] + f' (paragraph {i+1}, characters {offset+1}–{offset+len(part)})'
+                        provenance = {'spreadsheet_extraction': {k: sheet[k] for k in (
+                            'parser_version', 'format', 'sheet', 'date_system', 'sheet_state', 'row_hidden',
+                            'calculated', 'display_rendered', 'units_verified', 'warning') if k in sheet}}
                     candidates.append({'source_id': source.id, 'document_id': None,
-                        'title': source.title, 'locator': f'Section {i+1}' + (f' part {offset//3000+1}' if offset else ''),
+                        'title': source.title, 'locator': locator, **provenance,
                         'text': part, 'access': 'primary_text_reviewed' if source.kind in {'standard', 'rule'} else 'secondary_text_reviewed',
                         'source_kind': source.kind, 'policy_version': source.policy_version,
                         '_score': score(query, source.title + '\n' + part)})

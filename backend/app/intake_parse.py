@@ -41,6 +41,20 @@ def main():
         except PdfError as exc:
             sys.stderr.write(json.dumps({'pdf_error': exc.code, 'physical_page': exc.page}))
             raise SystemExit(2)
+    elif parser in {'xlsx', 'csv'}:
+        from .spreadsheet_parser import parse_xlsx, parse_csv, SpreadsheetError
+        try:
+            if len(raw) > 12_000_000:
+                raise SpreadsheetError('input_byte_limit')
+            rows = (parse_xlsx if parser == 'xlsx' else parse_csv)(raw, 1_000_000)
+            output = []
+            for item in rows:
+                p = parsers.passage(item['locator'], item['text'], 'spreadsheet_cells_unreviewed')
+                p['spreadsheet'] = item['spreadsheet']
+                output.append(p)
+        except SpreadsheetError as exc:
+            sys.stderr.write(json.dumps({'spreadsheet_error': exc.code, 'source_part': exc.part, 'locator': exc.locator}))
+            raise SystemExit(2)
     elif parser == 'text':
         from .services.documents import parse_bytes
         output = [parsers.passage(p['locator'], p['text']) for p in parse_bytes(raw, '.txt', 1_000_000)]

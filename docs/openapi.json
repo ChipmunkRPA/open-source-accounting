@@ -6449,6 +6449,8 @@
               "structural_html",
               "pdf",
               "text",
+              "xlsx",
+              "csv",
               "crossref_metadata",
               "sec_submissions"
             ],
@@ -6485,7 +6487,9 @@
                 "text/html",
                 "application/pdf",
                 "text/plain",
-                "application/json"
+                "application/json",
+                "text/csv",
+                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
               ]
             },
             "type": "array",
@@ -6674,7 +6678,9 @@
               "text/html",
               "application/pdf",
               "text/plain",
-              "application/json"
+              "application/json",
+              "text/csv",
+              "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
             ],
             "title": "Mime"
           },

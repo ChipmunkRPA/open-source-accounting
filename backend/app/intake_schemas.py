@@ -22,7 +22,7 @@ class ManualDelivery(Strict):
     """Claims requiring independent review, never an authorization by themselves."""
     raw_sha256: str = Field(pattern=r'^[0-9a-f]{64}$')
     byte_count: int = Field(ge=1, le=16_000_000)
-    mime: Literal['application/xml', 'text/xml', 'text/html', 'application/pdf', 'text/plain', 'application/json']
+    mime: Literal['application/xml', 'text/xml', 'text/html', 'application/pdf', 'text/plain', 'application/json', 'text/csv', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']
     method: Literal['publisher_delivery', 'author_original']
     evidence_ref: str = Field(pattern=r'^ev_[A-Za-z0-9_-]{1,120}$')
     evidence_sha256: str = Field(pattern=r'^[0-9a-f]{64}$')
@@ -53,11 +53,11 @@ class IntakeManifest(Strict):
     route: Literal['official_http', 'authorized_manual', 'reference_only']
     requested_url: str = Field(min_length=1, max_length=1500)
     redirect_urls: list[str] = Field(default_factory=list, max_length=3)
-    parser: Literal['ecfr_xml', 'annual_cfr_xml', 'structural_html', 'pdf', 'text', 'crossref_metadata', 'sec_submissions']
+    parser: Literal['ecfr_xml', 'annual_cfr_xml', 'structural_html', 'pdf', 'text', 'xlsx', 'csv', 'crossref_metadata', 'sec_submissions']
     annual_cfr: AnnualCfrEdition | None = None
     parser_family: str = Field(default='generic', max_length=80)
     cfr_title: str = Field(default='17', pattern=r'^\d{1,3}$')
-    allowed_mime: list[Literal['application/xml', 'text/xml', 'text/html', 'application/pdf', 'text/plain', 'application/json']] = Field(min_length=1, max_length=6)
+    allowed_mime: list[Literal['application/xml', 'text/xml', 'text/html', 'application/pdf', 'text/plain', 'application/json', 'text/csv', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']] = Field(min_length=1, max_length=6)
     max_bytes: int = Field(default=2_000_000, ge=1, le=16_000_000)
     issued_at: date | None = None
     publicly_available_at: date | None = None
@@ -82,6 +82,12 @@ class IntakeManifest(Strict):
     def validate_route(self):
         for url in [self.requested_url, *self.redirect_urls]:
             https_url(url)
+        spreadsheet_mimes = {'xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'csv': 'text/csv'}
+        if self.parser in spreadsheet_mimes:
+            if self.allowed_mime != [spreadsheet_mimes[self.parser]] or self.max_bytes > 12_000_000:
+                raise ValueError('Spreadsheet intake requires its exact MIME and at most 12 MB.')
+        elif set(self.allowed_mime) & set(spreadsheet_mimes.values()):
+            raise ValueError('Spreadsheet MIME requires a dedicated cell parser.')
         if self.parser == 'annual_cfr_xml':
             a = self.annual_cfr
             if (a is None or self.family_id not in {'FEDERAL_LAW', 'SEC_RULES'}
