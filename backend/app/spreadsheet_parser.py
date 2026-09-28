@@ -11,7 +11,7 @@ from datetime import datetime
 from pathlib import PurePosixPath
 from .sec_core.core import digest
 
-VERSION = 'spreadsheet-cells-2'
+VERSION = 'spreadsheet-cells-3'
 S = 'http://schemas.openxmlformats.org/spreadsheetml/2006/main'
 R = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships'
 P = 'http://schemas.openxmlformats.org/package/2006/relationships'
@@ -92,7 +92,7 @@ def parse_xlsx(raw, limit):
                 reject('active_or_external_content')
             roots={};nodes=0
             for name in names:
-                if not name.endswith(('.xml','.rels')):continue
+                if not name.endswith(('.xml','.rels','.vml')):continue
                 try:xml=archive.read(name).decode('utf-8-sig')
                 except UnicodeDecodeError:reject('unsupported_xml_encoding',name)
                 if '\0' in xml or '<!DOCTYPE' in xml.upper() or '<!ENTITY' in xml.upper():reject('unsafe_xml',name)
@@ -159,7 +159,7 @@ def parse_xlsx(raw, limit):
             sheets=book.find('{'+S+'}sheets')
             if sheets is None or not 1<=len(sheets)<=100:reject('sheet_count_limit')
             seen_names=set();seen_parts=set();output=[];count=total=0
-            seen_tables=set();table_identities=set()
+            seen_tables=set();table_identities=set();seen_comments=set()
             declared_names=[{'attributes':dict(n.attrib),'formula':n.text or ''}
                             for n in book.findall('./{'+S+'}definedNames/{'+S+'}definedName')]
             calculation=book.find('{'+S+'}calcPr')
@@ -180,9 +180,28 @@ def parse_xlsx(raw, limit):
                 if part in seen_parts:reject('duplicate_worksheet_binding',part)
                 seen_parts.add(part);sheet=roots.get(part)
                 if sheet is None or sheet.tag!='{'+S+'}worksheet':reject('invalid_worksheet',part)
-                unsupported={'drawing','legacyDrawing','legacyDrawingHF','oleObjects','controls','extLst','pivotTable','picture','pivotTableParts'}
+                unsupported={'drawing','legacyDrawingHF','oleObjects','controls','extLst','pivotTable','picture','pivotTableParts'}
                 if any(n.tag.rsplit('}',1)[-1] in unsupported for n in sheet.iter()):reject('visual_or_extended_content_requires_review',part)
-                if any('/comments' in kind or '/threadedComment' in kind for kind,_ in rels(part).values()):reject('comments_require_review',part)
+                from .spreadsheet_comments import comments
+                notes,note_drawing=comments(sheet,part,roots,rels(part),seen_comments)
+                for note in notes:
+                    description=json.dumps(note,ensure_ascii=False,sort_keys=True)
+                    total+=len(description)
+                    if total>limit:reject('spreadsheet_extraction_limit',part)
+                    output.append({'locator':"'"+name.replace("'","''")+"'!"+note['cell']+' comment',
+                        'text':description,'spreadsheet':{'parser_version':VERSION,'format':'xlsx','sheet':name,
+                            'source_part':note['source_part'],'date_system':epoch,'cells':[],'comment':note,
+                            'calculated':False,'display_rendered':False,'units_verified':False,
+                            'professional_review':'unreviewed'}})
+                if note_drawing:
+                    description=json.dumps(note_drawing,ensure_ascii=False,sort_keys=True)
+                    total+=len(description)
+                    if total>limit:reject('spreadsheet_extraction_limit',part)
+                    output.append({'locator':"'"+name.replace("'","''")+"' note drawing",'text':description,
+                        'spreadsheet':{'parser_version':VERSION,'format':'xlsx','sheet':name,
+                            'source_part':note_drawing['source_part'],'cells':[],'note_drawing':note_drawing,
+                            'calculated':False,'display_rendered':False,'units_verified':False,
+                            'professional_review':'unreviewed'}})
                 from .spreadsheet_tables import tables
                 table_list=tables(sheet,part,roots,rels(part),seen_tables,table_identities,
                     {n['attributes'].get('name','').casefold() for n in declared_names})
@@ -281,6 +300,8 @@ def parse_xlsx(raw, limit):
                             'professional_review':'unreviewed'}})
             if any(n.startswith('xl/worksheets/') and n.endswith('.xml') and n not in seen_parts for n in names):
                 reject('unbound_worksheet_part')
+            if any((root.tag=='{'+S+'}comments' or n.endswith('.vml') or 'threadedcomments' in n.lower() or 'threadedcomment' in root.tag.lower()) and n not in seen_comments for n,root in roots.items()):
+                reject('unbound_or_unsupported_comment_part')
             if any(root.tag=='{'+S+'}table' and n not in seen_tables for n,root in roots.items()):
                 reject('unbound_table_part')
             return output

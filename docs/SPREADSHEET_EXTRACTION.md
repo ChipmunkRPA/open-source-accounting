@@ -1,6 +1,6 @@
 # Spreadsheet extraction — literal values, not recalculation
 
-Issue #24 under #5; private upload/security and Agent context #29/#31. `spreadsheet-cells-2` supports `.xlsx` and UTF-8 comma-separated `.csv` to the existing authorized private-document upload path. It uses the same workspace/subscription controls, malware scanner, size limits, isolated process and storage/deletion path. Private uploads do not become public content.
+Issue #24 under #5; private upload/security and Agent context #29/#31. `spreadsheet-cells-3` supports `.xlsx` and UTF-8 comma-separated `.csv` to the existing authorized private-document upload path. It uses the same workspace/subscription controls, malware scanner, size limits, isolated process and storage/deletion path. Private uploads do not become public content.
 
 ## Preserved data
 
@@ -18,11 +18,11 @@ Input remains bounded by upload and isolated-worker limits. XLSX additionally li
 
 No macro, binary embedding, external relationship, data connection, query table or macro sheet is executed. Such package features are rejected. Formulas themselves remain untrusted source strings: this is not a formula engine or sanitized workbook generator. Downloaded originals remain the original user-supplied bytes.
 
-Charts/drawings, comments, extension content, pivot tables, unsupported phonetic text and orphan worksheet parts currently block the whole upload with `SPREADSHEET_PARSE_BLOCKED` and a scoped reason/part/locator. They need additional extraction adapters, not a fake review approval. Standard style/print/layout interpretation, conditional formatting, inherited visual formats and number rendering remain unverified. A supported literal-cell extraction is not certification of workbook completeness, accounting correctness or visual layout.
+Charts/non-note drawings, threaded comments, extension content, pivot tables, unsupported phonetic text and orphan worksheet parts currently block the whole upload with `SPREADSHEET_PARSE_BLOCKED` and a scoped reason/part/locator. They need additional extraction adapters, not a fake review approval. Standard style/print/layout interpretation, conditional formatting, inherited visual formats and number rendering remain unverified. A supported literal-cell extraction is not certification of workbook completeness, accounting correctness or visual layout.
 
 ## Scope still open
 
-Both private uploads and explicitly authorized source intake use this parser. No real spreadsheet artifacts were acquired and no professional approval was created. Visual checks, source rights, technical/applicability review and Agent evidence admission remain separate gates. Comments and measured rendering reconciliation remain open; unsupported parts are not silently discarded.
+Both private uploads and explicitly authorized source intake use this parser. No real spreadsheet artifacts were acquired and no professional approval was created. Visual checks, source rights, technical/applicability review and Agent evidence admission remain separate gates. Threaded comments and measured rendering reconciliation remain open; unsupported parts are not silently discarded.
 
 ## Structured tables
 
@@ -36,8 +36,17 @@ The implementation follows [Microsoft's SpreadsheetML table model](https://learn
 
 The shared source pipeline now supports `xlsx` and `csv` manifests with exactly their registered MIME (`application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` or `text/csv`) and at most 12,000,000 input bytes. Other parsers cannot declare these MIME types. Existing manifest serialization is unchanged; the parser version changes explicitly when new bytes are normalized.
 
-`source-intake-1/spreadsheet-cells-2` runs in the bounded intake subprocess. Every normalized row/declaration retains the spreadsheet metadata, exact sheet/cell locator, text hash and unreviewed status. Immutable raw/normalized objects and artifact receipts use the existing source-operation authorization. Staging and explicit recovery revisions copy metadata into `intake_spreadsheet`; no private upload is published. The independent review packet includes the original bytes, complete normalized metadata and a spreadsheet-specific checklist. Formula caches, display formatting, units and professional conclusions remain unverified.
+`source-intake-1/spreadsheet-cells-3` runs in the bounded intake subprocess. Every normalized row/declaration retains the spreadsheet metadata, exact sheet/cell locator, text hash and unreviewed status. Immutable raw/normalized objects and artifact receipts use the existing source-operation authorization. Staging and explicit recovery revisions copy metadata into `intake_spreadsheet`; no private upload is published. The independent review packet includes the original bytes, complete normalized metadata and a spreadsheet-specific checklist. Formula caches, display formatting, units and professional conclusions remain unverified.
 
 Unsupported/unsafe spreadsheet content returns `SPREADSHEET_PARSE_BLOCKED`, retaining the original without staging partial content. Existing parser limits, one-million-character extraction limit, 10,000-passage intake ceiling, subprocess CPU/memory/time limits and output-byte ceiling apply. No macros/formulas/external links execute. This enables authorized source-family ingestion; it does not acquire a real workbook or grant rights, parser, technical or applicability approval.
 
 Reviewed-source retrieval preserves spreadsheet cell/range locators with paragraph/character subranges and explicit date-system/calculation/rendering limits. This does not bypass existing model-input and independent review checks.
+
+
+## Legacy comments and note drawings
+
+Version 3 extracts legacy comments as separate passages with the sheet/cell locator, comment-part XML path, literal rich text, formatting declarations and declared author. Author IDs must resolve to the part's author list; authorship is not authenticated and a comment never confers review approval. Notes on unstored cells remain notes without invented cell values.
+
+A bound, note-only VML drawing is parsed as bounded XML metadata. Its exact declarations are retained separately, including hidden/visible styling and anchor data; it is never rendered or executed. Every note shape must map to exactly one comment cell. Form controls, non-note drawings, external/active links, duplicate or orphan parts, mismatched anchors, unsupported comment extensions and threaded discussions block the entire extraction. Existing ZIP/XML/CPU/text limits apply, with at most 10,000 comments per part. The raw workbook remains immutable and isolated from public HTML.
+
+The adapter follows [Microsoft's spreadsheet Comment model](https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.spreadsheet.comment) and [LegacyDrawing relationship model](https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.spreadsheet.legacydrawing). Comment text is untrusted document data; any request embedded in it is not an instruction. Version-3 source extractions need fresh parser/technical/applicability reviews; prior versions are not relabeled.

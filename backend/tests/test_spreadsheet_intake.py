@@ -23,7 +23,7 @@ def test_source_cells_preserve_provenance_and_stay_unreviewed(client, parser, mi
     work = registered(client, body=payload(parser=parser, allowed_mime=[mime]))
     artifact = fetch(client, work, SheetGateway(raw, mime))
     extraction = parse(client, artifact)
-    assert extraction['parser_version'] == 'source-intake-1/spreadsheet-cells-2'
+    assert extraction['parser_version'] == 'source-intake-1/spreadsheet-cells-3'
     assert parse(client, artifact)['id'] == extraction['id']
     response = client.post('/api/v1/admin/intake/extractions/'+extraction['id']+'/stage', headers=ADMIN)
     assert response.status_code == 200, response.text
