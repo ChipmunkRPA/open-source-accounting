@@ -280,3 +280,69 @@ def test_export_reloads_reviewer_membership_after_release(client,monkeypatch):
             Membership.user_id=='editor').execution_options(synchronize_session=False))
     monkeypatch.setattr(output_rights,'release',remove_membership)
     assert export_packet(client,path,p).status_code==409
+
+
+def test_coverage_does_not_promote_synthetic_attestations(client):
+    run_id,path=prepared(client)
+    url=f'/api/v1/runs/{run_id}/claim-review-coverage'
+    initial=client.get(url).json()
+    assert initial['total_claims']==1 and initial['outcomes']['unreviewed']==1
+    assert initial['attested_decision_coverage']==0
+    approve(client,path)
+    client.post('/api/v1/dev/subscription',json={'state':'expired'})
+    report=client.get(url).json()
+    assert report['outcomes']['supported']==1 and report['attested_decision_coverage']==1
+    assert report['verified_professional_adjudications']==0
+    assert report['claim_accuracy'] is None and report['numerical_accuracy'] is None
+    assert report['review_origin']=='not_independently_verified'
+    assert 'Fictional quasar' not in str(report) and 'review_note' not in str(report)
+    assert client.get(url,headers={'X-Dev-User':'admin'}).status_code==404
+    with client.app.state.db.Session() as db:
+        db.get(Source,'edge-source').enabled=False;db.commit()
+    stale=client.get(url).json()
+    assert stale['outcomes']['stale_revoked_or_invalid']==1
+    assert stale['current_attested_decisions']==0 and stale['outcomes']['supported']==0
+
+
+@pytest.mark.parametrize('kind',['contradicted','unresolved'])
+def test_coverage_outcomes_are_not_accuracy(client,kind):
+    run_id,path=prepared(client)
+    packet=client.get(path+'/review-packet').json();body=decision(packet)
+    body['decision']=kind
+    for passage in body['passages']:passage['relationship']='contradicts' if kind=='contradicted' else 'unresolved'
+    assert client.post(path+'/reviews',headers=EDITOR,json=body).status_code==201
+    report=client.get(f'/api/v1/runs/{run_id}/claim-review-coverage').json()
+    assert report['outcomes'][kind]==1 and report['claim_accuracy'] is None
+
+
+@pytest.mark.parametrize('claims,code',[([],200),([{'id':'invalid'}],409)])
+def test_coverage_empty_or_invalid_denominator(client,claims,code):
+    run_id,_=prepared(client)
+    with client.app.state.db.Session() as db:
+        run=db.get(Run,run_id);run.result={**run.result,'claims':claims};db.commit()
+    response=client.get(f'/api/v1/runs/{run_id}/claim-review-coverage')
+    assert response.status_code==code
+    if code==200:assert response.json()['attested_decision_coverage'] is None
+
+
+def test_coverage_rejects_duplicate_claim_denominator(client):
+    run_id,_=prepared(client)
+    with client.app.state.db.Session() as db:
+        run=db.get(Run,run_id);run.result={**run.result,'claims':run.result['claims']*2};db.commit()
+    assert client.get(f'/api/v1/runs/{run_id}/claim-review-coverage').status_code==409
+
+
+def test_coverage_withholds_changed_snapshot(client,monkeypatch):
+    from app.services import claim_reviews
+    run_id,path=prepared(client);approve(client,path)
+    original=claim_reviews.summary
+    calls=0
+    def changing(*args):
+        nonlocal calls
+        status=original(*args);calls+=1
+        if calls>1:status={**status,'current':False}
+        return status
+    monkeypatch.setattr(claim_reviews,'summary',changing)
+    response=client.get(f'/api/v1/runs/{run_id}/claim-review-coverage')
+    assert response.status_code==409
+    assert 'SOURCE_CHANGED' in response.text

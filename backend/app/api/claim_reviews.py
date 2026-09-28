@@ -13,6 +13,14 @@ from .library import require_editor
 router = APIRouter(tags=['claim review'])
 
 
+@router.get('/runs/{run_id}/claim-review-coverage')
+def coverage(run_id: str, user=Depends(current_user), db=Depends(session)):
+    run = get_run(db, user, run_id)
+    result = claim_reviews.coverage(db, run)
+    db.commit()
+    return result
+
+
 @router.get('/runs/{run_id}/claims/{claim_id}/review-packet/export')
 def export_packet(run_id: str, claim_id: str,
                   expected_revision: str = Query(pattern=r'^[a-f0-9]{64}$'),

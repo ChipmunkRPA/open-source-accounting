@@ -106,6 +106,50 @@ def summary(db, run, claim_id):
         'deliverable_approval_granted': False, 'qualification_basis': 'assigned_role_and_reviewer_attestation'}
 
 
+def coverage(db, run):
+    """Bounded metadata report, never a substitute for adjudicated evaluation."""
+    run = locked_run(db, run)
+    if run.state != 'completed_with_limitations' or not run.result:
+        fail('NO_RESULT', 'Coverage requires a completed retained draft.', 409)
+    claims = run.result.get('claims', [])
+    if not isinstance(claims, list) or len(claims) > 60:
+        fail('CLAIM_EVIDENCE', 'Coverage requires at most 60 valid claims.', 409)
+    try:
+        ids = [Claim.model_validate(c).id for c in claims]
+    except (ValueError, TypeError):
+        fail('CLAIM_EVIDENCE', 'Correct invalid claims before reporting coverage.', 409)
+    if len(ids) != len(set(ids)):
+        fail('CLAIM_EVIDENCE', 'Coverage requires unique claim identifiers.', 409)
+
+    def snapshot():
+        rows = []
+        for claim_id in ids:
+            status = summary(db, run, claim_id)
+            rows.append({k: status[k] for k in ('claim_id', 'revision', 'sequence',
+                'record_id', 'record_revision', 'current') } | {
+                'outcome': status['decision'] if status['current'] else
+                    ('unreviewed' if status['sequence'] == 0 else 'stale_revoked_or_invalid')})
+        return rows
+
+    rows = snapshot()
+    # Recheck live source/reviewer permissions before releasing aggregate metadata.
+    if snapshot() != rows:
+        fail('SOURCE_CHANGED', 'Review coverage changed; reload the report.', 409)
+    counts = {key: sum(r['outcome'] == key for r in rows) for key in
+        ('supported', 'contradicted', 'unresolved', 'unreviewed', 'stale_revoked_or_invalid')}
+    current = sum(r['current'] for r in rows)
+    return {'version': 'claim-review-coverage-1', 'run_id': run.id,
+        'result_sha256': digest(canonical(run.result)), 'model_id': run.model_id,
+        'prompt_version': run.result.get('prompt_version'), 'total_claims': len(ids),
+        'current_attested_decisions': current, 'outcomes': counts,
+        'attested_decision_coverage': current / len(ids) if ids else None,
+        'items': rows, 'verified_professional_adjudications': 0,
+        'review_origin': 'not_independently_verified', 'claim_accuracy': None,
+        'numerical_accuracy': None, 'deliverable_approval_granted': False,
+        'notice': 'Counts describe current role-assigned reviewer attestations, including possible synthetic records. '
+                  'They do not establish professional adjudication, accuracy, source rights or release approval.'}
+
+
 def packet(db, run, claim_id, *, export_revision=None, export_sequence=None):
     run = locked_run(db, run)
     exporting = export_revision is not None
