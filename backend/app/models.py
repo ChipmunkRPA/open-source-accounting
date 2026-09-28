@@ -1,7 +1,8 @@
 """Relational records. UTC timestamps are integer epoch seconds on both SQLite and PostgreSQL."""
 import time
 import uuid
-from sqlalchemy import String, Text, Integer, BigInteger, Boolean, Float, ForeignKey, JSON, UniqueConstraint, Index, func, literal_column
+from sqlalchemy import String, Text, Integer, BigInteger, Boolean, Float, ForeignKey, JSON, UniqueConstraint, Index, literal_column
+from sqlalchemy.dialects.postgresql import to_tsvector
 from sqlalchemy.orm import Mapped, mapped_column
 from .db import Base
 
@@ -116,7 +117,7 @@ class Source(Base):
 
 # Fixed language configuration is part of the index/query contract.
 Source.__table__.append_constraint(Index('ix_sources_title_fts',
-    func.to_tsvector(literal_column("'simple'"), Source.__table__.c.title),
+    to_tsvector(literal_column("'simple'"), Source.__table__.c.title),
     postgresql_using='gin').ddl_if(dialect='postgresql'))
 
 
@@ -130,7 +131,7 @@ class SourceSearchIndex(Base):
 
 
 SourceSearchIndex.__table__.append_constraint(Index('ix_source_search_body_fts',
-    func.to_tsvector(literal_column("'simple'"), SourceSearchIndex.__table__.c.search_text),
+    to_tsvector(literal_column("'simple'"), SourceSearchIndex.__table__.c.search_text),
     postgresql_using='gin').ddl_if(dialect='postgresql'))
 
 

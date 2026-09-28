@@ -1,9 +1,10 @@
-"""Execute actual retrieval in disposable local SQLite; never accepts an operator DB URL."""
+"""Execute actual retrieval in isolated SQLite or an explicitly confirmed empty local PostgreSQL test database."""
 import json
 import tempfile
 import time
 import sys
 import sqlite3
+from contextlib import contextmanager
 from pathlib import Path
 from ..db import Database
 from ..models import User, Workspace, Membership, Source, Document, Run, Evidence, now
@@ -14,7 +15,7 @@ from ..authority_schemas import RelationshipProposal, RelationshipDecision
 from ..services import rights, editorial, applicability, authority, citation_lookup, retrieval, authority_evidence, source_search
 from .schema import Corpus
 
-VERSION = 'retrieval-evaluation-1'
+VERSION = 'retrieval-evaluation-2'
 NOTICE = 'Original fictional engineering fixture. Simulated review only; no actual professional approval.'
 
 
@@ -84,6 +85,14 @@ def resource(row):
 
 def evaluate_case(db,case):
     run=prepare(db,case)
+    indexed=[]
+    if db.bind.dialect.name=='postgresql':
+        for fixture in case.sources:
+            source=db.get(Source,fixture.id)
+            if source_search.index_allowed(source):
+                entry=source_search.rebuild(db,source,source_search.revision(source),'fixture-reviewer')
+                indexed.append({'source_id':source.id,'index_revision':entry.revision,'index_version':entry.index_version})
+        db.commit()
     context=rights.runtime_context(db,run)
     started=time.perf_counter()
     pool=retrieval.search(db,run,case.question,case.evidence_limit,rights_context=context)
@@ -111,7 +120,7 @@ def evaluate_case(db,case):
     if case.minimum_recall is not None and recall<case.minimum_recall:failures.append('fixture_recall_regression')
     return {'case_id':case.id,'case_sha256':digest(canonical(case.model_dump(mode='json'))),
         'execution_status':'completed','kind':case.kind,'professional_review_status':case.professional_review_status,
-        'source_records':len(case.sources),'document_records':len(case.documents),
+        'source_records':len(case.sources),'document_records':len(case.documents),'authorized_indexes':indexed,
         'source_versions':[{'source_id':s.id,'version':s.version,'text_sha256':digest(s.text)} for s in case.sources],
         'observed_source_revisions':[{'source_id':s.id,'revision':citation_lookup.revision(db.get(Source,s.id))} for s in case.sources],
         'expected_relevant_units':sorted(expected),'retrieved_body_units':sorted(found),
@@ -125,13 +134,26 @@ def evaluate_case(db,case):
         'live_model_calls':0,'live_model_cost_usd':None}
 
 
-def evaluate(corpus):
-    results=[]
+@contextmanager
+def isolated_sqlite():
     with tempfile.TemporaryDirectory(prefix='osa-engineering-eval-') as root:
-        for index,case in enumerate(corpus.cases):
+        @contextmanager
+        def case_database(index):
             database=Database('sqlite:///'+str(Path(root)/f'{index}.db'))
             try:
                 database.create_all()
+                yield database
+            finally:database.engine.dispose()
+        yield case_database,sqlite3.sqlite_version
+
+
+def evaluate(corpus, *, postgres_url=None):
+    from .postgres import isolated_postgres
+    results=[]
+    manager=isolated_postgres(postgres_url) if postgres_url else isolated_sqlite()
+    with manager as (factory,database_version):
+        for index,case in enumerate(corpus.cases):
+            with factory(index) as database:
                 try:
                     with database.Session() as db:results.append(evaluate_case(db,case))
                 except Exception as error:
@@ -142,24 +164,24 @@ def evaluate(corpus):
                         'binding_checks':0,'binding_checks_passed':0,'forbidden_units_retrieved':[],
                         'missed_units':[],'retrieval_ms':None,'claim_support_accuracy':None,
                         'numerical_correctness':None,'model_abstention_accuracy':None,'live_model_calls':0,'live_model_cost_usd':None})
-            finally:database.engine.dispose()
     return {'version':VERSION,'corpus_version':corpus.version,'corpus_sha256':digest(canonical(corpus.model_dump(mode='json'))),
-        'mode':'offline_sqlite_actual_retrieval_engineering_fixtures','split':corpus.split,'case_count':len(results),
-        'python_version':sys.version.split()[0],'sqlite_version':sqlite3.sqlite_version,
+        'mode':'local_postgres_indexed_engineering_fixtures' if postgres_url else 'offline_sqlite_actual_retrieval_engineering_fixtures','split':corpus.split,'case_count':len(results),
+        'python_version':sys.version.split()[0],'database_version':database_version,'database_engine':'postgresql' if postgres_url else 'sqlite',
         'code_sha256':{str(p.relative_to(Path(__file__).parents[2])):digest(p.read_bytes())
                        for p in sorted(Path(__file__).parents[1].rglob('*.py'))},
         'professional_adjudications':0,'model_calls':0,'workflow_executions':0,'source_search_version':source_search.VERSION,
         'relationship_version':authority_evidence.VERSION,'precision_unit':'unique source/document with retained body; reference-only excluded',
-        'latency_scope':'retrieval, relationship expansion, evidence persistence and validation; excludes fixture setup and model work',
+        'latency_scope':'retrieval, relationship expansion, evidence persistence and validation; excludes fixture setup, authorized index builds and model work',
         'limitations':['Fictional development fixtures, not accounting truth or a held-out benchmark.',
-            'SQLite fallback only; no PostgreSQL ranking, embedding, live model, latency SLO, cost or professional claim support measured.',
+            ('Small PostgreSQL indexed corpus; not a scale or production performance claim.' if postgres_url else 'SQLite development fallback only; no PostgreSQL ranking measured.'),
+            'No embedding, live model, latency SLO, cost or professional claim support measured.',
             'A valid citation binding does not prove entailment. No numerical or model-abstention score is inferred.',
             'Maximum evidence bounds may intentionally miss relevant material; per-case omissions remain visible.'],
         'passed':not any(r['failures'] for r in results),'cases':results}
 
 
-def write_report(corpus_path,output):
-    result=evaluate(load(corpus_path))
+def write_report(corpus_path,output, *, postgres_url=None):
+    result=evaluate(load(corpus_path),postgres_url=postgres_url)
     Path(output).write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n')
     return result
 
@@ -179,9 +201,15 @@ def reviewer_packets(corpus, report):
                     'release_threshold_approved':False} for case in corpus.cases]}
 
 
-def compare_reports(baseline, current):
+def compare_reports(baseline, current, *, cross_engine=False):
     """Same-corpus development regression comparison; latency is descriptive, never an SLO."""
-    for key in ('version','corpus_sha256','mode','split','precision_unit'):
+    if cross_engine:
+        if {baseline.get('database_engine'),current.get('database_engine')}!={'sqlite','postgresql'}:
+            raise ValueError('Cross-engine comparison requires SQLite and PostgreSQL observations')
+        if baseline.get('code_sha256')!=current.get('code_sha256'):
+            raise ValueError('Cross-engine comparison requires the same application code')
+    for key in ('version','corpus_sha256','split','precision_unit')+(() if cross_engine else ('mode',)):
+
         if baseline.get(key)!=current.get(key):raise ValueError('Reports are not comparable: '+key)
     def by_case(report):
         cases=report['cases'];indexed={r['case_id']:r for r in cases}
@@ -204,6 +232,7 @@ def compare_reports(baseline, current):
         if set(b['failures'])-set(a['failures']):regressions.append('new_case_failure')
         changes.append({'case_id':cid,'metric_deltas':deltas,'retrieval_ms_delta':round(b['retrieval_ms']-a['retrieval_ms'],3) if a['retrieval_ms'] is not None and b['retrieval_ms'] is not None else None,
             'new_missed_units':sorted(set(b['missed_units'])-set(a['missed_units'])),'regressions':regressions})
-    return {'version':VERSION,'corpus_sha256':current['corpus_sha256'],'kind':'development_regression_not_release_approval',
+    return {'version':VERSION,'corpus_sha256':current['corpus_sha256'],'kind':'cross_engine_observation_not_release_approval' if cross_engine else 'development_regression_not_release_approval',
+        'baseline_engine':baseline.get('database_engine'),'current_engine':current.get('database_engine'),
         'baseline_sha256':digest(canonical(baseline)),'current_sha256':digest(canonical(current)),
         'professional_adjudications':0,'passed':current['passed'] and not any(c['regressions'] for c in changes),'cases':changes}

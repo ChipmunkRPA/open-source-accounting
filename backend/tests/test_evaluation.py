@@ -92,3 +92,30 @@ def test_failed_case_is_preserved_and_runner_makes_no_network_or_provider_calls(
     assert not report['passed'] and len(report['cases'])==16
     assert all(r['execution_status']=='error' and r['failures']==['execution_error'] for r in report['cases'])
     assert 'Synthetic private fixture contents' not in str(report)
+
+
+@pytest.mark.parametrize('url',[
+    'sqlite:///osa_eval_example','postgresql+psycopg://localhost/production',
+    'postgresql+psycopg://remote.example/osa_eval_example',
+    'postgresql+psycopg://localhost/osa_eval_example?options=-csearch_path=public',
+    'postgresql+psycopg://localhost/osa_eval_example?host=remote.example'])
+def test_postgres_evaluation_rejects_unsafe_targets_before_connection(monkeypatch,url):
+    from app.evaluation.postgres import validated_url
+    monkeypatch.setenv('OSA_DISPOSABLE_TEST_DATABASE','true')
+    with pytest.raises(ValueError):validated_url(url)
+
+
+def test_postgres_evaluation_requires_explicit_disposable_confirmation(monkeypatch):
+    from app.evaluation.postgres import validated_url
+    monkeypatch.delenv('OSA_DISPOSABLE_TEST_DATABASE',raising=False)
+    with pytest.raises(ValueError):validated_url('postgresql+psycopg://localhost/osa_eval_example')
+
+
+def test_cross_engine_comparison_is_explicit_and_code_bound(measured):
+    from app.evaluation.retrieval import compare_reports
+    _,report=measured
+    other=deepcopy(report);other['database_engine']='postgresql';other['mode']='local_postgres_indexed_engineering_fixtures'
+    with pytest.raises(ValueError):compare_reports(report,other)
+    assert compare_reports(report,other,cross_engine=True)['passed']
+    other['code_sha256']={}
+    with pytest.raises(ValueError):compare_reports(report,other,cross_engine=True)
