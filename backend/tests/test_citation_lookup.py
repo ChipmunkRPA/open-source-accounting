@@ -132,3 +132,21 @@ def test_provenance_change_during_release_rolls_back(client,monkeypatch):
     assert result.status_code==409,result.text
     with client.app.state.db.Session() as db:
         assert db.get(Source,'exact-fixture').policy['intake_locator']=='Synthetic page 2, paragraph 3'
+
+
+def test_metadata_reader_does_not_release_body_or_spend_output_allowance(client):
+    from sqlalchemy import select,func
+    from app.models import OutputRelease
+    fixture(client)
+    with client.app.state.db.Session() as db:
+        before=db.scalar(select(func.count()).select_from(OutputRelease))
+    response=client.get('/api/v1/sources/exact-fixture/metadata')
+    assert response.status_code==200 and 'text' not in response.json()
+    assert response.json()['access']=='text_available'
+    with client.app.state.db.Session() as db:
+        assert db.scalar(select(func.count()).select_from(OutputRelease))==before
+        s=db.get(Source,'exact-fixture');s.policy={**s.policy,'display_full':False};rights.record_approval(s,'synthetic');db.commit()
+    response=client.get('/api/v1/sources/exact-fixture/metadata')
+    assert response.status_code==200 and response.json()['access']=='reference_only'
+    assert 'text' not in response.json()
+    assert client.get('/api/v1/sources/missing/metadata').status_code==404

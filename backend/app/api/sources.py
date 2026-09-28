@@ -255,3 +255,12 @@ def resolve_citation(source_id: str, payload: CitationResolve, db=Depends(sessio
     result=citation_lookup.resolve(db,db.get(Source,source_id),payload)
     db.commit()
     return result
+
+
+@router.get('/sources/{source_id}/metadata')
+def source_metadata(source_id: str, db=Depends(session)):
+    row=db.get(Source,source_id)
+    if not row or not row.enabled or not row.reviewed:
+        fail('NOT_FOUND','Source not found.',404)
+    # A reader must not download the whole body merely to choose a bounded passage.
+    return rights.metadata(row)

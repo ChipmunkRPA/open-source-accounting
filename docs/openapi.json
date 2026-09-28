@@ -2696,6 +2696,46 @@
         }
       }
     },
+    "/api/v1/sources/{source_id}/metadata": {
+      "get": {
+        "tags": [
+          "sources"
+        ],
+        "summary": "Source Metadata",
+        "operationId": "source_metadata_api_v1_sources__source_id__metadata_get",
+        "parameters": [
+          {
+            "name": "source_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Source Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/billing/checkout": {
       "post": {
         "tags": [

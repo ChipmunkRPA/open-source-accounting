@@ -1,3 +1,4 @@
+import {sourceReaderView} from './views/source-reader.js';
 import {searchIndexView} from './views/search-index.js';
 import {secCommentsView} from './views/sec-comments.js';
 import {asuTrackingView} from './views/asu-tracking.js';
@@ -101,7 +102,7 @@ export async function mount(root:HTMLElement){
         case 'parser-review':page('Parser review');await parserReviewView(app);break;
         case 'dependency-report':page('Dependency coverage');await dependencyReportView(app);break;
         case 'editorial':page('Technical review');await editorialView(app);break;
-        case 'sources':page('Sources');await sourcesView(app);break;
+        case 'sources':page('Sources');if(path[1])await sourceReaderView(app,decodeURIComponent(path[1]));else await sourcesView(app);break;
         case 'topics':page('Topics');await topicsView(app);break;
         case 'pricing':page('Plans');await pricingView(app);break;
         case 'billing':page('Billing');await billingView(app);break;

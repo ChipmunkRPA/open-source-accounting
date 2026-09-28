@@ -6,11 +6,8 @@ import type {App,Json} from '../types.js';
 export async function sourcesView(app:App){
   const q=input('search','','source-search');q.placeholder='Search source title or publisher';const list=el('div');
   const framework=select([['','All frameworks'],['US_GAAP','U.S. GAAP'],['IFRS','IFRS'],['BOTH','Cross-framework'],['AUDIT','Auditing']]);
-  async function open(id:string){try{const s=await api('/sources/'+id);modal(s.title,badge(s.access,s.access==='reference_only'?'warning':'neutral'),el('p',{class:'muted'},`${s.publisher} · ${s.version}`),
-    s.text?textBlock(s.text):notice('Reference metadata only. No primary text is reproduced or available to the model.','warning'),
-    sourceNotices(s.source_attributions),s.url?el('a',{href:s.url,target:'_blank',rel:'noopener noreferrer'},'Open publisher source ↗'):el('span'));}catch(error){app.showError(error);}}
   async function refresh(){const rows=(await api(`/sources?q=${encodeURIComponent(q.value)}&framework=${framework.value}`)).items;
-    list.replaceChildren(...rows.map((s:Json)=>el('article',{class:'source-row'},el('div',{},el('h2',{},s.title),el('p',{class:'muted'},`${s.publisher} · ${s.kind}`)),badge(s.access,s.access==='reference_only'?'warning':'neutral'),button('Inspect source',()=>open(s.id),'secondary'))));
+    list.replaceChildren(...rows.map((s:Json)=>el('article',{class:'source-row'},el('div',{},el('h2',{},s.title),el('p',{class:'muted'},`${s.publisher} · ${s.kind}`)),badge(s.access,s.access==='reference_only'?'warning':'neutral'),link(app,'Inspect source','/sources/'+encodeURIComponent(s.id),'button secondary'))));
     if(!rows.length)list.append(empty('No matching sources','Try a broader topic or remove the framework filter.'));
   }
   q.oninput=()=>void refresh();framework.onchange=()=>void refresh();
