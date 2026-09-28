@@ -6,6 +6,172 @@
     "version": "0.7.0"
   },
   "paths": {
+    "/api/v1/runs/{run_id}/claims/{claim_id}/review-packet": {
+      "get": {
+        "tags": [
+          "claim review"
+        ],
+        "summary": "Packet",
+        "operationId": "packet_api_v1_runs__run_id__claims__claim_id__review_packet_get",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          },
+          {
+            "name": "claim_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Claim Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/runs/{run_id}/claims/{claim_id}/reviews": {
+      "get": {
+        "tags": [
+          "claim review"
+        ],
+        "summary": "History",
+        "operationId": "history_api_v1_runs__run_id__claims__claim_id__reviews_get",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          },
+          {
+            "name": "claim_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Claim Id"
+            }
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 2147483647,
+              "title": "Before"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "claim review"
+        ],
+        "summary": "Record",
+        "operationId": "record_api_v1_runs__run_id__claims__claim_id__reviews_post",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          },
+          {
+            "name": "claim_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Claim Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClaimDecision"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/editorial/relationships": {
       "post": {
         "tags": [
@@ -6638,6 +6804,90 @@
         ],
         "title": "CitationResolve"
       },
+      "ClaimDecision": {
+        "properties": {
+          "expected_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Expected Revision"
+          },
+          "expected_sequence": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Expected Sequence"
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "supported",
+              "contradicted",
+              "unresolved",
+              "revoked"
+            ],
+            "title": "Decision"
+          },
+          "passages": {
+            "items": {
+              "$ref": "#/components/schemas/PassageAssessment"
+            },
+            "type": "array",
+            "maxItems": 12,
+            "title": "Passages"
+          },
+          "review_note": {
+            "type": "string",
+            "maxLength": 4000,
+            "minLength": 20,
+            "title": "Review Note"
+          },
+          "competence_scope": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 20,
+            "title": "Competence Scope"
+          },
+          "evidence_ref": {
+            "type": "string",
+            "pattern": "^ev_[A-Za-z0-9_-]{1,120}$",
+            "title": "Evidence Ref"
+          },
+          "evidence_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Evidence Sha256"
+          },
+          "expires_at": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Expires At"
+          },
+          "confirm_actual_review_performed": {
+            "type": "boolean",
+            "const": true,
+            "title": "Confirm Actual Review Performed"
+          },
+          "confirm_competence_and_independence": {
+            "type": "boolean",
+            "const": true,
+            "title": "Confirm Competence And Independence"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "expected_revision",
+          "expected_sequence",
+          "decision",
+          "review_note",
+          "competence_scope",
+          "evidence_ref",
+          "evidence_sha256",
+          "expires_at",
+          "confirm_actual_review_performed",
+          "confirm_competence_and_independence"
+        ],
+        "title": "ClaimDecision"
+      },
       "CleanupAdvance": {
         "properties": {
           "expected_sequence": {
@@ -8255,6 +8505,40 @@
           "confirm_raw_and_citations_checked"
         ],
         "title": "ParserDecision"
+      },
+      "PassageAssessment": {
+        "properties": {
+          "evidence_id": {
+            "type": "string",
+            "maxLength": 36,
+            "minLength": 1,
+            "title": "Evidence Id"
+          },
+          "relationship": {
+            "type": "string",
+            "enum": [
+              "supports",
+              "contradicts",
+              "context_only",
+              "unresolved"
+            ],
+            "title": "Relationship"
+          },
+          "rationale": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 20,
+            "title": "Rationale"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "evidence_id",
+          "relationship",
+          "rationale"
+        ],
+        "title": "PassageAssessment"
       },
       "PassageRestage": {
         "properties": {

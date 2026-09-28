@@ -235,3 +235,5 @@ Operators can run bounded, resumable all-family or per-family stored-artifact ch
 with the [integrity reconciliation client](docs/INTEGRITY_RECONCILIATION.md).
 Its private state distinguishes verified bytes, failures, denied operations and
 unobserved units; completing a scan does not approve content.
+
+Claim-level human assessment is available through the workspace-scoped [claim review API and operator workflow](docs/CLAIM_REVIEW.md). Reviewers must have both an assigned technical-review role and permission in the target workspace; secure supporting-record handles, actual review attestations and exact claim/evidence revisions are required. Recorded decisions do not grant source rights or certify an entire deliverable. A dedicated reviewer interface and real professional adjudication remain pending.

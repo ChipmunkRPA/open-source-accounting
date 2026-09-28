@@ -10,7 +10,7 @@ from sqlalchemy.exc import IntegrityError, OperationalError
 from .config import Settings
 from .db import Database
 from .errors import ProviderError
-from .api import authority, sec_comments, asu_tracking, core, workspaces, chats, runs, memos, sources, billing, watches, library, sec_core, intake, counsel, source_scopes, output_amendments, model_usage, model_budgets, corrections
+from .api import claim_reviews, authority, sec_comments, asu_tracking, core, workspaces, chats, runs, memos, sources, billing, watches, library, sec_core, intake, counsel, source_scopes, output_amendments, model_usage, model_budgets, corrections
 
 
 class BodySizeLimit:
@@ -114,7 +114,7 @@ def create_app(config: Settings | None = None):
     async def database_error(request, error):
         return JSONResponse({'error': {'code': 'DATABASE_UNAVAILABLE', 'message': 'The database is busy or unavailable. Retry shortly.'}}, status_code=503)
 
-    for module in (authority, sec_comments, asu_tracking, core, workspaces, chats, runs, memos, sources, billing, watches, library, sec_core, intake, counsel, source_scopes, output_amendments, model_usage, model_budgets, corrections):
+    for module in (claim_reviews, authority, sec_comments, asu_tracking, core, workspaces, chats, runs, memos, sources, billing, watches, library, sec_core, intake, counsel, source_scopes, output_amendments, model_usage, model_budgets, corrections):
         app.include_router(module.router, prefix='/api/v1')
     dist = Path(__file__).resolve().parents[1] / 'frontend_dist'
     # Development checkout path; Docker copies dist into backend/frontend_dist.

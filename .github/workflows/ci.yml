@@ -59,7 +59,7 @@ jobs:
           OSA_EVALUATION_POSTGRES_URL: postgresql+psycopg://osa_test:local_ci_only@localhost:5432/osa_eval_ci
         run: |
           backend/.venv/bin/python -c "import os; from sqlalchemy import create_engine,text; from sqlalchemy.engine import make_url; e=create_engine(make_url(os.environ['OSA_EVALUATION_POSTGRES_URL']).set(database='osa_test'),isolation_level='AUTOCOMMIT'); c=e.connect(); c.execute(text('CREATE DATABASE osa_eval_ci')); c.close(); e.dispose()"
-          backend/.venv/bin/python -m pytest backend/tests/test_evaluation_postgres.py --junitxml=reports/ci-evaluation-postgres.xml
+          backend/.venv/bin/python -m pytest backend/tests/test_evaluation_postgres.py backend/tests/test_claim_reviews_postgres.py --junitxml=reports/ci-evaluation-postgres.xml
           backend/.venv/bin/python scripts/evaluate_retrieval.py --postgres --output reports/ci-retrieval-postgres.json --review-packets reports/ci-retrieval-postgres-review-packets.json --baseline reports/ci-retrieval-evaluation.json --diff-output reports/ci-retrieval-engine-diff.json --cross-engine
       - name: Contracts, content, queue and publication checks
         run: |

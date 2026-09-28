@@ -652,3 +652,17 @@ class RunAuthorityEvidence(Base):
     payload_sha256: Mapped[str] = mapped_column(String(64))
     created_at: Mapped[int] = mapped_column(Integer, default=now)
     __table_args__ = (UniqueConstraint('run_id', 'relationship_id'),)
+
+
+class RunClaimReview(Base):
+    __tablename__ = 'run_claim_reviews'
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
+    run_id: Mapped[str] = mapped_column(ForeignKey('runs.id', ondelete='CASCADE'), index=True)
+    claim_id: Mapped[str] = mapped_column(String(80))
+    sequence: Mapped[int] = mapped_column(Integer)
+    revision: Mapped[str] = mapped_column(String(64))
+    reviewer_id: Mapped[str | None] = mapped_column(ForeignKey('users.id', ondelete='SET NULL'))
+    payload: Mapped[dict] = mapped_column(JSON)
+    payload_sha256: Mapped[str] = mapped_column(String(64))
+    created_at: Mapped[int] = mapped_column(Integer, default=now)
+    __table_args__ = (UniqueConstraint('run_id', 'claim_id', 'sequence'),)
