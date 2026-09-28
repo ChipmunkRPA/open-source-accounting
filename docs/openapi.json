@@ -6,6 +6,238 @@
     "version": "0.7.0"
   },
   "paths": {
+    "/api/v1/editorial/relationships": {
+      "post": {
+        "tags": [
+          "authority relationships"
+        ],
+        "summary": "Propose Relationship",
+        "operationId": "propose_relationship_api_v1_editorial_relationships_post",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RelationshipProposal"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "authority relationships"
+        ],
+        "summary": "List Relationships",
+        "operationId": "list_relationships_api_v1_editorial_relationships_get",
+        "parameters": [
+          {
+            "name": "after",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 36,
+              "default": "",
+              "title": "After"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/editorial/relationships/{relationship_id}": {
+      "get": {
+        "tags": [
+          "authority relationships"
+        ],
+        "summary": "Relationship Packet",
+        "operationId": "relationship_packet_api_v1_editorial_relationships__relationship_id__get",
+        "parameters": [
+          {
+            "name": "relationship_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Relationship Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/editorial/relationships/{relationship_id}/review": {
+      "post": {
+        "tags": [
+          "authority relationships"
+        ],
+        "summary": "Review Relationship",
+        "operationId": "review_relationship_api_v1_editorial_relationships__relationship_id__review_post",
+        "parameters": [
+          {
+            "name": "relationship_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Relationship Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RelationshipDecision"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sources/{source_id}/relationships": {
+      "get": {
+        "tags": [
+          "authority relationships"
+        ],
+        "summary": "Source Relationships",
+        "operationId": "source_relationships_api_v1_sources__source_id__relationships_get",
+        "parameters": [
+          {
+            "name": "source_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Source Id"
+            }
+          },
+          {
+            "name": "after",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 36,
+              "default": "",
+              "title": "After"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 50,
+              "minimum": 1,
+              "default": 20,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/sec-comments": {
       "get": {
         "tags": [
@@ -7035,6 +7267,53 @@
         ],
         "title": "EditorialDecision"
       },
+      "Endpoint": {
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "maxLength": 36,
+            "minLength": 1,
+            "title": "Source Id"
+          },
+          "revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Revision"
+          },
+          "locator": {
+            "type": "string",
+            "maxLength": 16000,
+            "minLength": 1,
+            "title": "Locator"
+          },
+          "character_start": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Character Start"
+          },
+          "character_end": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Character End"
+          },
+          "passage_text_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Passage Text Sha256"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "source_id",
+          "revision",
+          "locator",
+          "character_start",
+          "character_end",
+          "passage_text_sha256"
+        ],
+        "title": "Endpoint"
+      },
       "Fact": {
         "properties": {
           "text": {
@@ -7992,6 +8271,117 @@
           "locator"
         ],
         "title": "ReferenceBinding"
+      },
+      "RelationshipDecision": {
+        "properties": {
+          "expected_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Expected Revision"
+          },
+          "expected_sequence": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Expected Sequence"
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "approved",
+              "rejected",
+              "revoked"
+            ],
+            "title": "Decision"
+          },
+          "review_note": {
+            "type": "string",
+            "maxLength": 4000,
+            "minLength": 20,
+            "title": "Review Note"
+          },
+          "evidence_ref": {
+            "type": "string",
+            "pattern": "^ev_[A-Za-z0-9_-]{1,120}$",
+            "title": "Evidence Ref"
+          },
+          "evidence_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Evidence Sha256"
+          },
+          "expires_at": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Expires At"
+          },
+          "confirm_actual_review_performed": {
+            "type": "boolean",
+            "const": true,
+            "title": "Confirm Actual Review Performed"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "expected_revision",
+          "expected_sequence",
+          "decision",
+          "review_note",
+          "evidence_ref",
+          "evidence_sha256",
+          "expires_at",
+          "confirm_actual_review_performed"
+        ],
+        "title": "RelationshipDecision"
+      },
+      "RelationshipProposal": {
+        "properties": {
+          "source": {
+            "$ref": "#/components/schemas/Endpoint"
+          },
+          "target": {
+            "$ref": "#/components/schemas/Endpoint"
+          },
+          "relation": {
+            "type": "string",
+            "enum": [
+              "cites",
+              "amends",
+              "supersedes",
+              "defines",
+              "illustrates",
+              "compares"
+            ],
+            "title": "Relation"
+          },
+          "scope": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 20,
+            "title": "Scope"
+          },
+          "evidence_ref": {
+            "type": "string",
+            "pattern": "^ev_[A-Za-z0-9_-]{1,120}$",
+            "title": "Evidence Ref"
+          },
+          "evidence_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Evidence Sha256"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "source",
+          "target",
+          "relation",
+          "scope",
+          "evidence_ref",
+          "evidence_sha256"
+        ],
+        "title": "RelationshipProposal"
       },
       "ReviewCreate": {
         "properties": {

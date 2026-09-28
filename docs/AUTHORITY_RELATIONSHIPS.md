@@ -1,0 +1,29 @@
+# Reviewed authority relationships
+
+Issue #25/#23, parent #5. `authority-relationships-1` stores directed `cites`, `amends`, `supersedes`, `defines`, `illustrates` and `compares` assertions between two distinct retained source records. Migration `0019_authority_relationships` adds indexed relational source/target foreign keys and an independent immutable review history, bringing the schema to 47 application tables. Nothing is seeded, inferred from a lexical match or automatically approved.
+
+Each endpoint binds source ID, exact citation-lookup revision, literal locator, zero-based/end-exclusive Unicode character range and passage hash. Both source passages must exist, match their staged hashes where applicable, and be publicly readable under current operation rights. Each range is limited to 3,000 characters. Proposals require storage permission as well. The relationship carries a bounded human-authored scope and a restricted evidence reference/hash. ASU/ASC and old/new CFI relationships can be recorded using these same exact endpoints when authorized retained text and actual review exist; reference inventories alone do not supply them.
+
+## Proposal and review API
+
+Source administrators, rights approvers and technical reviewers can submit `POST /api/v1/editorial/relationships` with `source` and `target` endpoint objects, `relation`, `scope`, `evidence_ref` and `evidence_sha256`. Endpoint fields are the subset of a citation descriptor described above. Submission hashes include the proposing actor and algorithm version. An identical retry returns the existing relationship and does not append an audit event. A new revision creates a new assertion, never edits the old payload.
+
+`GET /api/v1/editorial/relationships?after=<id>` supplies restricted metadata in 50-row ID-order pages. `GET /api/v1/editorial/relationships/{id}` supplies the proposal and up to 100 immutable review records only while both exact endpoints remain readable and unchanged. Notes may contain source-derived material, so packet release includes required notices and the shared cumulative output ledger. Larger review histories require explicit reconciliation; they are not silently truncated.
+
+Only a fresh authenticated technical reviewer may submit `POST /api/v1/editorial/relationships/{id}/review`. The reviewer must differ from the proposer. The schema requires expected relationship revision/sequence, decision (`approved`, `rejected`, `revoked`), substantive review note, restricted evidence reference/hash, expiry, and confirmation of actual review. Approval checks both current exact citations and display/storage rights; an explicit future expiry is mandatory. Revocation remains possible after source rights expire. Source locks and expected sequence checks serialize competing decisions; every decision appends a hash-bound record and audit metadata. User deletion invalidates dependent review/proposal identity. A valid record is evidence of the recorded human attestation, not proof that the reviewer was correct.
+
+## Public navigation
+
+`GET /api/v1/sources/{id}/relationships?after=<id>&limit=20` lists current permitted one-hop links in either direction. A batch observes at most 50 indexed incident relationships. Its cursor advances over excluded rows as well, so an empty result can still have a next batch. Counts describe examined relationship records, not complete authority coverage. Cycles are not recursively followed and no transitive applicability or precedence is inferred.
+
+Current status checks the proposal schema/hash, exact endpoint identities, active reviewer record/sequence/hash/expiry and both sources' live display permissions. Changed bodies/locators/provenance, revoked or scoped rights, disabled sources, deleted reviewers and invalid records withhold the relationship. Public responses expose scope, exact endpoints, source categories, direction and review expiry, but not restricted evidence references or private review notes. Notices and cumulative output limits apply to all involved source lineages. Source and review state are rechecked after output locking before commit. Source deletion cascades the derived assertion and review notes; this is not a claim of backup erasure.
+
+The free source reader offers explicit relationship loading, linked-source navigation, incoming/outgoing labels and partial-coverage notices. Its source revision must match the relationship response. No relationship endpoint can supply a caller-controlled workspace/provider context to unlock private content. No embedding, model call, acquisition job or recurring refresh is introduced.
+
+## Separate authority gates
+
+A reviewed `cites` link does not turn company practice into a standard. An `amends` or `supersedes` assertion describes the scoped passages, not automatic replacement of an entire document or applicability to every period. Source framework, known-as-of/effective dates, parser review, technical review, professional claim support, operation rights and workspace entitlement remain separate.
+
+This implementation supports reviewed public navigation. It does **not** automatically expand Agent retrieval, admit linked material to model input or establish claim entailment. `agent_admission_granted`, `claim_support_verified` and `complete_graph_verified` remain false. Full editorial UI, separately authorized model/output relationship snapshots, semantic retrieval, real all-family relationship coverage and independent evaluation remain open.
+
+Tests and browser screenshots use original synthetic sources, simulated reviewers and isolated local databases. The PostgreSQL concurrency test checks that competing expected-sequence reviews yield exactly one decision and one conflict. Synthetic records never count as real professional approvals or source acquisition. Current evidence and remaining work are recorded in progress.md.

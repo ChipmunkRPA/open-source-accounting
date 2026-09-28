@@ -1233,3 +1233,48 @@ def test_postgres_cleanup_competing_advances_count_once(pg_url):
             from sqlalchemy import delete
             db.execute(delete(Source).where(Source.id==actor));db.execute(delete(SearchIndexSweep).where(SearchIndexSweep.id==sid));db.commit()
         database.engine.dispose()
+
+
+def authority_review_worker(url,edge_id,body,reviewer,start,results):
+    from app.authority_schemas import RelationshipDecision
+    from app.services import authority
+    database=Database(url)
+    try:
+        assert start.wait(15)
+        with database.Session() as db:
+            try:
+                edge=authority.decide(db,edge_id,RelationshipDecision.model_validate(body),reviewer)
+                db.commit();results.put(('finished',edge.sequence))
+            except HTTPException as exc:
+                db.rollback();results.put(('error',exc.status_code))
+    finally:database.engine.dispose()
+
+
+def test_postgres_authority_reviews_serialize_expected_sequence(pg_url):
+    from app.models import AuthorityReview
+    from app.authority_schemas import RelationshipProposal
+    from app.services import authority
+    from test_source_search import source
+    from test_authority import endpoint,decision
+    database=Database(pg_url);actor,reviewer,left,right=[str(uuid4()) for _ in range(4)]
+    with database.Session() as db:
+        db.add_all([User(id=actor,role='admin'),User(id=reviewer,role='technical_reviewer')]);db.flush()
+        a=source(db,left);b=source(db,right)
+        edge=authority.propose(db,RelationshipProposal(source=endpoint(a),target=endpoint(b),relation='defines',
+            scope='Synthetic exact relationship for concurrent review test.',evidence_ref='ev_synthetic',evidence_sha256='a'*64),actor)
+        db.commit();edge_id=edge.id;body=decision(authority.summary(db,edge))
+    ctx=multiprocessing.get_context('spawn');start,results=ctx.Event(),ctx.Queue()
+    workers=[ctx.Process(target=authority_review_worker,args=(pg_url,edge_id,body,reviewer,start,results)) for _ in range(2)]
+    try:
+        for process in workers:process.start()
+        start.set();events=[results.get(timeout=20),results.get(timeout=20)]
+        assert sorted(events)==[('error',409),('finished',1)]
+        for process in workers:process.join(15);assert process.exitcode==0
+        with database.Session() as db:
+            assert db.scalar(select(func.count()).select_from(AuthorityReview).where(AuthorityReview.relationship_id==edge_id))==1
+    finally:
+        for process in workers:
+            if process.pid:
+                if process.is_alive():process.terminate()
+                process.join(5)
+        database.engine.dispose()

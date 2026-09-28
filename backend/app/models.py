@@ -612,3 +612,29 @@ class SearchIndexSweep(Base):
     vanished: Mapped[int] = mapped_column(Integer, default=0)
     started_at: Mapped[int] = mapped_column(Integer, default=now)
     completed_at: Mapped[int | None] = mapped_column(Integer)
+
+
+class AuthorityRelationship(Base):
+    __tablename__ = 'authority_relationships'
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
+    source_id: Mapped[str] = mapped_column(ForeignKey('sources.id', ondelete='CASCADE'), index=True)
+    target_id: Mapped[str] = mapped_column(ForeignKey('sources.id', ondelete='CASCADE'), index=True)
+    relation: Mapped[str] = mapped_column(String(20))
+    revision: Mapped[str] = mapped_column(String(64), unique=True)
+    payload: Mapped[dict] = mapped_column(JSON)
+    created_by: Mapped[str | None] = mapped_column(ForeignKey('users.id', ondelete='SET NULL'))
+    created_at: Mapped[int] = mapped_column(Integer, default=now)
+    sequence: Mapped[int] = mapped_column(Integer, default=0)
+    current_review_id: Mapped[str | None] = mapped_column(String(36))
+
+
+class AuthorityReview(Base):
+    __tablename__ = 'authority_reviews'
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
+    relationship_id: Mapped[str] = mapped_column(ForeignKey('authority_relationships.id', ondelete='CASCADE'), index=True)
+    sequence: Mapped[int] = mapped_column(Integer)
+    reviewer_id: Mapped[str | None] = mapped_column(ForeignKey('users.id', ondelete='SET NULL'))
+    payload: Mapped[dict] = mapped_column(JSON)
+    payload_sha256: Mapped[str] = mapped_column(String(64))
+    created_at: Mapped[int] = mapped_column(Integer, default=now)
+    __table_args__ = (UniqueConstraint('relationship_id', 'sequence'),)
