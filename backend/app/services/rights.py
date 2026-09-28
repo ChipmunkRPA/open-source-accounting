@@ -148,13 +148,13 @@ def evidence_allowed(db, evidence: Evidence, action='model_input', *, context=No
     from .applicability import applies
     from .dependencies import allowed as dependencies_allowed
     from .spreadsheet_context import current as context_current
-    if not context_current(db,evidence):
-        return False
     run = db.get(Run, evidence.run_id)
     if not run:
         return False
     context = context or runtime_context(db, run)
     if context.get('workspace_id') != run.workspace_id:
+        return False
+    if not context_current(db,evidence,action=action,context=context):
         return False
     if evidence.source_id:
         source = db.get(Source, evidence.source_id)

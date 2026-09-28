@@ -119,7 +119,10 @@ def execute(db_factory, job_id, owner, config):
                 if hit:
                     doc_first.append(hit)
             pool = doc_first + [x for x in selected if x not in doc_first]
-            for row in pool[:task['max_evidence']]:
+            from ..services.spreadsheet_dependencies import select_with_companions
+            pool = select_with_companions(db, run, pool, task['max_evidence'],
+                                          context=rights.runtime_context(db, run))
+            for row in pool:
                 evidence = Evidence(run_id=run.id, **row)
                 db.add(evidence)
                 db.flush()

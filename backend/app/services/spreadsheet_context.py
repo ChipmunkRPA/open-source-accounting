@@ -54,7 +54,7 @@ def document_context(doc, chunk):
     return result
 
 
-def current(db,evidence):
+def current(db,evidence, *, action="model_input", context=None):
     from ..models import Source,Document
     snapshot=evidence.extraction_context or {}
     if not snapshot:
@@ -68,6 +68,9 @@ def current(db,evidence):
     if snapshot.get('version')!=VERSION:return False
     if evidence.source_id:
         source=db.get(Source,evidence.source_id)
+        if source and "source_dependencies" in snapshot:
+            from .spreadsheet_dependencies import current as dependencies_current
+            return dependencies_current(db,evidence,source,action=action,context=context)
         return bool(source and snapshot==source_context(source))
     if evidence.document_id:
         doc=db.get(Document,evidence.document_id)
