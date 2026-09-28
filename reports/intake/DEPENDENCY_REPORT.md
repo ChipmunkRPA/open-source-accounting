@@ -2,7 +2,7 @@
 
 Observed full backend **792 passed / 23 optional PostgreSQL skipped**, including **8 new report cases**. Initial targeted report run **5 passed**, before artifact-record/SEC-unit/cycle cases were added. Receipts: dependency-report-backend.xml and dependency-report-targeted.xml. No failures; one upstream Starlette/httpx warning remains.
 
-TypeScript typecheck, production Identity Platform build, lint F and generated API contract passed. No new local PostgreSQL/migration/live-provider assertion; schema unchanged. CI results are recorded separately after observation.
+TypeScript typecheck, production Identity Platform build, lint F and generated API contract passed. No new local PostgreSQL/migration/live-provider assertion; schema unchanged. Implementation [fe41378](https://github.com/ChipmunkRPA/open-source-accounting/commit/fe413786138d61ebd7b8c37d7aa275536be499a8) passed [CI 36361607407](https://github.com/ChipmunkRPA/open-source-accounting/actions/runs/36361607407): Python 3.11/3.13 clean installs, frontend/backend, migrations/PostgreSQL and Docker. Content/hash/queue/generated-progress/publication checks passed.
 
 Commands:
 
