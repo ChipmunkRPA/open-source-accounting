@@ -508,3 +508,28 @@ class OutputAmendment(Base):
     reviewed_at: Mapped[int | None] = mapped_column(Integer)
     released_chars_at_apply: Mapped[int | None] = mapped_column(BigInteger)
     applied_terms_revision: Mapped[int | None] = mapped_column(Integer)
+
+
+class CorrectionCase(Base):
+    __tablename__ = 'correction_cases'
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
+    source_id: Mapped[str] = mapped_column(ForeignKey('sources.id'), index=True)
+    kind: Mapped[str] = mapped_column(String(20))
+    status: Mapped[str] = mapped_column(String(20), default='open')
+    version: Mapped[int] = mapped_column(Integer, default=1)
+    policy_version: Mapped[int] = mapped_column(Integer)
+    review_revision: Mapped[str] = mapped_column(String(64))
+    created_at: Mapped[int] = mapped_column(Integer, default=now)
+
+
+class CorrectionEvent(Base):
+    __tablename__ = 'correction_events'
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
+    case_id: Mapped[str] = mapped_column(ForeignKey('correction_cases.id'), index=True)
+    version: Mapped[int] = mapped_column(Integer)
+    actor_id: Mapped[str | None] = mapped_column(ForeignKey('users.id', ondelete='SET NULL'))
+    action: Mapped[str] = mapped_column(String(20))
+    note: Mapped[str] = mapped_column(Text)
+    source_policy_version: Mapped[int] = mapped_column(Integer)
+    created_at: Mapped[int] = mapped_column(Integer, default=now)
+    __table_args__ = (UniqueConstraint('case_id', 'version'),)

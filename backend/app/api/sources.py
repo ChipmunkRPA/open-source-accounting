@@ -3,7 +3,7 @@ from sqlalchemy import select, or_
 from ..auth import fresh_user, current_user, session, require_admin
 from ..schemas import SourceCreate, RightsApproval
 from ..models import Source, Audit
-from ..services import rights, output_rights, counsel
+from ..services import rights, output_rights, counsel, editorial
 from ..errors import fail
 
 router = APIRouter(tags=['sources'])
@@ -52,7 +52,7 @@ def topics(db=Depends(session)):
 def admin_sources(user=Depends(current_user), db=Depends(session)):
     require_admin(user)
     return {'items': [{**rights.metadata(s), 'policy': s.policy, 'rights_revision': rights.revision(s), 'created_by': s.created_by,
-                       'approved_by': s.approved_by} for s in db.scalars(select(Source).order_by(Source.created_at.desc()).limit(500))]}
+                       'approved_by': s.approved_by, 'review_revision': editorial.revision(s)} for s in db.scalars(select(Source).order_by(Source.created_at.desc()).limit(500))]}
 
 
 @router.post('/admin/sources', status_code=201)

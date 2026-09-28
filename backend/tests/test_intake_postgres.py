@@ -905,3 +905,32 @@ def test_postgres_applicability_stale_decision_cannot_overwrite(pg_url):
                 if process.is_alive():process.terminate()
                 process.join(5)
         database.engine.dispose()
+
+
+def test_postgres_correction_actions_serialize(pg_url):
+    from concurrent.futures import ThreadPoolExecutor
+    from threading import Barrier
+    from app.api.corrections import action
+    from app.correction_schemas import CorrectionAction
+    from app.models import CorrectionCase, CorrectionEvent
+    database=Database(pg_url); actor=str(uuid4()); sid=str(uuid4()); cid=str(uuid4())
+    with database.Session() as db:
+        db.add(User(id=actor,role='admin'));db.flush()
+        db.add(Source(id=sid,title='Synthetic correction race',publisher='Fixture',policy={}));db.flush()
+        db.add(CorrectionCase(id=cid,source_id=sid,kind='takedown',policy_version=1,review_revision='a'*64));db.commit()
+    barrier=Barrier(2)
+    def write():
+        with database.Session() as db:
+            user=db.get(User,actor);barrier.wait(timeout=10)
+            try:
+                result=action(cid,CorrectionAction(expected_version=1,action='disable',note='Synthetic concurrency rationale.'),user,db)
+                return result['version']
+            except HTTPException as exc:
+                db.rollback();return exc.status_code
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        futures=[pool.submit(write) for _ in range(2)]
+        assert sorted(f.result(timeout=20) for f in futures)==[2,409]
+    with database.Session() as db:
+        assert db.get(Source,sid).policy_version==2
+        assert db.scalar(select(func.count()).select_from(CorrectionEvent).where(CorrectionEvent.case_id==cid))==1
+    database.engine.dispose()

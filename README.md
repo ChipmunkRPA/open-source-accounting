@@ -218,3 +218,9 @@ python scripts/check_queue.py
 This check refuses a nonempty database, runs upgrade/downgrade/re-upgrade, and checks model/schema parity. CI uses PostgreSQL 17 with synthetic local credentials and no cloud secrets. Docker builds use the committed Node lock and hash-pinned Python runtime requirements.
 
 Technical reviewers: see [the review-record workflow](docs/EDITORIAL_REVIEWS.md) for exact revisions, supporting evidence, expiry, revocation and private history.
+
+Scoped operators can triage source corrections and takedowns at `/corrections`.
+Use private administrative descriptions and approved restricted record references;
+never paste licensed text, legal advice or credentials into notes. Disabling a source
+blocks dependent runtime use. Resolving a case does not restore that source or approve
+its content. See [review operations](docs/EDITORIAL_REVIEWS.md) for roles and limits.

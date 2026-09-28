@@ -1,5 +1,19 @@
 # Open Source Accounting — current implementation progress
 
+## 2026-09-27 · #23 correction and takedown administration (parent #5)
+
+Implementation: private administrator queue with exact opening source revision, idempotent creation, current-version transitions, append-only API action history, scoped recent-auth mutations and case-linked atomic emergency disable. Resolution/dismissal/reopening never restores sources or grants approval. Potential dependents reuse the bounded staged metadata report; reporting failure does not block disable. Migration 0013 adds two tables without backfills. UI and operator instructions included.
+
+Actual validation: **796 backend passed / 23 optional PostgreSQL skipped**, before final impact endpoint/two added tests; final **6 targeted passed**, **24 PostgreSQL contracts passed**, including competing case actions. Empty PostgreSQL upgrade/downgrade/re-upgrade/schema parity passed: **40 tables**. TypeScript/build, lint F and generated API contract passed. Browser synthetic workflow verified disabled source remained disabled after resolution, with one potential dependent. Fixed version-label key and test-helper unpacking; one upstream Starlette/httpx warning. Receipts/commands/limits: `reports/intake/CORRECTIONS.md`, JUnit and `corrections-ui.png`.
+
+Coverage unchanged: **32 families / 47 topics; 63 original drafts / 63 verified hashes / 0 professional approvals / 0 Agent admissions; 58 questions / 26 references**. SEC **34 targets / 28 selected excerpts / 7 excerpted sources / 0 full original HTTP documents / 0 technical or applicability approvals / 0 approved production index / 0 human-adjudicated evaluations**. Real acquired/parsed/reviewed/indexed additions **0**; synthetic fixtures excluded. Source packs, parser `source-intake-1/sec-core-0.7.0`, discovery `html-index-1/crossref-works-1`, requested `gemini-3.8-flash` and cost catalog unchanged. No paid resources, deployment, live inference/billing/SMS/notifications.
+
+Remaining gates: actual authorized primary text and independent reviewers; artifact-store integrity reconciliation, affected saved-artifact remediation, assignment/escalation/public complaint intake, corpus-scale source search/UI history, conditional applicability, all-family acquisition/index/evaluation and browser downloads. GCP project/region/spend choice, credentials and concrete release approval remain outstanding.
+
+Next resumable task: **#23/#21 artifact-store integrity reconciliation**, replacing metadata-only acquisition confidence with verified stored-byte hashes and explicit missing/corrupt states; continue authorized all-family retrieval. Keep main current. Full application/content/GCP goal remains active.
+
+---
+
 ## 2026-09-27 · #23 staged dependency coverage and impact report (parent #5)
 
 Implementation: reviewer-only metadata API/UI with pagination, exact source/revision, missing/stale reference bindings, recorded review states and transitive affected-source lookup. Historical bindings and intake parents retained; cycles flagged. Includes all 32 registry families with separate staged/artifact-record/extraction-record/review-state counts and explicit unclassified records. No source text or private findings. Bound above 2,000 staged sources fails explicitly; integrity/history errors mark the graph incomplete. Stable content hash excludes observation time. No claim of verified original bytes, professional approval, indexing, evaluations or atomic snapshot. Published on main as [fe41378](https://github.com/ChipmunkRPA/open-source-accounting/commit/fe413786138d61ebd7b8c37d7aa275536be499a8); [CI 36361607407](https://github.com/ChipmunkRPA/open-source-accounting/actions/runs/36361607407) passed both Python 3.11/3.13 clean installs, frontend/backend, migrations/PostgreSQL and Docker. Content/hash/queue/generated-progress/publication checks passed.
