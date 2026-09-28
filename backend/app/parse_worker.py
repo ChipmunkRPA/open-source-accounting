@@ -17,8 +17,12 @@ def main():
         raise ValueError('Oversized parser input')
     from .pdf_parser import PdfError
     from .docx_parser import DocxError
+    from .spreadsheet_parser import SpreadsheetError
     try:
         result = parse_bytes(data, sys.argv[1], int(sys.argv[2]))
+    except SpreadsheetError as exc:
+        sys.stderr.write(json.dumps({'spreadsheet_error': exc.code, 'source_part': exc.part, 'locator': exc.locator}))
+        raise SystemExit(2)
     except DocxError as exc:
         sys.stderr.write(json.dumps({'docx_error': exc.code, 'source_part': exc.part, 'source_xml_path': exc.path}))
         raise SystemExit(2)

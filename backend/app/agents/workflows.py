@@ -33,6 +33,19 @@ def preprocess(db, run, task, *, rights_context=None):
     result = {'workflow_guardrail': task['guardrail']}
     document_limits = []
     for doc in docs:
+        if doc.mime in {'text/csv', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'}:
+            metadata = [c.get('spreadsheet') for c in doc.chunks]
+            known = bool(metadata) and all(isinstance(m, dict) for m in metadata)
+            document_limits.append({
+                'document_id': doc.id,
+                'parser_versions': sorted({m['parser_version'] for m in metadata}) if known else [],
+                'cell_provenance': 'available' if known else 'unknown_legacy_extraction',
+                'date_systems': sorted({m['date_system'] for m in metadata if m.get('date_system')}) if known else [],
+                'formula_caches_verified': False, 'display_rendered': False, 'units_verified': False,
+                'complete_document_verified': False,
+                'warning': 'Spreadsheet cells are literal stored values, not rendered or recalculated results. CSV values stay strings. XLSX formula caches may be stale or missing; shared formulas are not translated. Preserve date systems, number formats, hidden/merged context and exact cell references. Do not infer units, evaluated formulas or complete evidence from retrieved chunks.',
+            })
+            continue
         if doc.mime == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
             metadata = [c.get('docx') for c in doc.chunks]
             known = bool(metadata) and all(isinstance(m, dict) for m in metadata)

@@ -12,7 +12,8 @@ from pathlib import Path
 from ..errors import fail
 
 FORMATS = {'.txt': 'text/plain', '.md': 'text/markdown', '.pdf': 'application/pdf',
-           '.docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'}
+           '.docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+           '.xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', '.csv': 'text/csv'}
 BLOCKED_NOTICES = [
     re.compile(r'\bDeloitte\s+Accounting\s+Research\s+Tool\b', re.I),
     re.compile(r'dart\.deloitte\.com', re.I),
@@ -29,25 +30,26 @@ def safe_filename(name):
 def preflight(data, filename, config):
     ext = Path(filename).suffix.lower()
     if ext not in FORMATS:
-        fail('FILE_TYPE', 'Use text, Markdown, text-based PDF, or DOCX.', 415)
+        fail('FILE_TYPE', 'Use text, Markdown, text-based PDF, DOCX, XLSX, or UTF-8 comma-separated CSV.', 415)
     if not data or len(data) > config.max_upload_mb * 1024 * 1024:
         fail('FILE_SIZE', f'Upload a non-empty file up to {config.max_upload_mb} MB.', 413)
     if ext == '.pdf' and not data.startswith(b'%PDF-'):
         fail('FILE_SIGNATURE', 'The file does not have a PDF signature.', 415)
-    if ext == '.docx':
+    if ext in {'.docx', '.xlsx'}:
         try:
             with zipfile.ZipFile(io.BytesIO(data)) as archive:
                 files = archive.infolist()
                 if len(files) > 2000 or sum(f.file_size for f in files) > 40 * 1024 * 1024:
-                    fail('ARCHIVE_LIMIT', 'The DOCX expands beyond the supported size.', 413)
-                if 'word/document.xml' not in archive.namelist():
-                    fail('FILE_SIGNATURE', 'This is not a supported DOCX file.', 415)
+                    fail('ARCHIVE_LIMIT', 'The Office archive expands beyond the supported size.', 413)
+                main_part = 'word/document.xml' if ext == '.docx' else 'xl/workbook.xml'
+                if main_part not in archive.namelist():
+                    fail('FILE_SIGNATURE', 'This is not a supported Office document archive.', 415)
                 if any('vbaProject' in x.filename or '..' in Path(x.filename).parts for x in files):
                     fail('ACTIVE_CONTENT', 'Macros or unsafe archive members are not supported.', 415)
                 if any(f.file_size > 1000 * max(1, f.compress_size) for f in files):
                     fail('ARCHIVE_LIMIT', 'Excessive compression ratio.', 413)
         except zipfile.BadZipFile:
-            fail('FILE_SIGNATURE', 'The DOCX archive is invalid.', 415)
+            fail('FILE_SIGNATURE', 'The Office document archive is invalid.', 415)
     return FORMATS[ext]
 
 
@@ -83,6 +85,9 @@ def parse_bytes(data, ext, character_limit):
         from ..pdf_parser import parse
         chunks = [{'locator': f'Page {p["pdf"]["physical_page"]}', **p}
                   for p in parse(data, page_limit=150, character_limit=character_limit)]
+    elif ext in {'.xlsx', '.csv'}:
+        from ..spreadsheet_parser import parse_xlsx, parse_csv
+        chunks = (parse_xlsx if ext == '.xlsx' else parse_csv)(data, character_limit)
     elif ext == '.docx':
         from ..docx_parser import parse
         chunks = parse(data, character_limit)
@@ -99,7 +104,7 @@ def parse_bytes(data, ext, character_limit):
         for offset in range(0, len(item['text']), 3500):
             chunk = {**item, 'locator': item['locator'] + (f', part {offset//3500+1}' if offset else ''),
                      'text': item['text'][offset:offset+3500]}
-            for format_key in ('pdf', 'docx'):
+            for format_key in ('pdf', 'docx', 'spreadsheet'):
                 if format_key in item:
                     chunk[format_key] = {**item[format_key], 'character_range': [offset, min(offset+3500, len(item['text']))]}
             output.append(chunk)
@@ -113,6 +118,13 @@ def parse_isolated(data, ext, limit):
                                timeout=25, check=False)
     except subprocess.TimeoutExpired:
         fail('PARSE_TIMEOUT', 'Document parsing exceeded the time limit.', 422)
+    if child.returncode == 2 and ext in {'.xlsx', '.csv'} and len(child.stderr) <= 4000:
+        try:
+            diagnostic = json.loads(child.stderr)
+            fail('SPREADSHEET_PARSE_BLOCKED', 'Spreadsheet format or coverage needs review; no document was stored. Resolve the reported structure and upload again.',
+                 422, reason=diagnostic['spreadsheet_error'], source_part=diagnostic['source_part'], locator=diagnostic['locator'])
+        except (ValueError, KeyError, TypeError):
+            pass
     if child.returncode == 2 and ext == '.docx' and len(child.stderr) <= 4000:
         try:
             diagnostic = json.loads(child.stderr)

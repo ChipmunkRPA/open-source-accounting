@@ -25,7 +25,7 @@ Application code is MIT-licensed. Original educational content is CC BY 4.0. Hos
 - Persistent free chat, workspaces, evidence cards and source references.
 - Five primary Agent workflows: deep research, memo preparation, uploaded documents + guidance analysis, contract comparison, and memo critique.
 - Experimental policy, disclosure, workpaper, benchmarking, audit-preparation, control-review, close-package and framework-comparison workflows.
-- Text-based PDF/DOCX/Markdown/TXT parsing, document access controls and deletion handling.
+- Private text-based PDF/DOCX/Markdown/TXT and [literal XLSX/CSV parsing](docs/SPREADSHEET_EXTRACTION.md), document access controls and deletion handling. Spreadsheet formulas are not recalculated and caches remain unverified.
 - A durable job engine with scope confirmation, quotas, cancellation, retries, research limitations and claim/evidence relationships.
 - Memo revisions, manual editing, review records, Markdown/DOCX/PDF export, and deterministic illustrative calculations.
 - Stripe checkout/portal/webhook adapters with backend annual-plan enforcement.

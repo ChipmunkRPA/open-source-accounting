@@ -24,7 +24,7 @@ export async function studioView(app:App){
 
 export async function uploadInto(app:App,workspace:string,refresh:()=>Promise<void>){
   if(!app.me?.access.agent_allowed){app.upgrade('Document processing');return;}
-  const file=input('file','','upload-file');file.accept='.txt,.md,.pdf,.docx';
+  const file=input('file','','upload-file');file.accept='.txt,.md,.pdf,.docx,.xlsx,.csv';
   const basis=select([['own_original','My original business document'],['licensed_for_this_service','Material licensed for processing with this service']]);
   const agree=checkbox('I am authorized to process this material here. It does not bypass a publisher restriction.');
   const message=el('div');
@@ -35,7 +35,7 @@ export async function uploadInto(app:App,workspace:string,refresh:()=>Promise<vo
       await api(`/workspaces/${workspace}/documents`,'POST',form);await refresh();dialog.close();
     }catch(e){message.replaceChildren(notice((e as Error).message,'error'));}finally{busy(submit,false);}
   });
-  const dialog=modal('Upload a private document',notice(`Text, Markdown, text-based PDF or DOCX. Maximum ${app.config.max_upload_mb} MB. No OCR. Local demos do not scan files unless a scanner is configured.`),
+  const dialog=modal('Upload a private document',notice(`Text, Markdown, text-based PDF, DOCX, XLSX or UTF-8 comma-separated CSV. Spreadsheet formulas are not recalculated; caches and formatting remain unverified. Maximum ${app.config.max_upload_mb} MB. No OCR. Local demos do not scan files unless a scanner is configured.`),
     field('Document',file),field('Authorization basis',basis),agree.element,message,submit);
 }
 
