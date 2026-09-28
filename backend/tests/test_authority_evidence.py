@@ -253,3 +253,60 @@ def test_inspection_preserves_notices_and_shared_output_budget(client,exhausted)
     with client.app.state.db.Session() as db:count = db.get(OutputBudget,'inspector-fixture').released_chars
     assert client.get(url).status_code == 200
     with client.app.state.db.Session() as db:assert db.get(OutputBudget,'inspector-fixture').released_chars == count
+
+
+def test_reuse_retains_exact_pair_and_never_mutates_rejected_selection(client, monkeypatch):
+    prepared(client)
+    from app.services.retrieval import search
+    with client.app.state.db.Session() as db:
+        run = SimpleNamespace(context=CONTEXT, document_ids=[], workspace_id='demo-workspace')
+        context = {'workspace_id': 'demo-workspace'}
+        pool = search(db, run, 'quasar', rights_context=context)
+        original = deepcopy(pool)
+        rows, plans = ae.select_evidence(db, run, pool, 2, context=context)
+        assert len(rows) == 2 and len(plans) == 1
+        assert {r['source_id'] for r in rows} == {'edge-source', 'edge-target'}
+        assert all(ce.current(db.get(Source, r['source_id']), SimpleNamespace(**r)) for r in rows)
+        assert pool == original
+        rows, plans = ae.select_evidence(db, run, pool, 10, context=context)
+        assert len(rows) == 2 and len(plans) == 1  # later lexical roots do not reappear
+        monkeypatch.setattr(ae, 'MAX_BYTES', 1)
+        rows, plans = ae.select_evidence(db, run, pool, 2, context=context)
+        assert rows == original[:2] and not plans
+
+
+@pytest.mark.parametrize('change', ['none', 'position', 'source', 'text', 'policy_version', 'title',
+                                     'access', 'context', 'coordinate', 'spreadsheet'])
+def test_reuse_requires_identical_position_and_metadata(client, change):
+    with client.app.state.db.Session() as db:
+        s = source(db)
+        s.text = 'Repeated passage.\n\nRepeated passage.'
+        s.policy = {**s.policy, 'content_sha256': digest(s.text)}
+        p = ce.packet(s, 0, len('Repeated passage.'))
+        endpoint = dict(source_id=s.id, document_id=None, title=s.title, text='Repeated passage.',
+                        locator=p['citation']['locator'], access='secondary_text_reviewed',
+                        source_kind=s.kind, policy_version=s.policy_version, extraction_context=p)
+        lexical = {**endpoint, 'locator': 'Section 1', 'extraction_context': {}}
+        if change == 'position':lexical['locator'] = 'Section 2'
+        elif change == 'source':lexical['source_id'] = 'another-source'
+        elif change in {'text', 'policy_version', 'title', 'access'}:lexical[change] = 'changed'
+        elif change == 'context':lexical['extraction_context'] = {'source_dependencies': ['required']}
+        elif change == 'coordinate':lexical = deepcopy(endpoint)
+        elif change == 'spreadsheet':s.policy = {**s.policy, 'intake_spreadsheet': {'format': 'xlsx'}}
+        assert ae.same_lexical_passage(db, lexical, endpoint) is (change == 'none')
+
+
+def test_intake_reuse_verifies_provenance_even_when_locators_match(client):
+    from app.services import passage_context
+    with client.app.state.db.Session() as db:
+        s = source(db)
+        s.policy = {**s.policy, 'intake_extraction_id': 'synthetic', 'intake_locator': 'Page 1',
+                    'content_sha256': digest(s.text)}
+        p = ce.packet(s, 0, len(s.text))
+        endpoint = dict(source_id=s.id, document_id=None, title=s.title, text=s.text,
+                        locator=p['citation']['locator'], access='secondary_text_reviewed',
+                        source_kind=s.kind, policy_version=s.policy_version, extraction_context=p)
+        lexical = {**endpoint, 'extraction_context': passage_context.packet(s, 0, len(s.text))}
+        assert ae.same_lexical_passage(db, lexical, endpoint)
+        lexical['extraction_context'] = {**lexical['extraction_context'], 'provenance_sha256': '0'*64}
+        assert not ae.same_lexical_passage(db, lexical, endpoint)

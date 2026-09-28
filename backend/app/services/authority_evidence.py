@@ -1,5 +1,6 @@
 """Bounded one-hop Agent relationships. An edge never transfers source admission."""
 from fastapi import HTTPException
+from types import SimpleNamespace
 from sqlalchemy import select, or_
 from ..models import Source, Evidence, AuthorityRelationship, RunAuthorityEvidence
 from ..errors import fail
@@ -53,11 +54,44 @@ def endpoint_row(db, run, endpoint, context):
             'source_kind': source.kind, 'policy_version': source.policy_version, 'extraction_context': snapshot}
 
 
+def same_lexical_passage(db, lexical, endpoint):
+    """Prove an ordinary passage is exactly this endpoint, including its position.
+
+    Spreadsheet companions keep their separate binding contract. Coordinate
+    packets already used by another edge are never rewritten.
+    """
+    from . import passage_context
+    if any(lexical.get(k) != endpoint.get(k) for k in (
+            'source_id', 'document_id', 'title', 'text', 'access', 'source_kind', 'policy_version')):
+        return False
+    if not lexical.get('source_id') or lexical.get('document_id') or not lexical.get('text'):
+        return False
+    source = db.get(Source, lexical['source_id'])
+    if not source or (source.policy or {}).get('intake_spreadsheet'):
+        return False
+    if not coordinate_evidence.current(source, SimpleNamespace(**endpoint)):
+        return False
+    citation = endpoint['extraction_context']['citation']
+    start, end = citation['character_start'], citation['character_end']
+    if passage_context.required(source):
+        return (passage_context.current(source, SimpleNamespace(**lexical))
+                and lexical['extraction_context']['character_start'] == start
+                and lexical['extraction_context']['character_end'] == end)
+    if lexical.get('extraction_context') or (source.policy or {}).get('sec_core'):
+        return False
+    for i, offset, a, b, text in passage_context.segments(source.text or ''):
+        locator = f'Section {i+1}' + (f' part {offset//3000+1}' if offset else '')
+        if lexical['locator'] == locator:
+            return (a, b, text) == (start, end, lexical['text'])
+    return False
+
+
 def select_evidence(db, run, pool, limit, *, context):
     selected, seen, plans, edges, seeds = [], {}, [], set(), set()
     used = 0
     for root in pool:
-        if key(root) in seen:
+        if key(root) in seen or any(same_lexical_passage(db, root, row) for row in selected
+                                   if row.get('extraction_context', {}).get('version') == coordinate_evidence.VERSION):
             continue
         # Each explicitly selected private document remains ahead of source graph expansion.
         group = select_with_companions(db, run, [root], limit-len(selected), context=context)
@@ -83,13 +117,27 @@ def select_evidence(db, run, pool, limit, *, context):
             pair = [endpoint_row(db, run, edge.payload[k], context) for k in ('source', 'target')]
             if any(row is None for row in pair):
                 continue
-            if any(key(row) in seen and seen[key(row)] != row for row in pair):
+            if any(key(row) in seen and seen[key(row)] != row
+                   and not same_lexical_passage(db, seen[key(row)], row) for row in pair):
                 continue
-            fresh = [row for row in pair if key(row) not in seen]
-            size = len(canonical(edge.payload)) + 2048
-            if len(selected)+len(fresh) > limit or used+size > MAX_BYTES:
-                continue
+            fresh = [row for row in pair if key(row) not in seen or seen[key(row)] != row]
+            replacements = {}
             for row in fresh:
+                for index, old in enumerate(selected):
+                    if index not in replacements and same_lexical_passage(db, old, row):
+                        replacements[index] = row
+                        break
+            size = len(canonical(edge.payload)) + 2048
+            if len(selected)+len(fresh)-len(replacements) > limit or used+size > MAX_BYTES:
+                continue
+            # Commit both endpoints atomically only after the complete pair fits.
+            for index, row in replacements.items():
+                del seen[key(selected[index])]
+                selected[index] = row
+                seen[key(row)] = row
+            for row in fresh:
+                if key(row) in seen:
+                    continue
                 seen[key(row)] = row
                 selected.append(row)
             plans.append((edge.id, key(pair[0]), key(pair[1])))

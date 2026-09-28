@@ -22,7 +22,7 @@ def test_actual_indexed_retrieval_and_cleanup(evaluation_url):
     assert report['database_engine']=='postgresql' and report['case_count']==16
     rows={c['case_id']:c for c in report['cases']}
     assert rows['definition-link']['relationship_count']==1
-    assert rows['bounded-definition-gap']['recall']==0.5
+    assert rows['bounded-definition-gap']['recall']==1
     assert rows['lexical-false-positive']['precision']==0.5
     for cid in ('reference-only','revoked-rights','missing-technical-review'):
         assert rows[cid]['authorized_indexes']==[]

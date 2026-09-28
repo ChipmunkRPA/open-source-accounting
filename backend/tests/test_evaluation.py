@@ -19,8 +19,8 @@ def test_actual_fixture_metrics_preserve_gap_and_unmeasured_dimensions(measured)
     corpus,report=measured
     assert report['passed'] and report['case_count']==16 and report['professional_adjudications']==0
     rows={r['case_id']:r for r in report['cases']}
-    assert rows['bounded-definition-gap']['recall']==0.5
-    assert rows['bounded-definition-gap']['missed_units']==['source:definition']
+    assert rows['bounded-definition-gap']['recall']==1
+    assert rows['bounded-definition-gap']['missed_units']==[]
     assert rows['definition-link']['recall']==1 and rows['definition-link']['relationship_count']==1
     assert rows['lexical-false-positive']['precision']==0.5 and rows['lexical-false-positive']['extra_units']==['source:irrelevant']
     assert rows['reference-only']['reference_only_units']==['source:reference']
@@ -60,6 +60,7 @@ def test_regression_is_retained_not_silently_dropped():
     raw=load(CORPUS).model_dump(mode='json')
     raw['cases']=[raw['cases'][1]]
     raw['cases'][0]['minimum_recall']=1
+    raw['cases'][0]['evidence_limit']=1
     report=evaluate(Corpus.model_validate(raw))
     assert not report['passed']
     assert report['cases'][0]['failures']==['fixture_recall_regression']
