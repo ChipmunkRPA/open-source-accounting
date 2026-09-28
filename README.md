@@ -182,6 +182,12 @@ python3 scripts/publish_existing_repository.py --apply
 
 The script requires Git/GitHub CLI authentication, refuses unexpected existing application code, never force-pushes, and verifies the remote commit. It is syntax-checked but not live-run in the development environment. Publishing source does not configure Google Cloud or enable live MFA.
 
+## ASU tracking
+
+Open `/asu-tracking` for the free rolling two-year ASU register and company filing disclosures. Search by ASU/topic, then filter materials by company/CIK and reported adoption status. The starter catalog has 16 ASU references and 12 filing links across two companies; it is not a complete issuance or filer universe.
+
+The worker refreshes identifiers from authorized staged SEC filing passages daily, with resumable batches and immediate rights-revocation checks. It does not automatically discover or acquire new external filings. Reference links and automatic mentions remain distinct from retained artifacts and approved evidence. See [ASU tracking operations and coverage](docs/ASU_TRACKING.md) and [observed validation](reports/asu/VALIDATION.md).
+
 ## SEC Core starter integration — v0.7.0
 
 The public **/sec-core** screen provides searchable selected official excerpts and an explicit acquisition inventory. New code implements controlled intake, raw/normalized hashes, conservative XML/HTML/PDF parsing, exact locators and existing-source review integration. The original 63-item educational manifest is unchanged; **34 SEC targets, 7 excerpted sources and 28 excerpts** are tracked separately. No complete source documents or original HTTP bytes are bundled, and no SEC passage is automatically approved for Agent evidence.
