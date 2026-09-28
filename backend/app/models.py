@@ -593,3 +593,22 @@ class ASURefresh(Base):
     scanned: Mapped[int] = mapped_column(Integer, default=0)
     eligible: Mapped[int] = mapped_column(Integer, default=0)
     matches: Mapped[int] = mapped_column(Integer, default=0)
+
+
+class SearchIndexSweep(Base):
+    __tablename__ = 'search_index_sweeps'
+    cleanup_version: Mapped[str] = mapped_column(String(80))
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
+    request_sha256: Mapped[str] = mapped_column(String(64), unique=True)
+    actor_id: Mapped[str] = mapped_column(String(128))
+    cursor: Mapped[str] = mapped_column(String(36), default='')
+    upper_id: Mapped[str] = mapped_column(String(36), default='')
+    state: Mapped[str] = mapped_column(String(20), default='running')
+    sequence: Mapped[int] = mapped_column(Integer, default=0)
+    initial_stored: Mapped[int] = mapped_column(Integer, default=0)
+    scanned: Mapped[int] = mapped_column(Integer, default=0)
+    retained: Mapped[int] = mapped_column(Integer, default=0)
+    removed: Mapped[int] = mapped_column(Integer, default=0)
+    vanished: Mapped[int] = mapped_column(Integer, default=0)
+    started_at: Mapped[int] = mapped_column(Integer, default=now)
+    completed_at: Mapped[int | None] = mapped_column(Integer)

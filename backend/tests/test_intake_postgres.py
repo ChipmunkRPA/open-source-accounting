@@ -1142,3 +1142,94 @@ def test_postgres_indexed_retrieval_beyond_legacy_bound(pg_url):
             db.execute(delete(Source).where(Source.id.like(prefix+'-%')));db.commit()
             assert db.scalar(select(func.count()).select_from(SourceSearchIndex).where(SourceSearchIndex.source_id.like(prefix+'-%')))==0
     database.engine.dispose()
+
+
+def index_cleanup_worker(url,sweep_id,actor,label,results,start=None):
+    from app.services import index_cleanup
+    database=Database(url)
+    try:
+        with database.Session() as db:
+            db.execute(text("SELECT set_config('application_name',:label,false)"),{'label':label})
+            results.put(('started',))
+            if start is not None:assert start.wait(15)
+            sweep=index_cleanup.advance(db,sweep_id,0,actor);db.commit()
+            results.put(('finished',sweep.retained,sweep.removed,sweep.sequence))
+    except HTTPException as exc:results.put(('error',exc.status_code))
+    finally:database.engine.dispose()
+
+
+def test_postgres_cleanup_waits_for_rebuild_and_preserves_fresh_entry(pg_url):
+    import time
+    from app.services import index_cleanup,source_search,counsel
+    from app.models import SourceSearchIndex,SearchIndexSweep
+    from test_source_search import source
+    database=Database(pg_url);actor=str(uuid4());label='cleanup-'+actor[:8]
+    with database.Session() as db:
+        row=source(db,actor);source_search.rebuild(db,row,source_search.revision(row),actor)
+        sweep=index_cleanup.start(db,actor,str(uuid4()));sid=sweep.id;db.commit()
+    ctx=multiprocessing.get_context('spawn');results=ctx.Queue()
+    worker=ctx.Process(target=index_cleanup_worker,args=(pg_url,sid,actor,label,results))
+    try:
+        with database.Session() as writer:
+            row=counsel.lock_source(writer,actor)
+            row.text='fresh rebuilt synthetic index body';rights.record_approval(row,actor)
+            source_search.rebuild(writer,row,source_search.revision(row),actor);writer.flush()
+            worker.start();assert results.get(timeout=20)==('started',)
+            blocked=False;deadline=time.monotonic()+15
+            while time.monotonic()<deadline:
+                with database.engine.connect() as probe:
+                    blocked=probe.execute(text("SELECT EXISTS(SELECT 1 FROM pg_locks l JOIN pg_stat_activity a ON a.pid=l.pid WHERE a.application_name=:label AND NOT l.granted)"),{'label':label}).scalar()
+                if blocked:break
+                time.sleep(.05)
+            assert blocked,'Expected a real PostgreSQL source-row lock wait.'
+            writer.commit()
+        assert results.get(timeout=20)==('finished',1,0,1)
+        worker.join(15);assert worker.exitcode==0
+        with database.Session() as db:
+            row=db.get(Source,actor);entry=db.get(SourceSearchIndex,actor)
+            assert source_search.current(row,entry) and 'fresh rebuilt' in entry.search_text
+            state=db.get(SearchIndexSweep,sid);assert state.scanned==1 and state.retained==1
+            with pytest.raises(HTTPException) as exc:index_cleanup.advance(db,sid,0,actor)
+            assert exc.value.status_code==409
+    finally:
+        if worker.pid:
+            if worker.is_alive():worker.terminate()
+            worker.join(5)
+        with database.Session() as db:
+            from sqlalchemy import delete
+            db.execute(delete(Source).where(Source.id==actor));db.execute(delete(SearchIndexSweep).where(SearchIndexSweep.id==sid));db.commit()
+        database.engine.dispose()
+
+
+
+def test_postgres_cleanup_competing_advances_count_once(pg_url):
+    from app.services import index_cleanup,source_search
+    from app.models import SearchIndexSweep,Audit
+    from test_source_search import source
+    database=Database(pg_url);actor=str(uuid4())
+    with database.Session() as db:
+        row=source(db,actor);source_search.rebuild(db,row,source_search.revision(row),actor)
+        sweep=index_cleanup.start(db,actor,str(uuid4()));sid=sweep.id;db.commit()
+    ctx=multiprocessing.get_context('spawn');results=ctx.Queue();start=ctx.Event()
+    workers=[ctx.Process(target=index_cleanup_worker,args=(pg_url,sid,actor,'competing-'+actor[:8],results,start)) for _ in range(2)]
+    try:
+        for worker in workers:worker.start()
+        assert results.get(timeout=20)==('started',)
+        assert results.get(timeout=20)==('started',)
+        start.set()
+        events=[results.get(timeout=20),results.get(timeout=20)]
+        assert ('finished',1,0,1) in events and ('error',409) in events
+        for worker in workers:worker.join(15);assert worker.exitcode==0
+        with database.Session() as db:
+            sweep=db.get(SearchIndexSweep,sid);assert sweep.scanned==1 and sweep.retained==1
+            assert db.scalar(select(func.count()).select_from(Audit).where(Audit.target_id==sid,Audit.action=='source.index_cleanup_batch'))==1
+    finally:
+        start.set()
+        for worker in workers:
+            if worker.pid:
+                if worker.is_alive():worker.terminate()
+                worker.join(5)
+        with database.Session() as db:
+            from sqlalchemy import delete
+            db.execute(delete(Source).where(Source.id==actor));db.execute(delete(SearchIndexSweep).where(SearchIndexSweep.id==sid));db.commit()
+        database.engine.dispose()

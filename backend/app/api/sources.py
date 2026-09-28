@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Header, Query
 from pydantic import BaseModel, ConfigDict, Field
 from sqlalchemy import select, or_
 from ..auth import fresh_user, current_user, session, require_admin
@@ -155,3 +155,50 @@ def delete_search_index(source_id:str,user=Depends(fresh_user),db=Depends(sessio
     if not row:fail('NOT_FOUND','Source not found.',404)
     source_search.remove(db,row,user.id);db.commit()
     return {'removed':True,'source_id':source_id}
+
+
+class CleanupAdvance(BaseModel):
+    model_config=ConfigDict(extra='forbid')
+    expected_sequence:int=Field(strict=True,ge=0)
+
+
+@router.post('/admin/search-index/sweeps')
+def start_index_cleanup(request_key:str=Header(alias='Idempotency-Key',min_length=16,max_length=200),
+                        user=Depends(fresh_user),db=Depends(session)):
+    from ..services import index_cleanup
+    require_admin(user)
+    sweep=index_cleanup.start(db,user.id,request_key);db.commit()
+    return index_cleanup.status(sweep)
+
+
+@router.get('/admin/search-index/sweeps/{sweep_id}')
+def index_cleanup_status(sweep_id:str,user=Depends(current_user),db=Depends(session)):
+    from ..models import SearchIndexSweep
+    from ..services import index_cleanup
+    require_admin(user)
+    sweep=db.get(SearchIndexSweep,sweep_id)
+    if not sweep:fail('NOT_FOUND','Index cleanup sweep not found.',404)
+    return index_cleanup.status(sweep)
+
+
+@router.post('/admin/search-index/sweeps/{sweep_id}/advance')
+def advance_index_cleanup(sweep_id:str,payload:CleanupAdvance,user=Depends(fresh_user),db=Depends(session)):
+    from ..services import index_cleanup
+    require_admin(user)
+    sweep=index_cleanup.advance(db,sweep_id,payload.expected_sequence,user.id);db.commit()
+    return index_cleanup.status(sweep)
+
+
+@router.get('/admin/search-index/sweeps/{sweep_id}/receipts')
+def index_cleanup_receipts(sweep_id:str,after:int=Query(default=0,ge=0),user=Depends(current_user),db=Depends(session)):
+    from ..models import SearchIndexSweep
+    from ..sec_core.core import canonical,digest
+    require_admin(user)
+    if not db.get(SearchIndexSweep,sweep_id):fail('NOT_FOUND','Index cleanup sweep not found.',404)
+    rows=list(db.scalars(select(Audit).where(Audit.target_id==sweep_id,
+        Audit.action=='source.index_cleanup_batch',Audit.id>after).order_by(Audit.id).limit(50)))
+    for row in rows:
+        if row.detail.get('receipt_sha256')!=digest(canonical(row.detail.get('receipt'))):
+            fail('CLEANUP_RECEIPT_INTEGRITY','Cleanup receipt integrity check failed.',409)
+    return {'items':[{'audit_id':row.id,**row.detail} for row in rows],
+            'next_after':rows[-1].id if len(rows)==50 else None}
