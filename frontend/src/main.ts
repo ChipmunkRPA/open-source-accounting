@@ -1,3 +1,4 @@
+import {claimReviewView} from './views/claim-review.js';
 import {authorityReviewView} from './views/authority-review.js';
 import {sourceReaderView} from './views/source-reader.js';
 import {searchIndexView} from './views/search-index.js';
@@ -93,6 +94,7 @@ export async function mount(root:HTMLElement){
       switch(path[0]){
         case undefined:case 'chat':page('Free chat');await chatView(app,path[1]);break;
         case 'agents':page('Agent studio');path[1]?await taskView(app,path[1]):await studioView(app);break;
+        case 'claim-review':page('Claim review');await claimReviewView(app,decodeURIComponent(path[1]||''),decodeURIComponent(path[2]||''));break;
         case 'runs':page('Research');await runView(app,path[1]);break;
         case 'memos':page('Memos');await memoView(app,path[1]);break;
         case 'workspaces':page('Workspaces');await workspacesView(app);break;

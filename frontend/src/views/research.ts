@@ -142,7 +142,7 @@ export async function runView(app:App,id:string){
               el('p',{class:'muted'},'One task is reserved on start; unsuccessful runs release that reservation. The model does not access unrestricted websites.'),confirm.element,msg,start)));
         return;
       }
-      if(run.access_blocked){body.replaceChildren(top,notice('A supporting source changed or was removed. Output is withheld pending review. Payment cannot resolve source permissions.','warning'));return;}
+      if(run.access_blocked){body.replaceChildren(top,notice('A supporting source changed or was removed. Output is withheld pending review. Payment cannot resolve source permissions.','warning'),link(app,'Review claim history or revoke a decision','/claim-review/'+encodeURIComponent(id),'button secondary'));return;}
       if(!run.result){
         const events=(await api(`/runs/${id}/events`)).items;
         body.replaceChildren(top,badge(run.state,'paid'),card('Research activity',
@@ -159,7 +159,8 @@ export async function runView(app:App,id:string){
       main.append(sourceNotices(result.source_attributions));
       if(result.claims?.length){main.append(el('h3',{},'Claims and supporting evidence'));
         for(const claim of result.claims)main.append(el('div',{class:'claim'},badge(claim.basis),textBlock(claim.text),
-          el('div',{class:'citation-row'},...claim.evidence_ids.map((eid:string,i:number)=>button(`Evidence ${i+1}`,()=>showEvidence(eid),'citation')))));
+          el('div',{class:'citation-row'},...claim.evidence_ids.map((eid:string,i:number)=>button(`Evidence ${i+1}`,()=>showEvidence(eid),'citation'))),
+          link(app,'Human review · '+claim.id,'/claim-review/'+encodeURIComponent(id)+'/'+encodeURIComponent(claim.id),'button secondary')));
       }
       const relationships=runRelationships(app,id);disposeRelationships=relationships.dispose;main.append(relationships.element);
       for(const t of result.tables||[])main.append(el('h3',{},t.title),table(t.columns,t.rows));
