@@ -35,6 +35,12 @@ class ManualDelivery(Strict):
         return self
 
 
+class AnnualCfrEdition(Strict):
+    year: int = Field(ge=1900, le=2200, strict=True)
+    volume: int = Field(ge=1, le=100, strict=True)
+    revised_as_of: date | None = None
+
+
 class IntakeManifest(Strict):
     family_id: str = Field(min_length=1, max_length=80)
     work_id: str = Field(min_length=1, max_length=160)
@@ -47,7 +53,8 @@ class IntakeManifest(Strict):
     route: Literal['official_http', 'authorized_manual', 'reference_only']
     requested_url: str = Field(min_length=1, max_length=1500)
     redirect_urls: list[str] = Field(default_factory=list, max_length=3)
-    parser: Literal['ecfr_xml', 'structural_html', 'pdf', 'text', 'crossref_metadata']
+    parser: Literal['ecfr_xml', 'annual_cfr_xml', 'structural_html', 'pdf', 'text', 'crossref_metadata']
+    annual_cfr: AnnualCfrEdition | None = None
     parser_family: str = Field(default='generic', max_length=80)
     cfr_title: str = Field(default='17', pattern=r'^\d{1,3}$')
     allowed_mime: list[Literal['application/xml', 'text/xml', 'text/html', 'application/pdf', 'text/plain', 'application/json']] = Field(min_length=1, max_length=6)
@@ -67,12 +74,25 @@ class IntakeManifest(Strict):
         # Preserve hashes of previously registered manifests and their rights reviews.
         if self.manual_delivery is None:
             data.pop('manual_delivery')
+        if self.annual_cfr is None:
+            data.pop('annual_cfr')
         return data
 
     @model_validator(mode='after')
     def validate_route(self):
         for url in [self.requested_url, *self.redirect_urls]:
             https_url(url)
+        if self.parser == 'annual_cfr_xml':
+            a = self.annual_cfr
+            if (a is None or self.family_id not in {'FEDERAL_LAW', 'SEC_RULES'}
+                    or self.edition != str(a.year) or self.redirect_urls
+                    or not set(self.allowed_mime) <= {'application/xml', 'text/xml'}):
+                raise ValueError('Annual CFR requires exact year/volume, year edition, CFR family, XML MIME and no redirects.')
+            expected = f'https://www.govinfo.gov/bulkdata/CFR/{a.year}/title-{self.cfr_title}/CFR-{a.year}-title{self.cfr_title}-vol{a.volume}.xml'
+            if self.requested_url != expected or (a.revised_as_of and a.revised_as_of.year != a.year):
+                raise ValueError('Annual CFR URL and revision year must match its declared title/year/volume.')
+        elif self.annual_cfr is not None:
+            raise ValueError('Annual edition metadata requires annual_cfr_xml.')
         if self.parser == 'crossref_metadata':
             from .crossref_discovery import query_contract
             query_contract(self.requested_url)

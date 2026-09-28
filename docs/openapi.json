@@ -5072,6 +5072,41 @@
         ],
         "title": "AgentCostCohort"
       },
+      "AnnualCfrEdition": {
+        "properties": {
+          "year": {
+            "type": "integer",
+            "maximum": 2200.0,
+            "minimum": 1900.0,
+            "title": "Year"
+          },
+          "volume": {
+            "type": "integer",
+            "maximum": 100.0,
+            "minimum": 1.0,
+            "title": "Volume"
+          },
+          "revised_as_of": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Revised As Of"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "year",
+          "volume"
+        ],
+        "title": "AnnualCfrEdition"
+      },
       "ApplicabilityDecision": {
         "properties": {
           "expected_policy_version": {
@@ -6242,12 +6277,23 @@
             "type": "string",
             "enum": [
               "ecfr_xml",
+              "annual_cfr_xml",
               "structural_html",
               "pdf",
               "text",
               "crossref_metadata"
             ],
             "title": "Parser"
+          },
+          "annual_cfr": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AnnualCfrEdition"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "parser_family": {
             "type": "string",

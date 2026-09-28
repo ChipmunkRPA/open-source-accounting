@@ -53,3 +53,5 @@ No completed briefs or gold answers are claimed here. Prioritized remaining scop
 ## Parser follow-up evidence
 
 The guide's printed page 12 identifies `GPOTABLE/BOXHD/CHED` header cells and `ROW/ENT` data cells. Inspected `backend/app/sec_core/parsers.py::ecfr_xml` iterates only TR/ROW table rows and TD/TH/ENT cells; it does not emit BOXHD/CHED headers in the normal table path. A nonempty extraction therefore cannot prove header-complete annual CFR tables. Next work must preserve verified header relationships, detect unsupported spans/graphics rather than silently lose them, and retain distinct annual-volume provenance. Use original synthetic fixtures and the actual source-intake rights/review pipeline; no real-volume parser success is claimed here.
+
+Annual-format implementation and explicit limits: [Annual CFR parser](ANNUAL_CFR_PARSER.md). No selected legal candidate has been acquired or approved by this implementation.

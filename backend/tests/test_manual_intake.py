@@ -120,8 +120,8 @@ def test_invalid_manual_registration(change):
 
 def test_old_http_manifest_hash_is_unchanged():
     model = IntakeCreate.model_validate(payload()).manifest
-    old = model.model_dump(mode='json'); old.pop('manual_delivery')
-    assert digest(canonical(model.canonical_metadata())) == digest(canonical(old))
+    # Frozen against the pre-annual-CFR schema, not today's expanding model_dump.
+    assert digest(canonical(model.canonical_metadata())) == 'b99cd83d0f9c224f43930d65bfa1761962bde3c32995726f382c9e2e1373310e'
 
 
 def test_http_manifest_cannot_use_manual_endpoint(client):
