@@ -139,9 +139,10 @@ def history(db, settings, extraction_id):
         ['store_raw', 'store_text', 'display_full'])
     rows = db.scalars(select(ParserReview).where(ParserReview.extraction_id == ex.id)
                       .order_by(ParserReview.sequence.desc()).limit(100)).all()
-    result = {'extraction_id': ex.id, 'revision': revision,
+    supporting = output_rights.history_sources(db,parent)
+    result = {'source_attributions': output_rights.notices(db,supporting), 'extraction_id': ex.id, 'revision': revision,
               'items': [{'id': r.id, 'sequence': r.sequence, 'created_at': r.created_at,
                          'payload': r.payload, 'payload_sha256': r.payload_sha256} for r in rows]}
-    output_rights.release(db, [parent], result)
+    output_rights.release(db, supporting, result)
     db.commit()
     return result

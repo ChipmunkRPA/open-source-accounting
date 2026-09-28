@@ -286,7 +286,8 @@ def output_worker(url, source_id, payload, start, results):
 
 
 @pytest.mark.parametrize('duplicate', [False, True])
-def test_postgres_output_limit_serializes_across_accounts(pg_url, duplicate):
+@pytest.mark.parametrize('inherited', [False, True])
+def test_postgres_output_limit_serializes_across_accounts(pg_url, duplicate, inherited):
     from app.models import OutputBudget, OutputRelease
     database = Database(pg_url)
     group = 'synthetic-'+str(uuid4())
@@ -295,6 +296,17 @@ def test_postgres_output_limit_serializes_across_accounts(pg_url, duplicate):
                         policy={'output_control': {'mode': 'bounded', 'group_id': group,
                                 'max_chars_per_response': 10, 'max_chars_total': 10}})
         session.add(source); session.commit(); source_id = source.id
+        if inherited:
+            from app.models import EditorialReview,now
+            from app.services import editorial
+            from app.sec_core.core import canonical,digest
+            parent=Source(title='Synthetic derived concurrency source',publisher='Test fixture',text='Synthetic derived output.')
+            session.add(parent);session.flush()
+            payload={'content_sha256':digest(parent.text),'reference_bindings':[{'source_id':source.id,
+                'review_revision':editorial.revision(source),'locator':source.canonical_url}]}
+            session.add(EditorialReview(source_id=parent.id,decision='changes_requested',review_revision=editorial.revision(parent),
+                payload=payload,payload_sha256=digest(canonical(payload)),expires_at=now()+3600))
+            session.commit();source_id=parent.id
     ctx = multiprocessing.get_context('spawn')
     start, results = ctx.Event(), ctx.Queue()
     payloads = ['alpha']*4 if duplicate else ['alpha', 'beta']

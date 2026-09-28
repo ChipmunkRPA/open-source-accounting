@@ -17,17 +17,23 @@ def canonical(value):
 
 
 def source_lineage(db, sources):
+    from .dependencies import output_bindings
     result = {}
     def visit(source, path):
         if source.id in path or len(path) >= 20:
             fail('DEPENDENCY_CYCLE', 'Source lineage requires review.', 409)
         if source.id in result: return
+        if len(result)>=500:fail('DEPENDENCY_LIMIT','Output dependency graph requires bounded reconciliation.',409)
         result[source.id] = source
         parent_id = source.policy.get('intake_parent_id')
         if parent_id:
             parent = db.get(Source, parent_id)
             if not parent: fail('SOURCE_CHANGED', 'Parent source is unavailable.', 409)
             visit(parent, path | {source.id})
+        for binding in output_bindings(source):
+            target=db.get(Source,binding['source_id'])
+            if not target:fail('SOURCE_CHANGED','Referenced publication is unavailable.',409)
+            visit(target,path | {source.id})
     for source in sources: visit(source, set())
     return list(result.values())
 
@@ -60,6 +66,20 @@ def notices(db, sources):
         key = canonical(row)
         if key not in seen: result.append(row); seen.add(key)
     return result
+
+
+def history_sources(db, source):
+    """Private findings can quote earlier bodies; retain all recorded dependencies."""
+    from . import dependencies,rights,editorial
+    sources={source.id:source}
+    for binding in dependencies.output_bindings(source,all_bodies=True):
+        target=db.get(Source,binding['source_id'])
+        if (not target or editorial.revision(target)!=binding['review_revision']
+                or dependencies.locator(target)!=binding['locator']):
+            fail('SOURCE_CHANGED','Historical supporting source requires revision review.',409)
+        rights.require(target,'display_full')
+        sources[target.id]=target
+    return list(sources.values())
 
 
 def notice_text(rows):

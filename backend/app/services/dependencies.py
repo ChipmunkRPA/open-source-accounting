@@ -52,9 +52,54 @@ def allowed(source,action,*,context=None,accounting_context=None,visited=None,_b
         if (not target or target.id in seen or not target.text or target.policy_version!=b.get('policy_version')
                 or editorial.revision(target)!=b.get('review_revision') or locator(target)!=b.get('locator')):return False
         # The dependency must permit the actual operation, not merely viewing its metadata.
-        if target.policy.get('output_control') is not None or target.policy.get('attribution'):return False  # Derived-output budgets need explicit lineage accounting.
         if not rights_allowed(target,action,context=context,_visited=seen,_check_dependencies=False):return False
         if target.policy.get('requires_technical_review') and not editorial.current(target):return False
         if accounting_context is not None and not applies(target,accounting_context):return False
         if not allowed(target,action,context=context,accounting_context=accounting_context,visited=seen,_budget=budget):return False
+    return True
+
+
+def output_bindings(source, *, all_bodies=False):
+    """Retain obligations from all decisions for this exact body, even after revocation.
+
+    These are output obligations, not current evidence approval. No text is copied.
+    """
+    from sqlalchemy import select
+    from ..sec_core.core import canonical,digest
+    db=object_session(source)
+    if db is None:return []
+    query=select(EditorialReview).where(EditorialReview.source_id==source.id)
+    if not all_bodies:query=query.where(EditorialReview.payload['content_sha256'].as_string()==digest(source.text or ''))
+    rows=db.scalars(query.limit(501)).all()
+    if len(rows)>500:fail('DEPENDENCY_LIMIT','Publication review history requires bounded reconciliation.',409)
+    bindings={}
+    for row in rows:
+        if row.payload_sha256!=digest(canonical(row.payload)):
+            fail('SOURCE_CHANGED','Publication dependency history failed integrity checks.',409)
+        for b in row.payload.get('reference_bindings',[]):
+            key=(b['source_id'],b['review_revision'],b['locator'])
+            bindings[key]=b
+    if len(bindings)>500:fail('DEPENDENCY_LIMIT','Publication dependencies require bounded reconciliation.',409)
+    return list(bindings.values())
+
+
+def output_allowed(source,action,*,context=None,visited=None,_budget=None):
+    """Current operation rights apply to every retained exact-body dependency."""
+    from fastapi import HTTPException
+    from .rights import allowed as rights_allowed
+    try:bindings=output_bindings(source)
+    except HTTPException:return False
+    if not bindings:return True
+    budget=_budget if _budget is not None else [500]
+    budget[0]-=1
+    seen=set(visited or ())
+    if source.id in seen or len(seen)>=10 or budget[0]<0:return False
+    seen.add(source.id)
+    db=object_session(source)
+    for b in bindings:
+        target=db.get(Source,b['source_id'])
+        if (not target or target.id in seen or editorial.revision(target)!=b['review_revision']
+                or locator(target)!=b['locator']):return False
+        if not rights_allowed(target,action,context=context,_visited=seen,_check_dependencies=False):return False
+        if not output_allowed(target,action,context=context,visited=seen,_budget=budget):return False
     return True

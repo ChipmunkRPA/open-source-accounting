@@ -81,11 +81,12 @@ def review_history(source_id: str, user=Depends(current_user), db=Depends(sessio
         fail('SOURCE_POLICY_BLOCK', 'Current source display permission is required to read review findings.', 403)
     rows = db.scalars(select(EditorialReview).where(EditorialReview.source_id == source_id)
                       .order_by(EditorialReview.created_at.desc(), EditorialReview.id).limit(100)).all()
-    result = {'source_id': source_id, 'current_record_id': source.policy.get('technical_review_record_id'),
+    supporting = output_rights.history_sources(db,source)
+    result = {'source_attributions': output_rights.notices(db,supporting), 'source_id': source_id, 'current_record_id': source.policy.get('technical_review_record_id'),
               'current': editorial.current(source), 'items': [{'id': row.id, 'created_at': row.created_at,
               'payload_sha256': row.payload_sha256, 'payload': row.payload} for row in rows]}
     # Findings may contain source-derived text; normal output budgets still apply.
-    output_rights.release(db, [source], result)
+    output_rights.release(db, supporting, result)
     db.commit()
     return result
 

@@ -53,7 +53,7 @@ export function applicabilityReview(app:App,source:Json,reload:()=>Promise<void>
     try{
       const data:Json=await api('/editorial/sources/'+encodeURIComponent(source.id)+'/applicability');
       if(!dialog.isConnected)return;
-      history.replaceChildren(notice(data.current?'A current applicability record exists; case scope and other gates still apply.':'No current applicability approval.'),
+      history.replaceChildren(sourceNotices(data.source_attributions),notice(data.current?'A current applicability record exists; case scope and other gates still apply.':'No current applicability approval.'),
         ...data.items.map((r:Json)=>card(r.payload.decision+' · '+new Date(r.created_at*1000).toLocaleString(),
           el('p',{},r.payload.review_scope),el('pre',{class:'review-text'},JSON.stringify(r.payload,null,2)),el('p',{class:'review-hash'},'Record SHA-256: '+r.payload_sha256))));
     }catch(e){if(dialog.isConnected)history.replaceChildren(notice((e as Error).message,'error'));}

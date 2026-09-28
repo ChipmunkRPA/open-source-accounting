@@ -80,7 +80,7 @@ export async function parserReviewView(app:App){
       const loadHistory=button('Show parser decision history',async()=>{
         busy(loadHistory,true);
         try{const data:Json=await api('/editorial/extractions/'+encodeURIComponent(row.id)+'/reviews');if(disposed||ticket!==sequence)return;
-          history.replaceChildren(notice('Private review findings. Use an approved review channel when sharing.'),
+          history.replaceChildren(notice('Private review findings. Use an approved review channel when sharing.'),sourceNotices(data.source_attributions),
             ...data.items.map((r:Json)=>card('Record '+r.sequence+' · '+r.payload.decision.replaceAll('_',' '),
               el('p',{},'Reviewer '+r.payload.reviewer_id+' · '+dateText(r.created_at)+' · expires '+dateText(r.payload.expires_at)),
               el('p',{},r.payload.review_scope),el('pre',{class:'review-text'},r.payload.review_note),

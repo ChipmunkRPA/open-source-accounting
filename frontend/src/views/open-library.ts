@@ -109,7 +109,7 @@ export async function editorialView(app:App){
       saveBlob(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),'review-packet.json');
       }catch(e){app.showError(e);}},'quiet');
     const history=button('Review history',async()=>{try{const data:Json=await api('/editorial/sources/'+s.id+'/reviews');
-      modal('Technical review history',notice('Private review records; do not copy confidential advice into public content.'),
+      modal('Technical review history',notice('Private review records; do not copy confidential advice into public content.'),sourceNotices(data.source_attributions),
         notice(data.current?'A current technical review exists; other evidence gates still apply.':'No current technical approval.'),
         ...data.items.map((r:Json)=>card(r.payload.decision.replaceAll('_',' ')+' · '+new Date(r.created_at*1000).toLocaleString(),
           el('p',{},r.payload.review_scope),el('p',{},r.payload.review_note),

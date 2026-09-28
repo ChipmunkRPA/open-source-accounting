@@ -106,6 +106,9 @@ def allowed(source: Source, action: str, *, context: dict | None = None, _visite
         if (policy.get('technical_review_status') != 'approved'
                 or policy.get('technical_reviewed_sha256') != digest or not current(source)):
             return False
+    if _check_dependencies and action in {'store_text','display_full','quote','export','redistribute','model_input','embed','train'}:
+        from .dependencies import output_allowed
+        if not output_allowed(source,action,context=context,visited=_visited):return False
     if _check_dependencies and action in {'model_input','embed','train'}:
         from .dependencies import allowed as dependencies_allowed
         if not dependencies_allowed(source,action,context=context,visited=_visited):return False

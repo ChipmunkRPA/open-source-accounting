@@ -84,7 +84,8 @@ def history(db,source):
     rights.require(source,'display_full')
     rows=db.scalars(select(ApplicabilityReview).where(ApplicabilityReview.source_id==source.id)
                     .order_by(ApplicabilityReview.payload['expected_policy_version'].as_integer().desc(),ApplicabilityReview.id).limit(100)).all()
-    result={'source_id':source.id,'current_record_id':source.policy.get('applicability_record_id'),
+    supporting=output_rights.history_sources(db,source)
+    result={'source_attributions':output_rights.notices(db,supporting),'source_id':source.id,'current_record_id':source.policy.get('applicability_record_id'),
             'current':current(source) is not None,'items':[{'id':r.id,'created_at':r.created_at,
             'payload':r.payload,'payload_sha256':r.payload_sha256} for r in rows]}
-    output_rights.release(db,[source],result);db.commit();return result
+    output_rights.release(db,supporting,result);db.commit();return result
