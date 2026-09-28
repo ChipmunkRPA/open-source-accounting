@@ -2,7 +2,7 @@
 
 ## 2026-09-27 · #23 correction and takedown administration (parent #5)
 
-Implementation: private administrator queue with exact opening source revision, idempotent creation, current-version transitions, append-only API action history, scoped recent-auth mutations and case-linked atomic emergency disable. Resolution/dismissal/reopening never restores sources or grants approval. Potential dependents reuse the bounded staged metadata report; reporting failure does not block disable. Migration 0013 adds two tables without backfills. UI and operator instructions included.
+Implementation: private administrator queue with exact opening source revision, idempotent creation, current-version transitions, append-only API action history, scoped recent-auth mutations and case-linked atomic emergency disable. Resolution/dismissal/reopening never restores sources or grants approval. Potential dependents reuse the bounded staged metadata report; reporting failure does not block disable. Migration 0013 adds two tables without backfills. UI and operator instructions included. Published on main as [488e176](https://github.com/ChipmunkRPA/open-source-accounting/commit/488e17619e15cb4c5356b0d28101c8f0e166eb67); [CI 36362160154](https://github.com/ChipmunkRPA/open-source-accounting/actions/runs/36362160154) passed both Python 3.11/3.13 clean installs, frontend/backend, migration/PostgreSQL and Docker. Content/hash/queue/generated-progress/publication checks passed. Temporary browser and test servers stopped.
 
 Actual validation: **796 backend passed / 23 optional PostgreSQL skipped**, before final impact endpoint/two added tests; final **6 targeted passed**, **24 PostgreSQL contracts passed**, including competing case actions. Empty PostgreSQL upgrade/downgrade/re-upgrade/schema parity passed: **40 tables**. TypeScript/build, lint F and generated API contract passed. Browser synthetic workflow verified disabled source remained disabled after resolution, with one potential dependent. Fixed version-label key and test-helper unpacking; one upstream Starlette/httpx warning. Receipts/commands/limits: `reports/intake/CORRECTIONS.md`, JUnit and `corrections-ui.png`.
 
@@ -10,7 +10,7 @@ Coverage unchanged: **32 families / 47 topics; 63 original drafts / 63 verified 
 
 Remaining gates: actual authorized primary text and independent reviewers; artifact-store integrity reconciliation, affected saved-artifact remediation, assignment/escalation/public complaint intake, corpus-scale source search/UI history, conditional applicability, all-family acquisition/index/evaluation and browser downloads. GCP project/region/spend choice, credentials and concrete release approval remain outstanding.
 
-Next resumable task: **#23/#21 artifact-store integrity reconciliation**, replacing metadata-only acquisition confidence with verified stored-byte hashes and explicit missing/corrupt states; continue authorized all-family retrieval. Keep main current. Full application/content/GCP goal remains active.
+Next resumable task: **#23/#8 artifact-store integrity reconciliation**, replacing metadata-only acquisition confidence with verified stored-byte hashes and explicit missing/corrupt states; continue authorized all-family retrieval. Keep main current. Full application/content/GCP goal remains active.
 
 ---
 
