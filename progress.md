@@ -1,5 +1,19 @@
 # Open Source Accounting — current implementation progress
 
+## 2026-09-27 · #8/#24 versioned eCFR table correction (parent #5)
+
+New eCFR intake uses `source-intake-ecfr-2`, preserving GPO/HTML table headers, captions, notes, signed numeric and empty cells, cell attributes and exact XML paths. Section headings are separate passages; printed-page markers remain distinct from physical pages. Unsupported graphics, complex formulas/spans/headers, nested/uneven tables and unknown structures fail the whole parse with a scoped diagnostic and retained raw artifact. New parse versions have separate extraction identities; existing normalized bytes, sources and reviews remain unchanged. Standalone SEC historical replay remains `sec-core-0.7.0`. Fresh versions are unapproved and require fresh independent review. See `docs/ECFR_PARSER.md`.
+
+Actual local validation: **119 targeted passes; 918 full backend passes / 28 optional PostgreSQL skips / zero failures**, including 22 new original synthetic cases. One upstream Starlette/httpx warning; no failing test run in this slice. Lint F, actual API export/unchanged-schema comparison, content and queue checks passed. Commands/results: `reports/intake/ECFR_PARSER.md`. No frontend/migration changes or local reruns of those checks. Synthetic old/new extraction tests verify unchanged historical object bytes/hashes and separate new-version retry identity. No real regulation was acquired or professionally reviewed.
+
+Coverage unchanged: **32 families / 47 topics; 63 original drafts / 63 hashes / 0 professional approvals / 0 Agent admissions; 58 questions / 26 references**. SEC **34 targets / 28 excerpts / 7 excerpted sources / 0 full original HTTP artifacts / 0 technical or applicability approvals / 0 approved production index / 0 human-adjudicated evaluations**. Government **17 overlapping metadata candidates / 3 families** and legal **9 metadata candidates / 3 families**, both **0 new real acquisition/parsing/review/index additions**. Their 12 and 14 review scenarios remain unexecuted/unadjudicated. Annual parser `source-intake-annual-cfr-1`, other legacy intake `source-intake-1/sec-core-0.7.0`, discovery `html-index-1/crossref-works-1`, requested `gemini-3.8-flash` unchanged. No cloud, live inference, billing, SMS or notification action.
+
+Remaining gates: actual authorized originals, publisher completeness, unsupported format reconciliation, independent rights/technical/applicability reviews, all-family index and adjudicated evaluations. The old SEC replay parser's known header limitation remains a historical limitation, not evidence that old snapshots are complete. GCP project/region/spend, credentials and concrete release approval remain outstanding.
+
+Next resumable task: #24 cross-family PDF extraction review contract, preserving physical/printed page distinctions and surfacing layout/image/OCR limitations before any authoritative table claims. Continue all-family authorized source acquisition as rights and reviewers become available. Keep main current; full application/content/GCP goal remains active.
+
+---
+
 ## 2026-09-27 · #8/#24 annual CFR XML adapter (parent #5)
 
 Implemented `annual_cfr_xml` / `source-intake-annual-cfr-1`: exact official annual title/year/volume URL contract, separate declared revision date and observed header identity, deterministic passage hashes/XML paths/printed-page labels, table headers/cells/empty values/notes and structural metadata. Isolated parsing rejects unsupported graphics, spans, mixed structures, unsafe XML and conflicting edition headers without partial staging. Raw artifacts survive parse failure. Existing operation permissions, independent review and applicability gates remain; old parser versions and manifest hashes are preserved. Added actual API schema and operator limits in `docs/ANNUAL_CFR_PARSER.md`; #24 is now in_progress, not complete.

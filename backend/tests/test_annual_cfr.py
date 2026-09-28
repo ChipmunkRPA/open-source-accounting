@@ -92,7 +92,10 @@ def test_legacy_manifest_hash_contract_and_distinct_version():
     new = IntakeCreate.model_validate(annual_payload()).manifest.canonical_metadata()
     assert new['annual_cfr'] == EDITION
     from app.services.intake import parser_version, PARSER_VERSION
-    assert parser_version(old) == PARSER_VERSION and parser_version(new) == VERSION != PARSER_VERSION
+    from app.ecfr_parser import VERSION as ECFR_VERSION
+    assert parser_version(old) == ECFR_VERSION
+    assert parser_version({**old, 'parser': 'text'}) == PARSER_VERSION
+    assert parser_version(new) == VERSION != PARSER_VERSION
 
 
 def test_api_isolated_parse_retry_and_separate_review(client):

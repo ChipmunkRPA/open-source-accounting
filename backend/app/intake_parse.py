@@ -22,7 +22,12 @@ def main():
             sys.stderr.write(json.dumps({'annual_cfr_error': exc.code, 'source_xml_path': exc.path}))
             raise SystemExit(2)
     elif parser == 'ecfr_xml':
-        output = parsers.ecfr_xml(raw, title=cfr_title)
+        from .ecfr_parser import parse, EcfrError
+        try:
+            output = parse(raw, cfr_title)
+        except EcfrError as exc:
+            sys.stderr.write(json.dumps({'ecfr_error': exc.code, 'source_xml_path': exc.path}))
+            raise SystemExit(2)
     elif parser == 'structural_html':
         output = parsers.html(raw, family, title)
     elif parser == 'pdf':
