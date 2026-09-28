@@ -6,6 +6,75 @@
     "version": "0.7.0"
   },
   "paths": {
+    "/api/v1/runs/{run_id}/claims/{claim_id}/review-packet/export": {
+      "get": {
+        "tags": [
+          "claim review"
+        ],
+        "summary": "Export Packet",
+        "operationId": "export_packet_api_v1_runs__run_id__claims__claim_id__review_packet_export_get",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          },
+          {
+            "name": "claim_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Claim Id"
+            }
+          },
+          {
+            "name": "expected_revision",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$",
+              "title": "Expected Revision"
+            }
+          },
+          {
+            "name": "expected_sequence",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "title": "Expected Sequence"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/runs/{run_id}/claims/{claim_id}/review-packet": {
       "get": {
         "tags": [

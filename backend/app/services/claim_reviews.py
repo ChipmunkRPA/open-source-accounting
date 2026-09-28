@@ -9,6 +9,7 @@ from ..sec_core.core import canonical, digest
 from . import rights, output_rights, authority_evidence, editorial
 
 VERSION = 'claim-review-1'
+MAX_EXPORT_BYTES = 2 * 1024 * 1024
 
 
 def locked_run(db, run):
@@ -105,20 +106,33 @@ def summary(db, run, claim_id):
         'deliverable_approval_granted': False, 'qualification_basis': 'assigned_role_and_reviewer_attestation'}
 
 
-def packet(db, run, claim_id):
+def packet(db, run, claim_id, *, export_revision=None, export_sequence=None):
     run = locked_run(db, run)
+    exporting = export_revision is not None
+    if exporting:
+        rights.run_artifact_access(db, run, 'export')
     body, revision, _ = binding(db, run, claim_id)
     status = summary(db, run, claim_id)
+    if exporting and (export_revision != revision or export_sequence != status['sequence']):
+        fail('REVISION_CONFLICT', 'Reload the exact claim packet and review sequence before exporting.', 409)
     row = latest(db, run.id, claim_id)
     result = {'version': VERSION, 'revision': revision, 'binding': body, 'status': status,
         'review': row.payload['decision'] if row and status['current'] else None,
         'notice': 'Human claim assessment only. No source rights, professional credential verification or whole-deliverable approval is granted.'}
     sources = output_rights.run_sources(db, run)
     result['source_attributions'] = output_rights.notices(db, sources)
+    if exporting:
+        result['export'] = {'version': 'claim-review-export-1', 'format': 'json',
+            'permission_checked': 'export', 'current_at_release_only': True,
+            'notice': 'Recheck the live record before relying on this file. Downloaded copies cannot reflect later revocation.'}
+        if len(canonical(result)) > MAX_EXPORT_BYTES:
+            fail('EXPORT_LIMIT', 'The claim packet exceeds the bounded export size.', 413)
     output_rights.release(db, sources, result)
     authority_evidence.release_check(db, run)
-    if binding(db, run, claim_id)[1] != revision:
-        fail('SOURCE_CHANGED', 'Claim or evidence changed before packet release.', 409)
+    if exporting:
+        rights.run_artifact_access(db, run, 'export')
+    if binding(db, run, claim_id)[1] != revision or summary(db, run, claim_id) != status:
+        fail('SOURCE_CHANGED', 'Claim, evidence or review status changed before packet release.', 409)
     return result
 
 

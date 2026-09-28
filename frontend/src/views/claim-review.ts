@@ -1,4 +1,4 @@
-import {api} from '../api.js';
+import {api,download} from '../api.js';
 import {sourceNotices} from '../source-notices.js';
 import {el,button,heading,link,notice,card,input,textarea,select,field,checkbox,dateText} from '../ui.js';
 import type {App,Json} from '../types.js';
@@ -16,6 +16,7 @@ export async function claimReviewView(app:App,runId='',claimId=''){
   const independent=checkbox('I have the competence for this scope and am independent of the run and cited input authors.');
   const load=button('Load claim status',()=>loadStatus(),'secondary');
   const inspect=button('Inspect exact claim and passages',()=>inspectPacket(),'secondary');
+  const exportPacket=button('Download exact review packet · JSON',()=>exportCurrent(),'secondary');
   const more=button('Earlier review records',()=>loadHistory(),'secondary');
   const save=button('Record human decision',()=>submit());
   const controls=[decision,note,competence,ref,hash,expiry,actual.input,independent.input];
@@ -25,7 +26,7 @@ export async function claimReviewView(app:App,runId='',claimId=''){
   function update(){
     const eligible=app.me?.role==='technical_reviewer'&&status!==null;
     run.disabled=claim.disabled=load.disabled=pending;
-    inspect.disabled=pending||!status;more.disabled=pending||next===null;
+    inspect.disabled=pending||!status;exportPacket.disabled=pending||!packet;more.disabled=pending||next===null;
     for(const c of controls)c.disabled=pending||!eligible;
     expiry.disabled=pending||!eligible||decision.value==='revoked';
     for(const a of assessments)for(const c of [a.choice,a.reason,a.read])c.disabled=pending||!eligible||decision.value==='revoked';
@@ -110,6 +111,15 @@ export async function claimReviewView(app:App,runId='',claimId=''){
     }catch(e){if(!disposed){clearPacket();if(status){status={...status,current:false,revision:null};showStatus();}error(e);}}
     finally{pending=false;if(!disposed)update();}
   }
+  async function exportCurrent(){
+    if(pending||!packet)return;pending=true;update();const id=++ticket;
+    const params=new URLSearchParams({expected_revision:packet.revision,expected_sequence:String(packet.status.sequence)});
+    try{
+      await download(base()+'/review-packet/export?'+params,'claim-review.json');
+      if(!disposed&&id===ticket)message.replaceChildren(notice('Review packet download started after fresh export-permission checks. Recheck the live record before relying on a saved copy.'));
+    }catch(e){if(!disposed&&id===ticket){invalidate();error(new Error((e as Error).message+' Reload and inspect the packet before trying again.'));}}
+    finally{pending=false;if(!disposed)update();}
+  }
   async function submit(){
     if(pending||save.disabled||!status)return;
     const revoked=decision.value==='revoked';
@@ -139,7 +149,7 @@ export async function claimReviewView(app:App,runId='',claimId=''){
   }
   app.content.replaceChildren(heading('Claim review','Human judgments bound to exact saved evidence. Retained review does not require an Agent subscription.'),
     notice('Individual claim assessments do not certify the deliverable or grant source rights. Reviewer competence is attested, not independently verified by this application.'),
-    card('Find a saved claim',field('Run ID',run),field('Claim ID',claim),el('div',{class:'actions'},load,inspect)),message,state,evidence,
+    card('Find a saved claim',field('Run ID',run),field('Claim ID',claim),el('div',{class:'actions'},load,inspect,exportPacket)),message,state,evidence,
     card('Record a human decision',app.me?.role==='technical_reviewer'?notice('Workspace review permission and independence are checked by the server.'):notice('An assigned technical reviewer with workspace review permission must record decisions.','warning'),
       field('Decision',decision),field('Review note',note),field('Competence and review scope',competence),
       field('Secure supporting-record reference',ref,'Use an approved ev_ record handle. Do not paste secrets or private advice into public issues.'),

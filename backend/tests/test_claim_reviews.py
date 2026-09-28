@@ -7,8 +7,14 @@ from test_authority_evidence import run_graph
 from test_authority import EDITOR
 
 
-def prepared(client):
-    _, result = run_graph(client)
+def prepared(client, policy=None):
+    if policy is None:
+        _, result = run_graph(client)
+    else:
+        from test_authority_evidence import prepared as prepare_graph, CONTEXT
+        from conftest import complete_run
+        prepare_graph(client, policy)
+        result = complete_run(client, question='Research quasar amortization exception', context=CONTEXT)
     with client.app.state.db.Session() as db:
         db.add(Membership(workspace_id='demo-workspace', user_id='editor', role='reviewer'))
         run = db.get(Run, result['id'])
@@ -164,3 +170,99 @@ def test_scoped_independence_and_saved_binding_integrity(client,change):
     else:
         assert not client.get(path+'/reviews').json()['status']['current']
         assert client.get(path+'/review-packet').json()['review'] is None
+
+
+def export_packet(client,path,p,**changes):
+    return client.get(path+'/review-packet/export',params={
+        'expected_revision':p['revision'],'expected_sequence':p['status']['sequence'],**changes})
+
+
+def test_export_exact_json_and_retained_free_access(client):
+    _,path=prepared(client);approve(client,path)
+    p=client.get(path+'/review-packet').json()
+    client.post('/api/v1/dev/subscription',json={'state':'expired'})
+    r=export_packet(client,path,p)
+    assert r.status_code==200,r.text
+    assert r.json()['binding']==p['binding'] and r.json()['review']==p['review']
+    assert r.json()['export']['permission_checked']=='export'
+    assert r.headers['cache-control']=='no-store' and r.headers['x-content-type-options']=='nosniff'
+    assert r.headers['content-disposition'].startswith('attachment; filename="claim-review-')
+    assert export_packet(client,path,p).content==r.content
+    assert client.get(path+'/review-packet/export',params={'expected_revision':p['revision'],'expected_sequence':1},headers={'X-Dev-User':'admin'}).status_code==404
+
+
+@pytest.mark.parametrize('change',['revision','sequence','export_denied','source_disabled','review_changed','oversized'])
+def test_export_fresh_permissions_revision_and_size(client,monkeypatch,change):
+    run_id,path=prepared(client, {'export':False} if change=='export_denied' else None);p=client.get(path+'/review-packet').json()
+    if change=='revision':p['revision']='0'*64
+    elif change=='sequence':p['status']['sequence']=999
+    elif change=='oversized':monkeypatch.setattr('app.services.claim_reviews.MAX_EXPORT_BYTES',10)
+    elif change=='review_changed':approve(client,path)
+    elif change=='export_denied':assert 'binding' in p
+    else:
+        with client.app.state.db.Session() as db:
+            s=db.get(Source,'edge-source')
+            s.enabled=False;db.commit()
+    r=export_packet(client,path,p)
+    assert r.status_code in {403,409,413},r.text
+    assert 'quasar amortization' not in r.text
+
+
+def test_export_omits_expired_findings_and_rechecks_after_lock(client,monkeypatch):
+    from app.sec_core.core import canonical,digest
+    from app.services import output_rights
+    run_id,path=prepared(client);approve(client,path)
+    with client.app.state.db.Session() as db:
+        row=db.scalar(select(RunClaimReview).where(RunClaimReview.run_id==run_id))
+        body=deepcopy(row.payload);body['decision']['expires_at']=1;row.payload=body;row.payload_sha256=digest(canonical(body));db.commit()
+    p=client.get(path+'/review-packet').json();r=export_packet(client,path,p)
+    assert r.status_code==200 and r.json()['review'] is None and not r.json()['status']['current']
+    original=output_rights.release
+    def deny_export(db,sources,payload):
+        original(db,sources,payload)
+        from app.services import rights
+        s=db.get(Source,'edge-source');s.policy={**s.policy,'export':False};rights.record_approval(s,'synthetic');db.flush()
+    monkeypatch.setattr(output_rights,'release',deny_export)
+    assert export_packet(client,path,p).status_code==409
+
+
+def test_export_notice_accounting_is_deduplicated_and_bounded(client):
+    from app.models import OutputBudget,OutputRelease
+    from app.services import output_rights
+    _,path=prepared(client,{'attribution':'Synthetic mandatory source notice.',
+        'output_control':{'mode':'bounded','group_id':'synthetic-claim-export','max_chars_per_response':100000,'max_chars_total':1000000}})
+    p=client.get(path+'/review-packet').json()
+    with client.app.state.db.Session() as db:
+        before=db.get(OutputBudget,'synthetic-claim-export').released_chars
+    r=export_packet(client,path,p);assert r.status_code==200,r.text
+    assert 'Synthetic mandatory source notice.' in r.text
+    with client.app.state.db.Session() as db:
+        budget=db.get(OutputBudget,'synthetic-claim-export')
+        after=budget.released_chars
+        assert after-before==len(output_rights.canonical(r.json()))
+        count=len(db.scalars(select(OutputRelease).where(OutputRelease.group_id=='synthetic-claim-export')).all())
+    assert export_packet(client,path,p).content==r.content
+    with client.app.state.db.Session() as db:
+        budget=db.get(OutputBudget,'synthetic-claim-export')
+        assert budget.released_chars==after
+        assert len(db.scalars(select(OutputRelease).where(OutputRelease.group_id=='synthetic-claim-export')).all())==count
+        budget.released_chars=1000001;db.commit()
+    blocked=export_packet(client,path,p)
+    assert blocked.status_code==403 and 'quasar amortization' not in blocked.text
+
+
+def test_export_preserves_unicode_and_rechecks_review_status(client,monkeypatch):
+    from app.services import output_rights
+    run_id,path=prepared(client)
+    with client.app.state.db.Session() as db:
+        run=db.get(Run,run_id);body=deepcopy(run.result);body['claims'][0]['text']='Synthetic Cafe\u0301 claim <script>untrusted text</script>'
+        run.result=body;db.commit()
+    approve(client,path);p=client.get(path+'/review-packet').json()
+    r=export_packet(client,path,p)
+    assert r.status_code==200 and r.json()['binding']['claim']['text']==p['binding']['claim']['text']
+    assert 'Cafe\u0301'.encode() in r.content
+    original=output_rights.release
+    def change_reviewer(db,sources,payload):
+        original(db,sources,payload);db.get(User,'editor').role='member';db.flush()
+    monkeypatch.setattr(output_rights,'release',change_reviewer)
+    assert export_packet(client,path,p).status_code==409
