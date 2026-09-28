@@ -75,7 +75,7 @@ These are GitHub development issues, **not background tasks, scheduled crawlers 
 
 ## Validation and remaining work
 
-The full local application passed 248 Python tests, TypeScript typecheck/demo build and 16 mocked MFA-controller tests. The 41 standalone SEC tests are included here. No live Gemini, Identity Platform, PostgreSQL shared throttling or Google Cloud deployment was tested. The existing full-app Agent search still has a 2,000-source scan bound that must be replaced before a large corpus launch. Complete-source acquisition, expert accounting review, source-history checks and adjudicated benchmarks remain release gates.
+Historical baseline validation reported 248 Python tests, TypeScript typecheck/demo build and 16 mocked MFA-controller tests, including 41 standalone SEC tests. Those are historical counts, not current results. See [progress.md](../../progress.md) for observed current regressions and PostgreSQL checks. [Authorized PostgreSQL lexical indexing](../INDEXED_RETRIEVAL.md) now replaces the first-2,000-source search bound and has a 10,001-source synthetic scale fixture. Real corpus index coverage, scoped/semantic retrieval and professionally adjudicated recall/precision remain unproven. Live Gemini/Identity Platform, approved GCP deployment, complete-source acquisition, expert accounting review and source-history validation remain release gates.
 
 ## Source and rights references
 

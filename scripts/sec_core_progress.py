@@ -42,7 +42,7 @@ def render():
         '- [ ] Review HTML selectors, PDF/table layouts and citation completeness against actual full sources.',
         '- [ ] Exercise the shared PostgreSQL rate budget and controlled egress on deployed infrastructure.',
         '- [ ] Perform real independent rights, technical and historical-applicability reviews.',
-        '- [ ] Replace legacy 2,000-source Agent retrieval bound; validate persistent retrieval at corpus scale.',
+        '- [ ] Validate authorized persistent retrieval on the real corpus; PostgreSQL lexical GIN has a 10,001-source synthetic fixture, while scoped/semantic retrieval and adjudicated recall remain open.',
         '- [ ] Create professionally adjudicated accounting/citation benchmarks and source-update monitoring.', '',
         'Observed local checks: 248 Python tests passed (203 baseline + 45 new); TypeScript typecheck and demo build passed. Mocked acquisition/reviewer fixtures are not live downloads or real professional approvals. No live Gemini, Identity Platform, PostgreSQL or cloud deployment was performed.', '',
         'Commands: `PYTHONPATH=backend python -m app.sec_core validate`; `python scripts/sec_core_progress.py --write`; `python scripts/sec_core_progress.py --check`. Full details: `docs/sec/README.md`.', '', END]
