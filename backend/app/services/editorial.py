@@ -118,7 +118,7 @@ def packet(db, source):
                        'primary_text_verified_by_packet': False,
                        'recorded_dependency_bindings': review.payload.get('reference_bindings', []) if review else []},
         'provenance': {k: policy.get(k) for k in ('content_item_id', 'content_version', 'content_license',
-            'intake_locator', 'intake_extraction_id', 'intake_artifact_id')},
+            'intake_locator', 'intake_extraction_id', 'intake_artifact_id', 'intake_parent_policy_version', 'intake_replaces_source_id')},
         'sec_provenance': {k: policy.get('sec_core', {}).get(k) for k in (
             'passage_id', 'source_id', 'locator', 'snapshot_id', 'source_as_of', 'retrieved_at',
             'effective_from', 'effective_to', 'public_available_at', 'authority_type',

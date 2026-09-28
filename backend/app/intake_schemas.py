@@ -125,3 +125,9 @@ class IntegrityHoldRelease(Strict):
 
 class IntegrityPrecondition(Strict):
     expected_raw_sha256: str = Field(pattern=r'^[a-f0-9]{64}$')
+
+
+class PassageRestage(Strict):
+    expected_parent_policy_version: int = Field(ge=1)
+    expected_normalized_sha256: str = Field(pattern=r'^[a-f0-9]{64}$')
+    confirm_fresh_reviews_required: Literal[True]

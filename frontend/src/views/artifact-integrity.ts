@@ -18,6 +18,19 @@ export async function artifactIntegrityView(app:App){
         el('p',{},'Raw bytes expected: '+r.raw.expected_bytes+' · observed: '+(r.raw.observed_bytes??'Not available')),
         el('p',{class:'review-hash'},'Observation SHA-256: '+r.observation_sha256),
         notice(r.work_on_hold?'This work is on hold: dependent output and model use are blocked. A successful check alone never releases a hold.':'No integrity hold is recorded for this work. Other review gates still apply.'));
+      if(!r.work_on_hold&&r.raw.status==='verified'){
+        for(const ex of r.extractions.filter((x:Json)=>x.status==='verified')){
+          const confirm=checkbox('Create new unapproved passage versions for extraction '+ex.extraction_id+'. Keep prior evidence and reviews unchanged.');
+          const restage=button('Create recovery passage revisions',async()=>{busy(restage,true);status.replaceChildren();try{
+            if(!confirm.input.checked)throw new Error('Acknowledge that fresh reviews are required.');
+            const state=await api('/admin/intake/extractions/'+ex.extraction_id+'/restage','POST',{
+              expected_parent_policy_version:r.policy_version,expected_normalized_sha256:ex.expected_sha256,confirm_fresh_reviews_required:true});
+            if(disposed)return;result.replaceChildren(notice(state.created+' new passage revisions created. No approvals or old evidence were restored.'),
+              table(['New source','Prior source'],state.source_ids.map((sid:string,i:number)=>[sid,state.predecessor_source_ids[i]])));
+          }catch(e){if(!disposed)status.replaceChildren(notice((e as Error).message,'error'));}finally{busy(restage,false);}},'secondary');
+          result.append(confirm.element,restage);
+        }
+      }
       if(r.integrity_hold&&app.me?.role==='rights_approver'){
         const note=textarea(),confirm=checkbox('Reverify these files and release this artifact hold. Older evidence remains invalid and must be reviewed again.');
         const release=button('Reverify and release hold',async()=>{busy(release,true);status.replaceChildren();try{

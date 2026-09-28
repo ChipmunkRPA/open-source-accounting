@@ -969,3 +969,42 @@ def test_postgres_integrity_failures_preserve_both_holds(pg_url,tmp_path,monkeyp
         assert set(source.policy['integrity_holds'])==set(artifacts)
         assert source.policy_version==initial+2
     database.engine.dispose()
+
+
+def test_postgres_passage_recovery_creates_one_revision(pg_url,tmp_path):
+    from concurrent.futures import ThreadPoolExecutor
+    from threading import Barrier
+    from app.models import SourceExtraction
+    from app.intake_schemas import PassageRestage
+    from app.services.storage import Storage
+    from app.sec_core.core import canonical,digest
+    database=Database(pg_url);actor=str(uuid4())
+    settings=Settings(app_env='test',database_url=pg_url,data_dir=str(tmp_path),_env_file=None)
+    raw=b'Synthetic raw fixture';body='Synthetic passage fixture'
+    normalized=canonical([{'text':body,'sha256':digest(body),'locator':'Synthetic section 1'}])
+    storage=Storage(settings)
+    with database.Session() as db:
+        db.add(User(id=actor,role='admin'));db.commit()
+        work=intake.register(db,settings,IntakeCreate.model_validate(payload(work_id=actor)),actor)
+        parent=db.get(Source,work.source_id);parent.reviewed=True;rights.record_approval(parent,actor)
+        artifact=SourceArtifact(work_id=work.id,raw_sha256=digest(raw),byte_count=len(raw),mime='text/plain',receipt={},
+            object_key=f'sources/{work.id}/raw/{digest(raw)}.bin');db.add(artifact);db.flush()
+        ex=SourceExtraction(artifact_id=artifact.id,normalized_sha256=digest(normalized),parser_version='synthetic',passage_count=1,
+            object_key=f'sources/{work.id}/parsed/{digest(raw)}-{digest(normalized)}.json');db.add(ex);db.flush()
+        storage.put_immutable(artifact.object_key,raw,'text/plain');storage.put_immutable(ex.object_key,normalized,'application/json')
+        db.commit();old_id=intake.stage(db,settings,ex.id,actor)['source_ids'][0]
+        parent.policy_version+=1;db.commit();eid=ex.id;version=parent.policy_version
+    barrier=Barrier(2)
+    def create():
+        with database.Session() as db:
+            barrier.wait(timeout=10)
+            return intake.restage(db,settings,eid,PassageRestage(expected_parent_policy_version=version,
+                expected_normalized_sha256=digest(normalized),confirm_fresh_reviews_required=True),actor)
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        results=[pool.submit(create) for _ in range(2)];values=[f.result(timeout=20) for f in results]
+    assert sorted(v['created'] for v in values)==[0,1]
+    assert values[0]['source_ids']==values[1]['source_ids']
+    with database.Session() as db:
+        assert db.get(Source,old_id).policy['intake_parent_policy_version']==version-1
+        assert db.get(Source,values[0]['source_ids'][0]).reviewed is False
+    database.engine.dispose()

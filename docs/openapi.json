@@ -3730,6 +3730,56 @@
         }
       }
     },
+    "/api/v1/admin/intake/extractions/{extraction_id}/restage": {
+      "post": {
+        "tags": [
+          "source-intake"
+        ],
+        "summary": "Restage Passages",
+        "operationId": "restage_passages_api_v1_admin_intake_extractions__extraction_id__restage_post",
+        "parameters": [
+          {
+            "name": "extraction_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Extraction Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PassageRestage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/admin/sources/{source_id}/counsel-records": {
       "get": {
         "tags": [
@@ -6477,6 +6527,33 @@
           "confirm_raw_and_citations_checked"
         ],
         "title": "ParserDecision"
+      },
+      "PassageRestage": {
+        "properties": {
+          "expected_parent_policy_version": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Expected Parent Policy Version"
+          },
+          "expected_normalized_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Expected Normalized Sha256"
+          },
+          "confirm_fresh_reviews_required": {
+            "type": "boolean",
+            "const": true,
+            "title": "Confirm Fresh Reviews Required"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "expected_parent_policy_version",
+          "expected_normalized_sha256",
+          "confirm_fresh_reviews_required"
+        ],
+        "title": "PassageRestage"
       },
       "Preferences": {
         "properties": {

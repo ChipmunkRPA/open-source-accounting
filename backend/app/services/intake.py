@@ -334,6 +334,8 @@ def stage(db, settings, extraction_id, actor_id):
         if old:
             if digest(old.text or '') != passage['sha256']:
                 fail('ARTIFACT_INTEGRITY', 'An immutable staged passage changed.', 409)
+            if old.policy.get('intake_parent_policy_version') != parent.policy_version:
+                fail('REVISION_CONFLICT', 'The original passage binding is stale; use the explicit recovery revision workflow.', 409)
             continue
         policy = {k: v for k, v in parent.policy.items() if not k.startswith('rights_review')}
         policy.update(requires_technical_review=True, technical_review_status='unreviewed',
@@ -353,3 +355,79 @@ def stage(db, settings, extraction_id, actor_id):
                  detail={'passages': len(ids)}))
     db.commit()
     return {'source_ids': ids, 'passages': len(ids), 'agent_eligible': False, 'status': 'independent_reviews_required'}
+
+
+def restage(db, settings, extraction_id, payload, actor_id):
+    """New internal passage versions; original edition, prior evidence and reviews are preserved."""
+    from uuid import uuid5, NAMESPACE_URL
+    from . import counsel
+    from .artifact_integrity import raw_check, extraction_check
+    from ..schemas import SourcePolicy
+    extraction=db.get(SourceExtraction,extraction_id)
+    if not extraction:fail('NOT_FOUND','Extraction not found.',404)
+    artifact=db.get(SourceArtifact,extraction.artifact_id)
+    work=db.get(IntakeWork,artifact.work_id)
+    counsel.lock_source(db,work.source_id)
+    work,parent,manifest=authorize(db,work.id,['store_raw','extract','store_text'],lock=True)
+    if (parent.policy_version!=payload.expected_parent_policy_version
+            or extraction.normalized_sha256!=payload.expected_normalized_sha256):
+        fail('REVISION_CONFLICT','Reload the current parent and extraction before restaging.',409)
+    if parent.policy.get('integrity_holds'):
+        fail('INTEGRITY_HOLD','Resolve every integrity hold before restaging.',409)
+    storage=Storage(settings)
+    raw,_=raw_check(storage,artifact,manifest);normalized,passages=extraction_check(storage,artifact,extraction)
+    if raw['status']!='verified' or normalized['status']!='verified':
+        fail('ARTIFACT_INTEGRITY','Stored objects must verify before creating new passage versions.',409)
+    ids=[];predecessors=[];created=0
+    for index,passage in enumerate(passages):
+        sid=str(uuid5(NAMESPACE_URL,f'osa:{extraction.id}:{index}:parent:{parent.policy_version}'))
+        ids.append(sid)
+        existing=db.get(Source,sid)
+        if existing:
+            p=existing.policy or {}
+            if (digest(existing.text or '')!=passage['sha256'] or p.get('intake_parent_id')!=parent.id
+                    or p.get('intake_parent_policy_version')!=parent.policy_version
+                    or p.get('intake_extraction_sha256')!=extraction.normalized_sha256
+                    or p.get('intake_extraction_id')!=extraction.id or p.get('intake_artifact_id')!=artifact.id
+                    or p.get('intake_passage_index')!=index or p.get('intake_parser_version')!=extraction.parser_version
+                    or not p.get('intake_replaces_source_id')
+                    or p.get('intake_locator')!=passage['locator']):
+                fail('ARTIFACT_INTEGRITY','Existing recovery revision does not match this extraction.',409)
+            predecessors.append(p.get('intake_replaces_source_id'));continue
+        previous=db.scalar(select(Source).where(Source.policy['intake_extraction_id'].as_string()==extraction.id,
+            Source.policy['intake_passage_index'].as_integer()==index)
+            .order_by(Source.policy['intake_parent_policy_version'].as_integer().desc(),Source.id).limit(1))
+        if not previous:fail('NO_PRIOR_PASSAGE','Stage the extraction normally before creating a recovery revision.',409)
+        prior=previous.policy or {};version=prior.get('intake_parent_policy_version')
+        if type(version) is not int or version>=parent.policy_version:
+            fail('PASSAGE_ALREADY_CURRENT','No older parent binding is available for recovery.',409)
+        expected_ids={str(uuid5(NAMESPACE_URL,f'osa:{extraction.id}:{index}')),
+                      str(uuid5(NAMESPACE_URL,f'osa:{extraction.id}:{index}:parent:{version}'))}
+        if (previous.id not in expected_ids or digest(previous.text or '')!=passage['sha256']
+                or prior.get('intake_parent_id')!=parent.id or prior.get('intake_artifact_id')!=artifact.id
+                or prior.get('intake_extraction_sha256')!=extraction.normalized_sha256
+                or prior.get('intake_locator')!=passage['locator']):
+            fail('ARTIFACT_INTEGRITY','Prior passage identity changed; investigate before recovery.',409)
+        # Copy grant proposals, never review records, hold state, scope grants or counsel activation.
+        policy={k:v for k,v in parent.policy.items() if k in SourcePolicy.model_fields}
+        policy.update(requires_technical_review=True,technical_review_status='unreviewed',
+            applicability_review_status='pending',content_sha256=passage['sha256'],content_reference_ids=[parent.id],
+            intake_manifest_sha256=work.manifest_sha256,intake_parent_id=parent.id,
+            intake_parent_policy_version=parent.policy_version,intake_artifact_id=artifact.id,
+            intake_extraction_id=extraction.id,intake_locator=passage['locator'],intake_passage_index=index,
+            intake_extraction_sha256=extraction.normalized_sha256,intake_parser_version=extraction.parser_version,
+            intake_replaces_source_id=previous.id)
+        db.add(Source(id=sid,title=(parent.title+' — '+passage['locator'])[:250],publisher=parent.publisher,
+            canonical_url=parent.canonical_url,version_label=parent.version_label,kind=parent.kind,framework=parent.framework,
+            text=passage['text'],policy=policy,created_by=actor_id,reviewed=False,
+            effective_from=manifest['effective_from'],effective_to=manifest['effective_to']))
+        predecessors.append(previous.id);created+=1
+    authorize(db,work.id,['store_raw','extract','store_text'])
+    if created:
+        db.add(Audit(actor_id=actor_id,action='intake.restaged_unapproved',target_id=extraction.id,
+            detail={'parent_policy_version':parent.policy_version,'normalized_sha256':extraction.normalized_sha256,
+                    'passages_created':created,'prior_evidence_restored':False}))
+    db.commit()
+    return {'source_ids':ids,'predecessor_source_ids':predecessors,'created':created,
+            'parent_policy_version':parent.policy_version,'status':'fresh_reviews_required' if created else 'revision_already_exists',
+            'approval_granted':False,'prior_evidence_restored':False}

@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, Header, Request, Query
 from sqlalchemy import select, func
 from starlette.concurrency import run_in_threadpool
 from ..auth import current_user, fresh_user, session, require_admin
-from ..intake_schemas import IntakeCreate, IntegrityHoldRelease, IntegrityPrecondition
+from ..intake_schemas import IntakeCreate, IntegrityHoldRelease, IntegrityPrecondition, PassageRestage
 from ..models import IntakeWork, SourceArtifact, SourceExtraction, IntakeAttempt, Source, SourceDiscovery
 from ..services import intake, rights, discovery
 from ..errors import fail
@@ -152,3 +152,10 @@ def artifact_inventory(after: str = Query('',max_length=36),limit: int = Query(1
                       'byte_count':a.byte_count,'manifest_sha256':w.manifest_sha256} for a,w in rows[:limit]],
             'next_after':rows[limit-1][0].id if len(rows)>limit else None,
             'notice':'Database artifact records collected during a paginated scan; not an atomic corpus snapshot or stored-byte verification.'}
+
+
+@router.post('/admin/intake/extractions/{extraction_id}/restage')
+def restage_passages(extraction_id: str, payload: PassageRestage, request: Request,
+                     user=Depends(fresh_user), db=Depends(session)):
+    require_admin(user)
+    return intake.restage(db, request.app.state.settings, extraction_id, payload, user.id)
