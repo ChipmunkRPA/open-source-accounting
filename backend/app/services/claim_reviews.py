@@ -78,7 +78,7 @@ def valid_record(db, row):
     except (KeyError, TypeError, ValueError):return False
     reviewer = db.get(User, row.reviewer_id, populate_existing=True)
     run = db.get(Run, row.run_id)
-    member = db.get(Membership, (run.workspace_id, row.reviewer_id)) if run else None
+    member = db.get(Membership, (run.workspace_id, row.reviewer_id), populate_existing=True) if run else None
     return bool(reviewer and reviewer.role == 'technical_reviewer' and p.get('version') == VERSION
         and member and member.role in {'owner', 'editor', 'reviewer'}
         and p.get('reviewer_id') == row.reviewer_id and p.get('run_id') == row.run_id

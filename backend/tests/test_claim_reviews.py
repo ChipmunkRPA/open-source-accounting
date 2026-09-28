@@ -266,3 +266,17 @@ def test_export_preserves_unicode_and_rechecks_review_status(client,monkeypatch)
         original(db,sources,payload);db.get(User,'editor').role='member';db.flush()
     monkeypatch.setattr(output_rights,'release',change_reviewer)
     assert export_packet(client,path,p).status_code==409
+
+
+def test_export_reloads_reviewer_membership_after_release(client,monkeypatch):
+    from app.services import output_rights
+    _,path=prepared(client);approve(client,path);p=client.get(path+'/review-packet').json()
+    original=output_rights.release
+    retained=[]
+    def remove_membership(db,sources,payload):
+        retained.append(db.get(Membership,('demo-workspace','editor')))
+        original(db,sources,payload)
+        db.execute(delete(Membership).where(Membership.workspace_id=='demo-workspace',
+            Membership.user_id=='editor').execution_options(synchronize_session=False))
+    monkeypatch.setattr(output_rights,'release',remove_membership)
+    assert export_packet(client,path,p).status_code==409
