@@ -49,3 +49,7 @@ For each original educational case brief, use the following authoring record aft
 6. Have a qualified independent reviewer assess the exact revision and scope; separately approve historical applicability and source operations before indexing/admission.
 
 No completed briefs or gold answers are claimed here. Prioritized remaining scope includes securities/SOX statutory versions, auditor-liability decisions, copyright/source-use cases, tax opinions, lower federal courts and additional state jurisdictions. The next engineering task is annual-CFR XML provenance/completeness handling with original offline fixtures, while authorization and review owners remain outstanding.
+
+## Parser follow-up evidence
+
+The guide's printed page 12 identifies `GPOTABLE/BOXHD/CHED` header cells and `ROW/ENT` data cells. Inspected `backend/app/sec_core/parsers.py::ecfr_xml` iterates only TR/ROW table rows and TD/TH/ENT cells; it does not emit BOXHD/CHED headers in the normal table path. A nonempty extraction therefore cannot prove header-complete annual CFR tables. Next work must preserve verified header relationships, detect unsupported spans/graphics rather than silently lose them, and retain distinct annual-volume provenance. Use original synthetic fixtures and the actual source-intake rights/review pipeline; no real-volume parser success is claimed here.
