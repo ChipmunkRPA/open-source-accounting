@@ -1,0 +1,1240 @@
+{
+  "version": "retrieval-evaluation-1",
+  "corpus_version": "retrieval-engineering-1",
+  "corpus_sha256": "d1d8852c14f58aa814b7389e8bd26a67172b6f350b30d62c0ee9727c14bf5607",
+  "mode": "offline_sqlite_actual_retrieval_engineering_fixtures",
+  "split": "development_regression_not_holdout",
+  "case_count": 16,
+  "python_version": "3.11.9",
+  "sqlite_version": "3.45.1",
+  "code_sha256": {
+    "app/__init__.py": "5b5dfa270251a1a6a12d37da921c2aabd9be69076981292f3db982f9c4677f87",
+    "app/admin.py": "ed59cbd1f84262590ec7404a6c9ba421564d03a41785edab454925e69c58dfae",
+    "app/agents/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "app/agents/calculations.py": "a980c55485a5c8e0032df216a3230e6e60c8da84be4834aa8a9c804b209140ba",
+    "app/agents/catalog.py": "af621a1b369a0b4f641fb3233dda0d5c55c2dc50ad5783e5f47aab1b8df8393c",
+    "app/agents/orchestrator.py": "b96b11c6977dc4f5caba990a161b7a67bda489936573995f4486bbb6d492d458",
+    "app/agents/prompts.py": "9b4808eee1bc87ff751b6f7d92009b5d79aedd9a237ad1322e133842cb4eb0e2",
+    "app/agents/verification.py": "8547f4613d15bbb86775693421e6762dab250c0b118e7bc4568da37a3cde8d9d",
+    "app/agents/workflows.py": "d98bf19438705ec2c3038d8ba24c32153afcba371837bc171b7f6656ab3047d0",
+    "app/annual_cfr.py": "1a9d858e3d8ce50b210693b1299a375709f266be947f695e9f97832bc37cf9a3",
+    "app/api/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "app/api/asu_tracking.py": "37a8e9189b784e6cde67c1a96e0faeed2924d955037062ec2c2cd24e438b48a0",
+    "app/api/authority.py": "366a2960cdd6f9d35f99f6021ba2c09c1bd8ce17ead5bfc665a53e3d282dcb5c",
+    "app/api/billing.py": "9164e0aac47213f733bb18a18b2c4d78f4c89f1742d319432ec0bf549196bc80",
+    "app/api/chats.py": "193bf3d54c79f610ae82dc1dc0cbdccb88a9afb3a62ad22346b081f59b230b61",
+    "app/api/common.py": "9ea8e9363f57efdf5ab6a4fb51593ea9133c9cc5f11d647febccf738ecf4337d",
+    "app/api/core.py": "90e7cfdb19b89bc1ff1a5d9d49bd8162eea649048a69eaab813987ae0ca20a2f",
+    "app/api/corrections.py": "63c4b4fac694b375e9b6126137f8d5ef99ee37c280476defae8e993ed036d7eb",
+    "app/api/counsel.py": "16f2f4c2ae2eb6fc1902f3ddefb55a36bfe8ffe6c5a4880dfd0b982e028f9b3d",
+    "app/api/intake.py": "dfc9387ac8da0e0e78c3ea5b265259ad23a9e4afbb3f518210cb960955ebca6e",
+    "app/api/library.py": "1d4c2c492af2743262f8d679b4ec1bda59f4d646a5edd81f9bbdec25ed95c2dd",
+    "app/api/memos.py": "32656827b8a70491a9ed9da9628b8e8fe098dffd6058bc60af6f95bda74cfae0",
+    "app/api/model_budgets.py": "b2807da37a5bd9af1769f44dfb1a6c46fb7fc25e132172c27969daf5fa8661e5",
+    "app/api/model_usage.py": "3e57d44ae204adfc03fc8c1b0777856da42b8f6fde99b47c72e5febdc9a8cf5f",
+    "app/api/output_amendments.py": "874a8054c47e47c385b0690e4eaaefcda1df29ffd8c99f55e670d9dfa41efb48",
+    "app/api/runs.py": "3f2e94fe2802434a864e623709d83fb7bd25787240a155e32b29d7feff84ea89",
+    "app/api/sec_comments.py": "60401e86313b585d678b3ac7bb582b138f9ee00834cfc82f1354eb42bd04a45a",
+    "app/api/sec_core.py": "8eebc08aed20e49ccd845e3d7530ab29d25709d792ee4ec14a12c6f9f0e50ddc",
+    "app/api/source_scopes.py": "d243781c4ab810f94f714aa416575ccc5612997e7f3ed815e64c08ef7d340dd0",
+    "app/api/sources.py": "8702c5ad98fed7c10eac6946b2d408a1d3c22b52d651e0395285aaaccbd03a7e",
+    "app/api/watches.py": "691d035ce2f3ed67377b56610aae4d3a52d9a6ad405b5ca713d262fa648943f5",
+    "app/api/workspaces.py": "012f43526e6c623f75a2ab0c0468a0db453ae22a1c7dcc91c8ee3a85902085dd",
+    "app/applicability_schemas.py": "44d3e04ec59cbc20cae65aea61a8aede8dcebfa9248d7cc3b79f0de26c3f52ab",
+    "app/asu_schemas.py": "ad422b2f0cb2597c6df2539cecdae14e3b006a372c47655a32dd5c9367f97af8",
+    "app/auth.py": "88272598afa64e671e6f6f464db2b3f5c8049e668501517dd3bce9ca63ca067e",
+    "app/authority_schemas.py": "088e4deb19bc5eb04d62fd59429708c490b2976ba4e53d1a55fa6b3bebc15532",
+    "app/config.py": "138c2248065ab5ac0f83def677f36f7900cf77d0ec4add48605f69fc573e06c2",
+    "app/content.py": "3ea12e022d9342eb0671ef71b63e0a30de17602fe1015fb3d4722a725217dd28",
+    "app/correction_schemas.py": "13f22faf07c336d4692e02144c24a6fef6d117c718f2996ee7fd0907a6ddde7f",
+    "app/counsel_schemas.py": "06d64906ab1e85a0df132cd89f12885f76f6889a35ab4c1e245b1b757289dbba",
+    "app/crossref_discovery.py": "f618246a094d222b9b15df3b28a9d208ffe2002d92fb9ed43f937802786b7574",
+    "app/db.py": "e90a2321c1ed6768f91a998f52206a95b58f77db4ccec767ef79fc5d43c39f7f",
+    "app/docx_parser.py": "61d5122e40baa815b0cb8dbe75ad2b68ee23060c7c9adb4dc726322acf534f35",
+    "app/ecfr_parser.py": "4fc880887555182294a282d59fa36d482a6ce1c14f48608dbe3b841575c392a2",
+    "app/editorial_schemas.py": "f50b70f20e71e0bc39dcd4afd84dbeb2b8e77056286cfe8c374105c52a1420ba",
+    "app/errors.py": "b909919a81312df17c48e53672c4866414ceda4a0ea06d448a1e3a812425a237",
+    "app/evaluation/__init__.py": "fbc72f5ab5efd106cbb5dbe832a85c553c9019b0dde3a3e3c194c0e85426b695",
+    "app/evaluation/retrieval.py": "71643182a242b45dcbecbf6164bd191643d5382632da317330f5ea210c35e22f",
+    "app/evaluation/schema.py": "fdd7aa5b95d79be40eb312a482792d6826a6bc5dcea7859e383119e3b53ca774",
+    "app/ingest.py": "7b594704148295be6a86ad761d53713a2f84f123c2573ad50db91f6d45aae41c",
+    "app/intake_parse.py": "40a25b1d7c7da6cace5d6c83062669c28351b055863a632ebac696b997104325",
+    "app/intake_schemas.py": "f5e38188d8d6246fa49b5ec188255e145bace722e9b3f830a2645c089145bd65",
+    "app/main.py": "a98ffa0374e040ad41a99484296404c7749a31a9b645d72f999df45f582d5e53",
+    "app/model_budget_schemas.py": "34b3156fb8e8292a8cb4d851c5dba7bbe9f44083fce84b2e42809da662de1fe5",
+    "app/model_usage_schemas.py": "003db286c200ce40787bc253a1f30c37b7fcdecee33a1d6c46fb23eef870cccb",
+    "app/models.py": "0595e256d240e68d7123b5168558c110eeae0ff1a655a83e7db1ff34210b30c7",
+    "app/output_amendment_schemas.py": "07def4a237f1bbfef625941edba421005840f173e06da390d808c679062ec208",
+    "app/parse_worker.py": "f44316ba5192789c7f49ca0f901d559ce3ab7ef7b2a941f847dda318e2714a2f",
+    "app/pdf_parser.py": "9a33fd977567ca09f3f5ca98fc285fa4fffe5a368951bcf6394f454eb225bb65",
+    "app/providers/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "app/providers/gemini.py": "55bbef0ad37d21a928ec2063c87219eb71844cc8412075cafba56b39f7d5b1e4",
+    "app/providers/gemini_contract.py": "556b16a9925ece5be0da3adc920adc85cdbb5a6effc850fdfff6ee509c5208af",
+    "app/providers/gemini_costs.py": "7df7f1a4a30479907ab31e3cfcc2d015f554385e066c6a8669c1c8cbf67c9fa8",
+    "app/reconcile_integrity.py": "ce7ab2c276ec1aeb00ce3afffe1ee2f3653d5d2ebeecf77abade654eee6a085f",
+    "app/schemas.py": "80891f0888a9fbc8aa1c258989787a4f290f394d4d371a3189e384c5f4197280",
+    "app/scope_schemas.py": "9e54ad819bf02e732962980604017775afe236d56facae1008f3d052c8b3b40f",
+    "app/sec_comment_schemas.py": "40e9f3fe34eb0d7454200aaea350bd28da50cddfa15fe330664f45480c890f8a",
+    "app/sec_core/__init__.py": "c68838acc39bf0cac17a221fa66bf2730ad0fc50b4b9e2a0cb86cb2589ccc2f9",
+    "app/sec_core/__main__.py": "3930bbf50f590b9972212b291dbed86df8ff156f73a706f3cc5a45bfd647524b",
+    "app/sec_core/core.py": "bd8556e55fdc1803fcf849f4ace9dcaf40af2b7535dea4cd74841b60b4301793",
+    "app/sec_core/fetch.py": "7ff622a3d8b61ca2e0971692626dbd7cc7a5c04d77e8288d87567e6024479cba",
+    "app/sec_core/integration.py": "358010780f9715e1e3781827690236843cda7bd73ef2afbe0ec3ca4805bcde64",
+    "app/sec_core/parsers.py": "3ddb71b62fdf3022a2761aaf26da71c441b2d8514e690fbb18b40d5a61484983",
+    "app/sec_submissions.py": "eb0eb5d148320a2e4eb7c3d40845ab5a6514ec79f129df6e911ad5206f8ecab5",
+    "app/seed.py": "15407183b86de68ca977712172d76291df26622024a630464d17ad2464344954",
+    "app/services/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "app/services/applicability.py": "9101ca9adf8b49d714344e36c4bb36609b4ee7c999d71576c4926a33ab09ade6",
+    "app/services/artifact_integrity.py": "c512679d839b7529460fc151238bcfc1dd7259e280c22f6b9de9166a1ab3237b",
+    "app/services/asu_tracking.py": "3a8fd3c1c7f0573d4c1176989f29e9ec695ca1d59e6dd7f0f7fa8385eb8a5ba3",
+    "app/services/authority.py": "fbcfaa6a92acacbfafedd729cc58819a0d9a391e618b3d5fa329450e1771cee2",
+    "app/services/authority_evidence.py": "68e65663f4a025db4667eda887cf8793d581867b65064c9ff5557966b3c89a12",
+    "app/services/billing.py": "72148e756a442f1530ce3664c72bc1370c9d0c69d4cb584f449ef1fcbb613409",
+    "app/services/citation_lookup.py": "c48aec77c6d0c683fdbcb1f51d89135655e0751b303b85bd996f2ad899b232ca",
+    "app/services/coordinate_evidence.py": "e8621e36e32dde88b827965f11fadfcc10a5cbb861ec8c86a2b340e0a7051458",
+    "app/services/counsel.py": "d4ee22103dafb850c8de7164c164204ec6d88287179a391da4fdd634eccba7f7",
+    "app/services/dependencies.py": "052d5c8d54308504f0c3a6989a7bc7b57e760eaed500319b3ed9faa9982e2865",
+    "app/services/dependency_report.py": "5b57b3388017e0577c48ece1e194f9fd9256325225224f5da4e32d77a3a9e008",
+    "app/services/discovery.py": "67107f1264ad9e0b0baadae8308821e4c33b6193673a04b98c7096e899fda357",
+    "app/services/documents.py": "8373f18f2ce6a10008db77e585652193803a54c545b4194d92b3950624bfc772",
+    "app/services/editions.py": "7a50e039a4b320e147bb17103ad269df63b46f3f85f344a54189729cedcd27d3",
+    "app/services/editorial.py": "025dabb35a595c0f090a02ef70bd4a593399ba8e842d86eaf81ded58ded4f629",
+    "app/services/entitlements.py": "154bd6369c0236c2e04d27244f461c5e03cd75cf0b53534fb3219d7520cd2703",
+    "app/services/idempotency.py": "2f898f60321f782b1038d4bb6a913e8f488806aa3495c19c008138de0c20cec7",
+    "app/services/index_cleanup.py": "4047c8a03af558407d152edd667576ab0fd05c98d027a2a4cd4e64ac8e621e35",
+    "app/services/intake.py": "92cd7085a980c43e242dd2ef24118530c0e2cb3e58159dcb89a809c4dee93a6d",
+    "app/services/memos.py": "fbf943ce77b3baf1ce4c5a7788773736abd2086b3723590ab86ef8e83a78f35d",
+    "app/services/model_attempts.py": "2769cdcb20da1b99f9608720b27e7e62147baeb29c7e70cf1749cf6889bc0097",
+    "app/services/model_budgets.py": "ee818f6b9aa0706fe6909b964aa6af85f8456a88740f621606ebd180d6535f80",
+    "app/services/output_amendments.py": "cb7a7994ccc7f5cdc543f0afcd1fcd75b8c0e3408be055f34fcd090ae973dea7",
+    "app/services/output_rights.py": "726d96cae991cbe7d5dc212a05b0eb4f7461208386a593a5357ac5948d197712",
+    "app/services/parser_review.py": "d75b98f3da15a260f704e2a7893f746221731653393347050da40de2c4ec9e6f",
+    "app/services/passage_context.py": "f3e4c534c777f6ad3094139eb3407c2e9fdcccbba2787735e1541770855f4dce",
+    "app/services/retrieval.py": "4c93d4a41b7e1ddcd5d37e48a2a40335b66279ac65437e170dc97a7cce9cf269",
+    "app/services/review_comparison.py": "3cfeda01308e3a33b02b113a0a82725d95e1ae26376b25ffc7b4e220e07698c0",
+    "app/services/rights.py": "9de210d170233080d03257f2dcd9d2e797743567163c36886bc8d78a3607c42d",
+    "app/services/sec_comments.py": "45001f1767c07945299aa473519247371c92a4296c7c7650c8f6b331aab07362",
+    "app/services/source_concurrency.py": "3363097bdd3d4d8aa912761adbb9614b7242021bee51aef9aa1c0f2db2f57637",
+    "app/services/source_gateway.py": "1ebf6bbb676d0354e11cf32b4f0350fa3b667f0ac3320f94f921837bb8ff23e7",
+    "app/services/source_scopes.py": "81537d700af985ad7bb161a187ed2d4b212cf392f85cb3790c40d8b683bb47bc",
+    "app/services/source_search.py": "92548853a2a789564b5ee749416197ed6165e727658f66690cdd65d8b70ad40b",
+    "app/services/spreadsheet_context.py": "874a98db4c252c68b3449afba54516de40eb397be38bdd34785adbd0e3863e62",
+    "app/services/spreadsheet_dependencies.py": "6a469795de0743b04723af4e0166dee3767797d159568bb490a62f63c7835cf9",
+    "app/services/storage.py": "28317f13e61baad0148c5bdc179ef538ea68bfdbf19c608c581b99ff901e28ad",
+    "app/services/watches.py": "6e6740acf764b1b30e587193eb292949d39dbe34a6a660c980ed536fa1feec21",
+    "app/source_discovery.py": "62a6a7cf971b26243fda5a2059fb7d16dca2223ff4771f2e7d1a2307e04764be",
+    "app/spreadsheet_comments.py": "200a6b2f395e6360b9576990b1b0b1ba4a4a6733ac0c5880ff104b0bfb8f8b8d",
+    "app/spreadsheet_parser.py": "ddf2bf988949c93d595420cf5c6919a0a25c1f9048d0fc23bb581f30d3a3699b",
+    "app/spreadsheet_tables.py": "25bd0996213ba4b149491a89b1a898f084d64f79d2faf18a1af2180dd30f87fc",
+    "app/worker.py": "f5d1175a3d0fc9a0d16821cd7959e5099f399d14a80bec790928b36e9b5d9844"
+  },
+  "professional_adjudications": 0,
+  "model_calls": 0,
+  "workflow_executions": 0,
+  "source_search_version": "postgres-simple-lexical-1",
+  "relationship_version": "authority-agent-evidence-1",
+  "precision_unit": "unique source/document with retained body; reference-only excluded",
+  "latency_scope": "retrieval, relationship expansion, evidence persistence and validation; excludes fixture setup and model work",
+  "limitations": [
+    "Fictional development fixtures, not accounting truth or a held-out benchmark.",
+    "SQLite fallback only; no PostgreSQL ranking, embedding, live model, latency SLO, cost or professional claim support measured.",
+    "A valid citation binding does not prove entailment. No numerical or model-abstention score is inferred.",
+    "Maximum evidence bounds may intentionally miss relevant material; per-case omissions remain visible."
+  ],
+  "passed": true,
+  "cases": [
+    {
+      "case_id": "definition-link",
+      "case_sha256": "ff479e07392836911c9c3dc9d68fd474e7a1c3bd3ebcf02fd01ae9e9c8fe723a",
+      "execution_status": "completed",
+      "kind": "engineering_fixture",
+      "professional_review_status": "not_adjudicated",
+      "source_records": 2,
+      "document_records": 0,
+      "source_versions": [
+        {
+          "source_id": "root",
+          "version": "fixture-1",
+          "text_sha256": "a9ba75be9831b48640fb680d810ca432973d06d25869263b54224fe3227544ed"
+        },
+        {
+          "source_id": "definition",
+          "version": "fixture-1",
+          "text_sha256": "c4f6cc4dd24bb86fbd3fdc22594485026d06584c3f37ad11db4a2c284339684b"
+        }
+      ],
+      "observed_source_revisions": [
+        {
+          "source_id": "root",
+          "revision": "1a01d2ef61dda35541cd665e1c6ddfb78cc00e8aa8bf28602a93a789033889c4"
+        },
+        {
+          "source_id": "definition",
+          "revision": "0fe44250418057e625e78fcfb87be584f61590eb93d3363778f87011a8a6e770"
+        }
+      ],
+      "expected_relevant_units": [
+        "source:definition",
+        "source:root"
+      ],
+      "retrieved_body_units": [
+        "source:definition",
+        "source:root"
+      ],
+      "missed_units": [],
+      "extra_units": [],
+      "forbidden_units_retrieved": [],
+      "reference_only_units": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "binding_checks": 3,
+      "binding_checks_passed": 3,
+      "observed_relationships": [
+        {
+          "version": "authority-agent-evidence-1",
+          "relationship_id": "f097df9b-f52c-4e91-819a-89ffbb9f8872",
+          "revision": "932523c61be16f60969962612c2f0a222fdcb53e28409e49c2b78c89dab794b2",
+          "review_id": "4c6edcd6-27dc-4313-a2be-e5eaca8f4d20",
+          "review_sequence": 1,
+          "review_sha256": "d7015993a7409c91b0e0eb2d85f3c47075756d1c9effe662abb490ef6c6f3e05",
+          "review_expires_at": 1790583563,
+          "source_evidence_id": "e87a3781-5956-47ac-ba43-3a3475fa7223",
+          "target_evidence_id": "16e9c860-5f27-4bb0-a9db-5d51a60f30ee",
+          "source": {
+            "source_id": "root",
+            "revision": "1a01d2ef61dda35541cd665e1c6ddfb78cc00e8aa8bf28602a93a789033889c4",
+            "locator": "source:root (characters 1–59)",
+            "character_start": 0,
+            "character_end": 59,
+            "passage_text_sha256": "a9ba75be9831b48640fb680d810ca432973d06d25869263b54224fe3227544ed"
+          },
+          "target": {
+            "source_id": "definition",
+            "revision": "0fe44250418057e625e78fcfb87be584f61590eb93d3363778f87011a8a6e770",
+            "locator": "source:definition (characters 1–57)",
+            "character_start": 0,
+            "character_end": 57,
+            "passage_text_sha256": "c4f6cc4dd24bb86fbd3fdc22594485026d06584c3f37ad11db4a2c284339684b"
+          },
+          "source_kind": "original_commentary",
+          "target_kind": "original_commentary",
+          "relation": "defines",
+          "scope": "Synthetic scope: the second passage defines a term in the first passage only.",
+          "claim_support_verified": false,
+          "complete_graph_verified": false,
+          "instructions_are_untrusted": true
+        }
+      ],
+      "relationship_count": 1,
+      "evidence_count": 3,
+      "retrieval_ms": 17.287,
+      "evidence": [
+        {
+          "resource": "source:root",
+          "locator": "Section 1",
+          "text_sha256": "a9ba75be9831b48640fb680d810ca432973d06d25869263b54224fe3227544ed",
+          "access": "secondary_text_reviewed",
+          "extraction_context": {}
+        },
+        {
+          "resource": "source:root",
+          "locator": "source:root (characters 1–59)",
+          "text_sha256": "a9ba75be9831b48640fb680d810ca432973d06d25869263b54224fe3227544ed",
+          "access": "secondary_text_reviewed",
+          "extraction_context": {
+            "version": "source-coordinate-evidence-1",
+            "citation": {
+              "source_id": "root",
+              "revision": "1a01d2ef61dda35541cd665e1c6ddfb78cc00e8aa8bf28602a93a789033889c4",
+              "source_version": "fixture-1",
+              "policy_version": 3,
+              "source_kind": "original_commentary",
+              "source_locator": "source:root",
+              "locator_kind": "source_record",
+              "locator": "source:root (characters 1–59)",
+              "character_start": 0,
+              "character_end": 59,
+              "offset_convention": "zero-based, end-exclusive Unicode characters in the retained source text",
+              "source_text_sha256": "a9ba75be9831b48640fb680d810ca432973d06d25869263b54224fe3227544ed",
+              "passage_text_sha256": "a9ba75be9831b48640fb680d810ca432973d06d25869263b54224fe3227544ed"
+            },
+            "extraction_context": {},
+            "complete_document_verified": false,
+            "instructions_are_untrusted": true
+          }
+        },
+        {
+          "resource": "source:definition",
+          "locator": "source:definition (characters 1–57)",
+          "text_sha256": "c4f6cc4dd24bb86fbd3fdc22594485026d06584c3f37ad11db4a2c284339684b",
+          "access": "secondary_text_reviewed",
+          "extraction_context": {
+            "version": "source-coordinate-evidence-1",
+            "citation": {
+              "source_id": "definition",
+              "revision": "0fe44250418057e625e78fcfb87be584f61590eb93d3363778f87011a8a6e770",
+              "source_version": "fixture-1",
+              "policy_version": 3,
+              "source_kind": "original_commentary",
+              "source_locator": "source:definition",
+              "locator_kind": "source_record",
+              "locator": "source:definition (characters 1–57)",
+              "character_start": 0,
+              "character_end": 57,
+              "offset_convention": "zero-based, end-exclusive Unicode characters in the retained source text",
+              "source_text_sha256": "c4f6cc4dd24bb86fbd3fdc22594485026d06584c3f37ad11db4a2c284339684b",
+              "passage_text_sha256": "c4f6cc4dd24bb86fbd3fdc22594485026d06584c3f37ad11db4a2c284339684b"
+            },
+            "extraction_context": {},
+            "complete_document_verified": false,
+            "instructions_are_untrusted": true
+          }
+        }
+      ],
+      "failures": [],
+      "claim_support_accuracy": null,
+      "numerical_correctness": null,
+      "model_abstention_accuracy": null,
+      "live_model_calls": 0,
+      "live_model_cost_usd": null
+    },
+    {
+      "case_id": "bounded-definition-gap",
+      "case_sha256": "efd1b2f6de397368375f006aace077ce38684c5de387c67e788c7668308ba0b1",
+      "execution_status": "completed",
+      "kind": "engineering_fixture",
+      "professional_review_status": "not_adjudicated",
+      "source_records": 2,
+      "document_records": 0,
+      "source_versions": [
+        {
+          "source_id": "root",
+          "version": "fixture-1",
+          "text_sha256": "a9ba75be9831b48640fb680d810ca432973d06d25869263b54224fe3227544ed"
+        },
+        {
+          "source_id": "definition",
+          "version": "fixture-1",
+          "text_sha256": "c4f6cc4dd24bb86fbd3fdc22594485026d06584c3f37ad11db4a2c284339684b"
+        }
+      ],
+      "observed_source_revisions": [
+        {
+          "source_id": "root",
+          "revision": "930db6694f336f577c52bcfbeb403e55bbd75305ea2246d051d98764cc261813"
+        },
+        {
+          "source_id": "definition",
+          "revision": "e88aa7f91c76208e728cd2df4b71516b05fc249b76eea1502ce885b0d6c225ee"
+        }
+      ],
+      "expected_relevant_units": [
+        "source:definition",
+        "source:root"
+      ],
+      "retrieved_body_units": [
+        "source:root"
+      ],
+      "missed_units": [
+        "source:definition"
+      ],
+      "extra_units": [],
+      "forbidden_units_retrieved": [],
+      "reference_only_units": [],
+      "precision": 1.0,
+      "recall": 0.5,
+      "binding_checks": 1,
+      "binding_checks_passed": 1,
+      "observed_relationships": [],
+      "relationship_count": 0,
+      "evidence_count": 1,
+      "retrieval_ms": 9.116,
+      "evidence": [
+        {
+          "resource": "source:root",
+          "locator": "Section 1",
+          "text_sha256": "a9ba75be9831b48640fb680d810ca432973d06d25869263b54224fe3227544ed",
+          "access": "secondary_text_reviewed",
+          "extraction_context": {}
+        }
+      ],
+      "failures": [],
+      "claim_support_accuracy": null,
+      "numerical_correctness": null,
+      "model_abstention_accuracy": null,
+      "live_model_calls": 0,
+      "live_model_cost_usd": null
+    },
+    {
+      "case_id": "exception-link",
+      "case_sha256": "f3dd6cbcca4da9018d24335e34117937a0cddb72ef2eccb43312480dd24c761b",
+      "execution_status": "completed",
+      "kind": "engineering_fixture",
+      "professional_review_status": "not_adjudicated",
+      "source_records": 2,
+      "document_records": 0,
+      "source_versions": [
+        {
+          "source_id": "root",
+          "version": "fixture-1",
+          "text_sha256": "a9ba75be9831b48640fb680d810ca432973d06d25869263b54224fe3227544ed"
+        },
+        {
+          "source_id": "exception",
+          "version": "fixture-1",
+          "text_sha256": "0611605cf367286c4ac2ac5808a95e80c33afc0945016967ab306817bd3f77b0"
+        }
+      ],
+      "observed_source_revisions": [
+        {
+          "source_id": "root",
+          "revision": "0b6ad3d466d0824fa3b7d242259b55788cda51832aa24f34b2af58114815ba01"
+        },
+        {
+          "source_id": "exception",
+          "revision": "202153a7f15420429551f2c3253c2cfa072765c63eff5e044376847328563474"
+        }
+      ],
+      "expected_relevant_units": [
+        "source:exception",
+        "source:root"
+      ],
+      "retrieved_body_units": [
+        "source:exception",
+        "source:root"
+      ],
+      "missed_units": [],
+      "extra_units": [],
+      "forbidden_units_retrieved": [],
+      "reference_only_units": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "binding_checks": 3,
+      "binding_checks_passed": 3,
+      "observed_relationships": [
+        {
+          "version": "authority-agent-evidence-1",
+          "relationship_id": "b11c4c4d-203d-47de-bccc-905bc2e7677b",
+          "revision": "d65a65eb16e64cd3c1e0953fbbee5a298aa503a1043758ea5152f6e0c55fd08e",
+          "review_id": "bbeff435-d31c-4cfa-b89e-b6fd2f1dece5",
+          "review_sequence": 1,
+          "review_sha256": "d28f14de42b33b2f37906789e08233227cbe3e7167524ca7ea0c02c9336a5c96",
+          "review_expires_at": 1790583564,
+          "source_evidence_id": "2892b234-8002-47f7-94a3-03f90b2ccceb",
+          "target_evidence_id": "6fff41e0-76de-488d-a7e6-8004fb54c9f7",
+          "source": {
+            "source_id": "root",
+            "revision": "0b6ad3d466d0824fa3b7d242259b55788cda51832aa24f34b2af58114815ba01",
+            "locator": "source:root (characters 1–59)",
+            "character_start": 0,
+            "character_end": 59,
+            "passage_text_sha256": "a9ba75be9831b48640fb680d810ca432973d06d25869263b54224fe3227544ed"
+          },
+          "target": {
+            "source_id": "exception",
+            "revision": "202153a7f15420429551f2c3253c2cfa072765c63eff5e044376847328563474",
+            "locator": "source:exception (characters 1–69)",
+            "character_start": 0,
+            "character_end": 69,
+            "passage_text_sha256": "0611605cf367286c4ac2ac5808a95e80c33afc0945016967ab306817bd3f77b0"
+          },
+          "source_kind": "original_commentary",
+          "target_kind": "original_commentary",
+          "relation": "cites",
+          "scope": "Synthetic scope: the second passage supplies an exception to this fictional recognition rule.",
+          "claim_support_verified": false,
+          "complete_graph_verified": false,
+          "instructions_are_untrusted": true
+        }
+      ],
+      "relationship_count": 1,
+      "evidence_count": 3,
+      "retrieval_ms": 16.215,
+      "evidence": [
+        {
+          "resource": "source:root",
+          "locator": "Section 1",
+          "text_sha256": "a9ba75be9831b48640fb680d810ca432973d06d25869263b54224fe3227544ed",
+          "access": "secondary_text_reviewed",
+          "extraction_context": {}
+        },
+        {
+          "resource": "source:root",
+          "locator": "source:root (characters 1–59)",
+          "text_sha256": "a9ba75be9831b48640fb680d810ca432973d06d25869263b54224fe3227544ed",
+          "access": "secondary_text_reviewed",
+          "extraction_context": {
+            "version": "source-coordinate-evidence-1",
+            "citation": {
+              "source_id": "root",
+              "revision": "0b6ad3d466d0824fa3b7d242259b55788cda51832aa24f34b2af58114815ba01",
+              "source_version": "fixture-1",
+              "policy_version": 3,
+              "source_kind": "original_commentary",
+              "source_locator": "source:root",
+              "locator_kind": "source_record",
+              "locator": "source:root (characters 1–59)",
+              "character_start": 0,
+              "character_end": 59,
+              "offset_convention": "zero-based, end-exclusive Unicode characters in the retained source text",
+              "source_text_sha256": "a9ba75be9831b48640fb680d810ca432973d06d25869263b54224fe3227544ed",
+              "passage_text_sha256": "a9ba75be9831b48640fb680d810ca432973d06d25869263b54224fe3227544ed"
+            },
+            "extraction_context": {},
+            "complete_document_verified": false,
+            "instructions_are_untrusted": true
+          }
+        },
+        {
+          "resource": "source:exception",
+          "locator": "source:exception (characters 1–69)",
+          "text_sha256": "0611605cf367286c4ac2ac5808a95e80c33afc0945016967ab306817bd3f77b0",
+          "access": "secondary_text_reviewed",
+          "extraction_context": {
+            "version": "source-coordinate-evidence-1",
+            "citation": {
+              "source_id": "exception",
+              "revision": "202153a7f15420429551f2c3253c2cfa072765c63eff5e044376847328563474",
+              "source_version": "fixture-1",
+              "policy_version": 3,
+              "source_kind": "original_commentary",
+              "source_locator": "source:exception",
+              "locator_kind": "source_record",
+              "locator": "source:exception (characters 1–69)",
+              "character_start": 0,
+              "character_end": 69,
+              "offset_convention": "zero-based, end-exclusive Unicode characters in the retained source text",
+              "source_text_sha256": "0611605cf367286c4ac2ac5808a95e80c33afc0945016967ab306817bd3f77b0",
+              "passage_text_sha256": "0611605cf367286c4ac2ac5808a95e80c33afc0945016967ab306817bd3f77b0"
+            },
+            "extraction_context": {},
+            "complete_document_verified": false,
+            "instructions_are_untrusted": true
+          }
+        }
+      ],
+      "failures": [],
+      "claim_support_accuracy": null,
+      "numerical_correctness": null,
+      "model_abstention_accuracy": null,
+      "live_model_calls": 0,
+      "live_model_cost_usd": null
+    },
+    {
+      "case_id": "conflicting-authority",
+      "case_sha256": "97ae5355fd89eeccf0f3c6cf23d4e59534bbc9b99df44d330d5b991748553e01",
+      "execution_status": "completed",
+      "kind": "engineering_fixture",
+      "professional_review_status": "not_adjudicated",
+      "source_records": 2,
+      "document_records": 0,
+      "source_versions": [
+        {
+          "source_id": "rule",
+          "version": "fixture-1",
+          "text_sha256": "eb02bf8c98fe0735b45ceeed4b940e196e10931f61ed1ab1af696f4a5204693d"
+        },
+        {
+          "source_id": "practice",
+          "version": "fixture-1",
+          "text_sha256": "c21ab2ac73586aa8077543277bbed5cf1407432ce2b43cf41907a2a6ee551cc3"
+        }
+      ],
+      "observed_source_revisions": [
+        {
+          "source_id": "rule",
+          "revision": "96e07d5dc30ccf982c1998bfedd36fde58ef4e3a3a16f19c44831c9472495943"
+        },
+        {
+          "source_id": "practice",
+          "revision": "05a5603a65a4cc922f0ab75bde0f96e00d2519e1cc212b6ecf823b4474bef496"
+        }
+      ],
+      "expected_relevant_units": [
+        "source:practice",
+        "source:rule"
+      ],
+      "retrieved_body_units": [
+        "source:practice",
+        "source:rule"
+      ],
+      "missed_units": [],
+      "extra_units": [],
+      "forbidden_units_retrieved": [],
+      "reference_only_units": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "binding_checks": 2,
+      "binding_checks_passed": 2,
+      "observed_relationships": [],
+      "relationship_count": 0,
+      "evidence_count": 2,
+      "retrieval_ms": 4.312,
+      "evidence": [
+        {
+          "resource": "source:rule",
+          "locator": "Section 1",
+          "text_sha256": "eb02bf8c98fe0735b45ceeed4b940e196e10931f61ed1ab1af696f4a5204693d",
+          "access": "primary_text_reviewed",
+          "extraction_context": {}
+        },
+        {
+          "resource": "source:practice",
+          "locator": "Section 1",
+          "text_sha256": "c21ab2ac73586aa8077543277bbed5cf1407432ce2b43cf41907a2a6ee551cc3",
+          "access": "secondary_text_reviewed",
+          "extraction_context": {}
+        }
+      ],
+      "failures": [],
+      "claim_support_accuracy": null,
+      "numerical_correctness": null,
+      "model_abstention_accuracy": null,
+      "live_model_calls": 0,
+      "live_model_cost_usd": null
+    },
+    {
+      "case_id": "historical-amendment",
+      "case_sha256": "577db2d3ca2252b602915cf2a49736ae13ffceffc67af1c2b2967de8a27dc7fd",
+      "execution_status": "completed",
+      "kind": "engineering_fixture",
+      "professional_review_status": "not_adjudicated",
+      "source_records": 2,
+      "document_records": 0,
+      "source_versions": [
+        {
+          "source_id": "old",
+          "version": "fixture-1",
+          "text_sha256": "7b8efd1a1189571e46202ccbed342f58a5582af1f800043248015e0c5ecb2b25"
+        },
+        {
+          "source_id": "new",
+          "version": "fixture-1",
+          "text_sha256": "489085d582a0864060c5de48dc47155cbaf3b9b3e361c672fa57b6b4786043d3"
+        }
+      ],
+      "observed_source_revisions": [
+        {
+          "source_id": "old",
+          "revision": "6d3430ebd3d3b51cd43bd1e502b25326bf1f758e055d8fe4e7796f428ab27fe7"
+        },
+        {
+          "source_id": "new",
+          "revision": "efc204a7e13a8ba30f951ccbd987aca1b2985eca7d644840fe493afd3d0dc459"
+        }
+      ],
+      "expected_relevant_units": [
+        "source:old"
+      ],
+      "retrieved_body_units": [
+        "source:old"
+      ],
+      "missed_units": [],
+      "extra_units": [],
+      "forbidden_units_retrieved": [],
+      "reference_only_units": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "binding_checks": 1,
+      "binding_checks_passed": 1,
+      "observed_relationships": [],
+      "relationship_count": 0,
+      "evidence_count": 1,
+      "retrieval_ms": 2.742,
+      "evidence": [
+        {
+          "resource": "source:old",
+          "locator": "Section 1",
+          "text_sha256": "7b8efd1a1189571e46202ccbed342f58a5582af1f800043248015e0c5ecb2b25",
+          "access": "secondary_text_reviewed",
+          "extraction_context": {}
+        }
+      ],
+      "failures": [],
+      "claim_support_accuracy": null,
+      "numerical_correctness": null,
+      "model_abstention_accuracy": null,
+      "live_model_calls": 0,
+      "live_model_cost_usd": null
+    },
+    {
+      "case_id": "known-as-of",
+      "case_sha256": "45e8d05d895334b5bdc0bfa8bac1018784a2590a1518e8fa2e94e949e0440e7b",
+      "execution_status": "completed",
+      "kind": "engineering_fixture",
+      "professional_review_status": "not_adjudicated",
+      "source_records": 2,
+      "document_records": 0,
+      "source_versions": [
+        {
+          "source_id": "known",
+          "version": "fixture-1",
+          "text_sha256": "9428dc793d8c24d6f0e13d4ddc0d267c33794db493e6f6d116610dcc1effacd9"
+        },
+        {
+          "source_id": "later",
+          "version": "fixture-1",
+          "text_sha256": "1ee056da9c6e7e2dc47974a1a5457c5352f6094961c1eaebf6abfa028f3447a6"
+        }
+      ],
+      "observed_source_revisions": [
+        {
+          "source_id": "known",
+          "revision": "1504498cfa0851760ca06d232fbe59fb116c7d8cae9a8fc521f09f4cdd02a4f8"
+        },
+        {
+          "source_id": "later",
+          "revision": "2c731a19b5e3f36ba0842e08dd8e08f10b1e7670c579f744892502a0782ae984"
+        }
+      ],
+      "expected_relevant_units": [
+        "source:known"
+      ],
+      "retrieved_body_units": [
+        "source:known"
+      ],
+      "missed_units": [],
+      "extra_units": [],
+      "forbidden_units_retrieved": [],
+      "reference_only_units": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "binding_checks": 1,
+      "binding_checks_passed": 1,
+      "observed_relationships": [],
+      "relationship_count": 0,
+      "evidence_count": 1,
+      "retrieval_ms": 2.939,
+      "evidence": [
+        {
+          "resource": "source:known",
+          "locator": "Section 1",
+          "text_sha256": "9428dc793d8c24d6f0e13d4ddc0d267c33794db493e6f6d116610dcc1effacd9",
+          "access": "secondary_text_reviewed",
+          "extraction_context": {}
+        }
+      ],
+      "failures": [],
+      "claim_support_accuracy": null,
+      "numerical_correctness": null,
+      "model_abstention_accuracy": null,
+      "live_model_calls": 0,
+      "live_model_cost_usd": null
+    },
+    {
+      "case_id": "wrong-framework",
+      "case_sha256": "109a8a98a3e8579f689ac4480d91487c60130fc97ec0de3e6b2a779dd807bc2c",
+      "execution_status": "completed",
+      "kind": "engineering_fixture",
+      "professional_review_status": "not_adjudicated",
+      "source_records": 2,
+      "document_records": 0,
+      "source_versions": [
+        {
+          "source_id": "us",
+          "version": "fixture-1",
+          "text_sha256": "e07bf4ad5ccd51002678e8add8245febe710529026be041d311556565316a96d"
+        },
+        {
+          "source_id": "other",
+          "version": "fixture-1",
+          "text_sha256": "0c095d15118570cf7c492d8d096ad3a2d4b3bebe01b9f3b4133822e3ad9b668a"
+        }
+      ],
+      "observed_source_revisions": [
+        {
+          "source_id": "us",
+          "revision": "756ae81b412db041b532bf25f90053f0a6b5f7c6d1984dc5255931ac30c287e3"
+        },
+        {
+          "source_id": "other",
+          "revision": "dbcf01b511ed3edd428e34f5903074f3c7ad88dd6cba7bb3bd45bae2d9d07b26"
+        }
+      ],
+      "expected_relevant_units": [
+        "source:us"
+      ],
+      "retrieved_body_units": [
+        "source:us"
+      ],
+      "missed_units": [],
+      "extra_units": [],
+      "forbidden_units_retrieved": [],
+      "reference_only_units": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "binding_checks": 1,
+      "binding_checks_passed": 1,
+      "observed_relationships": [],
+      "relationship_count": 0,
+      "evidence_count": 1,
+      "retrieval_ms": 2.797,
+      "evidence": [
+        {
+          "resource": "source:us",
+          "locator": "Section 1",
+          "text_sha256": "e07bf4ad5ccd51002678e8add8245febe710529026be041d311556565316a96d",
+          "access": "secondary_text_reviewed",
+          "extraction_context": {}
+        }
+      ],
+      "failures": [],
+      "claim_support_accuracy": null,
+      "numerical_correctness": null,
+      "model_abstention_accuracy": null,
+      "live_model_calls": 0,
+      "live_model_cost_usd": null
+    },
+    {
+      "case_id": "wrong-audit-regime",
+      "case_sha256": "ae1d0a306112495b322c1e8a308222b3c4b3798532476484fd9d055d9bc92b4a",
+      "execution_status": "completed",
+      "kind": "engineering_fixture",
+      "professional_review_status": "not_adjudicated",
+      "source_records": 2,
+      "document_records": 0,
+      "source_versions": [
+        {
+          "source_id": "pcaob",
+          "version": "fixture-1",
+          "text_sha256": "7c4aadea704331fb499d4fb52e44493f1284013173521d4e528dd394fd6e240c"
+        },
+        {
+          "source_id": "aicpa",
+          "version": "fixture-1",
+          "text_sha256": "b0cfae8c7f83bc1e73838d1a925a5d3eab5ff8d694c31dc12c489fa81c2eece7"
+        }
+      ],
+      "observed_source_revisions": [
+        {
+          "source_id": "pcaob",
+          "revision": "d2b335ef0e205d12d5286469b34950896e34d793ad58771b9d192b35d6833135"
+        },
+        {
+          "source_id": "aicpa",
+          "revision": "23b40e63b42fda2cf1a24351f839b7d770990eaf4c2432c5fa3cd9e20cfc162b"
+        }
+      ],
+      "expected_relevant_units": [
+        "source:pcaob"
+      ],
+      "retrieved_body_units": [
+        "source:pcaob"
+      ],
+      "missed_units": [],
+      "extra_units": [],
+      "forbidden_units_retrieved": [],
+      "reference_only_units": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "binding_checks": 1,
+      "binding_checks_passed": 1,
+      "observed_relationships": [],
+      "relationship_count": 0,
+      "evidence_count": 1,
+      "retrieval_ms": 2.928,
+      "evidence": [
+        {
+          "resource": "source:pcaob",
+          "locator": "Section 1",
+          "text_sha256": "7c4aadea704331fb499d4fb52e44493f1284013173521d4e528dd394fd6e240c",
+          "access": "secondary_text_reviewed",
+          "extraction_context": {}
+        }
+      ],
+      "failures": [],
+      "claim_support_accuracy": null,
+      "numerical_correctness": null,
+      "model_abstention_accuracy": null,
+      "live_model_calls": 0,
+      "live_model_cost_usd": null
+    },
+    {
+      "case_id": "reference-only",
+      "case_sha256": "b85df68e0d61898fecfc0999b5b5f044d106397f64f418c04f6144f9fa03891e",
+      "execution_status": "completed",
+      "kind": "engineering_fixture",
+      "professional_review_status": "not_adjudicated",
+      "source_records": 1,
+      "document_records": 0,
+      "source_versions": [
+        {
+          "source_id": "reference",
+          "version": "fixture-1",
+          "text_sha256": "2e4b433a329aab854bb74cc416e39dce567446eb79db377e667c0c0159cfe45f"
+        }
+      ],
+      "observed_source_revisions": [
+        {
+          "source_id": "reference",
+          "revision": "7fe6a0dff18cfcfd01b22421071e2cfdb882c1b2d0bdff47ecf64ce593cf17ee"
+        }
+      ],
+      "expected_relevant_units": [],
+      "retrieved_body_units": [],
+      "missed_units": [],
+      "extra_units": [],
+      "forbidden_units_retrieved": [],
+      "reference_only_units": [
+        "source:reference"
+      ],
+      "precision": null,
+      "recall": null,
+      "binding_checks": 0,
+      "binding_checks_passed": 0,
+      "observed_relationships": [],
+      "relationship_count": 0,
+      "evidence_count": 1,
+      "retrieval_ms": 1.658,
+      "evidence": [
+        {
+          "resource": "source:reference",
+          "locator": "Fictional reference",
+          "text_sha256": null,
+          "access": "reference_only",
+          "extraction_context": {}
+        }
+      ],
+      "failures": [],
+      "claim_support_accuracy": null,
+      "numerical_correctness": null,
+      "model_abstention_accuracy": null,
+      "live_model_calls": 0,
+      "live_model_cost_usd": null
+    },
+    {
+      "case_id": "revoked-rights",
+      "case_sha256": "d7cd44492d4c7f87968981b3e067fbc6ccf7edb0a1295d92af427dcd1ba3b0b3",
+      "execution_status": "completed",
+      "kind": "engineering_fixture",
+      "professional_review_status": "not_adjudicated",
+      "source_records": 1,
+      "document_records": 0,
+      "source_versions": [
+        {
+          "source_id": "revoked",
+          "version": "fixture-1",
+          "text_sha256": "621daa90284f756dd08f89452b5b8af37a7a77c2752fad9b28d0044a884faf77"
+        }
+      ],
+      "observed_source_revisions": [
+        {
+          "source_id": "revoked",
+          "revision": "137cf037d659c42141c5bbdb72a8bce3e24134311f3834251693b4a80c65d8a5"
+        }
+      ],
+      "expected_relevant_units": [],
+      "retrieved_body_units": [],
+      "missed_units": [],
+      "extra_units": [],
+      "forbidden_units_retrieved": [],
+      "reference_only_units": [],
+      "precision": null,
+      "recall": null,
+      "binding_checks": 0,
+      "binding_checks_passed": 0,
+      "observed_relationships": [],
+      "relationship_count": 0,
+      "evidence_count": 0,
+      "retrieval_ms": 0.552,
+      "evidence": [],
+      "failures": [],
+      "claim_support_accuracy": null,
+      "numerical_correctness": null,
+      "model_abstention_accuracy": null,
+      "live_model_calls": 0,
+      "live_model_cost_usd": null
+    },
+    {
+      "case_id": "missing-technical-review",
+      "case_sha256": "c5f20cbb5eb21095d421bed118fff8fb27a29ba60cab05b37b819ce34d1d0d7c",
+      "execution_status": "completed",
+      "kind": "engineering_fixture",
+      "professional_review_status": "not_adjudicated",
+      "source_records": 1,
+      "document_records": 0,
+      "source_versions": [
+        {
+          "source_id": "unreviewed",
+          "version": "fixture-1",
+          "text_sha256": "bb66f1088418b27d37437adbd326fbbedffa147a0663d64207bff84bca458f71"
+        }
+      ],
+      "observed_source_revisions": [
+        {
+          "source_id": "unreviewed",
+          "revision": "b3e2e33d8eef94797eea2945e2c509f07a80a9fb4cb4e5f06902b49c724dd07d"
+        }
+      ],
+      "expected_relevant_units": [],
+      "retrieved_body_units": [],
+      "missed_units": [],
+      "extra_units": [],
+      "forbidden_units_retrieved": [],
+      "reference_only_units": [],
+      "precision": null,
+      "recall": null,
+      "binding_checks": 0,
+      "binding_checks_passed": 0,
+      "observed_relationships": [],
+      "relationship_count": 0,
+      "evidence_count": 0,
+      "retrieval_ms": 0.642,
+      "evidence": [],
+      "failures": [],
+      "claim_support_accuracy": null,
+      "numerical_correctness": null,
+      "model_abstention_accuracy": null,
+      "live_model_calls": 0,
+      "live_model_cost_usd": null
+    },
+    {
+      "case_id": "tenant-isolation",
+      "case_sha256": "9644b655bb3f3aea9e1efc85258662f82eb877d61905b26d590a23886a0c9dec",
+      "execution_status": "completed",
+      "kind": "engineering_fixture",
+      "professional_review_status": "not_adjudicated",
+      "source_records": 0,
+      "document_records": 1,
+      "source_versions": [],
+      "observed_source_revisions": [],
+      "expected_relevant_units": [],
+      "retrieved_body_units": [],
+      "missed_units": [],
+      "extra_units": [],
+      "forbidden_units_retrieved": [],
+      "reference_only_units": [],
+      "precision": null,
+      "recall": null,
+      "binding_checks": 0,
+      "binding_checks_passed": 0,
+      "observed_relationships": [],
+      "relationship_count": 0,
+      "evidence_count": 0,
+      "retrieval_ms": 1.132,
+      "evidence": [],
+      "failures": [],
+      "claim_support_accuracy": null,
+      "numerical_correctness": null,
+      "model_abstention_accuracy": null,
+      "live_model_calls": 0,
+      "live_model_cost_usd": null
+    },
+    {
+      "case_id": "selected-private-document",
+      "case_sha256": "83ad9a96b8f8c1643cd47344017c9d3f1b772b6c6ebb06a916a508b942fbe149",
+      "execution_status": "completed",
+      "kind": "engineering_fixture",
+      "professional_review_status": "not_adjudicated",
+      "source_records": 0,
+      "document_records": 1,
+      "source_versions": [],
+      "observed_source_revisions": [],
+      "expected_relevant_units": [
+        "document:selected-doc"
+      ],
+      "retrieved_body_units": [
+        "document:selected-doc"
+      ],
+      "missed_units": [],
+      "extra_units": [],
+      "forbidden_units_retrieved": [],
+      "reference_only_units": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "binding_checks": 1,
+      "binding_checks_passed": 1,
+      "observed_relationships": [],
+      "relationship_count": 0,
+      "evidence_count": 1,
+      "retrieval_ms": 1.271,
+      "evidence": [
+        {
+          "resource": "document:selected-doc",
+          "locator": "Synthetic paragraph 1",
+          "text_sha256": "5634d86daeae51d25bf342da2b2cc95a70684f2e3359ed12cee2a360de461f44",
+          "access": "user_document",
+          "extraction_context": {}
+        }
+      ],
+      "failures": [],
+      "claim_support_accuracy": null,
+      "numerical_correctness": null,
+      "model_abstention_accuracy": null,
+      "live_model_calls": 0,
+      "live_model_cost_usd": null
+    },
+    {
+      "case_id": "prompt-injection-is-data",
+      "case_sha256": "01693ad913c5396670431ad6e76019cd59571c60f1fb16d46c7d75eb7644369d",
+      "execution_status": "completed",
+      "kind": "engineering_fixture",
+      "professional_review_status": "not_adjudicated",
+      "source_records": 1,
+      "document_records": 0,
+      "source_versions": [
+        {
+          "source_id": "injection",
+          "version": "fixture-1",
+          "text_sha256": "68362dc2a2c94828dd342d2ff926595af1e947620d9b56357f3d81aa2a12e9d0"
+        }
+      ],
+      "observed_source_revisions": [
+        {
+          "source_id": "injection",
+          "revision": "15eac999b38d2bfb5918d1a909eb1fc3b7a9af252ece6e3f3baf12dffa56beb4"
+        }
+      ],
+      "expected_relevant_units": [
+        "source:injection"
+      ],
+      "retrieved_body_units": [
+        "source:injection"
+      ],
+      "missed_units": [],
+      "extra_units": [],
+      "forbidden_units_retrieved": [],
+      "reference_only_units": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "binding_checks": 1,
+      "binding_checks_passed": 1,
+      "observed_relationships": [],
+      "relationship_count": 0,
+      "evidence_count": 1,
+      "retrieval_ms": 2.782,
+      "evidence": [
+        {
+          "resource": "source:injection",
+          "locator": "Section 1",
+          "text_sha256": "68362dc2a2c94828dd342d2ff926595af1e947620d9b56357f3d81aa2a12e9d0",
+          "access": "secondary_text_reviewed",
+          "extraction_context": {}
+        }
+      ],
+      "failures": [],
+      "claim_support_accuracy": null,
+      "numerical_correctness": null,
+      "model_abstention_accuracy": null,
+      "live_model_calls": 0,
+      "live_model_cost_usd": null
+    },
+    {
+      "case_id": "no-supporting-source",
+      "case_sha256": "49c92d1a1e531fa878867aa7dfe4a9dd5362388eca26bef4fdb081ffb5ca0e9a",
+      "execution_status": "completed",
+      "kind": "engineering_fixture",
+      "professional_review_status": "not_adjudicated",
+      "source_records": 1,
+      "document_records": 0,
+      "source_versions": [
+        {
+          "source_id": "irrelevant",
+          "version": "fixture-1",
+          "text_sha256": "3d0aa271c9b420606928b49e72e31e375ed79c5f3b0c58e5c147355cf3adde52"
+        }
+      ],
+      "observed_source_revisions": [
+        {
+          "source_id": "irrelevant",
+          "revision": "ed20c4fed91ed7d11d840bdc0daa4e997879978da93ea47f7b12297880e9037e"
+        }
+      ],
+      "expected_relevant_units": [],
+      "retrieved_body_units": [],
+      "missed_units": [],
+      "extra_units": [],
+      "forbidden_units_retrieved": [],
+      "reference_only_units": [],
+      "precision": null,
+      "recall": null,
+      "binding_checks": 0,
+      "binding_checks_passed": 0,
+      "observed_relationships": [],
+      "relationship_count": 0,
+      "evidence_count": 0,
+      "retrieval_ms": 1.823,
+      "evidence": [],
+      "failures": [],
+      "claim_support_accuracy": null,
+      "numerical_correctness": null,
+      "model_abstention_accuracy": null,
+      "live_model_calls": 0,
+      "live_model_cost_usd": null
+    },
+    {
+      "case_id": "lexical-false-positive",
+      "case_sha256": "499caa7c70ab918788f7b35fbd94adf0c4caaee44ce3ecbd5da1804d86a1550a",
+      "execution_status": "completed",
+      "kind": "engineering_fixture",
+      "professional_review_status": "not_adjudicated",
+      "source_records": 2,
+      "document_records": 0,
+      "source_versions": [
+        {
+          "source_id": "relevant",
+          "version": "fixture-1",
+          "text_sha256": "820a303e1221cea87d7879f71fadd66ff6b0f207c6e8dbe135d2d37768696227"
+        },
+        {
+          "source_id": "irrelevant",
+          "version": "fixture-1",
+          "text_sha256": "7b81fc9df82d1c74631e0c67f1bab714ec3fea957841cea95c0c0b1589bef4da"
+        }
+      ],
+      "observed_source_revisions": [
+        {
+          "source_id": "relevant",
+          "revision": "dbb29efc0a1596a64b289815804faaaa7a2a31ae1e019f56950cc0ce474d086c"
+        },
+        {
+          "source_id": "irrelevant",
+          "revision": "1ca0bfa892903c0bf83dfbf068bc1c5dc7353e5324056c45890fbc2cae44f003"
+        }
+      ],
+      "expected_relevant_units": [
+        "source:relevant"
+      ],
+      "retrieved_body_units": [
+        "source:irrelevant",
+        "source:relevant"
+      ],
+      "missed_units": [],
+      "extra_units": [
+        "source:irrelevant"
+      ],
+      "forbidden_units_retrieved": [],
+      "reference_only_units": [],
+      "precision": 0.5,
+      "recall": 1.0,
+      "binding_checks": 2,
+      "binding_checks_passed": 2,
+      "observed_relationships": [],
+      "relationship_count": 0,
+      "evidence_count": 2,
+      "retrieval_ms": 4.248,
+      "evidence": [
+        {
+          "resource": "source:relevant",
+          "locator": "Section 1",
+          "text_sha256": "820a303e1221cea87d7879f71fadd66ff6b0f207c6e8dbe135d2d37768696227",
+          "access": "secondary_text_reviewed",
+          "extraction_context": {}
+        },
+        {
+          "resource": "source:irrelevant",
+          "locator": "Section 1",
+          "text_sha256": "7b81fc9df82d1c74631e0c67f1bab714ec3fea957841cea95c0c0b1589bef4da",
+          "access": "secondary_text_reviewed",
+          "extraction_context": {}
+        }
+      ],
+      "failures": [],
+      "claim_support_accuracy": null,
+      "numerical_correctness": null,
+      "model_abstention_accuracy": null,
+      "live_model_calls": 0,
+      "live_model_cost_usd": null
+    }
+  ]
+}

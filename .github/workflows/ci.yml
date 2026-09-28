@@ -48,6 +48,10 @@ jobs:
           OSA_POSTGRES_TEST_URL: postgresql+psycopg://osa_test:local_ci_only@localhost:5432/osa_test
           OSA_DISPOSABLE_TEST_DATABASE: 'true'
         run: .venv/bin/python -m pytest tests/test_intake_postgres.py --junitxml=../reports/ci-postgres.xml
+      - name: Offline retrieval evaluation (synthetic, not adjudicated)
+        env:
+          PYTHONPATH: backend
+        run: backend/.venv/bin/python scripts/evaluate_retrieval.py --output reports/ci-retrieval-evaluation.json --review-packets reports/ci-retrieval-review-packets.json
       - name: Contracts, content, queue and publication checks
         run: |
           backend/.venv/bin/python scripts/export_contracts.py
@@ -61,7 +65,9 @@ jobs:
         if: always()
         with:
           name: validation-python-${{ matrix.python-version }}
-          path: reports/ci-*.xml
+          path: |
+            reports/ci-*.xml
+            reports/ci-retrieval-*.json
   container-build:
     runs-on: ubuntu-latest
     timeout-minutes: 20
