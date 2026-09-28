@@ -59,7 +59,28 @@ export async function editionsView(app:App){
     dirty=false;save.textContent=locked?'Save new inventory revision':'Create inventory';
   };
   const inspect=async(id:string)=>{const current=++request;
-    try{const r=await api('/admin/intake/editions/'+id);if(disposed||current!==request)return;
+    try{const [r,c]=await Promise.all([api('/admin/intake/editions/'+id),api('/admin/intake/editions/'+id+'/comparison')]);if(disposed||current!==request)return;
+      const value=(v:unknown)=>el('span',{class:'review-hash'},v===null?'Not declared':Array.isArray(v)?(v.length?v.join(', '):'None'):String(v));
+      const names:Record<string,string>={coverage_unit:'Declared coverage',inventory_note:'Inventory basis and limitations',key:'Component key',label:'Label',required:'Required component',intake_work_id:'Registered work',manifest_sha256:'Work manifest SHA-256',expected_raw_sha256:'Expected artifact SHA-256',known_raw_sha256:'Previously known delivery hashes'};
+      const changes=(rows:Json[])=>table(['Field','Previous declaration','Selected declaration'],rows.map(f=>[names[f.field]||f.field,value(f.before),value(f.after)]));
+      const declared=(p:Json,removed=false)=>el('section',{class:'card'},el('h4',{},p.label+' · '+p.key),
+        changes(Object.entries(p).map(([field,v])=>({field,before:removed?v:null,after:removed?null:v}))));
+      const comparison=el('section',{},el('h2',{},'Changes from previous inventory'),
+        notice(c.initial_inventory?'Initial inventory: every component is newly declared, not newly acquired.':'Revision '+c.before.revision+' → '+c.after.revision),
+        el('p',{class:'review-hash'},'Previous inventory SHA-256: '+(c.before?.manifest_sha256||'None — initial declaration')),
+        el('p',{class:'review-hash'},'Selected inventory SHA-256: '+c.after.manifest_sha256),
+        notice(c.notice),table(['Declared components','Previous','Selected'],[
+          ['Required',c.declared_counts.before.required,c.declared_counts.after.required],
+          ['Optional',c.declared_counts.before.optional,c.declared_counts.after.optional]]),
+        ...(c.required_components_removed.length?[notice('Required components removed: '+c.required_components_removed.join(', '),'error')]:[]),
+        ...(c.required_components_made_optional.length?[notice('Required components made optional: '+c.required_components_made_optional.join(', '),'error')]:[]),
+        el('h3',{},'Scope and limitations'),c.scope_changes.length?changes(c.scope_changes):el('p',{},'Unchanged'),
+        el('h3',{},'Added components ('+c.parts.added.length+')'),...c.parts.added.map((p:Json)=>declared(p)),
+        el('h3',{},'Removed components ('+c.parts.removed.length+')'),...c.parts.removed.map((p:Json)=>el('div',{},notice('Removed declaration; values below describe the prior inventory.'),declared(p,true))),
+        el('h3',{},'Changed components ('+c.parts.changed.length+')'),...c.parts.changed.map((p:Json)=>el('section',{class:'card'},el('h4',{},p.key),changes(p.fields))),
+        el('p',{},c.parts.unchanged_count+' components unchanged.'),
+        ...(c.parts.order_changed?[el('p',{},'Component order changed: '+(c.parts.order_before.join(', ')||'None')+' → '+c.parts.order_after.join(', '))]:[]),
+        el('h3',{},'Separate combined representation: '+c.combined.status),...(c.combined.fields.length?[changes(c.combined.fields)]:[]));
       const unit=(p:Json)=>el('section',{class:'card'},el('h3',{},p.label+' · '+p.key),el('p',{},p.receipt_state.replaceAll('_',' ')+' · '+(p.component_edition||'unbound')),
         el('p',{class:'review-hash'},'Expected raw SHA-256: '+(p.expected_raw_sha256||'Not declared')),
         p.unreconciled_raw_sha256.length?notice('New unselected deliveries: '+p.unreconciled_raw_sha256.join(', '),'error'):null,
@@ -73,7 +94,7 @@ export async function editionsView(app:App){
         el('p',{},r.required_matching_receipts+' / '+r.required_parts+' required receipts match; '+r.optional_matching_receipts+' / '+r.optional_parts+' optional receipts match.'),
         notice(r.required_receipts_complete?'All declared required receipts match. This does not establish a complete or approved publication.':'Required receipt inventory is incomplete or superseded.'),
         notice(r.notice),el('p',{class:'review-hash'},'Inventory SHA-256: '+r.manifest_sha256),revise,
-        ...(!r.current_revision?[button('Open current revision',()=>inspect(r.latest_id),'secondary')]:[]),...r.items.map(unit),
+        ...(!r.current_revision?[button('Open current revision',()=>inspect(r.latest_id),'secondary')]:[]),comparison,...r.items.map(unit),
         ...(r.combined_receipt?[el('h2',{},'Separate combined representation'),unit(r.combined_receipt)]:[]));
     }catch(e){if(current===request)error(e);}};
   const load=async()=>{const current=++historyRequest;try{const r=await api('/admin/intake/editions?offset='+offset);if(disposed||current!==historyRequest)return;
@@ -90,7 +111,7 @@ export async function editionsView(app:App){
     if(!form.reportValidity())return;
     const all=[...parts,...(combined?[combined]:[])];if(all.some(p=>!p.ready())){status.replaceChildren(notice('Resolve pending or failed work lookups before saving.','error'));return;}
     saving=true;busy(save,true);fields.disabled=true;status.replaceChildren();
-    try{const r=await api('/admin/intake/editions','POST',{family_id:family.value,collection_key:collection.value.trim(),edition:edition.value.trim(),expected_revision:expected,coverage_unit:coverage.value.trim(),inventory_note:note.value.trim(),parts:parts.map(p=>p.value()),combined:combined?.value()||null});
+    try{const r=await api('/admin/intake/editions','POST',{family_id:family.value,collection_key:collection.value.trim(),edition:edition.value.trim(),expected_revision:expected,coverage_unit:coverage.value.trim(),inventory_note:note.value.trim(),parts:parts.map((p:Json)=>p.value()),combined:combined?.value()||null});
       if(disposed)return;dirty=false;reset(r.manifest);status.replaceChildren(notice('Inventory revision '+r.revision+' saved. No acquisition or approval was performed.'));offset=0;await load();await inspect(r.id);
     }catch(e){error(e);}finally{saving=false;fields.disabled=false;busy(save,false);save.textContent=locked?'Save new inventory revision':'Create inventory';}});
   collection.required=edition.required=coverage.required=note.required=true;collection.pattern='[A-Za-z0-9][A-Za-z0-9_.-]{0,159}';collection.maxLength=160;edition.maxLength=80;coverage.minLength=5;coverage.maxLength=500;note.minLength=10;note.maxLength=2000;

@@ -178,3 +178,67 @@ def report(db, edition_id):
             'notice': 'Counts concern the declared component inventory, not a whole-document artifact or approved corpus. '
                       'No rights, parser, technical, applicability or index approval is granted. '
                       'Reconcile unexpected deliveries in a new immutable inventory revision.'}
+
+
+def comparison(db, edition_id):
+    """Compare frozen declarations only; never reconstruct historical live receipt state."""
+    row = db.get(IntakeEdition, edition_id)
+    if not row:
+        fail('NOT_FOUND', 'Edition inventory not found.', 404)
+    checked(row)
+    previous_id = row.manifest.get('previous_id')
+    previous = db.get(IntakeEdition, previous_id) if previous_id else None
+    if row.revision == 1:
+        valid_chain = previous_id is None
+    else:
+        valid_chain = previous is not None and previous.revision == row.revision-1 and all(
+            getattr(previous, k) == getattr(row, k) for k in ('family_id', 'collection_key', 'edition'))
+    if not valid_chain:
+        fail('EDITION_HISTORY', 'Inventory predecessor is missing or inconsistent; inspect revision history.', 409)
+    if previous:
+        checked(previous)
+    before = previous.manifest if previous else {}
+    after = row.manifest
+
+    def identity(item):
+        return {'id': item.id, 'revision': item.revision, 'manifest_sha256': item.manifest_sha256} if item else None
+
+    def changes(old, new):
+        # Include every persisted field, including frozen known-delivery hashes.
+        return [{'field': key, 'before': old.get(key), 'after': new.get(key)}
+                for key in sorted(set(old) | set(new)) if old.get(key) != new.get(key)]
+
+    old_parts = {p['key']: p for p in before.get('parts', [])}
+    new_parts = {p['key']: p for p in after['parts']}
+    shared = sorted(old_parts.keys() & new_parts.keys())
+    changed = [{'key': key, 'fields': changes(old_parts[key], new_parts[key])} for key in shared
+               if old_parts[key] != new_parts[key]]
+    old_combined, new_combined = before.get('combined'), after.get('combined')
+    combined_status = ('unchanged' if old_combined == new_combined else
+                       'added' if old_combined is None else 'removed' if new_combined is None else 'changed')
+
+    def counts(manifest):
+        parts = manifest.get('parts', [])
+        return {'required': sum(p['required'] for p in parts),
+                'optional': sum(not p['required'] for p in parts), 'total': len(parts)}
+
+    return {'before': identity(previous), 'after': identity(row),
+            'family_id': row.family_id, 'collection_key': row.collection_key, 'edition': row.edition,
+            'comparison_basis': 'immutable_predecessor_declarations_only',
+            'initial_inventory': previous is None,
+            'scope_changes': changes({k: before.get(k) for k in ('coverage_unit', 'inventory_note')},
+                                     {k: after[k] for k in ('coverage_unit', 'inventory_note')}),
+            'parts': {'added': [new_parts[k] for k in sorted(new_parts.keys()-old_parts.keys())],
+                      'removed': [old_parts[k] for k in sorted(old_parts.keys()-new_parts.keys())],
+                      'changed': changed, 'unchanged_count': len(shared)-len(changed),
+                      'order_before': list(old_parts), 'order_after': list(new_parts),
+                      'order_changed': list(old_parts) != list(new_parts)},
+            'declared_counts': {'before': counts(before), 'after': counts(after)},
+            'required_components_removed': sorted(k for k in old_parts.keys()-new_parts.keys() if old_parts[k]['required']),
+            'required_components_made_optional': [k for k in shared if old_parts[k]['required'] and not new_parts[k]['required']],
+            'combined': {'status': combined_status, 'before': old_combined, 'after': new_combined,
+                         'fields': changes(old_combined or {}, new_combined or {})},
+            'approval_granted': False, 'agent_eligible': False,
+            'notice': 'This compares declared scope and identities, not source text or historical receipt/review state. '
+                      'Removing required parts or making them optional reduces the denominator; it is not new acquisition. '
+                      'Combined representations remain separate. No completeness or professional approval is granted.'}

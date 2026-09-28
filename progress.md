@@ -1,5 +1,19 @@
 # Open Source Accounting — current implementation progress
 
+## 2026-09-27 · #8/#23 immutable inventory revision comparison (parent #5)
+
+Added scoped comparison API and operator view for the selected inventory versus its immediate predecessor, identified by exact IDs/hashes. Exposes added/removed/changed components, frozen known-delivery hashes, order, declared scope/limitations, required/optional counts and separate combined changes. Explicit warnings identify required removals and components made optional; reducing scope cannot masquerade as new acquisition. Missing/inconsistent/tampered predecessors fail closed. Comparison reads only frozen declarations, not source text, network/storage or reconstructed historical approval. No schema/provider changes.
+
+Actual local validation: **34 targeted passes**, including 11 new comparison cases; **867 backend passes / 28 optional PostgreSQL skips**, no failures/errors. TypeScript and production build, lint F and actual contract export passed. Initial typecheck found three missing callback annotations, corrected before successful rerun. One upstream Starlette/httpx warning. Browser synthetic revision comparison verified required 2 → 1, optional 0 → 1, exact hashes, scope changes and required-to-optional warning. Commands/JUnit/screenshot: `reports/intake/EDITION_COMPARISON.md`. Disposable server stopped/tab closed. CI pending publication.
+
+Coverage unchanged: **32 families / 47 topics; 63 original drafts / 63 verified hashes / 0 professional approvals / 0 Agent admissions; 58 questions / 26 references**. SEC **34 targets / 28 excerpts / 7 excerpted sources / 0 full original HTTP artifacts / 0 technical or applicability approvals / 0 approved production index / 0 human-adjudicated evaluations**. Government **17 overlapping metadata candidates across 3 families / 0 real acquisition/parsing/rights/review/index additions**. Synthetic comparisons excluded. Parser `source-intake-1/sec-core-0.7.0`, discovery `html-index-1/crossref-works-1`, requested `gemini-3.8-flash` unchanged; no paid resources, production, live inference/billing/SMS/notifications.
+
+Remaining gates: authorized original bytes, independent publisher/completeness and professional reviews, all-family index/evaluation, corpus-scale measurements. OMB direct route remains blocked after HTTP 403. GCP project/region/spend, credentials and exact release approval remain outstanding.
+
+Next resumable task: **#16 official law and court-source discovery/retrieval preparation**, following official routes and preserving version/as-of/applicability distinctions; acquire only under valid operation-specific authorization. Continue implementation where source rights/review gates block delivery. Keep main current; the full application/content/GCP goal remains active.
+
+---
+
 ## 2026-09-27 · #8/#23 multipart inventory operator screen (parent #5)
 
 Implemented `/editions` with scoped-administrator navigation, family/work/artifact selection, optional future hash entry, required/optional components, separate combined representation and paginated history. Immutable saves preserve collection identity; historical reports cannot prepare a new revision and link to the current revision. Pending/failed work lookups block saves. Reports expose receipt gaps, unreconciled deliveries, exact hashes, parser ledger status and operation permissions without granting source or professional approval. No backend/schema/provider behavior changed. Updated operator documentation and queue note.

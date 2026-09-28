@@ -3947,6 +3947,46 @@
         }
       }
     },
+    "/api/v1/admin/intake/editions/{edition_id}/comparison": {
+      "get": {
+        "tags": [
+          "source-intake"
+        ],
+        "summary": "Edition Comparison",
+        "operationId": "edition_comparison_api_v1_admin_intake_editions__edition_id__comparison_get",
+        "parameters": [
+          {
+            "name": "edition_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Edition Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/admin/sources/{source_id}/counsel-records": {
       "get": {
         "tags": [

@@ -186,3 +186,9 @@ def edition_history(user=Depends(current_user), db=Depends(session),
 def edition_report(edition_id: str, user=Depends(current_user), db=Depends(session)):
     require_admin(user)
     return editions.report(db, edition_id)
+
+
+@router.get('/admin/intake/editions/{edition_id}/comparison')
+def edition_comparison(edition_id: str, user=Depends(current_user), db=Depends(session)):
+    require_admin(user)
+    return editions.comparison(db, edition_id)
