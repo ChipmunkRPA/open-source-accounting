@@ -789,9 +789,13 @@
       "seed_urls": [
         "https://www.whitehouse.gov/omb/",
         "https://www.ecfr.gov/current/title-2/subtitle-A/chapter-II/part-200",
-        "https://tfm.fiscal.treasury.gov/"
+        "https://tfm.fiscal.treasury.gov/",
+        "https://www.whitehouse.gov/omb/information-resources/guidance/circulars/",
+        "https://www.whitehouse.gov/omb/information-resources/guidance/compliance-supplement/",
+        "https://fiscal.treasury.gov/resources/reference",
+        "https://tfx.treasury.gov/tfm"
       ],
-      "seed_status": "discovery seeds; revalidate current paths and terms before acquisition",
+      "seed_status": "2026-09-27: current Treasury route verified from Fiscal Service navigation; legacy seed retained, redirect unverified. OMB web metadata observed; direct supplement index returned HTTP 403. Revalidate permitted route and terms before acquisition.",
       "default_mode": "public_work_candidate",
       "unit_of_coverage": "circular/supplement/manual edition, fiscal year and program",
       "retrieval_steps": [

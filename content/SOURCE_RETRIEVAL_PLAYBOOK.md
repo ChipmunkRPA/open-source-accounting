@@ -472,7 +472,12 @@ Issues: [#15](https://github.com/ChipmunkRPA/open-source-accounting/issues/15). 
 **Official/discovery seeds**
 - `https://www.whitehouse.gov/omb/`
 - `https://www.ecfr.gov/current/title-2/subtitle-A/chapter-II/part-200`
-- `https://tfm.fiscal.treasury.gov/`
+- `https://tfm.fiscal.treasury.gov/` (legacy seed; redirect unverified)
+- `https://fiscal.treasury.gov/resources/reference` → `https://tfx.treasury.gov/tfm` (official navigation verified 2026-09-27)
+- `https://www.whitehouse.gov/omb/information-resources/guidance/circulars/`
+- `https://www.whitehouse.gov/omb/information-resources/guidance/compliance-supplement/`
+
+2026-09-27 discovery: direct OMB supplement-index HTTP request returned 403; stop that route until permitted access is established. Web metadata is not a raw acquisition receipt. See [the OMB/Treasury packet](../reports/intake/omb-treasury-candidates.json). The combined 2025 supplement is listed at 2,208 pages / 30,165 KB, beyond current intake/PDF limits. Official components need separate artifact identities and completeness reconciliation; do not silently truncate or claim a full edition from selected parts.
 
 **Retrieval procedure**
 1. Resolve current official navigation to relevant A-123/A-136 circulars, annual Compliance Supplements and Treasury manuals.
