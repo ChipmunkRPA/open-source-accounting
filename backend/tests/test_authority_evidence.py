@@ -16,11 +16,11 @@ from test_authority import proposal, review
 from conftest import complete_run
 
 
-def prepared(client):
+def prepared(client, policy=None):
     with client.app.state.db.Session() as db:
         for sid in ('edge-source', 'edge-target'):
             s = source(db, sid)
-            s.policy = {**s.policy, 'content_sha256': digest(s.text), 'content_reference_ids': []}
+            s.policy = {**s.policy, **(policy or {}), 'content_sha256': digest(s.text), 'content_reference_ids': []}
             rights.record_approval(s, 'synthetic');db.commit()
             editorial.record(db, s, EditorialDecision.model_validate(technical_decision(s)), 'editor')
             applicability.record(db, s, ApplicabilityDecision.model_validate(applicability_payload(s)), 'editor')
@@ -190,3 +190,66 @@ def test_output_rechecks_relationship_after_source_release_locks(client, monkeyp
             output_rights.run_output(db, run)
         assert error.value.detail['code'] == 'SOURCE_CHANGED'
         db.rollback()
+
+
+def test_inspection_api_exact_pairs_notices_and_no_subscription_requirement(client):
+    _, result = run_graph(client)
+    assert client.post('/api/v1/dev/subscription', json={'state':'expired'}).status_code == 200
+    response = client.get('/api/v1/runs/'+result['id']+'/relationships')
+    assert response.status_code == 200,response.text
+    payload = response.json()
+    assert len(payload['items']) == 1 and not payload['complete_graph_verified'] and not payload['claim_support_verified']
+    assert payload['selection_limits']['relationships'] == 6
+    item = payload['items'][0]
+    for name in ('source','target'):
+        p = item['passages'][name]
+        assert digest(p['text']) == p['citation']['passage_text_sha256']
+        assert p['evidence_id'] == item['relationship'][name+'_evidence_id']
+    assert 'review_note' not in str(payload) and 'ev_synthetic' not in str(payload)
+    assert 'source_attributions' in payload
+    assert client.get('/api/v1/runs/'+result['id']+'/relationships', headers={'X-Dev-User':'editor'}).status_code == 404
+
+
+@pytest.mark.parametrize('change', ['edge','source','snapshot','evidence'])
+def test_inspection_api_withholds_changed_dependencies(client,change):
+    edge, result = run_graph(client)
+    with client.app.state.db.Session() as db:
+        item = db.scalar(select(RunAuthorityEvidence).where(RunAuthorityEvidence.run_id == result['id']))
+        if change == 'edge':db.get(AuthorityRelationship, edge['id']).current_review_id = None
+        elif change == 'source':db.get(Source,'edge-target').enabled = False
+        elif change == 'snapshot':item.payload = {**item.payload,'scope':'Changed scope'}
+        else:db.get(Evidence,item.target_evidence_id).text = 'Changed body'
+        db.commit()
+    response = client.get('/api/v1/runs/'+result['id']+'/relationships')
+    assert response.status_code == 409 and response.json()['error']['code'] == 'SOURCE_CHANGED'
+    assert 'quasar' not in response.text
+
+
+def test_inspection_empty_run_is_not_complete_graph_claim(client):
+    result = complete_run(client)
+    response = client.get('/api/v1/runs/'+result['id']+'/relationships')
+    assert response.status_code == 200,response.text
+    payload = response.json()
+    assert payload['items'] == [] and not payload['complete_graph_verified']
+
+
+@pytest.mark.parametrize('exhausted', [False, True])
+def test_inspection_preserves_notices_and_shared_output_budget(client,exhausted):
+    from app.models import OutputBudget
+    prepared(client, {'attribution':'Synthetic inspector notice', 'output_control': {
+        'group_id':'inspector-fixture','mode':'bounded','max_chars_per_response':1000000,'max_chars_total':1000000}})
+    result = complete_run(client, question='Research quasar amortization', context=CONTEXT)
+    if exhausted:
+        with client.app.state.db.Session() as db:
+            db.get(OutputBudget,'inspector-fixture').released_chars = 999999;db.commit()
+    url = '/api/v1/runs/'+result['id']+'/relationships'
+    response = client.get(url)
+    if exhausted:
+        assert response.status_code == 403,response.text
+        assert response.json()['error']['code'] == 'SOURCE_OUTPUT_LIMIT'
+        return
+    assert response.status_code == 200,response.text
+    assert response.json()['source_attributions'][0]['notice'] == 'Synthetic inspector notice'
+    with client.app.state.db.Session() as db:count = db.get(OutputBudget,'inspector-fixture').released_chars
+    assert client.get(url).status_code == 200
+    with client.app.state.db.Session() as db:assert db.get(OutputBudget,'inspector-fixture').released_chars == count

@@ -1,3 +1,4 @@
+import {runRelationships} from './run-relationships.js';
 import {sourceNotices} from '../source-notices.js';
 import {api,requestKey,saveBlob} from '../api.js';
 import {el,button,link,heading,badge,textarea,field,busy,notice,card,select,input,checkbox,table,modal,textBlock,dateText,empty} from '../ui.js';
@@ -106,7 +107,8 @@ async function showEvidence(id:string){
 export async function runView(app:App,id:string){
   if(!id){app.navigate('/agents');return;}
   let alive=true,pending=false;
-  app.cleanup=()=>{alive=false;clearInterval(timer);};
+  let disposeRelationships=()=>{};
+  app.cleanup=()=>{alive=false;clearInterval(timer);disposeRelationships();};
   const body=el('div');app.content.replaceChildren(body);
   let lastState='';
   async function refresh(force=false){
@@ -114,7 +116,7 @@ export async function runView(app:App,id:string){
     try{
       const run=await api('/runs/'+id);if(!alive)return;
       const key=`${run.state}:${run.revision}:${run.access_blocked}`;
-      if(!force && key===lastState)return;lastState=key;
+      if(!force && key===lastState)return;lastState=key;disposeRelationships();disposeRelationships=()=>{};
       const top=heading(run.workflow.replaceAll('_',' '),run.question,link(app,'All work','/workspaces','button quiet'));
       if(['draft','planned','failed','cancelled','blocked'].includes(run.state)&&!run.result){
         const scope=await api(`/runs/${id}/scope`,'POST');
@@ -151,6 +153,7 @@ export async function runView(app:App,id:string){
         return;
       }
       const result=run.result,evidence=(await api(`/runs/${id}/evidence`)).items;
+      if(!alive)return;
       const main=el('section',{class:'analysis-panel'},badge('DRAFT · REVIEW REQUIRED','warning'),el('h2',{},result.title),textBlock(result.summary));
       for(const section of result.sections)main.append(el('section',{class:'analysis-section'},el('h3',{},section.heading),textBlock(section.body)));
       main.append(sourceNotices(result.source_attributions));
@@ -158,6 +161,7 @@ export async function runView(app:App,id:string){
         for(const claim of result.claims)main.append(el('div',{class:'claim'},badge(claim.basis),textBlock(claim.text),
           el('div',{class:'citation-row'},...claim.evidence_ids.map((eid:string,i:number)=>button(`Evidence ${i+1}`,()=>showEvidence(eid),'citation')))));
       }
+      const relationships=runRelationships(app,id);disposeRelationships=relationships.dispose;main.append(relationships.element);
       for(const t of result.tables||[])main.append(el('h3',{},t.title),table(t.columns,t.rows));
       const deterministic=result.deterministic||{};
       if(deterministic.comparison)main.append(el('h3',{},'Deterministic document comparison'),el('pre',{class:'diff'},deterministic.comparison.diff||'No text differences.'),notice(deterministic.comparison.warning));

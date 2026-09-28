@@ -172,3 +172,33 @@ def release_check(db, run, visited=None):
         parent = db.get(Run, memo.run_id) if memo and memo.run_id else None
         if parent:
             release_check(db, parent, visited)
+
+
+def inspection(db, run):
+    """Release the exact saved pair for an authorized workspace reader, never live replacements."""
+    from . import output_rights
+    rights.run_artifact_access(db, run, 'quote')
+    saved = packets(db, run, 'quote')
+    items = []
+    for packet in saved:
+        endpoints = {}
+        for name in ('source', 'target'):
+            evidence = db.get(Evidence, packet[name+'_evidence_id'])
+            source = db.get(Source, evidence.source_id)
+            endpoints[name] = {'evidence_id': evidence.id, 'title': evidence.title,
+                'access': evidence.access, 'source_kind': evidence.source_kind,
+                'text': evidence.text, 'citation': evidence.extraction_context['citation'],
+                'source_version': source.version_label}
+        items.append({'relationship': packet, 'passages': endpoints})
+    sources = output_rights.run_sources(db, run)
+    result = {'items': items, 'version': VERSION, 'complete_graph_verified': False,
+              'claim_support_verified': False, 'selection_limits': {
+                  'lexical_seeds': MAX_SEEDS, 'incident_edges_per_seed': MAX_INCIDENT,
+                  'relationships': MAX_RELATIONSHIPS, 'metadata_bytes': MAX_BYTES},
+              'coverage_note': 'Saved one-hop selection only. Limits are selection ceilings, not observed corpus counts. Empty results do not establish that no relevant relationships or exceptions exist.',
+              'source_attributions': output_rights.notices(db, sources)}
+    output_rights.release(db, sources, result)
+    release_check(db, run)
+    if packets(db, run, 'quote', lock=True) != saved:
+        fail('SOURCE_CHANGED', 'The saved relationship changed before inspection release.', 409)
+    return result

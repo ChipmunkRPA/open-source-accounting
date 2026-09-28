@@ -179,6 +179,15 @@ def evidence_list(run_id: str, user=Depends(current_user), db=Depends(session)):
     return {'items': [evidence_json(db, e) for e in db.scalars(select(Evidence).where(Evidence.run_id == run_id))]}
 
 
+@router.get('/runs/{run_id}/relationships')
+def relationship_evidence(run_id: str, user=Depends(current_user), db=Depends(session)):
+    from ..services.authority_evidence import inspection
+    run = get_run(db, user, run_id)
+    result = inspection(db, run)
+    db.commit()
+    return result
+
+
 @router.get('/evidence/{evidence_id}')
 def evidence_detail(evidence_id: str, user=Depends(current_user), db=Depends(session)):
     e = db.get(Evidence, evidence_id)
