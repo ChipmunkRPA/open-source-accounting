@@ -31,6 +31,23 @@ def validate_inputs(db, run, task, *, rights_context=None):
 def preprocess(db, run, task, *, rights_context=None):
     docs = validate_inputs(db, run, task, rights_context=rights_context)
     result = {'workflow_guardrail': task['guardrail']}
+    pdf_limits = []
+    for doc in docs:
+        if doc.mime != 'application/pdf':
+            continue
+        metadata = [c.get('pdf') for c in doc.chunks]
+        known = bool(metadata) and all(isinstance(m, dict) for m in metadata)
+        pdf_limits.append({
+            'document_id': doc.id,
+            'parser_versions': sorted({m['parser_version'] for m in metadata}) if known else [],
+            'physical_pages_with_text': sorted({m['physical_page'] for m in metadata}) if known else [],
+            'declared_physical_page_counts': sorted({m['physical_page_count'] for m in metadata}) if known else [],
+            'page_coverage_metadata': 'available' if known else 'unknown_legacy_extraction',
+            'layout_tables_graphics_reviewed': False, 'complete_document_verified': False,
+            'warning': 'PDF text extraction does not verify graphics, tables, reading order, printed page labels or full-document completeness. Do not infer absent terms from an extraction or retrieval subset.',
+        })
+    if pdf_limits:
+        result['document_extraction_limits'] = pdf_limits
     if run.workflow == 'memo_review' and run.inputs.get('memo_id'):
         memo = db.get(Memo, run.inputs['memo_id'])
         result['memo_under_review'] = {'title': memo.title, 'body': memo.body[:60000], 'revision': memo.revision, 'truncated': len(memo.body)>60000}

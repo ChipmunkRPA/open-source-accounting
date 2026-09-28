@@ -31,7 +31,16 @@ def main():
     elif parser == 'structural_html':
         output = parsers.html(raw, family, title)
     elif parser == 'pdf':
-        output = parsers.pdf(raw)
+        from .pdf_parser import parse, PdfError
+        try:
+            output = []
+            for item in parse(raw):
+                p = parsers.passage(f'PDF page {item["pdf"]["physical_page"]}', item['text'], 'pdf_page_unreviewed_layout')
+                p['pdf'] = item['pdf']
+                output.append(p)
+        except PdfError as exc:
+            sys.stderr.write(json.dumps({'pdf_error': exc.code, 'physical_page': exc.page}))
+            raise SystemExit(2)
     elif parser == 'text':
         from .services.documents import parse_bytes
         output = [parsers.passage(p['locator'], p['text']) for p in parse_bytes(raw, '.txt', 1_000_000)]

@@ -16,6 +16,9 @@ PARSER_VERSION = 'source-intake-1/sec-core-0.7.0'
 
 
 def parser_version(manifest):
+    if manifest['parser'] == 'pdf':
+        from ..pdf_parser import VERSION
+        return VERSION
     if manifest['parser'] == 'ecfr_xml':
         from ..ecfr_parser import VERSION
         return VERSION
@@ -297,6 +300,10 @@ def parse(db, settings, artifact_id, actor_id):
             args.append(json.dumps(manifest['annual_cfr']))
         result = subprocess.run(args,
                                 input=raw, capture_output=True, timeout=25, cwd=Path(__file__).resolve().parents[2])
+        if result.returncode == 2 and manifest['parser'] == 'pdf' and len(result.stderr) <= 4000:
+            diagnostic = json.loads(result.stderr)
+            fail('PDF_PARSE_BLOCKED', 'PDF extraction is incomplete or unsupported; raw artifact retained, nothing staged.',
+                 422, reason=diagnostic['pdf_error'], physical_page=diagnostic['physical_page'])
         if result.returncode == 2 and manifest['parser'] == 'ecfr_xml' and len(result.stderr) <= 4000:
             diagnostic = json.loads(result.stderr)
             fail('ECFR_PARSE_BLOCKED', 'eCFR XML needs format reconciliation; raw artifact retained, nothing staged.',
@@ -367,6 +374,8 @@ def stage(db, settings, extraction_id, actor_id):
                       intake_locator=passage['locator'], intake_passage_index=index,
                       intake_extraction_sha256=extraction.normalized_sha256,
                       intake_parser_version=extraction.parser_version, applicability_review_status='pending')
+        if passage.get('pdf'):
+            policy['intake_pdf'] = passage['pdf']
         if passage.get('source_xml_path'):
             policy['intake_source_xml_path'] = passage['source_xml_path']
         if passage.get('annual_cfr'):
@@ -443,6 +452,8 @@ def restage(db, settings, extraction_id, payload, actor_id):
             intake_extraction_id=extraction.id,intake_locator=passage['locator'],intake_passage_index=index,
             intake_extraction_sha256=extraction.normalized_sha256,intake_parser_version=extraction.parser_version,
             intake_replaces_source_id=previous.id)
+        if passage.get('pdf'):
+            policy['intake_pdf'] = passage['pdf']
         if passage.get('source_xml_path'):
             policy['intake_source_xml_path'] = passage['source_xml_path']
         if passage.get('annual_cfr'):

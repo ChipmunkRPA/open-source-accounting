@@ -80,14 +80,9 @@ def parse_bytes(data, ext, character_limit):
             raise ValueError('Binary content in text file.')
         chunks = [{'locator': f'Paragraph {i+1}', 'text': p.strip()} for i, p in enumerate(re.split(r'\n\s*\n', text)) if p.strip()]
     elif ext == '.pdf':
-        from pypdf import PdfReader
-        reader = PdfReader(io.BytesIO(data), strict=False)
-        if reader.is_encrypted or len(reader.pages) > 150:
-            raise ValueError('Encrypted PDFs and PDFs over 150 pages are not supported.')
-        root = reader.trailer['/Root']
-        if '/OpenAction' in root or '/AA' in root or '/JavaScript' in str(root.get('/Names', '')):
-            raise ValueError('Active PDF content is not supported.')
-        chunks = [{'locator': f'Page {i+1}', 'text': page.extract_text() or ''} for i, page in enumerate(reader.pages)]
+        from ..pdf_parser import parse
+        chunks = [{'locator': f'Page {p["pdf"]["physical_page"]}', **p}
+                  for p in parse(data, page_limit=150, character_limit=character_limit)]
     elif ext == '.docx':
         from docx import Document
         doc = Document(io.BytesIO(data))
@@ -108,19 +103,29 @@ def parse_bytes(data, ext, character_limit):
     output = []
     for item in chunks:
         for offset in range(0, len(item['text']), 3500):
-            output.append({'locator': item['locator'] + (f', part {offset//3500+1}' if offset else ''),
-                           'text': item['text'][offset:offset+3500]})
+            chunk = {**item, 'locator': item['locator'] + (f', part {offset//3500+1}' if offset else ''),
+                     'text': item['text'][offset:offset+3500]}
+            if 'pdf' in item:
+                chunk['pdf'] = {**item['pdf'], 'character_range': [offset, min(offset+3500, len(item['text']))]}
+            output.append(chunk)
     return output
 
 
 def parse_isolated(data, ext, limit):
     try:
         child = subprocess.run([sys.executable, '-m', 'app.parse_worker', ext, str(limit)],
-                               input=data, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,
+                               input=data, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                timeout=25, check=False)
     except subprocess.TimeoutExpired:
         fail('PARSE_TIMEOUT', 'Document parsing exceeded the time limit.', 422)
-    if child.returncode != 0:
+    if child.returncode == 2 and ext == '.pdf' and len(child.stderr) <= 4000:
+        try:
+            diagnostic = json.loads(child.stderr)
+            fail('PDF_PARSE_BLOCKED', 'PDF extraction is incomplete or unsupported; no document was stored. Review the original pages; OCR is not enabled.',
+                 422, reason=diagnostic['pdf_error'], physical_page=diagnostic['physical_page'])
+        except (ValueError, KeyError, TypeError):
+            pass
+    if child.returncode != 0 or len(child.stdout) > 32_000_000:
         fail('PARSE_FAILED', 'Cannot safely extract this document. Use a smaller text-based file.', 422)
     try:
         result = json.loads(child.stdout)

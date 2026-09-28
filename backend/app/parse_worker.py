@@ -12,8 +12,15 @@ def main():
     except (ImportError, ValueError):
         pass
     from .services.documents import parse_bytes
-    data = sys.stdin.buffer.read(12 * 1024 * 1024)
-    result = parse_bytes(data, sys.argv[1], int(sys.argv[2]))
+    data = sys.stdin.buffer.read(12 * 1024 * 1024 + 1)
+    if len(data) > 12 * 1024 * 1024:
+        raise ValueError('Oversized parser input')
+    from .pdf_parser import PdfError
+    try:
+        result = parse_bytes(data, sys.argv[1], int(sys.argv[2]))
+    except PdfError as exc:
+        sys.stderr.write(json.dumps({'pdf_error': exc.code, 'physical_page': exc.page}))
+        raise SystemExit(2)
     sys.stdout.write(json.dumps(result))
 
 
