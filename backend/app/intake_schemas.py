@@ -131,3 +131,41 @@ class PassageRestage(Strict):
     expected_parent_policy_version: int = Field(ge=1)
     expected_normalized_sha256: str = Field(pattern=r'^[a-f0-9]{64}$')
     confirm_fresh_reviews_required: Literal[True]
+
+
+class EditionPart(Strict):
+    key: str = Field(pattern=r'^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$')
+    label: str = Field(min_length=1, max_length=300)
+    required: bool = Field(default=True, strict=True)
+    intake_work_id: str | None = Field(default=None, min_length=1, max_length=36)
+    manifest_sha256: str | None = Field(default=None, pattern=r'^[a-f0-9]{64}$')
+    expected_raw_sha256: str | None = Field(default=None, pattern=r'^[a-f0-9]{64}$')
+
+    @model_validator(mode='after')
+    def binding(self):
+        if bool(self.intake_work_id) != bool(self.manifest_sha256):
+            raise ValueError('Bind a work and its exact manifest together.')
+        if self.expected_raw_sha256 and not self.intake_work_id:
+            raise ValueError('An expected artifact hash requires a bound work.')
+        return self
+
+
+class EditionCreate(Strict):
+    family_id: str = Field(min_length=1, max_length=80)
+    collection_key: str = Field(pattern=r'^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$')
+    edition: str = Field(min_length=1, max_length=80)
+    expected_revision: int = Field(ge=0, strict=True)
+    coverage_unit: str = Field(min_length=5, max_length=500)
+    inventory_note: str = Field(min_length=10, max_length=2000)
+    parts: list[EditionPart] = Field(min_length=1, max_length=250)
+    combined: EditionPart | None = None
+
+    @model_validator(mode='after')
+    def distinct_parts(self):
+        if not any(p.required for p in self.parts):
+            raise ValueError('Declare at least one required component.')
+        keys = [p.key for p in self.parts]
+        works = [p.intake_work_id for p in [*self.parts, *([self.combined] if self.combined else [])] if p.intake_work_id]
+        if len(keys) != len(set(keys)) or len(works) != len(set(works)):
+            raise ValueError('Component keys and bound work identities must be distinct.')
+        return self

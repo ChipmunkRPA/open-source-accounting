@@ -533,3 +533,19 @@ class CorrectionEvent(Base):
     source_policy_version: Mapped[int] = mapped_column(Integer)
     created_at: Mapped[int] = mapped_column(Integer, default=now)
     __table_args__ = (UniqueConstraint('case_id', 'version'),)
+
+
+class IntakeEdition(Base):
+    """Immutable declared multipart inventories; never acquisition or professional approval."""
+    __tablename__ = 'intake_editions'
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
+    family_id: Mapped[str] = mapped_column(String(80))
+    collection_key: Mapped[str] = mapped_column(String(160))
+    edition: Mapped[str] = mapped_column(String(80))
+    revision: Mapped[int] = mapped_column(Integer)
+    request_sha256: Mapped[str] = mapped_column(String(64))
+    manifest: Mapped[dict] = mapped_column(JSON)
+    manifest_sha256: Mapped[str] = mapped_column(String(64))
+    created_by: Mapped[str | None] = mapped_column(ForeignKey('users.id', ondelete='SET NULL'))
+    created_at: Mapped[int] = mapped_column(Integer, default=now)
+    __table_args__ = (UniqueConstraint('family_id', 'collection_key', 'edition', 'revision'),)

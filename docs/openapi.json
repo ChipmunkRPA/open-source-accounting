@@ -3780,6 +3780,173 @@
         }
       }
     },
+    "/api/v1/admin/intake/editions": {
+      "post": {
+        "tags": [
+          "source-intake"
+        ],
+        "summary": "Register Edition",
+        "operationId": "register_edition_api_v1_admin_intake_editions_post",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditionCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "source-intake"
+        ],
+        "summary": "Edition History",
+        "operationId": "edition_history_api_v1_admin_intake_editions_get",
+        "parameters": [
+          {
+            "name": "family_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Family Id"
+            }
+          },
+          {
+            "name": "collection_key",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Collection Key"
+            }
+          },
+          {
+            "name": "edition",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Edition"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/intake/editions/{edition_id}": {
+      "get": {
+        "tags": [
+          "source-intake"
+        ],
+        "summary": "Edition Report",
+        "operationId": "edition_report_api_v1_admin_intake_editions__edition_id__get",
+        "parameters": [
+          {
+            "name": "edition_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Edition Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/admin/sources/{source_id}/counsel-records": {
       "get": {
         "tags": [
@@ -5616,6 +5783,139 @@
           "state"
         ],
         "title": "DemoRequest"
+      },
+      "EditionCreate": {
+        "properties": {
+          "family_id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Family Id"
+          },
+          "collection_key": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$",
+            "title": "Collection Key"
+          },
+          "edition": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Edition"
+          },
+          "expected_revision": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Expected Revision"
+          },
+          "coverage_unit": {
+            "type": "string",
+            "maxLength": 500,
+            "minLength": 5,
+            "title": "Coverage Unit"
+          },
+          "inventory_note": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 10,
+            "title": "Inventory Note"
+          },
+          "parts": {
+            "items": {
+              "$ref": "#/components/schemas/EditionPart"
+            },
+            "type": "array",
+            "maxItems": 250,
+            "minItems": 1,
+            "title": "Parts"
+          },
+          "combined": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/EditionPart"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "family_id",
+          "collection_key",
+          "edition",
+          "expected_revision",
+          "coverage_unit",
+          "inventory_note",
+          "parts"
+        ],
+        "title": "EditionCreate"
+      },
+      "EditionPart": {
+        "properties": {
+          "key": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$",
+            "title": "Key"
+          },
+          "label": {
+            "type": "string",
+            "maxLength": 300,
+            "minLength": 1,
+            "title": "Label"
+          },
+          "required": {
+            "type": "boolean",
+            "title": "Required",
+            "default": true
+          },
+          "intake_work_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 36,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Intake Work Id"
+          },
+          "manifest_sha256": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Manifest Sha256"
+          },
+          "expected_raw_sha256": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Expected Raw Sha256"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "key",
+          "label"
+        ],
+        "title": "EditionPart"
       },
       "EditorialDecision": {
         "properties": {

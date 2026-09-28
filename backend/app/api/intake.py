@@ -4,9 +4,9 @@ from fastapi import APIRouter, Depends, Header, Request, Query
 from sqlalchemy import select, func
 from starlette.concurrency import run_in_threadpool
 from ..auth import current_user, fresh_user, session, require_admin
-from ..intake_schemas import IntakeCreate, IntegrityHoldRelease, IntegrityPrecondition, PassageRestage
-from ..models import IntakeWork, SourceArtifact, SourceExtraction, IntakeAttempt, Source, SourceDiscovery
-from ..services import intake, rights, discovery
+from ..intake_schemas import IntakeCreate, IntegrityHoldRelease, IntegrityPrecondition, PassageRestage, EditionCreate
+from ..models import IntakeWork, SourceArtifact, SourceExtraction, IntakeAttempt, Source, SourceDiscovery, IntakeEdition
+from ..services import intake, rights, discovery, editions
 from ..errors import fail
 
 router = APIRouter(tags=['source-intake'])
@@ -159,3 +159,30 @@ def restage_passages(extraction_id: str, payload: PassageRestage, request: Reque
                      user=Depends(fresh_user), db=Depends(session)):
     require_admin(user)
     return intake.restage(db, request.app.state.settings, extraction_id, payload, user.id)
+
+
+@router.post('/admin/intake/editions', status_code=201)
+def register_edition(payload: EditionCreate, request: Request, user=Depends(fresh_user), db=Depends(session)):
+    require_admin(user)
+    return editions.metadata(editions.create(db, request.app.state.settings, payload, user.id))
+
+
+@router.get('/admin/intake/editions')
+def edition_history(user=Depends(current_user), db=Depends(session),
+                    family_id: str | None = None, collection_key: str | None = None,
+                    edition: str | None = None, offset: int = Query(default=0, ge=0)):
+    require_admin(user)
+    query = select(IntakeEdition.id, IntakeEdition.family_id, IntakeEdition.collection_key,
+                   IntakeEdition.edition, IntakeEdition.revision, IntakeEdition.manifest_sha256, IntakeEdition.created_at)
+    for field, value in [('family_id', family_id), ('collection_key', collection_key), ('edition', edition)]:
+        if value is not None:
+            query = query.where(getattr(IntakeEdition, field) == value)
+    rows = db.execute(query.order_by(IntakeEdition.created_at.desc(), IntakeEdition.id).offset(offset).limit(101)).mappings().all()
+    return {'items': [dict(r) for r in rows[:100]],
+            'next_offset': offset+100 if len(rows) > 100 else None}
+
+
+@router.get('/admin/intake/editions/{edition_id}')
+def edition_report(edition_id: str, user=Depends(current_user), db=Depends(session)):
+    require_admin(user)
+    return editions.report(db, edition_id)

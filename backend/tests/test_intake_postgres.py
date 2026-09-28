@@ -1008,3 +1008,56 @@ def test_postgres_passage_recovery_creates_one_revision(pg_url,tmp_path):
         assert db.get(Source,old_id).policy['intake_parent_policy_version']==version-1
         assert db.get(Source,values[0]['source_ids'][0]).reviewed is False
     database.engine.dispose()
+
+
+def edition_worker(url, actor, request, start, results):
+    from app.intake_schemas import EditionCreate
+    from app.services import editions
+    database = Database(url)
+    try:
+        assert start.wait(15)
+        with database.Session() as db:
+            row = editions.create(db, Settings(app_env='test', _env_file=None), EditionCreate(**request), actor)
+            results.put(('created', row.id))
+    except HTTPException as exc:
+        results.put(('error', exc.status_code))
+    finally:
+        database.engine.dispose()
+
+
+@pytest.mark.parametrize('same_request', [True, False])
+def test_postgres_edition_creation_and_revision_races(pg_url, same_request):
+    from app.models import IntakeEdition
+    from test_intake_editions import body
+    database = Database(pg_url)
+    actor = str(uuid4())
+    with database.Session() as db:
+        db.add(User(id=actor, role='admin')); db.commit()
+    ctx = multiprocessing.get_context('spawn')
+    try:
+        for revision in (0, 1):
+            start, results = ctx.Event(), ctx.Queue()
+            one = body(collection_key=actor, expected_revision=revision)
+            two = {**one, 'inventory_note': one['inventory_note'] if same_request else 'Competing synthetic inventory revision.'}
+            workers = [ctx.Process(target=edition_worker, args=(pg_url, actor, request, start, results)) for request in (one, two)]
+            try:
+                for process in workers: process.start()
+                start.set()
+                events = [results.get(timeout=20), results.get(timeout=20)]
+                if same_request:
+                    assert events[0] == events[1] and events[0][0] == 'created'
+                else:
+                    assert sorted(e[0] for e in events) == ['created', 'error']
+                    assert ('error', 409) in events
+                for process in workers:
+                    process.join(15); assert process.exitcode == 0
+                with database.Session() as db:
+                    assert db.scalar(select(func.count()).select_from(IntakeEdition).where(
+                        IntakeEdition.collection_key == actor, IntakeEdition.revision == revision+1)) == 1
+            finally:
+                for process in workers:
+                    if process.pid:
+                        if process.is_alive(): process.terminate()
+                        process.join(5)
+    finally:
+        database.engine.dispose()
