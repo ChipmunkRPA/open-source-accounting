@@ -16,8 +16,12 @@ def main():
     if len(data) > 12 * 1024 * 1024:
         raise ValueError('Oversized parser input')
     from .pdf_parser import PdfError
+    from .docx_parser import DocxError
     try:
         result = parse_bytes(data, sys.argv[1], int(sys.argv[2]))
+    except DocxError as exc:
+        sys.stderr.write(json.dumps({'docx_error': exc.code, 'source_part': exc.part, 'source_xml_path': exc.path}))
+        raise SystemExit(2)
     except PdfError as exc:
         sys.stderr.write(json.dumps({'pdf_error': exc.code, 'physical_page': exc.page}))
         raise SystemExit(2)

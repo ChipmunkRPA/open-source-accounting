@@ -84,14 +84,8 @@ def parse_bytes(data, ext, character_limit):
         chunks = [{'locator': f'Page {p["pdf"]["physical_page"]}', **p}
                   for p in parse(data, page_limit=150, character_limit=character_limit)]
     elif ext == '.docx':
-        from docx import Document
-        doc = Document(io.BytesIO(data))
-        for i, p in enumerate(doc.paragraphs):
-            if p.text.strip():
-                chunks.append({'locator': f'Paragraph {i+1}', 'text': p.text})
-        for i, table in enumerate(doc.tables):
-            for j, row in enumerate(table.rows):
-                chunks.append({'locator': f'Table {i+1}, row {j+1}', 'text': ' | '.join(c.text for c in row.cells)})
+        from ..docx_parser import parse
+        chunks = parse(data, character_limit)
     else:
         raise ValueError('Unsupported format.')
     total = sum(len(x['text']) for x in chunks)
@@ -105,8 +99,9 @@ def parse_bytes(data, ext, character_limit):
         for offset in range(0, len(item['text']), 3500):
             chunk = {**item, 'locator': item['locator'] + (f', part {offset//3500+1}' if offset else ''),
                      'text': item['text'][offset:offset+3500]}
-            if 'pdf' in item:
-                chunk['pdf'] = {**item['pdf'], 'character_range': [offset, min(offset+3500, len(item['text']))]}
+            for format_key in ('pdf', 'docx'):
+                if format_key in item:
+                    chunk[format_key] = {**item[format_key], 'character_range': [offset, min(offset+3500, len(item['text']))]}
             output.append(chunk)
     return output
 
@@ -118,6 +113,13 @@ def parse_isolated(data, ext, limit):
                                timeout=25, check=False)
     except subprocess.TimeoutExpired:
         fail('PARSE_TIMEOUT', 'Document parsing exceeded the time limit.', 422)
+    if child.returncode == 2 and ext == '.docx' and len(child.stderr) <= 4000:
+        try:
+            diagnostic = json.loads(child.stderr)
+            fail('DOCX_PARSE_BLOCKED', 'DOCX requires revision or format review; no document was stored. Resolve the reported structure without silently accepting changes.',
+                 422, reason=diagnostic['docx_error'], source_part=diagnostic['source_part'], source_xml_path=diagnostic['source_xml_path'])
+        except (ValueError, KeyError, TypeError):
+            pass
     if child.returncode == 2 and ext == '.pdf' and len(child.stderr) <= 4000:
         try:
             diagnostic = json.loads(child.stderr)
