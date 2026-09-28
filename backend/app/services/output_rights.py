@@ -174,6 +174,8 @@ def run_output(db, run):
     sources = run_sources(db, run)
     payload = {**run.result, 'source_attributions': notices(db, sources)}
     release(db, sources, payload)
+    from .authority_evidence import release_check
+    release_check(db, run)
     return payload
 
 
@@ -183,4 +185,7 @@ def memo_output(db, memo, *, body=None, title=None):
     payload = {'title': memo.title if title is None else title,
                'body': memo.body if body is None else body, 'source_attributions': rows}
     release(db, sources, payload)
+    if memo.run_id:
+        from .authority_evidence import release_check
+        release_check(db, db.get(Run, memo.run_id))
     return payload

@@ -210,6 +210,8 @@ def run_artifact_access(db, run, action='quote', _visited=None, *, context=None)
     if any(not evidence_allowed(db, item, action, context=context) for item in items):
         fail('SOURCE_CHANGED', 'A source was disabled, changed, or deleted. This artifact requires review.', 409)
 
+    from .authority_evidence import packets
+    packets(db, run, action, context=context)
 
 def metadata(source):
     return {'id': source.id, 'title': source.title, 'publisher': source.publisher,

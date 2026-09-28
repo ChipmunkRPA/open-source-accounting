@@ -1278,3 +1278,35 @@ def test_postgres_authority_reviews_serialize_expected_sequence(pg_url):
                 if process.is_alive():process.terminate()
                 process.join(5)
         database.engine.dispose()
+
+
+def test_postgres_relationship_dependency_survives_endpoint_and_edge_deletion(pg_url):
+    from sqlalchemy import delete
+    from app.models import Workspace, Run, Evidence, AuthorityRelationship, RunAuthorityEvidence
+    from test_source_search import source
+    database = Database(pg_url)
+    actor, left, right = [str(uuid4()) for _ in range(3)]
+    try:
+        with database.Session() as db:
+            db.add(User(id=actor, role='admin'));db.flush()
+            workspace = Workspace(owner_id=actor, name='Synthetic dependency deletion');db.add(workspace);db.flush()
+            source(db, left);source(db, right)
+            edge = AuthorityRelationship(source_id=left, target_id=right, relation='defines', revision=actor*1+'0'*(64-len(actor)),
+                                         payload={'synthetic': True}, created_by=actor)
+            run = Run(workspace_id=workspace.id, user_id=actor, workflow='deep_research', question='Synthetic')
+            db.add_all([edge, run]);db.flush()
+            evidence = Evidence(run_id=run.id, source_id=left, title='Synthetic', locator='Exact test offset',
+                                text='quasar', access='secondary_text_reviewed', source_kind='original_commentary')
+            db.add(evidence);db.flush()
+            link = RunAuthorityEvidence(run_id=run.id, relationship_id=edge.id, source_evidence_id=evidence.id,
+                                        target_evidence_id=evidence.id, payload={'synthetic': True}, payload_sha256='a'*64)
+            db.add(link);db.commit();link_id, run_id = link.id, run.id
+            db.execute(delete(Evidence).where(Evidence.id == evidence.id))
+            db.execute(delete(AuthorityRelationship).where(AuthorityRelationship.id == edge.id));db.commit();db.expire_all()
+            preserved = db.get(RunAuthorityEvidence, link_id)
+            assert preserved and preserved.relationship_id is None and preserved.source_evidence_id is None and preserved.target_evidence_id is None
+            assert preserved.payload == {'synthetic': True}
+            db.execute(delete(Run).where(Run.id == run_id));db.commit();db.expire_all()
+            assert db.get(RunAuthorityEvidence, link_id) is None
+    finally:
+        database.engine.dispose()

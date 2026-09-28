@@ -85,6 +85,10 @@ def execute(db_factory, job_id, owner, config):
                         ('source_id', 'document_id', 'text', 'locator', 'access', 'policy_version', 'extraction_context')
                     ):
                         fail('SOURCE_CHANGED', 'The selected evidence revision changed.', 409)
+                if phase != 'planning':
+                    from ..services.authority_evidence import packets
+                    if packets(db, current, context=context) != payload.get('authority_relationships', []):
+                        fail('SOURCE_CHANGED', 'Relationship input changed before model dispatch.', 409)
                 db.commit()
             return model_attempts.invoke(db_factory, config, model,
                 lambda: model.structured(schema, prompt, payload, **kwargs),
@@ -100,6 +104,8 @@ def execute(db_factory, job_id, owner, config):
             run = checkpoint(db, run_id, job_id, owner, config)
             run.plan = plan.model_dump()
             emit(db, run, 'retrieving', query_count=min(len(plan.proposed_queries), task['max_queries']))
+            from ..models import RunAuthorityEvidence
+            db.execute(delete(RunAuthorityEvidence).where(RunAuthorityEvidence.run_id == run.id))
             db.execute(delete(Evidence).where(Evidence.run_id == run.id))
             selected, seen = [], set()
             queries = [run.question] + plan.proposed_queries[:task['max_queries'] - 1]
@@ -119,17 +125,19 @@ def execute(db_factory, job_id, owner, config):
                 if hit:
                     doc_first.append(hit)
             pool = doc_first + [x for x in selected if x not in doc_first]
-            from ..services.spreadsheet_dependencies import select_with_companions
-            pool = select_with_companions(db, run, pool, task['max_evidence'],
+            from ..services import authority_evidence
+            pool, relationship_plans = authority_evidence.select_evidence(db, run, pool, task['max_evidence'],
                                           context=rights.runtime_context(db, run))
             for row in pool:
                 evidence = Evidence(run_id=run.id, **row)
                 db.add(evidence)
                 db.flush()
                 rows.append({'id': evidence.id, **row})
+            authority_evidence.persist(db, run, relationship_plans, rows)
+            relationships = authority_evidence.packets(db, run)
             emit(db, run, 'analyzing', evidence_count=len(rows))
             data = {**request_data, 'plan': plan.model_dump(), 'evidence': rows,
-                    'deterministic_calculations': deterministic}
+                    'deterministic_calculations': deterministic, 'authority_relationships': relationships}
             # Keep large deterministic schedules out of the model. Full schedule remains in deliverable.
             if deterministic.get('lease'):
                 data['deterministic_calculations'] = {**deterministic,
@@ -145,7 +153,7 @@ def execute(db_factory, job_id, owner, config):
             emit(db, run, 'verifying', check='citations_and_applicability')
             db.commit()
         verification = structured(Verification, prompts.VERIFY,
-                    {'draft': analysis.model_dump(), 'evidence': rows, 'context': data['context']},
+                    {'draft': analysis.model_dump(), 'evidence': rows, 'context': data['context'], 'authority_relationships': relationships},
                     phase='verification', thinking='HIGH', cap=3500)
         usage = merge_usage(usage, model.last_usage)
         findings += [x.model_dump() for x in verification.findings]
@@ -157,7 +165,7 @@ def execute(db_factory, job_id, owner, config):
                                         correction, phase='correction', thinking='HIGH', cap=7500)
             usage = merge_usage(usage, model.last_usage)
             verification = structured(Verification, prompts.VERIFY,
-                    {'draft': analysis.model_dump(), 'evidence': rows, 'context': data['context']},
+                    {'draft': analysis.model_dump(), 'evidence': rows, 'context': data['context'], 'authority_relationships': relationships},
                     phase='reverification', thinking='HIGH', cap=3500)
             usage = merge_usage(usage, model.last_usage)
             findings = structural_verify(analysis, rows) + [x.model_dump() for x in verification.findings]
@@ -177,7 +185,9 @@ def execute(db_factory, job_id, owner, config):
                 result['limitations'].append('One or more references were identified but their primary text was not accessed.')
             result.update({'verification': findings, 'deterministic': deterministic,
                            'provider': config.model_provider, 'model_id': config.model_id,
-                           'prompt_version': prompts.PROMPT_VERSION, 'evidence_count': len(rows)})
+                           'prompt_version': prompts.PROMPT_VERSION, 'evidence_count': len(rows),
+                           'authority_relationship_count': len(relationships),
+                           'authority_evidence_version': authority_evidence.VERSION})
             run.result = result
             run.result = output_rights.run_output(db, run)
             run.token_usage = usage

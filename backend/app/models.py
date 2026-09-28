@@ -638,3 +638,16 @@ class AuthorityReview(Base):
     payload_sha256: Mapped[str] = mapped_column(String(64))
     created_at: Mapped[int] = mapped_column(Integer, default=now)
     __table_args__ = (UniqueConstraint('relationship_id', 'sequence'),)
+
+
+class RunAuthorityEvidence(Base):
+    __tablename__ = 'run_authority_evidence'
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uid)
+    run_id: Mapped[str] = mapped_column(ForeignKey('runs.id', ondelete='CASCADE'), index=True)
+    relationship_id: Mapped[str | None] = mapped_column(ForeignKey('authority_relationships.id', ondelete='SET NULL'))
+    source_evidence_id: Mapped[str | None] = mapped_column(ForeignKey('evidence.id', ondelete='SET NULL'))
+    target_evidence_id: Mapped[str | None] = mapped_column(ForeignKey('evidence.id', ondelete='SET NULL'))
+    payload: Mapped[dict] = mapped_column(JSON)
+    payload_sha256: Mapped[str] = mapped_column(String(64))
+    created_at: Mapped[int] = mapped_column(Integer, default=now)
+    __table_args__ = (UniqueConstraint('run_id', 'relationship_id'),)

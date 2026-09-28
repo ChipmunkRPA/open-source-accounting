@@ -56,11 +56,13 @@ def document_context(doc, chunk):
 
 def current(db,evidence, *, action="model_input", context=None):
     from ..models import Source,Document
-    from . import passage_context
+    from . import passage_context, coordinate_evidence
     snapshot=evidence.extraction_context or {}
     if evidence.source_id:
         source=db.get(Source,evidence.source_id)
         if evidence.access=="reference_only" and not evidence.text and not snapshot:return True
+        if isinstance(snapshot,dict) and snapshot.get('version')==coordinate_evidence.VERSION:
+            return coordinate_evidence.current(source,evidence)
         if source and passage_context.required(source):
             return passage_context.current(source,evidence)
     if not snapshot:
