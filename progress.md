@@ -1,5 +1,19 @@
 # Open Source Accounting — current implementation progress
 
+## 2026-09-27 · #23 staged dependency coverage and impact report (parent #5)
+
+Implementation: reviewer-only metadata API/UI with pagination, exact source/revision, missing/stale reference bindings, recorded review states and transitive affected-source lookup. Historical bindings and intake parents retained; cycles flagged. Includes all 32 registry families with separate staged/artifact-record/extraction-record/review-state counts and explicit unclassified records. No source text or private findings. Bound above 2,000 staged sources fails explicitly; integrity/history errors mark the graph incomplete. Stable content hash excludes observation time. No claim of verified original bytes, professional approval, indexing, evaluations or atomic snapshot.
+
+Actual validation: **792 backend passed / 23 optional PostgreSQL skipped**, including **8 new report cases**; initial targeted **5 passed** before three additional cases. TypeScript/build, lint F and API contract passed. No failures; one upstream Starlette/httpx warning. Browser synthetic case showed nine staged sources and exactly one potential dependent after filtering; refined null-review wording and rechecked. Temporary server/tab stopped. No new local PostgreSQL/migration/live-provider result; schema unchanged. Commands/receipts/limits: `reports/intake/DEPENDENCY_REPORT.md`, report JUnit and `dependency-report-ui.png`.
+
+Coverage unchanged: **32 families / 47 topics; 63 original drafts / 63 verified hashes / 0 professional approvals / 0 Agent admissions; 58 questions / 26 references**. SEC **34 targets / 28 selected excerpts / 7 excerpted sources / 0 full original HTTP documents / 0 technical or applicability approvals / 0 approved production index / 0 human-adjudicated evaluations**. Real acquired/parsed/reviewed/indexed units added **0**; synthetic records excluded. Source packs, parser `source-intake-1/sec-core-0.7.0`, discovery `html-index-1/crossref-works-1`, requested `gemini-3.8-flash` and cost catalog unchanged. No live inference, paid resources, deployment, billing/SMS or notifications.
+
+Remaining gates: artifact-store integrity reconciliation, correction/takedown administration, corpus partitioning/archived reports, actual rights/primary text/reviewers, conditional/jurisdiction/industry applicability, all-family acquisition/indexing/evaluation and browser download completion. GCP project/region/spend choice, credentials and concrete release approval remain outstanding.
+
+Next resumable task: **#23 correction/takedown administration**, connecting affected-source reports to controlled triage and existing source-disable gates; continue authorized all-family acquisition/reconciliation independently. Keep main current; full application/content/GCP goal remains active.
+
+---
+
 ## 2026-09-27 · #23 inherited publication output rights (parent #5)
 
 Implementation: output lineage now traverses declared editorial dependencies and intake parents. Exact-body historical review bindings retain obligations after revocation/rebinding; private histories retain older-body dependencies too. Current dependent operation permissions, exact publication revisions, inherited notices and shared cumulative/per-response ledgers apply. Direct/derived identical releases remain idempotent; nested groups are charged conservatively. Technical/parser/applicability histories render notices. Bounded history/graph queries fail explicitly; no schema or approval backfill. Published on main as [13eb0b3](https://github.com/ChipmunkRPA/open-source-accounting/commit/13eb0b30a3fc7ce73a92fa6cf4ea8a062dc0b0c3); [CI 36360845941](https://github.com/ChipmunkRPA/open-source-accounting/actions/runs/36360845941) passed both Python 3.11/3.13 clean installs, frontend/backend, migrations/PostgreSQL and Docker.

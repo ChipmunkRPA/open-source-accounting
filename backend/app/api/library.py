@@ -182,3 +182,12 @@ def applicability_history(source_id: str, user=Depends(current_user), db=Depends
     source=db.scalar(select(Source).where(Source.id==source_id).with_for_update())
     if not source:fail('NOT_FOUND','Source not found.',404)
     return applicability.history(db,source)
+
+
+@router.get('/editorial/dependency-report')
+def dependency_report(offset: int = Query(0,ge=0), limit: int = Query(50,ge=1,le=100),
+                      affected_by: str | None = Query(None,max_length=128),
+                      user=Depends(current_user), db=Depends(session), config=Depends(settings)):
+    from ..services.dependency_report import report
+    require_editor(user)
+    return report(db,config,offset=offset,limit=limit,affected_by=affected_by)
