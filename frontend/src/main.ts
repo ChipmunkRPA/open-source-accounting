@@ -1,3 +1,4 @@
+import {authorityReviewView} from './views/authority-review.js';
 import {sourceReaderView} from './views/source-reader.js';
 import {searchIndexView} from './views/search-index.js';
 import {secCommentsView} from './views/sec-comments.js';
@@ -61,6 +62,7 @@ export async function mount(root:HTMLElement){
                      el('span',{class:'account-name'},app.me.name));
       if(app.me.role==='technical_reviewer')account.append(link(app,'Content review','/editorial'),link(app,'Parser review','/parser-review'),link(app,'Dependency coverage','/dependency-report'));
       if(['admin','rights_approver'].includes(app.me.role))account.append(link(app,'Source admin','/admin'),link(app,'Search indexes','/search-index'),link(app,'Corrections','/corrections'),link(app,'Artifact integrity','/artifact-integrity'),link(app,'Multipart inventories','/editions'));
+      if(['admin','rights_approver','technical_reviewer'].includes(app.me.role))account.append(link(app,'Relationships','/authority-review'));
       document.documentElement.classList.toggle('reduced-motion',!!app.me.preferences.reduced_motion);
       document.documentElement.classList.toggle('compact',!!app.me.preferences.compact);
     }else account.append(button('Sign in',()=>showAuth(),'secondary'));
@@ -102,6 +104,7 @@ export async function mount(root:HTMLElement){
         case 'parser-review':page('Parser review');await parserReviewView(app);break;
         case 'dependency-report':page('Dependency coverage');await dependencyReportView(app);break;
         case 'editorial':page('Technical review');await editorialView(app);break;
+        case 'authority-review':page('Relationship review');await authorityReviewView(app,path[1]?decodeURIComponent(path[1]):'');break;
         case 'sources':page('Sources');if(path[1])await sourceReaderView(app,decodeURIComponent(path[1]));else await sourcesView(app);break;
         case 'topics':page('Topics');await topicsView(app);break;
         case 'pricing':page('Plans');await pricingView(app);break;

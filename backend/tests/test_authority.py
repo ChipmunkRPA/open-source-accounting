@@ -178,3 +178,19 @@ def test_malformed_rehashed_proposal_is_withheld(client):
         row=db.get(AuthorityRelationship,edge['id']);row.payload={**row.payload,'source':'invalid'}
         row.revision=digest(canonical(row.payload));db.commit()
     assert links(client).json()['items']==[]
+
+
+def test_metadata_status_supports_independent_revocation_without_body_packet(client):
+    edge,_=proposal(client);approved=review(client,edge).json()
+    assert approved['created_by']=='admin'
+    path='/api/v1/editorial/relationships/'+edge['id']
+    assert client.get(path+'/status').status_code==403
+    with client.app.state.db.Session() as db:
+        s=db.get(Source,'edge-target');s.policy={**s.policy,'display_full':False};rights.record_approval(s,'synthetic');db.commit()
+    assert client.get(path,headers=EDITOR).status_code==409
+    status=client.get(path+'/status',headers=EDITOR)
+    assert status.status_code==200,status.text
+    assert status.json()['sequence']==1 and not status.json()['current']
+    assert not {'proposal','scope','reviews','text'} & status.json().keys()
+    assert review(client,status.json(),decision='revoked').status_code==200
+    assert client.get('/api/v1/editorial/relationships/missing/status',headers=EDITOR).status_code==404

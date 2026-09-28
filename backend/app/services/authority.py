@@ -118,7 +118,7 @@ def summary(db,edge):
     return {'id':edge.id,'source_id':edge.source_id,'target_id':edge.target_id,'relation':edge.relation,
         'revision':edge.revision,'sequence':edge.sequence,'current':current(db,edge),
         'decision':record.payload['decision'] if record else 'unreviewed_or_invalid',
-        'created_at':edge.created_at,'agent_admission_granted':False}
+        'created_at':edge.created_at,'created_by':edge.created_by,'agent_admission_granted':False}
 
 
 def packet(db,edge):

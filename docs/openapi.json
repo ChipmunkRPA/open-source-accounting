@@ -238,6 +238,46 @@
         }
       }
     },
+    "/api/v1/editorial/relationships/{relationship_id}/status": {
+      "get": {
+        "tags": [
+          "authority relationships"
+        ],
+        "summary": "Relationship Status",
+        "operationId": "relationship_status_api_v1_editorial_relationships__relationship_id__status_get",
+        "parameters": [
+          {
+            "name": "relationship_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Relationship Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/sec-comments": {
       "get": {
         "tags": [

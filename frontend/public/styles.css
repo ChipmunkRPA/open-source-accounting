@@ -39,3 +39,5 @@
 @media(max-width:850px){.asu-layout{grid-template-columns:1fr}.asu-register{max-height:22rem}.asu-filters{align-items:stretch}}
 
 .source-passage-text{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;line-height:1.7;max-width:100%;margin:1rem 0}
+
+.account{flex-wrap:wrap;justify-content:flex-end;min-width:0}.topbar>.mobile-menu{flex-shrink:0}details.card[open]>summary{margin-bottom:20px}

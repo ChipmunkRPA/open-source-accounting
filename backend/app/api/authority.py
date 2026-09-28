@@ -49,3 +49,12 @@ def review_relationship(relationship_id:str,payload:RelationshipDecision,user=De
 def source_relationships(source_id:str,after:str=Query('',max_length=36),limit:int=Query(20,ge=1,le=50),db=Depends(session)):
     result=authority.public_links(db,source_id,after,limit)
     db.commit();return result
+
+
+@router.get('/editorial/relationships/{relationship_id}/status')
+def relationship_status(relationship_id:str,user=Depends(current_user),db=Depends(session)):
+    staff(user)
+    edge=db.get(AuthorityRelationship,relationship_id)
+    if not edge:fail('NOT_FOUND','Relationship not found.',404)
+    # Metadata-only access keeps revocation possible when body/packet rights expire.
+    return authority.summary(db,edge)
