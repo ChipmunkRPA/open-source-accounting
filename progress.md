@@ -1,5 +1,19 @@
 # Open Source Accounting — current implementation progress
 
+## 2026-09-27 · #8/#23 multipart inventory operator screen (parent #5)
+
+Implemented `/editions` with scoped-administrator navigation, family/work/artifact selection, optional future hash entry, required/optional components, separate combined representation and paginated history. Immutable saves preserve collection identity; historical reports cannot prepare a new revision and link to the current revision. Pending/failed work lookups block saves. Reports expose receipt gaps, unreconciled deliveries, exact hashes, parser ledger status and operation permissions without granting source or professional approval. No backend/schema/provider behavior changed. Updated operator documentation and queue note.
+
+Actual local validation: TypeScript typecheck, production frontend build, **16 identity tests / zero failures**, and **23 multipart API tests / zero failures** passed. One upstream Starlette/httpx warning. Synthetic browser journey created two inventory revisions, verified 1/2 required versus 1/1 required plus 0/1 optional receipts, and preserved historical warnings/disabled revision action. Screenshot, commands and JUnit: `reports/intake/EDITIONS_UI.md`. No live identity/provider/content result or independent review claimed. CI pending publication.
+
+Coverage unchanged: **32 families / 47 topics; 63 original drafts / 63 verified hashes / 0 professional approvals / 0 Agent admissions; 58 questions / 26 references**. SEC **34 targets / 28 excerpts / 7 excerpted sources / 0 full original HTTP artifacts / 0 technical or applicability approvals / 0 approved production index / 0 human-adjudicated evaluations**. Government packets remain **17 overlapping metadata candidates across 3 families**, with **0 real acquisition/parsing/rights/review/index additions**; synthetic UI receipts excluded. Parser `source-intake-1/sec-core-0.7.0`, discovery `html-index-1/crossref-works-1`, requested `gemini-3.8-flash` unchanged. No paid resources, production, live inference/billing/SMS/notifications.
+
+Remaining gates: independent publisher inventories, authorized full originals, exact professional reviews, all-family indexing/evaluation and corpus-scale reconciliation. OMB direct index remains blocked after HTTP 403; no bypass. GCP project/region/spend, credentials and exact release approval remain outstanding.
+
+Next resumable task: **#8/#23 operator revision comparison**, expose added/removed/changed multipart bindings and scope changes to support actual independent completeness review. Continue all-family source acquisition as operation rights and routes permit. Keep main current; full application/content/GCP goal remains active.
+
+---
+
 ## 2026-09-27 · #8 immutable multipart edition inventory (parent #5; source issue #15)
 
 Implemented authenticated edition registration/history/report APIs, typed metadata contracts and migration `0014_intake_editions`. Required and optional slots bind exact intake work manifests and raw hashes; unbound/missing/stale/mismatched/held parts remain explicit. A separate combined representation never fills a component or inflates component counts. Source-row-locked known-hash inventories flag later unexpected deliveries for an explicit new revision. Retry identity, optimistic revisions and uniqueness handle concurrent operators; old revisions remain immutable and cannot assert current required-receipt completeness. Metadata reports expose current operation permissions and parser-ledger status separately; receipt counts never grant byte-integrity, technical/applicability/index or Agent approval. Added operator instructions and actual API contract; updated #8 queue note. No frontend or model-provider behavior changed.

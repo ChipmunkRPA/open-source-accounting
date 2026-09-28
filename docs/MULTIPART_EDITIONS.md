@@ -42,4 +42,12 @@ Reads are non-atomic metadata observations across work records, not a live objec
 
 Bounds: 250 component slots plus one optional combined representation; 100 artifacts per bound work, otherwise an explicit 409 rather than truncating acquisition coverage; at most 10 displayed extractions per selected artifact, with `extractions_truncated` if more exist. List results omit manifests to avoid returning up to 100 large inventories. No fetch/parser limits were raised, no source was acquired, and no route block was bypassed.
 
-Migration `0014_intake_editions` adds one table, preserving prior data. Apply the normal migration before calling these endpoints in an existing installation. Scope still outstanding includes an operator UI, independently reviewed publisher inventories, full acquisition/parsing/professional-review/index reconciliation, and large-corpus performance measurements. Declaring a small pilot does not complete the all-content goal.
+Migration `0014_intake_editions` adds one table, preserving prior data. Apply the normal migration before calling these endpoints in an existing installation. Scope still outstanding includes independently reviewed publisher inventories, full acquisition/parsing/professional-review/index reconciliation, and large-corpus performance measurements. Declaring a small pilot does not complete the all-content goal.
+
+## Operator screen
+
+Open **Multipart inventories** from the signed-in source administrator header (`/editions`). The server enforces scoped administration; the navigation link is not authorization. Choose the family, collection, publisher edition, declared scope and limitations. Add required/optional components and, if useful, a separate combined representation. Load more registered works explicitly when the first page is insufficient. Select the exact work and acquired artifact, or declare a known future SHA-256. Unbound components and unknown hashes remain incomplete.
+
+Saving creates an immutable inventory revision. Saved collection identity cannot be edited; start a new inventory for a different collection or publisher edition. Inspect history to see receipt gaps, parser ledger status and current operation permissions. Only the current revision offers **Prepare next revision**; historical reports link to the current revision. A stale save returns a conflict without overwriting another operator's revision. Work lookup failures block saving; draft navigation asks before discarding changes. Rights expiry, source holds and professional reviews continue to be enforced by the existing server workflows.
+
+Browser validation uses disposable synthetic records only; see `reports/intake/EDITIONS_UI.md` and its screenshot. No real publication completeness or review is implied.
