@@ -1,3 +1,4 @@
+import {searchIndexView} from './views/search-index.js';
 import {secCommentsView} from './views/sec-comments.js';
 import {asuTrackingView} from './views/asu-tracking.js';
 import {editionsView} from './views/editions.js';
@@ -58,7 +59,7 @@ export async function mount(root:HTMLElement){
       account.append(badge(app.me.access.agent_allowed?'Agent':'Free',app.me.access.agent_allowed?'paid':'neutral'),
                      el('span',{class:'account-name'},app.me.name));
       if(app.me.role==='technical_reviewer')account.append(link(app,'Content review','/editorial'),link(app,'Parser review','/parser-review'),link(app,'Dependency coverage','/dependency-report'));
-      if(['admin','rights_approver'].includes(app.me.role))account.append(link(app,'Source admin','/admin'),link(app,'Corrections','/corrections'),link(app,'Artifact integrity','/artifact-integrity'),link(app,'Multipart inventories','/editions'));
+      if(['admin','rights_approver'].includes(app.me.role))account.append(link(app,'Source admin','/admin'),link(app,'Search indexes','/search-index'),link(app,'Corrections','/corrections'),link(app,'Artifact integrity','/artifact-integrity'),link(app,'Multipart inventories','/editions'));
       document.documentElement.classList.toggle('reduced-motion',!!app.me.preferences.reduced_motion);
       document.documentElement.classList.toggle('compact',!!app.me.preferences.compact);
     }else account.append(button('Sign in',()=>showAuth(),'secondary'));
@@ -113,6 +114,7 @@ export async function mount(root:HTMLElement){
         case 'editions':page('Multipart inventories');await editionsView(app);break;
         case 'artifact-integrity':page('Stored artifact integrity');await artifactIntegrityView(app);break;
         case 'corrections':page('Corrections');await correctionsView(app);break;
+        case 'search-index':page('Search index administration');await searchIndexView(app,path[1]);break;
         case 'admin':page('Source administration');await adminView(app);break;
         case 'watches':page('Watch inbox');await watchesView(app);break;
         default:content.replaceChildren(heading('Page not found','Use the navigation to return to your workspace.'));

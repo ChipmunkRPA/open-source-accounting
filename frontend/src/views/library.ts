@@ -45,7 +45,7 @@ export async function adminView(app:App){
   const result=await api('/admin/sources');const list=el('div');
   function draw(){list.replaceChildren(table(['Source','State','Policy version','Actions'],result.items.map((s:Json)=>[
     s.title,s.enabled?(s.reviewed?'Rights approved':'Needs rights review'):'Disabled',s.policy_version,
-    el('div',{class:'row-actions'},button('Policy',()=>modal(s.title,el('pre',{class:'source-text'},JSON.stringify(s.policy,null,2))),'quiet'),
+    el('div',{class:'row-actions'},link(app,'Search index','/search-index/'+encodeURIComponent(s.id)),button('Policy',()=>modal(s.title,el('pre',{class:'source-text'},JSON.stringify(s.policy,null,2))),'quiet'),
       button('Approve rights',async()=>{try{if(!confirm('Confirm that you personally reviewed the rights for this exact work, version and operations. This does not grant technical accounting approval.'))return;await api(`/admin/sources/${s.id}/approve`,'POST',{expected_policy_version:s.policy_version,expected_rights_revision:s.rights_revision,confirm_actual_rights_review:true});await adminView(app);}catch(e){app.showError(e);}},'quiet'),
       button('Disable',async()=>{try{await api(`/admin/sources/${s.id}/disable`,'POST');await adminView(app);}catch(e){app.showError(e);}},'quiet danger-text'))])));}
   draw();

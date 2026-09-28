@@ -127,3 +127,30 @@ def test_version_change_preserves_old_receipt_scope_and_request_identity(client,
         with pytest.raises(HTTPException) as exc:index_cleanup.advance(db,sweep.id,0,'admin')
         assert exc.value.detail['code']=='CLEANUP_VERSION_CHANGED'
         assert db.get(SourceSearchIndex,'version-fixture') is not None
+
+
+def test_saved_sweep_listing_is_admin_only_and_keyset_paginated(client):
+    with client.app.state.db.Session() as db:
+        for i in range(23):
+            db.add(SearchIndexSweep(id=f'00000000-0000-0000-0000-{i:012}',cleanup_version=index_cleanup.VERSION,
+                request_sha256=f'{i:064}',actor_id='admin',started_at=100,state='completed'))
+        db.commit()
+    url='/api/v1/admin/search-index/sweeps'
+    assert client.get(url).status_code==403
+    first=client.get(url,headers=ADMIN).json()
+    assert len(first['items'])==20 and first['next_before']==first['items'][-1]['id']
+    second=client.get(url+'?before='+first['next_before'],headers=ADMIN).json()
+    assert len(second['items'])==3 and second['next_before'] is None
+    ids=[r['id'] for r in first['items']+second['items']]
+    assert len(set(ids))==23 and ids==sorted(ids,reverse=True)
+    assert client.get(url+'?before=missing',headers=ADMIN).status_code==404
+    assert client.get(url+'?before='+'x'*37,headers=ADMIN).status_code==422
+
+
+def test_index_inventory_does_not_invent_current_or_approved_coverage(client):
+    with client.app.state.db.Session() as db:
+        row=indexed(db,'stale-inventory');row.enabled=False;db.commit()
+    url='/api/v1/admin/search-index/inventory'
+    assert client.get(url).status_code==403
+    result=client.get(url,headers=ADMIN).json()
+    assert result['stored_entries']==1 and result['current_entries'] is None and result['approval_granted'] is False

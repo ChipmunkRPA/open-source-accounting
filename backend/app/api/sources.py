@@ -202,3 +202,30 @@ def index_cleanup_receipts(sweep_id:str,after:int=Query(default=0,ge=0),user=Dep
             fail('CLEANUP_RECEIPT_INTEGRITY','Cleanup receipt integrity check failed.',409)
     return {'items':[{'audit_id':row.id,**row.detail} for row in rows],
             'next_after':rows[-1].id if len(rows)==50 else None}
+
+
+@router.get('/admin/search-index/inventory')
+def search_index_inventory(user=Depends(current_user),db=Depends(session)):
+    from sqlalchemy import func
+    from ..models import SourceSearchIndex
+    require_admin(user)
+    return {'stored_entries':db.scalar(select(func.count()).select_from(SourceSearchIndex)),
+        'current_entries':None,'approval_granted':False,
+        'notice':'Stored entries can be stale or revoked. Current eligibility is checked per source and during cleanup; this count does not establish corpus completeness.'}
+
+
+@router.get('/admin/search-index/sweeps')
+def list_index_cleanup(before:str=Query(default='',max_length=36),user=Depends(current_user),db=Depends(session)):
+    from sqlalchemy import and_
+    from ..models import SearchIndexSweep
+    from ..services import index_cleanup
+    require_admin(user)
+    query=select(SearchIndexSweep)
+    if before:
+        cursor=db.get(SearchIndexSweep,before)
+        if not cursor:fail('NOT_FOUND','Cleanup history cursor not found. Reload the list.',404)
+        query=query.where(or_(SearchIndexSweep.started_at<cursor.started_at,
+            and_(SearchIndexSweep.started_at==cursor.started_at,SearchIndexSweep.id<cursor.id)))
+    rows=list(db.scalars(query.order_by(SearchIndexSweep.started_at.desc(),SearchIndexSweep.id.desc()).limit(21)))
+    return {'items':[index_cleanup.status(row) for row in rows[:20]],
+            'next_before':rows[19].id if len(rows)>20 else None}

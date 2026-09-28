@@ -2381,6 +2381,46 @@
             }
           }
         }
+      },
+      "get": {
+        "tags": [
+          "sources"
+        ],
+        "summary": "List Index Cleanup",
+        "operationId": "list_index_cleanup_api_v1_admin_search_index_sweeps_get",
+        "parameters": [
+          {
+            "name": "before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 36,
+              "default": "",
+              "title": "Before"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/api/v1/admin/search-index/sweeps/{sweep_id}": {
@@ -2518,6 +2558,25 @@
                 "schema": {
                   "$ref": "#/components/schemas/HTTPValidationError"
                 }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/search-index/inventory": {
+      "get": {
+        "tags": [
+          "sources"
+        ],
+        "summary": "Search Index Inventory",
+        "operationId": "search_index_inventory_api_v1_admin_search_index_inventory_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
               }
             }
           }

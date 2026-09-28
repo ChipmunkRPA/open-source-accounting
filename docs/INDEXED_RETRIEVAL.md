@@ -40,3 +40,14 @@ The sweep fixes an upper source ID but does not freeze corpus membership or appr
 Cleanup takes the same source-before-index row locks used by rebuilding, then re-reads the entry. PostgreSQL sweep locks and SQLite writer serialization prevent conflicting advances; expected sequences reject stale retries. Index-row deletion, counters, cursor and receipt share a transaction, so a crash rolls them all back. Required rights/review checks include ancestors and publication dependencies; stale revisions, expiry, revocation, new scoped restrictions and obsolete index versions remove the derived entry. Original sources, immutable acquisitions, review records and user artifacts are not deleted or reapproved by this operation.
 
 Deletion removes live derived rows and their GIN entries. It does **not** attest to forensic disk erasure, MVCC/vacuum completion, removal from replicas/backups or completion of the operator's retention policy. No automatic cadence, background job or notification has been activated. New index builds remain explicit and separately authorized.
+
+
+## Administrator interface
+
+Open **Search indexes** from the administrator account links, or **Search index** beside a source in Source administration. `/search-index/{source_id}` loads one exact source; `/search-index?sweep={id}` opens a saved sweep. The screen requires the server-reported administrator/rights-approver role, and all API actions independently retain their server-side role and fresh-session checks.
+
+The screen exposes exact-revision build/refresh, explicit derived-index removal, stored-versus-current state, and permission/review gating. A changed input invalidates its loaded state; requests disable conflicting controls, stale responses are discarded after navigation/selection changes, and a revision conflict requires reloading. No control approves source rights or accounting review.
+
+Cleanup can be started with a retry-stable request key, advanced one batch at a time, and reopened after reload. Saved sweeps use 20-item chronological keyset pages; receipt pages are read separately and expand bounded hash-only observations on demand. Errors leave reload controls available rather than silently repeating a mutation. `GET /admin/search-index/inventory` reports stored entries, with `current_entries: null` and `approval_granted: false`; it does not label stale stored bytes as approved indexed coverage.
+
+Local browser QA used an isolated SQLite database, mock mode and synthetic sources. It verified build/removal, one retained and one revoked entry in a cleanup batch, receipt disclosure, saved-sweep reload, missing-source handling, stale-revision rejection, disabled actions and non-admin denial. A 390×844 viewport check verified readable controls and scrollable tables. [Synthetic mobile screenshot](../reports/retrieval/index-cleanup-mobile.png). This is not a deployed-origin, live MFA, real rights-review or production-index coverage result.
