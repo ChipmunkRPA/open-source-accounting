@@ -11,7 +11,7 @@ from datetime import datetime
 from pathlib import PurePosixPath
 from .sec_core.core import digest
 
-VERSION = 'spreadsheet-cells-1'
+VERSION = 'spreadsheet-cells-2'
 S = 'http://schemas.openxmlformats.org/spreadsheetml/2006/main'
 R = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships'
 P = 'http://schemas.openxmlformats.org/package/2006/relationships'
@@ -159,6 +159,7 @@ def parse_xlsx(raw, limit):
             sheets=book.find('{'+S+'}sheets')
             if sheets is None or not 1<=len(sheets)<=100:reject('sheet_count_limit')
             seen_names=set();seen_parts=set();output=[];count=total=0
+            seen_tables=set();table_identities=set()
             declared_names=[{'attributes':dict(n.attrib),'formula':n.text or ''}
                             for n in book.findall('./{'+S+'}definedNames/{'+S+'}definedName')]
             calculation=book.find('{'+S+'}calcPr')
@@ -179,9 +180,21 @@ def parse_xlsx(raw, limit):
                 if part in seen_parts:reject('duplicate_worksheet_binding',part)
                 seen_parts.add(part);sheet=roots.get(part)
                 if sheet is None or sheet.tag!='{'+S+'}worksheet':reject('invalid_worksheet',part)
-                unsupported={'drawing','legacyDrawing','legacyDrawingHF','oleObjects','controls','extLst','pivotTable','picture','tableParts','pivotTableParts'}
+                unsupported={'drawing','legacyDrawing','legacyDrawingHF','oleObjects','controls','extLst','pivotTable','picture','pivotTableParts'}
                 if any(n.tag.rsplit('}',1)[-1] in unsupported for n in sheet.iter()):reject('visual_or_extended_content_requires_review',part)
                 if any('/comments' in kind or '/threadedComment' in kind for kind,_ in rels(part).values()):reject('comments_require_review',part)
+                from .spreadsheet_tables import tables
+                table_list=tables(sheet,part,roots,rels(part),seen_tables,table_identities,
+                    {n['attributes'].get('name','').casefold() for n in declared_names})
+                for table in table_list:
+                    description=json.dumps(table,ensure_ascii=False,sort_keys=True)
+                    total+=len(description)
+                    if total>limit:reject('spreadsheet_extraction_limit',part)
+                    output.append({'locator':"'"+name.replace("'","''")+"'!"+table['range']+' table '+table['display_name'],
+                        'text':description,'spreadsheet':{'parser_version':VERSION,'format':'xlsx','sheet':name,
+                            'source_part':table['source_part'],'date_system':epoch,'cells':[],'table':table,
+                            'calculated':False,'display_rendered':False,'units_verified':False,
+                            'professional_review':'unreviewed'}})
                 merges=[m.get('ref','') for m in sheet.findall('./{'+S+'}mergeCells/{'+S+'}mergeCell')]
                 for merge in merges:
                     refs=merge.split(':')
@@ -240,6 +253,7 @@ def parse_xlsx(raw, limit):
                     if not cells:continue
                     item=chunk(name,cells,format='xlsx',source_part=part,row=rn,sheet_state=sh.get('state','visible'),
                         row_hidden=row.get('hidden','0'),date_system=epoch,merged_ranges=merges,
+                        tables=[{'name':t['display_name'],'range':t['range'],'source_part':t['source_part']} for t in table_list if t['start'][0]<=rn<=t['end'][0]],
                         column_properties=[dict(n.attrib) for n in sheet.findall('./{'+S+'}cols/{'+S+'}col')],
                         warning='Literal stored cells and formula caches only. Caches may be absent or stale. No formula translation/recalculation, number/date rendering, inferred units or visual review.')
                     total+=len(item['text']);sheet_items+=1
@@ -267,5 +281,7 @@ def parse_xlsx(raw, limit):
                             'professional_review':'unreviewed'}})
             if any(n.startswith('xl/worksheets/') and n.endswith('.xml') and n not in seen_parts for n in names):
                 reject('unbound_worksheet_part')
+            if any(root.tag=='{'+S+'}table' and n not in seen_tables for n,root in roots.items()):
+                reject('unbound_table_part')
             return output
     except zipfile.BadZipFile:reject('invalid_xlsx_archive')
