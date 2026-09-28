@@ -6,6 +6,112 @@
     "version": "0.7.0"
   },
   "paths": {
+    "/api/v1/sec-comments": {
+      "get": {
+        "tags": [
+          "SEC comment letters"
+        ],
+        "summary": "Listing",
+        "operationId": "listing_api_v1_sec_comments_get",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 200,
+              "default": "",
+              "title": "Q"
+            }
+          },
+          {
+            "name": "topic",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 80,
+              "default": "",
+              "title": "Topic"
+            }
+          },
+          {
+            "name": "form",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "UPLOAD",
+                    "CORRESP"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Form"
+            }
+          },
+          {
+            "name": "recent",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": true,
+              "title": "Recent"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "default": 25,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/asu-tracking": {
       "get": {
         "tags": [
@@ -5826,6 +5932,107 @@
         ],
         "title": "CorrectionCreate"
       },
+      "Correspondence": {
+        "properties": {
+          "company": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Company"
+          },
+          "cik": {
+            "type": "string",
+            "pattern": "^[0-9]{1,10}$",
+            "title": "Cik"
+          },
+          "accession": {
+            "type": "string",
+            "pattern": "^[0-9]{10}-[0-9]{2}-[0-9]{6}$",
+            "title": "Accession"
+          },
+          "form": {
+            "type": "string",
+            "enum": [
+              "UPLOAD",
+              "CORRESP"
+            ],
+            "title": "Form"
+          },
+          "url": {
+            "type": "string",
+            "maxLength": 1500,
+            "title": "Url"
+          },
+          "letter_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Letter Date"
+          },
+          "filed_on": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Filed On"
+          },
+          "publicly_available_on": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Publicly Available On"
+          },
+          "checked_on": {
+            "type": "string",
+            "format": "date",
+            "title": "Checked On"
+          },
+          "reviewed_filing": {
+            "type": "string",
+            "maxLength": 300,
+            "minLength": 1,
+            "title": "Reviewed Filing"
+          },
+          "related_accessions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 30,
+            "title": "Related Accessions"
+          },
+          "locator": {
+            "type": "string",
+            "maxLength": 300,
+            "minLength": 1,
+            "title": "Locator"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "company",
+          "cik",
+          "accession",
+          "form",
+          "url",
+          "letter_date",
+          "checked_on",
+          "reviewed_filing",
+          "locator"
+        ],
+        "title": "Correspondence"
+      },
       "CounselAssessments": {
         "properties": {
           "purpose": {
@@ -6460,6 +6667,16 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/AnnualCfrEdition"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "sec_correspondence": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Correspondence"
               },
               {
                 "type": "null"

@@ -1,3 +1,4 @@
+import {secCommentsView} from './views/sec-comments.js';
 import {asuTrackingView} from './views/asu-tracking.js';
 import {editionsView} from './views/editions.js';
 import {artifactIntegrityView} from './views/artifact-integrity.js';
@@ -44,7 +45,7 @@ export async function mount(root:HTMLElement){
   const nav=el('nav',{'aria-label':'Main navigation'},
       link(app,'Chat · Free','/chat'),link(app,'Agent studio','/agents'),link(app,'My workspaces','/workspaces'),
       link(app,'Memos','/memos'),link(app,'Documents','/documents'),link(app,'Topics','/topics'),
-      link(app,'Open library','/library'),link(app,'SEC Core','/sec-core'),link(app,'ASU tracking','/asu-tracking'),link(app,'Sources','/sources'),link(app,'Watch inbox','/watches'),
+      link(app,'Open library','/library'),link(app,'SEC Core','/sec-core'),link(app,'ASU tracking','/asu-tracking'),link(app,'SEC comments','/sec-comments'),link(app,'Sources','/sources'),link(app,'Watch inbox','/watches'),
       el('hr'),link(app,'Plans','/pricing'),link(app,'Billing & usage','/billing'),link(app,'Settings','/settings'),link(app,'Security','/security'));
   const sidebar:HTMLElement=el('aside',{class:'sidebar'},button('Close menu',()=>sidebar.classList.remove('open'),'quiet sidebar-close'),link(app,'osa / open-source-accounting','/chat','wordmark'),nav,
       el('div',{class:'sidebar-bottom'},badge(config.model_provider==='mock'?'Local demonstration':'Gemini 3.8 Flash'),
@@ -79,7 +80,7 @@ export async function mount(root:HTMLElement){
   async function render(){
     app.cleanup?.();app.cleanup=undefined;app.canLeave=undefined;banner.replaceChildren();sidebar.classList.remove('open');
     const path=location.pathname.split('/').filter(Boolean);
-    const publicRoutes=['pricing','topics','sources','library','sec-core','asu-tracking'];
+    const publicRoutes=['pricing','topics','sources','library','sec-core','asu-tracking','sec-comments'];
     if(!app.me && !publicRoutes.includes(path[0]||'chat')){
       content.replaceChildren(heading('Welcome to Open Source Accounting','General AI chat is free. Agent workflows are $89.99 per year.'),button('Sign in to continue',()=>showAuth()));return;
     }
@@ -92,6 +93,7 @@ export async function mount(root:HTMLElement){
         case 'memos':page('Memos');await memoView(app,path[1]);break;
         case 'workspaces':page('Workspaces');await workspacesView(app);break;
         case 'documents':page('Documents');await documentsView(app);break;
+        case 'sec-comments':page('SEC comments');await secCommentsView(app);break;
         case 'asu-tracking':page('ASU tracking');await asuTrackingView(app);break;
         case 'sec-core':page('SEC Core');await secCoreView(app);break;
         case 'library':page('Open library');await openLibraryView(app,path[1]);break;

@@ -1,0 +1,49 @@
+{
+  "source": {
+    "title": "Driven Brands Holdings Inc. \u2014 CORRESP 2026-01-05",
+    "publisher": "Driven Brands Holdings Inc.",
+    "canonical_url": "https://www.sec.gov/Archives/edgar/data/1804745/000180474526000002/filename1.htm",
+    "kind": "reference",
+    "version_label": "sec-comment-reference-2026-09-28",
+    "policy": {
+      "basis": "reference_only",
+      "review_note": "Reference proposal only; no source-operation or professional approval granted."
+    }
+  },
+  "manifest": {
+    "family_id": "SEC_FILINGS",
+    "work_id": "sec-comment-0001804745-26-000002",
+    "edition": "sec-comment-reference-2026-09-28",
+    "language": "en",
+    "jurisdiction": "US",
+    "authority_type": "company_response",
+    "coverage_unit": "One public correspondence document; attachments and related letters require separate reconciliation.",
+    "access_mode": "reference_only",
+    "route": "reference_only",
+    "requested_url": "https://www.sec.gov/Archives/edgar/data/1804745/000180474526000002/filename1.htm",
+    "parser": "structural_html",
+    "allowed_mime": [
+      "text/html"
+    ],
+    "max_bytes": 4000000,
+    "issued_at": "2026-01-05",
+    "sec_correspondence": {
+      "company": "Driven Brands Holdings Inc.",
+      "cik": "1804745",
+      "accession": "0001804745-26-000002",
+      "form": "CORRESP",
+      "url": "https://www.sec.gov/Archives/edgar/data/1804745/000180474526000002/filename1.htm",
+      "letter_date": "2026-01-05",
+      "filed_on": null,
+      "publicly_available_on": null,
+      "checked_on": "2026-09-28",
+      "reviewed_filing": "Form 10-K, fiscal year ended December 28, 2024; Form 10-Q, quarter ended September 27, 2025",
+      "related_accessions": [],
+      "locator": "Pages 1\u20132, reproduced comment 1; pages 8\u201310, internal-control response; page 10, reproduced comment 2"
+    },
+    "date_notes": "Letter and filing dates are distinct from public release and acquisition. Unknown dates remain null.",
+    "notices": [
+      "Public reference only; assess staff, issuer and third-party source operations separately."
+    ]
+  }
+}

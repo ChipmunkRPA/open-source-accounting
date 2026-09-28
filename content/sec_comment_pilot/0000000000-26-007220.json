@@ -1,0 +1,49 @@
+{
+  "source": {
+    "title": "Lionsgate Studios Corp. \u2014 UPLOAD 2026-07-21",
+    "publisher": "U.S. Securities and Exchange Commission",
+    "canonical_url": "https://www.sec.gov/Archives/edgar/data/2052959/000000000026007220/filename1.pdf",
+    "kind": "reference",
+    "version_label": "sec-comment-reference-2026-09-28",
+    "policy": {
+      "basis": "reference_only",
+      "review_note": "Reference proposal only; no source-operation or professional approval granted."
+    }
+  },
+  "manifest": {
+    "family_id": "SEC_FILINGS",
+    "work_id": "sec-comment-0000000000-26-007220",
+    "edition": "sec-comment-reference-2026-09-28",
+    "language": "en",
+    "jurisdiction": "US",
+    "authority_type": "staff_correspondence",
+    "coverage_unit": "One public correspondence document; attachments and related letters require separate reconciliation.",
+    "access_mode": "reference_only",
+    "route": "reference_only",
+    "requested_url": "https://www.sec.gov/Archives/edgar/data/2052959/000000000026007220/filename1.pdf",
+    "parser": "pdf",
+    "allowed_mime": [
+      "application/pdf"
+    ],
+    "max_bytes": 4000000,
+    "issued_at": "2026-07-21",
+    "sec_correspondence": {
+      "company": "Lionsgate Studios Corp.",
+      "cik": "2052959",
+      "accession": "0000000000-26-007220",
+      "form": "UPLOAD",
+      "url": "https://www.sec.gov/Archives/edgar/data/2052959/000000000026007220/filename1.pdf",
+      "letter_date": "2026-07-21",
+      "filed_on": "2026-07-21",
+      "publicly_available_on": null,
+      "checked_on": "2026-09-28",
+      "reviewed_filing": "Form 10-K, fiscal year ended March 31, 2026",
+      "related_accessions": [],
+      "locator": "Page 1, comment 1; segment results and non-GAAP measures, referenced filing page 52"
+    },
+    "date_notes": "Letter and filing dates are distinct from public release and acquisition. Unknown dates remain null.",
+    "notices": [
+      "Public reference only; assess staff, issuer and third-party source operations separately."
+    ]
+  }
+}

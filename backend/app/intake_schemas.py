@@ -4,6 +4,7 @@ from typing import Literal
 from urllib.parse import urlsplit
 from pydantic import Field, model_validator
 from .schemas import Strict, SourceCreate
+from .sec_comment_schemas import Correspondence
 
 
 def https_url(value: str) -> str:
@@ -55,6 +56,7 @@ class IntakeManifest(Strict):
     redirect_urls: list[str] = Field(default_factory=list, max_length=3)
     parser: Literal['ecfr_xml', 'annual_cfr_xml', 'structural_html', 'pdf', 'text', 'xlsx', 'csv', 'crossref_metadata', 'sec_submissions']
     annual_cfr: AnnualCfrEdition | None = None
+    sec_correspondence: Correspondence | None = None
     parser_family: str = Field(default='generic', max_length=80)
     cfr_title: str = Field(default='17', pattern=r'^\d{1,3}$')
     allowed_mime: list[Literal['application/xml', 'text/xml', 'text/html', 'application/pdf', 'text/plain', 'application/json', 'text/csv', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']] = Field(min_length=1, max_length=6)
@@ -74,6 +76,8 @@ class IntakeManifest(Strict):
         # Preserve hashes of previously registered manifests and their rights reviews.
         if self.manual_delivery is None:
             data.pop('manual_delivery')
+        if self.sec_correspondence is None:
+            data.pop('sec_correspondence')
         if self.annual_cfr is None:
             data.pop('annual_cfr')
         return data
@@ -82,6 +86,8 @@ class IntakeManifest(Strict):
     def validate_route(self):
         for url in [self.requested_url, *self.redirect_urls]:
             https_url(url)
+        if self.sec_correspondence and (self.family_id != 'SEC_FILINGS' or self.sec_correspondence.url != self.requested_url or self.parser not in {'pdf','structural_html','text'}):
+            raise ValueError('Correspondence metadata requires an exact SEC filing-body route.')
         spreadsheet_mimes = {'xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'csv': 'text/csv'}
         if self.parser in spreadsheet_mimes:
             if self.allowed_mime != [spreadsheet_mimes[self.parser]] or self.max_bytes > 12_000_000:
