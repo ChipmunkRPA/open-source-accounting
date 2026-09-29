@@ -1,8 +1,12 @@
 # Open Source Accounting — Codex instructions
 
+## Public/private boundary
+
+The operator selected a separate private repository: ChipmunkRPA/open-source-accounting-premium. Keep premium UI, Agent workflows, prompts, backend and infrastructure there. This public repository contains only the free client and educational/source-reference content. Run scripts/check_public.py before publishing. Existing historical MIT grants remain intact. Do not copy private implementation into allowed public paths.
+
 ## Start and scope
 
-Read master issue #5, `docs/codex/START.md`, the current task issue, and any supplied complete handoff before editing. First execute #6: reconcile the verified full v0.7 archive with live main and draft PR #4. Main did not contain the complete application at handoff. Preserve current maintainer changes; do not reset history, force-push, or blindly execute legacy encoded materialization scripts.
+Read master issue #5, the current task issue and progress.md before editing. Baseline reconciliation #6 has already been completed; full handoff, queue, backend and implementation documentation are now preserved in the private application repository. Do not repeat materialization. Preserve current maintainer changes; do not reset history, force-push, or blindly execute legacy encoded materialization scripts.
 
 This project covers accounting/auditing content beyond SEC. The live queue includes FASB/GASB, PCAOB/AICPA, IASB/ISSB/IFRS, IAASB/IESBA/IPSASB, GAO/FASAB/OMB/Treasury, law/courts, COSO/IIA/ISACA/NIST, publishers, open literature, industry regulators, local frameworks and original content. Use the official retrieval instructions in each source-family issue.
 
@@ -29,6 +33,10 @@ Read existing code/contracts/tests before modifying. Use typed schemas, explicit
 No secrets, OTP/setup keys, client documents, private prompts, databases or licensed raw corpora in public Git/ordinary telemetry. Keep parsing isolated and prevent active HTML/macros/external formulas. Preserve deletion of derived data and backup-retention disclosures. Do not weaken security or skip failing safety tests to obtain a green build.
 
 Run relevant tests and appropriate regression/build/content checks. Distinguish mock/offline/live/manual/professional evidence. Historical pass counts are not newly observed results. Build the real identity client, not merely demo assets. Keep unsupported/experimental workflows gated.
+
+## Proprietary premium boundary — operator update 2026-09-29
+
+Premium features must not be open-sourced in this repository. Stop public pushes containing premium implementation, prompts, orchestration, premium UI, tests, evaluation fixtures, build artifacts or internal design until the private repository boundary is implemented and verified. Keep current unpublished premium work local; do not delete it. Existing public/MIT history is an exposure to inventory, not something a new notice or .gitignore can undo. Preserve existing licenses and history; no force-push. Free chat and public educational/source-reading content remain free. Research Accordance through its public materials as a UX/product reference; distinguish observed behavior, marketing claims and our design proposals. Do not copy proprietary assets or infer access to its internal agent system. Local `.private/` material is excluded from Git and Docker but this is only an interim precaution, not completed repository separation.
 
 ## Execution and progress
 

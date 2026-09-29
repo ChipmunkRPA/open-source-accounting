@@ -12,3 +12,6 @@ data
 reports
 prior_v3
 frontend/next-host
+
+# Local proprietary migration and competitive research; never publish.
+.private/

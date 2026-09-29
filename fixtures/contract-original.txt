@@ -1,8 +1,0 @@
-FICTIONAL TEST CONTRACT — ORIGINAL DEMONSTRATION MATERIAL
-Customer: Example Customer. Provider: Example Software.
-Term: Twelve months beginning January 1, 2027.
-The customer pays an annual hosted subscription fee of USD 12,000 and a one-time
-implementation fee of USD 2,000. Implementation includes account setup and data
-configuration. Termination, acceptance, ownership and integration details are
-intentionally incomplete. These missing facts must not be invented by the agent.
-This fixture does not establish any GAAP conclusion.

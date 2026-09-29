@@ -23,15 +23,10 @@ export async function chatView(app:App,chatId?:string){
   const examples=el('div',{class:'example-row'},...['Explain the difference between a fact and an assumption in accounting research.',
       'What information should I collect before evaluating a contract?', 'How should I organize an accounting research memo?'].map(text=>button(text,()=>{input.value=text;input.focus();},'example')));
   const chatHistory=el('div',{class:'recent-chats'},...list.items.slice(0,6).map((c:Json)=>link(app,c.title,`/chat/${c.id}`,'recent-link')));
-  app.content.replaceChildren(heading('Ask freely.','General AI chat is free. Source-backed research and document work live in Agent studio.',
+  app.content.replaceChildren(heading('Ask freely.','General AI chat is free. Premium research is provided separately by the private hosted application.',
       link(app,'New chat','/chat','button secondary')),
       !chatId?el('section',{class:'hero-chat'},badge('CHAT · FREE','free'),el('h2',{},'A place to work through the question.'),examples):el('span'),
       messages,el('section',{class:'composer'},field('Your message',input),
       el('div',{class:'composer-actions'},el('span',{class:'muted'},'No document or live-source access in general chat.'),
-        button('Documents · Agent',()=>app.me?.access.agent_allowed?app.navigate('/agents/document_gaap'):app.upgrade('Document analysis'),'quiet'),send)),
-      chatHistory,el('section',{class:'grid three'},...[
-        ['Deep research','Resolve a question across the approved corpus.','deep_research'],
-        ['Documents + GAAP','Connect contract clauses with permitted research content.','document_gaap'],
-        ['Write a memo','Prepare a versioned, reviewable draft.','memo']
-      ].map(([title,desc,id])=>el('article',{class:'card'},badge('AGENT','paid'),el('h3',{},title),el('p',{class:'muted'},desc),link(app,'Preview task →',`/agents/${id}`)))));
+        send)),chatHistory);
 }

@@ -21,4 +21,4 @@ billing. Source licenses continue to govern each content item in any deployment.
 
 ## SEC Core official-source excerpts (v0.7.0)
 
-`content/sec_core/excerpts.json` contains identified, selected government-source text with per-passage provenance; it is not the original CC BY educational corpus. No ownership of the underlying government text is claimed. The source pack is not a complete document mirror, has not received independent professional review, and does not license agency marks or third-party embedded material. See `docs/sec/README.md` and each passage's context note.
+`content/sec_core/excerpts.json` contains identified, selected government-source text with per-passage provenance; it is not the original CC BY educational corpus. No ownership of the underlying government text is claimed. The source pack is not a complete document mirror, has not received independent professional review, and does not license agency marks or third-party embedded material. See each passage's context note.

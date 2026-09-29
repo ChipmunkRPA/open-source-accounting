@@ -37,36 +37,3 @@ export async function settingsView(app:App,logout:()=>void){
     card('Privacy and retention',el('p',{},'Private workspaces are isolated by membership. Source text is supplied to the configured model only through the authorized research path. Document deletion clears its source text and dependent generated content.'),
       el('p',{class:'muted'},'This starter does not represent a completed production privacy program. Cloud-provider retention, backups, regional controls, and legal obligations require deployment review.')));
 }
-
-export async function adminView(app:App){
-  const result=await api('/admin/sources');const list=el('div');
-  function draw(){list.replaceChildren(table(['Source','State','Policy version','Actions'],result.items.map((s:Json)=>[
-    s.title,s.enabled?(s.reviewed?'Rights approved':'Needs rights review'):'Disabled',s.policy_version,
-    el('div',{class:'row-actions'},link(app,'Search index','/search-index/'+encodeURIComponent(s.id)),button('Policy',()=>modal(s.title,el('pre',{class:'source-text'},JSON.stringify(s.policy,null,2))),'quiet'),
-      button('Approve rights',async()=>{try{if(!confirm('Confirm that you personally reviewed the rights for this exact work, version and operations. This does not grant technical accounting approval.'))return;await api(`/admin/sources/${s.id}/approve`,'POST',{expected_policy_version:s.policy_version,expected_rights_revision:s.rights_revision,confirm_actual_rights_review:true});await adminView(app);}catch(e){app.showError(e);}},'quiet'),
-      button('Disable',async()=>{try{await api(`/admin/sources/${s.id}/disable`,'POST');await adminView(app);}catch(e){app.showError(e);}},'quiet danger-text'))])));}
-  draw();
-  const title=input('text','','source-title'),publisher=input('text','','source-publisher'),url=input('url','','source-url'),text=textarea('','source-text',6);
-  const framework=select([['US_GAAP','U.S. GAAP'],['IFRS','IFRS'],['BOTH','Both'],['AUDIT','Auditing']]);
-  const kind=select([['original_commentary','Original commentary'],['reference','Reference metadata'],['rule','Rule'],['standard','Standard'],['staff_guidance','Staff guidance'],['company_example','Company example']]);
-  const policy=textarea(JSON.stringify({basis:'original',commercial_use:true,model_input:true,store_text:true,display_full:true,quote:true,export:true,embed:false,train:false,review_note:'Explain and independently review the reuse and acquisition basis.'},null,2),'source-policy',10);
-  const message=el('div');
-  const submit=button('Submit for independent approval',async()=>{try{await api('/admin/sources','POST',{title:title.value,publisher:publisher.value,canonical_url:url.value,kind:kind.value,framework:framework.value,text:text.value||null,policy:JSON.parse(policy.value)});await adminView(app);}catch(e){message.replaceChildren(notice((e as Error).message,'error'));}});
-  app.content.replaceChildren(heading('Source administration','Two-person approval for publication and permission grants. Emergency restriction is immediate.'),list,
-    card('Submit a new source record',el('div',{class:'grid two'},field('Title',title),field('Publisher',publisher),field('Canonical HTTPS link',url),field('Framework',framework),field('Authority category',kind)),
-      field('Permitted source text (leave blank for references)',text),field('Operation-level rights policy (JSON)',policy),notice('Do not place privileged legal advice or unlicensed source material here. Submission is not legal approval.','warning'),message,submit));
-}
-
-export async function watchesView(app:App){
-  const watches=(await api('/watches')).items,notes=(await api('/notifications')).items;
-  const topic=input('text','','watch-topic'),workspace=select(app.workspaces.map(w=>[w.id,w.name])),cadence=select([['1','Daily'],['7','Weekly'],['30','Every 30 days']]);
-  const consent=checkbox('I authorize scheduled checks of new approved platform sources and in-app notifications.');
-  const create=button('Create watch · Agent',async()=>{if(!consent.input.checked){app.showError(new Error('Opt in before creating the watch.'));return;}
-    try{await api('/watches','POST',{workspace_id:workspace.value,topic:topic.value,cadence_days:Number(cadence.value),consent:true});await watchesView(app);}catch(e){app.showError(e);}});
-  create.disabled=!app.config.experimental_agents_enabled;
-  app.content.replaceChildren(heading('Watch inbox','Checks new approved platform source records—not the unrestricted web. No emails are sent by this version.'),
-    !app.config.experimental_agents_enabled?notice('The watch module is experimental and disabled in this deployment.','warning'):notice('Watches pause at subscription expiry. They do not make automatic accounting adoption decisions.'),
-    el('div',{class:'grid two'},card('Create a watch',field('Topic keywords',topic),field('Workspace',workspace),field('Cadence',cadence),consent.element,create),
-      card('Saved watches',watches.length?table(['Topic','Cadence','State',''],watches.map((w:Json)=>[w.topic,`${w.cadence_days} days`,w.enabled?'Enabled':'Paused',button('Pause',async()=>{await api('/watches/'+w.id,'DELETE');await watchesView(app);},'quiet')])):el('p',{class:'muted'},'No saved watches.'))),
-    card('Notifications',...notes.map((n:Json)=>el('article',{class:'source-row'},el('div',{},el('h3',{},n.title),el('p',{},n.body)),badge(n.read?'Read':'New'),button('Mark read',async()=>{await api(`/notifications/${n.id}/read`,'POST');await watchesView(app);},'quiet')))));
-}

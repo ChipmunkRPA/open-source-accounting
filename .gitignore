@@ -23,3 +23,6 @@ runtime.env.yaml
 frontend/dist/
 
 .ruff_cache/
+
+# Local proprietary migration and competitive research; never publish.
+.private/

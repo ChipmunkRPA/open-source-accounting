@@ -2,12 +2,11 @@
   "name": "open-source-accounting-web",
   "version": "0.7.0",
   "private": true,
-  "description": "Dependency-light TypeScript UI; optional Next.js host included separately",
+  "description": "Free Open Source Accounting client; premium implementation is private",
   "type": "module",
   "scripts": {
-    "build": "tsc -p tsconfig.json && node scripts/build-vendor.mjs && node scripts/copy-assets.mjs",
+    "build": "node scripts/clean.mjs && tsc -p tsconfig.json && node scripts/build-vendor.mjs && node scripts/copy-assets.mjs && node scripts/build-library.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "build:demo": "tsc -p tsconfig.json && node scripts/copy-assets.mjs",
     "test:auth": "node --test tests/identity.test.mjs"
   },
   "devDependencies": {
