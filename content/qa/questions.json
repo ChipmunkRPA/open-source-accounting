@@ -699,6 +699,78 @@
       "review_status": "unreviewed",
       "license": "CC-BY-4.0",
       "use": "educational_draft_not_accounting_gold_standard"
+    },
+    {
+      "id": "qa-059",
+      "question": "Can five access exceptions establish unauthorized transactions?",
+      "answer": "No. Investigate the identities, permissions, activity and period exposure; the exception percentage alone cannot establish transactions or severity.",
+      "related_item_id": "itgc-evidence-workbook",
+      "source_ids": [
+        "nist-csf-2-0"
+      ],
+      "review_status": "unreviewed",
+      "license": "CC-BY-4.0",
+      "use": "educational_draft_not_accounting_gold_standard"
+    },
+    {
+      "id": "qa-060",
+      "question": "Are all emergency production changes control failures?",
+      "answer": "No. Inspect the applicable emergency policy, independence, timing and exact deployed version; a policy exception is not an automatic pass either.",
+      "related_item_id": "itgc-evidence-workbook",
+      "source_ids": [
+        "nist-csf-2-0"
+      ],
+      "review_status": "unreviewed",
+      "license": "CC-BY-4.0",
+      "use": "educational_draft_not_accounting_gold_standard"
+    },
+    {
+      "id": "qa-061",
+      "question": "Does 96.67% backup completion prove recovery within targets?",
+      "answer": "No. In the fictional workbook, restoration exceeds the time target by 35 minutes and the data-loss target by 30 minutes, with attachments untested.",
+      "related_item_id": "itgc-evidence-workbook",
+      "source_ids": [
+        "nist-csf-2-0"
+      ],
+      "review_status": "unreviewed",
+      "license": "CC-BY-4.0",
+      "use": "educational_draft_not_accounting_gold_standard"
+    },
+    {
+      "id": "qa-062",
+      "question": "Can equal 600-dollar interface totals prove completeness?",
+      "answer": "No. The fictional matching totals conceal missing C of 300 dollars, duplicate B of 200 dollars and unexpected D of 100 dollars.",
+      "related_item_id": "itgc-evidence-workbook",
+      "source_ids": [
+        "nist-csf-2-0"
+      ],
+      "review_status": "unreviewed",
+      "license": "CC-BY-4.0",
+      "use": "educational_draft_not_accounting_gold_standard"
+    },
+    {
+      "id": "qa-063",
+      "question": "Does recalculating the workbook allowance prove GAAP compliance?",
+      "answer": "No. The 900-dollar difference checks an assumed formula and population only; actual measurement criteria and estimate support require separate analysis.",
+      "related_item_id": "itgc-evidence-workbook",
+      "source_ids": [
+        "nist-csf-2-0"
+      ],
+      "review_status": "unreviewed",
+      "license": "CC-BY-4.0",
+      "use": "educational_draft_not_accounting_gold_standard"
+    },
+    {
+      "id": "qa-064",
+      "question": "Does approval of draft H1 authorize a changed journal H2?",
+      "answer": "No under the proposed exact-version control. Obtain authorization for H2; neither a second model pass nor a subscription authorizes posting.",
+      "related_item_id": "itgc-evidence-workbook",
+      "source_ids": [
+        "nist-csf-2-0"
+      ],
+      "review_status": "unreviewed",
+      "license": "CC-BY-4.0",
+      "use": "educational_draft_not_accounting_gold_standard"
     }
   ]
 }

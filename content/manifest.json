@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "release": "0.6.0",
-  "generated_at": "2026-09-27",
+  "release": "0.6.1",
+  "generated_at": "2026-09-29",
   "publication_state": "public_editorial_draft",
   "items": [
     {
@@ -1690,6 +1690,32 @@
         "reviewed_at": null
       },
       "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "itgc-evidence-workbook",
+      "title": "IT control evidence: six worked cases and a review template",
+      "kind": "case",
+      "topic": "internal-controls",
+      "framework": "AUDIT",
+      "summary": "Six original scenarios distinguish control design, operation and evidence across access, changes, backups, interfaces, spreadsheets and AI posting.",
+      "path": "cases/itgc-evidence-workbook-v1.md",
+      "version": "1.0.0",
+      "sha256": "e5c1c1bdb7c0fb244a99194914d67282aa831e6ade1c1c58c9f84d0a86975547",
+      "published_at": "2026-09-29",
+      "updated_at": "2026-09-29",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "nist-csf-2-0"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": false,
       "public_visibility": "editorial_draft",
       "agent_eligible_by_default": false
     }

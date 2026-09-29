@@ -339,6 +339,19 @@
       "full_text_included": false,
       "acquisition": "metadata_and_link_only",
       "automated_fetch_enabled": false
+    },
+    {
+      "id": "nist-csf-2-0",
+      "title": "NIST Cybersecurity Framework 2.0 — NIST CSWP 29",
+      "publisher": "National Institute of Standards and Technology",
+      "url": "https://doi.org/10.6028/NIST.CSWP.29",
+      "kind": "government_cybersecurity_guidance",
+      "checked_at": "2026-09-29",
+      "verification": "original_pdf_acquired_and_selected_page_visually_checked",
+      "review_scope": "Edition 2.0; physical page 25 / printed 20, PR.AA-05, PR.DS-11, PR.PS-01, PR.PS-04. AI-assisted locator check only; no independent technical/applicability approval. Full original/extraction retained locally outside distributed library.",
+      "full_text_included": false,
+      "acquisition": "official_original_retained_locally_separate_from_library",
+      "automated_fetch_enabled": false
     }
   ]
 }
