@@ -29,7 +29,7 @@
     {
       "id": "qa-003",
       "question": "Can a peer disclosure establish the correct accounting?",
-      "answer": "Not by itself. It describes a company\u2019s practice under its own facts. Establish comparability and verify the governing criteria separately.",
+      "answer": "Not by itself. It describes a company’s practice under its own facts. Establish comparability and verify the governing criteria separately.",
       "related_item_id": "authority-and-period",
       "source_ids": [
         "sec-frm"
@@ -172,7 +172,7 @@
     },
     {
       "id": "qa-015",
-      "question": "Is an award\u2019s headline grant value enough to book compensation?",
+      "question": "Is an award’s headline grant value enough to book compensation?",
       "answer": "No. Assemble terms, grant and service facts, vesting conditions, settlement provisions, modifications, and valuation evidence before assessing treatment.",
       "related_item_id": "share-based-award-intake",
       "source_ids": [
@@ -270,7 +270,7 @@
     {
       "id": "qa-023",
       "question": "Does an ICFR deficiency require an actual misstatement?",
-      "answer": "Not necessarily. AS 2201\u2019s severity analysis concerns the potential for misstatement, not just errors already found.",
+      "answer": "Not necessarily. AS 2201’s severity analysis concerns the potential for misstatement, not just errors already found.",
       "related_item_id": "icfr-deficiencies",
       "source_ids": [
         "pcaob-as2201"
@@ -940,6 +940,54 @@
       "related_item_id": "audit-proxy-measurement",
       "source_ids": [
         "plos-audit-comparability-2024"
+      ],
+      "review_status": "unreviewed",
+      "license": "CC-BY-4.0",
+      "use": "educational_draft_not_accounting_gold_standard"
+    },
+    {
+      "id": "qa-079",
+      "question": "What is recovery time in the Harbor example?",
+      "answer": "95 minutes from 14:00 incident declaration to 15:35 authorized release. File-copy completion at 14:32 is not the stipulated end point.",
+      "related_item_id": "recovery-reconciliation",
+      "source_ids": [
+        "nist-csf-2-0"
+      ],
+      "review_status": "unreviewed",
+      "license": "CC-BY-4.0",
+      "use": "educational_draft_not_accounting_gold_standard"
+    },
+    {
+      "id": "qa-080",
+      "question": "Does the 15-minute recovery-point interval prove transactions were lost?",
+      "answer": "No. It measures potential exposure under the stated definitions; reconcile actual events and external acknowledgments to determine missing or duplicate activity.",
+      "related_item_id": "recovery-reconciliation",
+      "source_ids": [
+        "nist-csf-2-0"
+      ],
+      "review_status": "unreviewed",
+      "license": "CC-BY-4.0",
+      "use": "educational_draft_not_accounting_gold_standard"
+    },
+    {
+      "id": "qa-081",
+      "question": "What is the missing signed amount in the four-event example?",
+      "answer": "300: the comparison total is 1400 and restored total is 1100. Missing events are -200 and +500; reconciliation does not authorize replay or posting.",
+      "related_item_id": "recovery-reconciliation",
+      "source_ids": [
+        "nist-csf-2-0"
+      ],
+      "review_status": "unreviewed",
+      "license": "CC-BY-4.0",
+      "use": "educational_draft_not_accounting_gold_standard"
+    },
+    {
+      "id": "qa-082",
+      "question": "Does a matching hash or zero net balance difference prove complete recovery?",
+      "answer": "No. A hash matches only the selected baseline; offsetting missing events can net to zero. Reconcile identities, versions, permissions, deletions and untested dependencies.",
+      "related_item_id": "recovery-reconciliation",
+      "source_ids": [
+        "nist-csf-2-0"
       ],
       "review_status": "unreviewed",
       "license": "CC-BY-4.0",
