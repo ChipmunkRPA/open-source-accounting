@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "0.6.1",
+  "release": "0.6.2",
   "generated_at": "2026-09-29",
   "publication_state": "public_editorial_draft",
   "items": [
@@ -1709,6 +1709,33 @@
       "license": "CC-BY-4.0",
       "source_ids": [
         "nist-csf-2-0"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": false,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "federal-igt-reconciliation",
+      "title": "Federal interentity reconciliation: explain differences before proposing corrections",
+      "kind": "case",
+      "topic": "government-audit",
+      "framework": "AUDIT",
+      "summary": "Four original federal reconciliation exercises distinguish partner exceptions, proposed corrections, recorded balances and account applicability, with a review template.",
+      "path": "cases/federal-igt-reconciliation-v1.md",
+      "version": "1.0.0",
+      "sha256": "6d984d16d7f5f734dbbf9b39dd74f0aa3ca69b7ee52e082ffc77df148e2f4c2c",
+      "published_at": "2026-09-29",
+      "updated_at": "2026-09-29",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "treasury-tfm4700-app5-jun2026",
+        "treasury-tfm4700-app6-jun2026"
       ],
       "technical_review": {
         "status": "unreviewed",

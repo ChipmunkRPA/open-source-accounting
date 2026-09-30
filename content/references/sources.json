@@ -352,6 +352,42 @@
       "full_text_included": false,
       "acquisition": "official_original_retained_locally_separate_from_library",
       "automated_fetch_enabled": false
+    },
+    {
+      "id": "treasury-tfm4700-app5-jun2026",
+      "title": "Treasury Financial Manual Chapter 4700 Appendix 5 — June 2026",
+      "publisher": "U.S. Treasury, Bureau of the Fiscal Service",
+      "url": "https://tfx.treasury.gov/media/26/download?inline",
+      "kind": "federal_reporting_manual",
+      "checked_at": "2026-09-29",
+      "verification": "original_pdf_acquired_and_selected_page_visually_checked",
+      "review_scope": "June 2026 label; physical/printed page 5. AI-assisted locator check only; no independent technical, rights or applicability approval. Full original/extraction retained separately from distributed library.",
+      "full_text_included": false,
+      "acquisition": "official_original_retained_locally_separate_from_library",
+      "automated_fetch_enabled": false,
+      "raw_sha256": "ea0b8cac1f971db79f1900a4adbacd06295726a2ea7fe4d552913c0b107c6865",
+      "retrieved_at": "2026-09-30T00:16:30.657097+00:00",
+      "issued_on": null,
+      "publicly_available_on": null,
+      "effective_on": null
+    },
+    {
+      "id": "treasury-tfm4700-app6-jun2026",
+      "title": "Treasury Financial Manual Chapter 4700 Appendix 6 — June 2026",
+      "publisher": "U.S. Treasury, Bureau of the Fiscal Service",
+      "url": "https://tfx.treasury.gov/media/1791/download?inline",
+      "kind": "federal_reporting_manual",
+      "checked_at": "2026-09-29",
+      "verification": "original_pdf_acquired_and_selected_page_visually_checked",
+      "review_scope": "June 2026 label; physical/printed page 7. AI-assisted locator check only; no independent technical, rights or applicability approval. Full original/extraction retained separately from distributed library.",
+      "full_text_included": false,
+      "acquisition": "official_original_retained_locally_separate_from_library",
+      "automated_fetch_enabled": false,
+      "raw_sha256": "6753769b57c643631a919bcf39655db2aa82e1fb2a7dab02f6876f46893f951d",
+      "retrieved_at": "2026-09-30T00:16:39.509760+00:00",
+      "issued_on": null,
+      "publicly_available_on": null,
+      "effective_on": null
     }
   ]
 }
