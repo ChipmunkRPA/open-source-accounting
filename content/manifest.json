@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "0.6.2",
+  "release": "0.6.3",
   "generated_at": "2026-09-29",
   "publication_state": "public_editorial_draft",
   "items": [
@@ -675,7 +675,7 @@
     },
     {
       "id": "playbook-deep-research",
-      "title": "Deep research — Agent playbook",
+      "title": "Deep research \u2014 Agent playbook",
       "kind": "playbook",
       "topic": "research",
       "framework": "BOTH",
@@ -702,7 +702,7 @@
     },
     {
       "id": "playbook-memo",
-      "title": "Accounting memorandum — Agent playbook",
+      "title": "Accounting memorandum \u2014 Agent playbook",
       "kind": "playbook",
       "topic": "research",
       "framework": "BOTH",
@@ -729,7 +729,7 @@
     },
     {
       "id": "playbook-document-gaap",
-      "title": "Uploaded documents plus GAAP — Agent playbook",
+      "title": "Uploaded documents plus GAAP \u2014 Agent playbook",
       "kind": "playbook",
       "topic": "documents",
       "framework": "US_GAAP",
@@ -756,7 +756,7 @@
     },
     {
       "id": "playbook-contract-compare",
-      "title": "Contract and amendment comparison — Agent playbook",
+      "title": "Contract and amendment comparison \u2014 Agent playbook",
       "kind": "playbook",
       "topic": "documents",
       "framework": "US_GAAP",
@@ -782,7 +782,7 @@
     },
     {
       "id": "playbook-memo-review",
-      "title": "Challenge my memo — Agent playbook",
+      "title": "Challenge my memo \u2014 Agent playbook",
       "kind": "playbook",
       "topic": "research",
       "framework": "BOTH",
@@ -809,7 +809,7 @@
     },
     {
       "id": "playbook-disclosure-review",
-      "title": "Disclosure gap review — Agent playbook",
+      "title": "Disclosure gap review \u2014 Agent playbook",
       "kind": "playbook",
       "topic": "disclosures",
       "framework": "US_GAAP",
@@ -837,7 +837,7 @@
     },
     {
       "id": "playbook-policy-draft",
-      "title": "Accounting policy drafting — Agent playbook",
+      "title": "Accounting policy drafting \u2014 Agent playbook",
       "kind": "playbook",
       "topic": "research",
       "framework": "BOTH",
@@ -863,7 +863,7 @@
     },
     {
       "id": "playbook-revenue-workpaper",
-      "title": "Revenue contract workpaper — Agent playbook",
+      "title": "Revenue contract workpaper \u2014 Agent playbook",
       "kind": "playbook",
       "topic": "revenue",
       "framework": "US_GAAP",
@@ -890,7 +890,7 @@
     },
     {
       "id": "playbook-lease-workpaper",
-      "title": "Lease assessment and schedule — Agent playbook",
+      "title": "Lease assessment and schedule \u2014 Agent playbook",
       "kind": "playbook",
       "topic": "leases",
       "framework": "US_GAAP",
@@ -917,7 +917,7 @@
     },
     {
       "id": "playbook-disclosure-benchmark",
-      "title": "Disclosure benchmarking — Agent playbook",
+      "title": "Disclosure benchmarking \u2014 Agent playbook",
       "kind": "playbook",
       "topic": "disclosures",
       "framework": "US_GAAP",
@@ -944,7 +944,7 @@
     },
     {
       "id": "playbook-sec-response",
-      "title": "SEC comment-response preparation — Agent playbook",
+      "title": "SEC comment-response preparation \u2014 Agent playbook",
       "kind": "playbook",
       "topic": "disclosures",
       "framework": "US_GAAP",
@@ -971,7 +971,7 @@
     },
     {
       "id": "playbook-audit-prep",
-      "title": "Audit preparation pack — Agent playbook",
+      "title": "Audit preparation pack \u2014 Agent playbook",
       "kind": "playbook",
       "topic": "audit",
       "framework": "BOTH",
@@ -998,7 +998,7 @@
     },
     {
       "id": "playbook-controls-review",
-      "title": "Control design and deficiency review — Agent playbook",
+      "title": "Control design and deficiency review \u2014 Agent playbook",
       "kind": "playbook",
       "topic": "controls",
       "framework": "BOTH",
@@ -1024,7 +1024,7 @@
     },
     {
       "id": "playbook-close-pack",
-      "title": "Close issue and evidence pack — Agent playbook",
+      "title": "Close issue and evidence pack \u2014 Agent playbook",
       "kind": "playbook",
       "topic": "research",
       "framework": "BOTH",
@@ -1052,7 +1052,7 @@
     },
     {
       "id": "playbook-framework-compare",
-      "title": "U.S. GAAP and IFRS issue comparison — Agent playbook",
+      "title": "U.S. GAAP and IFRS issue comparison \u2014 Agent playbook",
       "kind": "playbook",
       "topic": "research",
       "framework": "BOTH",
@@ -1078,7 +1078,7 @@
     },
     {
       "id": "playbook-standards-watch",
-      "title": "Opt-in standards impact watch — Agent playbook",
+      "title": "Opt-in standards impact watch \u2014 Agent playbook",
       "kind": "playbook",
       "topic": "research",
       "framework": "BOTH",
@@ -1437,7 +1437,7 @@
       "kind": "guide",
       "topic": "related-parties",
       "framework": "US_GAAP",
-      "summary": "Build a relationship map and assess evidence without assuming that management labels establish arm’s-length terms.",
+      "summary": "Build a relationship map and assess evidence without assuming that management labels establish arm\u2019s-length terms.",
       "path": "guides/related-party-workbook.md",
       "version": "0.6.0",
       "sha256": "ccc95011d2556ff4c067895f9ddf532cc8ded033e33eb72f6fc7f3da276cf92c",
@@ -1743,6 +1743,32 @@
         "reviewed_at": null
       },
       "primary_text_gap": false,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "federal-mda-evidence",
+      "title": "Federal MD&A evidence workpaper: connect costs, results and uncertainty",
+      "kind": "template",
+      "topic": "government-audit",
+      "framework": "AUDIT",
+      "summary": "Original federal narrative workpaper with cost and quality calculations, causal-evidence limits, comparability exceptions and review fields.",
+      "path": "templates/federal-mda-evidence-v1.md",
+      "version": "1.0.0",
+      "sha256": "a615fe9918eff287ffab0879c325e41adc2d5b1497343acb07bc8d8b4f0397bf",
+      "published_at": "2026-09-29",
+      "updated_at": "2026-09-29",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasab-sig-64-1-2026"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
       "public_visibility": "editorial_draft",
       "agent_eligible_by_default": false
     }

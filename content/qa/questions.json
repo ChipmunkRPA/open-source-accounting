@@ -29,7 +29,7 @@
     {
       "id": "qa-003",
       "question": "Can a peer disclosure establish the correct accounting?",
-      "answer": "Not by itself. It describes a company’s practice under its own facts. Establish comparability and verify the governing criteria separately.",
+      "answer": "Not by itself. It describes a company\u2019s practice under its own facts. Establish comparability and verify the governing criteria separately.",
       "related_item_id": "authority-and-period",
       "source_ids": [
         "sec-frm"
@@ -172,7 +172,7 @@
     },
     {
       "id": "qa-015",
-      "question": "Is an award’s headline grant value enough to book compensation?",
+      "question": "Is an award\u2019s headline grant value enough to book compensation?",
       "answer": "No. Assemble terms, grant and service facts, vesting conditions, settlement provisions, modifications, and valuation evidence before assessing treatment.",
       "related_item_id": "share-based-award-intake",
       "source_ids": [
@@ -270,7 +270,7 @@
     {
       "id": "qa-023",
       "question": "Does an ICFR deficiency require an actual misstatement?",
-      "answer": "Not necessarily. AS 2201’s severity analysis concerns the potential for misstatement, not just errors already found.",
+      "answer": "Not necessarily. AS 2201\u2019s severity analysis concerns the potential for misstatement, not just errors already found.",
       "related_item_id": "icfr-deficiencies",
       "source_ids": [
         "pcaob-as2201"
@@ -832,6 +832,66 @@
       "source_ids": [
         "treasury-tfm4700-app5-jun2026",
         "treasury-tfm4700-app6-jun2026"
+      ],
+      "review_status": "unreviewed",
+      "license": "CC-BY-4.0",
+      "use": "educational_draft_not_accounting_gold_standard"
+    },
+    {
+      "id": "qa-070",
+      "question": "Does unchanged cost per completed application prove overall service performance improved?",
+      "answer": "No. In the fictional workpaper, the first-pass acceptance rate falls from 95% to 90%; cost per accepted application rises. Outcome, timing and scope evidence remain necessary.",
+      "related_item_id": "federal-mda-evidence",
+      "source_ids": [
+        "fasab-sig-64-1-2026"
+      ],
+      "review_status": "unreviewed",
+      "license": "CC-BY-4.0",
+      "use": "educational_draft_not_accounting_gold_standard"
+    },
+    {
+      "id": "qa-071",
+      "question": "Is a decline from 95% to 90% a 5% relative decline?",
+      "answer": "No. It is five percentage points; relative decline is 5/95, approximately 5.26%.",
+      "related_item_id": "federal-mda-evidence",
+      "source_ids": [
+        "fasab-sig-64-1-2026"
+      ],
+      "review_status": "unreviewed",
+      "license": "CC-BY-4.0",
+      "use": "educational_draft_not_accounting_gold_standard"
+    },
+    {
+      "id": "qa-072",
+      "question": "Does a zero residual in a volume-first cost bridge establish that volume caused the entire change?",
+      "answer": "No. The bridge is arithmetic at an assumed comparison rate. Offset effects and alternative explanations require supporting evidence.",
+      "related_item_id": "federal-mda-evidence",
+      "source_ids": [
+        "fasab-sig-64-1-2026"
+      ],
+      "review_status": "unreviewed",
+      "license": "CC-BY-4.0",
+      "use": "educational_draft_not_accounting_gold_standard"
+    },
+    {
+      "id": "qa-073",
+      "question": "May an unavailable baseline count be replaced with zero to calculate growth?",
+      "answer": "No. Missing is not zero, and growth from a zero baseline is undefined. Disclose the gap and withhold an unsupported percentage.",
+      "related_item_id": "federal-mda-evidence",
+      "source_ids": [
+        "fasab-sig-64-1-2026"
+      ],
+      "review_status": "unreviewed",
+      "license": "CC-BY-4.0",
+      "use": "educational_draft_not_accounting_gold_standard"
+    },
+    {
+      "id": "qa-074",
+      "question": "Does a retained staff-guidance PDF approve a real management narrative or control assessment?",
+      "answer": "No. Rights, applicability, entity evidence, actual management assessments and authorized professional review remain separate gates.",
+      "related_item_id": "federal-mda-evidence",
+      "source_ids": [
+        "fasab-sig-64-1-2026"
       ],
       "review_status": "unreviewed",
       "license": "CC-BY-4.0",

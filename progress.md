@@ -1,3 +1,11 @@
+## 2026-09-29 · Federal MD&A evidence workpaper · #15/#22
+
+Published one original AI-assisted, unreviewed federal MD&A workpaper with fictional cost/quality calculations, an arithmetic-versus-causal explanation bridge, four evidence/comparability exceptions, a claim-level template and five study questions. Added one SIG 64.1 reference with artifact hash, retrieval time and selected page locators; no source body redistribution. Underlying SFFAS 64 and entity applicability remain primary-text/review gaps. No professional approval or Agent admission.
+
+Content release 0.6.3 now has **66 drafts / 74 study questions / 30 references**. All previous records preserved. No new acquisition/parsing/rights/professional review/index/adjudicated evaluation; the source artifact was previously acquired separately. This public commit contains only free educational content and progress. Premium implementation and tests remain private.
+
+Observed public `npm --prefix frontend run build`: passed, 66 hash-verified offline library pages and identity assets. `python3 scripts/check_public.py --dist`: passed. Private integration run of content-library tests: 40 passed, no failures/errors/skips (1.779 seconds), including arithmetic derived from the actual published table. These are engineering checks, not an accounting opinion. No browser journey or live deployment claimed. Next: observe CI and continue evidence-backed content/review work; source/professional and operator GCP gates remain open. No paid resource, live billing, notification or unattended continuation.
+
 # Open Source Accounting — public repository progress
 
 ## 2026-09-29 · Free federal reconciliation workbook · #15/#22
