@@ -896,6 +896,54 @@
       "review_status": "unreviewed",
       "license": "CC-BY-4.0",
       "use": "educational_draft_not_accounting_gold_standard"
+    },
+    {
+      "id": "qa-075",
+      "question": "Do equal composite audit scores establish equivalent safeguards?",
+      "answer": "No. Aggregation can let strong components offset a missing safeguard. Inspect the component vector, definitions and decision-specific evidence.",
+      "related_item_id": "audit-proxy-measurement",
+      "source_ids": [
+        "plos-audit-comparability-2024"
+      ],
+      "review_status": "unreviewed",
+      "license": "CC-BY-4.0",
+      "use": "educational_draft_not_accounting_gold_standard"
+    },
+    {
+      "id": "qa-076",
+      "question": "What happens to a closure rate of 20/20 when five eligible unresolved issues were omitted?",
+      "answer": "The corrected rate is 20/25 = 80.00%, 20.00 percentage points below the reported rate. This is a population correction, not necessarily a new operational decline.",
+      "related_item_id": "audit-proxy-measurement",
+      "source_ids": [
+        "plos-audit-comparability-2024"
+      ],
+      "review_status": "unreviewed",
+      "license": "CC-BY-4.0",
+      "use": "educational_draft_not_accounting_gold_standard"
+    },
+    {
+      "id": "qa-077",
+      "question": "What closure rate should be shown when there are no eligible issues?",
+      "answer": "The rate is undefined. Do not substitute 100% or zero; disclose the denominator and apply only a separately justified missing-data policy.",
+      "related_item_id": "audit-proxy-measurement",
+      "source_ids": [
+        "plos-audit-comparability-2024"
+      ],
+      "review_status": "unreviewed",
+      "license": "CC-BY-4.0",
+      "use": "educational_draft_not_accounting_gold_standard"
+    },
+    {
+      "id": "qa-078",
+      "question": "Does a CC-BY empirical article establish authoritative audit requirements?",
+      "answer": "No. License permission, source completeness, research validity, professional review and entity-specific applicability are separate questions.",
+      "related_item_id": "audit-proxy-measurement",
+      "source_ids": [
+        "plos-audit-comparability-2024"
+      ],
+      "review_status": "unreviewed",
+      "license": "CC-BY-4.0",
+      "use": "educational_draft_not_accounting_gold_standard"
     }
   ]
 }

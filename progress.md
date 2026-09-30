@@ -1,3 +1,11 @@
+## 2026-09-29 · Original audit-proxy measurement case · #19/#22
+
+Published educational library release **0.6.4**: **67 draft items, 78 study questions, 31 references**. Added one original case and four questions on composite-score compensation, component evidence, denominator correction, missing data, risk severity, sampling and causal inference. Fictional inputs yield equal 2.00 scores with different safeguards; five omitted eligible unresolved issues revise a 20/20 closure rate to 20/25 = 80.00% and its invented score to 1.80. This is original pedagogy, not a reproduced research rubric or authoritative audit procedure. Primary authority gap and unreviewed status remain explicit; zero professional approvals or automatic Agent admissions.
+
+Added an attributed PLOS research-context reference with retained-original hash/date and selected inspection limits. Source full text, private implementation/tests/design and raw corpora are not included. Prior 66 item records, 74 questions and 30 references are unchanged. `npm --prefix frontend run build` passed and generated **67 hash-verified offline pages**; `python3 scripts/check_public.py --dist` passed. No new browser result or independent review claimed. No source acquisition, approved indexing, adjudicated evaluation or deployment performed in this public change.
+
+Next: continue original content and independent source/technical review. Accounting authority/applicability, real source-operation approval where required, and deployment gates remain unresolved. Prior public main 641340196023052d2df298df4ab2f928627af1aa. Normal main commit/push; no branch/PR or force push.
+
 ## 2026-09-29 · Federal MD&A evidence workpaper · #15/#22
 
 Published one original AI-assisted, unreviewed federal MD&A workpaper with fictional cost/quality calculations, an arithmetic-versus-causal explanation bridge, four evidence/comparability exceptions, a claim-level template and five study questions. Added one SIG 64.1 reference with artifact hash, retrieval time and selected page locators; no source body redistribution. Underlying SFFAS 64 and entity applicability remain primary-text/review gaps. No professional approval or Agent admission.

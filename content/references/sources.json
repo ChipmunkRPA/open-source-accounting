@@ -406,6 +406,24 @@
       "issued_on": "2026-06-26",
       "publicly_available_on": null,
       "effective_on": "2026-06-26"
+    },
+    {
+      "id": "plos-audit-comparability-2024",
+      "title": "Internal audit quality and accounting information comparability: Evidence from China",
+      "publisher": "PLOS ONE; Liu G, Wang J, Sun Y, Guo J, Zhao Y",
+      "url": "https://doi.org/10.1371/journal.pone.0310959",
+      "kind": "empirical_research",
+      "checked_at": "2026-09-29",
+      "verification": "publisher_originals_and_selected_structure_checked",
+      "review_scope": "PDF physical pages 1, 7, 9, 10; XML equation (5) and Table 1 structure inspected. CC BY 4.0 notice observed. Empirical context only; complete table, correction history, data replication and independent professional review remain incomplete.",
+      "full_text_included": false,
+      "acquisition": "official_original_retained_locally_separate_from_library",
+      "automated_fetch_enabled": false,
+      "raw_sha256": "7a8133ef50d10952a998ddf8db49b6c3fdf915ab474b770e9e8646be0ea73257",
+      "retrieved_at": "2026-09-30T01:22:29.281259+00:00",
+      "issued_on": "2024-10-31",
+      "publicly_available_on": null,
+      "effective_on": null
     }
   ]
 }

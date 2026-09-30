@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "0.6.3",
+  "release": "0.6.4",
   "generated_at": "2026-09-29",
   "publication_state": "public_editorial_draft",
   "items": [
@@ -1762,6 +1762,32 @@
       "license": "CC-BY-4.0",
       "source_ids": [
         "fasab-sig-64-1-2026"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "audit-proxy-measurement",
+      "title": "Equal audit scores, different evidence: inspect the measure before the conclusion",
+      "kind": "case",
+      "topic": "audit-evidence",
+      "framework": "AUDIT",
+      "summary": "Original proxy-measurement case with compensating scores, denominator correction, missing-data exceptions and evidence review.",
+      "path": "cases/audit-proxy-measurement-v1.md",
+      "version": "1.0.0",
+      "sha256": "41ab64894d44ff72258bcb99c0124ae3b43da61452e26902b3a0ce5d2b6eb1d5",
+      "published_at": "2026-09-29",
+      "updated_at": "2026-09-29",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "plos-audit-comparability-2024"
       ],
       "technical_review": {
         "status": "unreviewed",
