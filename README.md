@@ -46,3 +46,11 @@ publishing this repository snapshot does not deploy the hosted library.
 ## Important U.S. federal tax cases
 
 The [tax case-law catalog](content/tax-case-law/README.md) adds 32 original educational decision briefs and official opinion links across 14 topics. It includes dated reversal, jurisdiction and 2026 procedural-history warnings. Raw judicial PDFs are retained separately, not included in this catalog. No complete-citator, current-law or professional-review claim is made.
+
+## Core standards research maps
+
+The [core standards directory](content/core-standards/README.md) provides five original
+research outlines with 20 manually curated tracks across FASB, GASB, AICPA, ESG and
+IRS literature. These are research questions and work-product designs, not acquired
+standards or a publisher index. No publisher standard bodies, automated collection,
+source-operation grants or professional approvals are included.

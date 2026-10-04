@@ -25,7 +25,18 @@ tools/govinfo/index_ecfr.py
 tools/govinfo/load_snapshot.py
 tools/govinfo/search_corpus.py'''.split())
 TAX_CASE_FILES = {'content/tax-case-law/README.md', 'content/tax-case-law/BRIEFS.md', 'content/tax-case-law/case-catalog.json', 'content/tax-case-law/topic-index.json'}
+CORE_STANDARDS_FILES = {
+    'content/core-standards/README.md',
+    'content/core-standards/directory.json',
+    'content/core-standards/fasb-research-map.md',
+    'content/core-standards/gasb-research-map.md',
+    'content/core-standards/aicpa-research-map.md',
+    'content/core-standards/esg-research-map.md',
+    'content/core-standards/irs-research-map.md',
+}
 def allowed(name):
+    if name.startswith('content/core-standards/'):
+        return name in CORE_STANDARDS_FILES
     if name.startswith('content/tax-case-law/'):
         return name in TAX_CASE_FILES
     return name in EXACT or name in {'content/systems/logos/ramp.svg','content/systems/logos/chargebee.svg','content/systems/logos/xero.svg'} or (name.startswith('content/') and Path(name).suffix in {'.md', '.json'})

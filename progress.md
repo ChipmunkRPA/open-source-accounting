@@ -1,3 +1,47 @@
+# 2026-10-04 — Original core standards research maps · #9/#10/#12/#13/#20/#22
+
+Added exactly seven public files: five original AI-assisted research maps, a
+machine-readable directory and a README. The 20 manually curated research tracks
+cover FASB (3), GASB (3), AICPA (6), sustainability/ESG (6) and IRS (2). These are
+research questions and work-product designs, not acquired standards, a scraped
+publisher index or completed source-family coverage. The existing 78-article
+library and its 45 references/82 questions are unchanged; the maps are counted
+separately. FASB/GASB/AICPA publisher full-text holdings remain 0/0/0. No source
+acquisition, parsing, source-rights grant, human professional/applicability approval,
+production index or adjudicated evaluation was added by this publication.
+
+The exact seven author hashes are preserved. A separate automated review checked
+all map/JSON questions and work products, the five-family denominator, original-only
+CC BY notice, absent publisher bodies and false source/admission flags. Official FAF
+terms v2.1 (effective 2026-07-30) were checked in a rendered cloud browser; AICPA
+terms v4 and official IFRS, GRI and GHG Protocol terms were examined for the existing
+restrictions. FASB/GASB links are homepage-only. No current-standard text or entity
+applicability was verified; the directory date is an editorial observation date.
+The bounded maps contain no copied standard requirements, private licensing drafts,
+credentials, fetch jobs or protected source body. Automated review is not accounting
+or legal professional approval. Required publisher permissions remain unresolved.
+
+Observed cloud checks: `python tests/check_directory.py` in the isolated author
+package passed 124 checks; the separate `check_core_directory.py` passed 160
+structural/content-parity checks against both the candidate and integrated public
+tree. These review scripts and private reports are not published. The narrow
+core-standards path allowlist passes its four negative file/symlink probes.
+`npm --prefix frontend run typecheck`, `npm --prefix frontend run test:auth`
+(16 tests), `npm --prefix frontend run test:systems` (55 tests), and the full real
+identity/library/systems build passed. `python scripts/check_public.py --dist`
+passed on the complete materialized public tree. Existing dependency files are
+unchanged; local installed dependencies were reused only after exact lock matching.
+
+Publication is a normal non-force descendant of tax-case commit
+654a261e05785fc896c8f5506c5dc7013e0a391a; all 419 baseline blobs were verified before
+integration, and unrelated files remain byte-exact. Existing GovInfo, tax-case and
+Systems/Xero additions remain intact. No hosted Actions, browser/mobile/native
+acceptance, release check, deployment or real Agent integration was run. These
+repository maps are not added to the generated article catalog and do not deploy
+a website. Next: obtain the specific publisher permissions and authorized human
+review before acquiring or admitting protected full texts; continue independently
+permitted government-source acquisition with separate document/version counts.
+
 # 2026-10-04 — Original federal tax case-law catalog · #16/#20/#22
 
 Add a separately counted Standard catalog of **32 original decision briefs across 14 topics**: 21 Supreme Court, seven appellate decisions from five circuits, and four Tax Court decisions. Each includes citation/docket/court/date, material facts, issue, holding, reasoning, authority/jurisdiction, limitations and a dated bounded history check. Versions of decisions in the same litigation are separate entries, not unrelated matters. Source opinions, original summaries, IRS guidance and existing accounting articles remain distinct.

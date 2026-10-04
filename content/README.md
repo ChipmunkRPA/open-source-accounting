@@ -70,3 +70,9 @@ No content item has been approved for professional reliance. No live model/stand
 ## Tax case-law catalog · 2026-10-04
 
 [Read 32 original federal tax decision briefs](tax-case-law/README.md) with official sources, court/docket identifiers, holdings, limits and dated history checks. This separately counted catalog preserves reversals and recent procedural developments; it is not a complete citator or professional legal opinion.
+
+## Core standards research maps
+
+[Five original research maps](core-standards/README.md) cover 20 tracks across FASB,
+GASB, AICPA, ESG and IRS literature. The tracks are research prompts, not acquired
+standards, publisher source bodies or professional approval.

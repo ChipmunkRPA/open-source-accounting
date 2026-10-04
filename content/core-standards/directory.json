@@ -1,0 +1,388 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-04",
+  "title": "Core accounting, audit, tax and sustainability research directory",
+  "entry_count": 20,
+  "counting_note": "These are twenty manually curated research tracks, not twenty acquired standards, articles or completed corpus families. They are original topic outlines; no protected publisher body was indexed or copied.",
+  "entries": [
+    {
+      "id": "fasb-asc",
+      "family": "FASB",
+      "title": "Accounting Standards Codification",
+      "publisher_homepage": "https://asc.fasb.org/",
+      "scope": "Nongovernmental U.S. financial reporting research",
+      "research_questions": [
+        "Which reporting entity, transaction and reporting period are in scope?",
+        "Which topic, subtopic, section and paragraph apply?",
+        "Is a paragraph current, pending, superseded or subject to transition relief?"
+      ],
+      "original_work_product": "A period-specific issue memo with source identifiers, assumptions and unresolved judgments",
+      "mode": "manually_curated_research_outline",
+      "publisher_body_included": false,
+      "automated_collection_enabled": false,
+      "agent_corpus_admitted": false,
+      "professional_review": "not_performed",
+      "corpus_access_status": "publisher_rights_required_for_product_corpus"
+    },
+    {
+      "id": "fasb-asu",
+      "family": "FASB",
+      "title": "Accounting Standards Updates",
+      "publisher_homepage": "https://fasb.org/",
+      "scope": "Changes to the Codification and transition research",
+      "research_questions": [
+        "Which existing paragraphs change?",
+        "What entity categories and interim/annual periods are affected?",
+        "What adoption method, elections and disclosures require confirmation?"
+      ],
+      "original_work_product": "An amendment-to-Codification change log; do not treat a project announcement as an amended rule",
+      "mode": "manually_curated_research_outline",
+      "publisher_body_included": false,
+      "automated_collection_enabled": false,
+      "agent_corpus_admitted": false,
+      "professional_review": "not_performed",
+      "corpus_access_status": "publisher_rights_required_for_product_corpus"
+    },
+    {
+      "id": "fasb-legacy",
+      "family": "FASB",
+      "title": "Historical pronouncements and basis materials",
+      "publisher_homepage": "https://fasb.org/",
+      "scope": "Historical decisions and grandfathered transactions",
+      "research_questions": [
+        "What date and historical authority question require the older material?",
+        "Has that material been superseded or incorporated elsewhere?"
+      ],
+      "original_work_product": "A historical-authority map that keeps explanatory history separate from governing text",
+      "mode": "manually_curated_research_outline",
+      "publisher_body_included": false,
+      "automated_collection_enabled": false,
+      "agent_corpus_admitted": false,
+      "professional_review": "not_performed",
+      "corpus_access_status": "publisher_rights_required_for_product_corpus"
+    },
+    {
+      "id": "gasb-gars",
+      "family": "GASB",
+      "title": "Governmental Accounting Research System",
+      "publisher_homepage": "https://gars.gasb.org/",
+      "scope": "State and local governmental financial reporting",
+      "research_questions": [
+        "Is the reporting unit a government, component unit or another type of entity?",
+        "Which fund and government-wide perspectives must be reconciled?",
+        "What basis and measurement focus apply to each statement?"
+      ],
+      "original_work_product": "A reporting-entity and statement-level authority map",
+      "mode": "manually_curated_research_outline",
+      "publisher_body_included": false,
+      "automated_collection_enabled": false,
+      "agent_corpus_admitted": false,
+      "professional_review": "not_performed",
+      "corpus_access_status": "publisher_rights_required_for_product_corpus"
+    },
+    {
+      "id": "gasb-pronouncements",
+      "family": "GASB",
+      "title": "Statements, Interpretations and other pronouncements",
+      "publisher_homepage": "https://gasb.org/",
+      "scope": "Original issuances and their subsequent amendments",
+      "research_questions": [
+        "What is the issuance date versus the effective reporting period?",
+        "Which statements amend the original requirement?",
+        "Are leases, subscriptions, pensions, OPEB, capital assets or debt implicated?"
+      ],
+      "original_work_product": "A versioned applicability register organized by issue and reporting period",
+      "mode": "manually_curated_research_outline",
+      "publisher_body_included": false,
+      "automated_collection_enabled": false,
+      "agent_corpus_admitted": false,
+      "professional_review": "not_performed",
+      "corpus_access_status": "publisher_rights_required_for_product_corpus"
+    },
+    {
+      "id": "gasb-implementation",
+      "family": "GASB",
+      "title": "Implementation guidance",
+      "publisher_homepage": "https://gasb.org/",
+      "scope": "Application questions for governmental transactions",
+      "research_questions": [
+        "Which facts make the example relevant?",
+        "Is the answer current after later pronouncements?",
+        "Which judgment remains specific to the reporting entity?"
+      ],
+      "original_work_product": "An original fact-to-guidance worksheet with unresolved exceptions, not copied question-and-answer banks",
+      "mode": "manually_curated_research_outline",
+      "publisher_body_included": false,
+      "automated_collection_enabled": false,
+      "agent_corpus_admitted": false,
+      "professional_review": "not_performed",
+      "corpus_access_status": "publisher_rights_required_for_product_corpus"
+    },
+    {
+      "id": "aicpa-au-c",
+      "family": "AICPA",
+      "title": "SAS / AU-C auditing standards",
+      "publisher_homepage": "https://www.aicpa-cima.com/",
+      "scope": "Nonissuer financial-statement audit research",
+      "research_questions": [
+        "Is the engagement within the nonissuer audit framework?",
+        "How do risk assessment, responses, evidence and reporting connect?",
+        "What current codified sections and amendments govern this engagement period?"
+      ],
+      "original_work_product": "An original audit research map and evidence-request checklist",
+      "mode": "manually_curated_research_outline",
+      "publisher_body_included": false,
+      "automated_collection_enabled": false,
+      "agent_corpus_admitted": false,
+      "professional_review": "not_performed",
+      "corpus_access_status": "publisher_rights_required_for_product_corpus"
+    },
+    {
+      "id": "aicpa-at-c",
+      "family": "AICPA",
+      "title": "SSAE / AT-C attestation standards",
+      "publisher_homepage": "https://www.aicpa-cima.com/",
+      "scope": "Attestation engagements",
+      "research_questions": [
+        "What subject matter, criteria, intended users and engagement type are specified?",
+        "Which report form and assurance level are contemplated?",
+        "What independence and evidence questions require confirmation?"
+      ],
+      "original_work_product": "An engagement-scoping worksheet separating examination, review and agreed-upon procedures research",
+      "mode": "manually_curated_research_outline",
+      "publisher_body_included": false,
+      "automated_collection_enabled": false,
+      "agent_corpus_admitted": false,
+      "professional_review": "not_performed",
+      "corpus_access_status": "publisher_rights_required_for_product_corpus"
+    },
+    {
+      "id": "aicpa-ar-c",
+      "family": "AICPA",
+      "title": "SSARS / AR-C preparation, compilation and review standards",
+      "publisher_homepage": "https://www.aicpa-cima.com/",
+      "scope": "Unaudited financial information engagements",
+      "research_questions": [
+        "Which service was actually engaged?",
+        "What management responsibilities and reporting language are relevant?",
+        "Does another framework govern the entity or engagement?"
+      ],
+      "original_work_product": "A service-selection and deliverables checklist that does not imply an audit opinion",
+      "mode": "manually_curated_research_outline",
+      "publisher_body_included": false,
+      "automated_collection_enabled": false,
+      "agent_corpus_admitted": false,
+      "professional_review": "not_performed",
+      "corpus_access_status": "publisher_rights_required_for_product_corpus"
+    },
+    {
+      "id": "aicpa-qm",
+      "family": "AICPA",
+      "title": "Quality management standards",
+      "publisher_homepage": "https://www.aicpa-cima.com/",
+      "scope": "Firm systems and engagement quality research",
+      "research_questions": [
+        "What quality objectives and risks are relevant to the firm?",
+        "Who owns design, implementation, monitoring and remediation?",
+        "How is the engagement-quality review requirement determined?"
+      ],
+      "original_work_product": "A responsibility/evidence matrix linking firm policies to demonstrable controls",
+      "mode": "manually_curated_research_outline",
+      "publisher_body_included": false,
+      "automated_collection_enabled": false,
+      "agent_corpus_admitted": false,
+      "professional_review": "not_performed",
+      "corpus_access_status": "publisher_rights_required_for_product_corpus"
+    },
+    {
+      "id": "aicpa-ethics",
+      "family": "AICPA",
+      "title": "Code of Professional Conduct",
+      "publisher_homepage": "https://www.aicpa-cima.com/",
+      "scope": "Ethics and independence research",
+      "research_questions": [
+        "Which professional role and covered relationships matter?",
+        "What facts may create an independence or conflict concern?",
+        "What authoritative interpretation and documentation are needed?"
+      ],
+      "original_work_product": "An independence fact register and escalation memo; no automated eligibility conclusion",
+      "mode": "manually_curated_research_outline",
+      "publisher_body_included": false,
+      "automated_collection_enabled": false,
+      "agent_corpus_admitted": false,
+      "professional_review": "not_performed",
+      "corpus_access_status": "publisher_rights_required_for_product_corpus"
+    },
+    {
+      "id": "aicpa-industry",
+      "family": "AICPA",
+      "title": "Audit and accounting guides and practice aids",
+      "publisher_homepage": "https://www.aicpa-cima.com/",
+      "scope": "Industry-specific audit/accounting literature",
+      "research_questions": [
+        "Which edition, industry and entity class match the engagement?",
+        "Which passages are authoritative requirements versus implementation commentary?",
+        "What separate publisher permissions cover product use?"
+      ],
+      "original_work_product": "An industry issue list with source edition and authority classification",
+      "mode": "manually_curated_research_outline",
+      "publisher_body_included": false,
+      "automated_collection_enabled": false,
+      "agent_corpus_admitted": false,
+      "professional_review": "not_performed",
+      "corpus_access_status": "publisher_rights_required_for_product_corpus"
+    },
+    {
+      "id": "esg-issb",
+      "family": "ESG",
+      "title": "ISSB IFRS S1 and IFRS S2",
+      "publisher_homepage": "https://www.ifrs.org/",
+      "scope": "Investor-focused sustainability-related disclosure research",
+      "research_questions": [
+        "Which jurisdiction has adopted which edition or modified requirements?",
+        "What reporting boundary, materiality lens and time horizon apply?",
+        "Which transition reliefs and local filing rules require confirmation?"
+      ],
+      "original_work_product": "A jurisdiction-and-period applicability matrix; no claim of universal legal adoption",
+      "mode": "manually_curated_research_outline",
+      "publisher_body_included": false,
+      "automated_collection_enabled": false,
+      "agent_corpus_admitted": false,
+      "professional_review": "not_performed",
+      "corpus_access_status": "publisher_rights_required_for_product_corpus"
+    },
+    {
+      "id": "esg-sasb",
+      "family": "ESG",
+      "title": "SASB industry-based materials",
+      "publisher_homepage": "https://www.ifrs.org/",
+      "scope": "Industry-specific sustainability research",
+      "research_questions": [
+        "Which business activities and industry classification describe the entity?",
+        "Which metrics, boundaries and estimation methods need evidence?",
+        "How does this use relate to an applicable reporting framework?"
+      ],
+      "original_work_product": "An original metric inventory with units, boundaries, owners and source-rights status",
+      "mode": "manually_curated_research_outline",
+      "publisher_body_included": false,
+      "automated_collection_enabled": false,
+      "agent_corpus_admitted": false,
+      "professional_review": "not_performed",
+      "corpus_access_status": "publisher_rights_required_for_product_corpus"
+    },
+    {
+      "id": "esg-gri",
+      "family": "ESG",
+      "title": "GRI Universal, Sector and Topic Standards",
+      "publisher_homepage": "https://www.globalreporting.org/",
+      "scope": "Impact-focused sustainability research",
+      "research_questions": [
+        "What impacts, stakeholders and material topics are relevant?",
+        "Which applicable editions and sector guidance need review?",
+        "How will metric evidence, omissions and reporting boundaries be documented?"
+      ],
+      "original_work_product": "An impact-topic research plan; publisher text requires an appropriate software/content permission",
+      "mode": "manually_curated_research_outline",
+      "publisher_body_included": false,
+      "automated_collection_enabled": false,
+      "agent_corpus_admitted": false,
+      "professional_review": "not_performed",
+      "corpus_access_status": "publisher_rights_required_for_product_corpus"
+    },
+    {
+      "id": "esg-ghg",
+      "family": "ESG",
+      "title": "GHG Protocol standards and guidance",
+      "publisher_homepage": "https://ghgprotocol.org/",
+      "scope": "Greenhouse-gas inventory methodology research",
+      "research_questions": [
+        "What organizational and operational boundaries are chosen?",
+        "What activity data, factors, units and calculation methods support each metric?",
+        "What inventory changes, estimation limitations and assurance evidence must be tracked?"
+      ],
+      "original_work_product": "An original calculation-and-provenance workbook; standards text and tools retain their own terms",
+      "mode": "manually_curated_research_outline",
+      "publisher_body_included": false,
+      "automated_collection_enabled": false,
+      "agent_corpus_admitted": false,
+      "professional_review": "not_performed",
+      "corpus_access_status": "publisher_rights_required_for_product_corpus"
+    },
+    {
+      "id": "esg-eu",
+      "family": "ESG",
+      "title": "EU CSRD and ESRS legal texts",
+      "publisher_homepage": "https://eur-lex.europa.eu/",
+      "scope": "European legal requirements and amendments",
+      "research_questions": [
+        "Which undertaking, jurisdiction, reporting year and reporting wave apply?",
+        "Which final Official Journal act and amendments govern the period?",
+        "Is a document final law, consolidated aid, proposal, draft standard or implementation guidance?"
+      ],
+      "original_work_product": "A CELEX-based legal version chain and article/annex evidence map",
+      "mode": "manually_curated_research_outline",
+      "publisher_body_included": false,
+      "automated_collection_enabled": false,
+      "agent_corpus_admitted": false,
+      "professional_review": "not_performed",
+      "corpus_access_status": "official_legal_text_candidate_subject_to_document_specific_rights"
+    },
+    {
+      "id": "esg-us",
+      "family": "ESG",
+      "title": "U.S. federal and state sustainability disclosure requirements",
+      "publisher_homepage": "https://www.sec.gov/",
+      "scope": "Separate federal rules, state statutes, regulations and litigation status",
+      "research_questions": [
+        "What regulator and entity thresholds apply?",
+        "Is the requirement proposed, adopted, stayed, amended or rescinded?",
+        "What court orders or state implementation materials change the conclusion?"
+      ],
+      "original_work_product": "A jurisdiction-specific status ledger; do not transfer one regulator’s status to another",
+      "mode": "manually_curated_research_outline",
+      "publisher_body_included": false,
+      "automated_collection_enabled": false,
+      "agent_corpus_admitted": false,
+      "professional_review": "not_performed",
+      "corpus_access_status": "official_government_material_candidate_subject_to_document_specific_rights"
+    },
+    {
+      "id": "irs-guidance",
+      "family": "IRS",
+      "title": "Revenue rulings, procedures, notices and Internal Revenue Bulletins",
+      "publisher_homepage": "https://www.irs.gov/",
+      "scope": "Published federal tax guidance and historical amendments",
+      "research_questions": [
+        "Is this advance guidance or published in the Internal Revenue Bulletin?",
+        "What legislation, regulations and later guidance amend or supersede it?",
+        "What taxable period and taxpayer facts are relevant?"
+      ],
+      "original_work_product": "A dated guidance chain that distinguishes precedent, advance releases and explanatory material",
+      "mode": "manually_curated_research_outline",
+      "publisher_body_included": false,
+      "automated_collection_enabled": false,
+      "agent_corpus_admitted": false,
+      "professional_review": "not_performed",
+      "corpus_access_status": "government_work_candidate_with_third_party_review"
+    },
+    {
+      "id": "irs-publications",
+      "family": "IRS",
+      "title": "Substantive instructions and publications",
+      "publisher_homepage": "https://www.irs.gov/",
+      "scope": "Practical tax administration guidance and edition history",
+      "research_questions": [
+        "Which tax year, form revision and substantive issue match the problem?",
+        "Does later law override the informal guidance?",
+        "Are language editions or reissued files duplicates for the requested scope?"
+      ],
+      "original_work_product": "An edition-aware reference map; forms and page fragments do not inflate article counts",
+      "mode": "manually_curated_research_outline",
+      "publisher_body_included": false,
+      "automated_collection_enabled": false,
+      "agent_corpus_admitted": false,
+      "professional_review": "not_performed",
+      "corpus_access_status": "government_work_candidate_with_third_party_review"
+    }
+  ]
+}
