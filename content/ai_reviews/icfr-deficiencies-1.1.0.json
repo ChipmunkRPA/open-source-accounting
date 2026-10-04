@@ -1,0 +1,136 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "icfr-deficiencies",
+  "input_sha256": "21c47b3306330ca680fd6650d18971676d95fa3a6568f3beec1bb931e9028f04",
+  "output_sha256": "b22d4f457b8806655bbaa3ff459454714b471e8535586d42ea37061a4017f511",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T05:42:12Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "pcaob-as2201",
+      "official_url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2201",
+      "source_version_or_date": "Applicable AS 2201 version and amendment dates not established in this review",
+      "access_state": "fresh_automated_verification_not_performed_due_to_publisher_access_restriction",
+      "exact_locators": [
+        "Retained reference URL only; standard paragraphs not freshly inspected"
+      ],
+      "checked_claim_ids": [
+        "icfr-primary-gap",
+        "icfr-verdict"
+      ]
+    },
+    {
+      "reference_id": "pcaob-terms",
+      "official_url": "https://pcaobus.org/privacypolicy",
+      "source_version_or_date": "Terms last-updated label 2021-09-09; inspected 2026-10-04",
+      "access_state": "publisher_policy_examined_then_standard_retrieval_stopped",
+      "exact_locators": [
+        "Terms of Use: Authorized Use, automated tools/data-gathering restriction",
+        "Intellectual Property Rights: separate conditional PCAOB Public Materials allowance"
+      ],
+      "checked_claim_ids": [
+        "icfr-access"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "icfr-access",
+      "article_section": "Scope and source-access boundary",
+      "category": "rights_and_access",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "PCAOB Authorized Use restricts automated gathering. AS 2201 was not fetched in this review after that restriction was identified; Public Materials terms are not treated as an automated-access grant.",
+      "source_reference_ids": [
+        "pcaob-terms"
+      ]
+    },
+    {
+      "claim_id": "icfr-primary-gap",
+      "article_section": "Scope and source-access boundary; Produce a reviewable issue packet",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "claim_removed_or_reframed_as_research",
+      "explanation": "Fresh AS 2201 text and amendment applicability remain unverified. Revised text removes a presently verified substantive standard claim and leaves criteria for authorized primary-source/professional analysis.",
+      "source_reference_ids": [
+        "pcaob-as2201"
+      ]
+    },
+    {
+      "claim_id": "icfr-facts",
+      "article_section": "Describe what is known without filling the gaps",
+      "category": "original_reasoning",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "The scenario explicitly stipulates missed reviews; missing signatures are not automatically called failures. Proposed evidence requests and observed assertions are kept separate.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "icfr-counts",
+      "article_section": "Why the detected amount is only one data point",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Ten August records produce 16.67% of 60 and 10% of 100; no July records are included. No confidence, severity or extrapolated maximum-loss claim is made.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "icfr-dates",
+      "article_section": "Preserve the chronology",
+      "category": "original_reasoning",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Performance date, record availability and covered period remain distinct. Later evidence is not categorically rejected for earlier-date assessment.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "icfr-verdict",
+      "article_section": "Produce a reviewable issue packet",
+      "category": "professional_boundary",
+      "severity": "warning",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "No severity category, sampling minimum, operating period or remediation result is assigned. Standard applicability remains expressly open.",
+      "source_reference_ids": [
+        "pcaob-as2201"
+      ]
+    },
+    {
+      "claim_id": "rights-original",
+      "article_section": "Original-content footer",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "This revision contains original educational explanation and fictional examples under the inherited CC BY 4.0 license. No third-party standard body is reproduced or relicensed; paid services do not change the stated free educational license.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "ICFR August record ratio",
+      "actual": "16.67",
+      "expected": "16.67",
+      "result": "pass"
+    },
+    {
+      "check": "ICFR combined record ratio",
+      "actual": "10.00",
+      "expected": "10.00",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Replaced unrefreshed standard assertions with original issue-analysis questions and explicit source-access gap.",
+    "Added an original population/count example and prevented unsupported extrapolation.",
+    "Separated reporting chronology, redesign, actual operation and final professional decisions."
+  ],
+  "unresolved_gaps": [
+    "PCAOB AS 2201 current text/version was not freshly verified because automated retrieval is restricted.",
+    "Authorized current source access and actual engagement facts are needed for severity, remediation and reporting conclusions.",
+    "No human professional review."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

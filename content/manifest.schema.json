@@ -37,7 +37,8 @@
             "US_GAAP",
             "IFRS",
             "BOTH",
-            "AUDIT"
+            "AUDIT",
+            "FASAB"
           ],
           "title": "Framework",
           "type": "string"

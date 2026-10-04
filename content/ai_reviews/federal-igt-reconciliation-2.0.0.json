@@ -1,0 +1,200 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "federal-igt-reconciliation",
+  "input_sha256": "6d984d16d7f5f734dbbf9b39dd74f0aa3ca69b7ee52e082ffc77df148e2f4c2c",
+  "output_sha256": "4831425f410b136125cbf7813a43fadc9f1935d34d992409633157a63e91c812",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T05:45:31Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "treasury-tfm4700-app5-jun2026",
+      "official_url": "https://tfx.treasury.gov/media/26/download?inline",
+      "source_version_or_date": "Appendix 5; observed footer June 2026",
+      "access_state": "Official PDF extracted text re-read for listed sections. Screenshot fetch failed with cache miss; no fresh visual verification or prior-artifact byte-identity claim.",
+      "exact_locators": [
+        "Physical/printed page 5: Section 2, IGT Reporting Guidance",
+        "Physical/printed pages 6–7: Section 2.3, Reconcile IGT Differences"
+      ],
+      "checked_claim_ids": [
+        "igt-reconcile-source",
+        "igt-no-circumvention",
+        "igt-source-dates"
+      ]
+    },
+    {
+      "reference_id": "treasury-tfm4700-app6-jun2026",
+      "official_url": "https://tfx.treasury.gov/media/1791/download?inline",
+      "source_version_or_date": "Appendix 6; observed footer June 2026",
+      "access_state": "Official PDF extracted text re-read for listed section. Screenshot fetch failed with cache miss; no fresh visual table-pairing or prior-artifact byte-identity claim.",
+      "exact_locators": [
+        "Physical/printed page 7: Limited Use of USSGL Accounts, Table 4, account 254000"
+      ],
+      "checked_claim_ids": [
+        "igt-account-limit",
+        "igt-source-dates"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "igt-reconcile-source",
+      "article_section": "Sources and verification",
+      "category": "source-check",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Reconfirmed partner reconciliation before GTAS ATB and transaction-support context from selected official text.",
+      "source_reference_ids": [
+        "treasury-tfm4700-app5-jun2026"
+      ]
+    },
+    {
+      "claim_id": "igt-no-circumvention",
+      "article_section": "Sources and verification; original cases",
+      "category": "source-check",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Explicitly separates legitimate supported correction from adjustments used to circumvent reconciliation.",
+      "source_reference_ids": [
+        "treasury-tfm4700-app5-jun2026"
+      ]
+    },
+    {
+      "claim_id": "igt-account-limit",
+      "article_section": "Case 4",
+      "category": "account-applicability",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Account 254000 remains an investment-specific limited-use example, never a plug account recommendation.",
+      "source_reference_ids": [
+        "treasury-tfm4700-app6-jun2026"
+      ]
+    },
+    {
+      "claim_id": "igt-source-dates",
+      "article_section": "Sources and verification",
+      "category": "provenance-limitation",
+      "severity": "warning",
+      "disposition": "explicitly-disclosed",
+      "explanation": "June 2026 is only the observed edition label; exact effective date and same-bytes identity with earlier retained sources are not established. Screenshot failure is disclosed.",
+      "source_reference_ids": [
+        "treasury-tfm4700-app5-jun2026",
+        "treasury-tfm4700-app6-jun2026"
+      ]
+    },
+    {
+      "claim_id": "igt-arithmetic",
+      "article_section": "Cases 1–5",
+      "category": "arithmetic",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Reperformed net/gross, proposed residual, explained percentage, zero-net counterexample and new cutoff/settlement arithmetic.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "igt-cutoff-case",
+      "article_section": "Case 5",
+      "category": "original-analysis",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Added separate 18,000/12,000 cutoff case and later 18,000 settlement. Delivery/recognition assumptions are explicit; subsequent cash does not erase a prior cutoff balance.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "igt-rights",
+      "article_section": "Free education and Premium execution",
+      "category": "rights-and-product-boundary",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Retained original free CC BY content; no government tables, full text, real transaction, source permission or professional opinion is sold or created.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "igt-real-scope",
+      "article_section": "Reusable reconciliation and review template",
+      "category": "applicability-gap",
+      "severity": "warning",
+      "disposition": "retained-explicit-abstention",
+      "explanation": "Actual accounts, reciprocal categories, attributes, recognition and entity reporting instructions still need review.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "igt-net",
+      "actual": "7000",
+      "expected": "7000",
+      "passed": true
+    },
+    {
+      "check": "igt-gross",
+      "actual": "23000",
+      "expected": "23000",
+      "passed": true
+    },
+    {
+      "check": "igt-proposed-balance",
+      "actual": "247000",
+      "expected": "247000",
+      "passed": true
+    },
+    {
+      "check": "igt-proposed-residual",
+      "actual": "3000",
+      "expected": "3000",
+      "passed": true
+    },
+    {
+      "check": "igt-progress-percentage",
+      "actual": "86.96",
+      "expected": "86.96",
+      "passed": true
+    },
+    {
+      "check": "igt-zero-net",
+      "actual": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "check": "igt-zero-net-gross",
+      "actual": "10000",
+      "expected": "10000",
+      "passed": true
+    },
+    {
+      "check": "igt-cutoff-difference",
+      "actual": "6000",
+      "expected": "6000",
+      "passed": true
+    },
+    {
+      "check": "igt-cutoff-correction",
+      "actual": "18000",
+      "expected": "18000",
+      "passed": true
+    },
+    {
+      "check": "igt-subsequent-settlement",
+      "actual": "0",
+      "expected": "0",
+      "passed": true
+    }
+  ],
+  "changes_summary": [
+    "Fresh limited source check with explicit Treasury screenshot/byte-identity limits.",
+    "Added original cutoff/settlement case, fact-change counterexamples and exception-state ledger.",
+    "Preserved original net/gross cases and CC BY status; distinguished review, posting, reconciliation and closure."
+  ],
+  "unresolved_gaps": [
+    "No human accountant, CPA, auditor or legal reviewer attestation was performed; this is an AI editorial review of the exact output hash.",
+    "No client records, real posting, filing, engagement procedure or Premium execution was performed. Source operation rights and Agent admission are unchanged.",
+    "Selected source passages were checked, not every requirement, amendment or related authority. Entity-specific facts, applicability and organizational release decisions remain necessary.",
+    "Treasury page images were unavailable from the web screenshot service; fresh source-table visual alignment is unverified.",
+    "Exact Treasury issuance/effective dates and current complete reporting/account applicability remain unresolved."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

@@ -1,0 +1,340 @@
+{
+  "$defs": {
+    "ArithmeticCheck": {
+      "additionalProperties": false,
+      "properties": {
+        "check": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Check",
+          "type": "string"
+        },
+        "actual": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Actual",
+          "type": "string"
+        },
+        "expected": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Expected",
+          "type": "string"
+        },
+        "result": {
+          "anyOf": [
+            {
+              "enum": [
+                "pass",
+                "fail"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Result"
+        },
+        "passed": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Passed"
+        }
+      },
+      "required": [
+        "check",
+        "actual",
+        "expected"
+      ],
+      "title": "ArithmeticCheck",
+      "type": "object"
+    },
+    "Finding": {
+      "additionalProperties": false,
+      "properties": {
+        "claim_id": {
+          "maxLength": 120,
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "title": "Claim Id",
+          "type": "string"
+        },
+        "article_section": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Article Section",
+          "type": "string"
+        },
+        "category": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Category",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "info",
+            "warning",
+            "block"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "disposition": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Disposition",
+          "type": "string"
+        },
+        "explanation": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Explanation",
+          "type": "string"
+        },
+        "source_reference_ids": {
+          "items": {
+            "maxLength": 120,
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "type": "string"
+          },
+          "maxItems": 100,
+          "title": "Source Reference Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "claim_id",
+        "article_section",
+        "category",
+        "severity",
+        "disposition",
+        "explanation",
+        "source_reference_ids"
+      ],
+      "title": "Finding",
+      "type": "object"
+    },
+    "ReviewedSource": {
+      "additionalProperties": false,
+      "properties": {
+        "reference_id": {
+          "maxLength": 120,
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "title": "Reference Id",
+          "type": "string"
+        },
+        "official_url": {
+          "maxLength": 2000,
+          "minLength": 8,
+          "title": "Official Url",
+          "type": "string"
+        },
+        "source_version_or_date": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Source Version Or Date",
+          "type": "string"
+        },
+        "access_state": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Access State",
+          "type": "string"
+        },
+        "exact_locators": {
+          "items": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 100,
+          "title": "Exact Locators",
+          "type": "array"
+        },
+        "checked_claim_ids": {
+          "items": {
+            "maxLength": 120,
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "type": "string"
+          },
+          "maxItems": 200,
+          "title": "Checked Claim Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "reference_id",
+        "official_url",
+        "source_version_or_date",
+        "access_state",
+        "exact_locators",
+        "checked_claim_ids"
+      ],
+      "title": "ReviewedSource",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "ai-editorial-review-1",
+      "title": "Schema",
+      "type": "string"
+    },
+    "item_id": {
+      "maxLength": 120,
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "title": "Item Id",
+      "type": "string"
+    },
+    "input_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Input Sha256",
+      "type": "string"
+    },
+    "output_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Output Sha256",
+      "type": "string"
+    },
+    "model_id": {
+      "anyOf": [
+        {
+          "maxLength": 120,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9._-]+$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Model Id"
+    },
+    "reasoning_effort": {
+      "anyOf": [
+        {
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max",
+            "ultra"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Reasoning Effort"
+    },
+    "reviewed_at_utc": {
+      "maxLength": 40,
+      "minLength": 20,
+      "title": "Reviewed At Utc",
+      "type": "string"
+    },
+    "outcome": {
+      "enum": [
+        "pass_ai_editorial_only",
+        "changes_required",
+        "primary_text_unavailable",
+        "rights_scope_unresolved"
+      ],
+      "title": "Outcome",
+      "type": "string"
+    },
+    "reviewed_sources": {
+      "items": {
+        "$ref": "#/$defs/ReviewedSource"
+      },
+      "maxItems": 100,
+      "minItems": 1,
+      "title": "Reviewed Sources",
+      "type": "array"
+    },
+    "findings": {
+      "items": {
+        "$ref": "#/$defs/Finding"
+      },
+      "maxItems": 500,
+      "minItems": 1,
+      "title": "Findings",
+      "type": "array"
+    },
+    "arithmetic_checks": {
+      "items": {
+        "$ref": "#/$defs/ArithmeticCheck"
+      },
+      "maxItems": 200,
+      "title": "Arithmetic Checks",
+      "type": "array"
+    },
+    "changes_summary": {
+      "items": {
+        "maxLength": 4000,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 100,
+      "title": "Changes Summary",
+      "type": "array"
+    },
+    "unresolved_gaps": {
+      "items": {
+        "maxLength": 4000,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 100,
+      "title": "Unresolved Gaps",
+      "type": "array"
+    },
+    "professional_review": {
+      "const": false,
+      "title": "Professional Review",
+      "type": "boolean"
+    },
+    "agent_admission": {
+      "const": false,
+      "title": "Agent Admission",
+      "type": "boolean"
+    },
+    "source_rights_granted": {
+      "const": false,
+      "title": "Source Rights Granted",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "schema",
+    "item_id",
+    "input_sha256",
+    "output_sha256",
+    "reviewed_at_utc",
+    "outcome",
+    "reviewed_sources",
+    "findings",
+    "arithmetic_checks",
+    "changes_summary",
+    "unresolved_gaps",
+    "professional_review",
+    "agent_admission",
+    "source_rights_granted"
+  ],
+  "title": "Receipt",
+  "type": "object"
+}

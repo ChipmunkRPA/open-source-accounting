@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "release": "0.6.5",
-  "generated_at": "2026-09-29",
+  "release": "0.6.6",
+  "generated_at": "2026-10-04",
   "publication_state": "public_editorial_draft",
   "items": [
     {
@@ -169,16 +169,16 @@
     },
     {
       "id": "share-based-award-intake",
-      "title": "Share-based compensation: build the award fact file",
+      "title": "Share-based awards: reconcile the register before choosing a model",
       "kind": "guide",
       "topic": "stock-compensation",
       "framework": "US_GAAP",
-      "summary": "Capture grant, vesting, settlement, valuation, and modification facts without confusing employee tax with issuer accounting.",
-      "path": "guides/share-based-award-intake.md",
-      "version": "0.5.0",
-      "sha256": "fcd176cd3f655bb609d1fa1890f6c134c93f80b8c55e049ac2336b0d42fc25e4",
+      "summary": "Reconcile fictional recorded award units by event identity, keep issued shares and pending items separate, and carry chronology and input gaps into an evidence worksheet.",
+      "path": "guides/share-based-award-intake-v2.md",
+      "version": "1.1.0",
+      "sha256": "b90c0ba452422960ada6c7e9ebc41d5ad8d49b3ac0dc90518c9e26930e4f044d",
       "published_at": "2026-09-27",
-      "updated_at": "2026-09-27",
+      "updated_at": "2026-10-04",
       "author": "Open Accounting contributors (AI-assisted)",
       "license": "CC-BY-4.0",
       "source_ids": [
@@ -228,11 +228,11 @@
       "topic": "financial-reporting",
       "framework": "US_GAAP",
       "summary": "A practical workpaper for quantitative and qualitative misstatement evaluation.",
-      "path": "guides/materiality.md",
-      "version": "0.5.0",
-      "sha256": "26aa441390a949a8592dda22d7b27be2aa22de0fdc16089bcebc14e7ee57352d",
+      "path": "guides/materiality-v1.md",
+      "version": "1.1.0",
+      "sha256": "0a687640e5b7dc25484f4c0a775671d11aad640a5073f253efe4dd3c9ec47f82",
       "published_at": "2026-09-27",
-      "updated_at": "2026-09-27",
+      "updated_at": "2026-10-04",
       "author": "Open Accounting contributors (AI-assisted)",
       "license": "CC-BY-4.0",
       "source_ids": [
@@ -254,11 +254,11 @@
       "topic": "financial-reporting",
       "framework": "US_GAAP",
       "summary": "A practical SAB 108 worksheet with a separate prior-period assessment.",
-      "path": "guides/error-measurement.md",
-      "version": "0.5.0",
-      "sha256": "0e84725a4ba0e5260b28dd0142d6a7ca15c067faf79549b27ef835f5473e6a7e",
+      "path": "guides/error-measurement-v1.md",
+      "version": "1.1.0",
+      "sha256": "fd1097006a9e64e4fdb729bc81313158b175fbbb2a31fff7f5ff8d8c3df47ced",
       "published_at": "2026-09-27",
-      "updated_at": "2026-09-27",
+      "updated_at": "2026-10-04",
       "author": "Open Accounting contributors (AI-assisted)",
       "license": "CC-BY-4.0",
       "source_ids": [
@@ -282,15 +282,16 @@
       "topic": "internal-controls",
       "framework": "AUDIT",
       "summary": "Build a risk-and-evidence analysis without treating a clean financial statement as proof of effective controls.",
-      "path": "guides/icfr-deficiencies.md",
-      "version": "0.5.0",
-      "sha256": "21c47b3306330ca680fd6650d18971676d95fa3a6568f3beec1bb931e9028f04",
+      "path": "guides/icfr-deficiencies-v1.md",
+      "version": "1.1.0",
+      "sha256": "b22d4f457b8806655bbaa3ff459454714b471e8535586d42ea37061a4017f511",
       "published_at": "2026-09-27",
-      "updated_at": "2026-09-27",
+      "updated_at": "2026-10-04",
       "author": "Open Accounting contributors (AI-assisted)",
       "license": "CC-BY-4.0",
       "source_ids": [
-        "pcaob-as2201"
+        "pcaob-as2201",
+        "pcaob-terms"
       ],
       "technical_review": {
         "status": "unreviewed",
@@ -336,11 +337,11 @@
       "topic": "financial-reporting",
       "framework": "US_GAAP",
       "summary": "A structured review for proposed non-GAAP disclosure without promising SEC compliance.",
-      "path": "guides/non-gaap-review.md",
-      "version": "0.5.0",
-      "sha256": "b9eed05ea8c446e45988b095b9071caa38c0a098510c440159265764a0ff969f",
+      "path": "guides/non-gaap-review-v1.md",
+      "version": "1.1.0",
+      "sha256": "82bf79f9fae0bf1e44ad0aa6c14f8eeb1dd354f13ec5f6e29aab63b0c4d5a3ae",
       "published_at": "2026-09-27",
-      "updated_at": "2026-09-27",
+      "updated_at": "2026-10-04",
       "author": "Open Accounting contributors (AI-assisted)",
       "license": "CC-BY-4.0",
       "source_ids": [
@@ -469,11 +470,11 @@
       "topic": "financial-reporting",
       "framework": "US_GAAP",
       "summary": "Quantify a 36,000 accumulated error and a 12,000 current-year effect without deciding materiality.",
-      "path": "cases/case-accumulated-error.md",
-      "version": "0.5.0",
-      "sha256": "6963bfa909fc288d956e2abdda2724baf7ae0d42cad75e1d982f33201dc5606a",
+      "path": "cases/case-accumulated-error-v1.md",
+      "version": "1.1.0",
+      "sha256": "0dd8dcac3cc79523b86ec91780c303ac043699fa13e1cba9b136102901dd590b",
       "published_at": "2026-09-27",
-      "updated_at": "2026-09-27",
+      "updated_at": "2026-10-04",
       "author": "Open Accounting contributors (AI-assisted)",
       "license": "CC-BY-4.0",
       "source_ids": [
@@ -491,20 +492,21 @@
     },
     {
       "id": "case-control-remediation",
-      "title": "Worked case: a redesigned review control has not yet operated",
+      "title": "Control remediation: separate reporting, operation and evidence dates",
       "kind": "case",
       "topic": "internal-controls",
       "framework": "AUDIT",
-      "summary": "Separate a remediation plan from evidence of effective operation.",
-      "path": "cases/case-control-remediation.md",
-      "version": "0.5.0",
-      "sha256": "a023ef3ba466541b3138ae91f695abb7a1f1464498ddcf47183bfc26c8164d0b",
+      "summary": "An original two-packet chronology, distinct-record reconciliation and evidence worksheet; no remediation or audit conclusion.",
+      "path": "cases/case-control-remediation-v2.md",
+      "version": "1.1.0",
+      "sha256": "d666ec2a8c565f65621e828bc6fb1cb02fc6cdc837280a5d1b973d88ee40a89d",
       "published_at": "2026-09-27",
-      "updated_at": "2026-09-27",
+      "updated_at": "2026-10-04",
       "author": "Open Accounting contributors (AI-assisted)",
       "license": "CC-BY-4.0",
       "source_ids": [
-        "pcaob-as2201"
+        "pcaob-as2201",
+        "pcaob-terms"
       ],
       "technical_review": {
         "status": "unreviewed",
@@ -1253,16 +1255,18 @@
       "topic": "fair-value",
       "framework": "US_GAAP",
       "summary": "Distinguish the reason for fair-value measurement from the valuation method and the reliability of its inputs.",
-      "path": "guides/fair-value-workbook.md",
-      "version": "0.6.0",
-      "sha256": "e62596c5063a71f62f109edd253705edf16b432ac2062ab72475952ac4c82dc6",
+      "path": "guides/fair-value-workbook-v1.md",
+      "version": "1.1.0",
+      "sha256": "cf404f1a491599fb4ba07567f85487dae29b6f1f7673deb533eeeb24b6b86a6e",
       "published_at": "2026-09-27",
-      "updated_at": "2026-09-27",
+      "updated_at": "2026-10-04",
       "author": "Open Source Accounting contributors (AI-assisted)",
       "license": "CC-BY-4.0",
       "source_ids": [
         "fasb-asc",
-        "pcaob-as2501"
+        "pcaob-as2501",
+        "sec-private-assets-fair-value-2026-09-28",
+        "pcaob-terms"
       ],
       "technical_review": {
         "status": "unreviewed",
@@ -1726,11 +1730,11 @@
       "topic": "government-audit",
       "framework": "AUDIT",
       "summary": "Four original federal reconciliation exercises distinguish partner exceptions, proposed corrections, recorded balances and account applicability, with a review template.",
-      "path": "cases/federal-igt-reconciliation-v1.md",
-      "version": "1.0.0",
-      "sha256": "6d984d16d7f5f734dbbf9b39dd74f0aa3ca69b7ee52e082ffc77df148e2f4c2c",
+      "path": "cases/federal-igt-reconciliation-v2.md",
+      "version": "2.0.0",
+      "sha256": "4831425f410b136125cbf7813a43fadc9f1935d34d992409633157a63e91c812",
       "published_at": "2026-09-29",
-      "updated_at": "2026-09-29",
+      "updated_at": "2026-10-04",
       "author": "Open Accounting contributors (AI-assisted)",
       "license": "CC-BY-4.0",
       "source_ids": [
@@ -1753,15 +1757,16 @@
       "topic": "government-audit",
       "framework": "AUDIT",
       "summary": "Original federal narrative workpaper with cost and quality calculations, causal-evidence limits, comparability exceptions and review fields.",
-      "path": "templates/federal-mda-evidence-v1.md",
-      "version": "1.0.0",
-      "sha256": "a615fe9918eff287ffab0879c325e41adc2d5b1497343acb07bc8d8b4f0397bf",
+      "path": "templates/federal-mda-evidence-v2.md",
+      "version": "2.0.0",
+      "sha256": "8e85e23fd7d96f4a5c5169e9b5522b0678c41e21d2424e2388c3019469c82ccc",
       "published_at": "2026-09-29",
-      "updated_at": "2026-09-29",
+      "updated_at": "2026-10-04",
       "author": "Open Accounting contributors (AI-assisted)",
       "license": "CC-BY-4.0",
       "source_ids": [
-        "fasab-sig-64-1-2026"
+        "fasab-sig-64-1-2026",
+        "fasab-standards-directory"
       ],
       "technical_review": {
         "status": "unreviewed",
@@ -1814,6 +1819,61 @@
       "license": "CC-BY-4.0",
       "source_ids": [
         "nist-csf-2-0"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "federal-budget-cost-bridge",
+      "title": "Federal accounting evidence workbook: budget authority, obligations, payments and accrued costs",
+      "kind": "case",
+      "topic": "government-accounting",
+      "framework": "FASAB",
+      "summary": "An original fictional event bridge separates supplied authority, obligations, payments and consumed-service costs, with counterexamples and an evidence worksheet.",
+      "path": "cases/federal-budget-cost-bridge-v2.md",
+      "version": "2.0.0",
+      "sha256": "5c3eef6a4fe0ca7086b3978ea01237f196db01acca10f600e75eec4302699c52",
+      "published_at": "2026-09-30",
+      "updated_at": "2026-10-04",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "fasab-standards-directory",
+        "omb-a136-2026-reference"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "government-audit-evidence",
+      "title": "Government-audit evidence case: two engagements, three clocks and an unresolved edition",
+      "kind": "case",
+      "topic": "government-audit",
+      "framework": "AUDIT",
+      "summary": "An original fictional packet separates asserted dates, assumptions and unknown applicability, with an engagement worksheet, disputed-date and changed-checklist counterexamples.",
+      "path": "cases/government-audit-evidence-v2.md",
+      "version": "2.0.0",
+      "sha256": "862a19213aa05cde116abcd61f20570846b1e2547610bbdea0a8127df71141dc",
+      "published_at": "2026-09-30",
+      "updated_at": "2026-10-04",
+      "author": "Open Accounting contributors (AI-assisted)",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "gao-yellowbook",
+        "gao-yellowbook-2024",
+        "gao-qm-faq"
       ],
       "technical_review": {
         "status": "unreviewed",

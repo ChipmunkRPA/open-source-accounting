@@ -1,0 +1,26 @@
+{
+  "item_id": "case-control-remediation",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "cases/case-control-remediation-v1.md",
+    "version": "1.0.0",
+    "sha256": "8a59a527b815f0abffc60e0c833c4f3c52efa2541128305c2242727b825d7af3",
+    "source_ids": [
+      "pcaob-as2201"
+    ]
+  },
+  "current": {
+    "path": "cases/case-control-remediation-v2.md",
+    "version": "1.1.0",
+    "sha256": "d666ec2a8c565f65621e828bc6fb1cb02fc6cdc837280a5d1b973d88ee40a89d",
+    "source_ids": [
+      "pcaob-as2201",
+      "pcaob-terms"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

@@ -1,0 +1,133 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "non-gaap-review",
+  "input_sha256": "b9eed05ea8c446e45988b095b9071caa38c0a098510c440159265764a0ff969f",
+  "output_sha256": "82bf79f9fae0bf1e44ad0aa6c14f8eeb1dd354f13ec5f6e29aab63b0c4d5a3ae",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T05:42:12Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "sec-nongaap",
+      "official_url": "https://www.sec.gov/rules-regulations/staff-guidance/corporation-finance-interpretations/non-gaap-financial-measures",
+      "source_version_or_date": "Page last update displayed 2022-12-13; individual question dates retained; inspected 2026-10-04",
+      "access_state": "official_staff_text_examined",
+      "exact_locators": [
+        "Questions 100.01, 100.04, 100.05, 100.06: 2022-12-13",
+        "Questions 100.02, 100.03: 2016-05-17",
+        "Question 102.10(a)-(c): 2022-12-13",
+        "Question 102.11: 2016-05-17"
+      ],
+      "checked_claim_ids": [
+        "ng-date",
+        "ng-adjustments",
+        "ng-prominence",
+        "ng-tax",
+        "ng-rules-gap"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "ng-date",
+      "article_section": "What was checked",
+      "category": "source_identity_and_applicability",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Page update date and each selected answer date were inspected; they are not treated as rule issuance dates or complete current-law verification.",
+      "source_reference_ids": [
+        "sec-nongaap"
+      ]
+    },
+    {
+      "claim_id": "ng-adjustments",
+      "article_section": "An original arithmetic check that does not approve the adjustment",
+      "category": "substantive_claim",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Questions 100.01-100.06 support separate scrutiny of adjustments, consistency, measurement basis, labels and potentially misleading presentation. Wording avoids a blanket ban on all recurring adjustments.",
+      "source_reference_ids": [
+        "sec-nongaap"
+      ]
+    },
+    {
+      "claim_id": "ng-prominence",
+      "article_section": "Keep four independent checks visible",
+      "category": "substantive_claim",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Question 102.10 supports reviewing full-document prominence and the furnished Item 2.02 earnings-release context. The candidate does not infer universal application to every metric or communication.",
+      "source_reference_ids": [
+        "sec-nongaap"
+      ]
+    },
+    {
+      "claim_id": "ng-tax",
+      "article_section": "Keep four independent checks visible",
+      "category": "substantive_claim",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Question 102.11 supports a measure-specific tax analysis. No unsupported tax rate or resulting after-tax amount is calculated.",
+      "source_reference_ids": [
+        "sec-nongaap"
+      ]
+    },
+    {
+      "claim_id": "ng-arithmetic",
+      "article_section": "An original arithmetic check that does not approve the adjustment",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "The signed pretax bridge equals 160000; the alternative 168000 omits an 8000 subtraction. Acceptability of each adjustment and comparator is expressly undecided.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "ng-rules-gap",
+      "article_section": "Stop before the compliance conclusion; Sources and verification",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Full current Regulation G, S-K and form texts were not reconciled; technical/legal application is withheld.",
+      "source_reference_ids": [
+        "sec-nongaap"
+      ]
+    },
+    {
+      "claim_id": "rights-original",
+      "article_section": "Original-content footer",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "This revision contains original educational explanation and fictional examples under the inherited CC BY 4.0 license. No third-party standard body is reproduced or relicensed; paid services do not change the stated free educational license.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "non-GAAP signed bridge",
+      "actual": "160000",
+      "expected": "160000",
+      "result": "pass"
+    },
+    {
+      "check": "non-GAAP omitted gain discrepancy",
+      "actual": "8000",
+      "expected": "8000",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Added a signed original reconciliation with an identifiable missing-subtraction error.",
+    "Expanded layout, label, consistency and tax review while preserving channel-specific applicability.",
+    "Identified exact staff-answer dates and withheld automatic compliance approval."
+  ],
+  "unresolved_gaps": [
+    "Current underlying rules, forms and entity-specific exceptions need separate verification.",
+    "The exercise stipulates a GAAP starting point; appropriateness of that comparator is not determined.",
+    "No human professional or legal approval."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

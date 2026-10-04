@@ -1,0 +1,147 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "case-accumulated-error",
+  "input_sha256": "6963bfa909fc288d956e2abdda2724baf7ae0d42cad75e1d982f33201dc5606a",
+  "output_sha256": "0dd8dcac3cc79523b86ec91780c303ac043699fa13e1cba9b136102901dd590b",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T05:42:12Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "sec-sab108",
+      "official_url": "https://www.sec.gov/rules-regulations/staff-guidance/staff-accounting-bulletins/staff-accounting-bulletin-no-108",
+      "source_version_or_date": "2006-09-13 issuance; official page inspected 2026-10-04",
+      "access_state": "official_staff_text_examined",
+      "exact_locators": [
+        "Introductory DATE and supplementary information",
+        "Topic 1.N, Question 1: both measurement approaches and correction effects",
+        "Topic 1.N, Question 2: reversing errors",
+        "Topic 1.N, Question 3: bounded 2006 transition"
+      ],
+      "checked_claim_ids": [
+        "case-source",
+        "case-release",
+        "case-current-gap"
+      ]
+    },
+    {
+      "reference_id": "sec-sab99",
+      "official_url": "https://www.sec.gov/interps/account/sab99.htm",
+      "source_version_or_date": "1999-08-12 issuance; official page inspected 2026-10-04",
+      "access_state": "official_staff_text_examined",
+      "exact_locators": [
+        "Introductory supplementary information: staff status",
+        "Topic 1.M.1: Assessing Materiality",
+        "Topic 1.M.1: Aggregating and Netting Misstatements"
+      ],
+      "checked_claim_ids": [
+        "case-source",
+        "case-current-gap"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "case-source",
+      "article_section": "Reconstruct the history",
+      "category": "substantive_claim",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "SAB 108 Questions 1-2 and SAB 99 Topic 1.M.1 support distinct measurement views and materiality evaluation; issuance/access dates and staff scope remain explicit.",
+      "source_reference_ids": [
+        "sec-sab108",
+        "sec-sab99"
+      ]
+    },
+    {
+      "claim_id": "case-signs",
+      "article_section": "Stipulated facts; Reconstruct the history",
+      "category": "original_correction",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "The unclear prior description of expense-adjusted profit is replaced with an explicit expense overstatement and pretax-income understatement premise.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "case-release",
+      "article_section": "Test a proposed release rather than accepting its label",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "A 36000 release of the stipulated expense accrual leaves zero liability error but a 24000 current expense understatement. This does not approve the entry.",
+      "source_reference_ids": [
+        "sec-sab108"
+      ]
+    },
+    {
+      "claim_id": "case-ratios",
+      "article_section": "A denominator packet, deliberately without a verdict",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Year-specific reported and corrected incomes and four displayed percentages were recalculated. Ratios are not threshold decisions.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "case-current-gap",
+      "article_section": "Questions the draft should leave open",
+      "category": "applicability_gap",
+      "severity": "warning",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "No current accounting correction, restatement, amendment or nonreliance requirement is asserted as verified.",
+      "source_reference_ids": [
+        "sec-sab108",
+        "sec-sab99"
+      ]
+    },
+    {
+      "claim_id": "rights-original",
+      "article_section": "Original-content footer",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "This revision contains original educational explanation and fictional examples under the inherited CC BY 4.0 license. No third-party standard body is reproduced or relicensed; paid services do not change the stated free educational license.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "accumulated liability history",
+      "actual": "(12000, 24000, 36000)",
+      "expected": "(12000, 24000, 36000)",
+      "result": "pass"
+    },
+    {
+      "check": "accumulated case corrected incomes",
+      "actual": "(192000, 102000, 72000)",
+      "expected": "(192000, 102000, 72000)",
+      "result": "pass"
+    },
+    {
+      "check": "accumulated error ratios",
+      "actual": "(Decimal('6.67'), Decimal('13.33'), Decimal('20.00'))",
+      "expected": "(Decimal('6.67'), Decimal('13.33'), Decimal('20.00'))",
+      "result": "pass"
+    },
+    {
+      "check": "closing error versus stated denominator",
+      "actual": "60.00",
+      "expected": "60.00",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Expanded three-year signed history and explicit full-release counterexample.",
+    "Added reported/corrected-income benchmarks without deciding materiality.",
+    "Clarified financial-statement versus filing decisions and current-authority limits."
+  ],
+  "unresolved_gaps": [
+    "Current correction presentation and securities-filing requirements are not independently verified.",
+    "The fictional case excludes tax, interim reporting and other errors.",
+    "No human professional review or posting authorization."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

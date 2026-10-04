@@ -1,0 +1,26 @@
+{
+  "item_id": "icfr-deficiencies",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/icfr-deficiencies.md",
+    "version": "0.5.0",
+    "sha256": "21c47b3306330ca680fd6650d18971676d95fa3a6568f3beec1bb931e9028f04",
+    "source_ids": [
+      "pcaob-as2201"
+    ]
+  },
+  "current": {
+    "path": "guides/icfr-deficiencies-v1.md",
+    "version": "1.1.0",
+    "sha256": "b22d4f457b8806655bbaa3ff459454714b471e8535586d42ea37061a4017f511",
+    "source_ids": [
+      "pcaob-as2201",
+      "pcaob-terms"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

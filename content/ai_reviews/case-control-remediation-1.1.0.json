@@ -1,0 +1,132 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "case-control-remediation",
+  "input_sha256": "8a59a527b815f0abffc60e0c833c4f3c52efa2541128305c2242727b825d7af3",
+  "output_sha256": "d666ec2a8c565f65621e828bc6fb1cb02fc6cdc837280a5d1b973d88ee40a89d",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T05:42:12Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "pcaob-as2201",
+      "official_url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2201",
+      "source_version_or_date": "Applicable AS 2201 version and amendment dates not established in this review",
+      "access_state": "fresh_automated_verification_not_performed_due_to_publisher_access_restriction",
+      "exact_locators": [
+        "Retained reference URL only; standard paragraphs not freshly inspected"
+      ],
+      "checked_claim_ids": [
+        "rem-version-gap"
+      ]
+    },
+    {
+      "reference_id": "pcaob-terms",
+      "official_url": "https://pcaobus.org/privacypolicy",
+      "source_version_or_date": "Terms last-updated label 2021-09-09; inspected 2026-10-04",
+      "access_state": "publisher_policy_examined_then_standard_retrieval_stopped",
+      "exact_locators": [
+        "Terms of Use: Authorized Use, automated tools/data-gathering restriction",
+        "Intellectual Property Rights: separate conditional PCAOB Public Materials allowance"
+      ],
+      "checked_claim_ids": [
+        "rem-access"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "rem-dates",
+      "article_section": "1. Scope; 2. Two evidence packets",
+      "category": "original_reasoning",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "The September 30 packet excludes October records; the later packet preserves actual date types. The text does not prohibit later evidence from informing earlier-date analysis.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "rem-counts",
+      "article_section": "3. Reconcile records",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Twelve rows contain ten distinct August IDs and two stipulated copies. Four ratios were independently recalculated with half-even two-decimal display rounding.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "rem-population",
+      "article_section": "3. Reconcile records",
+      "category": "original_reasoning",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "The original content expressly separates rows, packets, dollar exposure and control-event units, with no representativeness or confidence conclusion.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "rem-access",
+      "article_section": "6. Source-access and applicability boundary",
+      "category": "rights_and_access",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Authorized Use restriction was checked; AS 2201 automated retrieval was not performed afterward. No standard text is imported.",
+      "source_reference_ids": [
+        "pcaob-terms"
+      ]
+    },
+    {
+      "claim_id": "rem-version-gap",
+      "article_section": "6. Source-access and applicability boundary",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "unsupported_fresh_verification_removed",
+      "explanation": "Earlier amendment-banner observations are left historical, not freshly reconfirmed or converted to an applicable effective date. Current AS 2201 and engagement applicability remain unresolved.",
+      "source_reference_ids": [
+        "pcaob-as2201"
+      ]
+    },
+    {
+      "claim_id": "rem-review",
+      "article_section": "4. A populated evidence-work sheet; 6. Source-access and applicability boundary",
+      "category": "professional_boundary",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Proposed procedures remain proposed; AI checks do not create human review, remediation approval, opinion or Agent admission.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "rights-original",
+      "article_section": "Original-content footer",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "This revision contains original educational explanation and fictional examples under the inherited CC BY 4.0 license. No third-party standard body is reproduced or relicensed; paid services do not change the stated free educational license.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "control case original ratios",
+      "actual": "(Decimal('13.33'), Decimal('11.11'), Decimal('6.00'), Decimal('5.00'))",
+      "expected": "(Decimal('13.33'), Decimal('11.11'), Decimal('6.00'), Decimal('5.00'))",
+      "result": "pass"
+    },
+    {
+      "check": "control case distinct packets",
+      "actual": "10",
+      "expected": "10",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Preserved original fictional packet and all arithmetic while refreshing exact-revision AI disclosure.",
+    "Removed implied reliance on an unrefreshed amendment-banner date.",
+    "Added precise PCAOB source-access restriction and retained applicability gap."
+  ],
+  "unresolved_gaps": [
+    "Current AS 2201 text, amendment transitions and applicable engagement/year require authorized verification.",
+    "No evidence of real control work, professional assessment, sampling sufficiency or remediation."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

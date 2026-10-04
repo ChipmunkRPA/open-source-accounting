@@ -1,0 +1,27 @@
+{
+  "item_id": "share-based-award-intake",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/share-based-award-intake-v1.md",
+    "version": "1.0.0",
+    "sha256": "1bd85a2ebab00a04348630fd0536953ef16546b97ae34b666b55a902539bfc3f",
+    "source_ids": [
+      "fasb-asc",
+      "sec-sab14"
+    ]
+  },
+  "current": {
+    "path": "guides/share-based-award-intake-v2.md",
+    "version": "1.1.0",
+    "sha256": "b90c0ba452422960ada6c7e9ebc41d5ad8d49b3ac0dc90518c9e26930e4f044d",
+    "source_ids": [
+      "fasb-asc",
+      "sec-sab14"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

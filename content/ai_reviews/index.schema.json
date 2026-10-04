@@ -1,0 +1,87 @@
+{
+  "$defs": {
+    "Entry": {
+      "additionalProperties": false,
+      "properties": {
+        "item_id": {
+          "maxLength": 120,
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "title": "Item Id",
+          "type": "string"
+        },
+        "version": {
+          "maxLength": 40,
+          "minLength": 1,
+          "title": "Version",
+          "type": "string"
+        },
+        "content_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Content Sha256",
+          "type": "string"
+        },
+        "references_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "References Sha256",
+          "type": "string"
+        },
+        "input_path": {
+          "maxLength": 300,
+          "minLength": 1,
+          "title": "Input Path",
+          "type": "string"
+        },
+        "input_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Input Sha256",
+          "type": "string"
+        },
+        "receipt_path": {
+          "maxLength": 300,
+          "minLength": 1,
+          "title": "Receipt Path",
+          "type": "string"
+        },
+        "receipt_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Receipt Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "item_id",
+        "version",
+        "content_sha256",
+        "references_sha256",
+        "input_path",
+        "input_sha256",
+        "receipt_path",
+        "receipt_sha256"
+      ],
+      "title": "Entry",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "ai-editorial-review-index-1",
+      "title": "Schema",
+      "type": "string"
+    },
+    "reviews": {
+      "items": {
+        "$ref": "#/$defs/Entry"
+      },
+      "maxItems": 2000,
+      "title": "Reviews",
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema",
+    "reviews"
+  ],
+  "title": "Index",
+  "type": "object"
+}

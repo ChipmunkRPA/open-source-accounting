@@ -1,0 +1,27 @@
+{
+  "item_id": "case-accumulated-error",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "cases/case-accumulated-error.md",
+    "version": "0.5.0",
+    "sha256": "6963bfa909fc288d956e2abdda2724baf7ae0d42cad75e1d982f33201dc5606a",
+    "source_ids": [
+      "sec-sab108",
+      "sec-sab99"
+    ]
+  },
+  "current": {
+    "path": "cases/case-accumulated-error-v1.md",
+    "version": "1.1.0",
+    "sha256": "0dd8dcac3cc79523b86ec91780c303ac043699fa13e1cba9b136102901dd590b",
+    "source_ids": [
+      "sec-sab108",
+      "sec-sab99"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

@@ -1,0 +1,244 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "federal-budget-cost-bridge",
+  "input_sha256": "efeaf74e3c62ae9d1ec8c808019673dee6307f73d20ff86aa4078e2a2f2157af",
+  "output_sha256": "5c3eef6a4fe0ca7086b3978ea01237f196db01acca10f600e75eec4302699c52",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T05:45:31Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasab-standards-directory",
+      "official_url": "https://fasab.gov/accounting-standards/",
+      "source_version_or_date": "Landing page inspected 2026-10-04",
+      "access_state": "Official primary page or PDF extracted text inspected for the listed passages on 2026-10-04; no full-text redistribution or product permission change.",
+      "exact_locators": [
+        "Standards & Guidance; current handbook and separate issuance links"
+      ],
+      "checked_claim_ids": [
+        "budget-route"
+      ]
+    },
+    {
+      "reference_id": "fasab-standards-directory",
+      "official_url": "https://files.fasab.gov/pdffiles/handbook_sffas_53.pdf",
+      "source_version_or_date": "SFFAS 53; issued 2017-10-27; Handbook Version 24 (9/25)",
+      "access_state": "Official primary page or PDF extracted text inspected for the listed passages on 2026-10-04; no full-text redistribution or product permission change.",
+      "exact_locators": [
+        "Physical/printed pages 1, 3–4: status, paragraphs 1–2 and replacement SFFAS 7 paragraphs 80–82",
+        "Physical/printed pages 8–9: paragraph 8"
+      ],
+      "checked_claim_ids": [
+        "budget-source-scope",
+        "budget-effective-date",
+        "budget-bridge-limit"
+      ]
+    },
+    {
+      "reference_id": "omb-a136-2026-reference",
+      "official_url": "https://www.whitehouse.gov/wp-content/uploads/2026/05/OMB-Circular-No.-A-136-2026.pdf",
+      "source_version_or_date": "2026 Circular; FY2026 reporting scope checked, not all current instructions",
+      "access_state": "Official primary page or PDF extracted text inspected for the listed passages on 2026-10-04; no full-text redistribution or product permission change.",
+      "exact_locators": [
+        "Physical pages 7–8 / printed pages 5–6: I.2–I.4",
+        "Physical pages 101–102 / printed pages 99–100: II.3.8.31"
+      ],
+      "checked_claim_ids": [
+        "budget-omb-period",
+        "budget-bridge-limit"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "budget-route",
+      "article_section": "Sources and verification",
+      "category": "source-provenance",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Existing FASAB discovery reference was followed to an exact official chapter; directory availability is not treated as evidence for every rule.",
+      "source_reference_ids": [
+        "fasab-standards-directory"
+      ]
+    },
+    {
+      "claim_id": "budget-source-scope",
+      "article_section": "Sources and verification",
+      "category": "authority-and-scope",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Replaced link-only statement with a narrowly grounded account of SFFAS 53 component-reporting scope and net-cost/net-outlay reconciliation.",
+      "source_reference_ids": [
+        "fasab-standards-directory"
+      ]
+    },
+    {
+      "claim_id": "budget-effective-date",
+      "article_section": "Sources and verification",
+      "category": "effective-date",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Distinguishes 2017 issuance, 2018 period trigger and handbook version. Actual entity applicability is expressly unresolved.",
+      "source_reference_ids": [
+        "fasab-standards-directory"
+      ]
+    },
+    {
+      "claim_id": "budget-omb-period",
+      "article_section": "Sources and verification",
+      "category": "effective-date",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "The 2026 OMB document identifies FY2026 reporting applicability and entity-dependent scope; no filing deadlines or blanket applicability are inferred.",
+      "source_reference_ids": [
+        "omb-a136-2026-reference"
+      ]
+    },
+    {
+      "claim_id": "budget-bridge-limit",
+      "article_section": "From an event bridge to an accrual-to-cash explanation",
+      "category": "classification",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "The added 90,000-cost/120,000-cash exercise is an original limited model, expressly not the official BAR or a determination that every cash flow is a net outlay.",
+      "source_reference_ids": [
+        "fasab-standards-directory",
+        "omb-a136-2026-reference"
+      ]
+    },
+    {
+      "claim_id": "budget-arithmetic",
+      "article_section": "Fictional cases and added accrual-to-cash explanation",
+      "category": "arithmetic",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Reperformed main, prior-balance, advance, equipment, cancellation and new cost/cash bridge calculations. Equipment payable double-counting counterexample is explained.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "budget-rights",
+      "article_section": "Free education and Premium execution",
+      "category": "rights-and-product-boundary",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Original CC BY 4.0 educational status is preserved. No full source, copyrighted component, human review or source-operation grant is claimed.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "budget-actual-applicability",
+      "article_section": "Reusable event and evidence worksheet",
+      "category": "applicability-gap",
+      "severity": "warning",
+      "disposition": "retained-explicit-abstention",
+      "explanation": "No actual appropriation, obligation validity, classification, USSGL mapping or release authority has been established.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "main-authority-remainder",
+      "actual": "30000",
+      "expected": "30000",
+      "passed": true
+    },
+    {
+      "check": "main-undelivered",
+      "actual": "25000",
+      "expected": "25000",
+      "passed": true
+    },
+    {
+      "check": "main-unpaid-consumed",
+      "actual": "15000",
+      "expected": "15000",
+      "passed": true
+    },
+    {
+      "check": "main-obligations-composition",
+      "actual": "70000",
+      "expected": "70000",
+      "passed": true
+    },
+    {
+      "check": "main-outstanding",
+      "actual": "40000",
+      "expected": "40000",
+      "passed": true
+    },
+    {
+      "check": "opening-payable-variant",
+      "actual": "25000",
+      "expected": "25000",
+      "passed": true
+    },
+    {
+      "check": "advance-current-services-unpaid",
+      "actual": "25000",
+      "expected": "25000",
+      "passed": true
+    },
+    {
+      "check": "equipment-variant-services",
+      "actual": "25000",
+      "expected": "25000",
+      "passed": true
+    },
+    {
+      "check": "cancellation-obligations",
+      "actual": "65000",
+      "expected": "65000",
+      "passed": true
+    },
+    {
+      "check": "cancellation-remainder",
+      "actual": "35000",
+      "expected": "35000",
+      "passed": true
+    },
+    {
+      "check": "accrual-service-cash",
+      "actual": "72000",
+      "expected": "72000",
+      "passed": true
+    },
+    {
+      "check": "accrual-total-cash",
+      "actual": "120000",
+      "expected": "120000",
+      "passed": true
+    },
+    {
+      "check": "accrual-total-cost",
+      "actual": "90000",
+      "expected": "90000",
+      "passed": true
+    },
+    {
+      "check": "accrual-cash-bridge",
+      "actual": "120000",
+      "expected": "120000",
+      "passed": true
+    },
+    {
+      "check": "unpaid-equipment-cash",
+      "actual": "112000",
+      "expected": "112000",
+      "passed": true
+    }
+  ],
+  "changes_summary": [
+    "Added verified limited SFFAS 53 and OMB FY2026 source/date context with exact official links.",
+    "Added original accrual-to-cash case, sign reasoning, double-counting counterexample and endpoint-review questions.",
+    "Preserved all fictional-case facts and prior article bytes; added explicit Free/Premium separation."
+  ],
+  "unresolved_gaps": [
+    "No human accountant, CPA, auditor or legal reviewer attestation was performed; this is an AI editorial review of the exact output hash.",
+    "No client records, real posting, filing, engagement procedure or Premium execution was performed. Source operation rights and Agent admission are unchanged.",
+    "Selected source passages were checked, not every requirement, amendment or related authority. Entity-specific facts, applicability and organizational release decisions remain necessary.",
+    "Official report/account mapping, actual legal spending availability and entity-specific requirements are unverified."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

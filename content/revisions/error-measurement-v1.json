@@ -1,0 +1,29 @@
+{
+  "item_id": "error-measurement",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/error-measurement.md",
+    "version": "0.5.0",
+    "sha256": "0e84725a4ba0e5260b28dd0142d6a7ca15c067faf79549b27ef835f5473e6a7e",
+    "source_ids": [
+      "sec-sab108",
+      "sec-sab99",
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "guides/error-measurement-v1.md",
+    "version": "1.1.0",
+    "sha256": "fd1097006a9e64e4fdb729bc81313158b175fbbb2a31fff7f5ff8d8c3df47ced",
+    "source_ids": [
+      "sec-sab108",
+      "sec-sab99",
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

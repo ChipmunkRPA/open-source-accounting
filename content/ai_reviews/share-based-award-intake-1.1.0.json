@@ -1,0 +1,176 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "share-based-award-intake",
+  "input_sha256": "1bd85a2ebab00a04348630fd0536953ef16546b97ae34b666b55a902539bfc3f",
+  "output_sha256": "b90c0ba452422960ada6c7e9ebc41d5ad8d49b3ac0dc90518c9e26930e4f044d",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T05:42:12Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current ASC edition and topic amendments not established",
+      "access_state": "not_accessed_link_only",
+      "exact_locators": [
+        "Research locator only; no authoritative paragraph claim verified"
+      ],
+      "checked_claim_ids": [
+        "award-current-gap"
+      ]
+    },
+    {
+      "reference_id": "sec-sab14",
+      "official_url": "https://www.sec.gov/interps/account/sabcodet14.htm",
+      "source_version_or_date": "Codified Topic 14 page; exact consolidated revision date not established; inspected 2026-10-04",
+      "access_state": "selected_official_staff_sections_examined",
+      "exact_locators": [
+        "Section C, Questions 2-4: model choice and expertise; embedded ASC quotations not reproduced"
+      ],
+      "checked_claim_ids": [
+        "award-staff",
+        "award-current-gap"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "award-staff",
+      "article_section": "Scope and source questions",
+      "category": "substantive_claim",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "SEC Topic 14 Section C Questions 2-4 were inspected for model choice and expertise only. Complexity alone is not treated as validation, and embedded ASC quotations are not reproduced.",
+      "source_reference_ids": [
+        "sec-sab14"
+      ]
+    },
+    {
+      "claim_id": "award-current-gap",
+      "article_section": "Scope and source questions; Sources and verification",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "No exact consolidated Topic 14 amendment date or current ASC 718 text is established. Entity/award applicability and grant-date/measurement rules are left unresolved.",
+      "source_reference_ids": [
+        "sec-sab14",
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "award-register",
+      "article_section": "1. Define the populations; 2. Reconcile by event identity",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Raw 20500, conditional 16000, 4500 bridge and alternative branches were recalculated. Equal quantities do not establish duplicate identity or legal cancellation.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "award-units",
+      "article_section": "3. Reconcile issued shares separately",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "501500 issued shares and the 517500 mixed-unit arithmetic were recalculated; the mixed-unit sum is expressly rejected as a capitalization conclusion.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "award-model",
+      "article_section": "4. Preserve chronology and input identity",
+      "category": "original_reasoning",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Nominal 8000 x 12 / 4 = 24000 is arithmetic only; document dates and different securities are not substituted for grant date, value or expense.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "award-review",
+      "article_section": "5. Use a populated evidence worksheet; 6. Study questions",
+      "category": "professional_boundary",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "All work rows remain proposed and packet facts fictional. AI editorial review is distinguished from human technical review and Agent evidence approval.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "rights-original",
+      "article_section": "Original-content footer",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "This revision contains original educational explanation and fictional examples under the inherited CC BY 4.0 license. No third-party standard body is reproduced or relicensed; paid services do not change the stated free educational license.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "award raw subtotal",
+      "actual": "20500",
+      "expected": "20500",
+      "result": "pass"
+    },
+    {
+      "check": "award unique conditional subtotal",
+      "actual": "16000",
+      "expected": "16000",
+      "result": "pass"
+    },
+    {
+      "check": "award bridge difference",
+      "actual": "4500",
+      "expected": "4500",
+      "result": "pass"
+    },
+    {
+      "check": "award false amount-deduplication",
+      "actual": "12000",
+      "expected": "12000",
+      "result": "pass"
+    },
+    {
+      "check": "award proposed-offer branch",
+      "actual": "18000",
+      "expected": "18000",
+      "result": "pass"
+    },
+    {
+      "check": "award disputed cancellation branch",
+      "actual": "16500",
+      "expected": "16500",
+      "result": "pass"
+    },
+    {
+      "check": "award issued shares",
+      "actual": "501500",
+      "expected": "501500",
+      "result": "pass"
+    },
+    {
+      "check": "award mixed-unit sum",
+      "actual": "517500",
+      "expected": "517500",
+      "result": "pass"
+    },
+    {
+      "check": "award unsupported formula",
+      "actual": "24000",
+      "expected": "24000",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Preserved original event-identity case and recalculated all existing branch arithmetic.",
+    "Added freshly checked limited SEC Topic 14 model-selection context without importing ASC quotations.",
+    "Separated AI editorial completion from unverified primary ASC and professional conclusions."
+  ],
+  "unresolved_gaps": [
+    "Current primary ASC 718 text and complete Topic 14 amendment history were not verified.",
+    "No real grant date, legal right, award value, classification, recognition, tax or cancellation conclusion.",
+    "No human professional review."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

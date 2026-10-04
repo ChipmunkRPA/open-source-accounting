@@ -1,0 +1,149 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "materiality",
+  "input_sha256": "26aa441390a949a8592dda22d7b27be2aa22de0fdc16089bcebc14e7ee57352d",
+  "output_sha256": "0a687640e5b7dc25484f4c0a775671d11aad640a5073f253efe4dd3c9ec47f82",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T05:42:12Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "sec-sab99",
+      "official_url": "https://www.sec.gov/interps/account/sab99.htm",
+      "source_version_or_date": "1999-08-12 issuance; official page inspected 2026-10-04",
+      "access_state": "official_staff_text_examined",
+      "exact_locators": [
+        "Introductory supplementary information: staff status",
+        "Topic 1.M.1: Assessing Materiality",
+        "Topic 1.M.1: Aggregating and Netting Misstatements"
+      ],
+      "checked_claim_ids": [
+        "mat-status",
+        "mat-threshold",
+        "mat-aggregation",
+        "mat-current-gap"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "mat-status",
+      "article_section": "What the source supports",
+      "category": "source_identity_and_applicability",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "SAB 99 issuance date and staff-not-Commission-rule status match the official introduction. Access date is kept separate from current-authority reconciliation.",
+      "source_reference_ids": [
+        "sec-sab99"
+      ]
+    },
+    {
+      "claim_id": "mat-threshold",
+      "article_section": "What the source supports",
+      "category": "substantive_claim",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Topic 1.M.1 supports that quantitative thresholds do not replace qualitative analysis. Revised text attributes that limited principle to the staff rather than declaring a universal percentage.",
+      "source_reference_ids": [
+        "sec-sab99"
+      ]
+    },
+    {
+      "claim_id": "mat-aggregation",
+      "article_section": "Aggregation without disappearing components",
+      "category": "substantive_claim",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "The staff discussion considers each error and the aggregate. The fictional zero-net-income scenario retains both line-item errors; it does not pronounce the statements materially misstated.",
+      "source_reference_ids": [
+        "sec-sab99"
+      ]
+    },
+    {
+      "claim_id": "mat-original",
+      "article_section": "A small revenue percentage can obscure the question",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Original denominators and trend arithmetic were recalculated; no covenant or management-intent fact is invented.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "mat-current-gap",
+      "article_section": "Completion boundary",
+      "category": "applicability_gap",
+      "severity": "warning",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Current framework paragraphs, actual entity circumstances and later legal developments are not fully reconciled; conclusion remains a review task.",
+      "source_reference_ids": [
+        "sec-sab99"
+      ]
+    },
+    {
+      "claim_id": "rights-original",
+      "article_section": "Original-content footer",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "This revision contains original educational explanation and fictional examples under the inherited CC BY 4.0 license. No third-party standard body is reproduced or relicensed; paid services do not change the stated free educational license.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "materiality input SHA256",
+      "actual": "26aa441390a949a8592dda22d7b27be2aa22de0fdc16089bcebc14e7ee57352d",
+      "expected": "26aa441390a949a8592dda22d7b27be2aa22de0fdc16089bcebc14e7ee57352d",
+      "result": "pass"
+    },
+    {
+      "check": "materiality revenue percentage",
+      "actual": "0.15",
+      "expected": "0.15",
+      "result": "pass"
+    },
+    {
+      "check": "materiality reported-profit percentage",
+      "actual": "75.00",
+      "expected": "75.00",
+      "result": "pass"
+    },
+    {
+      "check": "materiality corrected profit",
+      "actual": "10000",
+      "expected": "10000",
+      "result": "pass"
+    },
+    {
+      "check": "materiality corrected-profit percentage",
+      "actual": "300.00",
+      "expected": "300.00",
+      "result": "pass"
+    },
+    {
+      "check": "materiality trends",
+      "actual": "(15000, -15000)",
+      "expected": "(15000, -15000)",
+      "result": "pass"
+    },
+    {
+      "check": "net income versus line amounts",
+      "actual": "0",
+      "expected": "0",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Added explicit denominator and earnings-trend calculations with no materiality verdict.",
+    "Added offsetting line-item counterexample and preserved individual/aggregate analysis.",
+    "Separated bulletin issuance, access date, staff status and current-applicability gap."
+  ],
+  "unresolved_gaps": [
+    "No current entity-specific accounting, auditing or securities-law applicability determination.",
+    "No human professional review or final materiality judgment."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

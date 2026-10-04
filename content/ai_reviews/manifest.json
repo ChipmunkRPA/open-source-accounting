@@ -1,0 +1,125 @@
+{
+  "schema": "ai-editorial-review-index-1",
+  "reviews": [
+    {
+      "item_id": "materiality",
+      "version": "1.1.0",
+      "content_sha256": "0a687640e5b7dc25484f4c0a775671d11aad640a5073f253efe4dd3c9ec47f82",
+      "references_sha256": "645974028a0e316d81af2ea23678d118d22e461e47e3a81c899694e840eb0ceb",
+      "input_path": "guides/materiality.md",
+      "input_sha256": "26aa441390a949a8592dda22d7b27be2aa22de0fdc16089bcebc14e7ee57352d",
+      "receipt_path": "ai_reviews/materiality-1.1.0.json",
+      "receipt_sha256": "d33f1f3698b8de4c7d305c3bd03ba4fe97a5a32f49805c5f78236d2908900ad0"
+    },
+    {
+      "item_id": "error-measurement",
+      "version": "1.1.0",
+      "content_sha256": "fd1097006a9e64e4fdb729bc81313158b175fbbb2a31fff7f5ff8d8c3df47ced",
+      "references_sha256": "e756408c86b81dc321bd52ca0a4a81a037dfd8202dd210ec92b14c98998948cc",
+      "input_path": "guides/error-measurement.md",
+      "input_sha256": "0e84725a4ba0e5260b28dd0142d6a7ca15c067faf79549b27ef835f5473e6a7e",
+      "receipt_path": "ai_reviews/error-measurement-1.1.0.json",
+      "receipt_sha256": "2c97b27ba28a5aabd573e24d39ca35fcc39244008241d607e2b30884f5a753aa"
+    },
+    {
+      "item_id": "non-gaap-review",
+      "version": "1.1.0",
+      "content_sha256": "82bf79f9fae0bf1e44ad0aa6c14f8eeb1dd354f13ec5f6e29aab63b0c4d5a3ae",
+      "references_sha256": "2546281923fc80d6bf27a57544c24f9d2e2b96ecd45384fa38ca14c5ffde17a6",
+      "input_path": "guides/non-gaap-review.md",
+      "input_sha256": "b9eed05ea8c446e45988b095b9071caa38c0a098510c440159265764a0ff969f",
+      "receipt_path": "ai_reviews/non-gaap-review-1.1.0.json",
+      "receipt_sha256": "a65dd5a9d5c2de69340ffb18a904e733cf1363a4b2796e3b280a16d1d5d4b347"
+    },
+    {
+      "item_id": "icfr-deficiencies",
+      "version": "1.1.0",
+      "content_sha256": "b22d4f457b8806655bbaa3ff459454714b471e8535586d42ea37061a4017f511",
+      "references_sha256": "645bf4734e6cb0c9758897738be8e9501cd8c3e65c4d29aec71e6101cc32d00e",
+      "input_path": "guides/icfr-deficiencies.md",
+      "input_sha256": "21c47b3306330ca680fd6650d18971676d95fa3a6568f3beec1bb931e9028f04",
+      "receipt_path": "ai_reviews/icfr-deficiencies-1.1.0.json",
+      "receipt_sha256": "440d5f714ab3d0ebc15407c45a5a70cd3b8cdf82c3d6a820115585c4de004809"
+    },
+    {
+      "item_id": "case-accumulated-error",
+      "version": "1.1.0",
+      "content_sha256": "0dd8dcac3cc79523b86ec91780c303ac043699fa13e1cba9b136102901dd590b",
+      "references_sha256": "5c3ae95fc5f03e46f74e78ff2b166805668180641e9565a932c975b75c6372af",
+      "input_path": "cases/case-accumulated-error.md",
+      "input_sha256": "6963bfa909fc288d956e2abdda2724baf7ae0d42cad75e1d982f33201dc5606a",
+      "receipt_path": "ai_reviews/case-accumulated-error-1.1.0.json",
+      "receipt_sha256": "9c74ab5dcbd9ba6451ed77cf61f04a6d13d65e701634b777602f5893f458f3ea"
+    },
+    {
+      "item_id": "case-control-remediation",
+      "version": "1.1.0",
+      "content_sha256": "d666ec2a8c565f65621e828bc6fb1cb02fc6cdc837280a5d1b973d88ee40a89d",
+      "references_sha256": "645bf4734e6cb0c9758897738be8e9501cd8c3e65c4d29aec71e6101cc32d00e",
+      "input_path": "cases/case-control-remediation-v1.md",
+      "input_sha256": "8a59a527b815f0abffc60e0c833c4f3c52efa2541128305c2242727b825d7af3",
+      "receipt_path": "ai_reviews/case-control-remediation-1.1.0.json",
+      "receipt_sha256": "af741d4f98fd67a1a17ca03d48c90ec1b14429698694c9396eae7b4fe7911f94"
+    },
+    {
+      "item_id": "fair-value-workbook",
+      "version": "1.1.0",
+      "content_sha256": "cf404f1a491599fb4ba07567f85487dae29b6f1f7673deb533eeeb24b6b86a6e",
+      "references_sha256": "eb203f7baec41f7d38df5f4936f0b5bb3cdf171252648fd1c8241891800752ea",
+      "input_path": "guides/fair-value-workbook.md",
+      "input_sha256": "e62596c5063a71f62f109edd253705edf16b432ac2062ab72475952ac4c82dc6",
+      "receipt_path": "ai_reviews/fair-value-workbook-1.1.0.json",
+      "receipt_sha256": "96488990b6c115c304ea755af65d2ce9450adfcbde6849da882faee6429e921c"
+    },
+    {
+      "item_id": "share-based-award-intake",
+      "version": "1.1.0",
+      "content_sha256": "b90c0ba452422960ada6c7e9ebc41d5ad8d49b3ac0dc90518c9e26930e4f044d",
+      "references_sha256": "320dbc523c30a85965eea5e1b8422df5b0d5011ef8ce99d0766f4b1bde41ef36",
+      "input_path": "guides/share-based-award-intake-v1.md",
+      "input_sha256": "1bd85a2ebab00a04348630fd0536953ef16546b97ae34b666b55a902539bfc3f",
+      "receipt_path": "ai_reviews/share-based-award-intake-1.1.0.json",
+      "receipt_sha256": "b4daf3ce0ea527c7d8fd7ce09fac30a800c644d8ad272caeba7b768b573b7e2e"
+    },
+    {
+      "item_id": "federal-budget-cost-bridge",
+      "version": "2.0.0",
+      "content_sha256": "5c3eef6a4fe0ca7086b3978ea01237f196db01acca10f600e75eec4302699c52",
+      "references_sha256": "da42ee990ced570133fa6380444f4acc218c01e6b06e3cb6585dfbb2181a7733",
+      "input_path": "cases/federal-budget-cost-bridge-v1.md",
+      "input_sha256": "efeaf74e3c62ae9d1ec8c808019673dee6307f73d20ff86aa4078e2a2f2157af",
+      "receipt_path": "ai_reviews/federal-budget-cost-bridge-2.0.0.json",
+      "receipt_sha256": "6dce4243f066edb15a9a29267aa052a3a2443649d280ecc8e046cb60e1096cf5"
+    },
+    {
+      "item_id": "government-audit-evidence",
+      "version": "2.0.0",
+      "content_sha256": "862a19213aa05cde116abcd61f20570846b1e2547610bbdea0a8127df71141dc",
+      "references_sha256": "2ac9fdcc3eabaa16cc2e9b0e1fe5c56ae8fa62694199e727630a1c93ca19a837",
+      "input_path": "cases/government-audit-evidence-v1.md",
+      "input_sha256": "40b627bbdcd3dfaa0376da15d42349d0390914cf2ce685bf262f23331d8ecf59",
+      "receipt_path": "ai_reviews/government-audit-evidence-2.0.0.json",
+      "receipt_sha256": "140c03446aff9eb2e9e177284fb4acd171e211a8c7273fb962cd20d2fb33dfb6"
+    },
+    {
+      "item_id": "federal-igt-reconciliation",
+      "version": "2.0.0",
+      "content_sha256": "4831425f410b136125cbf7813a43fadc9f1935d34d992409633157a63e91c812",
+      "references_sha256": "8f0ea174c74544bd9d425b176c3b8f1bb349b794a157a704076054069e59f0a6",
+      "input_path": "cases/federal-igt-reconciliation-v1.md",
+      "input_sha256": "6d984d16d7f5f734dbbf9b39dd74f0aa3ca69b7ee52e082ffc77df148e2f4c2c",
+      "receipt_path": "ai_reviews/federal-igt-reconciliation-2.0.0.json",
+      "receipt_sha256": "66a0346dad3f158d809ec77dd481c77ba0618f9873d0b037d381e3d61f186e10"
+    },
+    {
+      "item_id": "federal-mda-evidence",
+      "version": "2.0.0",
+      "content_sha256": "8e85e23fd7d96f4a5c5169e9b5522b0678c41e21d2424e2388c3019469c82ccc",
+      "references_sha256": "221cc6c7604cb86dbd92b063d537c1a369e7ae97b9e6a5fd7a4ec1348b2e4311",
+      "input_path": "templates/federal-mda-evidence-v1.md",
+      "input_sha256": "a615fe9918eff287ffab0879c325e41adc2d5b1497343acb07bc8d8b4f0397bf",
+      "receipt_path": "ai_reviews/federal-mda-evidence-2.0.0.json",
+      "receipt_sha256": "5eb1970082b7cc1ea750d8fa0eac3890cfa878642d8dcd58d5d71df3784607fe"
+    }
+  ]
+}

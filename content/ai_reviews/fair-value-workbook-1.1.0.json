@@ -1,0 +1,190 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "fair-value-workbook",
+  "input_sha256": "e62596c5063a71f62f109edd253705edf16b432ac2062ab72475952ac4c82dc6",
+  "output_sha256": "cf404f1a491599fb4ba07567f85487dae29b6f1f7673deb533eeeb24b6b86a6e",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T05:42:12Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current ASC edition and topic amendments not established",
+      "access_state": "not_accessed_link_only",
+      "exact_locators": [
+        "Research locator only; no authoritative paragraph claim verified"
+      ],
+      "checked_claim_ids": [
+        "fv-asc-gap"
+      ]
+    },
+    {
+      "reference_id": "pcaob-as2501",
+      "official_url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2501",
+      "source_version_or_date": "Applicable AS 2501 version and amendment dates not established in this review",
+      "access_state": "fresh_automated_verification_not_performed_due_to_publisher_access_restriction",
+      "exact_locators": [
+        "Retained reference URL only; standard paragraphs not freshly inspected"
+      ],
+      "checked_claim_ids": [
+        "fv-audit-gap"
+      ]
+    },
+    {
+      "reference_id": "sec-private-assets-fair-value-2026-09-28",
+      "official_url": "https://www.sec.gov/newsroom/speeches-statements/hohl-daley-statement-fair-value-measurement-disclosure-considerations-private-assets-092806",
+      "source_version_or_date": "Staff statement dated and last reviewed/updated 2026-09-28; inspected 2026-10-04",
+      "access_state": "selected_official_staff_sections_examined",
+      "exact_locators": [
+        "Introduction and named authors",
+        "Information Quality and Management’s Responsibility",
+        "The Market Participant Perspective",
+        "The Importance of Calibration",
+        "Fair Value Measurement Disclosures",
+        "Footnote 1: staff status and no new obligations"
+      ],
+      "checked_claim_ids": [
+        "fv-sec-status",
+        "fv-sec-scope"
+      ]
+    },
+    {
+      "reference_id": "pcaob-terms",
+      "official_url": "https://pcaobus.org/privacypolicy",
+      "source_version_or_date": "Terms last-updated label 2021-09-09; inspected 2026-10-04",
+      "access_state": "publisher_policy_examined_then_standard_retrieval_stopped",
+      "exact_locators": [
+        "Terms of Use: Authorized Use, automated tools/data-gathering restriction",
+        "Intellectual Property Rights: separate conditional PCAOB Public Materials allowance"
+      ],
+      "checked_claim_ids": [
+        "fv-pcaob-access"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "fv-sec-status",
+      "article_section": "A current staff reminder with a limited role",
+      "category": "source_identity_and_applicability",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Names, September 28, 2026 date and footnote 1 were verified. The statement is explicitly nonbinding staff context and creates no new obligations.",
+      "source_reference_ids": [
+        "sec-private-assets-fair-value-2026-09-28"
+      ]
+    },
+    {
+      "claim_id": "fv-sec-scope",
+      "article_section": "A current staff reminder; Assemble the source-to-conclusion trail",
+      "category": "substantive_claim",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Selected staff sections support research prompts about information, market perspectives, calibration and tailored disclosure. No full ASC quotation, NAV eligibility or blanket Level 3 classification is reproduced or adopted.",
+      "source_reference_ids": [
+        "sec-private-assets-fair-value-2026-09-28"
+      ]
+    },
+    {
+      "claim_id": "fv-asc-gap",
+      "article_section": "Define the measurement; Review and source-access gates",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Primary ASC text was not accessed; recognition, hierarchy, disclosure and investment-company applicability remain research tasks.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "fv-pcaob-access",
+      "article_section": "Review and source-access gates",
+      "category": "rights_and_access",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "PCAOB terms prohibit automated gathering; fresh AS 2501 retrieval was not performed. Reuse conditions and source access are separate.",
+      "source_reference_ids": [
+        "pcaob-terms"
+      ]
+    },
+    {
+      "claim_id": "fv-audit-gap",
+      "article_section": "Review and source-access gates",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "AS 2501 current text, amendment status and engagement application remain unverified; no auditing-standard requirement is presented as freshly checked.",
+      "source_reference_ids": [
+        "pcaob-as2501"
+      ]
+    },
+    {
+      "claim_id": "fv-prices",
+      "article_section": "An original instrument-matching exercise",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Three price multiplication branches and a stipulated duplicate-position effect were recalculated. Different instruments/dates are not treated as interchangeable market inputs.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "fv-sensitivity",
+      "article_section": "Sensitivity is a question, not a valuation conclusion",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "The two one-year discount formulas and their unrounded-result difference were recalculated; the certainty/rate assumptions are fictional and do not support a valuation conclusion.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "rights-original",
+      "article_section": "Original-content footer",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "This revision contains original educational explanation and fictional examples under the inherited CC BY 4.0 license. No third-party standard body is reproduced or relicensed; paid services do not change the stated free educational license.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "fair-value-workbook input SHA256",
+      "actual": "e62596c5063a71f62f109edd253705edf16b432ac2062ab72475952ac4c82dc6",
+      "expected": "e62596c5063a71f62f109edd253705edf16b432ac2062ab72475952ac4c82dc6",
+      "result": "pass"
+    },
+    {
+      "check": "fair-value price branches",
+      "actual": "(98000, 104000, 101000)",
+      "expected": "(98000, 104000, 101000)",
+      "result": "pass"
+    },
+    {
+      "check": "fair-value duplicate overstatement",
+      "actual": "98000",
+      "expected": "98000",
+      "result": "pass"
+    },
+    {
+      "check": "fair-value sensitivity",
+      "actual": "(Decimal('92.59'), Decimal('90.91'), Decimal('1.68'))",
+      "expected": "(Decimal('92.59'), Decimal('90.91'), Decimal('1.68'))",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Added scoped September 28, 2026 SEC staff context and its no-new-obligations limitation.",
+    "Created instrument/date/population mismatch examples and a bounded sensitivity calculation.",
+    "Separated ASC, PCAOB access and professional/specialist review gaps."
+  ],
+  "unresolved_gaps": [
+    "Current ASC text and the standard requiring or permitting the measurement were not accessed.",
+    "Fresh AS 2501 retrieval was not performed due to the publisher automated-access restriction.",
+    "No real input relevance, fair value, hierarchy, NAV eligibility or specialist conclusion is established."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

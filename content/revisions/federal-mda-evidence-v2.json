@@ -1,0 +1,26 @@
+{
+  "item_id": "federal-mda-evidence",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "templates/federal-mda-evidence-v1.md",
+    "version": "1.0.0",
+    "sha256": "a615fe9918eff287ffab0879c325e41adc2d5b1497343acb07bc8d8b4f0397bf",
+    "source_ids": [
+      "fasab-sig-64-1-2026"
+    ]
+  },
+  "current": {
+    "path": "templates/federal-mda-evidence-v2.md",
+    "version": "2.0.0",
+    "sha256": "8e85e23fd7d96f4a5c5169e9b5522b0678c41e21d2424e2388c3019469c82ccc",
+    "source_ids": [
+      "fasab-sig-64-1-2026",
+      "fasab-standards-directory"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

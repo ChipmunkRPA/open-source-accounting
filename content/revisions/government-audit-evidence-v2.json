@@ -1,0 +1,29 @@
+{
+  "item_id": "government-audit-evidence",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "cases/government-audit-evidence-v1.md",
+    "version": "1.0.0",
+    "sha256": "40b627bbdcd3dfaa0376da15d42349d0390914cf2ce685bf262f23331d8ecf59",
+    "source_ids": [
+      "gao-yellowbook",
+      "gao-yellowbook-2024",
+      "gao-qm-faq"
+    ]
+  },
+  "current": {
+    "path": "cases/government-audit-evidence-v2.md",
+    "version": "2.0.0",
+    "sha256": "862a19213aa05cde116abcd61f20570846b1e2547610bbdea0a8127df71141dc",
+    "source_ids": [
+      "gao-yellowbook",
+      "gao-yellowbook-2024",
+      "gao-qm-faq"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

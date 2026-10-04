@@ -1,0 +1,25 @@
+{
+  "item_id": "non-gaap-review",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/non-gaap-review.md",
+    "version": "0.5.0",
+    "sha256": "b9eed05ea8c446e45988b095b9071caa38c0a098510c440159265764a0ff969f",
+    "source_ids": [
+      "sec-nongaap"
+    ]
+  },
+  "current": {
+    "path": "guides/non-gaap-review-v1.md",
+    "version": "1.1.0",
+    "sha256": "82bf79f9fae0bf1e44ad0aa6c14f8eeb1dd354f13ec5f6e29aab63b0c4d5a3ae",
+    "source_ids": [
+      "sec-nongaap"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

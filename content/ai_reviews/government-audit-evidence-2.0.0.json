@@ -1,0 +1,173 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "government-audit-evidence",
+  "input_sha256": "40b627bbdcd3dfaa0376da15d42349d0390914cf2ce685bf262f23331d8ecf59",
+  "output_sha256": "862a19213aa05cde116abcd61f20570846b1e2547610bbdea0a8127df71141dc",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T05:45:31Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "gao-yellowbook",
+      "official_url": "https://www.gao.gov/yellowbook",
+      "source_version_or_date": "Current landing page inspected 2026-10-04",
+      "access_state": "Official primary page or PDF extracted text inspected for the listed passages on 2026-10-04; no full-text redistribution or product permission change.",
+      "exact_locators": [
+        "Current Yellow Book",
+        "Special Note for Federal Government Audit Organizations"
+      ],
+      "checked_claim_ids": [
+        "audit-qm-timing",
+        "audit-conditional-dates"
+      ]
+    },
+    {
+      "reference_id": "gao-yellowbook-2024",
+      "official_url": "https://www.gao.gov/assets/gao-24-106786.pdf",
+      "source_version_or_date": "Government Auditing Standards 2024 Revision; February 2024",
+      "access_state": "Official primary page or PDF extracted text inspected for the listed passages on 2026-10-04; no full-text redistribution or product permission change.",
+      "exact_locators": [
+        "Physical page 2: introductory supersession and effective-date notice",
+        "Physical page 8 / printed page vi: government-work and separate-component reproduction notice"
+      ],
+      "checked_claim_ids": [
+        "audit-engagement-timing",
+        "audit-conditional-dates",
+        "audit-rights"
+      ]
+    },
+    {
+      "reference_id": "gao-qm-faq",
+      "official_url": "https://files.gao.gov/reports/GAO-26-108710/index.html",
+      "source_version_or_date": "GAO-26-108710; published 2025-12-15",
+      "access_state": "Official primary page or PDF extracted text inspected for the listed passages on 2026-10-04; no full-text redistribution or product permission change.",
+      "exact_locators": [
+        "Introduction immediately before Section I",
+        "Section I: Quality Management Risk Assessment Process"
+      ],
+      "checked_claim_ids": [
+        "audit-faq-status",
+        "audit-quality-case"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "audit-engagement-timing",
+      "article_section": "Sources and verification",
+      "category": "effective-date",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Added verified different 2024-revision triggers for subject periods and performance-audit commencement, including early implementation.",
+      "source_reference_ids": [
+        "gao-yellowbook-2024"
+      ]
+    },
+    {
+      "claim_id": "audit-qm-timing",
+      "article_section": "Sources and verification",
+      "category": "applicability",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Separates ordinary organization-level dates from the current federal-government-audit-organization deferral; auditing a government client is not evidence of qualifying organization status.",
+      "source_reference_ids": [
+        "gao-yellowbook"
+      ]
+    },
+    {
+      "claim_id": "audit-conditional-dates",
+      "article_section": "Apply the verified timing facts",
+      "category": "conditional-analysis",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Applied date comparisons only after explicit GAGAS-scope, engagement-type and no-early-adoption assumptions. Older financial period is not automatically classified solely by report year.",
+      "source_reference_ids": [
+        "gao-yellowbook",
+        "gao-yellowbook-2024"
+      ]
+    },
+    {
+      "claim_id": "audit-faq-status",
+      "article_section": "Sources and verification",
+      "category": "source-status",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "FAQ is identified as GAGAS interpretive guidance, not an unrelated checklist or independent new standard.",
+      "source_reference_ids": [
+        "gao-qm-faq"
+      ]
+    },
+    {
+      "claim_id": "audit-quality-case",
+      "article_section": "Build a quality-risk response that can be tested",
+      "category": "original-analysis",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Added a fictional staffing/review-risk evidence chain; it is explicitly non-exhaustive and distinguishes policy design, implementation, operation, monitoring and remediation.",
+      "source_reference_ids": [
+        "gao-qm-faq"
+      ]
+    },
+    {
+      "claim_id": "audit-rights",
+      "article_section": "Sources and verification; Free education and Premium execution",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Checked GAO government-work notice and component caveat; no diagrams or source examples reproduced, no permissions granted.",
+      "source_reference_ids": [
+        "gao-yellowbook-2024"
+      ]
+    },
+    {
+      "claim_id": "audit-scope-gap",
+      "article_section": "Fictional packet and conditional answers",
+      "category": "applicability-gap",
+      "severity": "warning",
+      "disposition": "retained-explicit-abstention",
+      "explanation": "Actual engagement agreement, organization status, commencement event, predecessor edition and adoption decisions remain unresolved.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "gao-financial-period-earlier",
+      "actual": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "check": "gao-performance-later",
+      "actual": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "check": "gao-day-before",
+      "actual": "False",
+      "expected": "False",
+      "passed": true
+    },
+    {
+      "check": "gao-day-of",
+      "actual": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "changes_summary": [
+    "Replaced all-source-unknown posture with limited verified timing and FAQ facts.",
+    "Added conditional answers for the supplied assignments, one-day boundary tests and original quality-risk response case.",
+    "Kept real engagement compliance, organization eligibility and human review unresolved; separated free content from private paid execution."
+  ],
+  "unresolved_gaps": [
+    "No human accountant, CPA, auditor or legal reviewer attestation was performed; this is an AI editorial review of the exact output hash.",
+    "No client records, real posting, filing, engagement procedure or Premium execution was performed. Source operation rights and Agent admission are unchanged.",
+    "Selected source passages were checked, not every requirement, amendment or related authority. Entity-specific facts, applicability and organizational release decisions remain necessary.",
+    "No full Yellow Book or companion-standard review; actual predecessor/adoption and engagement-scope decisions require authorized professional assessment."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

@@ -1,0 +1,25 @@
+{
+  "item_id": "materiality",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/materiality.md",
+    "version": "0.5.0",
+    "sha256": "26aa441390a949a8592dda22d7b27be2aa22de0fdc16089bcebc14e7ee57352d",
+    "source_ids": [
+      "sec-sab99"
+    ]
+  },
+  "current": {
+    "path": "guides/materiality-v1.md",
+    "version": "1.1.0",
+    "sha256": "0a687640e5b7dc25484f4c0a775671d11aad640a5073f253efe4dd3c9ec47f82",
+    "source_ids": [
+      "sec-sab99"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

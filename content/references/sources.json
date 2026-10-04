@@ -56,7 +56,7 @@
     },
     {
       "id": "sec-sab99",
-      "title": "SAB 99 \u2014 Materiality",
+      "title": "SAB 99 — Materiality",
       "publisher": "SEC staff",
       "url": "https://www.sec.gov/interps/account/sab99.htm",
       "kind": "staff_guidance",
@@ -69,7 +69,7 @@
     },
     {
       "id": "sec-sab108",
-      "title": "SAB 108 \u2014 Quantifying financial statement misstatements",
+      "title": "SAB 108 — Quantifying financial statement misstatements",
       "publisher": "SEC staff",
       "url": "https://www.sec.gov/rules-regulations/staff-guidance/staff-accounting-bulletins/staff-accounting-bulletin-no-108",
       "kind": "staff_guidance",
@@ -82,7 +82,7 @@
     },
     {
       "id": "sec-sab14",
-      "title": "Codified SAB Topic 14 \u2014 Share-Based Payment",
+      "title": "Codified SAB Topic 14 — Share-Based Payment",
       "publisher": "SEC staff",
       "url": "https://www.sec.gov/interps/account/sabcodet14.htm",
       "kind": "staff_guidance",
@@ -121,20 +121,20 @@
     },
     {
       "id": "pcaob-as2201",
-      "title": "AS 2201 \u2014 Integrated ICFR audit",
+      "title": "AS 2201 — Integrated ICFR audit",
       "publisher": "PCAOB",
       "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2201",
       "kind": "auditing_standard",
       "checked_at": "2026-09-27",
       "verification": "publisher_page_examined",
-      "review_scope": "Selected paragraphs .62\u2013.70 and Appendix A examined. Apply the version for the engagement; no full standard is bundled.",
+      "review_scope": "Selected paragraphs .62–.70 and Appendix A examined. Apply the version for the engagement; no full standard is bundled.",
       "full_text_included": false,
       "acquisition": "metadata_and_link_only",
       "automated_fetch_enabled": false
     },
     {
       "id": "pcaob-as1105",
-      "title": "AS 1105 \u2014 Audit Evidence",
+      "title": "AS 1105 — Audit Evidence",
       "publisher": "PCAOB",
       "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS1105",
       "kind": "auditing_standard",
@@ -212,7 +212,7 @@
     },
     {
       "id": "sec-reuse",
-      "title": "SEC Webmaster FAQ \u2014 reuse",
+      "title": "SEC Webmaster FAQ — reuse",
       "publisher": "SEC",
       "url": "https://www.sec.gov/about/webmaster-frequently-asked-questions",
       "kind": "publisher_policy",
@@ -290,7 +290,7 @@
     },
     {
       "id": "pcaob-as2415",
-      "title": "AS 2415 \u2014 Going concern",
+      "title": "AS 2415 — Going concern",
       "publisher": "PCAOB",
       "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2415",
       "kind": "auditing_standard",
@@ -303,7 +303,7 @@
     },
     {
       "id": "pcaob-as2801",
-      "title": "AS 2801 \u2014 Subsequent events",
+      "title": "AS 2801 — Subsequent events",
       "publisher": "PCAOB",
       "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2801",
       "kind": "auditing_standard",
@@ -316,7 +316,7 @@
     },
     {
       "id": "pcaob-as2410",
-      "title": "AS 2410 \u2014 Related parties",
+      "title": "AS 2410 — Related parties",
       "publisher": "PCAOB",
       "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2410",
       "kind": "auditing_standard",
@@ -329,7 +329,7 @@
     },
     {
       "id": "pcaob-as2501",
-      "title": "AS 2501 \u2014 Auditing accounting estimates",
+      "title": "AS 2501 — Auditing accounting estimates",
       "publisher": "PCAOB",
       "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2501",
       "kind": "auditing_standard",
@@ -342,7 +342,7 @@
     },
     {
       "id": "nist-csf-2-0",
-      "title": "NIST Cybersecurity Framework 2.0 \u2014 NIST CSWP 29",
+      "title": "NIST Cybersecurity Framework 2.0 — NIST CSWP 29",
       "publisher": "National Institute of Standards and Technology",
       "url": "https://doi.org/10.6028/NIST.CSWP.29",
       "kind": "government_cybersecurity_guidance",
@@ -355,7 +355,7 @@
     },
     {
       "id": "treasury-tfm4700-app5-jun2026",
-      "title": "Treasury Financial Manual Chapter 4700 Appendix 5 \u2014 June 2026",
+      "title": "Treasury Financial Manual Chapter 4700 Appendix 5 — June 2026",
       "publisher": "U.S. Treasury, Bureau of the Fiscal Service",
       "url": "https://tfx.treasury.gov/media/26/download?inline",
       "kind": "federal_reporting_manual",
@@ -373,7 +373,7 @@
     },
     {
       "id": "treasury-tfm4700-app6-jun2026",
-      "title": "Treasury Financial Manual Chapter 4700 Appendix 6 \u2014 June 2026",
+      "title": "Treasury Financial Manual Chapter 4700 Appendix 6 — June 2026",
       "publisher": "U.S. Treasury, Bureau of the Fiscal Service",
       "url": "https://tfx.treasury.gov/media/1791/download?inline",
       "kind": "federal_reporting_manual",
@@ -391,13 +391,13 @@
     },
     {
       "id": "fasab-sig-64-1-2026",
-      "title": "FASAB Staff Implementation Guidance 64.1 \u2014 June 26, 2026",
+      "title": "FASAB Staff Implementation Guidance 64.1 — June 26, 2026",
       "publisher": "Federal Accounting Standards Advisory Board",
       "url": "https://files.fasab.gov/pdffiles/handbook_sig_64_1.pdf",
       "kind": "federal_staff_implementation_guidance",
       "checked_at": "2026-09-29",
       "verification": "original_pdf_acquired_and_selected_pages_visually_checked",
-      "review_scope": "Physical 2 copyright notice; physical 7 / printed 5 paragraphs 18\u201324, start of 25 and footnotes 2\u20133; physical 15 / printed 13 paragraphs 70\u201374 and materiality caveat. AI-assisted selected checks only; no professional, rights or applicability approval. Underlying SFFAS 64 text is not verified by this record.",
+      "review_scope": "Physical 2 copyright notice; physical 7 / printed 5 paragraphs 18–24, start of 25 and footnotes 2–3; physical 15 / printed 13 paragraphs 70–74 and materiality caveat. AI-assisted selected checks only; no professional, rights or applicability approval. Underlying SFFAS 64 text is not verified by this record.",
       "full_text_included": false,
       "acquisition": "official_original_retained_locally_separate_from_library",
       "automated_fetch_enabled": false,
@@ -424,6 +424,48 @@
       "issued_on": "2024-10-31",
       "publicly_available_on": null,
       "effective_on": null
+    },
+    {
+      "id": "fasab-standards-directory",
+      "title": "FASAB accounting standards directory",
+      "publisher": "Federal Accounting Standards Advisory Board",
+      "url": "https://fasab.gov/accounting-standards/",
+      "kind": "discovery_directory",
+      "checked_at": null,
+      "verification": "reference_only",
+      "review_scope": "Existing official discovery seed in the source-family registry. No new external check, source-body acquisition, paragraph verification or applicability approval for this workbook.",
+      "full_text_included": false,
+      "acquisition": "metadata_and_link_only",
+      "automated_fetch_enabled": false
+    },
+    {
+      "id": "omb-a136-2026-reference",
+      "title": "OMB Circular A-136: Financial Reporting Requirements — 2026 reference",
+      "publisher": "Office of Management and Budget",
+      "url": "https://www.whitehouse.gov/wp-content/uploads/2026/05/OMB-Circular-No.-A-136-2026.pdf",
+      "kind": "circular_reference",
+      "checked_at": null,
+      "verification": "reference_only",
+      "review_scope": "Title and official URL carried forward from the September 27, 2026 OMB/Treasury metadata inventory. No new external check or source-body access; requirements, deadlines, current status and entity/period applicability are unverified for this workbook.",
+      "full_text_included": false,
+      "acquisition": "metadata_and_link_only",
+      "automated_fetch_enabled": false,
+      "issued_on": null,
+      "publicly_available_on": null,
+      "effective_on": null
+    },
+    {
+      "id": "sec-private-assets-fair-value-2026-09-28",
+      "title": "Statement on Fair Value Measurement and Disclosure Considerations for Private Assets",
+      "publisher": "SEC staff",
+      "url": "https://www.sec.gov/newsroom/speeches-statements/hohl-daley-statement-fair-value-measurement-disclosure-considerations-private-assets-092806",
+      "kind": "staff_guidance",
+      "checked_at": "2026-10-02",
+      "verification": "publisher_page_examined",
+      "review_scope": "Official SEC page dated September 28, 2026, with bylines Kurt Hohl (Chief Accountant) and Brian Daly (Director, Division of Investment Management). Footnote 1 identifies the authors' staff views: the Commission has neither approved nor disapproved the content; it carries no legal force and creates no new obligations. This is staff guidance, not an issued standard or Commission rule. The page discusses private-asset fair-value and disclosure considerations and refers to ASC 820/946 and PCAOB AS 2501/1105. Only page identity, date, bylines and status were recorded. No source body, operation permission, applicability conclusion, professional review or original-article association is supplied.",
+      "full_text_included": false,
+      "acquisition": "metadata_and_link_only",
+      "automated_fetch_enabled": false
     }
   ]
 }

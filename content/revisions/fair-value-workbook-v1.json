@@ -1,0 +1,29 @@
+{
+  "item_id": "fair-value-workbook",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/fair-value-workbook.md",
+    "version": "0.6.0",
+    "sha256": "e62596c5063a71f62f109edd253705edf16b432ac2062ab72475952ac4c82dc6",
+    "source_ids": [
+      "fasb-asc",
+      "pcaob-as2501"
+    ]
+  },
+  "current": {
+    "path": "guides/fair-value-workbook-v1.md",
+    "version": "1.1.0",
+    "sha256": "cf404f1a491599fb4ba07567f85487dae29b6f1f7673deb533eeeb24b6b86a6e",
+    "source_ids": [
+      "fasb-asc",
+      "pcaob-as2501",
+      "sec-private-assets-fair-value-2026-09-28",
+      "pcaob-terms"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

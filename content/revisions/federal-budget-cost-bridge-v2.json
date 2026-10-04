@@ -1,0 +1,27 @@
+{
+  "item_id": "federal-budget-cost-bridge",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "cases/federal-budget-cost-bridge-v1.md",
+    "version": "1.0.0",
+    "sha256": "efeaf74e3c62ae9d1ec8c808019673dee6307f73d20ff86aa4078e2a2f2157af",
+    "source_ids": [
+      "fasab-standards-directory",
+      "omb-a136-2026-reference"
+    ]
+  },
+  "current": {
+    "path": "cases/federal-budget-cost-bridge-v2.md",
+    "version": "2.0.0",
+    "sha256": "5c3eef6a4fe0ca7086b3978ea01237f196db01acca10f600e75eec4302699c52",
+    "source_ids": [
+      "fasab-standards-directory",
+      "omb-a136-2026-reference"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

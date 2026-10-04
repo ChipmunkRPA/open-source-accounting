@@ -1,0 +1,268 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "federal-mda-evidence",
+  "input_sha256": "a615fe9918eff287ffab0879c325e41adc2d5b1497343acb07bc8d8b4f0397bf",
+  "output_sha256": "8e85e23fd7d96f4a5c5169e9b5522b0678c41e21d2424e2388c3019469c82ccc",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T05:45:31Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasab-sig-64-1-2026",
+      "official_url": "https://files.fasab.gov/pdffiles/handbook_sig_64_1.pdf",
+      "source_version_or_date": "SIG 64.1; issued 2026-06-26",
+      "access_state": "Official primary page or PDF extracted text inspected for the listed passages on 2026-10-04; no full-text redistribution or product permission change.",
+      "exact_locators": [
+        "Physical page 2: government-work and separate-component notice",
+        "Physical page 3 / printed page 1: Summary and no-new-requirements statement",
+        "Physical page 7 / printed page 5: paragraphs 18–24",
+        "Physical page 15 / printed page 13: paragraph 74"
+      ],
+      "checked_claim_ids": [
+        "mda-sig-status",
+        "mda-integrated-context",
+        "mda-rights"
+      ]
+    },
+    {
+      "reference_id": "fasab-standards-directory",
+      "official_url": "https://files.fasab.gov/pdffiles/handbook_sffas_64.pdf",
+      "source_version_or_date": "SFFAS 64; issued 2024-09-27; Handbook Version 24 (9/25)",
+      "access_state": "Official primary page or PDF extracted text inspected for the listed passages on 2026-10-04; no full-text redistribution or product permission change.",
+      "exact_locators": [
+        "Physical/printed page 4: paragraphs 1–3",
+        "Physical/printed page 5: paragraphs 8–11",
+        "Physical/printed page 7: paragraph 14",
+        "Physical/printed page 16: paragraph A33"
+      ],
+      "checked_claim_ids": [
+        "mda-sffas-date",
+        "mda-scope-gap"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "mda-sffas-date",
+      "article_section": "Sources and verification",
+      "category": "effective-date",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Verified SFFAS 64 period-start condition and early implementation, distinct from its issuance and the later SIG date; conventional FY2026 comparison is conditional on scope.",
+      "source_reference_ids": [
+        "fasab-standards-directory"
+      ]
+    },
+    {
+      "claim_id": "mda-sig-status",
+      "article_section": "Sources and verification",
+      "category": "source-status",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "SIG assists implementation without creating new requirements; paragraph 74 applies to the guidance itself.",
+      "source_reference_ids": [
+        "fasab-sig-64-1-2026"
+      ]
+    },
+    {
+      "claim_id": "mda-integrated-context",
+      "article_section": "Sources and verification",
+      "category": "source-check",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Selected official paragraphs support integration context; original service figures and new allocation examples are not FASAB examples.",
+      "source_reference_ids": [
+        "fasab-sig-64-1-2026"
+      ]
+    },
+    {
+      "claim_id": "mda-arithmetic",
+      "article_section": "Worked examples and planning sensitivity",
+      "category": "arithmetic",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Reperformed all reported main ratios, relative versus percentage-point differences, volume bridge, component allocations, unit costs and sensitivity endpoints.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "mda-original-cases",
+      "article_section": "Allocation; narrative review; forward-looking uncertainty",
+      "category": "original-analysis",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Added allocation-method shift, stage-count double-counting, unsupported-claim corrections and deterministic-sensitivity cautions with explicit fictional assumptions.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "mda-rights",
+      "article_section": "Sources and verification; Free education and Premium execution",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Preserved original CC BY education, retained FASAB component caveat, reproduced no source illustrations, and granted no source or professional permissions.",
+      "source_reference_ids": [
+        "fasab-sig-64-1-2026"
+      ]
+    },
+    {
+      "claim_id": "mda-scope-gap",
+      "article_section": "Sources and verification; reusable workpaper",
+      "category": "applicability-gap",
+      "severity": "warning",
+      "disposition": "retained-explicit-abstention",
+      "explanation": "Selected date/context checks do not constitute complete standards, amendment or administrative-instruction coverage, or actual management assessment.",
+      "source_reference_ids": [
+        "fasab-standards-directory"
+      ]
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "mda-cost-growth",
+      "actual": "10.0",
+      "expected": "10.00",
+      "passed": true
+    },
+    {
+      "check": "mda-volume-growth",
+      "actual": "10.0",
+      "expected": "10.00",
+      "passed": true
+    },
+    {
+      "check": "mda-unit-cost-prior",
+      "actual": "800",
+      "expected": "800",
+      "passed": true
+    },
+    {
+      "check": "mda-unit-cost-current",
+      "actual": "800",
+      "expected": "800",
+      "passed": true
+    },
+    {
+      "check": "mda-quality-prior",
+      "actual": "95.00",
+      "expected": "95",
+      "passed": true
+    },
+    {
+      "check": "mda-quality-current",
+      "actual": "90.0",
+      "expected": "90",
+      "passed": true
+    },
+    {
+      "check": "mda-quality-relative-decline",
+      "actual": "5.26",
+      "expected": "5.26",
+      "passed": true
+    },
+    {
+      "check": "mda-accepted-growth",
+      "actual": "4.21",
+      "expected": "4.21",
+      "passed": true
+    },
+    {
+      "check": "mda-accepted-unit-cost-prior",
+      "actual": "842.11",
+      "expected": "842.11",
+      "passed": true
+    },
+    {
+      "check": "mda-accepted-unit-cost-current",
+      "actual": "888.89",
+      "expected": "888.89",
+      "passed": true
+    },
+    {
+      "check": "mda-accepted-cost-increase",
+      "actual": "5.56",
+      "expected": "5.56",
+      "passed": true
+    },
+    {
+      "check": "mda-volume-bridge",
+      "actual": "1320000",
+      "expected": "1320000",
+      "passed": true
+    },
+    {
+      "check": "mda-allocation-intake",
+      "actual": "530000.00",
+      "expected": "530000",
+      "passed": true
+    },
+    {
+      "check": "mda-allocation-review",
+      "actual": "790000.00",
+      "expected": "790000",
+      "passed": true
+    },
+    {
+      "check": "mda-allocation-total",
+      "actual": "1320000",
+      "expected": "1320000",
+      "passed": true
+    },
+    {
+      "check": "mda-revised-allocation-intake",
+      "actual": "560000",
+      "expected": "560000",
+      "passed": true
+    },
+    {
+      "check": "mda-revised-allocation-review",
+      "actual": "760000",
+      "expected": "760000",
+      "passed": true
+    },
+    {
+      "check": "mda-intake-unit-cost",
+      "actual": "321.21",
+      "expected": "321.21",
+      "passed": true
+    },
+    {
+      "check": "mda-review-unit-cost",
+      "actual": "478.79",
+      "expected": "478.79",
+      "passed": true
+    },
+    {
+      "check": "mda-modeled-low",
+      "actual": "1280000",
+      "expected": "1280000",
+      "passed": true
+    },
+    {
+      "check": "mda-modeled-high",
+      "actual": "1520000",
+      "expected": "1520000",
+      "passed": true
+    },
+    {
+      "check": "sffas64-fy2026-trigger",
+      "actual": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "changes_summary": [
+    "Narrowed real SFFAS 64 effective-date gap with primary-source verification, distinct from SIG timing.",
+    "Added original component-allocation and population double-counting examples, claim-to-evidence review and transparent scenario sensitivity.",
+    "Kept entity controls, causality, reporting approval and paid workflow operation separate from the educational template."
+  ],
+  "unresolved_gaps": [
+    "No human accountant, CPA, auditor or legal reviewer attestation was performed; this is an AI editorial review of the exact output hash.",
+    "No client records, real posting, filing, engagement procedure or Premium execution was performed. Source operation rights and Agent admission are unchanged.",
+    "Selected source passages were checked, not every requirement, amendment or related authority. Entity-specific facts, applicability and organizational release decisions remain necessary.",
+    "Other entity-specific standards, amendments and current administrative reporting instructions were not comprehensively reviewed."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

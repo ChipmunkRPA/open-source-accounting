@@ -1,0 +1,27 @@
+{
+  "item_id": "federal-igt-reconciliation",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "cases/federal-igt-reconciliation-v1.md",
+    "version": "1.0.0",
+    "sha256": "6d984d16d7f5f734dbbf9b39dd74f0aa3ca69b7ee52e082ffc77df148e2f4c2c",
+    "source_ids": [
+      "treasury-tfm4700-app5-jun2026",
+      "treasury-tfm4700-app6-jun2026"
+    ]
+  },
+  "current": {
+    "path": "cases/federal-igt-reconciliation-v2.md",
+    "version": "2.0.0",
+    "sha256": "4831425f410b136125cbf7813a43fadc9f1935d34d992409633157a63e91c812",
+    "source_ids": [
+      "treasury-tfm4700-app5-jun2026",
+      "treasury-tfm4700-app6-jun2026"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

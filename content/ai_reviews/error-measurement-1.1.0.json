@@ -1,0 +1,166 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "error-measurement",
+  "input_sha256": "0e84725a4ba0e5260b28dd0142d6a7ca15c067faf79549b27ef835f5473e6a7e",
+  "output_sha256": "fd1097006a9e64e4fdb729bc81313158b175fbbb2a31fff7f5ff8d8c3df47ced",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:03:45Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "sec-sab108",
+      "official_url": "https://www.sec.gov/rules-regulations/staff-guidance/staff-accounting-bulletins/staff-accounting-bulletin-no-108",
+      "source_version_or_date": "2006-09-13 issuance; official page inspected 2026-10-04",
+      "access_state": "official_staff_text_examined",
+      "exact_locators": [
+        "Introductory DATE and supplementary information",
+        "Topic 1.N, Question 1: both measurement approaches and correction effects",
+        "Topic 1.N, Question 2: reversing errors",
+        "Topic 1.N, Question 3: bounded 2006 transition"
+      ],
+      "checked_claim_ids": [
+        "err-status",
+        "err-reversals",
+        "err-materiality",
+        "err-transition"
+      ]
+    },
+    {
+      "reference_id": "sec-sab99",
+      "official_url": "https://www.sec.gov/interps/account/sab99.htm",
+      "source_version_or_date": "1999-08-12 issuance; official page inspected 2026-10-04",
+      "access_state": "official_staff_text_examined",
+      "exact_locators": [
+        "Introductory supplementary information: staff status",
+        "Topic 1.M.1: Assessing Materiality",
+        "Topic 1.M.1: Aggregating and Netting Misstatements"
+      ],
+      "checked_claim_ids": [
+        "err-materiality"
+      ]
+    },
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current ASC edition and topic amendments not established",
+      "access_state": "not_accessed_link_only",
+      "exact_locators": [
+        "Research locator only; no authoritative paragraph claim verified"
+      ],
+      "checked_claim_ids": [
+        "err-asc-gap"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "err-status",
+      "article_section": "The source question",
+      "category": "source_identity_and_applicability",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "September 13, 2006 issuance and SEC staff status were checked in the official bulletin; later page timestamps are not used as issuance dates.",
+      "source_reference_ids": [
+        "sec-sab108"
+      ]
+    },
+    {
+      "claim_id": "err-reversals",
+      "article_section": "The source question; Define the signs before calculating",
+      "category": "substantive_correction",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "The revision corrects the risk of reading current-year income effects as only newly originating accruals. Questions 1 and 2 address carryover and reversals; three branches explicitly include releases.",
+      "source_reference_ids": [
+        "sec-sab108"
+      ]
+    },
+    {
+      "claim_id": "err-materiality",
+      "article_section": "Prepare separate measurements and judgments",
+      "category": "substantive_claim",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Measurement and materiality remain separate, and the two measurement perspectives are not added as independent errors.",
+      "source_reference_ids": [
+        "sec-sab108",
+        "sec-sab99"
+      ]
+    },
+    {
+      "claim_id": "err-transition",
+      "article_section": "Boundaries and evidence requests",
+      "category": "historical_applicability",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Question 3 is expressly limited to historical initial application around fiscal years ending in 2006; the revision withholds any present-day opening-equity permission.",
+      "source_reference_ids": [
+        "sec-sab108"
+      ]
+    },
+    {
+      "claim_id": "err-asc-gap",
+      "article_section": "The source question; Boundaries and evidence requests",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Current ASC Topic 250 was not accessed. Correction presentation and filing outcomes are research tasks, not verified requirements.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "err-arithmetic",
+      "article_section": "Define the signs before calculating",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "All three signed liability/expense branches were recalculated using addition of the displayed signed release. The narrative now expressly adds negative release amounts; it does not subtract an already negative number.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "rights-original",
+      "article_section": "Original-content footer",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "This revision contains original educational explanation and fictional examples under the inherited CC BY 4.0 license. No third-party standard body is reproduced or relicensed; paid services do not change the stated free educational license.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "error branch A",
+      "actual": "(36000, 12000)",
+      "expected": "(36000, 12000)",
+      "result": "pass"
+    },
+    {
+      "check": "error branch B",
+      "actual": "(12000, -12000)",
+      "expected": "(12000, -12000)",
+      "result": "pass"
+    },
+    {
+      "check": "error branch C",
+      "actual": "(0, -24000)",
+      "expected": "(0, -24000)",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Added signed release branches, including zero closing error with a 24000 current-income distortion.",
+    "Clarified reversal effects and separate accounting, presentation and filing decisions.",
+    "Restricted SAB 108 transition discussion to its historical scope.",
+    "Corrected narrative sign convention to add the displayed negative release column, with an explicit Branch B equation."
+  ],
+  "unresolved_gaps": [
+    "Primary ASC text not accessed; current Topic 250 treatment and relevant filings remain unverified.",
+    "The exercise excludes taxes, interim reporting and other errors; real analysis must address them.",
+    "No human professional review or correction authorization."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}
