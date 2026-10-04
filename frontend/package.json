@@ -5,9 +5,10 @@
   "description": "Free Open Source Accounting client; premium implementation is private",
   "type": "module",
   "scripts": {
-    "build": "node scripts/clean.mjs && tsc -p tsconfig.json && node scripts/build-vendor.mjs && node scripts/copy-assets.mjs && node scripts/build-library.mjs",
+    "build": "node scripts/clean.mjs && tsc -p tsconfig.json && node scripts/build-vendor.mjs && node scripts/copy-assets.mjs && node scripts/build-library.mjs && node scripts/build-systems.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test:auth": "node --test tests/identity.test.mjs"
+    "test:auth": "node --test tests/identity.test.mjs",
+    "test:systems": "node --test tests/systems.test.mjs"
   },
   "devDependencies": {
     "typescript": "5.9.3",

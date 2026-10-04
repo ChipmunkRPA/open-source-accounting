@@ -124,5 +124,5 @@ for(const item of manifest.items){
  await writeFile(`dist/library/${item.id}.html`,page(item.title,`<p><a href="index.html">All library items</a></p>${reviewSection(item)}<pre class="source-passage-text">${escape(bytes.toString('utf8'))}</pre>`));
  rows.push(`<li><a href="${item.id}.html">${escape(item.title)}</a> — ${escape(item.summary)}${reviews.has(item.id)?' · AI editorial record available':''}</li>`);
 }
-await writeFile('dist/library/index.html',page('Free original accounting library',`<p>${rows.length} original items; ${reviews.size} revision-bound AI editorial records. Third-party publications retain their own rights. Links and drafts are not approved authoritative evidence.</p><ul>${rows.join('')}</ul>`));
+await writeFile('dist/library/index.html',page('Free original accounting library',`<p><a href="../systems/index.html">Explore the free accounting systems directory</a></p><p>${rows.length} original items; ${reviews.size} revision-bound AI editorial records. Third-party publications retain their own rights. Links and drafts are not approved authoritative evidence.</p><ul>${rows.join('')}</ul>`));
 console.log(`Built ${rows.length} hash-verified offline library pages with ${reviews.size} AI editorial records.`);

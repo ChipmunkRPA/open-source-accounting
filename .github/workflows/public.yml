@@ -16,5 +16,6 @@ jobs:
       - run: npm --prefix frontend ci --ignore-scripts
       - run: npm --prefix frontend run typecheck
       - run: npm --prefix frontend run test:auth
+      - run: npm --prefix frontend run test:systems
       - run: npm --prefix frontend run build
       - run: python3 scripts/check_public.py --dist

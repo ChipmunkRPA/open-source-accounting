@@ -1,0 +1,1649 @@
+{
+  "schema_version": 1,
+  "version": "1.0.0",
+  "last_checked": "2026-10-04",
+  "title": "Accounting systems directory",
+  "license": "CC-BY-4.0 for original editorial text only; vendor names and logo assets excluded",
+  "disclaimer": "Independent educational directory. Vendor descriptions are based on official public materials, not hands-on product tests. Use cases, company-size fit and evaluation questions are editorial guidance, not rankings or recommendations. Availability, pricing, product editions and integrations must be confirmed with each vendor. No affiliation, endorsement, partner certification or working integration with Open Source Accounting is claimed.",
+  "categories": [
+    {
+      "id": "ap",
+      "label": "Accounts payable",
+      "description": "Receive invoices, route approvals and reconcile supplier payments."
+    },
+    {
+      "id": "procurement",
+      "label": "Procurement",
+      "description": "Manage buying requests, purchase orders and supplier workflows before an invoice arrives."
+    },
+    {
+      "id": "expense",
+      "label": "Expenses & travel",
+      "description": "Collect receipts, apply employee-spend policies and prepare reimbursements."
+    },
+    {
+      "id": "ar",
+      "label": "Receivables & collections",
+      "description": "Deliver invoices, follow up balances, handle disputes and apply incoming cash."
+    },
+    {
+      "id": "revenue",
+      "label": "Billing & revenue",
+      "description": "Translate commercial terms and usage into bills and revenue-accounting inputs."
+    },
+    {
+      "id": "close",
+      "label": "Close & reconciliation",
+      "description": "Coordinate period-end work, substantiate balances and investigate differences."
+    },
+    {
+      "id": "consolidation",
+      "label": "Consolidation",
+      "description": "Combine entity results, translate currencies and manage intercompany eliminations."
+    },
+    {
+      "id": "fpa",
+      "label": "Planning & analysis",
+      "description": "Model budgets, forecasts, scenarios and financial operating drivers."
+    },
+    {
+      "id": "treasury",
+      "label": "Treasury & cash",
+      "description": "Bring bank balances, cash forecasts, payments and financial exposures together."
+    },
+    {
+      "id": "tax",
+      "label": "Tax",
+      "description": "Support transaction-tax calculation, tax data and compliance workflows."
+    },
+    {
+      "id": "audit",
+      "label": "Audit, controls & reporting",
+      "description": "Organize risks, control evidence, audit work and external reporting."
+    },
+    {
+      "id": "integration",
+      "label": "Data & integration",
+      "description": "Move and reconcile information between operational systems and finance."
+    },
+    {
+      "id": "erp",
+      "label": "Core accounting & ERP",
+      "description": "Maintain the ledger and connect accounting with wider business operations."
+    }
+  ],
+  "systems": [
+    {
+      "id": "bill",
+      "name": "BILL",
+      "aliases": [],
+      "categories": [
+        "ap",
+        "ar",
+        "expense",
+        "procurement"
+      ],
+      "company_sizes": [
+        "small",
+        "midsize"
+      ],
+      "website": "https://www.bill.com/",
+      "introduction": "BILL brings supplier bills, customer invoices and employee spending into a finance-operations workspace. It sits alongside the accounting ledger and helps teams manage approvals and the handoff between transactions and bookkeeping.",
+      "use_cases": [
+        "Replace emailed bill approvals",
+        "Coordinate invoice and payment status"
+      ],
+      "company_fit": "Consider when a small or midsize finance team needs more structured payment workflows around its existing ledger.",
+      "integration_context": "The vendor lists accounting-system synchronization. Confirm your exact ledger edition, supported objects, sync direction and handling of rejected or duplicate records.",
+      "evaluation_questions": [
+        "Which approvals occur before payment release?",
+        "How are credits, voids and sync exceptions reconciled?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://www.bill.com/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://bill.lingoapp.com/s/Press-Kit-oJKrzm",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "tipalti",
+      "name": "Tipalti",
+      "aliases": [],
+      "categories": [
+        "ap",
+        "procurement",
+        "expense",
+        "treasury"
+      ],
+      "company_sizes": [
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://tipalti.com/",
+      "introduction": "Tipalti combines supplier onboarding, invoice processing and global payables with related procurement, expense and treasury workflows. Its role in the stack is to connect supplier-side activity with approvals, payment execution and accounting records.",
+      "use_cases": [
+        "Centralize multi-entity supplier workflows",
+        "Reconcile payment results to invoice records"
+      ],
+      "company_fit": "Consider for growing or larger organizations with cross-border suppliers or entity complexity.",
+      "integration_context": "Official materials list ERP connections and developer APIs. Map supplier identifiers, tax data, currencies and settlement results before selecting a connector.",
+      "evaluation_questions": [
+        "Which countries and payment methods are available for the entity?",
+        "Who owns supplier-master changes and failed-payment follow-up?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://tipalti.com/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://tipalti.com/",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "coupa",
+      "name": "Coupa",
+      "aliases": [],
+      "categories": [
+        "procurement",
+        "ap"
+      ],
+      "company_sizes": [
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://www.coupa.com/",
+      "introduction": "Coupa covers procure-to-pay activity, linking business purchasing with supplier invoices. For accounting teams, the important boundary is the movement from approved procurement records to the payable and its eventual posting in the ERP.",
+      "use_cases": [
+        "Connect purchase orders to supplier invoices",
+        "Standardize supplier invoice intake"
+      ],
+      "company_fit": "Consider when purchasing governance spans departments, entities or a substantial supplier base.",
+      "integration_context": "Coupa documents invoice-to-ERP integration and several supplier submission channels. Export status and retry handling need deliberate design.",
+      "evaluation_questions": [
+        "How do changes to an exported invoice reach the ledger?",
+        "Which purchasing and supplier channels are in scope?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://compass.coupa.com/en-us/products/total-spend-management-platform/integration-playbooks-and-resources/other-integration-playbooks/invoicing-platform-integration",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        },
+        {
+          "label": "Official supporting source",
+          "url": "https://docs.coupa.com/en/developer-documentation/the-coupa-core-api/orchestration-documents/invoices-integration-into-your-erp",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "integration_context"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://www.coupa.com/",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "ramp",
+      "name": "Ramp",
+      "aliases": [],
+      "categories": [
+        "expense",
+        "ap",
+        "procurement"
+      ],
+      "company_sizes": [
+        "small",
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://ramp.com/",
+      "introduction": "Ramp combines corporate-card and expense workflows with accounts payable and procurement. Finance teams can use the platform to gather spending information and approvals closer to the transaction, then connect the results to accounting.",
+      "use_cases": [
+        "Collect receipts and spending approvals",
+        "Coordinate purchasing and bill processing"
+      ],
+      "company_fit": "Consider across company sizes where employee and supplier spend needs a shared operating workflow.",
+      "integration_context": "Ramp provides an integrations catalog and accounting-automation tools. Validate entity eligibility, ledger mappings and the exact synchronization behavior.",
+      "evaluation_questions": [
+        "Are card and payment products available in the required country?",
+        "How will finance review exceptions before records are posted?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://ramp.com/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        },
+        {
+          "label": "Official supporting source",
+          "url": "https://ramp.com/press",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "official_media_asset",
+        "source_page": "https://ramp.com/press",
+        "asset_url": "https://assets.ramp.com/nextjs/ramp_september_2026_media_kit.zip",
+        "path": "logos/ramp.svg",
+        "sha256": "5b770d1951f8cb006dac3dd5597420cb079a6a6f2afa6c3687aa5060dc5b7106",
+        "usage_conditions": "Press page offers the kit for royalty-free web or print use. September 2026 kit instructions: use the intact black or white lockup, preserve proportions, and keep clear space on every side equal to its height. No effects, rearrangement or recoloring. Trademark rights remain with Ramp.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "sap-concur",
+      "name": "SAP Concur",
+      "aliases": [],
+      "categories": [
+        "expense",
+        "ap"
+      ],
+      "company_sizes": [
+        "small",
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://www.concur.com/",
+      "introduction": "SAP Concur focuses on travel, employee expenses and invoice-related spending. It brings receipts, policies and approval steps together so the finance team can work from a structured spend record rather than assembling reports after the fact.",
+      "use_cases": [
+        "Apply travel and expense policies",
+        "Prepare approved employee expenses for accounting"
+      ],
+      "company_fit": "Consider from smaller teams to multinationals; the useful fit depends on travel volume, country coverage and policy complexity.",
+      "integration_context": "The vendor describes prebuilt connectors and open APIs for accounting and other business systems. Check approved-report flow and card-feed reconciliation for the selected configuration.",
+      "evaluation_questions": [
+        "Which local tax and reimbursement rules are supported?",
+        "What happens when card transactions or receipts arrive late?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://www.concur.com/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://www.concur.com/",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "highradius",
+      "name": "HighRadius",
+      "aliases": [],
+      "categories": [
+        "ar",
+        "close",
+        "treasury"
+      ],
+      "company_sizes": [
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://www.highradius.com/product/accounts-receivable-software/",
+      "introduction": "HighRadius offers receivables workflows covering credit, collections, cash application and deductions. The AR product connects customer balances and payment information so collectors and cash-application staff can work on exceptions with shared context.",
+      "use_cases": [
+        "Prioritize overdue customer balances",
+        "Match cash receipts and resolve deductions"
+      ],
+      "company_fit": "Consider for midsize or enterprise teams with significant receivables volume and specialized AR responsibilities.",
+      "integration_context": "Official pages describe ERP-integrated AR, including SAP and NetSuite connections. Verify interfaces, write-back permissions and reconciliation rather than assuming instant synchronization.",
+      "evaluation_questions": [
+        "How are ambiguous payments held for review?",
+        "Can collection and dispute histories be traced to ERP balances?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://www.highradius.com/product/accounts-receivable-software/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        },
+        {
+          "label": "Official supporting source",
+          "url": "https://www.highradius.com/product/accounts-receivable-software/erp/sap/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "integration_context"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://www.highradius.com/product/accounts-receivable-software/",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "versapay",
+      "name": "Versapay",
+      "aliases": [],
+      "categories": [
+        "ar"
+      ],
+      "company_sizes": [
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://www.versapay.com/",
+      "introduction": "Versapay combines receivables automation with digital invoice delivery, customer collaboration and payments. A customer-facing portal can reduce scattered invoice questions while giving the finance team a clearer view of payment and dispute activity.",
+      "use_cases": [
+        "Offer customer self-service for invoices",
+        "Coordinate payment collection and disputes"
+      ],
+      "company_fit": "Consider for B2B businesses that need a more structured customer-payment experience around an established ERP.",
+      "integration_context": "Versapay documents ERP connectors, file-based exchange and APIs. Confirm the supported invoice, credit and payment flows for the chosen ERP.",
+      "evaluation_questions": [
+        "How do partial payments and disputed invoices synchronize?",
+        "Which payment methods and fees apply to the business?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://www.versapay.com/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        },
+        {
+          "label": "Official supporting source",
+          "url": "https://www.versapay.com/integrated-payments/all-integrations",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "integration_context"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://www.versapay.com/",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "stripe-billing",
+      "name": "Stripe Billing",
+      "aliases": [],
+      "categories": [
+        "revenue",
+        "ar"
+      ],
+      "company_sizes": [
+        "small",
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://stripe.com/billing",
+      "introduction": "Stripe Billing manages subscription and usage-oriented billing, invoicing and collection workflows. It is a commercial billing layer: the accounting team still needs to reconcile customer activity, settlement and any separately configured revenue-recognition process.",
+      "use_cases": [
+        "Bill recurring subscriptions",
+        "Change pricing and handle failed-payment follow-up"
+      ],
+      "company_fit": "Consider for digital businesses of different sizes; engineering capacity and billing-model complexity matter as much as headcount.",
+      "integration_context": "The product describes CRM and CPQ connections alongside Stripe services. Evaluate metering, webhooks, export completeness and ledger reconciliation for your architecture.",
+      "evaluation_questions": [
+        "Where is billable usage measured and corrected?",
+        "How are refunds and contract changes reflected in accounting?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://stripe.com/billing",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://stripe.com/newsroom/information",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Stripe publishes a logo kit and Marks Usage Terms. The terms expressly permit accurate textual references; graphic-mark permission for this independent directory is unresolved, so the text name is used. See https://stripe.com/legal/marks.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "chargebee",
+      "name": "Chargebee",
+      "aliases": [],
+      "categories": [
+        "revenue",
+        "ar"
+      ],
+      "company_sizes": [
+        "small",
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://www.chargebee.com/",
+      "introduction": "Chargebee provides subscription billing and monetization tools, with RevRec available for revenue-accounting workflows. Billing operations and revenue recognition should be evaluated as separate capabilities with their own data and configuration requirements.",
+      "use_cases": [
+        "Manage recurring customer plans",
+        "Transfer billing data into configured revenue schedules"
+      ],
+      "company_fit": "Consider for subscription businesses scaling pricing, customer lifecycle and finance operations.",
+      "integration_context": "Official documentation describes Chargebee-to-RevRec and ERP connections. Confirm which products are licensed and how revenue rules and journal exports are configured.",
+      "evaluation_questions": [
+        "Does the selected configuration include RevRec?",
+        "Who approves allocation rules, contract modifications and journal output?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://www.chargebee.com/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        },
+        {
+          "label": "Official supporting source",
+          "url": "https://www.chargebee.com/integrations/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "integration_context"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "official_media_asset",
+        "source_page": "https://www.chargebee.com/press/brand-guidelines/",
+        "asset_url": "https://www.chargebee.com/static/resources/press/chargebee-media-kit.zip",
+        "path": "logos/chargebee.svg",
+        "sha256": "803e72caf36cb68021524e0551e0c3592e3e30d1cd8fa08f7099cddd1b3f2187",
+        "usage_conditions": "Official public press kit and visual-identity guidance. Use the supplied intact blue/orange primary lockup on a plain light background; preserve proportions and clear space. Do not stretch, rotate, split, add shadows or use photographic/gradient backgrounds. Trademark rights remain with Chargebee.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "zuora",
+      "name": "Zuora",
+      "aliases": [],
+      "categories": [
+        "revenue",
+        "ar"
+      ],
+      "company_sizes": [
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://www.zuora.com/",
+      "introduction": "Zuora links subscription and usage monetization with quote-to-cash processes, including billing, collections and revenue recognition. It can serve as a specialist revenue platform when commercial arrangements exceed a simple recurring invoice.",
+      "use_cases": [
+        "Coordinate complex subscription changes",
+        "Connect billing events with revenue-accounting work"
+      ],
+      "company_fit": "Consider for larger or growing recurring-revenue businesses with dedicated billing and revenue teams.",
+      "integration_context": "The vendor presents Billing and Revenue as connected parts of its platform. Scope the CRM, usage source and ERP handoffs for the exact product combination.",
+      "evaluation_questions": [
+        "How are amendments and usage corrections versioned?",
+        "Which reconciliations prove completeness from contract through ledger?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://www.zuora.com/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://www.zuora.com/",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "blackline",
+      "name": "BlackLine",
+      "aliases": [],
+      "categories": [
+        "close",
+        "consolidation",
+        "ar"
+      ],
+      "company_sizes": [
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://www.blackline.com/products/financial-close/",
+      "introduction": "BlackLine offers a financial-close layer for account reconciliation, transaction matching and journal workflows. It brings supporting data and review status together around the ledger and also offers consolidation-related capabilities.",
+      "use_cases": [
+        "Substantiate balance-sheet accounts",
+        "Investigate unmatched transaction populations"
+      ],
+      "company_fit": "Consider for multi-entity or high-volume accounting teams seeking standardized close controls.",
+      "integration_context": "The vendor describes importing ERP, bank and other transaction data. Define population completeness, matching rules and journal approval boundaries before automation.",
+      "evaluation_questions": [
+        "What evidence supports every automated match?",
+        "How are source totals reconciled and unresolved differences escalated?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://www.blackline.com/products/financial-close/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://branding.blackline.com/blackline/logo-collection",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "The official logo collection requires Brandfolder sign-in. No access was requested and no restricted asset was copied; the text name is used.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "floqast",
+      "name": "FloQast",
+      "aliases": [],
+      "categories": [
+        "close"
+      ],
+      "company_sizes": [
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://www.floqast.com/lp/ai-powered-close-management",
+      "introduction": "FloQast organizes the accounting close around tasks, dependencies, reconciliations and review. Its operating role is to make the work around the ledger visible across preparers, reviewers and entities.",
+      "use_cases": [
+        "Coordinate a shared close calendar",
+        "Track reconciliation preparation and sign-off"
+      ],
+      "company_fit": "Consider for accounting teams growing beyond spreadsheet-based close coordination.",
+      "integration_context": "FloQast lists ERP, bank and other application integrations. Confirm the data-refresh boundary and where supporting documents and approvals are retained.",
+      "evaluation_questions": [
+        "Can reviewers trace a balance to the exact supporting version?",
+        "How does the process handle late entries after sign-off?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://www.floqast.com/lp/ai-powered-close-management",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        },
+        {
+          "label": "Official supporting source",
+          "url": "https://www.floqast.com/integrations",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "integration_context"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://www.floqast.com/lp/ai-powered-close-management",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "onestream",
+      "name": "OneStream",
+      "aliases": [],
+      "categories": [
+        "consolidation",
+        "close",
+        "fpa"
+      ],
+      "company_sizes": [
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://www.onestream.com/solutions/financial-close-and-consolidation-software/",
+      "introduction": "OneStream combines financial consolidation and close with planning and reporting. It is useful to study as a finance platform above operational ledgers, where entity results and group-level adjustments are brought into a common model.",
+      "use_cases": [
+        "Consolidate multi-entity financial results",
+        "Coordinate intercompany and currency-translation work"
+      ],
+      "company_fit": "Consider for complex groups with dedicated consolidation and finance-systems ownership.",
+      "integration_context": "Implementation needs a controlled mapping from source ledgers to the group model. Treat dimensions, ownership changes and elimination rules as governed accounting configuration.",
+      "evaluation_questions": [
+        "How are source-to-group mappings approved and versioned?",
+        "Can group adjustments and eliminations be traced to their origin?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://www.onestream.com/solutions/financial-close-and-consolidation-software/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://brand.onestream.com/logo",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "cch-tagetik",
+      "name": "CCH Tagetik",
+      "aliases": [],
+      "categories": [
+        "consolidation",
+        "close",
+        "fpa"
+      ],
+      "company_sizes": [
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://www.wolterskluwer.com/en/solutions/cch-tagetik/financial-close-consolidation",
+      "introduction": "CCH Tagetik, from Wolters Kluwer, supports financial close and consolidation within a broader performance-management platform. The accounting use case centers on collecting entity data, applying group rules and producing traceable consolidated reporting.",
+      "use_cases": [
+        "Coordinate group close submissions",
+        "Manage consolidation and intercompany adjustments"
+      ],
+      "company_fit": "Consider for groups with reporting complexity across entities, currencies or ownership structures.",
+      "integration_context": "Plan the source-ERP data model and validation steps before choosing a loading method. Verify exact connectors and modules with the vendor.",
+      "evaluation_questions": [
+        "How are local-account mappings reconciled to group accounts?",
+        "Can users explain and reproduce consolidation adjustments?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://www.wolterskluwer.com/en/solutions/cch-tagetik/financial-close-consolidation",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://www.wolterskluwer.com/en/solutions/cch-tagetik/financial-close-consolidation",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "anaplan",
+      "name": "Anaplan",
+      "aliases": [],
+      "categories": [
+        "fpa"
+      ],
+      "company_sizes": [
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://www.anaplan.com/solutions/financial-planning-analysis/",
+      "introduction": "Anaplan connects financial planning with operational models such as workforce, sales and supply chain. Finance teams use this type of platform to explore how business drivers change budgets and forecasts across departments.",
+      "use_cases": [
+        "Build driver-based forecasts",
+        "Compare cross-functional planning scenarios"
+      ],
+      "company_fit": "Consider for organizations with interconnected planning processes and staff to govern models.",
+      "integration_context": "Actuals and operating drivers need a governed import from source systems. Define model dimensions, refresh timing and reconciliation to the financial record.",
+      "evaluation_questions": [
+        "Who owns each planning driver and assumption?",
+        "Can users compare approved scenarios without overwriting the baseline?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://www.anaplan.com/solutions/financial-planning-analysis/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://www.anaplan.com/solutions/financial-planning-analysis/",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "workday-adaptive",
+      "name": "Adaptive from Workday",
+      "aliases": [
+        "Workday Adaptive Planning",
+        "Adaptive Insights"
+      ],
+      "categories": [
+        "fpa"
+      ],
+      "company_sizes": [
+        "small",
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://www.workday.com/en-us/products/adaptive-planning/overview.html",
+      "introduction": "Adaptive from Workday, also known as Workday Adaptive Planning, connects financial, workforce and operational planning. The product supports budgeting and scenario analysis so finance can relate operating choices to projected results.",
+      "use_cases": [
+        "Coordinate departmental budgets",
+        "Model headcount and financial scenarios"
+      ],
+      "company_fit": "Consider for growing through enterprise planning teams; model scope and administrator capacity drive fit.",
+      "integration_context": "The vendor describes connections to enterprise data sources. Confirm the actuals load, workforce source and reporting outputs for the selected environment.",
+      "evaluation_questions": [
+        "How are planning versions and submission approvals controlled?",
+        "Which reconciliation proves actuals match the ledger?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://www.workday.com/en-us/products/adaptive-planning/overview.html",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://www.workday.com/en-us/products/adaptive-planning/overview.html",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "pigment",
+      "name": "Pigment",
+      "aliases": [],
+      "categories": [
+        "fpa"
+      ],
+      "company_sizes": [
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://www.pigment.com/use-case/budget-planning-forecasting",
+      "introduction": "Pigment provides collaborative planning and financial modeling across statements and operating drivers. Its role is to connect finance assumptions with plans for functions such as headcount and sales, then make scenarios comparable.",
+      "use_cases": [
+        "Build linked financial forecasts",
+        "Explore hiring and revenue scenarios"
+      ],
+      "company_fit": "Consider for organizations with collaborative planning needs and ownership of a shared data model.",
+      "integration_context": "Pigment publishes a connector catalog. Validate the source dimensions, loading cadence and controls over changes to model logic.",
+      "evaluation_questions": [
+        "How are changed assumptions reviewed?",
+        "Can scenario results be reconciled back to approved source data?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://www.pigment.com/use-case/budget-planning-forecasting",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        },
+        {
+          "label": "Official supporting source",
+          "url": "https://kb.pigment.com/docs/active-pigment-connectors",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "integration_context"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://www.pigment.com/use-case/budget-planning-forecasting",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "kyriba",
+      "name": "Kyriba",
+      "aliases": [],
+      "categories": [
+        "treasury"
+      ],
+      "company_sizes": [
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://www.kyriba.com/",
+      "introduction": "Kyriba brings cash visibility, forecasting, payment workflows and financial-risk information into a treasury platform. It connects bank and enterprise data so treasury can work from a consolidated view of liquidity and exposures.",
+      "use_cases": [
+        "Aggregate cash positions across banks",
+        "Coordinate liquidity forecasts and payment controls"
+      ],
+      "company_fit": "Consider for midsize and enterprise treasury functions with multiple banks or entities.",
+      "integration_context": "Kyriba documents bank, ERP and API connectivity. Confirm supported bank formats, permissions, cutoff times and reconciliation for each account.",
+      "evaluation_questions": [
+        "Who can initiate, approve and release payments?",
+        "How are missing statements and stale balances identified?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://www.kyriba.com/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://brand.kyriba.com/",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "The official brand book makes logo access available by request and warns that some demonstration images are not licensed for public use. No approval was obtained; the text name is used.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "ripple-treasury",
+      "name": "Ripple Treasury",
+      "aliases": [
+        "GTreasury"
+      ],
+      "categories": [
+        "treasury",
+        "close"
+      ],
+      "company_sizes": [
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://treasury.ripple.com/",
+      "introduction": "Ripple Treasury, powered by GTreasury, combines treasury management, liquidity forecasting, reconciliation and risk workflows. It is a specialist treasury layer rather than a replacement for the operating accounting ledger.",
+      "use_cases": [
+        "Centralize bank and cash information",
+        "Track treasury exposures and reconciliation exceptions"
+      ],
+      "company_fit": "Consider for established treasury teams with cash, risk and multi-bank complexity.",
+      "integration_context": "The official site describes ERP integration and bank connectivity. Define the accounting handoff and independently scope any optional digital-asset capabilities.",
+      "evaluation_questions": [
+        "Which modules are required for the conventional treasury scope?",
+        "How are bank records and treasury accounting reconciled?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://treasury.ripple.com/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://treasury.ripple.com/",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "avalara",
+      "name": "Avalara AvaTax",
+      "aliases": [],
+      "categories": [
+        "tax"
+      ],
+      "company_sizes": [
+        "small",
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://www.avalara.com/us/en/products/integrations.html",
+      "introduction": "Avalara supplies transaction-tax tools that connect to selling and purchasing systems. AvaTax can sit in the transaction flow for tax calculations, while related services address other parts of the tax-compliance process.",
+      "use_cases": [
+        "Connect tax calculations to transactions",
+        "Organize tax data across sales channels"
+      ],
+      "company_fit": "Consider where transaction-tax jurisdictions or sales channels have outgrown manual maintenance.",
+      "integration_context": "Avalara publishes signed partner integrations and APIs. Confirm jurisdiction coverage, document lifecycle handling and the exact tax products included.",
+      "evaluation_questions": [
+        "How are exempt transactions and returns handled?",
+        "Who verifies registrations, taxability decisions and filing responsibility?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://www.avalara.com/us/en/products/integrations.html",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://www.avalara.com/us/en/products/integrations.html",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "vertex",
+      "name": "Vertex",
+      "aliases": [],
+      "categories": [
+        "tax"
+      ],
+      "company_sizes": [
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://www.vertexinc.com/solutions/products",
+      "introduction": "Vertex provides enterprise tax tools spanning determination, returns and reporting, with integration options for business systems. It is useful to evaluate where tax logic must be consistently applied to transactions across a complex technology stack.",
+      "use_cases": [
+        "Apply transaction-tax rules across systems",
+        "Prepare consistent tax data for reporting"
+      ],
+      "company_fit": "Consider for larger or complex businesses with dedicated tax operations and multiple transaction sources.",
+      "integration_context": "The product portfolio includes integrations and invoicing capabilities. Confirm the particular engine, ERP version, jurisdictions and reporting modules.",
+      "evaluation_questions": [
+        "How is a tax-rule change tested before use?",
+        "Can each reported amount be traced back to source transactions?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://www.vertexinc.com/solutions/products",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://www.vertexinc.com/solutions/products",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "optro",
+      "name": "Optro",
+      "aliases": [
+        "AuditBoard"
+      ],
+      "categories": [
+        "audit"
+      ],
+      "company_sizes": [
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://optro.ai/",
+      "introduction": "Optro, formerly AuditBoard, organizes audit, risk and compliance work. It provides a shared operating layer for risk information and assurance activity; the directory does not treat software adoption as proof that controls are effective.",
+      "use_cases": [
+        "Coordinate risk-based audit work",
+        "Organize compliance evidence and responsibilities"
+      ],
+      "company_fit": "Consider for organizations with dedicated internal-audit, risk or compliance teams.",
+      "integration_context": "Plan how evidence and issue status enter from business systems. Validate specific connectors, retention and reviewer access in a scoped evaluation.",
+      "evaluation_questions": [
+        "Can evidence be tied to the tested period and version?",
+        "How are findings, remediation and retesting tracked?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://optro.ai/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://optro.ai/",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "workiva",
+      "name": "Workiva",
+      "aliases": [],
+      "categories": [
+        "audit"
+      ],
+      "company_sizes": [
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://www.workiva.com/",
+      "introduction": "Workiva connects financial reporting with audit, risk and controls workflows. For finance, its role includes organizing report data, collaborative review and traceability across annual, interim and other external reporting outputs.",
+      "use_cases": [
+        "Coordinate financial-report preparation",
+        "Connect control evidence and disclosure review"
+      ],
+      "company_fit": "Consider for organizations with formal reporting obligations or complex collaborative review cycles.",
+      "integration_context": "The platform describes linked data and history. Scope data feeds, document permissions and final report validation rather than assuming a connection establishes accuracy.",
+      "evaluation_questions": [
+        "Who controls final disclosure and filing approval?",
+        "How are changes propagated and checked across linked reports?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://www.workiva.com/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://www.workiva.com/",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "diligent",
+      "name": "Diligent One",
+      "aliases": [],
+      "categories": [
+        "audit"
+      ],
+      "company_sizes": [
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://www.diligent.com/",
+      "introduction": "Diligent One brings governance, risk, compliance and audit activities into a shared platform. It is relevant to accounting teams that need to connect assurance work and risk reporting with management and board oversight.",
+      "use_cases": [
+        "Coordinate audit and risk activity",
+        "Report control issues to oversight teams"
+      ],
+      "company_fit": "Consider for organizations with formal governance structures and multiple assurance stakeholders.",
+      "integration_context": "Identify how audit populations and evidence will enter the selected modules. Confirm connector scope, access control and audit-trail retention.",
+      "evaluation_questions": [
+        "Can reviewers distinguish draft evidence from approved conclusions?",
+        "How are issue ownership and overdue remediation escalated?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://www.diligent.com/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://www.diligent.com/",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "fivetran",
+      "name": "Fivetran",
+      "aliases": [],
+      "categories": [
+        "integration"
+      ],
+      "company_sizes": [
+        "small",
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://www.fivetran.com/",
+      "introduction": "Fivetran moves data from applications, databases and other sources into analytical destinations. In a finance stack it can supply a reporting warehouse, but data movement alone does not validate accounting completeness or authorize ledger changes.",
+      "use_cases": [
+        "Feed a finance reporting warehouse",
+        "Bring operational and accounting data into analysis"
+      ],
+      "company_fit": "Consider for organizations with a data platform and staff responsible for financial data quality.",
+      "integration_context": "The vendor describes source and destination connectors. Validate table coverage, history, deleted records, refresh latency and downstream reconciliation.",
+      "evaluation_questions": [
+        "Which source records are excluded or delayed?",
+        "What control reconciles warehouse results to the books?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://www.fivetran.com/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://www.fivetran.com/news",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "boomi",
+      "name": "Boomi",
+      "aliases": [],
+      "categories": [
+        "integration"
+      ],
+      "company_sizes": [
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://boomi.com/platform/integration/",
+      "introduction": "Boomi is an integration platform for connecting applications and data. Finance teams can use this type of layer to coordinate ERP handoffs, while keeping transformation logic, failures and permissions under explicit ownership.",
+      "use_cases": [
+        "Connect ERP and operating applications",
+        "Monitor cross-system transaction handoffs"
+      ],
+      "company_fit": "Consider for organizations with several business systems and an integration owner or delivery partner.",
+      "integration_context": "Boomi provides application connectors and integration tooling. Select the supported connector version and design idempotency, retries and reconciliation per flow.",
+      "evaluation_questions": [
+        "How are partial failures and duplicate messages handled?",
+        "Who can change a mapping that affects a financial posting?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://boomi.com/platform/integration/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        },
+        {
+          "label": "Official supporting source",
+          "url": "https://boomi.com/connectors/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "integration_context"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://boomi.com/platform/integration/",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "celigo",
+      "name": "Celigo",
+      "aliases": [],
+      "categories": [
+        "integration"
+      ],
+      "company_sizes": [
+        "small",
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://docs.celigo.com/hc/en-us/articles/360019292691-Overview-of-Celigo-integrator-io",
+      "introduction": "Celigo provides application integration through integrator.io, with prebuilt and universal connectors. A common finance pattern is moving orders and related records between commerce, CRM and ERP systems with visible error handling.",
+      "use_cases": [
+        "Coordinate order-to-ERP data exchange",
+        "Reduce repetitive cross-application data entry"
+      ],
+      "company_fit": "Consider for growing through enterprise businesses with recurring application-to-application workflows.",
+      "integration_context": "Official documentation describes connectors and iterative integration lifecycle management. Scope each business object and reconciliation step rather than assuming a template covers every exception.",
+      "evaluation_questions": [
+        "How are refunds, cancellations and duplicate orders handled?",
+        "Can support staff replay failures safely and trace the outcome?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://docs.celigo.com/hc/en-us/articles/360019292691-Overview-of-Celigo-integrator-io",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://docs.celigo.com/hc/en-us/articles/360019292691-Overview-of-Celigo-integrator-io",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "quickbooks-online",
+      "name": "QuickBooks Online",
+      "aliases": [
+        "QBO"
+      ],
+      "categories": [
+        "erp",
+        "ap",
+        "ar"
+      ],
+      "company_sizes": [
+        "small"
+      ],
+      "website": "https://quickbooks.intuit.com/accounting/",
+      "introduction": "QuickBooks Online is a core accounting product for smaller businesses, bringing bookkeeping, invoicing and financial reporting into one workspace. It is often the ledger around which specialist payment, expense or reporting tools are connected.",
+      "use_cases": [
+        "Maintain small-business books",
+        "Reconcile bank activity and invoices"
+      ],
+      "company_fit": "Consider for small businesses; verify plan limits and country-specific functionality before selection.",
+      "integration_context": "Evaluate bank feeds and connected applications against the required transaction detail. Set clear ownership for categorization, reconciliation and closing periods.",
+      "evaluation_questions": [
+        "Does the country and plan support the required workflows?",
+        "How will external apps avoid creating duplicate transactions?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://quickbooks.intuit.com/accounting/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://quickbooks.intuit.com/accounting/",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "xero",
+      "name": "Xero",
+      "aliases": [],
+      "categories": [
+        "erp",
+        "ap",
+        "ar"
+      ],
+      "company_sizes": [
+        "small",
+        "midsize"
+      ],
+      "website": "https://www.xero.com/us/accounting-software/",
+      "introduction": "Xero brings small-business accounting tasks such as invoicing, bills and bank reconciliation into a shared cloud workspace. Its app ecosystem lets a business extend the ledger with specialist tools as operational needs develop.",
+      "use_cases": [
+        "Run day-to-day bookkeeping",
+        "Coordinate accountant and business-owner access"
+      ],
+      "company_fit": "Consider for small and some midsize businesses; assess entity complexity and the local product edition.",
+      "integration_context": "Xero advertises an app ecosystem alongside its accounting features. Confirm each app’s data ownership, posting behavior and support for local requirements.",
+      "evaluation_questions": [
+        "Which functions require a separate product or plan?",
+        "How are bank-feed gaps and duplicate imports resolved?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://www.xero.com/us/accounting-software/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://www.xero.com/us/media/downloads/",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "The official media page links SVG/PNG files and requires the Xero logo guidelines. Those conditions have not been fully verified for this directory; the text name is used.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "netsuite",
+      "name": "Oracle NetSuite",
+      "aliases": [],
+      "categories": [
+        "erp",
+        "consolidation",
+        "revenue"
+      ],
+      "company_sizes": [
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://www.netsuite.com/portal/products/erp/financial-management.shtml",
+      "introduction": "Oracle NetSuite combines core financial management with business applications such as orders, inventory and commerce. Finance can evaluate it as an integrated ERP backbone, with additional capabilities for consolidation, billing and revenue.",
+      "use_cases": [
+        "Connect operations to the general ledger",
+        "Manage a growing multi-entity accounting environment"
+      ],
+      "company_fit": "Consider for growing midsize businesses and more complex groups evaluating a broader ERP.",
+      "integration_context": "The vendor describes linked business applications. Scope the required modules, external integrations, master data and migration controls for the intended operating model.",
+      "evaluation_questions": [
+        "Which processes require additional modules or customization?",
+        "How will opening balances and migrated transactions be validated?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://www.netsuite.com/portal/products/erp/financial-management.shtml",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://www.netsuite.com/portal/products/erp/financial-management.shtml",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "sage-intacct",
+      "name": "Sage Intacct",
+      "aliases": [],
+      "categories": [
+        "erp",
+        "consolidation",
+        "close"
+      ],
+      "company_sizes": [
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://www.sage.com/en-us/sage-business-cloud/intacct/",
+      "introduction": "Sage Intacct focuses on financial management, multi-entity accounting and dimensional reporting, with extended finance capabilities. It can serve as the central ledger while operational applications connect around it.",
+      "use_cases": [
+        "Report across entities and dimensions",
+        "Coordinate finance workflows as the business grows"
+      ],
+      "company_fit": "Consider for midsize and larger finance teams prioritizing accounting depth and multi-entity visibility.",
+      "integration_context": "The vendor describes an integration ecosystem and extended products. Confirm dimension mappings, entity boundaries and transaction flows for each connected application.",
+      "evaluation_questions": [
+        "Are required dimensions consistently populated across sources?",
+        "How are intercompany and consolidation rules governed?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://www.sage.com/en-us/sage-business-cloud/intacct/",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://www.sage.com/en-us/sage-business-cloud/intacct/",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "business-central",
+      "name": "Microsoft Dynamics 365 Business Central",
+      "aliases": [
+        "Business Central",
+        "Dynamics 365 BC"
+      ],
+      "categories": [
+        "erp",
+        "ap",
+        "ar",
+        "consolidation"
+      ],
+      "company_sizes": [
+        "small",
+        "midsize"
+      ],
+      "website": "https://learn.microsoft.com/en-us/dynamics365/business-central/finance",
+      "introduction": "Business Central combines financial management with wider business operations for small and midsize organizations. Its finance capabilities include general-ledger work, receivables, payables, bank reconciliation and multi-company processes.",
+      "use_cases": [
+        "Connect purchasing and sales with accounting",
+        "Manage period-end and intercompany work"
+      ],
+      "company_fit": "Consider for small and midsize businesses needing broader operations and accounting in one system.",
+      "integration_context": "Configure posting groups and financial processes carefully. Check extensions and external connections against the chosen edition, localization and upgrade path.",
+      "evaluation_questions": [
+        "Which processes need an extension or implementation partner?",
+        "How are posting groups and company boundaries tested?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://learn.microsoft.com/en-us/dynamics365/business-central/finance",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://learn.microsoft.com/en-us/dynamics365/business-central/finance",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    },
+    {
+      "id": "sap-s4hana",
+      "name": "SAP S/4HANA Cloud Public Edition",
+      "aliases": [
+        "S/4HANA"
+      ],
+      "categories": [
+        "erp",
+        "procurement",
+        "close"
+      ],
+      "company_sizes": [
+        "midsize",
+        "enterprise"
+      ],
+      "website": "https://learning.sap.com/products/s4hana-cloud",
+      "introduction": "SAP S/4HANA Cloud Public Edition connects finance with areas such as procurement, sales, manufacturing and supply chain. Its financial processes cover accounting, closing and management reporting within a broader enterprise system.",
+      "use_cases": [
+        "Align operational transactions with financial accounting",
+        "Standardize a multi-function enterprise process model"
+      ],
+      "company_fit": "Consider for organizations prepared for a structured ERP implementation and ongoing process governance.",
+      "integration_context": "Use the exact edition and release documentation when scoping interfaces. Define organizational structures, charts of accounts and data migration before implementation.",
+      "evaluation_questions": [
+        "Which localization and release meet the business requirements?",
+        "Where do standard processes end and extensions begin?"
+      ],
+      "last_checked": "2026-10-04",
+      "sources": [
+        {
+          "label": "Official product or documentation source",
+          "url": "https://learning.sap.com/products/s4hana-cloud",
+          "checked_on": "2026-10-04",
+          "supports": [
+            "product_scope"
+          ]
+        }
+      ],
+      "logo": {
+        "status": "pending_review",
+        "source_page": "https://learning.sap.com/products/s4hana-cloud",
+        "asset_url": null,
+        "path": null,
+        "sha256": null,
+        "usage_conditions": "Official logo redistribution conditions have not been established for this directory. A text name is shown; no logo is generated or hotlinked.",
+        "checked_on": "2026-10-04"
+      }
+    }
+  ]
+}

@@ -31,3 +31,7 @@ The content is AI-assisted and unreviewed unless a genuine review record states
 otherwise. It is not a professional accounting opinion. No warranties are given;
 see the license's limitations and disclaimers. Application review gates and disabled
 training settings are operating controls, not additional restrictions on CC BY rights.
+
+## Accounting systems directory exception
+
+Original editorial descriptions in `systems/catalog.json` follow CC BY 4.0. Vendor names, marks and `systems/logos/` assets are excluded. See `systems/NOTICE.md` and each logo provenance record; no trademark or blanket redistribution license is granted.

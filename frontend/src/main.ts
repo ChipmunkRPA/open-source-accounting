@@ -13,7 +13,7 @@ import {sourcesView,topicsView,settingsView} from './views/library.js';
 export async function mount(root:HTMLElement){
   root.replaceChildren(el('p',{class:'boot'},'Connecting to your workspace…'));
   let config:Config;
-  try {config=await api<Config>('/config');configure(config);}catch{root.replaceChildren(heading('Open Source Accounting','The live API is not connected. The original educational library is available offline.'),el('a',{href:'/assets/library/index.html',class:'button'},'Browse the free library'),notice('Free chat and current source feeds require the configured hosted API. Premium service implementation is maintained privately.'));return;}
+  try {config=await api<Config>('/config');configure(config);}catch{root.replaceChildren(heading('Open Source Accounting','The live API is not connected. The original educational library is available offline.'),el('a',{href:'/assets/library/index.html',class:'button'},'Browse the free library'),el('a',{href:'/assets/systems/index.html',class:'button'},'Explore accounting systems'),notice('Free chat and current source feeds require the configured hosted API. Premium service implementation is maintained privately.'));return;}
   const banner=el('div',{class:'global-banner','aria-live':'polite'});
   const content=el('main',{id:'main',class:'content',tabindex:-1});
   const app:App={config,me:null,workspaces:[],content,banner,
@@ -32,7 +32,7 @@ export async function mount(root:HTMLElement){
   };
   const account=el('div',{class:'account'});
   const nav=el('nav',{'aria-label':'Main navigation'},
-      link(app,'Chat · Free','/chat'),link(app,'Topics','/topics'),link(app,'Open library','/library'),link(app,'SEC Core','/sec-core'),link(app,'ASU tracking','/asu-tracking'),link(app,'SEC comments','/sec-comments'),link(app,'Sources','/sources'),el('hr'),link(app,'Settings','/settings'),link(app,'Security','/security'));
+      link(app,'Chat · Free','/chat'),link(app,'Topics','/topics'),link(app,'Open library','/library'),el('a',{href:'/assets/systems/index.html'},'Systems · Free'),link(app,'SEC Core','/sec-core'),link(app,'ASU tracking','/asu-tracking'),link(app,'SEC comments','/sec-comments'),link(app,'Sources','/sources'),el('hr'),link(app,'Settings','/settings'),link(app,'Security','/security'));
   const sidebar:HTMLElement=el('aside',{class:'sidebar'},button('Close menu',()=>sidebar.classList.remove('open'),'quiet sidebar-close'),link(app,'osa / open-source-accounting','/chat','wordmark'),nav,
       el('div',{class:'sidebar-bottom'},badge(config.model_provider==='mock'?'Local demonstration':'Gemini 3.8 Flash'),
       el('p',{class:'muted'},'Ask freely. Delegate the work.')));
