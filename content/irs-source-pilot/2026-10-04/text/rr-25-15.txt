@@ -1,0 +1,385 @@
+Section 6047. -- Information Relating to Certain Trusts and Annuity Plans
+(Also: §§ 3405, 6413, 6414)
+
+
+
+
+Rev. Rul. 2025-15 Withholding and Reporting With Respect to Uncashed
+Retirement Plan Distribution Checks (and Subsequent Checks)
+
+
+
+ISSUES
+
+   (1) Under the facts presented (in which a retirement plan distribution check, defined
+
+in the facts presented as Check 1, was not cashed), is an adjustment or refund
+
+available under sections 6413 and 6414 of the Internal Revenue Code for amounts
+
+withheld and remitted with respect to Check 1?
+
+   (2) Under the facts presented (in which a subsequent retirement plan distribution
+
+check, defined in the facts presented as Check 2, was mailed), what federal income tax
+
+withholding obligations apply under section 3405 with respect to Check 2?
+
+   (3) Under the facts presented, what reporting obligations apply under
+
+section 6047(d) with respect to Check 1?
+
+   (4) Under the facts presented, what reporting obligations apply under
+
+section 6047(d) with respect to Check 2?
+
+FACTS
+
+   Employer M is the plan administrator of Plan X, a qualified retirement plan under
+
+section 401(a) that does not include designated Roth accounts under section 402A,
+hold employer securities, or provide benefits described in section 104 (compensation for
+
+injuries or sickness) or section 105 (amounts received under accident and health plans).
+
+Individual C, a U.S. person under section 7701(a)(30)(A) with a calendar year taxable
+
+year, has an accrued benefit in Plan X with a value of $800, has not made a withholding
+
+election under section 3405 with respect to the accrued benefit, and has no investment
+
+in the contract within the meaning of section 72 with respect to the accrued benefit. In
+
+2024, Employer M made a designated distribution within the meaning of
+
+section 3405(e)(1) of Individual C’s $800 accrued benefit by withholding federal income
+
+tax in the amount required under section 3405 (and, thus, reducing the accrued benefit
+
+by the withheld amount), remitting that amount to the Department of the Treasury
+
+(Treasury Department), and mailing a check for the remainder (Check 1) to Individual C
+
+at Individual C’s address on file. After the designated distribution was made, Individual
+
+C did not earn any additional accrued benefit under Plan X on account of compensation
+
+from or service for Employer M. Check 1 was not cashed within six months after the
+
+date on the check, and Employer M cancelled the check. 1 Subsequently, Employer M
+
+mailed a second check (Check 2) in the amount of Individual C’s accrued benefit at the
+
+time of issuance of Check 2 (net of applicable withholding, if any, required under
+
+section 3405) to Individual C.
+
+
+
+
+1 The results under this revenue ruling would be the same if the drawee was no longer obligated to make
+
+a payment with respect to Check 1 for any other reason.
+
+                                                   2
+LAW AND ANALYSIS
+
+(1) Withholding
+
+    (A) In general
+
+    Section 3405 provides federal income tax withholding rules with respect to
+
+designated distributions as defined under section 3405(e)(1). With respect to specified
+
+plans, including a plan described in section 401(a), section 3405(d)(2) provides that the
+
+plan administrator shall withhold and be liable for payment of the tax required to be
+
+withheld under section 3405 unless the plan administrator directs the payor to withhold
+
+the tax and provides the payor with such information as the Secretary may require by
+
+regulations.
+
+    (B) Issuance of Check 1
+
+        (i) Possibility of adjustments for income tax withheld with respect to a
+
+        designated distribution
+
+    Section 6413(a)(1) provides that, if more than the correct amount of tax imposed by
+
+section 3402 2 is paid with respect to any payment of remuneration, proper
+
+adjustments, 3 with respect to both the tax and the amount to be deducted, shall be
+
+made, without interest, in such manner and at such times as the Secretary may
+
+prescribe by regulations. 4 Treas. Reg. § 31.6413(b)-1 refers to § 31.6413(a)-2 for
+
+provisions related to adjustment of overpayment of tax imposed by section 3402.
+
+Pursuant to § 31.6413(a)-2(c), an adjustment is available under section 6413(a)(1) only
+
+
+
+2 Section 3405(f)(1) provides that any designated distribution is treated as if it were wages paid by an
+
+employer to an employee with respect to which there has been withholding under section 3402.
+3 Proper adjustment of an overpayment of income tax withholding may involve offsetting future
+
+withholding obligations. See §§ 31.6413(a)-1(b) and 31.6413(a)-2(c).
+4 Section 6413(a)(1) also applies with respect to sections 3101, 3111, 3201, and 3221, which relate to the
+
+Federal Insurance Contributions Act and the Railroad Retirement Tax Act.
+
+                                                     3
+to the extent that more than the amount required was deducted and withheld by the
+
+employer or withholding agent and the employee was reimbursed within the same
+
+calendar year in accordance with § 31.6413(a)-1(b)(1)(i), or there was an overpayment
+
+of tax attributable to an administrative error, that is, an error involving the inaccurate
+
+reporting of the amount withheld.
+
+    Under the facts presented, Employer M made a designated distribution within the
+
+meaning of section 3405(e)(1) with respect to Individual C’s accrued benefit by
+
+withholding federal income tax in the amount required under section 3405, remitting that
+
+amount to the Treasury Department, and mailing Check 1 to Individual C. The amount
+
+deducted and withheld by Employer M from the designated distribution was the amount
+
+required by section 3405, and that amount was remitted to the Treasury Department.
+
+Accordingly, because more than the correct amount of tax was not withheld or paid,
+
+Employer M is not entitled to an adjustment under section 6413(a)(1).
+
+        (ii) Possibility for refund of income tax withheld with respect to a
+
+        designated distribution
+
+    Section 6413(b) provides that, if more than the correct amount of tax imposed by
+
+section 3402 is paid or deducted with respect to any payment of remuneration and the
+
+overpayment cannot be adjusted under section 6413(a), a refund may be available in
+
+such manner and at such times as the Secretary may prescribe by regulations. 5 In part,
+
+§ 31.6413(b)-1 refers to § 31.6414-1 for provisions related to refunds of tax imposed by
+
+section 3402. Pursuant to § 31.6414-1(a)(1), the refund authority under section 6413(b)
+
+
+
+
+5 Section 6413(b) also applies with respect to sections 3101, 3111, 3201, and 3221.
+
+
+                                                   4
+applies only to the extent that the amount paid to the Treasury Department was in
+
+excess of the amount deducted and withheld by the employer or withholding agent.
+
+   Similar to section 6413(b), section 6414 provides that, in certain circumstances
+
+involving income tax withholding, a refund or credit to the employer or to the withholding
+
+agent may be available. Pursuant to section 6414 and § 31.6414-1(a)(1), the refund or
+
+credit authority under section 6414 applies only to the extent that the amount paid to the
+
+Treasury Department was in excess of the amount deducted and withheld by the
+
+employer or withholding agent.
+
+   Under the facts presented, Employer M made a designated distribution within the
+
+meaning of section 3405(e)(1) with respect to Individual C’s accrued benefit by
+
+withholding federal income tax as required under section 3405, remitting that amount to
+
+the Treasury Department, and mailing Check 1. Accordingly, because the amount
+
+deducted and withheld by Employer M from the designated distribution was the same
+
+amount paid by Employer M to the Treasury Department, Employer M is not entitled to a
+
+refund under section 6413(b) or 6414.
+
+   (C) Issuance of Check 2
+
+   Under the facts presented, Employer M mailed a second check, Check 2, to
+
+Individual C. If the amount of Individual C’s accrued benefit under Plan X at the time of
+
+the issuance of Check 2 is less than or equal to the amount of Check 1, no federal
+
+income tax withholding is required in connection with the issuance of Check 2 because
+
+Employer M withheld the amount required under section 3405 from Individual C’s
+
+accrued benefit under Plan X in connection with the issuance of Check 1. If the amount
+
+of Individual C’s accrued benefit under Plan X at the time of the issuance of Check 2 is
+
+
+
+                                            5
+greater than the amount of Check 1 (for example, because of earnings), the excess
+
+amount is a separate designated distribution subject to withholding at the time of the
+
+issuance of Check 2. 6
+
+(2) Reporting
+
+    (A) In General
+
+    Section 6047(d) provides that the Secretary of the Treasury shall, by forms or
+
+regulations, require the employer maintaining a plan from which designated distributions
+
+(as defined in section 3405(e)(1)) may be made, or the plan administrator of that plan,
+
+to make returns and reports regarding the plan. However, pursuant to
+
+section 6047(d)(1), no such return or report may be required with respect to distributions
+
+to any person during any year unless the distributions aggregate $10 or more.
+
+    Form 1099-R, Distributions From Pensions, Annuities, Retirement or Profit-Sharing
+
+Plans, IRAs, Insurance Contracts, etc., is used to satisfy the reporting obligations under
+
+section 6047(d). Under the 2024 instructions to Form 1099-R, a Form 1099-R must be
+
+filed for each person to whom a designated distribution of $10 or more has been made,
+
+and the total amount of the distribution (before federal income tax or other withholding)
+
+must be reported in Box 1 of that form. In addition, under those instructions, the taxable
+
+amount must be reported in Box 2a unless the plan administrator is unable to
+
+reasonably obtain the data needed to compute the taxable amount, and the federal
+
+income tax withheld must be reported in Box 4 of the Form 1099-R.
+
+
+
+
+6 Under certain circumstances, federal income tax withholding with respect to a designated distribution is
+
+not required. For example, under § 31.3405(c)-1, Q&A-14, no withholding is required if the amount of an
+eligible rollover distribution (as defined in section 402(f)(2)(A)) is less than $200 (subject to rules with
+respect to aggregating distributions within one taxable year).
+
+                                                     6
+    (B) Issuance of Check 1
+
+    With respect to the distribution of Individual C’s accrued benefit at the time of
+
+issuance of Check 1, Employer M must report the designated distribution ($800) in Box
+
+1 of Form 1099-R for 2024. 7 In addition, because Individual C has no investment in the
+
+contract within the meaning of section 72 and no exception to income inclusion under
+
+section 402(a) applies, Employer M must report the same amount ($800) in Box 2a and
+
+must report the federal income tax withheld in Box 4.
+
+    (C) Issuance of Check 2
+
+    With respect to the distribution of Individual C’s accrued benefit at the time of
+
+issuance of Check 2, if the amount of Individual C’s accrued benefit under Plan X at the
+
+time of the issuance of Check 2 is less than or equal to the amount of Check 1,
+
+Employer M is not required to report the distribution on Form 1099-R. If the amount of
+
+Individual C’s accrued benefit under Plan X at the time of the issuance of Check 2 is
+
+greater than the amount of Check 1, Employer M generally 8 must report the excess
+
+amount in Box 1 and Box 2a on Form 1099-R for the year of the distribution and report
+
+any federal income tax withheld in Box 4 on that Form 1099-R.
+
+HOLDINGS 9
+
+    (1) No adjustment or refund is available under sections 6413 and 6414 with respect
+
+to the amounts withheld and remitted with respect to Check 1.
+
+
+7 This reporting requirement applies without regard to whether the check is returned as undeliverable or
+
+remains uncashed for any other reason.
+8 See section 6047(d)(1) (regarding $10 reporting threshold).
+9 Revenue rulings represent the conclusions of the Internal Revenue Service on the application of the
+
+specific provisions of law addressed in the revenue ruling to the pivotal facts stated in the ruling.
+Accordingly, for example, this revenue ruling does not address: (1) the appropriateness of mailing a
+check to an address on file that the plan administrator has reason to believe is incorrect; (2) a situation in
+which a second check is issued by any person other than the issuer of Check 1, including, for example,
+
+
+                                                      7
+    (2) If the amount of Individual C’s accrued benefit under Plan X at the time of the
+
+issuance of Check 2 is less than or equal to the amount of Check 1, no federal income
+
+tax withholding obligations apply with respect to Check 2. If the amount of Individual C’s
+
+accrued benefit at the time of issuance of Check 2 is greater than the amount of
+
+Check 1, the excess amount is subject to withholding in accordance with section 3405.
+
+    (3) With respect to Check 1, Employer M must report, on Form 1099-R for 2024, the
+
+designated distribution ($800) in Boxes 1 and 2a and the federal income tax withheld in
+
+Box 4.
+
+    (4) If the amount of Individual C’s accrued benefit under Plan X at the time of the
+
+issuance of Check 2 is less than or equal to the amount of Check 1, no reporting
+
+obligations apply with respect to Check 2. If the amount of Individual C’s accrued benefit
+
+at the time of issuance of Check 2 is at least $10 greater than the amount of Check 1,
+
+the excess amount is subject to reporting in accordance with section 6047(d).
+
+DRAFTING INFORMATION
+
+    The principal author of this revenue ruling is Christina Cerasale of the Office of
+
+Associate Chief Counsel (Employee Benefits, Exempt Organizations, and Employment
+
+Taxes). Ms. Cerasale may be reached at (202) 317-4102 (not a toll-free number).
+
+
+
+
+the Pension Benefit Guaranty Corporation (PBGC) following a transfer of an amount to the PBGC’s
+Missing Participants Program (29 CFR Part 4050), or issued to anyone other than Individual C (for
+example, to the surviving spouse of Individual C); (3) any aspect of the PBGC’s Missing Participants
+Program; or (4) issues under title I of the Employee Retirement Income Security Act of 1974, Pub. L. 93-
+406, 88 Stat. 829, as amended. With respect to item (3), PBGC has informed the Treasury Department
+and the Internal Revenue Service that PBGC is considering possible modifications to its Missing
+Participants Program regarding the treatment of prior tax withholding in connection with the transfer of
+benefits to the program.
+
+                                                    8
+

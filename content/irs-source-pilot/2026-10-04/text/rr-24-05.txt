@@ -1,0 +1,242 @@
+Part I
+
+
+Section 42.—Low-income housing credit
+
+
+26 CFR 1.42-14: Allocation rules for post-2000 State housing credit ceiling amount.
+
+
+
+
+Rev. Rul. 2024-5
+
+
+ISSUE
+
+   Section 305 of the Taxpayer Certainty and Disaster Tax Relief Act of 2020, Public
+
+Law 116-260, div. EE, 134 Stat. 3038, 3080 (Dec. 27, 2020) (Act) authorized housing
+
+credit agencies (Agencies) to allocate additional housing credit dollar amounts (HCDAs)
+
+in 2021 or 2022 to buildings in one or more qualified disaster zones (as defined in
+
+section 301(2) of the Act). If an Agency allocated HCDAs to buildings located in
+
+qualified disaster zones in 2021 or 2022 and some of those amounts are returned to the
+
+Agency after 2022, may the Agency reallocate those returned amounts, and, if so, are
+
+the reallocations restricted to buildings in a qualified disaster zone?
+                                                    2
+
+LAW
+
+    Under section 305(a)(1) and (2) of the Act, for purposes of section 42 of the Internal
+
+Revenue Code (Code) 1, the State housing credit ceiling for any State for each of
+
+calendar years 2021 and 2022 is increased by the aggregate HCDA allocated by the
+
+State’s Agencies for the calendar year to buildings located in any qualified disaster zone
+
+(as defined in section 301(2) of the Act) in the State up to an aggregate limitation as set
+
+in section 305(a)(2) of the Act (Applicable Dollar Limitation).
+
+    Section 305(a)(4) of the Act provides that, for purposes of determining the unused
+
+State housing credit ceiling for any calendar year under section 42(h)(3)(C), any
+
+increase in the State housing credit ceiling under section 305(a)(1) of the Act is treated
+
+as an amount described in section 42(h)(3)(C)(ii).
+
+    Section 42(h)(3)(C) defines the State housing credit ceiling applicable to any State
+
+for any calendar year to be an amount equal to the sum of the following four amounts—
+
+        (i) the “Unused Carryforward Component,” which is the amount of the unused
+            State housing credit ceiling (if any) of such State for the preceding calendar
+            year,
+
+        (ii) the “Population Component,“ which is the amount equal to the greater of—
+                 (I)   $1.75 multiplied by the State population, or
+                 (II)  $2,000,000, 2
+
+        (iii) the “Returned Credit Component,“ which is the amount of State housing
+              credit ceiling returned in the calendar year, plus
+
+
+
+
+1
+ Unless otherwise specified, all "section" or “§” references are to sections of the Code or the Income Tax
+Regulations (26 CFR part 1).
+2
+ An annual cost of living adjustment applies to both elements of the Population Component under section
+42(h)(3)(H).
+                                             3
+
+       (iv) the “National Pool Component,“ which is the amount (if any) allocated under
+           section 42(h)(3)(D) from a national pool of unused credit to such State by the
+           Secretary of the Treasury or her delegate.
+
+   Section 1.42-14(d)(1) further provides that the Returned Credit Component of the
+
+State housing credit ceiling of a State for any calendar year equals the HCDA returned
+
+during the calendar year that was validly allocated within the State in a prior calendar
+
+year to any project that does not become a qualified low-income housing project within
+
+the period required by section 42, or as required by the terms of the allocation. The
+
+Returned Credit Component also includes credit allocated in a prior calendar year that
+
+is returned as a result of the cancellation of an allocation by mutual consent or by a
+
+State’s determination that the amount allocated is not necessary for the financial
+
+feasibility of the project.
+
+   Section 1.42-14(g) sets forth the stacking order regarding how credit is treated as
+
+allocated from the various components of the State housing credit ceiling. Specifically,
+
+the first credit allocated for any calendar year is treated as credit from the Unused
+
+Carryforward Component of the State housing credit ceiling for the calendar year. After
+
+all of the credit in the Unused Carryforward Component has been allocated, any credit
+
+allocated is treated as allocated from the sum of the Population, Returned Credit, and
+
+National Pool Components of the State housing credit ceiling.
+
+   Notice 2021-45, 2021-31 I.R.B. 170, identified the 11 States and Puerto Rico that
+
+had qualified disaster zones, along with the State populations residing in each. It also
+
+contained a list of counties and parishes located within the qualified disaster zones.
+                                              4
+
+   IRS Announcement 2022-27, 2022-51 I.R.B. 559, reminded Agencies that unless an
+
+allocation was in 2021 and 2022, it would fail to increase a State’s housing credit
+
+ceiling.
+
+ANALYSIS
+
+   Under section 305(a)(1) of the Act, a State’s housing credit ceiling is increased in
+
+calendar years 2021 and 2022 to reflect the aggregate HCDAs that are allocated by the
+
+State to buildings located in any qualified disaster zone in the State. The aggregate
+
+increases for both years, however, may not exceed the Applicable Dollar Limitation.
+
+Section 305(a)(4) of the Act provides that the increase is taken into account in the
+
+Population Component of a State’s housing credit ceiling for the purpose of determining
+
+the unused State housing credit ceiling for any calendar year. Thus, the housing credit
+
+ceiling increase resulting from a valid allocation under the Act joins with the otherwise-
+
+determined Population Component of a State’s housing credit ceiling in the year of
+
+allocation.
+
+   The need for an increase in the State’s housing credit ceiling for the year of
+
+allocation implies that a qualified disaster zone allocation comes out of the State’s
+
+housing credit ceiling for the allocation year. Without the increase, a qualified disaster
+
+zone allocation would reduce the credit ceiling amounts available to the State for other
+
+projects in that year. Consistent with section 42(h)(3)(C)(iii) and § 1.42-14(d)(1) in all
+
+years, the Returned Credit Component for any year is the amount of State housing
+
+credit ceiling allocated in a prior year that is returned in the calendar year at issue.
+
+Because the Act treats the disaster allocations as coming out of the allocation-year
+                                             5
+
+ceiling, any such allocation that is returned in 2023 or after meets the requirements in
+
+section 42(h)(3)(C)(iii) and § 1.42-14(d)(1). As such, the returned allocation is part of
+
+the Returned Credit Component of a State’s housing credit ceiling in the year of return
+
+and may be reallocated.
+
+   Other than increasing the State’s 2021 and 2022 housing credit ceiling, section 305
+
+of the Act ascribes no special attributes to HCDA allocations to qualified disaster zones.
+
+After their allocation, these HCDAs have no statutory attributes that distinguish them
+
+from any other allocations that had been made from the allocation-year ceiling. Put
+
+differently, the Act provides for the increase in the credit ceiling and indicates where the
+
+increase is taken account for purposes of the stacking order, but does not provide rules
+
+for how a State should reallocate these amounts if they are returned after 2022.
+
+   The Act’s silence about returned allocations suggests that the normal returned credit
+
+rules under section 42 apply to these returned allocations as well. Further, there is an
+
+indication that the Act affirmatively intended for normal section 42 rules to apply after a
+
+valid allocation to a qualified disaster zone. Because section 305(a)(4) of the Act
+
+provides that the increase in the credit ceiling is part of the Population Component for
+
+determining the Unused Carryforward Component for the next year, it indicates an
+
+intent to apply the general stacking order of the rules under § 1.42-14(g). For example,
+
+this would mean that a State’s allocations would first reduce the State’s current year
+
+Unused Carryforward Component (regardless of whether to a qualified disaster zone)
+
+before reducing the other components of a State’s housing credit ceiling. Therefore,
+                                              6
+
+under the Act, the regular section 42 returned credit rules would apply to a returned
+
+allocation that was validly allocated in a prior calendar year.
+
+HOLDING
+
+   If one or more of a State’s allocations to qualified disaster zones in 2021 or 2022 are
+
+returned after 2022, then the returned HCDAs are part of the overall Returned Credit
+
+Component of a State’s housing credit ceiling in the year of return. As such,
+
+reallocations of these returned amounts are not restricted to projects located in qualified
+
+disaster zones.
+
+   The analysis in this revenue ruling applies only for purposes of determining the
+
+validity of reallocations of HCDAs whose previous allocations had increased a State’s
+
+housing credit ceiling under section 305 of the Act.
+
+DRAFTING INFORMATION
+
+   The principal author of this revenue ruling is Dillon Taylor of the Office of Associate
+
+Chief Counsel (Passthroughs & Special Industries). For further information regarding
+
+this revenue ruling, contact Dillon Taylor at (202) 317-4137 (not a toll-free call).
+

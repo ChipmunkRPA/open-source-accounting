@@ -278,3 +278,19 @@ image/deployment and full-app live integration remain unrun. No public fixture b
 visibility/IAM change, Actions dispatch, paid resource or deployment was performed.
 
 Independent bounded AI code/policy review repeated the same public checks and found no blocking finding in the exact 34-file overlay. Existing 78 articles remain under their prior grants; the branding does not relicense them. Source publication uses the real remote parent and preserves unrelated files. Systems hosted-preview re-pin/rebuild remains a separate release gate.
+
+## 2026-10-04 · Eight whole IRS government-source originals · #7/#8/#20
+
+Ray Sang’s Annotation — AI-assisted technical source-catalog description; not professionally reviewed.
+
+Added **8 complete IRS Revenue Ruling PDFs (678,025 original bytes)** and **8 complete extractable texts (63,517 bytes)** with **40 PDF page units**. The pilot has exactly 18 files under `content/irs-source-pilot/2026-10-04/`. Original authored articles, professional approvals, current-law determinations, live application imports and Agent admissions added by this batch are all **zero**. This is a bounded repository source snapshot, not completion of the wider IRS collection.
+
+Exact full texts were screened against the IRS reuse policy and government-authorship evidence; reacquired PDF hashes match the exact reviewed originals. All eight identify IRS Chief Counsel authorship. No private treatise passages/publisher-added headnotes were identified in this selection, and all eight have zero embedded raster images. IRS attribution remains intact; government text is not relabeled under first-party copyright or noncommercial terms. Revenue Ruling 2023-2 (private reference-work definitions), the retained advance 2007-3 copy (unresolved publication placeholder), and publications with possible third-party photographs remain outside this pilot. AI material screening is not human legal/accounting approval.
+
+Seven items have identified IRB publication presence/dates, while their actual standalone advance-PDF editions are preserved. Exact reconciliation to final IRB text remains open. Revenue Ruling 2026-20 is explicitly advance-copy-only. Later legal treatment and fact-specific applicability remain unreviewed. Source years and retrieval/posting dates are not asserted effective dates or current law.
+
+The public boundary pins all 18 approved paths and SHA-256 values and rejects every other IRS-pilot path. There is no broad PDF/TXT allowance. Negative tests run the actual checker against altered and unknown source files, alongside source-edition, attribution, licensing and no-admission checks.
+
+Final observed checks: TypeScript; **16 auth + 55 Systems + 7 content-policy Node tests**; **18 Python tests** (8 existing policy/HTTP plus 10 IRS); full public build (**78 existing library articles, 33 Systems profiles**); and `scripts/check_public.py --dist`, all passed. Existing locked dependencies were reused; copied dependency-bin symlinks were repaired before final passing runs. No new dependencies, hosted Actions dispatch, native/Mac/release validation, deployment, paid resource or real Agent integration occurred.
+
+Normal non-force publication descends from policy head `c003b7864520d8aa8453d07f3abaedad7764a93b`, preserving unrelated remote tree leaves and all prior progress bytes. Six existing GovInfo archive blobs were not rematerialized locally; the base Git tree retains them unchanged. `[skip ci]` respects the no-Actions direction. Next: continue permitted collection with durable batch backups, then review further exact source batches and applicability without conflating documents, pages, rules and original articles.

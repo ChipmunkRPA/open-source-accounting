@@ -1,0 +1,257 @@
+Part I
+
+
+Section 1001. -- Determination of Amount of and Recognition of Gain or Loss
+
+
+
+26 CFR 1.1001-1: Computation of gain or loss.
+(Also §§ 351, 852; 1.351-1)
+
+
+
+
+Rev. Rul. 2026-20
+
+
+
+ISSUE
+
+
+   Should a transfer of securities to a newly formed exchange traded fund that is
+
+intended to qualify as an exchange to which § 351 of the Internal Revenue Code
+
+(Code)1 applies fail to qualify as such if, as part of the same plan, some or all of the
+
+transferred securities are distributed pursuant to § 852(b)(6) in redemption of shares
+
+held by an “authorized participant”?
+
+
+FACTS
+
+   As part of a plan, an investor (Investor) transfers a portfolio of securities to a newly
+
+formed exchange traded fund (ETF). For Federal income tax purposes, ETF is a
+
+
+
+1 Unless otherwise provided, all “Section” or “§” references are to sections of the Code or the Income Tax
+
+Regulations (26 CFR part 1).
+                                              2
+
+
+corporation that intends to qualify as a regulated investment company (RIC) under
+
+§ 851 and to meet the requirements to be taxed under subchapter M of the Code. At
+
+the time of Investor’s transfer to ETF the securities are appreciated, and the transferred
+
+portfolio is diversified within the meaning of § 1.351-1(c).
+
+   Pursuant to the same plan that includes the transfer of securities by Investor to ETF,
+
+the following two transactions take place. First, ETF issues shares to a person serving
+
+as an “authorized participant” (AP) in exchange for securities that are consistent with
+
+the ETF’s investment thesis or cash that ETF intends to use to acquire such securities.
+
+Second, and shortly thereafter, ETF redeems those shares, in a transaction intended to
+
+qualify under § 852(b)(6), in exchange for securities transferred to ETF by Investor.
+
+Upon completion of the planned transactions, ETF holds a portfolio of securities that is
+
+consistent with its investment thesis and materially different from the portfolio
+
+transferred by Investor.
+
+
+LAW AND ANALYSIS
+
+  A RIC, as defined in § 851, is a domestic corporation for federal income tax purposes
+
+that meets requirements specified in § 851. A RIC that meets the requirements of § 852
+
+is taxed under part I of subchapter M of chapter 1 of the Code (subchapter M). Taxation
+
+of RICs and their shareholders under part I of subchapter M is generally more favorable
+
+than taxation of non-RIC corporations subject to subchapter C of chapter 1 of the Code
+
+(subchapter C). Like other corporations subject to subchapter C, a RIC generally must
+
+recognize gain upon a distribution of appreciated property under § 311(b). However, §
+
+852(b)(6) provides that § 311(b) shall not apply to certain RIC distributions. Specifically,
+
+§ 311(b) does not apply to any distribution by a RIC to which part I of subchapter M
+                                             3
+
+
+applies, “if such distribution is in redemption of its stock upon the demand of the
+
+shareholder.”
+
+   Section 351 provides that no gain or loss is recognized if property is transferred to a
+
+corporation by one or more persons solely in exchange for stock in such corporation
+
+and, immediately after the exchange, such person or persons are in control (as defined
+
+in § 368(c)) of the corporation. “[T]he purpose of [§ 351] [is] to save the taxpayer from
+
+an immediate recognition of a gain, or to intermit the claim of a loss, in certain
+
+transactions where gain or loss may have accrued in a constitutional sense, but where
+
+in a popular and economic sense there has been a mere change in the form of
+
+ownership and the taxpayer has not really ‘cashed in’ on the theoretical gain, or closed
+
+out a losing venture.” Portland Oil Co. v. Commissioner, 109 F.2d 479, 488 (1st Cir.
+
+1940).
+
+   Under generally applicable principles of law, such as the substance over form and
+
+step-transaction doctrines, an intermediary’s transitory ownership of property may be
+
+disregarded for Federal income tax purposes and the transaction recharacterized in
+
+accordance with its substance. See generally Stewart v. Commissioner, 714 F.2d 977,
+
+987 (9th Cir. 1983) (observing that the purpose of the substance over form doctrine is to
+
+deny legal effect to transactions that comply with the formal requirements of a statute
+
+but violate the purpose of the statute). In this regard, transactions effectuated as part of
+
+a single integrated plan may be recharacterized to ensure that “[a] given result at the
+
+end of a straight path is not made a different result because reached by following a
+
+devious path.” Minnesota Tea Co. v. Helvering, 302 U.S. 609, 613 (1938). For
+
+example, in Commissioner v. Court Holding Co., 324 U.S. 331, 334 (1945), the
+                                               4
+
+
+Supreme Court stated that a “sale by one person cannot be transformed for tax
+
+purposes into a sale by another by using the latter as a conduit through which to pass
+
+title. To permit the true nature of a transaction to be disguised by mere formalisms,
+
+which exist solely to alter tax liabilities, would seriously impair the effective
+
+administration of the tax policies of Congress.”
+
+   Courts and the Internal Revenue Service have found that contributions of property to
+
+a corporation followed by a distribution of the contributed property or a redemption of
+
+shares in exchange for the contributed property may be recharacterized. For example,
+
+in Kuper v. Commissioner, 533 F.2d 152 (5th Cir. 1976), shareholders of one
+
+corporation (KE) contributed all shares in KE to another corporation (KV) owned by the
+
+same shareholders. On the following day, KV distributed the KE stock to one
+
+shareholder in complete redemption of its interest in KV. The Fifth Circuit held that,
+
+where shareholders of one corporation (KE) contributed all shares in KE to another
+
+corporation (KV) owned by the same shareholders and, on the following day, KV
+
+distributed the KE stock to one shareholder in complete redemption of its interest in KV,
+
+(i) the contributing shareholders who continued to own shares of KV would be treated
+
+as engaging in a taxable disposition of their KE shares with the shareholder being
+
+redeemed, and (ii) the redeemed shareholder would be treated as engaging in a taxable
+
+disposition of its KV shares with the shareholders who retained their KV shares. Rev.
+
+Rul. 71-336, 1971-2 C.B. 299, similarly concludes that where, pursuant to a pre-
+
+arranged plan, a group of shareholders contributes, appreciated stock in a corporation
+
+(Y) to another corporation (X) and, shortly thereafter, X redeems its stock held by
+
+another historical X shareholder in exchange for the appreciated Y stock transferred by
+                                             5
+
+
+the group of shareholders, the transactions should be recharacterized as a taxable
+
+stock-for-stock exchange among the shareholders.
+
+   Similarly, pre-acquisition distributions have been recharacterized as sale proceeds in
+
+situations in which the distribution or redemption has not aligned with the economic
+
+reality of the transaction. See, e.g., Waterman Steamship Corp. v. Commissioner, 430
+
+F.2d 1185 (5th Cir. 1970) (holding that the distribution of a promissory note by a
+
+subsidiary corporation to its parent was in substance part of the purchase price paid by
+
+a third party to the parent for the subsidiary’s stock); Rev. Rul. 75-360, 1975-2 C.B. 110
+
+(integrating a cash redemption of target preferred stock with an acquisition of common
+
+stock for common stock as a transaction that does not qualify as a reorganization under
+
+§ 368(a)(1)(B) because the acquisition is not solely for voting stock).
+
+   In the situation at hand, the transactions undertaken as part of the plan were
+
+designed to enable Investor to exchange Investor’s appreciated portfolio of securities for
+
+a materially different portfolio that aligns with the ETF’s investment thesis without
+
+recognizing any built-in gains in those securities, and ETF was merely a conduit through
+
+which securities transferred from Investor to AP pursuant to the plan. Based on the
+
+foregoing, Investor is treated as having disposed of these securities for other property
+
+differing materially in kind or extent from that which Investor transferred to ETF.
+
+
+HOLDING
+
+   The transfer of securities by Investor to ETF is recharacterized to reflect the
+
+substance of the transactions carried out pursuant to the plan. Accordingly, Investor is
+
+treated as undertaking a taxable exchange under § 1001 with AP of the securities
+
+contributed to ETF by Investor that are used by ETF to redeem AP. The result would be
+                                            6
+
+
+the same if there were multiple investors engaging in the transaction.
+
+
+EFFECT ON OTHER DOCUMENTS
+
+   Rev. Rul. 71-336, 1971-2 C.B. 299, is amplified; Rev. Rul. 75-447, 1975-2 C.B. 13,
+
+and Rev. Rul. 88-32, 1988-1 C.B. 833, are distinguished.
+
+
+DRAFTING INFORMATION
+
+   The principal author of this revenue ruling is the Office of Associate Chief Counsel
+
+(Corporate). For further information regarding this revenue ruling, call (202) 317-3181
+
+(not a toll-free call).
+

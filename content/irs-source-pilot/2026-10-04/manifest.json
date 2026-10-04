@@ -1,0 +1,484 @@
+{
+  "schema_version": "official-irs-source-pilot-v1",
+  "documents": [
+    {
+      "document_id": "irs:rev-rul:2019-24",
+      "official_identifier": "Revenue Ruling 2019-24",
+      "document_type": "revenue_ruling",
+      "source_agency": "U.S. Internal Revenue Service",
+      "jurisdiction": {
+        "country": "US",
+        "level": "federal",
+        "id": "US"
+      },
+      "tax_family": "federal_income_tax",
+      "source_url": "https://www.irs.gov/pub/irs-drop/rr-19-24.pdf",
+      "source_retrieved_at": "2026-10-04T18:08:17+00:00",
+      "source_http_last_modified": "Wed, 09 Oct 2019 14:23:44 GMT",
+      "original_pdf": {
+        "path": "originals/rr-19-24.pdf",
+        "sha256": "e0ccbbefc302668b4aefb9476058476a449b29d412f359b1fc0eb7da232407a5",
+        "bytes": 75827,
+        "pages": 5,
+        "embedded_images": 0
+      },
+      "full_text": {
+        "path": "text/rr-19-24.txt",
+        "sha256": "b4a74db956bdc1f983816d5937d60de397db23d883edf838f7eac93a3db5588c",
+        "bytes": 8069,
+        "scope": "complete extractable standalone-PDF text, not a summary",
+        "extraction": "pdftotext -layout; no OCR; exact retained edition"
+      },
+      "publication_year": 2019,
+      "irb_publication_url": "https://www.irs.gov/irb/2019-44_IRB",
+      "irb_publication_date": "2019-10-28",
+      "edition_status": "IRS advance PDF; IRB presence/date identified, exact final-text reconciliation pending",
+      "annotation": {
+        "label": "Ray Sang’s Annotation",
+        "status": "AI-assisted; not professionally reviewed",
+        "catalog_subject": "Cryptocurrency hard forks and airdrops"
+      },
+      "rights": {
+        "basis_url": "https://www.irs.gov/about-irs/use-of-content-from-irsgov",
+        "basis": "IRS permits copying content created or maintained by federal employees in official duties and requests credit; third-party copyrighted material is excluded.",
+        "government_authorship_evidence": "Drafting information identifies Suzanne R. Sinno, Office of Associate Chief Counsel (Income Tax & Accounting).",
+        "exact_reviewed_original_sha256": "e0ccbbefc302668b4aefb9476058476a449b29d412f359b1fc0eb7da232407a5",
+        "screening": "Full text reviewed; newly reacquired raw hash matches exact reviewed source; zero embedded raster images. References/quotations are federal statutes, regulations, official IRS/congressional materials or federal judicial opinions. No private treatise excerpts or publisher-added headnotes identified.",
+        "review_kind": "AI source/material screening; not professional legal or accounting review",
+        "first_party_noncommercial_terms_apply_to_government_text": false,
+        "government_text_relicensed": false,
+        "publication_candidate": true
+      },
+      "attribution": "Source: U.S. Internal Revenue Service. No endorsement, sponsorship or affiliation is implied.",
+      "effective_from": null,
+      "effective_to": null,
+      "current_applicability_reviewed": false,
+      "current_law_claim": false,
+      "supersession_status": "No comprehensive later-treatment review; consult the retained source and subsequent primary authorities",
+      "as_of": "2026-10-04",
+      "agent_admitted": false,
+      "professionally_reviewed": false,
+      "original_authored_article": false
+    },
+    {
+      "document_id": "irs:rev-rul:2019-19",
+      "official_identifier": "Revenue Ruling 2019-19",
+      "document_type": "revenue_ruling",
+      "source_agency": "U.S. Internal Revenue Service",
+      "jurisdiction": {
+        "country": "US",
+        "level": "federal",
+        "id": "US"
+      },
+      "tax_family": "federal_income_tax",
+      "source_url": "https://www.irs.gov/pub/irs-drop/rr-19-19.pdf",
+      "source_retrieved_at": "2026-10-04T18:08:20+00:00",
+      "source_http_last_modified": "Fri, 07 Nov 2025 09:00:07 GMT",
+      "original_pdf": {
+        "path": "originals/rr-19-19.pdf",
+        "sha256": "57f1ead842d713c38d7b8c884e72755a3d134c40dceb0e1d1882c8ddb4ba24d2",
+        "bytes": 47157,
+        "pages": 5,
+        "embedded_images": 0
+      },
+      "full_text": {
+        "path": "text/rr-19-19.txt",
+        "sha256": "5087494860075f4c126600f821467397ad9029ce1ed1dfd0b8fe3aac42e5ab23",
+        "bytes": 7592,
+        "scope": "complete extractable standalone-PDF text, not a summary",
+        "extraction": "pdftotext -layout; no OCR; exact retained edition"
+      },
+      "publication_year": 2019,
+      "irb_publication_url": "https://www.irs.gov/irb/2019-36_IRB",
+      "irb_publication_date": "2019-09-03",
+      "edition_status": "IRS advance PDF; IRB presence/date identified, exact final-text reconciliation pending",
+      "annotation": {
+        "label": "Ray Sang’s Annotation",
+        "status": "AI-assisted; not professionally reviewed",
+        "catalog_subject": "Uncashed retirement-plan distribution checks"
+      },
+      "rights": {
+        "basis_url": "https://www.irs.gov/about-irs/use-of-content-from-irsgov",
+        "basis": "IRS permits copying content created or maintained by federal employees in official duties and requests credit; third-party copyrighted material is excluded.",
+        "government_authorship_evidence": "Drafting information identifies Angelique Carrington, Office of Associate Chief Counsel (Employee Benefits, Exempt Organizations, and Employment Taxes).",
+        "exact_reviewed_original_sha256": "57f1ead842d713c38d7b8c884e72755a3d134c40dceb0e1d1882c8ddb4ba24d2",
+        "screening": "Full text reviewed; newly reacquired raw hash matches exact reviewed source; zero embedded raster images. References/quotations are federal statutes, regulations, official IRS/congressional materials or federal judicial opinions. No private treatise excerpts or publisher-added headnotes identified.",
+        "review_kind": "AI source/material screening; not professional legal or accounting review",
+        "first_party_noncommercial_terms_apply_to_government_text": false,
+        "government_text_relicensed": false,
+        "publication_candidate": true
+      },
+      "attribution": "Source: U.S. Internal Revenue Service. No endorsement, sponsorship or affiliation is implied.",
+      "effective_from": null,
+      "effective_to": null,
+      "current_applicability_reviewed": false,
+      "current_law_claim": false,
+      "supersession_status": "No comprehensive later-treatment review; consult the retained source and subsequent primary authorities",
+      "as_of": "2026-10-04",
+      "agent_admitted": false,
+      "professionally_reviewed": false,
+      "original_authored_article": false
+    },
+    {
+      "document_id": "irs:rev-rul:2025-15",
+      "official_identifier": "Revenue Ruling 2025-15",
+      "document_type": "revenue_ruling",
+      "source_agency": "U.S. Internal Revenue Service",
+      "jurisdiction": {
+        "country": "US",
+        "level": "federal",
+        "id": "US"
+      },
+      "tax_family": "federal_income_tax",
+      "source_url": "https://www.irs.gov/pub/irs-drop/rr-25-15.pdf",
+      "source_retrieved_at": "2026-10-04T18:08:17+00:00",
+      "source_http_last_modified": "Wed, 16 Jul 2025 17:28:21 GMT",
+      "original_pdf": {
+        "path": "originals/rr-25-15.pdf",
+        "sha256": "9c9c802370e22c9bc1ff9d9b943fdbe5d4b9056dd6abb17bf7b0a2d5ce207974",
+        "bytes": 175611,
+        "pages": 8,
+        "embedded_images": 0
+      },
+      "full_text": {
+        "path": "text/rr-25-15.txt",
+        "sha256": "ad97250529faee2287d30c5297affa2509e07a3d8ea362811079ed6bce55baba",
+        "bytes": 14767,
+        "scope": "complete extractable standalone-PDF text, not a summary",
+        "extraction": "pdftotext -layout; no OCR; exact retained edition"
+      },
+      "publication_year": 2025,
+      "irb_publication_url": "https://www.irs.gov/irb/2025-32_IRB",
+      "irb_publication_date": "2025-08-04",
+      "edition_status": "IRS advance PDF; IRB presence/date identified, exact final-text reconciliation pending",
+      "annotation": {
+        "label": "Ray Sang’s Annotation",
+        "status": "AI-assisted; not professionally reviewed",
+        "catalog_subject": "Replacement retirement-check withholding and reporting"
+      },
+      "rights": {
+        "basis_url": "https://www.irs.gov/about-irs/use-of-content-from-irsgov",
+        "basis": "IRS permits copying content created or maintained by federal employees in official duties and requests credit; third-party copyrighted material is excluded.",
+        "government_authorship_evidence": "Drafting information identifies Christina Cerasale, Office of Associate Chief Counsel (Employee Benefits, Exempt Organizations, and Employment Taxes).",
+        "exact_reviewed_original_sha256": "9c9c802370e22c9bc1ff9d9b943fdbe5d4b9056dd6abb17bf7b0a2d5ce207974",
+        "screening": "Full text reviewed; newly reacquired raw hash matches exact reviewed source; zero embedded raster images. References/quotations are federal statutes, regulations, official IRS/congressional materials or federal judicial opinions. No private treatise excerpts or publisher-added headnotes identified.",
+        "review_kind": "AI source/material screening; not professional legal or accounting review",
+        "first_party_noncommercial_terms_apply_to_government_text": false,
+        "government_text_relicensed": false,
+        "publication_candidate": true
+      },
+      "attribution": "Source: U.S. Internal Revenue Service. No endorsement, sponsorship or affiliation is implied.",
+      "effective_from": null,
+      "effective_to": null,
+      "current_applicability_reviewed": false,
+      "current_law_claim": false,
+      "supersession_status": "No comprehensive later-treatment review; consult the retained source and subsequent primary authorities",
+      "as_of": "2026-10-04",
+      "agent_admitted": false,
+      "professionally_reviewed": false,
+      "original_authored_article": false
+    },
+    {
+      "document_id": "irs:rev-rul:2021-2",
+      "official_identifier": "Revenue Ruling 2021-2",
+      "document_type": "revenue_ruling",
+      "source_agency": "U.S. Internal Revenue Service",
+      "jurisdiction": {
+        "country": "US",
+        "level": "federal",
+        "id": "US"
+      },
+      "tax_family": "federal_income_tax",
+      "source_url": "https://www.irs.gov/pub/irs-drop/rr-21-02.pdf",
+      "source_retrieved_at": "2026-10-04T18:08:17+00:00",
+      "source_http_last_modified": "Wed, 06 Jan 2021 16:23:53 GMT",
+      "original_pdf": {
+        "path": "originals/rr-21-02.pdf",
+        "sha256": "57b3c7e8c54c54d9a55c2329d14e676b9d07289ca0fdc451db80840d03d030ca",
+        "bytes": 81828,
+        "pages": 2,
+        "embedded_images": 0
+      },
+      "full_text": {
+        "path": "text/rr-21-02.txt",
+        "sha256": "66718ef1ea5bdde1acd561b14a47808abbdb03e160579d5c42806a5e51f004c1",
+        "bytes": 3048,
+        "scope": "complete extractable standalone-PDF text, not a summary",
+        "extraction": "pdftotext -layout; no OCR; exact retained edition"
+      },
+      "publication_year": 2021,
+      "irb_publication_url": "https://www.irs.gov/irb/2021-04_IRB",
+      "irb_publication_date": "2021-01-25",
+      "edition_status": "IRS advance PDF; IRB presence/date identified, exact final-text reconciliation pending",
+      "annotation": {
+        "label": "Ray Sang’s Annotation",
+        "status": "AI-assisted; not professionally reviewed",
+        "catalog_subject": "PPP expense deductions and express obsolescence of earlier guidance"
+      },
+      "rights": {
+        "basis_url": "https://www.irs.gov/about-irs/use-of-content-from-irsgov",
+        "basis": "IRS permits copying content created or maintained by federal employees in official duties and requests credit; third-party copyrighted material is excluded.",
+        "government_authorship_evidence": "Drafting information identifies Charles Gorham, Charles Magee and Bruce Chang, Office of Associate Chief Counsel (Income Tax & Accounting).",
+        "exact_reviewed_original_sha256": "57b3c7e8c54c54d9a55c2329d14e676b9d07289ca0fdc451db80840d03d030ca",
+        "screening": "Full text reviewed; newly reacquired raw hash matches exact reviewed source; zero embedded raster images. References/quotations are federal statutes, regulations, official IRS/congressional materials or federal judicial opinions. No private treatise excerpts or publisher-added headnotes identified.",
+        "review_kind": "AI source/material screening; not professional legal or accounting review",
+        "first_party_noncommercial_terms_apply_to_government_text": false,
+        "government_text_relicensed": false,
+        "publication_candidate": true
+      },
+      "attribution": "Source: U.S. Internal Revenue Service. No endorsement, sponsorship or affiliation is implied.",
+      "effective_from": null,
+      "effective_to": null,
+      "current_applicability_reviewed": false,
+      "current_law_claim": false,
+      "supersession_status": "No comprehensive later-treatment review; consult the retained source and subsequent primary authorities",
+      "as_of": "2026-10-04",
+      "agent_admitted": false,
+      "professionally_reviewed": false,
+      "original_authored_article": false
+    },
+    {
+      "document_id": "irs:rev-rul:2008-26",
+      "official_identifier": "Revenue Ruling 2008-26",
+      "document_type": "revenue_ruling",
+      "source_agency": "U.S. Internal Revenue Service",
+      "jurisdiction": {
+        "country": "US",
+        "level": "federal",
+        "id": "US"
+      },
+      "tax_family": "federal_income_tax",
+      "source_url": "https://www.irs.gov/pub/irs-drop/rr-08-26.pdf",
+      "source_retrieved_at": "2026-10-04T18:08:20+00:00",
+      "source_http_last_modified": "Tue, 31 Jul 2012 10:25:46 GMT",
+      "original_pdf": {
+        "path": "originals/rr-08-26.pdf",
+        "sha256": "aa202c190dae8428c5f6f1ab33a9cc44264411eca43f40fb192825b81aa476eb",
+        "bytes": 20281,
+        "pages": 5,
+        "embedded_images": 0
+      },
+      "full_text": {
+        "path": "text/rr-08-26.txt",
+        "sha256": "cb19eb785572a84da0492722473f8753855f134b4b3658d5077e25b62188b0d2",
+        "bytes": 7611,
+        "scope": "complete extractable standalone-PDF text, not a summary",
+        "extraction": "pdftotext -layout; no OCR; exact retained edition"
+      },
+      "publication_year": 2008,
+      "irb_publication_url": "https://www.irs.gov/irb/2008-21_IRB",
+      "irb_publication_date": "2008-05-27",
+      "edition_status": "IRS advance PDF; IRB presence/date identified, exact final-text reconciliation pending",
+      "annotation": {
+        "label": "Ray Sang’s Annotation",
+        "status": "AI-assisted; not professionally reviewed",
+        "catalog_subject": "Medicaid rebates and gross receipts"
+      },
+      "rights": {
+        "basis_url": "https://www.irs.gov/about-irs/use-of-content-from-irsgov",
+        "basis": "IRS permits copying content created or maintained by federal employees in official duties and requests credit; third-party copyrighted material is excluded.",
+        "government_authorship_evidence": "Drafting information identifies Susie K. Bird, Office of Associate Chief Counsel (Income Tax and Accounting).",
+        "exact_reviewed_original_sha256": "aa202c190dae8428c5f6f1ab33a9cc44264411eca43f40fb192825b81aa476eb",
+        "screening": "Full text reviewed; newly reacquired raw hash matches exact reviewed source; zero embedded raster images. References/quotations are federal statutes, regulations, official IRS/congressional materials or federal judicial opinions. No private treatise excerpts or publisher-added headnotes identified.",
+        "review_kind": "AI source/material screening; not professional legal or accounting review",
+        "first_party_noncommercial_terms_apply_to_government_text": false,
+        "government_text_relicensed": false,
+        "publication_candidate": true
+      },
+      "attribution": "Source: U.S. Internal Revenue Service. No endorsement, sponsorship or affiliation is implied.",
+      "effective_from": null,
+      "effective_to": null,
+      "current_applicability_reviewed": false,
+      "current_law_claim": false,
+      "supersession_status": "No comprehensive later-treatment review; consult the retained source and subsequent primary authorities",
+      "as_of": "2026-10-04",
+      "agent_admitted": false,
+      "professionally_reviewed": false,
+      "original_authored_article": false
+    },
+    {
+      "document_id": "irs:rev-rul:2024-5",
+      "official_identifier": "Revenue Ruling 2024-5",
+      "document_type": "revenue_ruling",
+      "source_agency": "U.S. Internal Revenue Service",
+      "jurisdiction": {
+        "country": "US",
+        "level": "federal",
+        "id": "US"
+      },
+      "tax_family": "federal_income_tax",
+      "source_url": "https://www.irs.gov/pub/irs-drop/rr-24-05.pdf",
+      "source_retrieved_at": "2026-10-04T18:08:17+00:00",
+      "source_http_last_modified": "Tue, 30 Jan 2024 13:47:35 GMT",
+      "original_pdf": {
+        "path": "originals/rr-24-05.pdf",
+        "sha256": "00e323652b6a9574bb3fcc95cd8cfb5ddac98069b2f88bbf459adf99a2fee082",
+        "bytes": 65679,
+        "pages": 6,
+        "embedded_images": 0
+      },
+      "full_text": {
+        "path": "text/rr-24-05.txt",
+        "sha256": "5c336c45ca66eb80c22142e971899457d21ae99958f70d87ed53c94f7bf8e667",
+        "bytes": 9289,
+        "scope": "complete extractable standalone-PDF text, not a summary",
+        "extraction": "pdftotext -layout; no OCR; exact retained edition"
+      },
+      "publication_year": 2024,
+      "irb_publication_url": "https://www.irs.gov/irb/2024-07_IRB",
+      "irb_publication_date": "2024-02-12",
+      "edition_status": "IRS advance PDF; IRB presence/date identified, exact final-text reconciliation pending",
+      "annotation": {
+        "label": "Ray Sang’s Annotation",
+        "status": "AI-assisted; not professionally reviewed",
+        "catalog_subject": "Returned disaster-zone housing-credit allocations"
+      },
+      "rights": {
+        "basis_url": "https://www.irs.gov/about-irs/use-of-content-from-irsgov",
+        "basis": "IRS permits copying content created or maintained by federal employees in official duties and requests credit; third-party copyrighted material is excluded.",
+        "government_authorship_evidence": "Drafting information identifies Dillon Taylor, Office of Associate Chief Counsel (Passthroughs & Special Industries).",
+        "exact_reviewed_original_sha256": "00e323652b6a9574bb3fcc95cd8cfb5ddac98069b2f88bbf459adf99a2fee082",
+        "screening": "Full text reviewed; newly reacquired raw hash matches exact reviewed source; zero embedded raster images. References/quotations are federal statutes, regulations, official IRS/congressional materials or federal judicial opinions. No private treatise excerpts or publisher-added headnotes identified.",
+        "review_kind": "AI source/material screening; not professional legal or accounting review",
+        "first_party_noncommercial_terms_apply_to_government_text": false,
+        "government_text_relicensed": false,
+        "publication_candidate": true
+      },
+      "attribution": "Source: U.S. Internal Revenue Service. No endorsement, sponsorship or affiliation is implied.",
+      "effective_from": null,
+      "effective_to": null,
+      "current_applicability_reviewed": false,
+      "current_law_claim": false,
+      "supersession_status": "No comprehensive later-treatment review; consult the retained source and subsequent primary authorities",
+      "as_of": "2026-10-04",
+      "agent_admitted": false,
+      "professionally_reviewed": false,
+      "original_authored_article": false
+    },
+    {
+      "document_id": "irs:rev-rul:2026-16",
+      "official_identifier": "Revenue Ruling 2026-16",
+      "document_type": "revenue_ruling",
+      "source_agency": "U.S. Internal Revenue Service",
+      "jurisdiction": {
+        "country": "US",
+        "level": "federal",
+        "id": "US"
+      },
+      "tax_family": "federal_income_tax",
+      "source_url": "https://www.irs.gov/pub/irs-drop/rr-26-16.pdf",
+      "source_retrieved_at": "2026-10-04T17:59:51+00:00",
+      "source_http_last_modified": "Mon, 10 Aug 2026 17:16:56 GMT",
+      "original_pdf": {
+        "path": "originals/rr-26-16.pdf",
+        "sha256": "b9b20f782596a26da8bfb6a0b3b87b933817194073d2e9bda9143c6b5cbed2a9",
+        "bytes": 83724,
+        "pages": 3,
+        "embedded_images": 0
+      },
+      "full_text": {
+        "path": "text/rr-26-16.txt",
+        "sha256": "0de6b26bb290e803a76a9deb04b8a6fc838d84abbaced74f3a70b3d52a58b206",
+        "bytes": 3959,
+        "scope": "complete extractable standalone-PDF text, not a summary",
+        "extraction": "pdftotext -layout; no OCR; exact retained edition"
+      },
+      "publication_year": 2026,
+      "irb_publication_url": "https://www.irs.gov/irb/2026-36_IRB",
+      "irb_publication_date": "2026-08-31",
+      "edition_status": "IRS advance PDF; IRB presence/date identified, exact final-text reconciliation pending",
+      "annotation": {
+        "label": "Ray Sang’s Annotation",
+        "status": "AI-assisted; not professionally reviewed",
+        "catalog_subject": "ICE Endex and prospective accounting-method conditions"
+      },
+      "rights": {
+        "basis_url": "https://www.irs.gov/about-irs/use-of-content-from-irsgov",
+        "basis": "IRS permits copying content created or maintained by federal employees in official duties and requests credit; third-party copyrighted material is excluded.",
+        "government_authorship_evidence": "Drafting information identifies Shawn Tetelman, Office of Associate Chief Counsel (Financial Institutions & Products).",
+        "exact_reviewed_original_sha256": "b9b20f782596a26da8bfb6a0b3b87b933817194073d2e9bda9143c6b5cbed2a9",
+        "screening": "Full text reviewed; newly reacquired raw hash matches exact reviewed source; zero embedded raster images. References/quotations are federal statutes, regulations, official IRS/congressional materials or federal judicial opinions. No private treatise excerpts or publisher-added headnotes identified.",
+        "review_kind": "AI source/material screening; not professional legal or accounting review",
+        "first_party_noncommercial_terms_apply_to_government_text": false,
+        "government_text_relicensed": false,
+        "publication_candidate": true
+      },
+      "attribution": "Source: U.S. Internal Revenue Service. No endorsement, sponsorship or affiliation is implied.",
+      "effective_from": null,
+      "effective_to": null,
+      "current_applicability_reviewed": false,
+      "current_law_claim": false,
+      "supersession_status": "No comprehensive later-treatment review; consult the retained source and subsequent primary authorities",
+      "as_of": "2026-10-04",
+      "agent_admitted": false,
+      "professionally_reviewed": false,
+      "original_authored_article": false
+    },
+    {
+      "document_id": "irs:rev-rul:2026-20",
+      "official_identifier": "Revenue Ruling 2026-20",
+      "document_type": "revenue_ruling",
+      "source_agency": "U.S. Internal Revenue Service",
+      "jurisdiction": {
+        "country": "US",
+        "level": "federal",
+        "id": "US"
+      },
+      "tax_family": "federal_income_tax",
+      "source_url": "https://www.irs.gov/pub/irs-drop/rr-26-20.pdf",
+      "source_retrieved_at": "2026-10-04T17:57:58+00:00",
+      "source_http_last_modified": "Mon, 28 Sep 2026 15:57:08 GMT",
+      "original_pdf": {
+        "path": "originals/rr-26-20.pdf",
+        "sha256": "ef8b0ec3cb3000319e95bcbe320497e896ac6633deeafa814fedc030e3fe46d0",
+        "bytes": 127918,
+        "pages": 6,
+        "embedded_images": 0
+      },
+      "full_text": {
+        "path": "text/rr-26-20.txt",
+        "sha256": "204f45c59e864ea4cd320b730039c4fee4cbea6ee414fc4bc378a13cfdc4c754",
+        "bytes": 9182,
+        "scope": "complete extractable standalone-PDF text, not a summary",
+        "extraction": "pdftotext -layout; no OCR; exact retained edition"
+      },
+      "publication_year": 2026,
+      "irb_publication_url": null,
+      "irb_publication_date": null,
+      "edition_status": "advance copy; final IRB publication not identified",
+      "annotation": {
+        "label": "Ray Sang’s Annotation",
+        "status": "AI-assisted; not professionally reviewed",
+        "catalog_subject": "ETF contribution/redemption transactions"
+      },
+      "rights": {
+        "basis_url": "https://www.irs.gov/about-irs/use-of-content-from-irsgov",
+        "basis": "IRS permits copying content created or maintained by federal employees in official duties and requests credit; third-party copyrighted material is excluded.",
+        "government_authorship_evidence": "Drafting information identifies Office of Associate Chief Counsel (Corporate).",
+        "exact_reviewed_original_sha256": "ef8b0ec3cb3000319e95bcbe320497e896ac6633deeafa814fedc030e3fe46d0",
+        "screening": "Full text reviewed; newly reacquired raw hash matches exact reviewed source; zero embedded raster images. References/quotations are federal statutes, regulations, official IRS/congressional materials or federal judicial opinions. No private treatise excerpts or publisher-added headnotes identified.",
+        "review_kind": "AI source/material screening; not professional legal or accounting review",
+        "first_party_noncommercial_terms_apply_to_government_text": false,
+        "government_text_relicensed": false,
+        "publication_candidate": true
+      },
+      "attribution": "Source: U.S. Internal Revenue Service. No endorsement, sponsorship or affiliation is implied.",
+      "effective_from": null,
+      "effective_to": null,
+      "current_applicability_reviewed": false,
+      "current_law_claim": false,
+      "supersession_status": "No comprehensive later-treatment review; consult the retained source and subsequent primary authorities",
+      "as_of": "2026-10-04",
+      "agent_admitted": false,
+      "professionally_reviewed": false,
+      "original_authored_article": false
+    }
+  ],
+  "whole_original_documents": 8,
+  "complete_texts": 8,
+  "original_authored_articles": 0,
+  "storage_purpose": "versioned_GitHub_primary_source_snapshot",
+  "application_imported": false,
+  "published_in_application": false,
+  "agent_admitted": 0
+}

@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 EXACT = set('''AGENTS.md LICENSE NOTICE.md license-notice.md .gitignore .dockerignore README.md CONTRIBUTING.md SECURITY.md PUBLISHING.md progress.md
 CONTENT-TERMS.md robots.txt
 frontend/src/annotation.ts frontend/public/robots.txt frontend/public/content-terms.txt
-frontend/tests/content-policy.test.mjs scripts/tests/test_content_policy.py
+frontend/tests/content-policy.test.mjs scripts/tests/test_content_policy.py scripts/tests/test_irs_source_pilot.py
 .github/workflows/public.yml scripts/check_public.py scripts/serve_public.py
 frontend/package.json frontend/package-lock.json frontend/tsconfig.json
 frontend/public/index.html frontend/public/styles.css frontend/public/systems.js frontend/public/systems.css
@@ -38,7 +38,10 @@ CORE_STANDARDS_FILES = {
     'content/core-standards/irs-research-map.md',
 }
 SALT_FILES = {'content/salt/2026-10-04/sources.json', 'content/salt/2026-10-04/README.md', 'content/salt/2026-10-04/local-layers.json', 'content/salt/2026-10-04/manifest.json', 'content/salt/2026-10-04/source-links.json', 'content/salt/2026-10-04/jurisdictions.json'}
+IRS_SOURCE_FILES = {'content/irs-source-pilot/2026-10-04/README.md': '23f66e7370976f6f997f2a616589cf402f552865dd68e4adb0548f0abeec3ee2', 'content/irs-source-pilot/2026-10-04/manifest.json': 'f4abc02491a0e6515a8a7db4771daa664e274b98821dd8d9bb8fbb62a20cef4e', 'content/irs-source-pilot/2026-10-04/originals/rr-08-26.pdf': 'aa202c190dae8428c5f6f1ab33a9cc44264411eca43f40fb192825b81aa476eb', 'content/irs-source-pilot/2026-10-04/originals/rr-19-19.pdf': '57f1ead842d713c38d7b8c884e72755a3d134c40dceb0e1d1882c8ddb4ba24d2', 'content/irs-source-pilot/2026-10-04/originals/rr-19-24.pdf': 'e0ccbbefc302668b4aefb9476058476a449b29d412f359b1fc0eb7da232407a5', 'content/irs-source-pilot/2026-10-04/originals/rr-21-02.pdf': '57b3c7e8c54c54d9a55c2329d14e676b9d07289ca0fdc451db80840d03d030ca', 'content/irs-source-pilot/2026-10-04/originals/rr-24-05.pdf': '00e323652b6a9574bb3fcc95cd8cfb5ddac98069b2f88bbf459adf99a2fee082', 'content/irs-source-pilot/2026-10-04/originals/rr-25-15.pdf': '9c9c802370e22c9bc1ff9d9b943fdbe5d4b9056dd6abb17bf7b0a2d5ce207974', 'content/irs-source-pilot/2026-10-04/originals/rr-26-16.pdf': 'b9b20f782596a26da8bfb6a0b3b87b933817194073d2e9bda9143c6b5cbed2a9', 'content/irs-source-pilot/2026-10-04/originals/rr-26-20.pdf': 'ef8b0ec3cb3000319e95bcbe320497e896ac6633deeafa814fedc030e3fe46d0', 'content/irs-source-pilot/2026-10-04/text/rr-08-26.txt': 'cb19eb785572a84da0492722473f8753855f134b4b3658d5077e25b62188b0d2', 'content/irs-source-pilot/2026-10-04/text/rr-19-19.txt': '5087494860075f4c126600f821467397ad9029ce1ed1dfd0b8fe3aac42e5ab23', 'content/irs-source-pilot/2026-10-04/text/rr-19-24.txt': 'b4a74db956bdc1f983816d5937d60de397db23d883edf838f7eac93a3db5588c', 'content/irs-source-pilot/2026-10-04/text/rr-21-02.txt': '66718ef1ea5bdde1acd561b14a47808abbdb03e160579d5c42806a5e51f004c1', 'content/irs-source-pilot/2026-10-04/text/rr-24-05.txt': '5c336c45ca66eb80c22142e971899457d21ae99958f70d87ed53c94f7bf8e667', 'content/irs-source-pilot/2026-10-04/text/rr-25-15.txt': 'ad97250529faee2287d30c5297affa2509e07a3d8ea362811079ed6bce55baba', 'content/irs-source-pilot/2026-10-04/text/rr-26-16.txt': '0de6b26bb290e803a76a9deb04b8a6fc838d84abbaced74f3a70b3d52a58b206', 'content/irs-source-pilot/2026-10-04/text/rr-26-20.txt': '204f45c59e864ea4cd320b730039c4fee4cbea6ee414fc4bc378a13cfdc4c754'}
 def allowed(name):
+    if name.startswith('content/irs-source-pilot/'):
+        return name in IRS_SOURCE_FILES
     if any(part in {'fictional_annotations', 'copyright_detection', 'premium_private'} for part in Path(name).parts):
         return False
     if name.startswith('content/salt/'):
@@ -86,6 +89,7 @@ for name in set(names)-{''}:
     p=ROOT/name
     if not p.exists() and not p.is_symlink(): continue  # pending deletions
     if p.is_symlink() or not allowed(name): errors.append(name)
+    elif name in IRS_SOURCE_FILES and __import__('hashlib').sha256(p.read_bytes()).hexdigest() != IRS_SOURCE_FILES[name]: errors.append(name+' (IRS source hash mismatch)')
     elif name.startswith('content/') and fiction_file_error(p): errors.append(name+' (private fiction)')
 if '--dist' in sys.argv:
     expected={p.removeprefix('frontend/src/').removesuffix('.ts')+'.js' for p in EXACT if p.startswith('frontend/src/')}

@@ -1,0 +1,128 @@
+Part I
+
+
+Section 1256.—Section 1256 Contracts Marked to Market
+
+
+
+(Also §§ 446, 481, 7805; 1.446-1, 301.7805-1).
+
+
+
+
+Rev. Rul. 2026-16
+
+
+
+ISSUE
+
+
+   Is ICE Endex, which is a regulated exchange of the Netherlands, a qualified board or
+
+exchange within the meaning of § 1256(g)(7)(C) of the Internal Revenue Code (Code)1?
+
+FACTS
+
+   ICE Endex is a regulated exchange of the Netherlands.
+
+   On December 23, 2011, the Commodity Futures Trading Commission (CFTC)
+
+published final rules regarding the registration with the CFTC of foreign boards of trade
+
+(FBOT). See Registration of Foreign Boards of Trade, 76 FR 80674 (Dec. 23, 2011),
+
+codified at 17 CFR Part 48, and as amended by 89 FR 66201 (Aug. 15, 2024). The
+
+
+1 Unless otherwise specified, all “Section” or “§” references are to sections of the Code or the Income Tax
+
+Regulations (26 CFR Part 1).
+                                           -2-
+
+effective date for the final rules generally was February 21, 2012. Under the CFTC
+
+FBOT registration system, the CFTC may issue an Order of Registration to an FBOT,
+
+allowing the FBOT to provide direct access to its electronic trading and order matching
+
+system from the United States.
+
+   On January 10, 2017, the CFTC granted an Order of Registration to ICE Endex
+
+under the CFTC FBOT registration system. An FBOT’s status under the CFTC FBOT
+
+registration system is posted online by the CFTC.
+
+LAW
+
+   Section 1256(g)(7) provides that the term “qualified board or exchange” means:
+
+      (A) a national securities exchange that is registered with the Securities and
+
+Exchange Commission,
+
+      (B) a domestic board of trade designated as a contract market by the CFTC, or
+
+      (C) any other exchange, board of trade, or other market that the Secretary of the
+
+Treasury or the Secretary’s delegate determines has rules adequate to carry out the
+
+purposes of § 1256.
+
+HOLDING
+
+   The Internal Revenue Service determines that ICE Endex, which is a regulated
+
+exchange of the Netherlands, is a qualified board or exchange within the meaning of
+
+§ 1256(g)(7)(C) as long as ICE Endex holds a valid Order of Registration under the
+
+CFTC FBOT registration system.
+
+PROSPECTIVE APPLICATION
+
+   Under the authority of § 7805(b)(8), this revenue ruling is effective for ICE Endex
+                                           -3-
+
+Contracts entered into on or after September 1, 2026. For purposes of this revenue
+
+ruling, the term “ICE Endex Contracts” means futures contracts and futures contract
+
+options that are traded on or subject to the rules of ICE Endex, that are described in
+
+§ 1256(g)(1)(A), and that are not covered by the exception in § 1256(b)(2).
+
+CHANGE IN METHOD OF ACCOUNTING
+
+   A change in the treatment of ICE Endex Contracts to reflect the determination made
+
+in this revenue ruling is a change in method of accounting within the meaning of §§ 446
+
+and 481 and the regulations thereunder. The Commissioner of Internal Revenue grants
+
+consent to a taxpayer to change its method of accounting for ICE Endex Contracts
+
+entered into on or after September 1, 2026, to the § 1256 mark-to-market method for
+
+the first taxable year during which the taxpayer holds such contracts. The requirement
+
+to file a Form 3115, Application for Change in Accounting Method, in § 1.446-1(e)(3)(i)
+
+is waived. The change is made on a cut-off basis and is inapplicable to ICE Endex
+
+Contracts that were entered into before September 1, 2026. Because the change is
+
+made on a “cut-off” basis, there is no potential omission or duplication of income or
+
+deductions, and an adjustment under § 481 is neither permitted nor required.
+
+DRAFTING INFORMATION
+
+   The principal author of this revenue ruling is Shawn Tetelman of the Office of
+
+Associate Chief Counsel (Financial Institutions & Products). For further information
+
+regarding this revenue ruling, contact Shawn Tetelman at (202) 317-7053 (not a toll-free
+
+number).
+

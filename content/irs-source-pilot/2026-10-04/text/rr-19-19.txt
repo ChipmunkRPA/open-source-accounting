@@ -1,0 +1,209 @@
+Section 402.—Taxability of beneficiary of employees’ trust
+  (Also §§ 3405, 6047)
+
+
+
+Rev. Rul. 2019-19 Failure To Cash a Distribution Check From a Qualified
+Retirement Plan
+
+
+
+ISSUES
+
+   (1) Under the facts presented, does Individual A’s failure to cash the distribution
+
+check she received in 2019 permit her to exclude the amount of the designated
+
+distribution from her gross income in that year under § 402(a) of the Internal Revenue
+
+Code?
+
+   (2) Does Individual A’s failure to cash the distribution check she received alter
+
+Employer M’s obligations with respect to withholding under § 3405?
+
+   (3) Does Individual A’s failure to cash the distribution check she received alter
+
+Employer M’s obligations with respect to reporting under § 6047(d)?
+
+
+FACTS
+
+   Employer M is the plan administrator of Plan X, a qualified retirement plan under
+
+§ 401(a) that does not include a qualified Roth contribution program under § 402A(b). A
+
+distribution of $900 is required to be made from Plan X to Individual A in 2019.
+
+Individual A has no investment in the contract within the meaning of § 72 with respect to
+
+her Plan X benefit, has a calendar year taxable year, and has never made a withholding
+
+election with respect to her Plan X benefit. Employer M makes the required $900
+
+distribution, a designated distribution within the meaning of § 3405(e)(1), by withholding
+
+tax as required under § 3405(d)(2) and mailing a check for the remainder to Individual
+                                                      - 2 -
+
+
+A. Although Individual A receives the check and could cash it in 2019, she does not do
+
+so. 1 Individual A does not make a rollover contribution with respect to any portion of the
+
+designated distribution, and no other exception to income inclusion under § 402(a)
+
+applies.
+
+
+LAW AND ANALYSIS
+
+    (1) Includibility in Gross Income
+
+    Section 402(a) provides that, except as otherwise provided in § 402 (for example, a
+
+rollover under § 402(c)(1)), any amount actually distributed to a distributee by an
+
+employees’ trust described in § 401(a) which is exempt from tax under § 501(a) is
+
+taxable to the distributee, in the taxable year of the distributee in which distributed,
+
+under § 72. Section 72 provides rules relating to inclusion in gross income of amounts
+
+received from qualified plans and certain other arrangements.
+
+    Under § 402(a), the amount of the designated distribution is actually distributed from
+
+Plan X to Individual A in 2019. Because Individual A has no investment in the contract
+
+within the meaning of § 72 and no exception to § 402(a) applies, the amount of the
+
+designated distribution is includible in her gross income in 2019. Individual A’s failure to
+
+cash the distribution check she received in 2019 does not permit her to exclude the
+
+amount of the designated distribution from her gross income in that year under § 402(a).
+
+    (2) Withholding
+
+    Section 3405 provides federal income tax withholding rules with respect to
+
+designated distributions as defined under § 3405(e)(1). With respect to specified plans,
+
+
+
+1
+ For purposes of this revenue ruling, whether Individual A keeps the check, sends it back, destroys it, or
+cashes it in a subsequent year is irrelevant.
+                                                      - 3 -
+
+
+including a plan described in § 401(a), § 3405(d)(2) provides that the plan administrator
+
+shall withhold and be liable for payment of the tax required to be withheld under § 3405
+
+unless the plan administrator directs the payor to withhold the tax and provides the
+
+payor with such information as the Secretary may require by regulations.
+
+    Employer M, as the plan administrator of Plan X, withheld tax as required under
+
+§ 3405(d)(2) from Individual A’s designated distribution. 2 Individual A’s failure to cash
+
+the distribution check she received does not alter Employer M’s obligations with respect
+
+to withholding of tax, and liability for payment of that tax, under § 3405.
+
+    (3) Reporting
+
+    Section 6047(d) provides that the Secretary of the Treasury shall, by forms or
+
+regulations, require the employer maintaining a plan from which designated distributions
+
+(as defined in § 3405(e)(1)) may be made, or the plan administrator of that plan, to
+
+make returns and reports regarding the plan. However, no such return or report may be
+
+required with respect to distributions to any person during any year unless the
+
+distributions aggregate $10 or more.
+
+    Form 1099-R, Distributions From Pensions, Annuities, Retirement or Profit-Sharing
+
+Plans, IRAs, Insurance Contracts, etc., is used to satisfy the reporting obligations under
+
+§ 6047(d). Under the 2019 instructions to Form 1099-R, a Form 1099-R must be filed
+
+for each person to whom a designated distribution of $10 or more has been made, and
+
+the total amount of the distribution (before income tax or other withholding) must be
+
+
+
+2
+  As described in the facts, Employer M withheld tax as required under § 3405(d)(2) from the designated
+distribution. However, under certain circumstances, withholding with respect to a designated distribution
+is not required. For example, under § 31.3405(c)-1, Q&A-14, no withholding is required if the amount of
+an eligible rollover distribution (as defined in § 402(f)(2)(A)) is less than $200 (subject to specified
+aggregation rules).
+                                              - 4 -
+
+
+reported in Box 1. In addition, under those instructions, the taxable amount of the
+
+distribution (including income tax withheld) must be reported in Box 2a, and the federal
+
+income tax withheld must be reported in Box 4.
+
+   The Plan X distribution to Individual A, including both the amount of the check and
+
+the amount withheld, is a designated distribution under § 3405(e)(1) that exceeds the
+
+reporting threshold. Accordingly, Employer M is required to report that designated
+
+distribution in Box 1 of a Form 1099-R for 2019. Because Individual A has no
+
+investment in the contract within the meaning of § 72 and no exception to income
+
+inclusion under § 402(a) applies, Employer M must report the same amount in Box 2a
+
+as in Box 1 and must report the federal income tax withheld in Box 4. Individual A’s
+
+failure to cash the distribution check she received does not alter Employer M’s
+
+obligations with respect to reporting under § 6047(d).
+
+HOLDINGS
+
+   (1) Individual A’s failure to cash the distribution check she received in 2019 does not
+
+permit her to exclude the amount of the designated distribution from her gross income in
+
+that year under § 402(a).
+
+   (2) Individual A’s failure to cash the distribution check she received does not alter
+
+Employer M’s obligations with respect to withholding under § 3405.
+
+   (3) Individual A’s failure to cash the distribution check she received does not alter
+
+Employer M’s obligations with respect to reporting under § 6047(d).
+
+   The Department of the Treasury and the Internal Revenue Service continue to
+
+analyze issues that arise in other situations involving uncashed checks from eligible
+                                               - 5 -
+
+
+retirement plans described in § 402(c)(8)(B), including situations involving missing
+
+individuals with benefits under those plans.
+
+DRAFTING INFORMATION
+
+   The principal author of this revenue ruling is Angelique Carrington of the Office of
+
+Associate Chief Counsel (Employee Benefits, Exempt Organizations, and Employment
+
+Taxes). Ms. Carrington may be reached at (202) 317-4148 (not a toll-free number).
+

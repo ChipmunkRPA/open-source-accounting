@@ -1,0 +1,202 @@
+Section 61.--Gross Income Defined
+
+
+26 CFR 1.61-3: Gross income derived from business.
+(Also § 162; 1.162-1.)
+
+
+
+
+Rev. Rul. 2008-26
+
+
+ISSUE
+
+        Are Medicaid Rebates that a pharmaceutical manufacturer pays to State
+
+Medicaid Agencies adjustments to the sales price in calculating gross receipts, or are
+
+they ordinary and necessary business expenses that are deductible from gross income
+
+under § 162 of the Internal Revenue Code?
+
+FACTS
+
+        M, who uses an accrual method of accounting and files returns on a calendar
+
+year basis, manufactures and sells prescription drugs. In 1992, M entered into a
+
+“Rebate Agreement” with the Department of Health and Human Services (HHS)
+
+pursuant to the Medicaid Rebate Program established by the Omnibus Budget
+
+Reconciliation Act of 1990, Pub. L. No. 101-508, 104 Stat. 1388 (1990) (the Act).
+
+        The Medicaid Rebate Program is designed to reduce the cost of drugs paid for
+
+by the Medicaid Program and to increase Medicaid beneficiaries’ access to prescription
+
+drugs. Under the Act, pharmaceutical manufacturers must sign a “Rebate Agreement”
+                                            2
+with HHS (who acts on behalf of each State Medicaid Agency) to gain access to the
+
+Medicaid-funded segment of the pharmaceutical market.
+
+      The Rebate Agreements require pharmaceutical manufacturers to pay Medicaid
+
+Rebates directly to each State Medicaid Agency. A Medicaid Rebate is a portion of the
+
+price paid by State Medicaid Agencies to retailers for covered outpatient drugs
+
+dispensed to Medicaid beneficiaries. The amount of the Medicaid Rebate is designed
+
+to ensure that the Medicaid Program is charged no more for covered outpatient drugs
+
+than any other purchaser. See H.R. Rep. No. 101-881 at 96 (1990).
+
+      In 2005, the following events occur: (1) M sells Product D, a prescription drug, to
+
+W, a wholesaler; (2) W sells Product D to R, a retail pharmacy; (3) R dispenses Product
+
+D to individual A, a Medicaid beneficiary, and then files a reimbursement claim with S, a
+
+State Medicaid Agency; (4) S approves the claim and then reimburses R for the cost of
+
+Product D plus a dispensing fee; and (5) M pays a Medicaid Rebate to S pursuant to the
+
+Rebate Agreement.
+
+LAW AND ANALYSIS
+
+      Section 61(a) provides that, except as otherwise provided, gross income means
+
+all income from whatever source derived. Section 1.61-3(a) of the Income Tax
+
+Regulations provides that in a manufacturing, merchandising, or mining business,
+
+"gross income" means the total sales, less the cost of goods sold, plus any income from
+
+investments and from incidental or outside operations or sources.
+
+      Section 162 allows as a deduction all the ordinary and necessary expenses paid
+
+or incurred during the taxable year in carrying on any trade or business. Section
+                                              3
+1.162-1(a) provides, in part, that business expenses deductible from gross income
+
+include the ordinary and necessary expenditures directly connected with or pertaining to
+
+the taxpayer's trade or business.
+
+       In Pittsburgh Milk Co. v. Commissioner, 26 T.C. 707 (1956), nonacq. 1959-2 C.B.
+
+8-9, nonacq. withdrawn and acq. 1962-2 C.B. 5-6, acq. withdrawn and nonacq. 1976-2
+
+C.B. 3-4, and nonacq. withdrawn in part and acq. in part 1982-2 C.B. 2, the Tax Court
+
+addressed whether allowances, discounts, or rebates paid by a milk producer to certain
+
+purchasers of its milk, in willful violation of state law, are adjustments to the purchase
+
+price of the milk resulting in a reduced sales price, or ordinary and necessary business
+
+expenses under § 162 (in which case no deduction would be allowed under the rules of
+
+§ 162(c)). The court reasoned that for income derived from the sale of property, in
+
+determining gain, the amount realized must be based on the actual price or
+
+consideration for which the property was sold and not on some greater price for which it
+
+possibly should have been, but was not, sold. The court focused on the facts and
+
+circumstances of the transaction, what the parties intended, and the purpose or
+
+consideration for which the allowance was made. The court found that the allowances
+
+were part of the sales transaction and concluded that gross income must be computed
+
+on the price for which the milk was actually sold. Thus, under Pittsburgh Milk, where a
+
+payment is made from a seller to a purchaser, and the purpose and intent of the parties
+
+is to reach an agreed upon selling price, the payment is properly viewed as an
+
+adjustment to the purchase price that reduces gross sales.
+                                             4
+       In contrast, in United Draperies, Inc. v. Commissioner, 41 T.C. 457 (1964), aff’d,
+
+340 F.2d 936 (7th Cir.), cert. denied, 382 U.S. 813 (1965), the Tax Court held that a
+
+drapery manufacturer could not exclude from income kickbacks paid to employees of
+
+the companies that purchased the taxpayer’s draperies. The court noted that the
+
+kickbacks were made to employees of its customers and were “independent of its
+
+agreement with its purchasers fixing the selling price of the products sold,” and that
+
+“[t]hese amounts were paid for a consideration separate from the selling price of its
+
+products, namely these employees sending the business of their employers to petitioner
+
+....” United Draperies at 465.
+
+       Rev. Rul. 76-96, 1976-1 C.B. 23, addresses the tax treatment of rebates paid by
+
+an automobile manufacturer to retail customers. The manufacturer offered rebates of a
+
+set amount to retail customers who independently negotiated at arm’s length with one of
+
+the manufacturer’s dealers to arrive at a purchase price for a new car. The ruling holds
+
+that the rebates reduce the purchase price of the cars and are not includible in the retail
+
+customer’s gross income. The ruling further holds that the manufacturer may deduct
+
+the rebates as ordinary and necessary business expenses under § 162.
+
+       The Medicaid Rebate is paid by M to S pursuant to the terms of the rebate
+
+agreement. Under the purpose and intent test of Pittsburgh Milk, the Medicaid Rebate
+
+is a factor used in setting the actual selling price, negotiated and agreed to before the
+
+sale to W takes place.
+
+HOLDING
+                                             5
+       Medicaid Rebates that a pharmaceutical manufacturer pays to State Medicaid
+
+Agencies are adjustments to the sales price in calculating gross receipts. This holding
+
+is limited to Medicaid Rebates that a pharmaceutical manufacturer pays pursuant to the
+
+Medicaid Rebate Program established by the Act.
+
+EFFECT ON OTHER DOCUMENTS
+
+       Rev. Rul. 2005-28, 2005-1 C.B. 997, is clarified and superseded. Rev. Rul.
+
+2005-28 suspended, in part, Rev. Rul. 76-96. Whether a rebate of the type described in
+
+Rev. Rul. 76-96 is an ordinary and necessary business expense or, alternatively, is an
+
+adjustment to the sales price in calculating gross receipts, is an issue under
+
+reconsideration. Therefore, pending the Service’s reconsideration of the issue and
+
+publication of subsequent guidance, the Service will not apply, and taxpayers may not
+
+rely on, the conclusion of Rev. Rul. 76-96 that rebates made by the manufacturer are
+
+ordinary and necessary business expenses deductible under § 162.
+
+DRAFTING INFORMATION
+
+       The principal author of this revenue ruling is Susie K. Bird of the Office of
+
+Associate Chief Counsel (Income Tax and Accounting). For further information
+
+regarding this revenue ruling, contact Ms. Bird on (202) 622-4950 (not a toll-free call).
+
