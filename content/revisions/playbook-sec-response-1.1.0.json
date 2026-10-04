@@ -1,0 +1,27 @@
+{
+  "item_id": "playbook-sec-response",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "playbooks/playbook-sec-response.md",
+    "version": "0.5.0",
+    "sha256": "290c3b9bcadd356d6b224901825cf90f99caed92076f6eb534c441877b5eecb6",
+    "source_ids": [
+      "sec-frm",
+      "sec-reuse"
+    ]
+  },
+  "current": {
+    "path": "playbooks/playbook-sec-response-v1.md",
+    "version": "1.1.0",
+    "sha256": "52facd83f14f5e2b8b3e575d19c553984d92eba365108555533ad8f7a5e50b43",
+    "source_ids": [
+      "sec-frm",
+      "sec-reuse"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

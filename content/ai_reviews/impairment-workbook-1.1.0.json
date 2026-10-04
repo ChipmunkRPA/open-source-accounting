@@ -1,0 +1,124 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "impairment-workbook",
+  "input_sha256": "75873c65d0207670ff9a15b9be96de1ddbe930f0ac772315ae2263561af6bc9b",
+  "output_sha256": "586427813ea3d34e65f1bf1f6033411cf5cf443aff0b07c4daab7ae0d1c2519a",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T07:14:07Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC/ASU text not accessed; publisher boundary identified 2026-10-04",
+      "access_state": "not_accessed_link_only_rights_unresolved",
+      "exact_locators": [
+        "Research entry point only; no operative paragraph adopted as verified"
+      ],
+      "checked_claim_ids": [
+        "impairment-model",
+        "source-boundary"
+      ]
+    },
+    {
+      "reference_id": "pcaob-as2501",
+      "official_url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2501",
+      "source_version_or_date": "Current version/amendment applicability not established in this review",
+      "access_state": "fresh_automated_retrieval_not_performed_due_to_publisher_restriction",
+      "exact_locators": [
+        "Retained link only; earlier page observations not freshly reconfirmed"
+      ],
+      "checked_claim_ids": [
+        "impairment-model",
+        "pcaob-boundary"
+      ]
+    },
+    {
+      "reference_id": "pcaob-terms",
+      "official_url": "https://pcaobus.org/privacypolicy",
+      "source_version_or_date": "Terms last-updated label 2021-09-09; inspected 2026-10-04",
+      "access_state": "publisher_policy_examined_then_standard_retrieval_stopped",
+      "exact_locators": [
+        "Authorized Use automated-gathering restriction",
+        "Separate conditional Public Materials reuse provisions"
+      ],
+      "checked_claim_ids": [
+        "pcaob-boundary"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "impairment-model",
+      "article_section": "Scope; Measurement-label example",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Current ASC 350/360 and AS 2501 requirements were not accessed; neither a lower management-labeled value nor a cash-flow total is treated as a universal impairment rule.",
+      "source_reference_ids": [
+        "fasb-asc",
+        "pcaob-as2501"
+      ]
+    },
+    {
+      "claim_id": "impairment-numbers",
+      "article_section": "Original examples",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "900000 carrying comparison with 1000000 and 780000 yields+100000/-120000;15% reduction of 200000 produces 170000, not an approved charge.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "source-boundary",
+      "article_section": "Scope; Sources and verification",
+      "category": "source_access_and_rights",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Current primary ASC/ASU text, applicable amendments and source-operation permission remain unresolved. FASB restrictions identified October 4, 2026 prevented further retrieval. Original calculations do not verify current accounting requirements.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "pcaob-boundary",
+      "article_section": "Sources and verification",
+      "category": "source_access_and_rights",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Current AS 2501 body/version was not freshly verified. Authorized Use restrictions were inspected; no automated standard retrieval followed. Earlier observations remain historical, not a new technical review.",
+      "source_reference_ids": [
+        "pcaob-as2501",
+        "pcaob-terms"
+      ]
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Different measurement comparisons",
+      "actual": "[100000, -120000]",
+      "expected": "[100000, -120000]",
+      "result": "pass"
+    },
+    {
+      "check": "Stipulated forecast sensitivity",
+      "actual": "[170000, 30000]",
+      "expected": "[170000, 30000]",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Added original undiscounted-versus-management-labeled-value comparisons.",
+    "Added bounded forecast sensitivity without selecting an impairment model.",
+    "Retained source, grouping, measurement and specialist-review gaps."
+  ],
+  "unresolved_gaps": [
+    "Current primary accounting/audit requirements and entity/reporting-period applicability are not verified.",
+    "Publisher source-operation rights remain unresolved; no restricted source body was acquired.",
+    "No actual client evidence, human professional review, posting, filing or Agent admission is supplied."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

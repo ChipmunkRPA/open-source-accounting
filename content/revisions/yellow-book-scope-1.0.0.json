@@ -1,0 +1,29 @@
+{
+  "item_id": "yellow-book-scope",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/yellow-book-scope.md",
+    "version": "0.5.0",
+    "sha256": "cf0dece7557f2a6f5daa7338c2bec21fc3f88978f114dcebd54ef4504c1369e4",
+    "source_ids": [
+      "gao-yellowbook",
+      "gao-yellowbook-2024",
+      "gao-qm-faq"
+    ]
+  },
+  "current": {
+    "path": "guides/yellow-book-scope-v1.md",
+    "version": "1.0.0",
+    "sha256": "24e66fd1bf33ba9d0899f77f125add692bb66ed335fa3f2e51a2a4499c8e7462",
+    "source_ids": [
+      "gao-yellowbook",
+      "gao-yellowbook-2024",
+      "gao-qm-faq"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

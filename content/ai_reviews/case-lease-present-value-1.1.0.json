@@ -1,0 +1,151 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "case-lease-present-value",
+  "input_sha256": "bada27c4c46fb7107730acbbac0c0a1d12bbac5ebee2ae958976cafc40ad4061",
+  "output_sha256": "1b07da25dfc0fcb7d6e04870b159545a51bb9ebf3b55f5b3c3ec215244c61c93",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:55:51Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC text not accessed; publisher restriction identified 2026-10-04",
+      "access_state": "not_accessed_link_only_rights_unresolved",
+      "exact_locators": [
+        "No operative ASC paragraph adopted as verified; research reference only"
+      ],
+      "checked_claim_ids": [
+        "source-authority-gap"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "pv-base",
+      "article_section": "PV and rollforward",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Annual PV and all 12 displayed schedule amounts checked at high precision; closing residual is within stated tolerance.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "pv-cent",
+      "article_section": "PV and rollforward",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Displayed year2 gives 9433.97 while independently rounded actual closing is9433.96; the one-cent discrepancy is reproduced, not assumed.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "pv-advance",
+      "article_section": "Earlier payment counterexample",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Times0/1/2 yield 28333.93 versus times1/2/3 value 26730.12; difference 1603.81 from unrounded figures.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "pv-tool",
+      "article_section": "Product helper scope",
+      "category": "product_scope_correction",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Annual schedule is independent mathematics; actual helper is monthly-only with nominal annual/12 and rejects advance timing. Historical fixture remains unchanged.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "source-authority-gap",
+      "article_section": "Scope; Source and permission boundary",
+      "category": "source_access_and_rights",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Current ASC criteria were not accessed. Publisher-use restrictions identified October 4, 2026 prevented further retrieval or adoption of source content. Original reasoning/math is not presented as verified current accounting authority.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "rights-original",
+      "article_section": "Original-content footer",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Only original educational prose/examples are licensed CC BY 4.0 here; no private standard body, publisher permission or Agent/source admission is supplied. Revised prose uses homepage references, not publisher deep links.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Annual arrears PV",
+      "actual": "26730.12",
+      "expected": "26730.12",
+      "result": "pass"
+    },
+    {
+      "check": "Annual advance PV",
+      "actual": "28333.93",
+      "expected": "28333.93",
+      "result": "pass"
+    },
+    {
+      "check": "Unrounded timing difference displayed",
+      "actual": "1603.81",
+      "expected": "1603.81",
+      "result": "pass"
+    },
+    {
+      "check": "Independent annual schedule displayed cells",
+      "actual": "[[26730.12, 1603.81, 10000, 18333.93], [18333.93, 1100.04, 10000, 9433.96], [9433.96, 566.04, 10000, 0]]",
+      "expected": "[[26730.12, 1603.81, 10000, 18333.93], [18333.93, 1100.04, 10000, 9433.96], [9433.96, 566.04, 10000, 0]]",
+      "result": "pass"
+    },
+    {
+      "check": "Displayed year-two arithmetic",
+      "actual": "9433.97",
+      "expected": "9433.97",
+      "result": "pass"
+    },
+    {
+      "check": "Displayed-versus-unrounded closing cent difference",
+      "actual": "0.01",
+      "expected": "0.01",
+      "result": "pass"
+    },
+    {
+      "check": "High-precision ending residual bound",
+      "actual": "True",
+      "expected": "True",
+      "result": "pass"
+    },
+    {
+      "check": "Total modeled interest",
+      "actual": "3269.88",
+      "expected": "3269.88",
+      "result": "pass"
+    },
+    {
+      "check": "Payments less unrounded PV",
+      "actual": "3269.88",
+      "expected": "3269.88",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Preserved annual base example and checked every displayed row.",
+    "Explained the exact year-two cent difference and aggregate interest.",
+    "Added earlier-payment branch and explicit monthly-tool limitation."
+  ],
+  "unresolved_gaps": [
+    "Current primary ASC/ASU requirements, entity/period applicability and publisher-operation permissions remain unresolved.",
+    "AI editorial pass is limited to original reasoning, arithmetic and stated implementation scope; it is not a human professional or current-GAAP conclusion.",
+    "No live deployment, database/provider integration or posting/feature activation was performed."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

@@ -1,0 +1,26 @@
+{
+  "item_id": "playbook-controls-review",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "playbooks/playbook-controls-review.md",
+    "version": "0.5.0",
+    "sha256": "549e0ea086b5a2e312f725ba3a4dfc3ecd01853cd2f5c173b2912e76deee0ce8",
+    "source_ids": [
+      "pcaob-as2201"
+    ]
+  },
+  "current": {
+    "path": "playbooks/playbook-controls-review-v1.md",
+    "version": "1.1.0",
+    "sha256": "ebe9158a308adb6abd1df3f154517e55329fba2c98a6c521d14f9597e273aaac",
+    "source_ids": [
+      "pcaob-as2201",
+      "pcaob-terms"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

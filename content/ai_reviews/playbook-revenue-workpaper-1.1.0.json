@@ -1,0 +1,122 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "playbook-revenue-workpaper",
+  "input_sha256": "cbefb8812d3b2e0971689a4629e4ef1bca213af73f58cc1f68772e03320613e1",
+  "output_sha256": "8ba8fb9c04bae0023c9bf12994765444d4dd931d0fbd75bd1c8a4808b9a58b24",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:55:51Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC text not accessed; publisher restriction identified 2026-10-04",
+      "access_state": "not_accessed_link_only_rights_unresolved",
+      "exact_locators": [
+        "No operative ASC paragraph adopted as verified; research reference only"
+      ],
+      "checked_claim_ids": [
+        "source-authority-gap"
+      ]
+    },
+    {
+      "reference_id": "fasb-revenue-project",
+      "official_url": "https://fasb.org/",
+      "source_version_or_date": "Historical registry summary retained; no full current ASU/ASC verification; further retrieval stopped 2026-10-04",
+      "access_state": "summary_encountered_before_restriction_then_not_used_as_current_authority",
+      "exact_locators": [
+        "Project overview rendered before publisher terms were inspected; no copied body retained and no substantive rule derived for this revision"
+      ],
+      "checked_claim_ids": [
+        "source-authority-gap"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "workpaper-allocation",
+      "article_section": "Use helper",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Inspected helper performs supplied-weight arithmetic with exact values and whole-cent rules, not distinctness/SSP/exception/recognition decisions.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "workpaper-example",
+      "article_section": "Original exercise",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "54000 allocated by45000:15000 weights gives 40500/13500 and reconciles; premises remain fictional.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "workpaper-missing",
+      "article_section": "Evidence and exceptions",
+      "category": "original_reasoning",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Missing inputs must not be entered as zero to satisfy validation; accepted numerical zero does not decide accounting appropriateness.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "source-authority-gap",
+      "article_section": "Scope; Source and permission boundary",
+      "category": "source_access_and_rights",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Current ASC criteria were not accessed. Publisher-use restrictions identified October 4, 2026 prevented further retrieval or adoption of source content. Original reasoning/math is not presented as verified current accounting authority.",
+      "source_reference_ids": [
+        "fasb-asc",
+        "fasb-revenue-project"
+      ]
+    },
+    {
+      "claim_id": "rights-original",
+      "article_section": "Original-content footer",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Only original educational prose/examples are licensed CC BY 4.0 here; no private standard body, publisher permission or Agent/source admission is supplied. Revised prose uses homepage references, not publisher deep links.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "workflow-state",
+      "article_section": "Purpose and availability",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Actual catalogue and default gate checked: EXPERIMENTAL/disabled by default; policy draft minimum 0, revenue/lease workpaper minimum 1. Code/pure-helper checks are not live deployment or professional acceptance.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Stipulated allocation",
+      "actual": "[40500, 13500]",
+      "expected": "[40500, 13500]",
+      "result": "pass"
+    },
+    {
+      "check": "Allocation total",
+      "actual": "54000",
+      "expected": "54000",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Confirmed default-off state and ready-document minimum.",
+    "Added checked75:25 original allocation.",
+    "Separated accepted numbers from supported accounting inputs."
+  ],
+  "unresolved_gaps": [
+    "Current primary ASC/ASU requirements, entity/period applicability and publisher-operation permissions remain unresolved.",
+    "AI editorial pass is limited to original reasoning, arithmetic and stated implementation scope; it is not a human professional or current-GAAP conclusion.",
+    "No live deployment, database/provider integration or posting/feature activation was performed."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

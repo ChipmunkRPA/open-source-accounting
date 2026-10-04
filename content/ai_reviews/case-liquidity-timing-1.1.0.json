@@ -1,0 +1,137 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "case-liquidity-timing",
+  "input_sha256": "48e2ca31249ddffc41f2d78ac9f45079c1e3952c941bf0ad309953eda8c3f7dd",
+  "output_sha256": "6ac33ff39832ad4f67b848593c6732b61f634ecef90c93c799a6521e38a5f017",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:14:05Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC text not accessed",
+      "access_state": "not_accessed_link_only",
+      "exact_locators": [
+        "Research locator only; no current recognition, measurement or disclosure paragraph verified"
+      ],
+      "checked_claim_ids": [
+        "liquidity-boundary"
+      ]
+    },
+    {
+      "reference_id": "pcaob-as2415",
+      "official_url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2415",
+      "source_version_or_date": "Current body/version/applicability not freshly verified",
+      "access_state": "fresh_automated_retrieval_not_performed_due_to_publisher_restriction",
+      "exact_locators": [
+        "Retained reference link only; no current standard/policy body inspected"
+      ],
+      "checked_claim_ids": [
+        "liquidity-boundary"
+      ]
+    },
+    {
+      "reference_id": "pcaob-terms",
+      "official_url": "https://pcaobus.org/privacypolicy",
+      "source_version_or_date": "Terms last-updated label 2021-09-09; inspected 2026-10-04",
+      "access_state": "publisher_policy_examined_then_standard_retrieval_stopped",
+      "exact_locators": [
+        "Authorized Use automated-gathering restriction",
+        "Separate conditional Public Materials reuse allowance"
+      ],
+      "checked_claim_ids": [
+        "publisher-access"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "liquidity-schedule",
+      "article_section": "Reproduce both branches",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "800000 less six 150000 groups reaches -100000; later 500000 gives 400000. First negative stage is six; negative value is a modeled gap, not an authorized overdraft.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "liquidity-order",
+      "article_section": "Counterexample",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Earlier receipt gives 550000 before sixth payments and400000 afterward. Equal ending values do not establish identical payment capacity.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "liquidity-boundary",
+      "article_section": "Research and output boundaries",
+      "category": "applicability_gap",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "No current going-concern horizon, legal insolvency or professional opinion follows from the arithmetic.",
+      "source_reference_ids": [
+        "fasb-asc",
+        "pcaob-as2415"
+      ]
+    },
+    {
+      "claim_id": "publisher-access",
+      "article_section": "Sources and access limit",
+      "category": "rights_and_access",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "PCAOB Authorized Use restriction was inspected before deciding not to freshly fetch the standard/policy bodies. Separate reuse provisions are not treated as automated-acquisition permission.",
+      "source_reference_ids": [
+        "pcaob-terms"
+      ]
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Signed six-stage schedule",
+      "actual": "[650000, 500000, 350000, 200000, 50000, -100000]",
+      "expected": "[650000, 500000, 350000, 200000, 50000, -100000]",
+      "result": "pass"
+    },
+    {
+      "check": "Late receipt endpoint",
+      "actual": "400000",
+      "expected": "400000",
+      "result": "pass"
+    },
+    {
+      "check": "Earlier receipt before sixth payments",
+      "actual": "550000",
+      "expected": "550000",
+      "result": "pass"
+    },
+    {
+      "check": "Earlier receipt endpoint",
+      "actual": "400000",
+      "expected": "400000",
+      "result": "pass"
+    },
+    {
+      "check": "First identified negative stage",
+      "actual": "6",
+      "expected": "6",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Added complete signed six-stage schedule and both receipt branches.",
+    "Identified month-six group as first modeled gap without inventing a day.",
+    "Clarified negative funding position, uncommitted resources and minimum model dependency."
+  ],
+  "unresolved_gaps": [
+    "No human professional approval or complete entity-specific accounting/audit/legal determination.",
+    "Current primary ASC text not accessed; topic/model references are research leads.",
+    "Current PCAOB standard/policy body and amendment applicability not freshly verified because automated acquisition is restricted."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

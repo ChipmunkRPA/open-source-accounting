@@ -1,0 +1,227 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "receivable-loss-workbook",
+  "input_sha256": "7b71227d7e6e95e4ac40b22a695375ec4894a657d4380a79d05d65761119d5cb",
+  "output_sha256": "377f14b7de202f551bc32a220e6bcc46f9faf3d2c8792766fb3656ed69de4e54",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T07:14:07Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC/ASU text not accessed; publisher boundary identified 2026-10-04",
+      "access_state": "not_accessed_link_only_rights_unresolved",
+      "exact_locators": [
+        "Research entry point only; no operative paragraph adopted as verified"
+      ],
+      "checked_claim_ids": [
+        "source-boundary"
+      ]
+    },
+    {
+      "reference_id": "pcaob-as2501",
+      "official_url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2501",
+      "source_version_or_date": "Current version/amendment applicability not established in this review",
+      "access_state": "fresh_automated_retrieval_not_performed_due_to_publisher_restriction",
+      "exact_locators": [
+        "Retained link only; earlier page observations not freshly reconfirmed"
+      ],
+      "checked_claim_ids": [
+        "pcaob-boundary"
+      ]
+    },
+    {
+      "reference_id": "pcaob-terms",
+      "official_url": "https://pcaobus.org/privacypolicy",
+      "source_version_or_date": "Terms last-updated label 2021-09-09; inspected 2026-10-04",
+      "access_state": "publisher_policy_examined_then_standard_retrieval_stopped",
+      "exact_locators": [
+        "Authorized Use automated-gathering restriction",
+        "Separate conditional Public Materials reuse provisions"
+      ],
+      "checked_claim_ids": [
+        "pcaob-boundary"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "loss-population",
+      "article_section": "1. Preserve raw rows",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "117000 raw minus 15000 duplicate minus 5000 stipulated post-period invoice equals 97000;100000 positive invoices and separate-3000 credit remain distinct.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "loss-scenarios",
+      "article_section": "2–3. Conditional subtotal and sensitivities",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "2510 base;3150 older-bucket alternative;3510 percentage-point branch;2535.10 relative-rate branch all recompute. These are not recommended rates, forecasts or a complete allowance.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "loss-counterexamples",
+      "article_section": "4. Counterexamples",
+      "category": "original_reasoning",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Duplicate adds 300; later 5000 receipt leaves 3000 only under its stipulated application and does not decide measurement-date conditions.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "embedded-question-1",
+      "article_section": "Embedded study question 1",
+      "category": "individual_question_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "100000 positive invoices differs from 97000 including credit; credit treatment remains open.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "embedded-question-2",
+      "article_section": "Embedded study question 2",
+      "category": "individual_question_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Counting the stipulated duplicate adds 300 and gives 2810.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "embedded-question-3",
+      "article_section": "Embedded study question 3",
+      "category": "individual_question_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "One percentage point adds 1000;1% relative increase adds 25.10.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "embedded-question-4",
+      "article_section": "Embedded study question 4",
+      "category": "individual_question_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Later 5000 receipt requires application/measurement-date evidence and does not validate the population.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "embedded-question-5",
+      "article_section": "Embedded study question 5",
+      "category": "individual_question_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "2510 is a conditional subtotal, not a complete GAAP allowance.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "source-boundary",
+      "article_section": "Scope; Sources and verification",
+      "category": "source_access_and_rights",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Current primary ASC/ASU text, applicable amendments and source-operation permission remain unresolved. FASB restrictions identified October 4, 2026 prevented further retrieval. Original calculations do not verify current accounting requirements.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "pcaob-boundary",
+      "article_section": "Sources and verification",
+      "category": "source_access_and_rights",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Current AS 2501 body/version was not freshly verified. Authorized Use restrictions were inspected; no automated standard retrieval followed. Earlier observations remain historical, not a new technical review.",
+      "source_reference_ids": [
+        "pcaob-as2501",
+        "pcaob-terms"
+      ]
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Raw algebraic total",
+      "actual": "117000",
+      "expected": "117000",
+      "result": "pass"
+    },
+    {
+      "check": "Net period reconciliation",
+      "actual": "97000",
+      "expected": "97000",
+      "result": "pass"
+    },
+    {
+      "check": "Positive invoices",
+      "actual": "100000",
+      "expected": "100000",
+      "result": "pass"
+    },
+    {
+      "check": "Positive plus credit",
+      "actual": "97000",
+      "expected": "97000",
+      "result": "pass"
+    },
+    {
+      "check": "Bucket products",
+      "actual": "[650, 300, 600, 960]",
+      "expected": "[650, 300, 600, 960]",
+      "result": "pass"
+    },
+    {
+      "check": "Base positive-invoice subtotal",
+      "actual": "2510",
+      "expected": "2510",
+      "result": "pass"
+    },
+    {
+      "check": "Older-bucket scenario and change",
+      "actual": "[3150, 640]",
+      "expected": "[3150, 640]",
+      "result": "pass"
+    },
+    {
+      "check": "One-percentage-point scenario",
+      "actual": "[3510, 1000]",
+      "expected": "[3510, 1000]",
+      "result": "pass"
+    },
+    {
+      "check": "One-percent relative scenario",
+      "actual": "[2535.1, 25.1]",
+      "expected": "[2535.1, 25.1]",
+      "result": "pass"
+    },
+    {
+      "check": "Duplicate effect and total",
+      "actual": "[300, 2810]",
+      "expected": "[300, 2810]",
+      "result": "pass"
+    },
+    {
+      "check": "Later receipt remaining amount",
+      "actual": "3000",
+      "expected": "3000",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Preserved all original invoice/credit records and scenario inputs.",
+    "Checked every scenario, percentage-point/relative distinction, duplicate/later-cash counterexample and embedded answer.",
+    "Removed implication of fresh PCAOB technical-source verification and retained unresolved credit/model/rate decisions."
+  ],
+  "unresolved_gaps": [
+    "Current primary accounting/audit requirements and entity/reporting-period applicability are not verified.",
+    "Publisher source-operation rights remain unresolved; no restricted source body was acquired.",
+    "No actual client evidence, human professional review, posting, filing or Agent admission is supplied."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

@@ -1,0 +1,25 @@
+{
+  "item_id": "research-study-questions-v06",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "qa/research-study-questions-v06.md",
+    "version": "0.6.0",
+    "sha256": "22e30e3693c5079d616c6c926301e3f5c850c480c5ea8a5cc6281dd48bf6e3dd",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "qa/research-study-questions-v06-v1.md",
+    "version": "1.1.0",
+    "sha256": "83938424b2691f15e32c9570a4645a20ce71c6951ac562ecf26be51ee575b869",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

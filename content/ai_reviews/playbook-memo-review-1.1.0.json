@@ -1,0 +1,143 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "playbook-memo-review",
+  "input_sha256": "2d6e853db8c7d98f1045e84365197cabc96784cd3fa1251380902cb788d5448f",
+  "output_sha256": "ecab5b34b537c489f90e24d126067890fae2e49c0dd62b140c64f91eccea1fcb",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:02:22Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current authoritative ASC text not accessed",
+      "access_state": "not_accessed_link_only",
+      "exact_locators": [
+        "Research entry point only; no substantive ASC paragraph verified"
+      ],
+      "checked_claim_ids": [
+        "workflow-asc-gap"
+      ]
+    },
+    {
+      "reference_id": "sec-frm",
+      "official_url": "https://www.sec.gov/about/divisions-offices/division-corporation-finance/financial-reporting-manual",
+      "source_version_or_date": "Landing page last reviewed/updated 2026-06-29; inspected 2026-10-04",
+      "access_state": "official_landing_page_and_revision_notes_examined",
+      "exact_locators": [
+        "Introductory non-authoritative/conflicting-authority disclaimer",
+        "Summary of Recent Revisions: June 29, 2026 administrative updates",
+        "Recent Updates: section-specific technical date tags"
+      ],
+      "checked_claim_ids": [
+        "workflow-frm"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "workflow-state",
+      "article_section": "Purpose and implementation snapshot",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Actual code catalog and gate checks on 2026-10-04 support the stated memo_review availability, ordinary subscription/Start admission, free library/chat and separate finite evaluation boundaries. This is not deployed/live acceptance.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "workflow-rights",
+      "article_section": "Purpose and implementation snapshot; Sources",
+      "category": "rights_and_review",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Payment, source-operation rights, technical review and Agent admission remain separate; no permissions or professional approval are granted by this original playbook.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "workflow-asc-gap",
+      "article_section": "Sources and verification",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Current primary ASC text was not accessed; the article gives research procedures and original examples, not verified accounting rules.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "workflow-frm",
+      "article_section": "Sources and verification",
+      "category": "source_hierarchy",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "FRM introductory disclaimer and administrative-update notes were inspected; the manual is not substituted for governing primary requirements.",
+      "source_reference_ids": [
+        "sec-frm"
+      ]
+    },
+    {
+      "claim_id": "critique-binding",
+      "article_section": "Bind the request",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "memo_inputs.expected_memo_revision and workflow validation separate selected current revision from unpinned behavior; invalid revision types/ranges rejected in pure-helper checks.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "critique-truncation",
+      "article_section": "Bind the request",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Saved memo can satisfy document minimum; preprocessing records exact revision and >60000-character truncation, not full-document assurance.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "critique-editing",
+      "article_section": "Requested output",
+      "category": "product_correction",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Removed unsupported tracked-changes promise; candidate offers issue rows and proposed text without silent saved-memo edits.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "critique-example",
+      "article_section": "Original review exercise",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "12 x 800 = 9600 and difference from 8800 is 800; arithmetic correction is kept distinct from proving liability recognition.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Memo critique arithmetic",
+      "actual": "9600",
+      "expected": "9600",
+      "result": "pass"
+    },
+    {
+      "check": "Memo critique difference",
+      "actual": "800",
+      "expected": "800",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Corrected beta status and exact-revision/truncation expectations.",
+    "Removed promise of automatic tracked changes.",
+    "Added an original arithmetic-versus-recognition counterexample."
+  ],
+  "unresolved_gaps": [
+    "No complete primary-authority or entity-specific accounting/legal applicability determination.",
+    "No live deployment, model, database integration or full application acceptance from this editorial review.",
+    "No human professional approval, source permission or Agent admission."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

@@ -1,0 +1,111 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "playbook-deep-research",
+  "input_sha256": "4246559afddf3279a1b15d71015e92b561db21f16b84fee6abc3179ff7389845",
+  "output_sha256": "b92eeecaa3a6a30904f4783a7f2ee19bba60f308ff03ed68e911552fbe157aef",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:02:22Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current authoritative ASC text not accessed",
+      "access_state": "not_accessed_link_only",
+      "exact_locators": [
+        "Research entry point only; no substantive ASC paragraph verified"
+      ],
+      "checked_claim_ids": [
+        "workflow-asc-gap"
+      ]
+    },
+    {
+      "reference_id": "sec-frm",
+      "official_url": "https://www.sec.gov/about/divisions-offices/division-corporation-finance/financial-reporting-manual",
+      "source_version_or_date": "Landing page last reviewed/updated 2026-06-29; inspected 2026-10-04",
+      "access_state": "official_landing_page_and_revision_notes_examined",
+      "exact_locators": [
+        "Introductory non-authoritative/conflicting-authority disclaimer",
+        "Summary of Recent Revisions: June 29, 2026 administrative updates",
+        "Recent Updates: section-specific technical date tags"
+      ],
+      "checked_claim_ids": [
+        "workflow-frm"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "workflow-state",
+      "article_section": "Purpose and implementation snapshot",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Actual code catalog and gate checks on 2026-10-04 support the stated deep_research availability, ordinary subscription/Start admission, free library/chat and separate finite evaluation boundaries. This is not deployed/live acceptance.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "workflow-rights",
+      "article_section": "Purpose and implementation snapshot; Sources",
+      "category": "rights_and_review",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Payment, source-operation rights, technical review and Agent admission remain separate; no permissions or professional approval are granted by this original playbook.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "workflow-asc-gap",
+      "article_section": "Sources and verification",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Current primary ASC text was not accessed; the article gives research procedures and original examples, not verified accounting rules.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "workflow-frm",
+      "article_section": "Sources and verification",
+      "category": "source_hierarchy",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "FRM introductory disclaimer and administrative-update notes were inspected; the manual is not substituted for governing primary requirements.",
+      "source_reference_ids": [
+        "sec-frm"
+      ]
+    },
+    {
+      "claim_id": "research-process",
+      "article_section": "Work in propositions; Requested output",
+      "category": "original_workflow",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Bounded source research is separated from an exhaustive literature search; facts, governing criteria and inference are traced individually.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "research-dates",
+      "article_section": "Original issue tree",
+      "category": "original_reasoning",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Draft amendment, service and period-end dates are kept distinct; no execution, enforceability or accounting result is invented.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [],
+  "changes_summary": [
+    "Replaced outdated core label with implemented-beta/default-on status.",
+    "Added an original date-conflict issue tree and explicit bounded-corpus limits."
+  ],
+  "unresolved_gaps": [
+    "No complete primary-authority or entity-specific accounting/legal applicability determination.",
+    "No live deployment, model, database integration or full application acceptance from this editorial review.",
+    "No human professional approval, source permission or Agent admission."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

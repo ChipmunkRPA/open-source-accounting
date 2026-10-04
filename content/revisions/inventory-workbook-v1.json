@@ -1,0 +1,25 @@
+{
+  "item_id": "inventory-workbook",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/inventory-workbook.md",
+    "version": "0.6.0",
+    "sha256": "ef5af6e4a0834a95be255b88a12f0836d98ca34d6d839cea396838e13460bfd7",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "guides/inventory-workbook-v1.md",
+    "version": "1.0.0",
+    "sha256": "6c0a6e0a5f1e987c18dfeddf37d772dd7376209e5d5534dfff729d6136752728",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-01",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

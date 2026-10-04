@@ -1,0 +1,209 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "sec-nongaap-communication-scope",
+  "input_sha256": "ec49d99642f18bfdb6781bf7c4b237bd91b1ca850726242d5f2a9a1e42be69ad",
+  "output_sha256": "ecef494f822d2226170591759c0d17d10cd23ff058b98efc7bff90a369972d3a",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T05:50:00Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "sec-regg-ecfr",
+      "official_url": "https://www.ecfr.gov/current/title-17/chapter-II/part-244",
+      "source_version_or_date": "eCFR Title 17 displayed current through 2026-10-01; inspected 2026-10-04",
+      "access_state": "selected_official_primary_sections_examined",
+      "exact_locators": [
+        "17 CFR 244.100(a)-(d) and Notes; 244.101(a)-(c); 244.102"
+      ],
+      "checked_claim_ids": [
+        "scope-dates",
+        "scope-definition",
+        "scope-public",
+        "scope-legal-gap"
+      ]
+    },
+    {
+      "reference_id": "sec-item10e-ecfr",
+      "official_url": "https://www.ecfr.gov/current/title-17/chapter-II/part-229/subpart-229.1/section-229.10",
+      "source_version_or_date": "eCFR Title 17 displayed current through 2026-10-01; inspected 2026-10-04",
+      "access_state": "selected_official_primary_sections_examined",
+      "exact_locators": [
+        "Item 10(e)(1)(i)-(ii), (e)(2)-(7), note to (e)"
+      ],
+      "checked_claim_ids": [
+        "scope-dates",
+        "scope-filings",
+        "scope-furnished",
+        "scope-legal-gap"
+      ]
+    },
+    {
+      "reference_id": "sec-form8k",
+      "official_url": "https://www.sec.gov/files/form8-k.pdf",
+      "source_version_or_date": "Official form revision SEC 873 (02-25); inspected 2026-10-04",
+      "access_state": "selected_official_primary_sections_examined",
+      "exact_locators": [
+        "Official PDF SEC 873 (02-25), printed p.3: General Instruction B.1-B.2",
+        "Printed pp.14-15: Item 2.02(a)-(b), Instructions 1-4"
+      ],
+      "checked_claim_ids": [
+        "scope-dates",
+        "scope-filings",
+        "scope-furnished",
+        "scope-timing",
+        "scope-webcast",
+        "scope-legal-gap"
+      ]
+    },
+    {
+      "reference_id": "sec-nongaap",
+      "official_url": "https://www.sec.gov/rules-regulations/staff-guidance/corporation-finance-interpretations/non-gaap-financial-measures",
+      "source_version_or_date": "Page last update 2022-12-13 with per-question dates; inspected 2026-10-04",
+      "access_state": "selected_official_staff_sections_examined",
+      "exact_locators": [
+        "Questions 100.01-100.06 and 102.10; displayed last update 2022-12-13 and individual dates"
+      ],
+      "checked_claim_ids": [
+        "scope-staff"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "scope-dates",
+      "article_section": "A dated source map, not a filing decision",
+      "category": "source_identity_and_applicability",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Rule pages displayed current through October 1, 2026; the official Form 8-K PDF carries SEC 873 (02-25). These are kept separate from access date and legal applicability.",
+      "source_reference_ids": [
+        "sec-regg-ecfr",
+        "sec-item10e-ecfr",
+        "sec-form8k"
+      ]
+    },
+    {
+      "claim_id": "scope-definition",
+      "article_section": "First identify the measure and who is speaking",
+      "category": "substantive_claim",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Regulation G Rule 101 supports the covered registrant/measure definitions and specified exclusions. Ratios are examined by their ingredients, not labels.",
+      "source_reference_ids": [
+        "sec-regg-ecfr"
+      ]
+    },
+    {
+      "claim_id": "scope-public",
+      "article_section": "Then map each communication route",
+      "category": "substantive_claim",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Rules 100 and 102 support public-disclosure comparator/reconciliation, non-misleading presentation, conditional exceptions and separate antifraud liability. No automatic safe harbor is inferred.",
+      "source_reference_ids": [
+        "sec-regg-ecfr"
+      ]
+    },
+    {
+      "claim_id": "scope-filings",
+      "article_section": "Then map each communication route",
+      "category": "substantive_claim",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Item 10(e)(1)(i) and (ii) are distinguished; the guide does not import all filing prohibitions through the narrower Form 8-K cross-reference.",
+      "source_reference_ids": [
+        "sec-item10e-ecfr",
+        "sec-form8k"
+      ]
+    },
+    {
+      "claim_id": "scope-furnished",
+      "article_section": "Why furnished does not mean no requirements",
+      "category": "substantive_claim",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "General Instruction B.2 and Item 2.02 Instruction 2 support the stated furnished/filed distinction and application of Item 10(e)(1)(i). The article preserves B.2 exceptions and other obligations.",
+      "source_reference_ids": [
+        "sec-form8k",
+        "sec-item10e-ecfr"
+      ]
+    },
+    {
+      "claim_id": "scope-timing",
+      "article_section": "Why furnished does not mean no requirements",
+      "category": "substantive_claim",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "General Instruction B.1 supports the default four-business-day rule, special weekend/holiday count and exceptions. Final wording adds the special-count qualification; no actual due date is calculated.",
+      "source_reference_ids": [
+        "sec-form8k"
+      ]
+    },
+    {
+      "claim_id": "scope-webcast",
+      "article_section": "Original case: the webcast packet is missing one fact",
+      "category": "substantive_claim_and_original_example",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Item 2.02(b)(1)-(4) supplies four distinct conditions. The 48-hour original interval is correct, but the missing pre-presentation furnishing evidence prevents an exception conclusion.",
+      "source_reference_ids": [
+        "sec-form8k"
+      ]
+    },
+    {
+      "claim_id": "scope-staff",
+      "article_section": "Make the review reproducible",
+      "category": "source_hierarchy",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Selected staff questions are used as additional issue-spotting context, not as regulatory text or proof that an adjustment is acceptable.",
+      "source_reference_ids": [
+        "sec-nongaap"
+      ]
+    },
+    {
+      "claim_id": "scope-legal-gap",
+      "article_section": "Sources and limits",
+      "category": "applicability_gap",
+      "severity": "warning",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Entity classification, actual clocks, complete exceptions, other duties and later developments remain explicit rather than being inferred from the example.",
+      "source_reference_ids": [
+        "sec-regg-ecfr",
+        "sec-item10e-ecfr",
+        "sec-form8k"
+      ]
+    },
+    {
+      "claim_id": "original-rights",
+      "article_section": "Original-content footer",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Only original explanation/examples and brief source descriptions are included. Government regulation sources are linked; no publisher branding, protected standard body or source rights grant is included.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Webcast interval in stated same-timezone/no-clock-change example",
+      "actual": "48.0",
+      "expected": "48",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Added weekend/Commission-holiday counting qualification to the default reporting-clock summary.",
+    "Verified the exact narrow Item 10(e)(1)(i) cross-reference in Item 2.02 and kept furnished/filed consequences scoped.",
+    "Checked the original 48-hour arithmetic and all four webcast-exception evidence conditions."
+  ],
+  "unresolved_gaps": [
+    "No real issuer/measure classification, deadline, exception qualification or filing authorization.",
+    "No complete post-current-through-date rule reconciliation or whole-Form-8-K review.",
+    "The SEC staff interpretations are separate from regulation; no professional or legal approval."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

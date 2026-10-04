@@ -1,0 +1,25 @@
+{
+  "item_id": "case-cash-flow-bridge",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "cases/case-cash-flow-bridge.md",
+    "version": "0.6.0",
+    "sha256": "f68e50019a072797517d09b6a2cce45eebea1cd16eb4334253563a89075da70a",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "cases/case-cash-flow-bridge-v1.md",
+    "version": "1.1.0",
+    "sha256": "5589d5dc04ddbb6e9424080a583a9d4af758164ce8dc43d5c8a47d0747fa4959",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

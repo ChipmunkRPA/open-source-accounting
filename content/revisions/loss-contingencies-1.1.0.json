@@ -1,0 +1,27 @@
+{
+  "item_id": "loss-contingencies",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/loss-contingencies.md",
+    "version": "0.5.0",
+    "sha256": "5663ceb28c3baa14546863083a3a0fdad3c9ca610dbceab4ab1c732b1cd0eb17",
+    "source_ids": [
+      "fasb-asc",
+      "sec-sab99"
+    ]
+  },
+  "current": {
+    "path": "guides/loss-contingencies-v1.md",
+    "version": "1.1.0",
+    "sha256": "7b1c04fb96f9d150491d12b3a7fe84901a5738649cb3981641b21b04cc40faa9",
+    "source_ids": [
+      "fasb-asc",
+      "sec-sab99"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

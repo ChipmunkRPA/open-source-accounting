@@ -1,0 +1,25 @@
+{
+  "item_id": "recovery-reconciliation",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "templates/recovery-reconciliation-v1.md",
+    "version": "1.0.0",
+    "sha256": "d1787f6c83e9dfa872ffcd4cb431963c7f823f3ca8da61e9f62d8a45224391f4",
+    "source_ids": [
+      "nist-csf-2-0"
+    ]
+  },
+  "current": {
+    "path": "templates/recovery-reconciliation-v2.md",
+    "version": "2.0.0",
+    "sha256": "9bed04435d557f2b4a4b6c55d1fddad391c240a282604cf21610e931350bb6d8",
+    "source_ids": [
+      "nist-csf-2-0"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

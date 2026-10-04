@@ -1,0 +1,27 @@
+{
+  "item_id": "ferc-research-and-reconciliation",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/ferc-research-and-reconciliation.md",
+    "version": "0.6.7",
+    "sha256": "20615d27c26b78fb721086452584121c31867931fa797e1b40fcb8d022fd7370",
+    "source_ids": [
+      "ferc-accounting-directory",
+      "ferc-electric-forms-directory"
+    ]
+  },
+  "current": {
+    "path": "guides/ferc-research-and-reconciliation-v1.md",
+    "version": "1.0.0",
+    "sha256": "027a170684a558b756bab341ae673a97b9347cd30cc7904fc2e9b18e158b14a2",
+    "source_ids": [
+      "ferc-accounting-directory",
+      "ferc-electric-forms-directory"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

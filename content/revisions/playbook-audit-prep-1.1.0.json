@@ -1,0 +1,28 @@
+{
+  "item_id": "playbook-audit-prep",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "playbooks/playbook-audit-prep.md",
+    "version": "0.5.0",
+    "sha256": "ad5356618bdc1fcf91d498d0ace326600773ed9e6d1a809bf8ad70ff7d6eda38",
+    "source_ids": [
+      "pcaob-as1105",
+      "pcaob-as2201"
+    ]
+  },
+  "current": {
+    "path": "playbooks/playbook-audit-prep-v1.md",
+    "version": "1.1.0",
+    "sha256": "c43fa077daa0963372e59db72f661c836567ee77cd1e51ac4344b2033c2d4045",
+    "source_ids": [
+      "pcaob-as1105",
+      "pcaob-as2201",
+      "pcaob-terms"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

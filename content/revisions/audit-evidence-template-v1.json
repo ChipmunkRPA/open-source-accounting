@@ -1,0 +1,27 @@
+{
+  "item_id": "audit-evidence-template",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "templates/audit-evidence-template.md",
+    "version": "0.5.0",
+    "sha256": "c2e7493ccc558a7b3011b05f85a1ab4c3176eabf857c1015f4a7c98768ec46e7",
+    "source_ids": [
+      "pcaob-as1105"
+    ]
+  },
+  "current": {
+    "path": "templates/audit-evidence-template-v1.md",
+    "version": "1.0.0",
+    "sha256": "397abdd4d07bb392970ca3753d4e752c69333f780df34166b5a27dc721f72240",
+    "source_ids": [
+      "pcaob-as1105",
+      "gao-yellowbook",
+      "gao-yellowbook-2024"
+    ]
+  },
+  "date": "2026-09-30",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

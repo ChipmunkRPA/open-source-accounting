@@ -1,0 +1,25 @@
+{
+  "item_id": "itgc-evidence-workbook",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "cases/itgc-evidence-workbook-v1.md",
+    "version": "1.0.0",
+    "sha256": "e5c1c1bdb7c0fb244a99194914d67282aa831e6ade1c1c58c9f84d0a86975547",
+    "source_ids": [
+      "nist-csf-2-0"
+    ]
+  },
+  "current": {
+    "path": "cases/itgc-evidence-workbook-v2.md",
+    "version": "2.0.0",
+    "sha256": "8a4693fdf81c76ff48a70671fbbe87009aa1c8c5ebdeaf0aeb14ec58bab3261b",
+    "source_ids": [
+      "nist-csf-2-0"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

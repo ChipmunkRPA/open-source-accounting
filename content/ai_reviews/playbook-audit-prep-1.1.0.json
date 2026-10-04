@@ -1,0 +1,113 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "playbook-audit-prep",
+  "input_sha256": "ad5356618bdc1fcf91d498d0ace326600773ed9e6d1a809bf8ad70ff7d6eda38",
+  "output_sha256": "c43fa077daa0963372e59db72f661c836567ee77cd1e51ac4344b2033c2d4045",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:14:05Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "pcaob-as1105",
+      "official_url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS1105",
+      "source_version_or_date": "Current body/version/applicability not freshly verified",
+      "access_state": "fresh_automated_retrieval_not_performed_due_to_publisher_restriction",
+      "exact_locators": [
+        "Retained reference link only; no current standard/policy body inspected"
+      ],
+      "checked_claim_ids": [
+        "audit-prep-boundary"
+      ]
+    },
+    {
+      "reference_id": "pcaob-as2201",
+      "official_url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2201",
+      "source_version_or_date": "Current body/version/applicability not freshly verified",
+      "access_state": "fresh_automated_retrieval_not_performed_due_to_publisher_restriction",
+      "exact_locators": [
+        "Retained reference link only; no current standard/policy body inspected"
+      ],
+      "checked_claim_ids": [
+        "audit-prep-boundary"
+      ]
+    },
+    {
+      "reference_id": "pcaob-terms",
+      "official_url": "https://pcaobus.org/privacypolicy",
+      "source_version_or_date": "Terms last-updated label 2021-09-09; inspected 2026-10-04",
+      "access_state": "publisher_policy_examined_then_standard_retrieval_stopped",
+      "exact_locators": [
+        "Authorized Use automated-gathering restriction",
+        "Separate conditional Public Materials reuse allowance"
+      ],
+      "checked_claim_ids": [
+        "publisher-access"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "audit-prep-example",
+      "article_section": "Original population example",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "12 attachments/10 distinct IDs and 12%/10% ratios are not assurance levels, error rates or performed audit work.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "audit-prep-boundary",
+      "article_section": "Requested output",
+      "category": "professional_boundary",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "No actual sample sufficiency, audit procedures, opinion or professional approval is supplied; current criteria need authorized review.",
+      "source_reference_ids": [
+        "pcaob-as1105",
+        "pcaob-as2201"
+      ]
+    },
+    {
+      "claim_id": "workflow-state",
+      "article_section": "Purpose and availability",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Actual code catalog state, document minimum and default-off guard were checked. No live deployment or completed model work is inferred.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "publisher-access",
+      "article_section": "Sources and access limit",
+      "category": "rights_and_access",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "PCAOB Authorized Use restriction was inspected before deciding not to freshly fetch the standard/policy bodies. Separate reuse provisions are not treated as automated-acquisition permission.",
+      "source_reference_ids": [
+        "pcaob-terms"
+      ]
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Attachment and distinct ratios",
+      "actual": "(12.0, 10.0)",
+      "expected": "(12.0, 10.0)",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Confirmed experimental/default-off and preparation-only boundary.",
+    "Added duplicate attachment/population example.",
+    "Removed implication that PCAOB bodies were freshly checked."
+  ],
+  "unresolved_gaps": [
+    "No human professional approval or complete entity-specific accounting/audit/legal determination.",
+    "Current PCAOB standard/policy body and amendment applicability not freshly verified because automated acquisition is restricted.",
+    "No hosted deployment, live provider or full application/database acceptance was run."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

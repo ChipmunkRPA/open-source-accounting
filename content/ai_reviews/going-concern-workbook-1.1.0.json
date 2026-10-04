@@ -1,0 +1,128 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "going-concern-workbook",
+  "input_sha256": "69927897531826cf595aa3b594c6ef8da2b50ee27e71627af6f653b0052abc0b",
+  "output_sha256": "d82fafd7d78a646dcb8ea1a0a0385a0883ed36ac078f0ed2e6a6a689b4a95a8e",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:14:05Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC text not accessed",
+      "access_state": "not_accessed_link_only",
+      "exact_locators": [
+        "Research locator only; no current recognition, measurement or disclosure paragraph verified"
+      ],
+      "checked_claim_ids": [
+        "gc-horizon"
+      ]
+    },
+    {
+      "reference_id": "pcaob-as2415",
+      "official_url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2415",
+      "source_version_or_date": "Current body/version/applicability not freshly verified",
+      "access_state": "fresh_automated_retrieval_not_performed_due_to_publisher_restriction",
+      "exact_locators": [
+        "Retained reference link only; no current standard/policy body inspected"
+      ],
+      "checked_claim_ids": [
+        "gc-horizon"
+      ]
+    },
+    {
+      "reference_id": "pcaob-terms",
+      "official_url": "https://pcaobus.org/privacypolicy",
+      "source_version_or_date": "Terms last-updated label 2021-09-09; inspected 2026-10-04",
+      "access_state": "publisher_policy_examined_then_standard_retrieval_stopped",
+      "exact_locators": [
+        "Authorized Use automated-gathering restriction",
+        "Separate conditional Public Materials reuse allowance"
+      ],
+      "checked_claim_ids": [
+        "publisher-access"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "gc-timing",
+      "article_section": "Original timing comparison",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "The signed schedule and earlier/later receipt branches were recalculated; positive endpoint does not erase the earlier funding gap.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "gc-horizon",
+      "article_section": "Scope; Requested workpaper",
+      "category": "applicability_gap",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "No generic twelve-month horizon or current ASC/PCAOB criterion is asserted as verified.",
+      "source_reference_ids": [
+        "fasb-asc",
+        "pcaob-as2415"
+      ]
+    },
+    {
+      "claim_id": "publisher-access",
+      "article_section": "Sources and access limit",
+      "category": "rights_and_access",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "PCAOB Authorized Use restriction was inspected before deciding not to freshly fetch the standard/policy bodies. Separate reuse provisions are not treated as automated-acquisition permission.",
+      "source_reference_ids": [
+        "pcaob-terms"
+      ]
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Signed six-stage schedule",
+      "actual": "[650000, 500000, 350000, 200000, 50000, -100000]",
+      "expected": "[650000, 500000, 350000, 200000, 50000, -100000]",
+      "result": "pass"
+    },
+    {
+      "check": "Late receipt endpoint",
+      "actual": "400000",
+      "expected": "400000",
+      "result": "pass"
+    },
+    {
+      "check": "Earlier receipt before sixth payments",
+      "actual": "550000",
+      "expected": "550000",
+      "result": "pass"
+    },
+    {
+      "check": "Earlier receipt endpoint",
+      "actual": "400000",
+      "expected": "400000",
+      "result": "pass"
+    },
+    {
+      "check": "First identified negative stage",
+      "actual": "6",
+      "expected": "6",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Expanded cash-timing and financing-status evidence.",
+    "Separated hypothetical funding positions from actual bank balances and solvency.",
+    "Kept management/auditor horizons and current authority unresolved."
+  ],
+  "unresolved_gaps": [
+    "No human professional approval or complete entity-specific accounting/audit/legal determination.",
+    "Current primary ASC text not accessed; topic/model references are research leads.",
+    "Current PCAOB standard/policy body and amendment applicability not freshly verified because automated acquisition is restricted."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

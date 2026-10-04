@@ -1,0 +1,119 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "related-party-workbook",
+  "input_sha256": "ccc95011d2556ff4c067895f9ddf532cc8ded033e33eb72f6fc7f3da276cf92c",
+  "output_sha256": "932f4477ef39c9776b538b442f8dabe06965336d9db20109dc08f8f5163a863d",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:14:05Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC text not accessed",
+      "access_state": "not_accessed_link_only",
+      "exact_locators": [
+        "Research locator only; no current recognition, measurement or disclosure paragraph verified"
+      ],
+      "checked_claim_ids": [
+        "related-source"
+      ]
+    },
+    {
+      "reference_id": "pcaob-as2410",
+      "official_url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2410",
+      "source_version_or_date": "Current body/version/applicability not freshly verified",
+      "access_state": "fresh_automated_retrieval_not_performed_due_to_publisher_restriction",
+      "exact_locators": [
+        "Retained reference link only; no current standard/policy body inspected"
+      ],
+      "checked_claim_ids": [
+        "related-source"
+      ]
+    },
+    {
+      "reference_id": "pcaob-terms",
+      "official_url": "https://pcaobus.org/privacypolicy",
+      "source_version_or_date": "Terms last-updated label 2021-09-09; inspected 2026-10-04",
+      "access_state": "publisher_policy_examined_then_standard_retrieval_stopped",
+      "exact_locators": [
+        "Authorized Use automated-gathering restriction",
+        "Separate conditional Public Materials reuse allowance"
+      ],
+      "checked_claim_ids": [
+        "publisher-access"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "related-facts",
+      "article_section": "Keep two linked populations",
+      "category": "original_reasoning",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Relationships require supported records and dates; names or rumors do not establish hidden ties or misconduct.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "related-arithmetic",
+      "article_section": "Original transaction example",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Payment-term difference of 150 days and gross-balance arithmetic difference of 40000 were checked; neither proves market equivalence or permitted offset.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "related-source",
+      "article_section": "Scope; Research and reconcile",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Current ASC 850/AS 2410 definitions, measurement and disclosure criteria remain unverified.",
+      "source_reference_ids": [
+        "fasb-asc",
+        "pcaob-as2410"
+      ]
+    },
+    {
+      "claim_id": "publisher-access",
+      "article_section": "Sources and access limit",
+      "category": "rights_and_access",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "PCAOB Authorized Use restriction was inspected before deciding not to freshly fetch the standard/policy bodies. Separate reuse provisions are not treated as automated-acquisition permission.",
+      "source_reference_ids": [
+        "pcaob-terms"
+      ]
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Payment-term difference",
+      "actual": "150",
+      "expected": "150",
+      "result": "pass"
+    },
+    {
+      "check": "Gross-balance arithmetic difference",
+      "actual": "40000",
+      "expected": "40000",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Separated relationship and transaction populations with supported IDs.",
+    "Added price-versus-terms and gross-balance counterexamples.",
+    "Prohibited speculative relationship/misconduct claims and retained source gaps."
+  ],
+  "unresolved_gaps": [
+    "No human professional approval or complete entity-specific accounting/audit/legal determination.",
+    "Current primary ASC text not accessed; topic/model references are research leads.",
+    "Current PCAOB standard/policy body and amendment applicability not freshly verified because automated acquisition is restricted."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

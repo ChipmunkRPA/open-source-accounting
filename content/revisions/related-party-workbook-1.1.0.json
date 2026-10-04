@@ -1,0 +1,28 @@
+{
+  "item_id": "related-party-workbook",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/related-party-workbook.md",
+    "version": "0.6.0",
+    "sha256": "ccc95011d2556ff4c067895f9ddf532cc8ded033e33eb72f6fc7f3da276cf92c",
+    "source_ids": [
+      "fasb-asc",
+      "pcaob-as2410"
+    ]
+  },
+  "current": {
+    "path": "guides/related-party-workbook-v1.md",
+    "version": "1.1.0",
+    "sha256": "932f4477ef39c9776b538b442f8dabe06965336d9db20109dc08f8f5163a863d",
+    "source_ids": [
+      "fasb-asc",
+      "pcaob-as2410",
+      "pcaob-terms"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

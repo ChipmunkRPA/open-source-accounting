@@ -1,0 +1,100 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "playbook-controls-review",
+  "input_sha256": "549e0ea086b5a2e312f725ba3a4dfc3ecd01853cd2f5c173b2912e76deee0ce8",
+  "output_sha256": "ebe9158a308adb6abd1df3f154517e55329fba2c98a6c521d14f9597e273aaac",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:14:05Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "pcaob-as2201",
+      "official_url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2201",
+      "source_version_or_date": "Current body/version/applicability not freshly verified",
+      "access_state": "fresh_automated_retrieval_not_performed_due_to_publisher_restriction",
+      "exact_locators": [
+        "Retained reference link only; no current standard/policy body inspected"
+      ],
+      "checked_claim_ids": [
+        "control-criteria"
+      ]
+    },
+    {
+      "reference_id": "pcaob-terms",
+      "official_url": "https://pcaobus.org/privacypolicy",
+      "source_version_or_date": "Terms last-updated label 2021-09-09; inspected 2026-10-04",
+      "access_state": "publisher_policy_examined_then_standard_retrieval_stopped",
+      "exact_locators": [
+        "Authorized Use automated-gathering restriction",
+        "Separate conditional Public Materials reuse allowance"
+      ],
+      "checked_claim_ids": [
+        "publisher-access"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "control-count",
+      "article_section": "Original operation-log example",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Two execution files over three scheduled runs rounds to 66.67%; approval/training records are not additional executions or an effectiveness score.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "control-criteria",
+      "article_section": "Analyze; Requested output",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Current AS 2201 severity/remediation criteria were not freshly verified; no automatic classification is made.",
+      "source_reference_ids": [
+        "pcaob-as2201"
+      ]
+    },
+    {
+      "claim_id": "workflow-state",
+      "article_section": "Purpose and availability",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Actual code catalog state, document minimum and default-off guard were checked. No live deployment or completed model work is inferred.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "publisher-access",
+      "article_section": "Sources and access limit",
+      "category": "rights_and_access",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "PCAOB Authorized Use restriction was inspected before deciding not to freshly fetch the standard/policy bodies. Separate reuse provisions are not treated as automated-acquisition permission.",
+      "source_reference_ids": [
+        "pcaob-terms"
+      ]
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Recorded-run count ratio",
+      "actual": "66.67",
+      "expected": "66.67",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Confirmed experimental/default-off and one-ready-document minimum.",
+    "Added scheduled-run versus document-count example.",
+    "Kept severity, operating-effectiveness and remediation decisions open."
+  ],
+  "unresolved_gaps": [
+    "No human professional approval or complete entity-specific accounting/audit/legal determination.",
+    "Current PCAOB standard/policy body and amendment applicability not freshly verified because automated acquisition is restricted.",
+    "No hosted deployment, live provider or full application/database acceptance was run."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

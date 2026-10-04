@@ -1,0 +1,244 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "case-esg-units-and-boundary",
+  "input_sha256": "e37779a42e3a8724f7fc60ea82653f365691c2ae9a486c58ace7c61a3dc73180",
+  "output_sha256": "9adf1f2efda555e800f57aa4cb86217776bcdc89a91474b8f70c175414f95297",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T07:06:32Z",
+  "outcome": "rights_scope_unresolved",
+  "reviewed_sources": [
+    {
+      "reference_id": "ghg-standards-directory",
+      "official_url": "https://ghgprotocol.org/terms-use",
+      "source_version_or_date": "Terms last updated February 2023",
+      "access_state": "Directory was observed before the terms check. Acquisition stopped after restrictions were identified; no standard/factor corpus acquired and no alternate route used.",
+      "exact_locators": [
+        "Section 1: No Unauthorized Access, No Commercial Use",
+        "Section 3: Intellectual Property Rights and Limited License"
+      ],
+      "checked_claim_ids": [
+        "source-rights-gap"
+      ]
+    },
+    {
+      "reference_id": "gri-standards-directory",
+      "official_url": "https://www.globalreporting.org/media/mgspa4n4/gri-global-website-term-of-use-mpgc-05222025_25-august.pdf",
+      "source_version_or_date": "Terms last updated 2025-08-28",
+      "access_state": "Directory and copyright page were observed. Acquisition stopped after automated-access, derivatives and software-use restrictions were identified; no standards bodies acquired.",
+      "exact_locators": [
+        "Physical page 4, section 3: Use of Content",
+        "Physical page 4, section 4: Restrictions on Use",
+        "Related official copyright page https://www.globalreporting.org/copyright/, Trademarks and copyright policy"
+      ],
+      "checked_claim_ids": [
+        "source-rights-gap"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "source-rights-gap",
+      "article_section": "Sources and verification",
+      "category": "rights-and-primary-text-gap",
+      "severity": "warning",
+      "disposition": "acquisition-stopped-and-gap-retained",
+      "explanation": "Fresh source-specific GHG/GRI terms checks identified restrictions. Standard-body acquisition stopped; the article contains original teaching material and explicit unresolved authority/rights gaps.",
+      "source_reference_ids": [
+        "ghg-standards-directory",
+        "gri-standards-directory"
+      ]
+    },
+    {
+      "claim_id": "original-analysis",
+      "article_section": "Two-site case; activity/factor/boundary bridge; overlap correction",
+      "category": "original-educational-content",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Reperformed original unit, duplicate, total/intensity and factor examples; added original activity-first attribution, added-site boundary and overlapping-meter revision cases.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "numerical-checks",
+      "article_section": "Two-site case; activity/factor/boundary bridge; overlap correction",
+      "category": "arithmetic-and-dates",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Reperformed 23 deterministic arithmetic/date checks with explicit inputs and expected results; exact output hashes and body anchors are separately verified.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "actual-applicability-gap",
+      "article_section": "Scope, sources and review gates",
+      "category": "applicability-gap",
+      "severity": "warning",
+      "disposition": "retained-explicit-abstention",
+      "explanation": "No real factor, reporting boundary, Scope classification, baseline-recalculation policy or assurance opinion is established.",
+      "source_reference_ids": [
+        "ghg-standards-directory",
+        "gri-standards-directory"
+      ]
+    },
+    {
+      "claim_id": "standard-premium-boundary",
+      "article_section": "Standard education and Premium execution",
+      "category": "licensing-and-professional-boundary",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Free CC BY 4.0 original education remains Standard. Premium means separately licensed/authorized private execution; no source rights, human CPA review, posting or workflow operation is claimed.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "site-a-kg",
+      "actual": "5000.00",
+      "expected": "5000",
+      "result": "pass"
+    },
+    {
+      "check": "site-a-tonnes",
+      "actual": "5",
+      "expected": "5",
+      "result": "pass"
+    },
+    {
+      "check": "site-b-kg",
+      "actual": "4500.00",
+      "expected": "4500",
+      "result": "pass"
+    },
+    {
+      "check": "site-b-tonnes",
+      "actual": "4.5",
+      "expected": "4.5",
+      "result": "pass"
+    },
+    {
+      "check": "two-site-tonnes",
+      "actual": "9.5",
+      "expected": "9.5",
+      "result": "pass"
+    },
+    {
+      "check": "energy-kwh",
+      "actual": "30500",
+      "expected": "30500",
+      "result": "pass"
+    },
+    {
+      "check": "duplicate-total",
+      "actual": "14.0",
+      "expected": "14",
+      "result": "pass"
+    },
+    {
+      "check": "omitted-conversion-factor",
+      "actual": "1000.0",
+      "expected": "1000",
+      "result": "pass"
+    },
+    {
+      "check": "prior-intensity",
+      "actual": "4",
+      "expected": "4",
+      "result": "pass"
+    },
+    {
+      "check": "current-intensity",
+      "actual": "3.8",
+      "expected": "3.8",
+      "result": "pass"
+    },
+    {
+      "check": "intensity-decrease",
+      "actual": "5.00",
+      "expected": "5",
+      "result": "pass"
+    },
+    {
+      "check": "absolute-increase",
+      "actual": "18.7500",
+      "expected": "18.75",
+      "result": "pass"
+    },
+    {
+      "check": "factor-sensitivity",
+      "actual": "10.00",
+      "expected": "10",
+      "result": "pass"
+    },
+    {
+      "check": "factor-only-change",
+      "actual": "0.50",
+      "expected": "0.5",
+      "result": "pass"
+    },
+    {
+      "check": "bridge-prior",
+      "actual": "7750.00",
+      "expected": "7750",
+      "result": "pass"
+    },
+    {
+      "check": "bridge-a-activity",
+      "actual": "1000.0",
+      "expected": "1000",
+      "result": "pass"
+    },
+    {
+      "check": "bridge-b-activity",
+      "actual": "750.00",
+      "expected": "750",
+      "result": "pass"
+    },
+    {
+      "check": "bridge-factor",
+      "actual": "500.00",
+      "expected": "500",
+      "result": "pass"
+    },
+    {
+      "check": "bridge-current",
+      "actual": "10000",
+      "expected": "10000",
+      "result": "pass"
+    },
+    {
+      "check": "bridge-change",
+      "actual": "2250",
+      "expected": "2250",
+      "result": "pass"
+    },
+    {
+      "check": "expanded-boundary",
+      "actual": "12000",
+      "expected": "12000",
+      "result": "pass"
+    },
+    {
+      "check": "replacement-activity",
+      "actual": "17500",
+      "expected": "17500",
+      "result": "pass"
+    },
+    {
+      "check": "replacement-kg",
+      "actual": "4375.00",
+      "expected": "4375",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Reperformed original unit, duplicate, total/intensity and factor examples; added original activity-first attribution, added-site boundary and overlapping-meter revision cases.",
+    "Preserved the original article bytes; new immutable version1.0.0 with explicit Free Standard/private Premium separation."
+  ],
+  "unresolved_gaps": [
+    "No real factor, reporting boundary, Scope classification, baseline-recalculation policy or assurance opinion is established.",
+    "No independent human accountant, CPA, auditor or legal attestation was performed. AI review does not grant source rights or Agent admission.",
+    "No real journal, filing, configuration change, private model call, recurring monitor or external integration was performed."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

@@ -1,0 +1,27 @@
+{
+  "item_id": "playbook-deep-research",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "playbooks/playbook-deep-research.md",
+    "version": "0.5.0",
+    "sha256": "4246559afddf3279a1b15d71015e92b561db21f16b84fee6abc3179ff7389845",
+    "source_ids": [
+      "fasb-asc",
+      "sec-frm"
+    ]
+  },
+  "current": {
+    "path": "playbooks/playbook-deep-research-v1.md",
+    "version": "1.1.0",
+    "sha256": "b92eeecaa3a6a30904f4783a7f2ee19bba60f308ff03ed68e911552fbe157aef",
+    "source_ids": [
+      "fasb-asc",
+      "sec-frm"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

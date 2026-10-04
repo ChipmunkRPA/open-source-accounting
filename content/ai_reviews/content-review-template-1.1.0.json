@@ -1,0 +1,109 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "content-review-template",
+  "input_sha256": "15f136d791385ccc50e83f2ed0f24525a4890b6140ed74ac355319a9ed2f4deb",
+  "output_sha256": "f4520e015cb6893187cf1919b02857a07cf20f74c330266d5be8d161da267551",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:02:22Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fair-use",
+      "official_url": "https://www.copyright.gov/fair-use/more-info.html",
+      "source_version_or_date": "Copyright Office educational policy page inspected 2026-10-04; no rule effective date inferred",
+      "access_state": "official_policy_guidance_examined",
+      "exact_locators": [
+        "Four-factor description",
+        "Case-by-case determination and no fixed amount/percentage formula"
+      ],
+      "checked_claim_ids": [
+        "review-fair-use",
+        "review-legal-gap"
+      ]
+    },
+    {
+      "reference_id": "cc-by-4",
+      "official_url": "https://creativecommons.org/licenses/by/4.0/legalcode.en",
+      "source_version_or_date": "CC BY 4.0 International legal code and deed inspected 2026-10-04",
+      "access_state": "official_license_and_deed_examined",
+      "exact_locators": [
+        "Legal code Section 2(a): rights grant, downstream restrictions, no endorsement",
+        "Legal code Section 2(b): other rights including trademarks",
+        "Legal code Section 3(a): attribution and modifications",
+        "Deed: summary rather than legal code"
+      ],
+      "checked_claim_ids": [
+        "review-cc",
+        "review-legal-gap"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "review-separation",
+      "article_section": "Four decisions",
+      "category": "original_template",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Editorial, human technical, rights and operational admission decisions are separately recorded. Template completion cannot authorize its own source use.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "review-fair-use",
+      "article_section": "Rights questions before copying",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Copyright Office explains case-specific four-factor review and no fixed amount/percentage guarantee. Candidate avoids claiming that paraphrase itself clears rights.",
+      "source_reference_ids": [
+        "fair-use"
+      ]
+    },
+    {
+      "claim_id": "review-cc",
+      "article_section": "Rights questions before copying",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "CC BY 4.0 legal code supports the limited scope, attribution/change notices, downstream restrictions and trademark exclusion; the deed is identified as a summary.",
+      "source_reference_ids": [
+        "cc-by-4"
+      ]
+    },
+    {
+      "claim_id": "review-claim-example",
+      "article_section": "Claim-level technical review",
+      "category": "original_reasoning",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "A homepage link is not presented as evidence that a decisive paragraph was inspected; the original counterexample either requires authorized access or reframing.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "review-legal-gap",
+      "article_section": "Release record",
+      "category": "legal_boundary",
+      "severity": "warning",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "No fact-specific fair-use or comprehensive rights determination is supplied, and no human professional or database approval is created.",
+      "source_reference_ids": [
+        "fair-use",
+        "cc-by-4"
+      ]
+    }
+  ],
+  "arithmetic_checks": [],
+  "changes_summary": [
+    "Separated four kinds of review and decision records.",
+    "Added a direct warning that rewording alone does not clear rights.",
+    "Specified exact material/version/operation and claim-level source evidence."
+  ],
+  "unresolved_gaps": [
+    "Fact-specific permissions or legal assessment require actual relevant review.",
+    "No actual human technical or rights approval is recorded."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

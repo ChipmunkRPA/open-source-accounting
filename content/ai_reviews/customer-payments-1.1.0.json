@@ -1,0 +1,122 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "customer-payments",
+  "input_sha256": "393dcc091b96c3b99c78185deedab51c0d7df554c4bd5bb801d66945e741e532",
+  "output_sha256": "76c02cc5ccc58bd6541d9f0ce68703fd0550f34eabe26bc91fef814c33bbef50",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:55:51Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC text not accessed; publisher restriction identified 2026-10-04",
+      "access_state": "not_accessed_link_only_rights_unresolved",
+      "exact_locators": [
+        "No operative ASC paragraph adopted as verified; research reference only"
+      ],
+      "checked_claim_ids": [
+        "source-authority-gap"
+      ]
+    },
+    {
+      "reference_id": "fasb-customer-equity",
+      "official_url": "https://fasb.org/",
+      "source_version_or_date": "Historical registry summary retained; no full current ASU/ASC verification; further retrieval stopped 2026-10-04",
+      "access_state": "retained_publisher_reference_no_substantive_current_requirement_adopted",
+      "exact_locators": [
+        "Publisher summary/announcement is a research lead only; no current effective-date or accounting conclusion adopted"
+      ],
+      "checked_claim_ids": [
+        "source-authority-gap",
+        "customer-awards"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "customer-party",
+      "article_section": "Scope; Evidence questions",
+      "category": "original_research_structure",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Recipient, arrangement, form, purpose, conditions and sales connection are gathered before selecting classification.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "customer-bridge",
+      "article_section": "Original payment packet",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "10000+15000=25000, milestone60%, plus separate5000 credit yields30000 arithmetic only; no service/value/recognition decision.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "customer-awards",
+      "article_section": "Separate research branch",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "The retained customer-consideration announcement is not used to infer current amendments or effective dates. No ASU/ASC body was acquired.",
+      "source_reference_ids": [
+        "fasb-customer-equity"
+      ]
+    },
+    {
+      "claim_id": "source-authority-gap",
+      "article_section": "Scope; Source and permission boundary",
+      "category": "source_access_and_rights",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Current ASC criteria were not accessed. Publisher-use restrictions identified October 4, 2026 prevented further retrieval or adoption of source content. Original reasoning/math is not presented as verified current accounting authority.",
+      "source_reference_ids": [
+        "fasb-asc",
+        "fasb-customer-equity"
+      ]
+    },
+    {
+      "claim_id": "rights-original",
+      "article_section": "Original-content footer",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Only original educational prose/examples are licensed CC BY 4.0 here; no private standard body, publisher permission or Agent/source admission is supplied. Revised prose uses homepage references, not publisher deep links.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Proposed payment split",
+      "actual": "25000",
+      "expected": "25000",
+      "result": "pass"
+    },
+    {
+      "check": "Milestone percentage",
+      "actual": "60",
+      "expected": "60",
+      "result": "pass"
+    },
+    {
+      "check": "Separate payment and credit sum",
+      "actual": "30000",
+      "expected": "30000",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Added signed payment/credit and milestone evidence scenario.",
+    "Removed unrefreshed announcement-based treatment/date implication.",
+    "Separated cash and equity-linked research questions."
+  ],
+  "unresolved_gaps": [
+    "Current primary ASC/ASU requirements, entity/period applicability and publisher-operation permissions remain unresolved.",
+    "AI editorial pass is limited to original reasoning, arithmetic and stated implementation scope; it is not a human professional or current-GAAP conclusion.",
+    "No live deployment, database/provider integration or posting/feature activation was performed."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

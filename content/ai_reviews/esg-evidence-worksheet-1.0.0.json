@@ -1,0 +1,130 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "esg-evidence-worksheet",
+  "input_sha256": "79f595de8915beb1230a41d8f2e6065e5a7ede9223ee3966480ffe7a9b191a17",
+  "output_sha256": "af82bb9211b952fabdc09acccd11ffeb3810c09ba089de68e0268c60be10a1e7",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T07:06:32Z",
+  "outcome": "rights_scope_unresolved",
+  "reviewed_sources": [
+    {
+      "reference_id": "ghg-standards-directory",
+      "official_url": "https://ghgprotocol.org/terms-use",
+      "source_version_or_date": "Terms last updated February 2023",
+      "access_state": "Directory was observed before the terms check. Acquisition stopped after restrictions were identified; no standard/factor corpus acquired and no alternate route used.",
+      "exact_locators": [
+        "Section 1: No Unauthorized Access, No Commercial Use",
+        "Section 3: Intellectual Property Rights and Limited License"
+      ],
+      "checked_claim_ids": [
+        "source-rights-gap"
+      ]
+    },
+    {
+      "reference_id": "gri-standards-directory",
+      "official_url": "https://www.globalreporting.org/media/mgspa4n4/gri-global-website-term-of-use-mpgc-05222025_25-august.pdf",
+      "source_version_or_date": "Terms last updated 2025-08-28",
+      "access_state": "Directory and copyright page were observed. Acquisition stopped after automated-access, derivatives and software-use restrictions were identified; no standards bodies acquired.",
+      "exact_locators": [
+        "Physical page 4, section 3: Use of Content",
+        "Physical page 4, section 4: Restrictions on Use",
+        "Related official copyright page https://www.globalreporting.org/copyright/, Trademarks and copyright policy"
+      ],
+      "checked_claim_ids": [
+        "source-rights-gap"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "source-rights-gap",
+      "article_section": "Sources and verification",
+      "category": "rights-and-primary-text-gap",
+      "severity": "warning",
+      "disposition": "acquisition-stopped-and-gap-retained",
+      "explanation": "Fresh source-specific GHG/GRI terms checks identified restrictions. Standard-body acquisition stopped; the article contains original teaching material and explicit unresolved authority/rights gaps.",
+      "source_reference_ids": [
+        "ghg-standards-directory",
+        "gri-standards-directory"
+      ]
+    },
+    {
+      "claim_id": "original-analysis",
+      "article_section": "Filled fictional record; claims and exceptions",
+      "category": "original-educational-content",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Added complete original training-population example, month-end versus period-wide numerator/denominator reconciliation, exception register and evidence/release distinctions.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "numerical-checks",
+      "article_section": "Filled fictional record; claims and exceptions",
+      "category": "arithmetic-and-dates",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Reperformed 4 deterministic arithmetic/date checks with explicit inputs and expected results; exact output hashes and body anchors are separately verified.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "actual-applicability-gap",
+      "article_section": "Scope, sources and review gates",
+      "category": "applicability-gap",
+      "severity": "warning",
+      "disposition": "retained-explicit-abstention",
+      "explanation": "Actual source completeness, disclosure criteria, attendance corroboration and professional assurance remain unverified.",
+      "source_reference_ids": [
+        "ghg-standards-directory",
+        "gri-standards-directory"
+      ]
+    },
+    {
+      "claim_id": "standard-premium-boundary",
+      "article_section": "Standard education and Premium execution",
+      "category": "licensing-and-professional-boundary",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Free CC BY 4.0 original education remains Standard. Premium means separately licensed/authorized private execution; no source rights, human CPA review, posting or workflow operation is claimed.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "month-end-rate",
+      "actual": "72.00",
+      "expected": "72",
+      "result": "pass"
+    },
+    {
+      "check": "period-wide-population",
+      "actual": "110",
+      "expected": "110",
+      "result": "pass"
+    },
+    {
+      "check": "period-wide-completions",
+      "actual": "77",
+      "expected": "77",
+      "result": "pass"
+    },
+    {
+      "check": "period-wide-rate",
+      "actual": "70.0",
+      "expected": "70",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Added complete original training-population example, month-end versus period-wide numerator/denominator reconciliation, exception register and evidence/release distinctions.",
+    "Preserved the original article bytes; new immutable version1.0.0 with explicit Free Standard/private Premium separation."
+  ],
+  "unresolved_gaps": [
+    "Actual source completeness, disclosure criteria, attendance corroboration and professional assurance remain unverified.",
+    "No independent human accountant, CPA, auditor or legal attestation was performed. AI review does not grant source rights or Agent admission.",
+    "No real journal, filing, configuration change, private model call, recurring monitor or external integration was performed."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

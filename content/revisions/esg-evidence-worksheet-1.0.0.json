@@ -1,0 +1,27 @@
+{
+  "item_id": "esg-evidence-worksheet",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "templates/esg-evidence-worksheet.md",
+    "version": "0.6.6",
+    "sha256": "79f595de8915beb1230a41d8f2e6065e5a7ede9223ee3966480ffe7a9b191a17",
+    "source_ids": [
+      "ghg-standards-directory",
+      "gri-standards-directory"
+    ]
+  },
+  "current": {
+    "path": "templates/esg-evidence-worksheet-v1.md",
+    "version": "1.0.0",
+    "sha256": "af82bb9211b952fabdc09acccd11ffeb3810c09ba089de68e0268c60be10a1e7",
+    "source_ids": [
+      "ghg-standards-directory",
+      "gri-standards-directory"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

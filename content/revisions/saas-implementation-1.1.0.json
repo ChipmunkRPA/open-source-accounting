@@ -1,0 +1,27 @@
+{
+  "item_id": "saas-implementation",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/saas-implementation.md",
+    "version": "0.5.0",
+    "sha256": "de0ff15d303eb6ccad235fd4438de7485eaa2e5093444ef86cfff995c804b7c4",
+    "source_ids": [
+      "fasb-asc",
+      "fasb-revenue-project"
+    ]
+  },
+  "current": {
+    "path": "guides/saas-implementation-v1.md",
+    "version": "1.1.0",
+    "sha256": "9cb177e6ceb41c585b7cde7200d1382e42755680ee3c23b98c87b7d973ad92e5",
+    "source_ids": [
+      "fasb-asc",
+      "fasb-revenue-project"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

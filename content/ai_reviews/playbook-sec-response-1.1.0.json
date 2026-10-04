@@ -1,0 +1,129 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "playbook-sec-response",
+  "input_sha256": "290c3b9bcadd356d6b224901825cf90f99caed92076f6eb534c441877b5eecb6",
+  "output_sha256": "52facd83f14f5e2b8b3e575d19c553984d92eba365108555533ad8f7a5e50b43",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:02:22Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "sec-frm",
+      "official_url": "https://www.sec.gov/about/divisions-offices/division-corporation-finance/financial-reporting-manual",
+      "source_version_or_date": "Landing page last reviewed/updated 2026-06-29; inspected 2026-10-04",
+      "access_state": "official_landing_page_and_revision_notes_examined",
+      "exact_locators": [
+        "Introductory non-authoritative/conflicting-authority disclaimer",
+        "Summary of Recent Revisions: June 29, 2026 administrative updates",
+        "Recent Updates: section-specific technical date tags"
+      ],
+      "checked_claim_ids": [
+        "workflow-frm"
+      ]
+    },
+    {
+      "reference_id": "sec-reuse",
+      "official_url": "https://www.sec.gov/about/webmaster-frequently-asked-questions",
+      "source_version_or_date": "SEC FAQ page dated 2021-05-19; inspected 2026-10-04",
+      "access_state": "publisher_policy_examined",
+      "exact_locators": [
+        "General Questions: Is content on sec.gov free?",
+        "General Questions: Is any of the content not free to reuse?"
+      ],
+      "checked_claim_ids": [
+        "response-reuse"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "workflow-state",
+      "article_section": "Purpose and implementation snapshot",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Actual code catalog and gate checks on 2026-10-04 support the stated sec_response availability, ordinary subscription/Start admission, free library/chat and separate finite evaluation boundaries. This is not deployed/live acceptance.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "workflow-rights",
+      "article_section": "Purpose and implementation snapshot; Sources",
+      "category": "rights_and_review",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Payment, source-operation rights, technical review and Agent admission remain separate; no permissions or professional approval are granted by this original playbook.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "workflow-frm",
+      "article_section": "Sources and verification",
+      "category": "source_hierarchy",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "FRM introductory disclaimer and administrative-update notes were inspected; the manual is not substituted for governing primary requirements.",
+      "source_reference_ids": [
+        "sec-frm"
+      ]
+    },
+    {
+      "claim_id": "response-feature",
+      "article_section": "Purpose and implementation snapshot",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Catalog status EXPERIMENTAL/default-off and actual guard refusal were checked. The catalogue expressly excludes filing/regulator contact or implied prior-correspondence approval.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "response-reuse",
+      "article_section": "Separate each request",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "SEC reuse policy was inspected; issuer correspondence is not treated as government-authored authority or a general operation grant.",
+      "source_reference_ids": [
+        "sec-reuse"
+      ]
+    },
+    {
+      "claim_id": "response-example",
+      "article_section": "Original comment-tracker exercise",
+      "category": "original_reasoning",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "The request is explicitly fictional with two components, not a fabricated actual SEC request. Proposed future commitments remain unapproved.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "response-margin",
+      "article_section": "Original comment-tracker exercise",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "125000 / 500000 = 25%; source, measure validity and comparability are not inferred.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Response exercise margin percentage",
+      "actual": "25.0",
+      "expected": "25.0",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Clarified preparation-only/default-off state.",
+    "Added original two-part comment tracker and checked margin example.",
+    "Preserved actual-deadline, representation, commitment and filing boundaries."
+  ],
+  "unresolved_gaps": [
+    "No complete primary-authority or entity-specific accounting/legal applicability determination.",
+    "No live deployment, model, database integration or full application acceptance from this editorial review.",
+    "No human professional approval, source permission or Agent admission."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

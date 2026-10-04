@@ -1,0 +1,29 @@
+{
+  "item_id": "playbook-disclosure-review",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "playbooks/playbook-disclosure-review.md",
+    "version": "0.5.0",
+    "sha256": "d2a0875a1c07030267da34bf1e487a78c2fa1d4defe90168de8d95a3c1ddb14a",
+    "source_ids": [
+      "fasb-asc",
+      "sec-frm",
+      "sec-nongaap"
+    ]
+  },
+  "current": {
+    "path": "playbooks/playbook-disclosure-review-v1.md",
+    "version": "1.1.0",
+    "sha256": "e253a18c546bfaf740cfaa0f9e6f5754d2fcdc0fd5526394a6874415aab53aea",
+    "source_ids": [
+      "fasb-asc",
+      "sec-frm",
+      "sec-nongaap"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

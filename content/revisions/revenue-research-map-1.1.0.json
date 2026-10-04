@@ -1,0 +1,27 @@
+{
+  "item_id": "revenue-research-map",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/revenue-research-map.md",
+    "version": "0.5.0",
+    "sha256": "3dd33e802692705075e54676282cf4f4abb4863ed6d00f1d84c443b1adb81018",
+    "source_ids": [
+      "fasb-revenue-project",
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "guides/revenue-research-map-v1.md",
+    "version": "1.1.0",
+    "sha256": "a6edcf13e48c1c63a6c95c5e51c23e89d3c0b39c23e9b169a9e29054ea778e00",
+    "source_ids": [
+      "fasb-revenue-project",
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

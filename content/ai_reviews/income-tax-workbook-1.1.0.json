@@ -1,0 +1,112 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "income-tax-workbook",
+  "input_sha256": "705650063f6bfa8f7ad51fa0903d9712e5ab68d2ad8913f97573900a8e67d956",
+  "output_sha256": "7346c3474c5b5806790f7f0d751538e6473613cb4c0a4c30fc6af381d97316ca",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T07:14:07Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC/ASU text not accessed; publisher boundary identified 2026-10-04",
+      "access_state": "not_accessed_link_only_rights_unresolved",
+      "exact_locators": [
+        "Research entry point only; no operative paragraph adopted as verified"
+      ],
+      "checked_claim_ids": [
+        "tax-scope",
+        "source-boundary"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "tax-scope",
+      "article_section": "Scope and source gap",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "No current tax law, enacted rate, election or ASC 740 criterion was accessed; all rates and adjustments are stipulated mathematics.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "tax-arithmetic",
+      "article_section": "Original rate example; Basis differences",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "110000 base gives 22000 at 20% or 27500 at 25%; difference 5500.12000 cash comparison difference 10000 and 30000 x 20%=6000 do not prove liabilities or deferred-tax recognition.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "tax-review",
+      "article_section": "Requested output",
+      "category": "review_boundary",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "AI work does not generate reviewer sign-offs, payment instructions, returns, elections or professional tax advice.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "source-boundary",
+      "article_section": "Scope; Sources and verification",
+      "category": "source_access_and_rights",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Current primary ASC/ASU text, applicable amendments and source-operation permission remain unresolved. FASB restrictions identified October 4, 2026 prevented further retrieval. Original calculations do not verify current accounting requirements.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Candidate base",
+      "actual": "110000",
+      "expected": "110000",
+      "result": "pass"
+    },
+    {
+      "check": "Fictional rate branches",
+      "actual": "[22000, 27500]",
+      "expected": "[22000, 27500]",
+      "result": "pass"
+    },
+    {
+      "check": "Rate scenario difference",
+      "actual": "5500",
+      "expected": "5500",
+      "result": "pass"
+    },
+    {
+      "check": "Cash-versus-formula difference",
+      "actual": "10000",
+      "expected": "10000",
+      "result": "pass"
+    },
+    {
+      "check": "Basis-difference arithmetic",
+      "actual": "6000",
+      "expected": "6000",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Added explicitly fictional rate/base/basis-difference exercises with no enacted-rate claim.",
+    "Separated cash payments from unvalidated formula amounts.",
+    "Replaced promised reviewer sign-offs with fields for actual decisions."
+  ],
+  "unresolved_gaps": [
+    "Current primary accounting/audit requirements and entity/reporting-period applicability are not verified.",
+    "Publisher source-operation rights remain unresolved; no restricted source body was acquired.",
+    "No actual client evidence, human professional review, posting, filing or Agent admission is supplied."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

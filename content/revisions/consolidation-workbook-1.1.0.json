@@ -1,0 +1,25 @@
+{
+  "item_id": "consolidation-workbook",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/consolidation-workbook.md",
+    "version": "0.6.0",
+    "sha256": "82f16ffd1ed7744e66205088d01293143a864d8ba89a39b0add249b0e2578610",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "guides/consolidation-workbook-v1.md",
+    "version": "1.1.0",
+    "sha256": "ad72436c2ad5d0a3f02db8c78a0f6a7cd3ff11d3f14c57186251ac258cf7aa86",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

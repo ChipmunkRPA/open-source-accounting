@@ -1,0 +1,109 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "software-cost-workbook",
+  "input_sha256": "628f89b04c886c8db887b735291ca73b114e7098be10fc6d89f18b76a2cf472f",
+  "output_sha256": "2e5edadea588c1fb77576d7fac540a28cb1112a1adb3ba6b7feb1cbb4fc98921",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T07:14:07Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC/ASU text not accessed; publisher boundary identified 2026-10-04",
+      "access_state": "not_accessed_link_only_rights_unresolved",
+      "exact_locators": [
+        "Research entry point only; no operative paragraph adopted as verified"
+      ],
+      "checked_claim_ids": [
+        "source-boundary"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "software-population",
+      "article_section": "Original cost-allocation packet",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "60+25+15 hours=100; uniform-cost allocation 60000/25000/15000 reconciles.80% shortcut gives 80000,20000 higher than the development-labeled branch.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "software-evidence",
+      "article_section": "Trace activities",
+      "category": "original_reasoning",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Retrospective percentages and internal approvals are not treated as verified timesheets or accounting criteria.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "software-rounding",
+      "article_section": "Model and schedule questions",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "60000/36 displays 1666.67; multiplying that rounded display by 36 gives 60000.12, a 12-cent difference. The asset base and useful life remain unapproved.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "source-boundary",
+      "article_section": "Scope; Sources and verification",
+      "category": "source_access_and_rights",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Current primary ASC/ASU text, applicable amendments and source-operation permission remain unresolved. FASB restrictions identified October 4, 2026 prevented further retrieval. Original calculations do not verify current accounting requirements.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Stated hour total",
+      "actual": "100",
+      "expected": "100",
+      "result": "pass"
+    },
+    {
+      "check": "Uniform-cost allocations",
+      "actual": "[60000, 25000, 15000]",
+      "expected": "[60000, 25000, 15000]",
+      "result": "pass"
+    },
+    {
+      "check": "Blanket allocation dependency",
+      "actual": "[80000, 20000]",
+      "expected": "[80000, 20000]",
+      "result": "pass"
+    },
+    {
+      "check": "Conditional monthly display",
+      "actual": "1666.67",
+      "expected": "1666.67",
+      "result": "pass"
+    },
+    {
+      "check": "Rounded multiplication and excess",
+      "actual": "[60000.12, 0.12]",
+      "expected": "[60000.12, 0.12]",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Added original activity/hour allocation with uniform-cost assumptions.",
+    "Compared blanket 80% against 60-hour branch without an automatic capitalization decision.",
+    "Added 36-month rounding counterexample and retained current-amendment gaps."
+  ],
+  "unresolved_gaps": [
+    "Current primary accounting/audit requirements and entity/reporting-period applicability are not verified.",
+    "Publisher source-operation rights remain unresolved; no restricted source body was acquired.",
+    "No actual client evidence, human professional review, posting, filing or Agent admission is supplied."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

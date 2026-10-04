@@ -1,0 +1,27 @@
+{
+  "item_id": "ferc-mapping-evidence-template",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "templates/ferc-mapping-evidence-template.md",
+    "version": "0.6.7",
+    "sha256": "d38e425cea7322b1a7f66584b4879cbf45cfbc2393b8d05ab27a9677bd7a4078",
+    "source_ids": [
+      "ferc-accounting-directory",
+      "ferc-electric-forms-directory"
+    ]
+  },
+  "current": {
+    "path": "templates/ferc-mapping-evidence-template-v1.md",
+    "version": "1.0.0",
+    "sha256": "0e427011c11c2f1527714978340c5aa5add18fd315486ac3702dee8b1d9344ca",
+    "source_ids": [
+      "ferc-accounting-directory",
+      "ferc-electric-forms-directory"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

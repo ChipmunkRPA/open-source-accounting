@@ -1,0 +1,132 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "estimate-register-template",
+  "input_sha256": "71925ce41328dd0bce8cc34f4ccd0b20ef8c10e39c261ce7b6d7db820750eca5",
+  "output_sha256": "b940eb5c0a1e1bedce748e4eacc83273945f2780da38214e08a67b8e923c4bcd",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T07:06:32Z",
+  "outcome": "rights_scope_unresolved",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://fasb.org/",
+      "source_version_or_date": "Current Codification edition/effective dates not inspected in this review",
+      "access_state": "No restricted body was fetched. Current project source reviewer reported verified FAF/FASB/GASB Terms v2.1 effective 2026-07-30, sections2,6(a),6(c),11. Those AI-use/automated-collection/link restrictions were honored; no alternate acquisition.",
+      "exact_locators": [
+        "Homepage research pointer only; no current accounting paragraph",
+        "Rights finding relayed from the current project source review, not a newly inspected standard body"
+      ],
+      "checked_claim_ids": [
+        "source-rights-gap"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "source-rights-gap",
+      "article_section": "Sources and verification",
+      "category": "rights-and-primary-text-gap",
+      "severity": "warning",
+      "disposition": "acquisition-not-attempted-and-gap-retained",
+      "explanation": "Restricted FAF/FASB standard bodies were not fetched or paraphrased; article uses homepage-only research pointer and explicit unverified authority/effective-date conditions.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "original-analysis",
+      "article_section": "Weighted estimate; overlay; sensitivity; retrospective review",
+      "category": "original-educational-content",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Added original three-outcome estimate, distinct management overlay, coherent sensitivity and no-hindsight retrospective reasoning.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "numerical-checks",
+      "article_section": "Weighted estimate; overlay; sensitivity; retrospective review",
+      "category": "arithmetic-and-dates",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Reperformed 7 deterministic arithmetic/date checks with explicit inputs and expected results; exact output hashes and body anchors are separately verified.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "actual-applicability-gap",
+      "article_section": "Scope, sources and review gates",
+      "category": "applicability-gap",
+      "severity": "warning",
+      "disposition": "retained-explicit-abstention",
+      "explanation": "No required accounting model, probabilities, discounting/risk treatment, recognition or real management intent is established.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "standard-premium-boundary",
+      "article_section": "Standard education and Premium execution",
+      "category": "licensing-and-professional-boundary",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Free CC BY 4.0 original education remains Standard. Premium means separately licensed/authorized private execution; no source rights, human CPA review, posting or workflow operation is claimed.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "probability-total",
+      "actual": "1.00",
+      "expected": "1",
+      "result": "pass"
+    },
+    {
+      "check": "weighted-output",
+      "actual": "32000.00",
+      "expected": "32000",
+      "result": "pass"
+    },
+    {
+      "check": "overlay-total",
+      "actual": "40000",
+      "expected": "40000",
+      "result": "pass"
+    },
+    {
+      "check": "sensitivity-probability-total",
+      "actual": "1.00",
+      "expected": "1",
+      "result": "pass"
+    },
+    {
+      "check": "sensitivity-output",
+      "actual": "42000.00",
+      "expected": "42000",
+      "result": "pass"
+    },
+    {
+      "check": "sensitivity-change",
+      "actual": "10000",
+      "expected": "10000",
+      "result": "pass"
+    },
+    {
+      "check": "retrospective-difference",
+      "actual": "18000",
+      "expected": "18000",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Added original three-outcome estimate, distinct management overlay, coherent sensitivity and no-hindsight retrospective reasoning.",
+    "Preserved the original article bytes; new immutable version1.0.0 with explicit Free Standard/private Premium separation."
+  ],
+  "unresolved_gaps": [
+    "No required accounting model, probabilities, discounting/risk treatment, recognition or real management intent is established.",
+    "No independent human accountant, CPA, auditor or legal attestation was performed. AI review does not grant source rights or Agent admission.",
+    "No real journal, filing, configuration change, private model call, recurring monitor or external integration was performed."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

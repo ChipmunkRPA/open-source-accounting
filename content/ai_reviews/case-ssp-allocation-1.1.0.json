@@ -1,0 +1,127 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "case-ssp-allocation",
+  "input_sha256": "854f04b6571a0cffb7a630d281fe94fe9a5573f806828b202aeaf895eb8f1f1c",
+  "output_sha256": "dbe625a9de40b6ae716e718bdafc5e0aa1d8cde8ba6a96a46b165638e62c41c4",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:55:51Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC text not accessed; publisher restriction identified 2026-10-04",
+      "access_state": "not_accessed_link_only_rights_unresolved",
+      "exact_locators": [
+        "No operative ASC paragraph adopted as verified; research reference only"
+      ],
+      "checked_claim_ids": [
+        "source-authority-gap"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "ssp-premises",
+      "article_section": "Arithmetic premises",
+      "category": "review_boundary",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Replaced wording that could imply an actual qualified reviewer with explicitly fictional mathematical premises; no real distinctness or pricing review is claimed.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "ssp-base",
+      "article_section": "Base calculation",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "80000+20000=100000;90000 proportional split72000/18000 reconciles. Weight/price difference is not an accounting conclusion.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "ssp-rounding",
+      "article_section": "Tiny total example",
+      "category": "product_and_math",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Exact equal one-third-cent quotas produce0.00/0.00/0.01 under disclosed later-input-row tie rule; current helper reproduces it.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "ssp-validation",
+      "article_section": "Input validation",
+      "category": "product_correction",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Actual helper accepts a zero weight with a positive total and rejects negative/nonpositive-total cases; mathematical acceptance is separated from valid accounting input.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "source-authority-gap",
+      "article_section": "Scope; Source and permission boundary",
+      "category": "source_access_and_rights",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Current ASC criteria were not accessed. Publisher-use restrictions identified October 4, 2026 prevented further retrieval or adoption of source content. Original reasoning/math is not presented as verified current accounting authority.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "rights-original",
+      "article_section": "Original-content footer",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Only original educational prose/examples are licensed CC BY 4.0 here; no private standard body, publisher permission or Agent/source admission is supplied. Revised prose uses homepage references, not publisher deep links.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Weight total",
+      "actual": "100000",
+      "expected": "100000",
+      "result": "pass"
+    },
+    {
+      "check": "Stipulated allocations",
+      "actual": "[72000, 18000]",
+      "expected": "[72000, 18000]",
+      "result": "pass"
+    },
+    {
+      "check": "Allocation reconciliation",
+      "actual": "90000",
+      "expected": "90000",
+      "result": "pass"
+    },
+    {
+      "check": "Weight/price arithmetic difference",
+      "actual": "10000",
+      "expected": "10000",
+      "result": "pass"
+    },
+    {
+      "check": "One-cent later-row tie rule",
+      "actual": "[0, 0, 1]",
+      "expected": "[0, 0, 1]",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Removed any suggestion of real professional approval of hypothetical assumptions.",
+    "Added exact-cent tie case and documented input order.",
+    "Corrected zero-weight validation description and preserved old fixture bytes."
+  ],
+  "unresolved_gaps": [
+    "Current primary ASC/ASU requirements, entity/period applicability and publisher-operation permissions remain unresolved.",
+    "AI editorial pass is limited to original reasoning, arithmetic and stated implementation scope; it is not a human professional or current-GAAP conclusion.",
+    "No live deployment, database/provider integration or posting/feature activation was performed."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

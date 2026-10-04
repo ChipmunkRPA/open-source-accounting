@@ -1,0 +1,27 @@
+{
+  "item_id": "case-ferc-reconciliation-gaps",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "cases/case-ferc-reconciliation-gaps.md",
+    "version": "0.6.7",
+    "sha256": "c9ab55bf23fa4cbd33f574c1002cbddafecbb999a9867741d82aae75c479a3b6",
+    "source_ids": [
+      "ferc-accounting-directory",
+      "ferc-electric-forms-directory"
+    ]
+  },
+  "current": {
+    "path": "cases/case-ferc-reconciliation-gaps-v1.md",
+    "version": "1.0.0",
+    "sha256": "e4096fa98cfe9d411cc66da9d23146b4071bf78effe431f38c5f50703ce5a0a7",
+    "source_ids": [
+      "ferc-accounting-directory",
+      "ferc-electric-forms-directory"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

@@ -1,0 +1,25 @@
+{
+  "item_id": "acquisition-workbook",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/acquisition-workbook.md",
+    "version": "0.6.0",
+    "sha256": "9752efa6a6eaf3beb72a282c94c5672907b2050a3467f52dc68a53589a404201",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "guides/acquisition-workbook-v1.md",
+    "version": "1.1.0",
+    "sha256": "bf67a08bc7fc91fc83f24c6dc24f5a3c3a7fa56e2dbe95116f15d62c9291efcc",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

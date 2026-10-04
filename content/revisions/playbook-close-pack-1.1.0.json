@@ -1,0 +1,29 @@
+{
+  "item_id": "playbook-close-pack",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "playbooks/playbook-close-pack.md",
+    "version": "0.5.0",
+    "sha256": "e0ce97636dfedb01bb204bc0a62db7c0fb314e8f9a8b3c8462b299e47020f7b9",
+    "source_ids": [
+      "sec-sab99",
+      "sec-sab108",
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "playbooks/playbook-close-pack-v1.md",
+    "version": "1.1.0",
+    "sha256": "bf76a908a09551ee9bc0542004afaeeec90548cf797fac14d535ed1bab67bbc6",
+    "source_ids": [
+      "sec-sab99",
+      "sec-sab108",
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

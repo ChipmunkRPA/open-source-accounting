@@ -1,0 +1,27 @@
+{
+  "item_id": "playbook-standards-watch",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "playbooks/playbook-standards-watch.md",
+    "version": "0.5.0",
+    "sha256": "c6df5c0471bc24f3bd6ce85a0c59bed5aafe45dccc5975adaa5d807ee1f8c8a1",
+    "source_ids": [
+      "fasb-asc",
+      "gao-yellowbook"
+    ]
+  },
+  "current": {
+    "path": "playbooks/playbook-standards-watch-v1.md",
+    "version": "1.0.0",
+    "sha256": "daff5ae23e1cf976dc4c6da783f2d6311e903577f883d8a743980f9eba13de1d",
+    "source_ids": [
+      "fasb-asc",
+      "gao-yellowbook"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

@@ -1,0 +1,97 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "acquisition-workbook",
+  "input_sha256": "9752efa6a6eaf3beb72a282c94c5672907b2050a3467f52dc68a53589a404201",
+  "output_sha256": "bf67a08bc7fc91fc83f24c6dc24f5a3c3a7fa56e2dbe95116f15d62c9291efcc",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T07:14:07Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC/ASU text not accessed; publisher boundary identified 2026-10-04",
+      "access_state": "not_accessed_link_only_rights_unresolved",
+      "exact_locators": [
+        "Research entry point only; no operative paragraph adopted as verified"
+      ],
+      "checked_claim_ids": [
+        "source-boundary"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "acquisition-cash",
+      "article_section": "Original cash-use bridge",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Seller 2000000+lender 300000+advisers 100000=2400000, without assuming all payments are consideration.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "acquisition-proposal",
+      "article_section": "Another amount",
+      "category": "original_reasoning",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Adding the conditional proposed 150000 gives 2550000 arithmetic, not cash already paid or an unconditional obligation.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "acquisition-residual",
+      "article_section": "Residuals and dates",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "2000000-1700000=300000 is not validated goodwill; accounting scope, consideration and asset/liability population remain open.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "source-boundary",
+      "article_section": "Scope; Sources and verification",
+      "category": "source_access_and_rights",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Current primary ASC/ASU text, applicable amendments and source-operation permission remain unresolved. FASB restrictions identified October 4, 2026 prevented further retrieval. Original calculations do not verify current accounting requirements.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Closing cash uses",
+      "actual": "2400000",
+      "expected": "2400000",
+      "result": "pass"
+    },
+    {
+      "check": "Adding conditional proposal",
+      "actual": "2550000",
+      "expected": "2550000",
+      "result": "pass"
+    },
+    {
+      "check": "Unvalidated residual",
+      "actual": "300000",
+      "expected": "300000",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Added original closing cash-use, conditional-payment and residual examples.",
+    "Separated payment totals from consideration and goodwill conclusions.",
+    "Kept transaction scope/date/measurement questions unresolved."
+  ],
+  "unresolved_gaps": [
+    "Current primary accounting/audit requirements and entity/reporting-period applicability are not verified.",
+    "Publisher source-operation rights remain unresolved; no restricted source body was acquired.",
+    "No actual client evidence, human professional review, posting, filing or Agent admission is supplied."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

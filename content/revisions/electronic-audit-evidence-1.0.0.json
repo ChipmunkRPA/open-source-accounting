@@ -1,0 +1,29 @@
+{
+  "item_id": "electronic-audit-evidence",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/electronic-audit-evidence.md",
+    "version": "0.5.0",
+    "sha256": "c8edb9b97d501551e2d0b920aeb24e7622d2e85bd6e7aa4489947298fcaed399",
+    "source_ids": [
+      "pcaob-as1105",
+      "pcaob-tech-amendments",
+      "pcaob-electronic-policy"
+    ]
+  },
+  "current": {
+    "path": "guides/electronic-audit-evidence-v1.md",
+    "version": "1.0.0",
+    "sha256": "9553a213000c05a06d7dea5c6b1235fc03b8317f6a4b0df4206a3ba3e8b00d2e",
+    "source_ids": [
+      "pcaob-as1105",
+      "pcaob-tech-amendments",
+      "pcaob-electronic-policy"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

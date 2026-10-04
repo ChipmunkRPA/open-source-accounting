@@ -1,0 +1,112 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "case-cash-flow-bridge",
+  "input_sha256": "f68e50019a072797517d09b6a2cce45eebea1cd16eb4334253563a89075da70a",
+  "output_sha256": "5589d5dc04ddbb6e9424080a583a9d4af758164ce8dc43d5c8a47d0747fa4959",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T07:14:07Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC/ASU text not accessed; publisher boundary identified 2026-10-04",
+      "access_state": "not_accessed_link_only_rights_unresolved",
+      "exact_locators": [
+        "Research entry point only; no operative paragraph adopted as verified"
+      ],
+      "checked_claim_ids": [
+        "source-boundary"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "equipment-bridges",
+      "article_section": "Separate three bridges",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "400000+120000+100000-30000=590000; asset increase 190000 and selected-bank net-95000 are distinct.5000 carrying/proceeds comparison is not another cash outflow.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "equipment-financing",
+      "article_section": "Counterexample financing path",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Additional+100000/-100000 bank legs leave net-95000 while gross purchases rise to 220000. Same net does not prove same gross flows or classification.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "source-boundary",
+      "article_section": "Scope; Sources and verification",
+      "category": "source_access_and_rights",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Current primary ASC/ASU text, applicable amendments and source-operation permission remain unresolved. FASB restrictions identified October 4, 2026 prevented further retrieval. Original calculations do not verify current accounting requirements.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Equipment asset bridge",
+      "actual": "590000",
+      "expected": "590000",
+      "result": "pass"
+    },
+    {
+      "check": "Balance increase",
+      "actual": "190000",
+      "expected": "190000",
+      "result": "pass"
+    },
+    {
+      "check": "Selected bank net",
+      "actual": "-95000",
+      "expected": "-95000",
+      "result": "pass"
+    },
+    {
+      "check": "Carrying amount/proceeds difference",
+      "actual": "5000",
+      "expected": "5000",
+      "result": "pass"
+    },
+    {
+      "check": "Through-bank financing net",
+      "actual": "0",
+      "expected": "0",
+      "result": "pass"
+    },
+    {
+      "check": "Through-bank overall net",
+      "actual": "-95000",
+      "expected": "-95000",
+      "result": "pass"
+    },
+    {
+      "check": "Through-bank gross purchases",
+      "actual": "220000",
+      "expected": "220000",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Expanded three separate asset, balance-change and bank-flow bridges.",
+    "Added direct-lender versus through-bank financing counterexample.",
+    "Withheld classification and recognition conclusions despite net reconciliation."
+  ],
+  "unresolved_gaps": [
+    "Current primary accounting/audit requirements and entity/reporting-period applicability are not verified.",
+    "Publisher source-operation rights remain unresolved; no restricted source body was acquired.",
+    "No actual client evidence, human professional review, posting, filing or Agent admission is supplied."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

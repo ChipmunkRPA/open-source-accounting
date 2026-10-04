@@ -1,0 +1,28 @@
+{
+  "item_id": "subsequent-events-workbook",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/subsequent-events-workbook.md",
+    "version": "0.6.0",
+    "sha256": "80e501e9968f4772cc804273728b36f1473237210986c0873227ea4c52ef641c",
+    "source_ids": [
+      "fasb-asc",
+      "pcaob-as2801"
+    ]
+  },
+  "current": {
+    "path": "guides/subsequent-events-workbook-v1.md",
+    "version": "1.1.0",
+    "sha256": "8723d13b7789f5697833505f797b454fc315a4ee2d3b5247987f0169585c2942",
+    "source_ids": [
+      "fasb-asc",
+      "pcaob-as2801",
+      "pcaob-terms"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

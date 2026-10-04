@@ -38,7 +38,9 @@
             "IFRS",
             "BOTH",
             "AUDIT",
-            "FASAB"
+            "FASAB",
+            "REGULATORY",
+            "SUSTAINABILITY"
           ],
           "title": "Framework",
           "type": "string"

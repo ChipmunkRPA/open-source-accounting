@@ -1,0 +1,89 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "playbook-disclosure-benchmark",
+  "input_sha256": "21259a2a43fe7e1bfb74077a198f02e41729c6800d0cdc50e8aa3b8054e2b211",
+  "output_sha256": "1b9f8b5beb47271c5c3fce0f68544319e3ab2481918928a48bc4303963e60ffa",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:14:05Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "sec-frm",
+      "official_url": "https://www.sec.gov/about/divisions-offices/division-corporation-finance/financial-reporting-manual",
+      "source_version_or_date": "Landing-page update 2026-06-29; inspected 2026-10-04",
+      "access_state": "official_disclaimer_and_revision_notes_examined",
+      "exact_locators": [
+        "Non-authoritative status and underlying-source priority",
+        "Administrative changes versus technical section updates"
+      ],
+      "checked_claim_ids": [
+        "benchmark-scope"
+      ]
+    },
+    {
+      "reference_id": "sec-reuse",
+      "official_url": "https://www.sec.gov/about/webmaster-frequently-asked-questions",
+      "source_version_or_date": "SEC FAQ page dated 2021-05-19; inspected 2026-10-04",
+      "access_state": "publisher_reuse_policy_examined",
+      "exact_locators": [
+        "General Questions on government-created/EDGAR reuse and exceptions"
+      ],
+      "checked_claim_ids": [
+        "benchmark-scope"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "benchmark-scope",
+      "article_section": "Intake; Compare context",
+      "category": "source_hierarchy",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "FRM remains non-authoritative; SEC reuse policy does not turn issuer practice into rules or universal content rights.",
+      "source_reference_ids": [
+        "sec-frm",
+        "sec-reuse"
+      ]
+    },
+    {
+      "claim_id": "benchmark-example",
+      "article_section": "Original comparison example",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "75000 and 100000 average-period amounts are checked but not annualized comparable accounting performance.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "workflow-state",
+      "article_section": "Purpose and availability",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Actual code catalog state, document minimum and default-off guard were checked. No live deployment or completed model work is inferred.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Peer period averages",
+      "actual": "(75000, 100000)",
+      "expected": "(75000, 100000)",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Confirmed experimental/default-off state and zero-document technical minimum.",
+    "Added fictional same-label/different-period comparison.",
+    "Distinguished sampled practice from authority, completeness and approval."
+  ],
+  "unresolved_gaps": [
+    "No human professional approval or complete entity-specific accounting/audit/legal determination.",
+    "No hosted deployment, live provider or full application/database acceptance was run."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

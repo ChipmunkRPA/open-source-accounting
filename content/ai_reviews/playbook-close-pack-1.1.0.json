@@ -1,0 +1,110 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "playbook-close-pack",
+  "input_sha256": "e0ce97636dfedb01bb204bc0a62db7c0fb314e8f9a8b3c8462b299e47020f7b9",
+  "output_sha256": "bf76a908a09551ee9bc0542004afaeeec90548cf797fac14d535ed1bab67bbc6",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:14:05Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "sec-sab99",
+      "official_url": "https://www.sec.gov/interps/account/sab99.htm",
+      "source_version_or_date": "1999-08-12 issuance; inspected 2026-10-04",
+      "access_state": "official_staff_text_examined",
+      "exact_locators": [
+        "Introductory staff status",
+        "Topic 1.M.1 quantitative/qualitative and aggregation discussion"
+      ],
+      "checked_claim_ids": [
+        "close-staff"
+      ]
+    },
+    {
+      "reference_id": "sec-sab108",
+      "official_url": "https://www.sec.gov/rules-regulations/staff-guidance/staff-accounting-bulletins/staff-accounting-bulletin-no-108",
+      "source_version_or_date": "2006-09-13 issuance; inspected 2026-10-04",
+      "access_state": "official_staff_text_examined",
+      "exact_locators": [
+        "Introductory staff status",
+        "Topic 1.N Questions 1-3: both measurements, reversals and historical transition"
+      ],
+      "checked_claim_ids": [
+        "close-staff"
+      ]
+    },
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC text not accessed",
+      "access_state": "not_accessed_link_only",
+      "exact_locators": [
+        "Research locator only; no current recognition, measurement or disclosure paragraph verified"
+      ],
+      "checked_claim_ids": [
+        "close-staff"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "close-staff",
+      "article_section": "Separate measurement, materiality and correction",
+      "category": "substantive_claim",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "SAB 99 and108 staff status, measurement/materiality distinction and reversal issue were checked. Current ASC correction requirements remain unaccessed.",
+      "source_reference_ids": [
+        "sec-sab99",
+        "sec-sab108",
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "close-signs",
+      "article_section": "Original signed bridge",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Adds displayed signed release:15000+5000+(-20000)=0 and5000+(-20000)=-15000. No entry or correction treatment is approved.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "workflow-state",
+      "article_section": "Purpose and availability",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Actual code catalog state, document minimum and default-off guard were checked. No live deployment or completed model work is inferred.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Signed closing liability bridge",
+      "actual": "0",
+      "expected": "0",
+      "result": "pass"
+    },
+    {
+      "check": "Signed current expense error",
+      "actual": "-15000",
+      "expected": "-15000",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Confirmed experimental/default-off and no-posting catalogue boundary.",
+    "Added explicitly signed error bridge with zero ending liability but current-income distortion.",
+    "Preserved open dependencies and separate materiality/correction decisions."
+  ],
+  "unresolved_gaps": [
+    "No human professional approval or complete entity-specific accounting/audit/legal determination.",
+    "Current primary ASC text not accessed; topic/model references are research leads.",
+    "No hosted deployment, live provider or full application/database acceptance was run."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

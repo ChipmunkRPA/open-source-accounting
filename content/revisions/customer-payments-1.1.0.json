@@ -1,0 +1,27 @@
+{
+  "item_id": "customer-payments",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/customer-payments.md",
+    "version": "0.5.0",
+    "sha256": "393dcc091b96c3b99c78185deedab51c0d7df554c4bd5bb801d66945e741e532",
+    "source_ids": [
+      "fasb-asc",
+      "fasb-customer-equity"
+    ]
+  },
+  "current": {
+    "path": "guides/customer-payments-v1.md",
+    "version": "1.1.0",
+    "sha256": "76c02cc5ccc58bd6541d9f0ce68703fd0550f34eabe26bc91fef814c33bbef50",
+    "source_ids": [
+      "fasb-asc",
+      "fasb-customer-equity"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

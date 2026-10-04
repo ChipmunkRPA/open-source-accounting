@@ -1,0 +1,25 @@
+{
+  "item_id": "audit-proxy-measurement",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "cases/audit-proxy-measurement-v1.md",
+    "version": "1.0.0",
+    "sha256": "41ab64894d44ff72258bcb99c0124ae3b43da61452e26902b3a0ce5d2b6eb1d5",
+    "source_ids": [
+      "plos-audit-comparability-2024"
+    ]
+  },
+  "current": {
+    "path": "cases/audit-proxy-measurement-v2.md",
+    "version": "2.0.0",
+    "sha256": "2c94f2712d4edf2b7f797d0e5ac3355dcc6e25d5a0b0709af89b2a4cd732c11f",
+    "source_ids": [
+      "plos-audit-comparability-2024"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

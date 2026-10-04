@@ -1,0 +1,27 @@
+{
+  "item_id": "lease-measurement",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/lease-measurement.md",
+    "version": "0.5.0",
+    "sha256": "ec49252b1a57f970e26de1d83d411a69a7073c957d3e5d20f67c767053e1d13b",
+    "source_ids": [
+      "fasb-asc",
+      "fasb-leases-pir"
+    ]
+  },
+  "current": {
+    "path": "guides/lease-measurement-v1.md",
+    "version": "1.1.0",
+    "sha256": "4dd251fafb6c9b45ae5ffb7ec9f0d51035abf623d8c2d8f0303f9e0b95fd46df",
+    "source_ids": [
+      "fasb-asc",
+      "fasb-leases-pir"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

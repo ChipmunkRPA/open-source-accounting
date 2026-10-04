@@ -1,0 +1,59 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "subsequent-event-register-template",
+  "input_sha256": "29d3a1f12a5ec6d49f0d95e1138107eba854722e295fadff3e15733ff299dc2d",
+  "output_sha256": "d368f9e3d86443929ca69f41c48b9b88260d75112664043a46592f08f57c0437",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:14:05Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC text not accessed",
+      "access_state": "not_accessed_link_only",
+      "exact_locators": [
+        "Research locator only; no current recognition, measurement or disclosure paragraph verified"
+      ],
+      "checked_claim_ids": [
+        "event-template-scope"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "event-template",
+      "article_section": "Original filled example",
+      "category": "original_reasoning",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "November20 is an assertion in a January12 letter received January15, not a confirmed condition merely because it appears in a document.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "event-template-scope",
+      "article_section": "Scope cover; Release checklist",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "No current ASC 855 evaluation endpoint or mandatory checklist is supplied.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    }
+  ],
+  "arithmetic_checks": [],
+  "changes_summary": [
+    "Expanded stable event and evidence-status fields.",
+    "Added original asserted-onset example and prior-record preservation.",
+    "Separated exact-revision review from incomplete period coverage."
+  ],
+  "unresolved_gaps": [
+    "No human professional approval or complete entity-specific accounting/audit/legal determination.",
+    "Current primary ASC text not accessed; topic/model references are research leads."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

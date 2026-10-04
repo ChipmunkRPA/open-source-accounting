@@ -1,0 +1,30 @@
+{
+  "item_id": "authority-and-period",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/authority-and-period.md",
+    "version": "0.5.0",
+    "sha256": "ff50fe1debf847ed658432cbb29a4716492bc1c8b61255e92b935e1fe1ebdfd8",
+    "source_ids": [
+      "fasb-asc",
+      "sec-frm",
+      "pcaob-as1105"
+    ]
+  },
+  "current": {
+    "path": "guides/authority-and-period-v1.md",
+    "version": "1.1.0",
+    "sha256": "0bfaa27a31e0abc364455a814adbf21876ff0bf55eda457754e138d11f294743",
+    "source_ids": [
+      "fasb-asc",
+      "sec-frm",
+      "pcaob-as1105",
+      "pcaob-terms"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

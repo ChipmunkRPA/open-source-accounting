@@ -1,0 +1,27 @@
+{
+  "item_id": "case-implementation-alternatives",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "cases/case-implementation-alternatives.md",
+    "version": "0.5.0",
+    "sha256": "b08b5f230e6c5879650b424ab0af7e56f11926a890fdce77d0275965a0787e59",
+    "source_ids": [
+      "fasb-asc",
+      "fasb-revenue-project"
+    ]
+  },
+  "current": {
+    "path": "cases/case-implementation-alternatives-v1.md",
+    "version": "1.1.0",
+    "sha256": "2081a4f5be730d7bec3964ae597fb92e32aeb732bdcb77381795d0a2e9bd38bd",
+    "source_ids": [
+      "fasb-asc",
+      "fasb-revenue-project"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

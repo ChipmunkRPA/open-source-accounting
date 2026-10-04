@@ -1,0 +1,27 @@
+{
+  "item_id": "esg-evidence-boundaries",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/esg-evidence-boundaries.md",
+    "version": "0.6.6",
+    "sha256": "2ea5eb328dc40758d33d0cd89e34132e7225ec08099782b9641ee258f5f7f344",
+    "source_ids": [
+      "ghg-standards-directory",
+      "gri-standards-directory"
+    ]
+  },
+  "current": {
+    "path": "guides/esg-evidence-boundaries-v1.md",
+    "version": "1.0.0",
+    "sha256": "4077149d6d53fc669253ccd8e271cadd1ced0ce284f7ee76e82747f3f1771128",
+    "source_ids": [
+      "ghg-standards-directory",
+      "gri-standards-directory"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

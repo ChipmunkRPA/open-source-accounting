@@ -1,0 +1,102 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "loss-contingencies",
+  "input_sha256": "5663ceb28c3baa14546863083a3a0fdad3c9ca610dbceab4ab1c732b1cd0eb17",
+  "output_sha256": "7b1c04fb96f9d150491d12b3a7fe84901a5738649cb3981641b21b04cc40faa9",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:14:05Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC text not accessed",
+      "access_state": "not_accessed_link_only",
+      "exact_locators": [
+        "Research locator only; no current recognition, measurement or disclosure paragraph verified"
+      ],
+      "checked_claim_ids": [
+        "loss-scope"
+      ]
+    },
+    {
+      "reference_id": "sec-sab99",
+      "official_url": "https://www.sec.gov/interps/account/sab99.htm",
+      "source_version_or_date": "1999-08-12 issuance; inspected 2026-10-04",
+      "access_state": "official_staff_text_examined",
+      "exact_locators": [
+        "Introductory staff status",
+        "Topic 1.M.1 quantitative/qualitative and aggregation discussion"
+      ],
+      "checked_claim_ids": [
+        "loss-materiality"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "loss-scope",
+      "article_section": "Establish the question",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "ASC Topic 450 is a candidate locator only; current criteria are not represented as examined.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "loss-amounts",
+      "article_section": "Original claim example",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Demand and proposal are not assumed to form an equally likely loss range. All three calculations were checked; no accrual or disclosure amount is selected.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "loss-materiality",
+      "article_section": "Materiality and handoff",
+      "category": "source_hierarchy",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "SAB 99 limited staff principle and issuance date were checked; no entity-specific materiality decision is supplied.",
+      "source_reference_ids": [
+        "sec-sab99"
+      ]
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Unsupported midpoint arithmetic",
+      "actual": "1600000",
+      "expected": "1600000",
+      "result": "pass"
+    },
+    {
+      "check": "Demand/proposal difference",
+      "actual": "800000",
+      "expected": "800000",
+      "result": "pass"
+    },
+    {
+      "check": "Proposed payment split",
+      "actual": "1200000",
+      "expected": "1200000",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Split model selection, recognition, measurement, disclosure and presentation research.",
+    "Replaced unverified authoritative-sounding recognition summary with explicit primary-text gap.",
+    "Added demand/proposal/midpoint and payment-status examples."
+  ],
+  "unresolved_gaps": [
+    "No human professional approval or complete entity-specific accounting/audit/legal determination.",
+    "Current primary ASC text not accessed; topic/model references are research leads."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

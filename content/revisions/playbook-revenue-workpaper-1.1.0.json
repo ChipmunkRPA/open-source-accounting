@@ -1,0 +1,27 @@
+{
+  "item_id": "playbook-revenue-workpaper",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "playbooks/playbook-revenue-workpaper.md",
+    "version": "0.5.0",
+    "sha256": "cbefb8812d3b2e0971689a4629e4ef1bca213af73f58cc1f68772e03320613e1",
+    "source_ids": [
+      "fasb-asc",
+      "fasb-revenue-project"
+    ]
+  },
+  "current": {
+    "path": "playbooks/playbook-revenue-workpaper-v1.md",
+    "version": "1.1.0",
+    "sha256": "8ba8fb9c04bae0023c9bf12994765444d4dd931d0fbd75bd1c8a4808b9a58b24",
+    "source_ids": [
+      "fasb-asc",
+      "fasb-revenue-project"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

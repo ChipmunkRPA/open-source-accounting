@@ -1,0 +1,27 @@
+{
+  "item_id": "lease-identification",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/lease-identification.md",
+    "version": "0.5.0",
+    "sha256": "78624e0a6c98409a0143cac8af6bd0a873f0a306d347086320b581645334dd11",
+    "source_ids": [
+      "fasb-asc",
+      "fasb-leases-pir"
+    ]
+  },
+  "current": {
+    "path": "guides/lease-identification-v1.md",
+    "version": "1.1.0",
+    "sha256": "352bb93d8471f2a0a003d2c1baa50d9a53a89c043ff8aa0d9d16ee0ba34ab4d5",
+    "source_ids": [
+      "fasb-asc",
+      "fasb-leases-pir"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

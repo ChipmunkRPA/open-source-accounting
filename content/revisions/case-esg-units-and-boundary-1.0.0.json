@@ -1,0 +1,27 @@
+{
+  "item_id": "case-esg-units-and-boundary",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "cases/case-esg-units-and-boundary.md",
+    "version": "0.6.6",
+    "sha256": "e37779a42e3a8724f7fc60ea82653f365691c2ae9a486c58ace7c61a3dc73180",
+    "source_ids": [
+      "ghg-standards-directory",
+      "gri-standards-directory"
+    ]
+  },
+  "current": {
+    "path": "cases/case-esg-units-and-boundary-v1.md",
+    "version": "1.0.0",
+    "sha256": "9adf1f2efda555e800f57aa4cb86217776bcdc89a91474b8f70c175414f95297",
+    "source_ids": [
+      "ghg-standards-directory",
+      "gri-standards-directory"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

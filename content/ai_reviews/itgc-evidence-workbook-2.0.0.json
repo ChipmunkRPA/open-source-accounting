@@ -1,0 +1,197 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "itgc-evidence-workbook",
+  "input_sha256": "e5c1c1bdb7c0fb244a99194914d67282aa831e6ade1c1c58c9f84d0a86975547",
+  "output_sha256": "8a4693fdf81c76ff48a70671fbbe87009aa1c8c5ebdeaf0aeb14ec58bab3261b",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T05:56:58Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "nist-csf-2-0",
+      "official_url": "https://doi.org/10.6028/NIST.CSWP.29",
+      "source_version_or_date": "NIST CSF 2.0, CSWP 29; published 2024-02-26",
+      "access_state": "Selected official text inspected on 2026-10-04; no full-source redistribution or product operation grant.",
+      "exact_locators": [
+        "Physical page 2 / printed i: Abstract",
+        "Physical page 25 / printed 20: PR.AA-05, PR.DS-11, PR.PS-01 and PR.PS-04",
+        "Physical page 28 / printed 23: recovery-outcome identifiers"
+      ],
+      "checked_claim_ids": [
+        "itgc-source-scope",
+        "itgc-source-provenance"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "itgc-source-scope",
+      "article_section": "Sources and verification",
+      "category": "source-scope",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Reconfirmed high-level outcome/nonprescriptive context and listed control-topic locators; financial-reporting examples remain original inferences.",
+      "source_reference_ids": [
+        "nist-csf-2-0"
+      ]
+    },
+    {
+      "claim_id": "itgc-source-provenance",
+      "article_section": "Sources and verification",
+      "category": "provenance",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Distinguishes fresh selected official text check from earlier retained artifact. No new same-bytes, complete publication or mandatory-entity claim.",
+      "source_reference_ids": [
+        "nist-csf-2-0"
+      ]
+    },
+    {
+      "claim_id": "itgc-arithmetic",
+      "article_section": "Cases 1–7",
+      "category": "arithmetic",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Reperformed exception rates, approval/backup percentages, target overruns, interface totals, allowance formula and period-wide identity coverage.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "itgc-period-case",
+      "article_section": "Case 7",
+      "category": "original-analysis",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Added 8-current-plus-3-earlier identity population and 72.73% period coverage; distinguishes snapshot, identity, alias and exposure-time questions.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "itgc-remediation-case",
+      "article_section": "Case 8 and cross-case checklist",
+      "category": "original-analysis",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Added version-bound remediation and negative/retry/interruption test design without claiming tests were executed or establishing a mandatory sample size.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "itgc-review-gap",
+      "article_section": "Evaluation prompts and source boundary",
+      "category": "professional-applicability",
+      "severity": "warning",
+      "disposition": "retained-explicit-abstention",
+      "explanation": "No real SOX/COSO opinion, deficiency severity, auditor conclusion, source right or paid execution is established.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "itgc-access-exceptions",
+      "actual": "6.2500",
+      "expected": "6.25",
+      "passed": true
+    },
+    {
+      "check": "itgc-privileged",
+      "actual": "25.00",
+      "expected": "25",
+      "passed": true
+    },
+    {
+      "check": "itgc-preapproved",
+      "actual": "83.33",
+      "expected": "83.33",
+      "passed": true
+    },
+    {
+      "check": "itgc-timing-pattern",
+      "actual": "91.67",
+      "expected": "91.67",
+      "passed": true
+    },
+    {
+      "check": "itgc-backup",
+      "actual": "96.67",
+      "expected": "96.67",
+      "passed": true
+    },
+    {
+      "check": "itgc-restore-over",
+      "actual": "35",
+      "expected": "35",
+      "passed": true
+    },
+    {
+      "check": "itgc-loss-over",
+      "actual": "30",
+      "expected": "30",
+      "passed": true
+    },
+    {
+      "check": "itgc-interface-source",
+      "actual": "600",
+      "expected": "600",
+      "passed": true
+    },
+    {
+      "check": "itgc-interface-target",
+      "actual": "600",
+      "expected": "600",
+      "passed": true
+    },
+    {
+      "check": "itgc-intended-base",
+      "actual": "100000",
+      "expected": "100000",
+      "passed": true
+    },
+    {
+      "check": "itgc-short-base",
+      "actual": "55000",
+      "expected": "55000",
+      "passed": true
+    },
+    {
+      "check": "itgc-intended-allowance",
+      "actual": "2000.00",
+      "expected": "2000",
+      "passed": true
+    },
+    {
+      "check": "itgc-short-allowance",
+      "actual": "1100.00",
+      "expected": "1100",
+      "passed": true
+    },
+    {
+      "check": "itgc-allowance-difference",
+      "actual": "900",
+      "expected": "900",
+      "passed": true
+    },
+    {
+      "check": "itgc-period-population",
+      "actual": "11",
+      "expected": "11",
+      "passed": true
+    },
+    {
+      "check": "itgc-period-coverage",
+      "actual": "72.73",
+      "expected": "72.73",
+      "passed": true
+    }
+  ],
+  "changes_summary": [
+    "Fresh selected NIST context check without rights/applicability escalation.",
+    "Added two substantial original period-coverage/remediation cases and cross-case review questions; now eight worked cases."
+  ],
+  "unresolved_gaps": [
+    "AI editorial checking only; no human CPA/auditor/legal attestation, source grant or Agent admission.",
+    "No real engagement procedures, postings, recovery, private model runs or integrations were performed.",
+    "Real entity criteria, financial-reporting/audit authority and professional deficiency analysis remain unverified."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

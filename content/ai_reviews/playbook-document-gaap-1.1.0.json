@@ -1,0 +1,140 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "playbook-document-gaap",
+  "input_sha256": "905c139da02c38fc11a89f0af2e2c3823e976416a11d12508f8521df85062a20",
+  "output_sha256": "9ca1d3a7ba02a89e60bb5a4abb69eefeedb85328280d6a74193fe6e9d5e81806",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:02:22Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current authoritative ASC text not accessed",
+      "access_state": "not_accessed_link_only",
+      "exact_locators": [
+        "Research entry point only; no substantive ASC paragraph verified"
+      ],
+      "checked_claim_ids": [
+        "workflow-asc-gap"
+      ]
+    },
+    {
+      "reference_id": "pcaob-as1105",
+      "official_url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS1105",
+      "source_version_or_date": "Current AS 1105 edition/amendment applicability not established",
+      "access_state": "fresh_automated_retrieval_not_performed_due_to_publisher_restriction",
+      "exact_locators": [
+        "Retained link only; no standard paragraphs freshly inspected"
+      ],
+      "checked_claim_ids": [
+        "documents-pcaob"
+      ]
+    },
+    {
+      "reference_id": "pcaob-terms",
+      "official_url": "https://pcaobus.org/privacypolicy",
+      "source_version_or_date": "Terms last-updated label 2021-09-09; inspected 2026-10-04",
+      "access_state": "publisher_policy_examined_then_standard_retrieval_stopped",
+      "exact_locators": [
+        "Terms of Use: Authorized Use automated-gathering restriction",
+        "Intellectual Property Rights: separate conditional Public Materials allowance"
+      ],
+      "checked_claim_ids": [
+        "documents-pcaob"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "workflow-state",
+      "article_section": "Purpose and implementation snapshot",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Actual code catalog and gate checks on 2026-10-04 support the stated document_gaap availability, ordinary subscription/Start admission, free library/chat and separate finite evaluation boundaries. This is not deployed/live acceptance.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "workflow-rights",
+      "article_section": "Purpose and implementation snapshot; Sources",
+      "category": "rights_and_review",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Payment, source-operation rights, technical review and Agent admission remain separate; no permissions or professional approval are granted by this original playbook.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "workflow-asc-gap",
+      "article_section": "Sources and verification",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Current primary ASC text was not accessed; the article gives research procedures and original examples, not verified accounting rules.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "documents-inputs",
+      "article_section": "Select the actual document packet",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "catalog min_documents=1 and workflows.validate_inputs ready/workspace checks were inspected; document readiness is not completeness or licensing.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "documents-extraction",
+      "article_section": "Extraction supplies candidates",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "workflows.preprocess explicitly retains PDF visibility/layout/completeness, DOCX rendered-page/numbering and spreadsheet formula-cache/unit limits.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "documents-pcaob",
+      "article_section": "Connect facts to permitted authority",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "AS 1105 was not freshly fetched; PCAOB terms access restriction was inspected. Source references are not represented as criteria applied.",
+      "source_reference_ids": [
+        "pcaob-as1105",
+        "pcaob-terms"
+      ]
+    },
+    {
+      "claim_id": "documents-example",
+      "article_section": "Original clause matrix",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "1100 - 900 = 200 monthly difference; draft/final-file naming conflict does not decide operative rights.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Document proposed-fee difference",
+      "actual": "200",
+      "expected": "200",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Corrected beta status and document-readiness limits.",
+    "Added parser-specific limitations tied to actual code.",
+    "Added conflicting-status clause example and precise primary-source gap."
+  ],
+  "unresolved_gaps": [
+    "No complete primary-authority or entity-specific accounting/legal applicability determination.",
+    "No live deployment, model, database integration or full application acceptance from this editorial review.",
+    "No human professional approval, source permission or Agent admission."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

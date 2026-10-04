@@ -1,0 +1,28 @@
+{
+  "item_id": "case-liquidity-timing",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "cases/case-liquidity-timing.md",
+    "version": "0.6.0",
+    "sha256": "48e2ca31249ddffc41f2d78ac9f45079c1e3952c941bf0ad309953eda8c3f7dd",
+    "source_ids": [
+      "fasb-asc",
+      "pcaob-as2415"
+    ]
+  },
+  "current": {
+    "path": "cases/case-liquidity-timing-v1.md",
+    "version": "1.1.0",
+    "sha256": "6ac33ff39832ad4f67b848593c6732b61f634ecef90c93c799a6521e38a5f017",
+    "source_ids": [
+      "fasb-asc",
+      "pcaob-as2415",
+      "pcaob-terms"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

@@ -1,0 +1,25 @@
+{
+  "item_id": "currency-policy-template",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "templates/currency-policy-template.md",
+    "version": "0.6.0",
+    "sha256": "afa7e81c1e8a37dde8a142854758973bc0816b0312fef3eac9f0c3892182f9c5",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "templates/currency-policy-template-v1.md",
+    "version": "1.0.0",
+    "sha256": "be3e53a1fa35bd5528dc775a062d30549c915a66ed1311bd002f9c5998671e73",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

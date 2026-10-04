@@ -1,0 +1,109 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "playbook-contract-compare",
+  "input_sha256": "a1c22fdb48a090bf959df09710c7f9a97488b7fcd2033daeac38dde580789aef",
+  "output_sha256": "382a6fce10315d965a819f27922ff6573ab6d97b4fee99f897899ca664087385",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:02:22Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current authoritative ASC text not accessed",
+      "access_state": "not_accessed_link_only",
+      "exact_locators": [
+        "Research entry point only; no substantive ASC paragraph verified"
+      ],
+      "checked_claim_ids": [
+        "workflow-asc-gap"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "workflow-state",
+      "article_section": "Purpose and implementation snapshot",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Actual code catalog and gate checks on 2026-10-04 support the stated contract_compare availability, ordinary subscription/Start admission, free library/chat and separate finite evaluation boundaries. This is not deployed/live acceptance.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "workflow-rights",
+      "article_section": "Purpose and implementation snapshot; Sources",
+      "category": "rights_and_review",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Payment, source-operation rights, technical review and Agent admission remain separate; no permissions or professional approval are granted by this original playbook.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "workflow-asc-gap",
+      "article_section": "Sources and verification",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Current primary ASC text was not accessed; the article gives research procedures and original examples, not verified accounting rules.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "compare-product",
+      "article_section": "Select versions; What comparison supplies",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "contract_comparison.compare uses selected-order adjacent extracted-text differences for 2-10 documents; pure-helper checks verified pair identities and warning. It is not a normalized semantic or chronological review.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "compare-limits",
+      "article_section": "What comparison supplies",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Input and output are bounded; truncation is disclosed. Empty differences cannot prove complete agreements unchanged.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "compare-example",
+      "article_section": "Original three-version exercise",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Adjacent changes +100 and -20 yield net +80; no dates, signature or accounting effects are inferred.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Comparison adjacent changes",
+      "actual": "(100, -20)",
+      "expected": "(100, -20)",
+      "result": "pass"
+    },
+    {
+      "check": "Comparison overall change",
+      "actual": "80",
+      "expected": "80",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Removed implication of normalized semantic/chronological comparison.",
+    "Documented actual adjacent-pair selected-order and truncation behavior.",
+    "Added checked original three-version fee example."
+  ],
+  "unresolved_gaps": [
+    "No complete primary-authority or entity-specific accounting/legal applicability determination.",
+    "No live deployment, model, database integration or full application acceptance from this editorial review.",
+    "No human professional approval, source permission or Agent admission."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

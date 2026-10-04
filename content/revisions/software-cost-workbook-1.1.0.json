@@ -1,0 +1,25 @@
+{
+  "item_id": "software-cost-workbook",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/software-cost-workbook.md",
+    "version": "0.6.0",
+    "sha256": "628f89b04c886c8db887b735291ca73b114e7098be10fc6d89f18b76a2cf472f",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "guides/software-cost-workbook-v1.md",
+    "version": "1.1.0",
+    "sha256": "2e5edadea588c1fb77576d7fac540a28cb1112a1adb3ba6b7feb1cbb4fc98921",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

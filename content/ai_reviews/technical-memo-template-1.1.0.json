@@ -1,0 +1,96 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "technical-memo-template",
+  "input_sha256": "abf80ddbfae5a2709166b4c68288afef867eee6e735398d481b6fbd38d4ecadf",
+  "output_sha256": "abf42dbac7d4041c78dcba53fb28a9598a66b2f059078fdba97a1d0d5301daac",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:02:22Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current authoritative ASC text not accessed",
+      "access_state": "not_accessed_link_only",
+      "exact_locators": [
+        "Research entry point only; no substantive ASC paragraph verified"
+      ],
+      "checked_claim_ids": [
+        "memo-template-source"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "memo-template-structure",
+      "article_section": "Cover through conditional conclusion",
+      "category": "original_template",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Fields separate facts, claims, assumptions, alternatives, calculations and exact revision review. No mandated professional memo format is claimed.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "memo-template-source",
+      "article_section": "Authority and applicability",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Codification is a research entry point only; no recognition or measurement paragraph was accessed or asserted.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "memo-template-arithmetic",
+      "article_section": "Calculations and proposed entries",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "80 x 25 = 2000; 60 x 25 = 1500; difference 500. The example withholds population, price validity, recognition and posting conclusions.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "memo-template-review",
+      "article_section": "Cover and revision identity; Release checklist",
+      "category": "review_boundary",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "AI checks, rights decisions and actual human review declarations remain distinct; no name or approval is fabricated.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Memo-template nominal population",
+      "actual": "2000",
+      "expected": "2000",
+      "result": "pass"
+    },
+    {
+      "check": "Memo-template confirmed-population branch",
+      "actual": "1500",
+      "expected": "1500",
+      "result": "pass"
+    },
+    {
+      "check": "Memo-template population dependency",
+      "actual": "500",
+      "expected": "500",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Expanded placeholder-only structure into claim-level evidence and alternative-analysis fields.",
+    "Added a checked original population/price dependency example.",
+    "Clarified exact-revision review and draft-entry boundaries."
+  ],
+  "unresolved_gaps": [
+    "Primary ASC text not accessed; entity-specific treatment remains unresolved.",
+    "No actual preparer, reviewer, entry approval or professional conclusion is supplied."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

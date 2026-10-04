@@ -1,0 +1,128 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "playbook-lease-workpaper",
+  "input_sha256": "2d135df01f0e54aed6066cb7a56617a7e405f83bccf24c2d19891ffe94d3e1f6",
+  "output_sha256": "c4e9c0433a24a8a5009732cd8f57e1f76239c3d04820d33ecdab2aeb39b5ad2d",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:55:51Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC text not accessed; publisher restriction identified 2026-10-04",
+      "access_state": "not_accessed_link_only_rights_unresolved",
+      "exact_locators": [
+        "No operative ASC paragraph adopted as verified; research reference only"
+      ],
+      "checked_claim_ids": [
+        "source-authority-gap"
+      ]
+    },
+    {
+      "reference_id": "fasb-leases-pir",
+      "official_url": "https://fasb.org/",
+      "source_version_or_date": "Historical registry summary retained; no full current ASU/ASC verification; further retrieval stopped 2026-10-04",
+      "access_state": "retained_publisher_reference_no_substantive_current_requirement_adopted",
+      "exact_locators": [
+        "Publisher summary/announcement is a research lead only; no current effective-date or accounting conclusion adopted"
+      ],
+      "checked_claim_ids": [
+        "source-authority-gap"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "lease-workpaper-scope",
+      "article_section": "Supported helper contract",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Monthly arrears and nominal annual/12 accurately match inspected helper; annual-payment or advance schedules are not implied supported.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "lease-workpaper-rounding",
+      "article_section": "Original monthly exercise",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "2000-payment PV 5881.97 differs from2x displayed 2940.99=5881.98 by 0.01; recalculation uses original inputs.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "lease-workpaper-limits",
+      "article_section": "Unresolved matters",
+      "category": "original_reasoning",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "First-payment label does not determine commencement, and excluded features remain visible; no classification or posting approval.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "source-authority-gap",
+      "article_section": "Scope; Source and permission boundary",
+      "category": "source_access_and_rights",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Current ASC criteria were not accessed. Publisher-use restrictions identified October 4, 2026 prevented further retrieval or adoption of source content. Original reasoning/math is not presented as verified current accounting authority.",
+      "source_reference_ids": [
+        "fasb-asc",
+        "fasb-leases-pir"
+      ]
+    },
+    {
+      "claim_id": "rights-original",
+      "article_section": "Original-content footer",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Only original educational prose/examples are licensed CC BY 4.0 here; no private standard body, publisher permission or Agent/source admission is supplied. Revised prose uses homepage references, not publisher deep links.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "workflow-state",
+      "article_section": "Purpose and availability",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Actual catalogue and default gate checked: EXPERIMENTAL/disabled by default; policy draft minimum 0, revenue/lease workpaper minimum 1. Code/pure-helper checks are not live deployment or professional acceptance.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Doubled exact-input monthly PV",
+      "actual": "5881.97",
+      "expected": "5881.97",
+      "result": "pass"
+    },
+    {
+      "check": "Twice rounded display",
+      "actual": "5881.98",
+      "expected": "5881.98",
+      "result": "pass"
+    },
+    {
+      "check": "Rounding counterexample difference",
+      "actual": "0.01",
+      "expected": "0.01",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Confirmed default-off experimental state and input minimum.",
+    "Added recomputation-versus-rounded-scaling counterexample.",
+    "Kept rate/term/ROU and other accounting judgments separate."
+  ],
+  "unresolved_gaps": [
+    "Current primary ASC/ASU requirements, entity/period applicability and publisher-operation permissions remain unresolved.",
+    "AI editorial pass is limited to original reasoning, arithmetic and stated implementation scope; it is not a human professional or current-GAAP conclusion.",
+    "No live deployment, database/provider integration or posting/feature activation was performed."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

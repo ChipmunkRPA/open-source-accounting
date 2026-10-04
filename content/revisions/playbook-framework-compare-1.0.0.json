@@ -1,0 +1,25 @@
+{
+  "item_id": "playbook-framework-compare",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "playbooks/playbook-framework-compare.md",
+    "version": "0.5.0",
+    "sha256": "29f9ec951baaae0352bd76ba188fe6aca2a6862083c4bbebbc028bf944c813ff",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "playbooks/playbook-framework-compare-v1.md",
+    "version": "1.0.0",
+    "sha256": "b2462b4579d8cb67a2d171278c309a646ebbf78c6dced16e5daaf5f9b12eef15",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

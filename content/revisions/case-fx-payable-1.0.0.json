@@ -1,0 +1,25 @@
+{
+  "item_id": "case-fx-payable",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "cases/case-fx-payable.md",
+    "version": "0.6.0",
+    "sha256": "956bb367677096be2c889189f19b39fe2f41699175e32542410b2b0ef46c7bce",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "cases/case-fx-payable-v1.md",
+    "version": "1.0.0",
+    "sha256": "2a7a24b9a3529619620be8cd3ed356e3963fdf958e7bfbaecf6b251e786a2d6a",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

@@ -1,0 +1,140 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "playbook-memo",
+  "input_sha256": "090e6637b786a8b6534a7cf8ac789441babf155f4e1baae27c72ec906cfbd4b6",
+  "output_sha256": "7db93e460bf5482ddd3f4d748f3ed4fae402e38d7be3cbe4a0c241e517ed96c5",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:02:22Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current authoritative ASC text not accessed",
+      "access_state": "not_accessed_link_only",
+      "exact_locators": [
+        "Research entry point only; no substantive ASC paragraph verified"
+      ],
+      "checked_claim_ids": [
+        "workflow-asc-gap"
+      ]
+    },
+    {
+      "reference_id": "sec-frm",
+      "official_url": "https://www.sec.gov/about/divisions-offices/division-corporation-finance/financial-reporting-manual",
+      "source_version_or_date": "Landing page last reviewed/updated 2026-06-29; inspected 2026-10-04",
+      "access_state": "official_landing_page_and_revision_notes_examined",
+      "exact_locators": [
+        "Introductory non-authoritative/conflicting-authority disclaimer",
+        "Summary of Recent Revisions: June 29, 2026 administrative updates",
+        "Recent Updates: section-specific technical date tags"
+      ],
+      "checked_claim_ids": [
+        "workflow-frm"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "workflow-state",
+      "article_section": "Purpose and implementation snapshot",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Actual code catalog and gate checks on 2026-10-04 support the stated memo availability, ordinary subscription/Start admission, free library/chat and separate finite evaluation boundaries. This is not deployed/live acceptance.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "workflow-rights",
+      "article_section": "Purpose and implementation snapshot; Sources",
+      "category": "rights_and_review",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Payment, source-operation rights, technical review and Agent admission remain separate; no permissions or professional approval are granted by this original playbook.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "workflow-asc-gap",
+      "article_section": "Sources and verification",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Current primary ASC text was not accessed; the article gives research procedures and original examples, not verified accounting rules.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "workflow-frm",
+      "article_section": "Sources and verification",
+      "category": "source_hierarchy",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "FRM introductory disclaimer and administrative-update notes were inspected; the manual is not substituted for governing primary requirements.",
+      "source_reference_ids": [
+        "sec-frm"
+      ]
+    },
+    {
+      "claim_id": "memo-product",
+      "article_section": "Editing and export",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Inspected api/memos.py manual/read/export paths retain workspace/output-rights controls without ordinary Agent subscription admission; new AI execution remains separate.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "memo-declarations",
+      "article_section": "Editing and export",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "services/memo_reviews.py records exact revision/content digest and expressly does not verify professional qualification or grant source permissions.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "memo-example",
+      "article_section": "Original calculation paragraph",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "30 x 400 = 12000; 30 x 450 = 13500; difference 1500, with unsigned proposal and recognition limitations.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Memo original price",
+      "actual": "12000",
+      "expected": "12000",
+      "result": "pass"
+    },
+    {
+      "check": "Memo proposed price",
+      "actual": "13500",
+      "expected": "13500",
+      "result": "pass"
+    },
+    {
+      "check": "Memo price difference",
+      "actual": "1500",
+      "expected": "1500",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Corrected implementation status and separated manual editing/export from new AI execution.",
+    "Added a checked original price-branch example.",
+    "Qualified review declarations and exact saved revision behavior."
+  ],
+  "unresolved_gaps": [
+    "No complete primary-authority or entity-specific accounting/legal applicability determination.",
+    "No live deployment, model, database integration or full application acceptance from this editorial review.",
+    "No human professional approval, source permission or Agent admission."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

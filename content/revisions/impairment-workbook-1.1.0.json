@@ -1,0 +1,28 @@
+{
+  "item_id": "impairment-workbook",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/impairment-workbook.md",
+    "version": "0.6.0",
+    "sha256": "75873c65d0207670ff9a15b9be96de1ddbe930f0ac772315ae2263561af6bc9b",
+    "source_ids": [
+      "fasb-asc",
+      "pcaob-as2501"
+    ]
+  },
+  "current": {
+    "path": "guides/impairment-workbook-v1.md",
+    "version": "1.1.0",
+    "sha256": "586427813ea3d34e65f1bf1f6033411cf5cf443aff0b07c4daab7ae0d1c2519a",
+    "source_ids": [
+      "fasb-asc",
+      "pcaob-as2501",
+      "pcaob-terms"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

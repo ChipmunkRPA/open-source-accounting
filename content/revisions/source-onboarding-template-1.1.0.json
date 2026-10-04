@@ -1,0 +1,28 @@
+{
+  "item_id": "source-onboarding-template",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "templates/source-onboarding-template.md",
+    "version": "0.5.0",
+    "sha256": "9f137235eeecc349ecfe2da24f4ed51692831469a7eff7894cc5dfcc991f2c25",
+    "source_ids": [
+      "sec-reuse",
+      "pcaob-terms"
+    ]
+  },
+  "current": {
+    "path": "templates/source-onboarding-template-v1.md",
+    "version": "1.1.0",
+    "sha256": "0a05eade8ea3676d44666840614f3635e5b4f5b8105c4d17e2a42bfcd6c19778",
+    "source_ids": [
+      "sec-reuse",
+      "pcaob-terms",
+      "fair-use"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

@@ -1,0 +1,28 @@
+{
+  "item_id": "going-concern-workbook",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/going-concern-workbook.md",
+    "version": "0.6.0",
+    "sha256": "69927897531826cf595aa3b594c6ef8da2b50ee27e71627af6f653b0052abc0b",
+    "source_ids": [
+      "fasb-asc",
+      "pcaob-as2415"
+    ]
+  },
+  "current": {
+    "path": "guides/going-concern-workbook-v1.md",
+    "version": "1.1.0",
+    "sha256": "d82fafd7d78a646dcb8ea1a0a0385a0883ed36ac078f0ed2e6a6a689b4a95a8e",
+    "source_ids": [
+      "fasb-asc",
+      "pcaob-as2415",
+      "pcaob-terms"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

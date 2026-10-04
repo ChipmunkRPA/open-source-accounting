@@ -1,0 +1,400 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "research-study-questions-v06",
+  "input_sha256": "22e30e3693c5079d616c6c926301e3f5c850c480c5ea8a5cc6281dd48bf6e3dd",
+  "output_sha256": "83938424b2691f15e32c9570a4645a20ce71c6951ac562ecf26be51ee575b869",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:14:05Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC text not accessed",
+      "access_state": "not_accessed_link_only",
+      "exact_locators": [
+        "Research locator only; no current recognition, measurement or disclosure paragraph verified"
+      ],
+      "checked_claim_ids": [
+        "qa-031",
+        "qa-032",
+        "qa-033",
+        "qa-034",
+        "qa-035",
+        "qa-036",
+        "qa-037",
+        "qa-038",
+        "qa-039",
+        "qa-040",
+        "qa-041",
+        "qa-042",
+        "qa-043",
+        "qa-044",
+        "qa-045",
+        "qa-046",
+        "qa-047",
+        "qa-048",
+        "qa-049",
+        "qa-050",
+        "qa-051",
+        "qa-052",
+        "qa-053",
+        "qa-054",
+        "qa-055",
+        "qa-056",
+        "qa-057",
+        "qa-058"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "qa-031",
+      "article_section": "qa-031",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Cash population and internal transfer zero sum. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-032",
+      "article_section": "qa-032",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Candidate reconciliation versus validated population. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-033",
+      "article_section": "qa-033",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Instrument scope before loss-rate assumptions. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-034",
+      "article_section": "qa-034",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Validation must be actually performed. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-035",
+      "article_section": "qa-035",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Inventory location does not establish ownership. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-036",
+      "article_section": "qa-036",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Count difference does not replace observation. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-037",
+      "article_section": "qa-037",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Asset categories before impairment model. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-038",
+      "article_section": "qa-038",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Sensitivity is not appraisal or approval. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-039",
+      "article_section": "qa-039",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Instrument/date/unit fit before valuation. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-040",
+      "article_section": "qa-040",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Price branches and specialist limits. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-041",
+      "article_section": "qa-041",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Complete acquisition packet and unverified model. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-042",
+      "article_section": "qa-042",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "No unsupported goodwill plug. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-043",
+      "article_section": "qa-043",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Ownership and contractual rights before consolidation. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-044",
+      "article_section": "qa-044",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Missing rights/agreements remain unresolved. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-045",
+      "article_section": "qa-045",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Tax/levy scope and actual law evidence. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-046",
+      "article_section": "qa-046",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Reviewer decisions must not be fabricated. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-047",
+      "article_section": "qa-047",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Currency facts and internal approval limits. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-048",
+      "article_section": "qa-048",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Unit-aware EUR-to-USD arithmetic; no posting. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-049",
+      "article_section": "qa-049",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Distinct assessment dates/horizons. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-050",
+      "article_section": "qa-050",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Funding timing versus survival/assurance. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-051",
+      "article_section": "qa-051",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Condition/event/discovery chronology. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-052",
+      "article_section": "qa-052",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Unknown endpoint prevents complete-period claim. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-053",
+      "article_section": "qa-053",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Supported relationships without speculation. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-054",
+      "article_section": "qa-054",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Gross balances/privacy and actual access controls. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-055",
+      "article_section": "qa-055",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Software activity evidence rather than labels. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-056",
+      "article_section": "qa-056",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Retrospective estimates are not time records. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-057",
+      "article_section": "qa-057",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Financing terms before classification. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-058",
+      "article_section": "qa-058",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Selected-term extraction limits and actual review. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "qa-031 included transfer combined change",
+      "actual": "0",
+      "expected": "0",
+      "result": "pass"
+    },
+    {
+      "check": "qa-036 count difference",
+      "actual": "8",
+      "expected": "8",
+      "result": "pass"
+    },
+    {
+      "check": "qa-040 price branches",
+      "actual": "(900, 1000, 100)",
+      "expected": "(900, 1000, 100)",
+      "result": "pass"
+    },
+    {
+      "check": "qa-048 unit-aware conversion",
+      "actual": "110.00",
+      "expected": "110",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Individually revised all 28 answers, preserving IDs.",
+    "Corrected unsupported validation/sign-off or primary-authority implications and checked worked arithmetic.",
+    "Proposed exact question-bank replacements separately; no shared-bank write or gold/human review transition."
+  ],
+  "unresolved_gaps": [
+    "No human professional approval or complete entity-specific accounting/audit/legal determination.",
+    "Current primary ASC text not accessed; topic/model references are research leads.",
+    "Question bank replacements are proposed only; existing shared bank and human/gold review state remain unchanged."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

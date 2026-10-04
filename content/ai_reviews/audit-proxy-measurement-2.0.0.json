@@ -1,0 +1,187 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "audit-proxy-measurement",
+  "input_sha256": "41ab64894d44ff72258bcb99c0124ae3b43da61452e26902b3a0ce5d2b6eb1d5",
+  "output_sha256": "2c94f2712d4edf2b7f797d0e5ac3355dcc6e25d5a0b0709af89b2a4cd732c11f",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T05:56:58Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "plos-audit-comparability-2024",
+      "official_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0310959",
+      "source_version_or_date": "Liu et al., PLOS ONE 19(10) e0310959; published 2024-10-31",
+      "access_state": "Selected official text inspected on 2026-10-04; no full-source redistribution or product operation grant.",
+      "exact_locators": [
+        "Publication metadata and copyright/license link (resolved to CC BY 4.0)",
+        "Abstract",
+        "Section 3.1 Sample and data",
+        "Section 3.2.2 Interpreted variable",
+        "Section 6 limitations paragraph"
+      ],
+      "checked_claim_ids": [
+        "proxy-source-context",
+        "proxy-rights",
+        "proxy-research-gap"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "proxy-source-context",
+      "article_section": "Sources and verification",
+      "category": "source-provenance",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Rechecked publisher identity, date, Chinese listed-company research context and stated generalization/endogeneity limits. The lesson does not present an empirical result as a universal intervention.",
+      "source_reference_ids": [
+        "plos-audit-comparability-2024"
+      ]
+    },
+    {
+      "claim_id": "proxy-rights",
+      "article_section": "Sources; free/private boundary",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Publisher license link resolves to CC BY 4.0. Original fictional cases are separately attributed; no source formula/table/diagram copied.",
+      "source_reference_ids": [
+        "plos-audit-comparability-2024"
+      ]
+    },
+    {
+      "claim_id": "proxy-research-gap",
+      "article_section": "Sources and verification",
+      "category": "research-limitation",
+      "severity": "warning",
+      "disposition": "retained-explicit-limitation",
+      "explanation": "No data replication, full formula/table validation or comprehensive correction/retraction-history search is claimed; absence of a visible notice is not treated as such a search.",
+      "source_reference_ids": [
+        "plos-audit-comparability-2024"
+      ]
+    },
+    {
+      "claim_id": "proxy-arithmetic",
+      "article_section": "Initial cases and new sensitivity exercises",
+      "category": "arithmetic",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Reperformed original composite/population correction plus new weight ranking, normalization, unknown-indicator bounds and workload-mix examples.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "proxy-interpretation",
+      "article_section": "Weight and missing-data sensitivity; trend example",
+      "category": "original-analysis",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Explains why rankings depend on chosen weights, conditional ranges are not probability intervals, and population exclusions can change a headline without improved capability.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "proxy-initial-cedar",
+      "actual": "2.0",
+      "expected": "2",
+      "passed": true
+    },
+    {
+      "check": "proxy-initial-birch",
+      "actual": "2",
+      "expected": "2",
+      "passed": true
+    },
+    {
+      "check": "proxy-corrected-closure",
+      "actual": "80.0",
+      "expected": "80",
+      "passed": true
+    },
+    {
+      "check": "proxy-corrected-score",
+      "actual": "1.8",
+      "expected": "1.8",
+      "passed": true
+    },
+    {
+      "check": "proxy-low-weight-cedar",
+      "actual": "1.5",
+      "expected": "1.5",
+      "passed": true
+    },
+    {
+      "check": "proxy-high-weight-cedar",
+      "actual": "3",
+      "expected": "3",
+      "passed": true
+    },
+    {
+      "check": "proxy-low-normalized-cedar",
+      "actual": "60.0",
+      "expected": "60",
+      "passed": true
+    },
+    {
+      "check": "proxy-low-normalized-birch",
+      "actual": "80.0",
+      "expected": "80",
+      "passed": true
+    },
+    {
+      "check": "proxy-high-normalized-cedar",
+      "actual": "75.00",
+      "expected": "75",
+      "passed": true
+    },
+    {
+      "check": "proxy-high-normalized-birch",
+      "actual": "50.0",
+      "expected": "50",
+      "passed": true
+    },
+    {
+      "check": "proxy-missing-low",
+      "actual": "1.0",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "check": "proxy-missing-high",
+      "actual": "2.0",
+      "expected": "2",
+      "passed": true
+    },
+    {
+      "check": "proxy-year-a",
+      "actual": "66.67",
+      "expected": "66.67",
+      "passed": true
+    },
+    {
+      "check": "proxy-year-b",
+      "actual": "66.67",
+      "expected": "66.67",
+      "passed": true
+    },
+    {
+      "check": "proxy-excluded-complex",
+      "actual": "90.0",
+      "expected": "90",
+      "passed": true
+    }
+  ],
+  "changes_summary": [
+    "Updated limited current publisher/context/license checks while preserving research-validation gaps.",
+    "Added original weight/normalization, missing-data and workload/population sensitivity cases."
+  ],
+  "unresolved_gaps": [
+    "AI editorial checking only; no human CPA/auditor/legal attestation, source grant or Agent admission.",
+    "No real engagement procedures, postings, recovery, private model runs or integrations were performed.",
+    "Underlying study data were not replicated; model/table/formula and correction/retraction history review remains incomplete."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

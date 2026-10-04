@@ -1,0 +1,27 @@
+{
+  "item_id": "content-review-template",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "templates/content-review-template.md",
+    "version": "0.5.0",
+    "sha256": "15f136d791385ccc50e83f2ed0f24525a4890b6140ed74ac355319a9ed2f4deb",
+    "source_ids": [
+      "fair-use",
+      "cc-by-4"
+    ]
+  },
+  "current": {
+    "path": "templates/content-review-template-v1.md",
+    "version": "1.1.0",
+    "sha256": "f4520e015cb6893187cf1919b02857a07cf20f74c330266d5be8d161da267551",
+    "source_ids": [
+      "fair-use",
+      "cc-by-4"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

@@ -1,0 +1,25 @@
+{
+  "item_id": "playbook-policy-draft",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "playbooks/playbook-policy-draft.md",
+    "version": "0.5.0",
+    "sha256": "94a8d40cebfb5bcf18f8f9876753cab7149846891b2e0ca9de1b13e31f942c40",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "playbooks/playbook-policy-draft-v1.md",
+    "version": "1.1.0",
+    "sha256": "1c768cbfc3c6ae2628e72c1e6176950b610e3d5c70a9f0c4911d6f89af941907",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

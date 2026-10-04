@@ -1,0 +1,25 @@
+{
+  "item_id": "cash-flow-workbook",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/cash-flow-workbook.md",
+    "version": "0.6.0",
+    "sha256": "c998919501ab87854350a38ccc14b5b16f142da1b562014fddefcf074ef73705",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "guides/cash-flow-workbook-v1.md",
+    "version": "1.0.0",
+    "sha256": "7a8bbb371bdfd787d142df0ecfe3178929131c8908f2a836b2b8f08dbe9d5bea",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-01",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

@@ -1,0 +1,27 @@
+{
+  "item_id": "playbook-disclosure-benchmark",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "playbooks/playbook-disclosure-benchmark.md",
+    "version": "0.5.0",
+    "sha256": "21259a2a43fe7e1bfb74077a198f02e41729c6800d0cdc50e8aa3b8054e2b211",
+    "source_ids": [
+      "sec-frm",
+      "sec-reuse"
+    ]
+  },
+  "current": {
+    "path": "playbooks/playbook-disclosure-benchmark-v1.md",
+    "version": "1.1.0",
+    "sha256": "1b9f8b5beb47271c5c3fce0f68544319e3ab2481918928a48bc4303963e60ffa",
+    "source_ids": [
+      "sec-frm",
+      "sec-reuse"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

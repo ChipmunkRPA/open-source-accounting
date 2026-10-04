@@ -1,0 +1,25 @@
+{
+  "item_id": "disclosure-review-template",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "templates/disclosure-review-template.md",
+    "version": "0.5.0",
+    "sha256": "a321f5732603abe89740af88e0a711f92c84e7cfa821364250486748330d5c78",
+    "source_ids": [
+      "sec-frm"
+    ]
+  },
+  "current": {
+    "path": "templates/disclosure-review-template-v1.md",
+    "version": "1.1.0",
+    "sha256": "3df8fd6653aea96920a476f6224c2f0a7264587b413e60b8d862bfd7f1e2abc6",
+    "source_ids": [
+      "sec-frm"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

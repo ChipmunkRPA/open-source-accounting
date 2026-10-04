@@ -1,0 +1,25 @@
+{
+  "item_id": "case-ssp-allocation",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "cases/case-ssp-allocation.md",
+    "version": "0.5.0",
+    "sha256": "854f04b6571a0cffb7a630d281fe94fe9a5573f806828b202aeaf895eb8f1f1c",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "cases/case-ssp-allocation-v1.md",
+    "version": "1.1.0",
+    "sha256": "dbe625a9de40b6ae716e718bdafc5e0aa1d8cde8ba6a96a46b165638e62c41c4",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

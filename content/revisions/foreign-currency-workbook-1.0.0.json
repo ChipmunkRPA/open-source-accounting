@@ -1,0 +1,25 @@
+{
+  "item_id": "foreign-currency-workbook",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/foreign-currency-workbook.md",
+    "version": "0.6.0",
+    "sha256": "d777fa71d4071ae5007a190c6714fa91256b17bc1c88f5482ea88368dea054ba",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "guides/foreign-currency-workbook-v1.md",
+    "version": "1.0.0",
+    "sha256": "2de7c3a87e7d672d4c93aad8d6ec9cc7e44fe29a957040ef17a4518b9d6d3b34",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

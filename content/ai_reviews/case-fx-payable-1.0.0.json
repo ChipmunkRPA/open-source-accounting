@@ -1,0 +1,180 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "case-fx-payable",
+  "input_sha256": "956bb367677096be2c889189f19b39fe2f41699175e32542410b2b0ef46c7bce",
+  "output_sha256": "2a7a24b9a3529619620be8cd3ed356e3963fdf958e7bfbaecf6b251e786a2d6a",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T07:06:32Z",
+  "outcome": "rights_scope_unresolved",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://fasb.org/",
+      "source_version_or_date": "Current Codification edition/effective dates not inspected in this review",
+      "access_state": "No restricted body was fetched. Current project source reviewer reported verified FAF/FASB/GASB Terms v2.1 effective 2026-07-30, sections2,6(a),6(c),11. Those AI-use/automated-collection/link restrictions were honored; no alternate acquisition.",
+      "exact_locators": [
+        "Homepage research pointer only; no current accounting paragraph",
+        "Rights finding relayed from the current project source review, not a newly inspected standard body"
+      ],
+      "checked_claim_ids": [
+        "source-rights-gap"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "source-rights-gap",
+      "article_section": "Sources and verification",
+      "category": "rights-and-primary-text-gap",
+      "severity": "warning",
+      "disposition": "acquisition-not-attempted-and-gap-retained",
+      "explanation": "Restricted FAF/FASB standard bodies were not fetched or paraphrased; article uses homepage-only research pointer and explicit unverified authority/effective-date conditions.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "original-analysis",
+      "article_section": "Original payable; settlement; partial payment; receivable variant",
+      "category": "original-educational-content",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Extended original stipulated case with settlement and bank-fee separation, partial-settlement rollforward and liability-versus-asset interpretation limits.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "numerical-checks",
+      "article_section": "Original payable; settlement; partial payment; receivable variant",
+      "category": "arithmetic-and-dates",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Reperformed 15 deterministic arithmetic/date checks with explicit inputs and expected results; exact output hashes and body anchors are separately verified.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "actual-applicability-gap",
+      "article_section": "Scope, sources and review gates",
+      "category": "applicability-gap",
+      "severity": "warning",
+      "disposition": "retained-explicit-abstention",
+      "explanation": "All recognition, rate-policy, presentation, subsequent-event and posting decisions remain conditional on unverified accounting authority and actual facts.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "standard-premium-boundary",
+      "article_section": "Standard education and Premium execution",
+      "category": "licensing-and-professional-boundary",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Free CC BY 4.0 original education remains Standard. Premium means separately licensed/authorized private execution; no source rights, human CPA review, posting or workflow operation is claimed.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "initial-usd",
+      "actual": "110000.00",
+      "expected": "110000",
+      "result": "pass"
+    },
+    {
+      "check": "closing-usd",
+      "actual": "112000.00",
+      "expected": "112000",
+      "result": "pass"
+    },
+    {
+      "check": "closing-increase",
+      "actual": "2000",
+      "expected": "2000",
+      "result": "pass"
+    },
+    {
+      "check": "settlement-cash",
+      "actual": "115000.00",
+      "expected": "115000",
+      "result": "pass"
+    },
+    {
+      "check": "post-closing-increase",
+      "actual": "3000",
+      "expected": "3000",
+      "result": "pass"
+    },
+    {
+      "check": "total-increase",
+      "actual": "5000",
+      "expected": "5000",
+      "result": "pass"
+    },
+    {
+      "check": "settlement-bridge",
+      "actual": "0",
+      "expected": "0",
+      "result": "pass"
+    },
+    {
+      "check": "bank-fee-total",
+      "actual": "115500",
+      "expected": "115500",
+      "result": "pass"
+    },
+    {
+      "check": "settled-initial-portion",
+      "actual": "44000.00",
+      "expected": "44000",
+      "result": "pass"
+    },
+    {
+      "check": "partial-cash",
+      "actual": "44400.00",
+      "expected": "44400",
+      "result": "pass"
+    },
+    {
+      "check": "settled-difference",
+      "actual": "400",
+      "expected": "400",
+      "result": "pass"
+    },
+    {
+      "check": "remaining-initial",
+      "actual": "66000.00",
+      "expected": "66000",
+      "result": "pass"
+    },
+    {
+      "check": "remaining-closing",
+      "actual": "67200.00",
+      "expected": "67200",
+      "result": "pass"
+    },
+    {
+      "check": "remaining-difference",
+      "actual": "1200",
+      "expected": "1200",
+      "result": "pass"
+    },
+    {
+      "check": "partial-bridge",
+      "actual": "67200",
+      "expected": "67200",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Extended original stipulated case with settlement and bank-fee separation, partial-settlement rollforward and liability-versus-asset interpretation limits.",
+    "Preserved the original article bytes; new immutable version1.0.0 with explicit Free Standard/private Premium separation."
+  ],
+  "unresolved_gaps": [
+    "All recognition, rate-policy, presentation, subsequent-event and posting decisions remain conditional on unverified accounting authority and actual facts.",
+    "No independent human accountant, CPA, auditor or legal attestation was performed. AI review does not grant source rights or Agent admission.",
+    "No real journal, filing, configuration change, private model call, recurring monitor or external integration was performed."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

@@ -1,0 +1,165 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "audit-evidence-template",
+  "input_sha256": "397abdd4d07bb392970ca3753d4e752c69333f780df34166b5a27dc721f72240",
+  "output_sha256": "cfbf9595c4c32fdbdc3a30a96c590edb1f118f42631ca26ec40bbef4951055c9",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T05:56:58Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "pcaob-as1105",
+      "official_url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS1105",
+      "source_version_or_date": "Current body/edition not verified in this review",
+      "access_state": "Link-only gap: current project reviewer relayed verified publisher automation restriction on 2026-10-04; no automated acquisition was attempted by this worker. Content/version/effective-date verification remains unresolved; ordinary public-material reuse language is not automation permission.",
+      "exact_locators": [
+        "Body not acquired; publisher terms restriction verified by current project source reviewer at https://pcaobus.org/privacypolicy, Terms of Use, Authorized Use, data-mining/automated-tools bullet (terms last updated 2021-09-09). This worker did not fetch the standard or an alternate copy."
+      ],
+      "checked_claim_ids": [
+        "evidence-pcaob-gap"
+      ]
+    },
+    {
+      "reference_id": "gao-yellowbook",
+      "official_url": "https://www.gao.gov/yellowbook",
+      "source_version_or_date": "Current page inspected 2026-10-04",
+      "access_state": "Selected official text inspected on 2026-10-04; no full-source redistribution or product operation grant.",
+      "exact_locators": [
+        "About The Yellow Book; limited engagement/auditor/organization scope context"
+      ],
+      "checked_claim_ids": [
+        "evidence-gao-scope"
+      ]
+    },
+    {
+      "reference_id": "gao-yellowbook-2024",
+      "official_url": "https://www.gao.gov/products/gao-24-106786",
+      "source_version_or_date": "2024 publication landing page inspected 2026-10-04",
+      "access_state": "Selected official text inspected on 2026-10-04; no full-source redistribution or product operation grant.",
+      "exact_locators": [
+        "What GAO Found; Why GAO Did This Study: quality-management revision context"
+      ],
+      "checked_claim_ids": [
+        "evidence-gao-scope"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "evidence-pcaob-gap",
+      "article_section": "Sources and verification",
+      "category": "rights-and-primary-text-gap",
+      "severity": "warning",
+      "disposition": "retained-explicit-abstention",
+      "explanation": "AS1105 remains unfetched/link-only in light of current project verified publisher automation restriction; no paragraph or current version assertion.",
+      "source_reference_ids": [
+        "pcaob-as1105"
+      ]
+    },
+    {
+      "claim_id": "evidence-gao-scope",
+      "article_section": "Source context",
+      "category": "source-check",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Limited official GAO scope and quality-management revision context rechecked; no prescribed independence/competence procedure inferred.",
+      "source_reference_ids": [
+        "gao-yellowbook",
+        "gao-yellowbook-2024"
+      ]
+    },
+    {
+      "claim_id": "evidence-arithmetic",
+      "article_section": "Attendance and requested/received/reviewed packets",
+      "category": "arithmetic",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Reperformed 13/5-hour reconciliation and new 80%,60%,40%,33.33% nested-state calculations. States are expressly not additive.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "evidence-state-case",
+      "article_section": "Second packet and status transition",
+      "category": "original-analysis",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Added received/inspected/reviewed versus resolved distinctions and exact-revision status history.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "evidence-contradiction-case",
+      "article_section": "Contradictory evidence and release checklist",
+      "category": "original-analysis",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Added approval/payment chronology counterexample, missing-timezone cautions and proportionate conclusions without alleging misconduct.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "evidence-review-gap",
+      "article_section": "Release checklist; free/private boundary",
+      "category": "professional-applicability",
+      "severity": "warning",
+      "disposition": "retained-explicit-abstention",
+      "explanation": "Actual independence, competence, evidence sufficiency, prescribed thresholds and professional conclusions remain outside the template.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "evidence-unfiltered-hours",
+      "actual": "13",
+      "expected": "13",
+      "passed": true
+    },
+    {
+      "check": "evidence-unique-asserted-hours",
+      "actual": "5",
+      "expected": "5",
+      "passed": true
+    },
+    {
+      "check": "evidence-hours-bridge",
+      "actual": "13",
+      "expected": "13",
+      "passed": true
+    },
+    {
+      "check": "evidence-received",
+      "actual": "80.0",
+      "expected": "80",
+      "passed": true
+    },
+    {
+      "check": "evidence-inspected",
+      "actual": "60.0",
+      "expected": "60",
+      "passed": true
+    },
+    {
+      "check": "evidence-reviewed",
+      "actual": "40.0",
+      "expected": "40",
+      "passed": true
+    },
+    {
+      "check": "evidence-inspected-exceptions",
+      "actual": "33.33",
+      "expected": "33.33",
+      "passed": true
+    }
+  ],
+  "changes_summary": [
+    "Rechecked limited GAO context and retained explicit PCAOB rights/text block.",
+    "Added substantive original nested-state packet, contradiction handling and release checklist while preserving prior immutable bytes."
+  ],
+  "unresolved_gaps": [
+    "AI editorial checking only; no human CPA/auditor/legal attestation, source grant or Agent admission.",
+    "No real engagement procedures, postings, recovery, private model runs or integrations were performed.",
+    "Exact applicable independence/competence provisions and PCAOB source text remain unverified."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

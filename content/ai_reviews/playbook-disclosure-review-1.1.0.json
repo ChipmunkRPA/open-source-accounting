@@ -1,0 +1,143 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "playbook-disclosure-review",
+  "input_sha256": "d2a0875a1c07030267da34bf1e487a78c2fa1d4defe90168de8d95a3c1ddb14a",
+  "output_sha256": "e253a18c546bfaf740cfaa0f9e6f5754d2fcdc0fd5526394a6874415aab53aea",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:02:22Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current authoritative ASC text not accessed",
+      "access_state": "not_accessed_link_only",
+      "exact_locators": [
+        "Research entry point only; no substantive ASC paragraph verified"
+      ],
+      "checked_claim_ids": [
+        "workflow-asc-gap"
+      ]
+    },
+    {
+      "reference_id": "sec-frm",
+      "official_url": "https://www.sec.gov/about/divisions-offices/division-corporation-finance/financial-reporting-manual",
+      "source_version_or_date": "Landing page last reviewed/updated 2026-06-29; inspected 2026-10-04",
+      "access_state": "official_landing_page_and_revision_notes_examined",
+      "exact_locators": [
+        "Introductory non-authoritative/conflicting-authority disclaimer",
+        "Summary of Recent Revisions: June 29, 2026 administrative updates",
+        "Recent Updates: section-specific technical date tags"
+      ],
+      "checked_claim_ids": [
+        "workflow-frm"
+      ]
+    },
+    {
+      "reference_id": "sec-nongaap",
+      "official_url": "https://www.sec.gov/rules-regulations/staff-guidance/corporation-finance-interpretations/non-gaap-financial-measures",
+      "source_version_or_date": "Page last-update 2022-12-13; selected per-answer dates retained; inspected 2026-10-04",
+      "access_state": "selected_official_staff_interpretations_examined",
+      "exact_locators": [
+        "Questions 100.01-100.06, dates 2016-05-17/2022-12-13 as marked",
+        "Question 102.10(a)-(c), 2022-12-13"
+      ],
+      "checked_claim_ids": [
+        "disclosure-staff"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "workflow-state",
+      "article_section": "Purpose and implementation snapshot",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Actual code catalog and gate checks on 2026-10-04 support the stated disclosure_review availability, ordinary subscription/Start admission, free library/chat and separate finite evaluation boundaries. This is not deployed/live acceptance.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "workflow-rights",
+      "article_section": "Purpose and implementation snapshot; Sources",
+      "category": "rights_and_review",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Payment, source-operation rights, technical review and Agent admission remain separate; no permissions or professional approval are granted by this original playbook.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "workflow-asc-gap",
+      "article_section": "Sources and verification",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Current primary ASC text was not accessed; the article gives research procedures and original examples, not verified accounting rules.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "workflow-frm",
+      "article_section": "Sources and verification",
+      "category": "source_hierarchy",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "FRM introductory disclaimer and administrative-update notes were inspected; the manual is not substituted for governing primary requirements.",
+      "source_reference_ids": [
+        "sec-frm"
+      ]
+    },
+    {
+      "claim_id": "disclosure-feature",
+      "article_section": "Purpose and implementation snapshot",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Catalog status EXPERIMENTAL with enabled_by_default=false and actual catalog guard refusal were checked; reading the playbook enables nothing.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "disclosure-staff",
+      "article_section": "Build requirement-to-location rows",
+      "category": "source_hierarchy",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Selected staff Section 100 and Question 102.10 support full-layout/definition scrutiny; the article withholds current rule/entity-specific conclusions.",
+      "source_reference_ids": [
+        "sec-nongaap"
+      ]
+    },
+    {
+      "claim_id": "disclosure-example",
+      "article_section": "Original consistency example",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "250000 + 20000 = 270000 exposes a bridge only; adjustment validity, population fit and compliance remain unresolved.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Disclosure playbook bridge",
+      "actual": "270000",
+      "expected": "270000",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Made default-off experimental status explicit and code-checked.",
+    "Added original evidence-gap bridge rather than a superficial keyword checklist.",
+    "Separated staff context, primary-access gaps and complete compliance review."
+  ],
+  "unresolved_gaps": [
+    "No complete primary-authority or entity-specific accounting/legal applicability determination.",
+    "No live deployment, model, database integration or full application acceptance from this editorial review.",
+    "No human professional approval, source permission or Agent admission."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

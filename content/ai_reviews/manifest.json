@@ -120,6 +120,666 @@
       "input_sha256": "a615fe9918eff287ffab0879c325e41adc2d5b1497343acb07bc8d8b4f0397bf",
       "receipt_path": "ai_reviews/federal-mda-evidence-2.0.0.json",
       "receipt_sha256": "5eb1970082b7cc1ea750d8fa0eac3890cfa878642d8dcd58d5d71df3784607fe"
+    },
+    {
+      "item_id": "authority-and-period",
+      "version": "1.1.0",
+      "content_sha256": "0bfaa27a31e0abc364455a814adbf21876ff0bf55eda457754e138d11f294743",
+      "references_sha256": "a6f7e5a662e0add5e8eb9357e80d61544f2774e196fd0e560edbbce6bc1244d1",
+      "input_path": "guides/authority-and-period.md",
+      "input_sha256": "ff50fe1debf847ed658432cbb29a4716492bc1c8b61255e92b935e1fe1ebdfd8",
+      "receipt_path": "ai_reviews/authority-and-period-1.1.0.json",
+      "receipt_sha256": "ccbfb2896f2ca9eec5d54426c7cbff774869c1e643150a4ef319bdb8ab1ea909"
+    },
+    {
+      "item_id": "technical-memo-template",
+      "version": "1.1.0",
+      "content_sha256": "abf42dbac7d4041c78dcba53fb28a9598a66b2f059078fdba97a1d0d5301daac",
+      "references_sha256": "88d4697c4e18930bdbdf2bd9cf50ca224c54778fbc72cde7480043b026127ccd",
+      "input_path": "templates/technical-memo-template.md",
+      "input_sha256": "abf80ddbfae5a2709166b4c68288afef867eee6e735398d481b6fbd38d4ecadf",
+      "receipt_path": "ai_reviews/technical-memo-template-1.1.0.json",
+      "receipt_sha256": "1876f5a74f00b9c68c532834e5c95683a762fcb4a3f3c06946a65cbd7877732d"
+    },
+    {
+      "item_id": "content-review-template",
+      "version": "1.1.0",
+      "content_sha256": "f4520e015cb6893187cf1919b02857a07cf20f74c330266d5be8d161da267551",
+      "references_sha256": "96fd43b76002547de14416a7f1976c8f86439770d3fdecab82f97b0a4a45d40a",
+      "input_path": "templates/content-review-template.md",
+      "input_sha256": "15f136d791385ccc50e83f2ed0f24525a4890b6140ed74ac355319a9ed2f4deb",
+      "receipt_path": "ai_reviews/content-review-template-1.1.0.json",
+      "receipt_sha256": "defbc58be1288b15f4df2140b406b7bc79e1b053cb64290af0e7388ffc875dca"
+    },
+    {
+      "item_id": "source-onboarding-template",
+      "version": "1.1.0",
+      "content_sha256": "0a05eade8ea3676d44666840614f3635e5b4f5b8105c4d17e2a42bfcd6c19778",
+      "references_sha256": "b6827d6220f8bd53b0da02c678817374fde4b87aa6b465d2ba92ec2bcfd6cd89",
+      "input_path": "templates/source-onboarding-template.md",
+      "input_sha256": "9f137235eeecc349ecfe2da24f4ed51692831469a7eff7894cc5dfcc991f2c25",
+      "receipt_path": "ai_reviews/source-onboarding-template-1.1.0.json",
+      "receipt_sha256": "5c3d34b6cf6eeec84bef5226fedf2e9bf40443d71c5a8eec6fd67c039eaae010"
+    },
+    {
+      "item_id": "disclosure-review-template",
+      "version": "1.1.0",
+      "content_sha256": "3df8fd6653aea96920a476f6224c2f0a7264587b413e60b8d862bfd7f1e2abc6",
+      "references_sha256": "02560935ef1f9b681ee3386a545ee0b6bc5fa1fe786abc95c5780821174370fc",
+      "input_path": "templates/disclosure-review-template.md",
+      "input_sha256": "a321f5732603abe89740af88e0a711f92c84e7cfa821364250486748330d5c78",
+      "receipt_path": "ai_reviews/disclosure-review-template-1.1.0.json",
+      "receipt_sha256": "1d13f4d90fcf098823aa9603b1f6b2442af94346f6381517cc63cfb85f979ab9"
+    },
+    {
+      "item_id": "playbook-deep-research",
+      "version": "1.1.0",
+      "content_sha256": "b92eeecaa3a6a30904f4783a7f2ee19bba60f308ff03ed68e911552fbe157aef",
+      "references_sha256": "a944a245b83abd53e96a2980a56c912e361bf001c16fd3cf96bc2c6d29ca3854",
+      "input_path": "playbooks/playbook-deep-research.md",
+      "input_sha256": "4246559afddf3279a1b15d71015e92b561db21f16b84fee6abc3179ff7389845",
+      "receipt_path": "ai_reviews/playbook-deep-research-1.1.0.json",
+      "receipt_sha256": "634749a46bf3d7ed16dcd7f167c6bf97462b4165b210171f56300d65a3aa5722"
+    },
+    {
+      "item_id": "playbook-memo",
+      "version": "1.1.0",
+      "content_sha256": "7db93e460bf5482ddd3f4d748f3ed4fae402e38d7be3cbe4a0c241e517ed96c5",
+      "references_sha256": "a944a245b83abd53e96a2980a56c912e361bf001c16fd3cf96bc2c6d29ca3854",
+      "input_path": "playbooks/playbook-memo.md",
+      "input_sha256": "090e6637b786a8b6534a7cf8ac789441babf155f4e1baae27c72ec906cfbd4b6",
+      "receipt_path": "ai_reviews/playbook-memo-1.1.0.json",
+      "receipt_sha256": "6b2931ff7be4669aed57652526b97d39adc88fe45f7bde12bed7a6d83c9f7056"
+    },
+    {
+      "item_id": "playbook-document-gaap",
+      "version": "1.1.0",
+      "content_sha256": "9ca1d3a7ba02a89e60bb5a4abb69eefeedb85328280d6a74193fe6e9d5e81806",
+      "references_sha256": "37086199780db420290e730ba1c25d252ee94c1bf35a164e4542b2b9b986e1e9",
+      "input_path": "playbooks/playbook-document-gaap.md",
+      "input_sha256": "905c139da02c38fc11a89f0af2e2c3823e976416a11d12508f8521df85062a20",
+      "receipt_path": "ai_reviews/playbook-document-gaap-1.1.0.json",
+      "receipt_sha256": "207210151ad348038614d5067ad458d3dbed0582539f5b52f9edc1bce9053a04"
+    },
+    {
+      "item_id": "playbook-contract-compare",
+      "version": "1.1.0",
+      "content_sha256": "382a6fce10315d965a819f27922ff6573ab6d97b4fee99f897899ca664087385",
+      "references_sha256": "88d4697c4e18930bdbdf2bd9cf50ca224c54778fbc72cde7480043b026127ccd",
+      "input_path": "playbooks/playbook-contract-compare.md",
+      "input_sha256": "a1c22fdb48a090bf959df09710c7f9a97488b7fcd2033daeac38dde580789aef",
+      "receipt_path": "ai_reviews/playbook-contract-compare-1.1.0.json",
+      "receipt_sha256": "913890038d72963b689b1fe6a40ed6d5619c05c0ba0e41823ee547f28a361755"
+    },
+    {
+      "item_id": "playbook-memo-review",
+      "version": "1.1.0",
+      "content_sha256": "ecab5b34b537c489f90e24d126067890fae2e49c0dd62b140c64f91eccea1fcb",
+      "references_sha256": "a944a245b83abd53e96a2980a56c912e361bf001c16fd3cf96bc2c6d29ca3854",
+      "input_path": "playbooks/playbook-memo-review.md",
+      "input_sha256": "2d6e853db8c7d98f1045e84365197cabc96784cd3fa1251380902cb788d5448f",
+      "receipt_path": "ai_reviews/playbook-memo-review-1.1.0.json",
+      "receipt_sha256": "c141967d4d61fb2ea67ad4442c9189d6de1e3782ace613585478061e13558ae4"
+    },
+    {
+      "item_id": "playbook-disclosure-review",
+      "version": "1.1.0",
+      "content_sha256": "e253a18c546bfaf740cfaa0f9e6f5754d2fcdc0fd5526394a6874415aab53aea",
+      "references_sha256": "c8196da0eb3a1c3d70091f5ce1ee8168f8bcc9da6ded68dea2cbccab01b58eed",
+      "input_path": "playbooks/playbook-disclosure-review.md",
+      "input_sha256": "d2a0875a1c07030267da34bf1e487a78c2fa1d4defe90168de8d95a3c1ddb14a",
+      "receipt_path": "ai_reviews/playbook-disclosure-review-1.1.0.json",
+      "receipt_sha256": "57d1203a8a07f6a3e511082fecf5f0c1b0c95b24af84a297abda88697812e7d5"
+    },
+    {
+      "item_id": "playbook-sec-response",
+      "version": "1.1.0",
+      "content_sha256": "52facd83f14f5e2b8b3e575d19c553984d92eba365108555533ad8f7a5e50b43",
+      "references_sha256": "30175449fb4947e5b09ffcd019ab68a7ac1fe9b12a89126750b52f0d465df316",
+      "input_path": "playbooks/playbook-sec-response.md",
+      "input_sha256": "290c3b9bcadd356d6b224901825cf90f99caed92076f6eb534c441877b5eecb6",
+      "receipt_path": "ai_reviews/playbook-sec-response-1.1.0.json",
+      "receipt_sha256": "a63da260f6348b460918e16f1a680dfb711477dcd46cf8bd3fa637cdb9bfaa95"
+    },
+    {
+      "item_id": "loss-contingencies",
+      "version": "1.1.0",
+      "content_sha256": "7b1c04fb96f9d150491d12b3a7fe84901a5738649cb3981641b21b04cc40faa9",
+      "references_sha256": "e2064ea5edbc0910a09191971b6f6eb76d73a44361746fb1104b6f2ab00b56f9",
+      "input_path": "guides/loss-contingencies.md",
+      "input_sha256": "5663ceb28c3baa14546863083a3a0fdad3c9ca610dbceab4ab1c732b1cd0eb17",
+      "receipt_path": "ai_reviews/loss-contingencies-1.1.0.json",
+      "receipt_sha256": "a675e7e13fcf660b10b48f700d961b3791984fe723ad20b677ed4831119dd960"
+    },
+    {
+      "item_id": "going-concern-workbook",
+      "version": "1.1.0",
+      "content_sha256": "d82fafd7d78a646dcb8ea1a0a0385a0883ed36ac078f0ed2e6a6a689b4a95a8e",
+      "references_sha256": "35a006a06b675efc5b8dc786cbfd8e13b3ed531d8ea36fcb167abf601fed17ca",
+      "input_path": "guides/going-concern-workbook.md",
+      "input_sha256": "69927897531826cf595aa3b594c6ef8da2b50ee27e71627af6f653b0052abc0b",
+      "receipt_path": "ai_reviews/going-concern-workbook-1.1.0.json",
+      "receipt_sha256": "3c528a8faf0a5e58839d217d30bfdd4aba992f445d372b6c15a51723045edfdb"
+    },
+    {
+      "item_id": "case-liquidity-timing",
+      "version": "1.1.0",
+      "content_sha256": "6ac33ff39832ad4f67b848593c6732b61f634ecef90c93c799a6521e38a5f017",
+      "references_sha256": "35a006a06b675efc5b8dc786cbfd8e13b3ed531d8ea36fcb167abf601fed17ca",
+      "input_path": "cases/case-liquidity-timing.md",
+      "input_sha256": "48e2ca31249ddffc41f2d78ac9f45079c1e3952c941bf0ad309953eda8c3f7dd",
+      "receipt_path": "ai_reviews/case-liquidity-timing-1.1.0.json",
+      "receipt_sha256": "2a4168b09486aa79e3ed2166a234280541bdba3f926d63dd4392ac0365cac3fb"
+    },
+    {
+      "item_id": "subsequent-events-workbook",
+      "version": "1.1.0",
+      "content_sha256": "8723d13b7789f5697833505f797b454fc315a4ee2d3b5247987f0169585c2942",
+      "references_sha256": "44e03d226f3145f7910ecdb9cc948423cf607d2ffbd5fe862567ad6ffdd8ea76",
+      "input_path": "guides/subsequent-events-workbook.md",
+      "input_sha256": "80e501e9968f4772cc804273728b36f1473237210986c0873227ea4c52ef641c",
+      "receipt_path": "ai_reviews/subsequent-events-workbook-1.1.0.json",
+      "receipt_sha256": "c395e0fd6d38c003b43446b175487487450a04fe4fc62d0dab28874f4851ec77"
+    },
+    {
+      "item_id": "subsequent-event-register-template",
+      "version": "1.1.0",
+      "content_sha256": "d368f9e3d86443929ca69f41c48b9b88260d75112664043a46592f08f57c0437",
+      "references_sha256": "88d4697c4e18930bdbdf2bd9cf50ca224c54778fbc72cde7480043b026127ccd",
+      "input_path": "templates/subsequent-event-register-template.md",
+      "input_sha256": "29d3a1f12a5ec6d49f0d95e1138107eba854722e295fadff3e15733ff299dc2d",
+      "receipt_path": "ai_reviews/subsequent-event-register-template-1.1.0.json",
+      "receipt_sha256": "c2ebf7db622cbc9699f0f0054033fedeb746b4a57aa714a96b60e69453ccc268"
+    },
+    {
+      "item_id": "related-party-workbook",
+      "version": "1.1.0",
+      "content_sha256": "932f4477ef39c9776b538b442f8dabe06965336d9db20109dc08f8f5163a863d",
+      "references_sha256": "3d1bd9605aa160754cc7092182257a89a46a5f94b55fe31950865945f00c4118",
+      "input_path": "guides/related-party-workbook.md",
+      "input_sha256": "ccc95011d2556ff4c067895f9ddf532cc8ded033e33eb72f6fc7f3da276cf92c",
+      "receipt_path": "ai_reviews/related-party-workbook-1.1.0.json",
+      "receipt_sha256": "75edf0c21b9543ecbda7acb935ddaab27eb9118a2f65a739c4b66f3f94577a99"
+    },
+    {
+      "item_id": "research-study-questions",
+      "version": "1.1.0",
+      "content_sha256": "e6bb5cea4459a478214e85e03024985e73fdb6717462bdb0d4e3d0978605b86e",
+      "references_sha256": "50a1261bbd90c92ba6c0cfe2af3669216ac79d222774f57be444ce5c0e37007a",
+      "input_path": "qa/research-study-questions.md",
+      "input_sha256": "2c25516d646e3464bccfdb5965e83a0a9750306e5608f98bccae1132493842c5",
+      "receipt_path": "ai_reviews/research-study-questions-1.1.0.json",
+      "receipt_sha256": "68d340b77a5c2cf253d94d11072984c8fa8c87f97c2a33a5e2d4c645e8170ee6"
+    },
+    {
+      "item_id": "research-study-questions-v06",
+      "version": "1.1.0",
+      "content_sha256": "83938424b2691f15e32c9570a4645a20ce71c6951ac562ecf26be51ee575b869",
+      "references_sha256": "88d4697c4e18930bdbdf2bd9cf50ca224c54778fbc72cde7480043b026127ccd",
+      "input_path": "qa/research-study-questions-v06.md",
+      "input_sha256": "22e30e3693c5079d616c6c926301e3f5c850c480c5ea8a5cc6281dd48bf6e3dd",
+      "receipt_path": "ai_reviews/research-study-questions-v06-1.1.0.json",
+      "receipt_sha256": "8f19d1f841f2e299d0572a0f63de0f5fa95c6587cb50fa23386d06f3503c8729"
+    },
+    {
+      "item_id": "playbook-disclosure-benchmark",
+      "version": "1.1.0",
+      "content_sha256": "1b9f8b5beb47271c5c3fce0f68544319e3ab2481918928a48bc4303963e60ffa",
+      "references_sha256": "30175449fb4947e5b09ffcd019ab68a7ac1fe9b12a89126750b52f0d465df316",
+      "input_path": "playbooks/playbook-disclosure-benchmark.md",
+      "input_sha256": "21259a2a43fe7e1bfb74077a198f02e41729c6800d0cdc50e8aa3b8054e2b211",
+      "receipt_path": "ai_reviews/playbook-disclosure-benchmark-1.1.0.json",
+      "receipt_sha256": "093048f75971b3b9e0ce04a0b450f7df62870665df2ac98e9a86d59a1ffab2c8"
+    },
+    {
+      "item_id": "playbook-audit-prep",
+      "version": "1.1.0",
+      "content_sha256": "c43fa077daa0963372e59db72f661c836567ee77cd1e51ac4344b2033c2d4045",
+      "references_sha256": "2b4d56c11aff7bc4c5bb018929902b58d4e257076b1b076ff2b5488fc0aa36aa",
+      "input_path": "playbooks/playbook-audit-prep.md",
+      "input_sha256": "ad5356618bdc1fcf91d498d0ace326600773ed9e6d1a809bf8ad70ff7d6eda38",
+      "receipt_path": "ai_reviews/playbook-audit-prep-1.1.0.json",
+      "receipt_sha256": "4d6247ca9034647d271b29cf6fe3ef2cb5c7b2b9d78514670fc7417d92397455"
+    },
+    {
+      "item_id": "playbook-controls-review",
+      "version": "1.1.0",
+      "content_sha256": "ebe9158a308adb6abd1df3f154517e55329fba2c98a6c521d14f9597e273aaac",
+      "references_sha256": "645bf4734e6cb0c9758897738be8e9501cd8c3e65c4d29aec71e6101cc32d00e",
+      "input_path": "playbooks/playbook-controls-review.md",
+      "input_sha256": "549e0ea086b5a2e312f725ba3a4dfc3ecd01853cd2f5c173b2912e76deee0ce8",
+      "receipt_path": "ai_reviews/playbook-controls-review-1.1.0.json",
+      "receipt_sha256": "65bbb00801a8c10d06e87a149414e5a28474751b3cc53c83c3474d7e2e42fb64"
+    },
+    {
+      "item_id": "playbook-close-pack",
+      "version": "1.1.0",
+      "content_sha256": "bf76a908a09551ee9bc0542004afaeeec90548cf797fac14d535ed1bab67bbc6",
+      "references_sha256": "e756408c86b81dc321bd52ca0a4a81a037dfd8202dd210ec92b14c98998948cc",
+      "input_path": "playbooks/playbook-close-pack.md",
+      "input_sha256": "e0ce97636dfedb01bb204bc0a62db7c0fb314e8f9a8b3c8462b299e47020f7b9",
+      "receipt_path": "ai_reviews/playbook-close-pack-1.1.0.json",
+      "receipt_sha256": "a25caf70c853539619a0138b12ae78b39f5caafd39429fcd603c3484a30b836d"
+    },
+    {
+      "item_id": "revenue-research-map",
+      "version": "1.1.0",
+      "content_sha256": "a6edcf13e48c1c63a6c95c5e51c23e89d3c0b39c23e9b169a9e29054ea778e00",
+      "references_sha256": "70d5b8c6dc8db8198e75fd0fdf3318d4d4b5639cd81d9e3aa0f393067dfadfe0",
+      "input_path": "guides/revenue-research-map.md",
+      "input_sha256": "3dd33e802692705075e54676282cf4f4abb4863ed6d00f1d84c443b1adb81018",
+      "receipt_path": "ai_reviews/revenue-research-map-1.1.0.json",
+      "receipt_sha256": "03d13b02b1883c51fdb3cea3133b1cf76db395ba8c80acd18b4f4e48f0a88297"
+    },
+    {
+      "item_id": "saas-implementation",
+      "version": "1.1.0",
+      "content_sha256": "9cb177e6ceb41c585b7cde7200d1382e42755680ee3c23b98c87b7d973ad92e5",
+      "references_sha256": "70d5b8c6dc8db8198e75fd0fdf3318d4d4b5639cd81d9e3aa0f393067dfadfe0",
+      "input_path": "guides/saas-implementation.md",
+      "input_sha256": "de0ff15d303eb6ccad235fd4438de7485eaa2e5093444ef86cfff995c804b7c4",
+      "receipt_path": "ai_reviews/saas-implementation-1.1.0.json",
+      "receipt_sha256": "ef78a48140fe914d034f6ec5983892d7f4f6624c7702df209e40f7ddcba2df09"
+    },
+    {
+      "item_id": "customer-payments",
+      "version": "1.1.0",
+      "content_sha256": "76c02cc5ccc58bd6541d9f0ce68703fd0550f34eabe26bc91fef814c33bbef50",
+      "references_sha256": "eae9c8f184bfd70fdd921fd53fb1f389eaae395a58abf5490d51482c3884f75b",
+      "input_path": "guides/customer-payments.md",
+      "input_sha256": "393dcc091b96c3b99c78185deedab51c0d7df554c4bd5bb801d66945e741e532",
+      "receipt_path": "ai_reviews/customer-payments-1.1.0.json",
+      "receipt_sha256": "4342fd8e5436782399a0d85b0f0d3c62ca50601b0f340981b7fe9066ca2bca42"
+    },
+    {
+      "item_id": "lease-identification",
+      "version": "1.1.0",
+      "content_sha256": "352bb93d8471f2a0a003d2c1baa50d9a53a89c043ff8aa0d9d16ee0ba34ab4d5",
+      "references_sha256": "143671c98137c3028fd2d0ad107828edf14fc5cccc03e0c488235acf3aee637a",
+      "input_path": "guides/lease-identification.md",
+      "input_sha256": "78624e0a6c98409a0143cac8af6bd0a873f0a306d347086320b581645334dd11",
+      "receipt_path": "ai_reviews/lease-identification-1.1.0.json",
+      "receipt_sha256": "259ce402249ea70e26c0ace7b9750dddcf48cb1dde6f760b9c221b7972bcf85a"
+    },
+    {
+      "item_id": "lease-measurement",
+      "version": "1.1.0",
+      "content_sha256": "4dd251fafb6c9b45ae5ffb7ec9f0d51035abf623d8c2d8f0303f9e0b95fd46df",
+      "references_sha256": "143671c98137c3028fd2d0ad107828edf14fc5cccc03e0c488235acf3aee637a",
+      "input_path": "guides/lease-measurement.md",
+      "input_sha256": "ec49252b1a57f970e26de1d83d411a69a7073c957d3e5d20f67c767053e1d13b",
+      "receipt_path": "ai_reviews/lease-measurement-1.1.0.json",
+      "receipt_sha256": "0e40b27c319598131199f6f82ebcbebc717fa97ce1bf9eb634a326b2444cd772"
+    },
+    {
+      "item_id": "case-ssp-allocation",
+      "version": "1.1.0",
+      "content_sha256": "dbe625a9de40b6ae716e718bdafc5e0aa1d8cde8ba6a96a46b165638e62c41c4",
+      "references_sha256": "88d4697c4e18930bdbdf2bd9cf50ca224c54778fbc72cde7480043b026127ccd",
+      "input_path": "cases/case-ssp-allocation.md",
+      "input_sha256": "854f04b6571a0cffb7a630d281fe94fe9a5573f806828b202aeaf895eb8f1f1c",
+      "receipt_path": "ai_reviews/case-ssp-allocation-1.1.0.json",
+      "receipt_sha256": "6d0f103b515a653af524285ec3cb015b07d9b5a1be585d61a0127d66bfcb012d"
+    },
+    {
+      "item_id": "case-lease-present-value",
+      "version": "1.1.0",
+      "content_sha256": "1b07da25dfc0fcb7d6e04870b159545a51bb9ebf3b55f5b3c3ec215244c61c93",
+      "references_sha256": "88d4697c4e18930bdbdf2bd9cf50ca224c54778fbc72cde7480043b026127ccd",
+      "input_path": "cases/case-lease-present-value.md",
+      "input_sha256": "bada27c4c46fb7107730acbbac0c0a1d12bbac5ebee2ae958976cafc40ad4061",
+      "receipt_path": "ai_reviews/case-lease-present-value-1.1.0.json",
+      "receipt_sha256": "e35ef64e73fc462a6b790cb9827b24d563c43939b45a9d91d945e1eddc1e19c1"
+    },
+    {
+      "item_id": "case-implementation-alternatives",
+      "version": "1.1.0",
+      "content_sha256": "2081a4f5be730d7bec3964ae597fb92e32aeb732bdcb77381795d0a2e9bd38bd",
+      "references_sha256": "70d5b8c6dc8db8198e75fd0fdf3318d4d4b5639cd81d9e3aa0f393067dfadfe0",
+      "input_path": "cases/case-implementation-alternatives.md",
+      "input_sha256": "b08b5f230e6c5879650b424ab0af7e56f11926a890fdce77d0275965a0787e59",
+      "receipt_path": "ai_reviews/case-implementation-alternatives-1.1.0.json",
+      "receipt_sha256": "daf42147e5b642beb61b21750da9583ffbd397eccdc7bd0fd8469f28ba46fc24"
+    },
+    {
+      "item_id": "clause-evidence-template",
+      "version": "1.1.0",
+      "content_sha256": "9c4e589107441260a8dce40f1af2ef0487256ad9641404a5308a8dc50792de92",
+      "references_sha256": "88d4697c4e18930bdbdf2bd9cf50ca224c54778fbc72cde7480043b026127ccd",
+      "input_path": "templates/clause-evidence-template.md",
+      "input_sha256": "fe8fd56dbbc00eb5dfca0ebe966963979e6bc3a099d52026722f17e51d2ded5f",
+      "receipt_path": "ai_reviews/clause-evidence-template-1.1.0.json",
+      "receipt_sha256": "96c57fea82901837a3dff5316ec94fc6a42d7643e1e48b5c3108871bb7f31728"
+    },
+    {
+      "item_id": "playbook-policy-draft",
+      "version": "1.1.0",
+      "content_sha256": "1c768cbfc3c6ae2628e72c1e6176950b610e3d5c70a9f0c4911d6f89af941907",
+      "references_sha256": "88d4697c4e18930bdbdf2bd9cf50ca224c54778fbc72cde7480043b026127ccd",
+      "input_path": "playbooks/playbook-policy-draft.md",
+      "input_sha256": "94a8d40cebfb5bcf18f8f9876753cab7149846891b2e0ca9de1b13e31f942c40",
+      "receipt_path": "ai_reviews/playbook-policy-draft-1.1.0.json",
+      "receipt_sha256": "554dc2be033d393f8afd83b8a322d4d86f03114634b761db69ce40f439e64b3e"
+    },
+    {
+      "item_id": "playbook-revenue-workpaper",
+      "version": "1.1.0",
+      "content_sha256": "8ba8fb9c04bae0023c9bf12994765444d4dd931d0fbd75bd1c8a4808b9a58b24",
+      "references_sha256": "70d5b8c6dc8db8198e75fd0fdf3318d4d4b5639cd81d9e3aa0f393067dfadfe0",
+      "input_path": "playbooks/playbook-revenue-workpaper.md",
+      "input_sha256": "cbefb8812d3b2e0971689a4629e4ef1bca213af73f58cc1f68772e03320613e1",
+      "receipt_path": "ai_reviews/playbook-revenue-workpaper-1.1.0.json",
+      "receipt_sha256": "811ea895d132b6c625d8b7319e7450d9301ef58d88d73bd3c46b017946c109e9"
+    },
+    {
+      "item_id": "playbook-lease-workpaper",
+      "version": "1.1.0",
+      "content_sha256": "c4e9c0433a24a8a5009732cd8f57e1f76239c3d04820d33ecdab2aeb39b5ad2d",
+      "references_sha256": "143671c98137c3028fd2d0ad107828edf14fc5cccc03e0c488235acf3aee637a",
+      "input_path": "playbooks/playbook-lease-workpaper.md",
+      "input_sha256": "2d135df01f0e54aed6066cb7a56617a7e405f83bccf24c2d19891ffe94d3e1f6",
+      "receipt_path": "ai_reviews/playbook-lease-workpaper-1.1.0.json",
+      "receipt_sha256": "f2794d7d09345d17d06fe77564185421684411735b3e7ec2feb34d1acf1271a7"
+    },
+    {
+      "item_id": "cash-flow-workbook",
+      "version": "1.1.0",
+      "content_sha256": "e45323f7759266d7b16ada741dbd4e110e00fb6b4a20cc7450334a6e208e3fa9",
+      "references_sha256": "88d4697c4e18930bdbdf2bd9cf50ca224c54778fbc72cde7480043b026127ccd",
+      "input_path": "guides/cash-flow-workbook-v1.md",
+      "input_sha256": "7a8bbb371bdfd787d142df0ecfe3178929131c8908f2a836b2b8f08dbe9d5bea",
+      "receipt_path": "ai_reviews/cash-flow-workbook-1.1.0.json",
+      "receipt_sha256": "c96b613aaf1ada5624d9f67ccbe5f1eb1ad10be1777f00b6bd433920d232c68c"
+    },
+    {
+      "item_id": "receivable-loss-workbook",
+      "version": "1.1.0",
+      "content_sha256": "377f14b7de202f551bc32a220e6bcc46f9faf3d2c8792766fb3656ed69de4e54",
+      "references_sha256": "bb8da9fd66f6399d8321eeaabb1a501bafac9fe8d4ae88eefc6d1f043f8df5f7",
+      "input_path": "guides/receivable-loss-workbook-v1.md",
+      "input_sha256": "7b71227d7e6e95e4ac40b22a695375ec4894a657d4380a79d05d65761119d5cb",
+      "receipt_path": "ai_reviews/receivable-loss-workbook-1.1.0.json",
+      "receipt_sha256": "c96ac5e9bc4c115bda1f57d959e085f176f38a3fe9a09ac16286634efe21b80d"
+    },
+    {
+      "item_id": "inventory-workbook",
+      "version": "1.1.0",
+      "content_sha256": "70bef72117b1dd31b904a73e8d269ccdaaf1e1f586ff086edc17ebd75096b071",
+      "references_sha256": "88d4697c4e18930bdbdf2bd9cf50ca224c54778fbc72cde7480043b026127ccd",
+      "input_path": "guides/inventory-workbook-v1.md",
+      "input_sha256": "6c0a6e0a5f1e987c18dfeddf37d772dd7376209e5d5534dfff729d6136752728",
+      "receipt_path": "ai_reviews/inventory-workbook-1.1.0.json",
+      "receipt_sha256": "96f8bb88072f75c5ab999b3dd7bc11a6778357d5d037b36e342cf0a89bcf7a5d"
+    },
+    {
+      "item_id": "impairment-workbook",
+      "version": "1.1.0",
+      "content_sha256": "586427813ea3d34e65f1bf1f6033411cf5cf443aff0b07c4daab7ae0d1c2519a",
+      "references_sha256": "bb8da9fd66f6399d8321eeaabb1a501bafac9fe8d4ae88eefc6d1f043f8df5f7",
+      "input_path": "guides/impairment-workbook.md",
+      "input_sha256": "75873c65d0207670ff9a15b9be96de1ddbe930f0ac772315ae2263561af6bc9b",
+      "receipt_path": "ai_reviews/impairment-workbook-1.1.0.json",
+      "receipt_sha256": "66c17300c0f96456bb28fa9f60d149de8d680706803768336a97167c35cbcb14"
+    },
+    {
+      "item_id": "acquisition-workbook",
+      "version": "1.1.0",
+      "content_sha256": "bf67a08bc7fc91fc83f24c6dc24f5a3c3a7fa56e2dbe95116f15d62c9291efcc",
+      "references_sha256": "88d4697c4e18930bdbdf2bd9cf50ca224c54778fbc72cde7480043b026127ccd",
+      "input_path": "guides/acquisition-workbook.md",
+      "input_sha256": "9752efa6a6eaf3beb72a282c94c5672907b2050a3467f52dc68a53589a404201",
+      "receipt_path": "ai_reviews/acquisition-workbook-1.1.0.json",
+      "receipt_sha256": "646a6925fdaae4e810bc781798b9054136f7bfb87a1695c16755b1d2981ce3b4"
+    },
+    {
+      "item_id": "consolidation-workbook",
+      "version": "1.1.0",
+      "content_sha256": "ad72436c2ad5d0a3f02db8c78a0f6a7cd3ff11d3f14c57186251ac258cf7aa86",
+      "references_sha256": "88d4697c4e18930bdbdf2bd9cf50ca224c54778fbc72cde7480043b026127ccd",
+      "input_path": "guides/consolidation-workbook.md",
+      "input_sha256": "82f16ffd1ed7744e66205088d01293143a864d8ba89a39b0add249b0e2578610",
+      "receipt_path": "ai_reviews/consolidation-workbook-1.1.0.json",
+      "receipt_sha256": "63d60be379fe6a0dfb1aa04a1df520b2cfc787d96e2473e1f82dfb89267b9048"
+    },
+    {
+      "item_id": "income-tax-workbook",
+      "version": "1.1.0",
+      "content_sha256": "7346c3474c5b5806790f7f0d751538e6473613cb4c0a4c30fc6af381d97316ca",
+      "references_sha256": "88d4697c4e18930bdbdf2bd9cf50ca224c54778fbc72cde7480043b026127ccd",
+      "input_path": "guides/income-tax-workbook.md",
+      "input_sha256": "705650063f6bfa8f7ad51fa0903d9712e5ab68d2ad8913f97573900a8e67d956",
+      "receipt_path": "ai_reviews/income-tax-workbook-1.1.0.json",
+      "receipt_sha256": "b3aaa5f5fdec32afb38f4c4c8a593eb61e3c54ccfb615826ff26ff6026e55079"
+    },
+    {
+      "item_id": "software-cost-workbook",
+      "version": "1.1.0",
+      "content_sha256": "2e5edadea588c1fb77576d7fac540a28cb1112a1adb3ba6b7feb1cbb4fc98921",
+      "references_sha256": "88d4697c4e18930bdbdf2bd9cf50ca224c54778fbc72cde7480043b026127ccd",
+      "input_path": "guides/software-cost-workbook.md",
+      "input_sha256": "628f89b04c886c8db887b735291ca73b114e7098be10fc6d89f18b76a2cf472f",
+      "receipt_path": "ai_reviews/software-cost-workbook-1.1.0.json",
+      "receipt_sha256": "3852ed9189624e2449d9c0793978a331d9117464b6353cfb4e031df4e6938d0b"
+    },
+    {
+      "item_id": "debt-workbook",
+      "version": "1.1.0",
+      "content_sha256": "77288c98b4170e278558941724bb3c9ff35285d5bfc62845dbeef7da8cd99ed4",
+      "references_sha256": "88d4697c4e18930bdbdf2bd9cf50ca224c54778fbc72cde7480043b026127ccd",
+      "input_path": "guides/debt-workbook-v1.md",
+      "input_sha256": "dfed99fd1c055e2643d9fa927e7609b0a214e91775bf2f5d84267f9f7de41746",
+      "receipt_path": "ai_reviews/debt-workbook-1.1.0.json",
+      "receipt_sha256": "9d0d6c8bb68479ec585f8966d07c467b692d95e024cd7a53a85f91fb7aff7b94"
+    },
+    {
+      "item_id": "case-cash-flow-bridge",
+      "version": "1.1.0",
+      "content_sha256": "5589d5dc04ddbb6e9424080a583a9d4af758164ce8dc43d5c8a47d0747fa4959",
+      "references_sha256": "88d4697c4e18930bdbdf2bd9cf50ca224c54778fbc72cde7480043b026127ccd",
+      "input_path": "cases/case-cash-flow-bridge.md",
+      "input_sha256": "f68e50019a072797517d09b6a2cce45eebea1cd16eb4334253563a89075da70a",
+      "receipt_path": "ai_reviews/case-cash-flow-bridge-1.1.0.json",
+      "receipt_sha256": "3040c020580921730f298956dd1fb1843c00e2b02a39a6a08c1f8da880c583cd"
+    },
+    {
+      "item_id": "yellow-book-scope",
+      "version": "1.0.0",
+      "content_sha256": "24e66fd1bf33ba9d0899f77f125add692bb66ed335fa3f2e51a2a4499c8e7462",
+      "references_sha256": "2ac9fdcc3eabaa16cc2e9b0e1fe5c56ae8fa62694199e727630a1c93ca19a837",
+      "input_path": "guides/yellow-book-scope.md",
+      "input_sha256": "cf0dece7557f2a6f5daa7338c2bec21fc3f88978f114dcebd54ef4504c1369e4",
+      "receipt_path": "ai_reviews/yellow-book-scope-1.0.0.json",
+      "receipt_sha256": "f5da961380ed8928500368da4823832f95c387b04bd0d8590f3ac657d3cd3a7a"
+    },
+    {
+      "item_id": "electronic-audit-evidence",
+      "version": "1.0.0",
+      "content_sha256": "9553a213000c05a06d7dea5c6b1235fc03b8317f6a4b0df4206a3ba3e8b00d2e",
+      "references_sha256": "d41c0f12737fffa3ab4eb81de56d578f158efdef91f843d6e929ea96a42de5ce",
+      "input_path": "guides/electronic-audit-evidence.md",
+      "input_sha256": "c8edb9b97d501551e2d0b920aeb24e7622d2e85bd6e7aa4489947298fcaed399",
+      "receipt_path": "ai_reviews/electronic-audit-evidence-1.0.0.json",
+      "receipt_sha256": "69a187f484dba20251c95579fe95f14e9bfabf8dccf0e0c50e127d74f11f38a1"
+    },
+    {
+      "item_id": "audit-proxy-measurement",
+      "version": "2.0.0",
+      "content_sha256": "2c94f2712d4edf2b7f797d0e5ac3355dcc6e25d5a0b0709af89b2a4cd732c11f",
+      "references_sha256": "262d1573697879612d812faa6c18c802a4d379415d0651b8707c7e6bbdb6f67e",
+      "input_path": "cases/audit-proxy-measurement-v1.md",
+      "input_sha256": "41ab64894d44ff72258bcb99c0124ae3b43da61452e26902b3a0ce5d2b6eb1d5",
+      "receipt_path": "ai_reviews/audit-proxy-measurement-2.0.0.json",
+      "receipt_sha256": "81f3271038bff9db6ac72072d9ec518bf6eb8c79f2792a4711999fbe87cdd28d"
+    },
+    {
+      "item_id": "itgc-evidence-workbook",
+      "version": "2.0.0",
+      "content_sha256": "8a4693fdf81c76ff48a70671fbbe87009aa1c8c5ebdeaf0aeb14ec58bab3261b",
+      "references_sha256": "97384499391e17ed9ccc54822683279940b3552b75edd8aed9b0e29d87be6337",
+      "input_path": "cases/itgc-evidence-workbook-v1.md",
+      "input_sha256": "e5c1c1bdb7c0fb244a99194914d67282aa831e6ade1c1c58c9f84d0a86975547",
+      "receipt_path": "ai_reviews/itgc-evidence-workbook-2.0.0.json",
+      "receipt_sha256": "8b264a95d1c131e4a5869b093efd1f2cdb77b632cf9fd480c815f5e3c146b4e1"
+    },
+    {
+      "item_id": "recovery-reconciliation",
+      "version": "2.0.0",
+      "content_sha256": "9bed04435d557f2b4a4b6c55d1fddad391c240a282604cf21610e931350bb6d8",
+      "references_sha256": "97384499391e17ed9ccc54822683279940b3552b75edd8aed9b0e29d87be6337",
+      "input_path": "templates/recovery-reconciliation-v1.md",
+      "input_sha256": "d1787f6c83e9dfa872ffcd4cb431963c7f823f3ca8da61e9f62d8a45224391f4",
+      "receipt_path": "ai_reviews/recovery-reconciliation-2.0.0.json",
+      "receipt_sha256": "f01e88bad6f195f9e6b16ff3b6006a861f3101e2a2d5e5032964067fc8218389"
+    },
+    {
+      "item_id": "audit-evidence-template",
+      "version": "2.0.0",
+      "content_sha256": "cfbf9595c4c32fdbdc3a30a96c590edb1f118f42631ca26ec40bbef4951055c9",
+      "references_sha256": "0794d145f272744ae6f544c4e86f97bbb3036f355b8e86a01988a8d4fbe62ccc",
+      "input_path": "templates/audit-evidence-template-v1.md",
+      "input_sha256": "397abdd4d07bb392970ca3753d4e752c69333f780df34166b5a27dc721f72240",
+      "receipt_path": "ai_reviews/audit-evidence-template-2.0.0.json",
+      "receipt_sha256": "dbb5e88e1c06500ec8621f3e78c8e15b31b160e6ad4b7841c47cc440382573d2"
+    },
+    {
+      "item_id": "esg-evidence-boundaries",
+      "version": "1.0.0",
+      "content_sha256": "4077149d6d53fc669253ccd8e271cadd1ced0ce284f7ee76e82747f3f1771128",
+      "references_sha256": "7724cf4bc6944b47723a9d236dbc933c8a31349fcbea183ab3413ce8decd08ea",
+      "input_path": "guides/esg-evidence-boundaries.md",
+      "input_sha256": "2ea5eb328dc40758d33d0cd89e34132e7225ec08099782b9641ee258f5f7f344",
+      "receipt_path": "ai_reviews/esg-evidence-boundaries-1.0.0.json",
+      "receipt_sha256": "de3993131a6d8191a872a9dcea26ee71a1e5bff36f16d64c43231e55981bd636"
+    },
+    {
+      "item_id": "case-esg-units-and-boundary",
+      "version": "1.0.0",
+      "content_sha256": "9adf1f2efda555e800f57aa4cb86217776bcdc89a91474b8f70c175414f95297",
+      "references_sha256": "7724cf4bc6944b47723a9d236dbc933c8a31349fcbea183ab3413ce8decd08ea",
+      "input_path": "cases/case-esg-units-and-boundary.md",
+      "input_sha256": "e37779a42e3a8724f7fc60ea82653f365691c2ae9a486c58ace7c61a3dc73180",
+      "receipt_path": "ai_reviews/case-esg-units-and-boundary-1.0.0.json",
+      "receipt_sha256": "40e289a5e9ad0fc5ae8078ee5079d3531bef4949dc3b2527f39dc48d76193f9d"
+    },
+    {
+      "item_id": "esg-evidence-worksheet",
+      "version": "1.0.0",
+      "content_sha256": "af82bb9211b952fabdc09acccd11ffeb3810c09ba089de68e0268c60be10a1e7",
+      "references_sha256": "7724cf4bc6944b47723a9d236dbc933c8a31349fcbea183ab3413ce8decd08ea",
+      "input_path": "templates/esg-evidence-worksheet.md",
+      "input_sha256": "79f595de8915beb1230a41d8f2e6065e5a7ede9223ee3966480ffe7a9b191a17",
+      "receipt_path": "ai_reviews/esg-evidence-worksheet-1.0.0.json",
+      "receipt_sha256": "221f74ab7f8d288f55615f86a637a0a13c353ecbe88a7f6d607da50fcf78f73c"
+    },
+    {
+      "item_id": "ferc-research-and-reconciliation",
+      "version": "1.0.0",
+      "content_sha256": "027a170684a558b756bab341ae673a97b9347cd30cc7904fc2e9b18e158b14a2",
+      "references_sha256": "96112402bcb34047fa3b1f9db5d1253f2eda7370d93886e06551be29aadcc46b",
+      "input_path": "guides/ferc-research-and-reconciliation.md",
+      "input_sha256": "20615d27c26b78fb721086452584121c31867931fa797e1b40fcb8d022fd7370",
+      "receipt_path": "ai_reviews/ferc-research-and-reconciliation-1.0.0.json",
+      "receipt_sha256": "e2fc4f95011d64eefde5650be8f179f50d22f1f608d4e60a47923998342df7f4"
+    },
+    {
+      "item_id": "case-ferc-reconciliation-gaps",
+      "version": "1.0.0",
+      "content_sha256": "e4096fa98cfe9d411cc66da9d23146b4071bf78effe431f38c5f50703ce5a0a7",
+      "references_sha256": "96112402bcb34047fa3b1f9db5d1253f2eda7370d93886e06551be29aadcc46b",
+      "input_path": "cases/case-ferc-reconciliation-gaps.md",
+      "input_sha256": "c9ab55bf23fa4cbd33f574c1002cbddafecbb999a9867741d82aae75c479a3b6",
+      "receipt_path": "ai_reviews/case-ferc-reconciliation-gaps-1.0.0.json",
+      "receipt_sha256": "ede3b2d41dddbdf822bcc5dc4f692249c09c74f6ac5cd9c939e4673b03ac3b31"
+    },
+    {
+      "item_id": "ferc-mapping-evidence-template",
+      "version": "1.0.0",
+      "content_sha256": "0e427011c11c2f1527714978340c5aa5add18fd315486ac3702dee8b1d9344ca",
+      "references_sha256": "96112402bcb34047fa3b1f9db5d1253f2eda7370d93886e06551be29aadcc46b",
+      "input_path": "templates/ferc-mapping-evidence-template.md",
+      "input_sha256": "d38e425cea7322b1a7f66584b4879cbf45cfbc2393b8d05ab27a9677bd7a4078",
+      "receipt_path": "ai_reviews/ferc-mapping-evidence-template-1.0.0.json",
+      "receipt_sha256": "755d6de409b8358a4c2159283fc702bbcfe0386d2fd129f9f48027b04d0ca737"
+    },
+    {
+      "item_id": "playbook-framework-compare",
+      "version": "1.0.0",
+      "content_sha256": "b2462b4579d8cb67a2d171278c309a646ebbf78c6dced16e5daaf5f9b12eef15",
+      "references_sha256": "88d4697c4e18930bdbdf2bd9cf50ca224c54778fbc72cde7480043b026127ccd",
+      "input_path": "playbooks/playbook-framework-compare.md",
+      "input_sha256": "29f9ec951baaae0352bd76ba188fe6aca2a6862083c4bbebbc028bf944c813ff",
+      "receipt_path": "ai_reviews/playbook-framework-compare-1.0.0.json",
+      "receipt_sha256": "dea399b622904a4f2f64dc2363589899a81a4711b1aa4ee54132cd281f780f1d"
+    },
+    {
+      "item_id": "playbook-standards-watch",
+      "version": "1.0.0",
+      "content_sha256": "daff5ae23e1cf976dc4c6da783f2d6311e903577f883d8a743980f9eba13de1d",
+      "references_sha256": "0a61f8cc2f793187df1bee8837ef34406e6f8d952a050205416445180f3d8ee4",
+      "input_path": "playbooks/playbook-standards-watch.md",
+      "input_sha256": "c6df5c0471bc24f3bd6ce85a0c59bed5aafe45dccc5975adaa5d807ee1f8c8a1",
+      "receipt_path": "ai_reviews/playbook-standards-watch-1.0.0.json",
+      "receipt_sha256": "79032392a366f2dc0cfa68c642047f4b5fa007a3a19382395467873b2f00fb47"
+    },
+    {
+      "item_id": "foreign-currency-workbook",
+      "version": "1.0.0",
+      "content_sha256": "2de7c3a87e7d672d4c93aad8d6ec9cc7e44fe29a957040ef17a4518b9d6d3b34",
+      "references_sha256": "88d4697c4e18930bdbdf2bd9cf50ca224c54778fbc72cde7480043b026127ccd",
+      "input_path": "guides/foreign-currency-workbook.md",
+      "input_sha256": "d777fa71d4071ae5007a190c6714fa91256b17bc1c88f5482ea88368dea054ba",
+      "receipt_path": "ai_reviews/foreign-currency-workbook-1.0.0.json",
+      "receipt_sha256": "12768d5528fbf587318e36dba889c88f0f5264a26bca53fb9f357abe78c4e94f"
+    },
+    {
+      "item_id": "case-fx-payable",
+      "version": "1.0.0",
+      "content_sha256": "2a7a24b9a3529619620be8cd3ed356e3963fdf958e7bfbaecf6b251e786a2d6a",
+      "references_sha256": "88d4697c4e18930bdbdf2bd9cf50ca224c54778fbc72cde7480043b026127ccd",
+      "input_path": "cases/case-fx-payable.md",
+      "input_sha256": "956bb367677096be2c889189f19b39fe2f41699175e32542410b2b0ef46c7bce",
+      "receipt_path": "ai_reviews/case-fx-payable-1.0.0.json",
+      "receipt_sha256": "5107ebad69858e21c7ed5b2a325345bb73bd0bb12dc09c79c8612d295fbe7fad"
+    },
+    {
+      "item_id": "currency-policy-template",
+      "version": "1.0.0",
+      "content_sha256": "be3e53a1fa35bd5528dc775a062d30549c915a66ed1311bd002f9c5998671e73",
+      "references_sha256": "88d4697c4e18930bdbdf2bd9cf50ca224c54778fbc72cde7480043b026127ccd",
+      "input_path": "templates/currency-policy-template.md",
+      "input_sha256": "afa7e81c1e8a37dde8a142854758973bc0816b0312fef3eac9f0c3892182f9c5",
+      "receipt_path": "ai_reviews/currency-policy-template-1.0.0.json",
+      "receipt_sha256": "9f15a75e6bb23357bf9e4183eb33416b30825693b23bc5705a80c4a6a719ee61"
+    },
+    {
+      "item_id": "estimate-register-template",
+      "version": "1.0.0",
+      "content_sha256": "b940eb5c0a1e1bedce748e4eacc83273945f2780da38214e08a67b8e923c4bcd",
+      "references_sha256": "88d4697c4e18930bdbdf2bd9cf50ca224c54778fbc72cde7480043b026127ccd",
+      "input_path": "templates/estimate-register-template.md",
+      "input_sha256": "71925ce41328dd0bce8cc34f4ccd0b20ef8c10e39c261ce7b6d7db820750eca5",
+      "receipt_path": "ai_reviews/estimate-register-template-1.0.0.json",
+      "receipt_sha256": "0a715d826298b4ed48825fce52bfd4019c9270d14b72a4e56484584b9d9dcc8b"
+    },
+    {
+      "item_id": "sec-mda-controls-map",
+      "version": "1.0.0",
+      "content_sha256": "49d30eca518214b861200e7c7f5036b4861c4a9c63cab9f1c44769be6f831fb1",
+      "references_sha256": "45c3ac239760cd52042d1c1aea49ae198cabc575150c2cf789779fad6cc788b5",
+      "input_path": "ai_reviews/inputs/sec-mda-controls-map-authored-draft-1.md",
+      "input_sha256": "e8da203ca079d253a62ece910d150c90f3ed545c53b14f5e69de6d1d873db385",
+      "receipt_path": "ai_reviews/sec-mda-controls-map-1.0.0.json",
+      "receipt_sha256": "f51765844109ae0fa0ac6f8a32c591f47b98ed5605a53b6a5c2a198aee2d6b5a"
+    },
+    {
+      "item_id": "sec-nongaap-communication-scope",
+      "version": "1.0.0",
+      "content_sha256": "ecef494f822d2226170591759c0d17d10cd23ff058b98efc7bff90a369972d3a",
+      "references_sha256": "b9e20e6e59dab716fdf32d2218d26dfdf120e2fbb77ca314dc6f9404057a8cc6",
+      "input_path": "ai_reviews/inputs/sec-nongaap-communication-scope-authored-draft-1.md",
+      "input_sha256": "ec49d99642f18bfdb6781bf7c4b237bd91b1ca850726242d5f2a9a1e42be69ad",
+      "receipt_path": "ai_reviews/sec-nongaap-communication-scope-1.0.0.json",
+      "receipt_sha256": "fc8871b46a5cb1649fca4455269f6c4ed95c12e6043c69166af2c2c5c0105af5"
     }
   ]
 }

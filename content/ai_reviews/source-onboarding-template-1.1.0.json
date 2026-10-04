@@ -1,0 +1,117 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "source-onboarding-template",
+  "input_sha256": "9f137235eeecc349ecfe2da24f4ed51692831469a7eff7894cc5dfcc991f2c25",
+  "output_sha256": "0a05eade8ea3676d44666840614f3635e5b4f5b8105c4d17e2a42bfcd6c19778",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:02:22Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "sec-reuse",
+      "official_url": "https://www.sec.gov/about/webmaster-frequently-asked-questions",
+      "source_version_or_date": "SEC FAQ page dated 2021-05-19; inspected 2026-10-04",
+      "access_state": "publisher_policy_examined",
+      "exact_locators": [
+        "General Questions: Is content on sec.gov free?",
+        "General Questions: Is any of the content not free to reuse?"
+      ],
+      "checked_claim_ids": [
+        "onboard-sec"
+      ]
+    },
+    {
+      "reference_id": "pcaob-terms",
+      "official_url": "https://pcaobus.org/privacypolicy",
+      "source_version_or_date": "Terms last-updated label 2021-09-09; inspected 2026-10-04",
+      "access_state": "publisher_policy_examined_then_standard_retrieval_stopped",
+      "exact_locators": [
+        "Terms of Use: Authorized Use automated-gathering restriction",
+        "Intellectual Property Rights: separate conditional Public Materials allowance"
+      ],
+      "checked_claim_ids": [
+        "onboard-pcaob"
+      ]
+    },
+    {
+      "reference_id": "fair-use",
+      "official_url": "https://www.copyright.gov/fair-use/more-info.html",
+      "source_version_or_date": "Copyright Office educational policy page inspected 2026-10-04; no rule effective date inferred",
+      "access_state": "official_policy_guidance_examined",
+      "exact_locators": [
+        "Four-factor description",
+        "Case-by-case determination and no fixed amount/percentage formula"
+      ],
+      "checked_claim_ids": [
+        "onboard-fair-use"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "onboard-operations",
+      "article_section": "Identity; Proposed permission matrix",
+      "category": "original_template",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "Acquisition, storage, indexing, model processing, display, export and training are separate states. No operation is granted by this template.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "onboard-sec",
+      "article_section": "Two publisher-policy observations",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "SEC FAQ reuse position was inspected, but the revision does not classify all issuer attachments as government-authored or override third-party exceptions.",
+      "source_reference_ids": [
+        "sec-reuse"
+      ]
+    },
+    {
+      "claim_id": "onboard-pcaob",
+      "article_section": "Two publisher-policy observations",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "The automated acquisition restriction and distinct conditional Public Materials reuse provisions were separately inspected. No standard fetch followed the restriction.",
+      "source_reference_ids": [
+        "pcaob-terms"
+      ]
+    },
+    {
+      "claim_id": "onboard-fair-use",
+      "article_section": "Original intake example",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "A free-to-download handbook is not assumed licensed for all operations; Copyright Office case-specific guidance supports avoiding automatic paraphrase or quantity clearance.",
+      "source_reference_ids": [
+        "fair-use"
+      ]
+    },
+    {
+      "claim_id": "onboard-records",
+      "article_section": "Version, attribution and release checks",
+      "category": "original_reasoning",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "No artifact hash is invented for a link-only reference; revised text/terms trigger a scoped new review rather than inherited permission.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [],
+  "changes_summary": [
+    "Made allowed, blocked and unresolved operation states explicit.",
+    "Added verified SEC/PCAOB policy observations without blanket standards restrictions.",
+    "Added original handbook example and prohibited fabricated artifact hashes or implied licenses."
+  ],
+  "unresolved_gaps": [
+    "Actual source permissions, intended-provider scope and operation approvals must be established separately.",
+    "No source is acquired, ingested or admitted by the template."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

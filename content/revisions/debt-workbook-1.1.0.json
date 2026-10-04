@@ -1,0 +1,25 @@
+{
+  "item_id": "debt-workbook",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/debt-workbook-v1.md",
+    "version": "1.0.0",
+    "sha256": "dfed99fd1c055e2643d9fa927e7609b0a214e91775bf2f5d84267f9f7de41746",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "guides/debt-workbook-v2.md",
+    "version": "1.1.0",
+    "sha256": "77288c98b4170e278558941724bb3c9ff35285d5bfc62845dbeef7da8cd99ed4",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

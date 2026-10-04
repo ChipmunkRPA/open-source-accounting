@@ -1,0 +1,25 @@
+{
+  "item_id": "case-lease-present-value",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "cases/case-lease-present-value.md",
+    "version": "0.5.0",
+    "sha256": "bada27c4c46fb7107730acbbac0c0a1d12bbac5ebee2ae958976cafc40ad4061",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "cases/case-lease-present-value-v1.md",
+    "version": "1.1.0",
+    "sha256": "1b07da25dfc0fcb7d6e04870b159545a51bb9ebf3b55f5b3c3ec215244c61c93",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

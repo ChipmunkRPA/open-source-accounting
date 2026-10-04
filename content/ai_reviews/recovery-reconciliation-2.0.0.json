@@ -1,0 +1,185 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "recovery-reconciliation",
+  "input_sha256": "d1787f6c83e9dfa872ffcd4cb431963c7f823f3ca8da61e9f62d8a45224391f4",
+  "output_sha256": "9bed04435d557f2b4a4b6c55d1fddad391c240a282604cf21610e931350bb6d8",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T05:56:58Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "nist-csf-2-0",
+      "official_url": "https://doi.org/10.6028/NIST.CSWP.29",
+      "source_version_or_date": "NIST CSF 2.0, CSWP 29; published 2024-02-26",
+      "access_state": "Selected official text inspected on 2026-10-04; no full-source redistribution or product operation grant.",
+      "exact_locators": [
+        "Physical page 2 / printed i: Abstract",
+        "Physical page 25 / printed 20: PR.DS-11 and PR.PS-04",
+        "Physical page 28 / printed 23: RC.RP-03, RC.RP-05 and RC.RP-06"
+      ],
+      "checked_claim_ids": [
+        "recovery-source-context",
+        "recovery-source-limit"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "recovery-source-context",
+      "article_section": "Sources and verification",
+      "category": "source-scope",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Selected NIST backup/logging/restoration-integrity/completion topics verified, without treating them as prescribed financial procedures or fixed time targets.",
+      "source_reference_ids": [
+        "nist-csf-2-0"
+      ]
+    },
+    {
+      "claim_id": "recovery-source-limit",
+      "article_section": "Sources and verification",
+      "category": "provenance",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Fresh selected-text check is distinct from prior snapshot hash and comprehensive current-source search.",
+      "source_reference_ids": [
+        "nist-csf-2-0"
+      ]
+    },
+    {
+      "claim_id": "recovery-arithmetic",
+      "article_section": "Timeline; reconciliation; replay; dependency cases",
+      "category": "arithmetic",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Reperformed minutes/headroom/exposure, missing signed events, once/twice replay and 129-minute recovery with 9-minute target overrun.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "recovery-replay-case",
+      "article_section": "Replay counterexample",
+      "category": "original-analysis",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Separates correct intended plan from exactly-once execution evidence and explains timeout ambiguity; real external payments remain separately restricted.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "recovery-dependency-case",
+      "article_section": "Dependency, version relationships and uncertainty",
+      "category": "original-analysis",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Added attachment dependency, partial-service boundary, database-to-artifact version consistency and clock-uncertainty analysis.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "recovery-authorization-gap",
+      "article_section": "Exceptions and reporting limits",
+      "category": "authorization-boundary",
+      "severity": "warning",
+      "disposition": "retained-explicit-boundary",
+      "explanation": "No actual recovery, access/retention change, posting or payment is authorized by this educational workpaper.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "recovery-total-time",
+      "actual": "95",
+      "expected": "95",
+      "passed": true
+    },
+    {
+      "check": "recovery-headroom",
+      "actual": "25",
+      "expected": "25",
+      "passed": true
+    },
+    {
+      "check": "recovery-exposure",
+      "actual": "15",
+      "expected": "15",
+      "passed": true
+    },
+    {
+      "check": "recovery-copy-time",
+      "actual": "32",
+      "expected": "32",
+      "passed": true
+    },
+    {
+      "check": "recovery-comparison-total",
+      "actual": "1400",
+      "expected": "1400",
+      "passed": true
+    },
+    {
+      "check": "recovery-restored-total",
+      "actual": "1100",
+      "expected": "1100",
+      "passed": true
+    },
+    {
+      "check": "recovery-missing-net",
+      "actual": "300",
+      "expected": "300",
+      "passed": true
+    },
+    {
+      "check": "recovery-missing-count-percent",
+      "actual": "50.0",
+      "expected": "50",
+      "passed": true
+    },
+    {
+      "check": "recovery-once-replay",
+      "actual": "1400",
+      "expected": "1400",
+      "passed": true
+    },
+    {
+      "check": "recovery-double-replay",
+      "actual": "1900",
+      "expected": "1900",
+      "passed": true
+    },
+    {
+      "check": "recovery-double-excess",
+      "actual": "500",
+      "expected": "500",
+      "passed": true
+    },
+    {
+      "check": "recovery-dependency-time",
+      "actual": "129",
+      "expected": "129",
+      "passed": true
+    },
+    {
+      "check": "recovery-dependency-overrun",
+      "actual": "9",
+      "expected": "9",
+      "passed": true
+    },
+    {
+      "check": "recovery-db-only-time",
+      "actual": "48",
+      "expected": "48",
+      "passed": true
+    }
+  ],
+  "changes_summary": [
+    "Updated selected NIST source context, preserving complete-source/applicability gaps.",
+    "Added original duplicate replay, delayed-dependency, partial-release and relationship-consistency counterexamples."
+  ],
+  "unresolved_gaps": [
+    "AI editorial checking only; no human CPA/auditor/legal attestation, source grant or Agent admission.",
+    "No real engagement procedures, postings, recovery, private model runs or integrations were performed.",
+    "Real continuity criteria, service tests, external economic events, retention decisions and release authorizations were not evaluated."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

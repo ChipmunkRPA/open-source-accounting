@@ -1,0 +1,121 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "authority-and-period",
+  "input_sha256": "ff50fe1debf847ed658432cbb29a4716492bc1c8b61255e92b935e1fe1ebdfd8",
+  "output_sha256": "0bfaa27a31e0abc364455a814adbf21876ff0bf55eda457754e138d11f294743",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:02:22Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current authoritative ASC text not accessed",
+      "access_state": "not_accessed_link_only",
+      "exact_locators": [
+        "Research entry point only; no substantive ASC paragraph verified"
+      ],
+      "checked_claim_ids": [
+        "authority-asc"
+      ]
+    },
+    {
+      "reference_id": "sec-frm",
+      "official_url": "https://www.sec.gov/about/divisions-offices/division-corporation-finance/financial-reporting-manual",
+      "source_version_or_date": "Landing page last reviewed/updated 2026-06-29; inspected 2026-10-04",
+      "access_state": "official_landing_page_and_revision_notes_examined",
+      "exact_locators": [
+        "Introductory non-authoritative/conflicting-authority disclaimer",
+        "Summary of Recent Revisions: June 29, 2026 administrative updates",
+        "Recent Updates: section-specific technical date tags"
+      ],
+      "checked_claim_ids": [
+        "authority-manual"
+      ]
+    },
+    {
+      "reference_id": "pcaob-as1105",
+      "official_url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS1105",
+      "source_version_or_date": "Current AS 1105 edition/amendment applicability not established",
+      "access_state": "fresh_automated_retrieval_not_performed_due_to_publisher_restriction",
+      "exact_locators": [
+        "Retained link only; no standard paragraphs freshly inspected"
+      ],
+      "checked_claim_ids": [
+        "authority-pcaob"
+      ]
+    },
+    {
+      "reference_id": "pcaob-terms",
+      "official_url": "https://pcaobus.org/privacypolicy",
+      "source_version_or_date": "Terms last-updated label 2021-09-09; inspected 2026-10-04",
+      "access_state": "publisher_policy_examined_then_standard_retrieval_stopped",
+      "exact_locators": [
+        "Terms of Use: Authorized Use automated-gathering restriction",
+        "Intellectual Property Rights: separate conditional Public Materials allowance"
+      ],
+      "checked_claim_ids": [
+        "authority-pcaob"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "authority-manual",
+      "article_section": "Distinguish three questions",
+      "category": "source_hierarchy",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "SEC FRM introductory disclaimer supports non-authoritative status; June 29, 2026 update notes expressly describe administrative changes rather than current technical refresh of all sections.",
+      "source_reference_ids": [
+        "sec-frm"
+      ]
+    },
+    {
+      "claim_id": "authority-asc",
+      "article_section": "Distinguish three questions; Sources",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "ASC remains unaccessed; no current criterion is asserted as verified.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "authority-pcaob",
+      "article_section": "Distinguish three questions; Sources",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "AS 1105 is link-only; the terms restriction was inspected and fresh standard retrieval not performed. Earlier unqualified selected-provision description was removed.",
+      "source_reference_ids": [
+        "pcaob-as1105",
+        "pcaob-terms"
+      ]
+    },
+    {
+      "claim_id": "authority-dates",
+      "article_section": "Scope cover sheet; Original date exercise",
+      "category": "original_reasoning",
+      "severity": "info",
+      "disposition": "corrected_or_supported_with_stated_scope",
+      "explanation": "The invented 2024/2025/2026 chronology is explicitly hypothetical. Issuance, effective, reporting and access dates are separate; no actual standard applicability is inferred.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [],
+  "changes_summary": [
+    "Distinguished claim support, source authority and period applicability.",
+    "Added a populated authority map and fictional date counterexample.",
+    "Refreshed FRM status and disclosed current ASC/PCAOB access limits."
+  ],
+  "unresolved_gaps": [
+    "Current ASC and AS 1105 primary text are not verified.",
+    "No real entity/period applicability or human professional review."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

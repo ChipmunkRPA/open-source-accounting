@@ -1,0 +1,161 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "electronic-audit-evidence",
+  "input_sha256": "c8edb9b97d501551e2d0b920aeb24e7622d2e85bd6e7aa4489947298fcaed399",
+  "output_sha256": "9553a213000c05a06d7dea5c6b1235fc03b8317f6a4b0df4206a3ba3e8b00d2e",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T05:56:58Z",
+  "outcome": "rights_scope_unresolved",
+  "reviewed_sources": [
+    {
+      "reference_id": "pcaob-as1105",
+      "official_url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS1105",
+      "source_version_or_date": "Current body/edition not verified in this review",
+      "access_state": "Link-only gap: current project reviewer relayed verified publisher automation restriction on 2026-10-04; no automated acquisition was attempted by this worker. Content/version/effective-date verification remains unresolved; ordinary public-material reuse language is not automation permission.",
+      "exact_locators": [
+        "Body not acquired; publisher terms restriction verified by current project source reviewer at https://pcaobus.org/privacypolicy, Terms of Use, Authorized Use, data-mining/automated-tools bullet (terms last updated 2021-09-09). This worker did not fetch the standard or an alternate copy."
+      ],
+      "checked_claim_ids": [
+        "electronic-authority-gap"
+      ]
+    },
+    {
+      "reference_id": "pcaob-tech-amendments",
+      "official_url": "https://pcaobus.org/oversight/standards/standard-setting-research-projects/amendments-related-to-certain-aspects-of-designing-and-performing-audit-procedures-that-involve-technology-assisted-data-analysis",
+      "source_version_or_date": "Current body/edition not verified in this review",
+      "access_state": "Link-only gap: current project reviewer relayed verified publisher automation restriction on 2026-10-04; no automated acquisition was attempted by this worker. Content/version/effective-date verification remains unresolved; ordinary public-material reuse language is not automation permission.",
+      "exact_locators": [
+        "Body not acquired; publisher terms restriction verified by current project source reviewer at https://pcaobus.org/privacypolicy, Terms of Use, Authorized Use, data-mining/automated-tools bullet (terms last updated 2021-09-09). This worker did not fetch the standard or an alternate copy."
+      ],
+      "checked_claim_ids": [
+        "electronic-authority-gap"
+      ]
+    },
+    {
+      "reference_id": "pcaob-electronic-policy",
+      "official_url": "https://pcaobus.org/news-events/news-releases/news-release-detail/pcaob-posts-board-policy-statement-on-evaluating-the-reliability-of-external-electronic-information-provided-by-the-company",
+      "source_version_or_date": "Current body/edition not verified in this review",
+      "access_state": "Link-only gap: current project reviewer relayed verified publisher automation restriction on 2026-10-04; no automated acquisition was attempted by this worker. Content/version/effective-date verification remains unresolved; ordinary public-material reuse language is not automation permission.",
+      "exact_locators": [
+        "Body not acquired; publisher terms restriction verified by current project source reviewer at https://pcaobus.org/privacypolicy, Terms of Use, Authorized Use, data-mining/automated-tools bullet (terms last updated 2021-09-09). This worker did not fetch the standard or an alternate copy."
+      ],
+      "checked_claim_ids": [
+        "electronic-authority-gap"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "electronic-authority-gap",
+      "article_section": "Authority boundary; Sources",
+      "category": "rights-and-primary-text-gap",
+      "severity": "warning",
+      "disposition": "unresolved-and-claims-narrowed",
+      "explanation": "Removed freshly asserted PCAOB requirements/effective dates and retained explicit link-only research pointers. No content acquisition or workaround followed the publisher restriction.",
+      "source_reference_ids": [
+        "pcaob-as1105",
+        "pcaob-tech-amendments",
+        "pcaob-electronic-policy"
+      ]
+    },
+    {
+      "claim_id": "electronic-offsetting-case",
+      "article_section": "Worked case",
+      "category": "arithmetic-and-original-analysis",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Four equal-count/amount source/export records contain offsetting missing, duplicate and unexpected identities. Reperformed totals, gross exceptions and zero scan flags.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "electronic-join-case",
+      "article_section": "A second case",
+      "category": "arithmetic-and-original-analysis",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Original one-to-many enrichment example doubles 300 to 600; explains cardinality, period-version selection and legitimate splitting counterexamples.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "electronic-procedure-status",
+      "article_section": "Workpaper and study checks",
+      "category": "evidence-integrity",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Explicitly distinguishes acquisition, transformation, analysis, actual follow-up and revision-specific review; no real procedure was performed.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "electronic-free-boundary",
+      "article_section": "Free lesson and private workflow boundary",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Original educational material stays CC BY 4.0; no source license, technical review or private model execution is claimed.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "electronic-source-total",
+      "actual": "1000",
+      "expected": "1000",
+      "passed": true
+    },
+    {
+      "check": "electronic-export-total",
+      "actual": "1000",
+      "expected": "1000",
+      "passed": true
+    },
+    {
+      "check": "electronic-missing",
+      "actual": "700",
+      "expected": "700",
+      "passed": true
+    },
+    {
+      "check": "electronic-extra",
+      "actual": "700",
+      "expected": "700",
+      "passed": true
+    },
+    {
+      "check": "electronic-flag-count",
+      "actual": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "check": "electronic-join-before",
+      "actual": "300",
+      "expected": "300",
+      "passed": true
+    },
+    {
+      "check": "electronic-join-after",
+      "actual": "600",
+      "expected": "600",
+      "passed": true
+    },
+    {
+      "check": "electronic-join-difference",
+      "actual": "300",
+      "expected": "300",
+      "passed": true
+    }
+  ],
+  "changes_summary": [
+    "Narrowed unsupported freshly verified PCAOB claims to honest rights/text gaps.",
+    "Added original equal-total/equal-count counterexample, zero-flag limit, join amplification case and traceable workpaper."
+  ],
+  "unresolved_gaps": [
+    "AI editorial checking only; no human CPA/auditor/legal attestation, source grant or Agent admission.",
+    "No real engagement procedures, postings, recovery, private model runs or integrations were performed.",
+    "PCAOB source text, current applicable editions and automation permission remain unresolved. No exact standards conclusion is approved."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

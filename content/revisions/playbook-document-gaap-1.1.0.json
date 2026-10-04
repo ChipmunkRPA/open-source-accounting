@@ -1,0 +1,28 @@
+{
+  "item_id": "playbook-document-gaap",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "playbooks/playbook-document-gaap.md",
+    "version": "0.5.0",
+    "sha256": "905c139da02c38fc11a89f0af2e2c3823e976416a11d12508f8521df85062a20",
+    "source_ids": [
+      "fasb-asc",
+      "pcaob-as1105"
+    ]
+  },
+  "current": {
+    "path": "playbooks/playbook-document-gaap-v1.md",
+    "version": "1.1.0",
+    "sha256": "9ca1d3a7ba02a89e60bb5a4abb69eefeedb85328280d6a74193fe6e9d5e81806",
+    "source_ids": [
+      "fasb-asc",
+      "pcaob-as1105",
+      "pcaob-terms"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

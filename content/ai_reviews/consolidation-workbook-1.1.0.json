@@ -1,0 +1,97 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "consolidation-workbook",
+  "input_sha256": "82f16ffd1ed7744e66205088d01293143a864d8ba89a39b0add249b0e2578610",
+  "output_sha256": "ad72436c2ad5d0a3f02db8c78a0f6a7cd3ff11d3f14c57186251ac258cf7aa86",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T07:14:07Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC/ASU text not accessed; publisher boundary identified 2026-10-04",
+      "access_state": "not_accessed_link_only_rights_unresolved",
+      "exact_locators": [
+        "Research entry point only; no operative paragraph adopted as verified"
+      ],
+      "checked_claim_ids": [
+        "source-boundary"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "consolidation-economic",
+      "article_section": "Original ownership arithmetic",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "60%x 40%=24%; an assumed nonoverlapping 10% direct interest gives 34%. Economic arithmetic is not voting power or consolidation.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "consolidation-rights",
+      "article_section": "Original rights question",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Two of five seats equals 40%, but decision scope, consent rights and actual legal effect remain unresolved.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "consolidation-evidence",
+      "article_section": "Rights-and-economics record",
+      "category": "original_reasoning",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Ownership percentages, management labels and financing/support arrangements require distinct evidence; no legal/control determination is asserted.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "source-boundary",
+      "article_section": "Scope; Sources and verification",
+      "category": "source_access_and_rights",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Current primary ASC/ASU text, applicable amendments and source-operation permission remain unresolved. FASB restrictions identified October 4, 2026 prevented further retrieval. Original calculations do not verify current accounting requirements.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Stipulated indirect economic percentage",
+      "actual": "24",
+      "expected": "24",
+      "result": "pass"
+    },
+    {
+      "check": "Conditional nonoverlapping total percentage",
+      "actual": "34",
+      "expected": "34",
+      "result": "pass"
+    },
+    {
+      "check": "Board-seat fraction",
+      "actual": "40",
+      "expected": "40",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Added original economic-interest and board-seat counterexamples.",
+    "Separated rights, economics, periods and legal interpretations.",
+    "Withheld consolidation model/control conclusions until authorized primary review."
+  ],
+  "unresolved_gaps": [
+    "Current primary accounting/audit requirements and entity/reporting-period applicability are not verified.",
+    "Publisher source-operation rights remain unresolved; no restricted source body was acquired.",
+    "No actual client evidence, human professional review, posting, filing or Agent admission is supplied."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

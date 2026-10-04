@@ -1,0 +1,146 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "lease-measurement",
+  "input_sha256": "ec49252b1a57f970e26de1d83d411a69a7073c957d3e5d20f67c767053e1d13b",
+  "output_sha256": "4dd251fafb6c9b45ae5ffb7ec9f0d51035abf623d8c2d8f0303f9e0b95fd46df",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:55:51Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC text not accessed; publisher restriction identified 2026-10-04",
+      "access_state": "not_accessed_link_only_rights_unresolved",
+      "exact_locators": [
+        "No operative ASC paragraph adopted as verified; research reference only"
+      ],
+      "checked_claim_ids": [
+        "source-authority-gap"
+      ]
+    },
+    {
+      "reference_id": "fasb-leases-pir",
+      "official_url": "https://fasb.org/",
+      "source_version_or_date": "Historical registry summary retained; no full current ASU/ASC verification; further retrieval stopped 2026-10-04",
+      "access_state": "retained_publisher_reference_no_substantive_current_requirement_adopted",
+      "exact_locators": [
+        "Publisher summary/announcement is a research lead only; no current effective-date or accounting conclusion adopted"
+      ],
+      "checked_claim_ids": [
+        "source-authority-gap"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "measurement-conventions",
+      "article_section": "Annual teaching illustration; Helper contract",
+      "category": "product_scope_correction",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Annual effective-rate teaching example is expressly separate from the inspected monthly-arrears/nominal-annual-divided-by12 helper.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "measurement-math",
+      "article_section": "Annual and monthly examples",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Annual arrears26730.12, advance28333.93 and timing difference 1603.81 were independently recalculated; monthly PV2940.99 and all three rows agree.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "measurement-rate",
+      "article_section": "Current sample helper",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Nominal6% compounded monthly produces approximately 6.1678% effective annually, so effective/nominal inputs are not silently substituted.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "measurement-limits",
+      "article_section": "Inputs/exclusions; Requested output",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Actual helper assumptions, unsupported advance timing and lack of rate/ROU/classification conclusions were inspected and exercised with pure calls; no live acceptance claim.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "source-authority-gap",
+      "article_section": "Scope; Source and permission boundary",
+      "category": "source_access_and_rights",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Current ASC criteria were not accessed. Publisher-use restrictions identified October 4, 2026 prevented further retrieval or adoption of source content. Original reasoning/math is not presented as verified current accounting authority.",
+      "source_reference_ids": [
+        "fasb-asc",
+        "fasb-leases-pir"
+      ]
+    },
+    {
+      "claim_id": "rights-original",
+      "article_section": "Original-content footer",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Only original educational prose/examples are licensed CC BY 4.0 here; no private standard body, publisher permission or Agent/source admission is supplied. Revised prose uses homepage references, not publisher deep links.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Annual arrears PV",
+      "actual": "26730.12",
+      "expected": "26730.12",
+      "result": "pass"
+    },
+    {
+      "check": "Annual advance PV",
+      "actual": "28333.93",
+      "expected": "28333.93",
+      "result": "pass"
+    },
+    {
+      "check": "Unrounded timing difference displayed",
+      "actual": "1603.81",
+      "expected": "1603.81",
+      "result": "pass"
+    },
+    {
+      "check": "Nominal six-percent compounded effective percentage",
+      "actual": "6.1678",
+      "expected": "6.1678",
+      "result": "pass"
+    },
+    {
+      "check": "Monthly arrears PV",
+      "actual": "2940.99",
+      "expected": "2940.99",
+      "result": "pass"
+    },
+    {
+      "check": "Monthly displayed schedule",
+      "actual": "[[2940.99, 29.41, 1000, 1970.4], [1970.4, 19.7, 1000, 990.1], [990.1, 9.9, 1000, 0]]",
+      "expected": "[[2940.99, 29.41, 1000, 1970.4], [1970.4, 19.7, 1000, 990.1], [990.1, 9.9, 1000, 0]]",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Corrected annual-example versus supported-monthly-helper ambiguity.",
+    "Added advance/arrears, effective/nominal and monthly schedule examples.",
+    "Placed excluded accounting judgments alongside numerical output."
+  ],
+  "unresolved_gaps": [
+    "Current primary ASC/ASU requirements, entity/period applicability and publisher-operation permissions remain unresolved.",
+    "AI editorial pass is limited to original reasoning, arithmetic and stated implementation scope; it is not a human professional or current-GAAP conclusion.",
+    "No live deployment, database/provider integration or posting/feature activation was performed."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

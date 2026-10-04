@@ -1,0 +1,27 @@
+{
+  "item_id": "playbook-memo-review",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "playbooks/playbook-memo-review.md",
+    "version": "0.5.0",
+    "sha256": "2d6e853db8c7d98f1045e84365197cabc96784cd3fa1251380902cb788d5448f",
+    "source_ids": [
+      "fasb-asc",
+      "sec-frm"
+    ]
+  },
+  "current": {
+    "path": "playbooks/playbook-memo-review-v1.md",
+    "version": "1.1.0",
+    "sha256": "ecab5b34b537c489f90e24d126067890fae2e49c0dd62b140c64f91eccea1fcb",
+    "source_ids": [
+      "fasb-asc",
+      "sec-frm"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

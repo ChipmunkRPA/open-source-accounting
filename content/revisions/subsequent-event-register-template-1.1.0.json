@@ -1,0 +1,25 @@
+{
+  "item_id": "subsequent-event-register-template",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "templates/subsequent-event-register-template.md",
+    "version": "0.6.0",
+    "sha256": "29d3a1f12a5ec6d49f0d95e1138107eba854722e295fadff3e15733ff299dc2d",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "templates/subsequent-event-register-template-v1.md",
+    "version": "1.1.0",
+    "sha256": "d368f9e3d86443929ca69f41c48b9b88260d75112664043a46592f08f57c0437",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

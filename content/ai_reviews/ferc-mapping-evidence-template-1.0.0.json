@@ -1,0 +1,223 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "ferc-mapping-evidence-template",
+  "input_sha256": "d38e425cea7322b1a7f66584b4879cbf45cfbc2393b8d05ab27a9677bd7a4078",
+  "output_sha256": "0e427011c11c2f1527714978340c5aa5add18fd315486ac3702dee8b1d9344ca",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T07:06:32Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "ferc-accounting-directory",
+      "official_url": "https://ferc.gov/accounting-matters-1",
+      "source_version_or_date": "Page labeled updated 2026-06-30; checked 2026-10-04",
+      "access_state": "Exact catalog URL successfully read; this differs from the historical 403 observation. Selected government publication facts only.",
+      "exact_locators": [
+        "Accounting and Financial Reporting Regulations",
+        "Formal Accounting Guidance",
+        "Accounting Releases: explicit Rescinded/Superseded labels"
+      ],
+      "checked_claim_ids": [
+        "ferc-source-context"
+      ]
+    },
+    {
+      "reference_id": "ferc-accounting-directory",
+      "official_url": "https://www.ecfr.gov/current/title-18/chapter-I/subchapter-C/part-101",
+      "source_version_or_date": "Inspected display: Title18 current through 2026-09-21; last amended 2026-08-24; authoritative but unofficial",
+      "access_state": "Official eCFR text followed from the FERC accounting index; selected General Instructions only. No complete intervening-amendment search or transaction/account determination.",
+      "exact_locators": [
+        "Page status/current-through notice",
+        "General Instructions 2(A), 2(F), 3(C)"
+      ],
+      "checked_claim_ids": [
+        "ferc-records-context",
+        "ferc-period-limit"
+      ]
+    },
+    {
+      "reference_id": "ferc-accounting-directory",
+      "official_url": "https://ferc.gov/privacy",
+      "source_version_or_date": "Privacy page labeled updated 2026-05-26; inspected 2026-10-04",
+      "access_state": "Site-specific Internet Security Policy inspected. No broad license for third-party works, protected standards or privately filed materials inferred.",
+      "exact_locators": [
+        "Internet Security Policy: authorized use/security monitoring and excessive-request controls"
+      ],
+      "checked_claim_ids": [
+        "ferc-source-rights"
+      ]
+    },
+    {
+      "reference_id": "ferc-electric-forms-directory",
+      "official_url": "https://ferc.gov/general-information-0/electric-industry-forms",
+      "source_version_or_date": "Forms page labeled updated 2026-07-21; checked 2026-10-04",
+      "access_state": "Exact official index was read. Linked Form1 media page dated 2022-08-03 was read; its linked PDF could not be opened by the tool and was not obtained elsewhere.",
+      "exact_locators": [
+        "Form No.1, Form No.1-F and Form No.3-Q sections",
+        "Linked https://ferc.gov/media/form-1, page date and instruction-PDF link"
+      ],
+      "checked_claim_ids": [
+        "ferc-form-gap"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "ferc-source-context",
+      "article_section": "Sources and verification",
+      "category": "source-provenance",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Current direct official index access succeeded. Historical HTTP403 is not falsely reported as current; rescinded/superseded labels and authority distinctions were observed.",
+      "source_reference_ids": [
+        "ferc-accounting-directory"
+      ]
+    },
+    {
+      "claim_id": "ferc-records-context",
+      "article_section": "Sources and verification",
+      "category": "selected-primary-text",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Selected Part101 General Instructions support narrow record/mapping context, without deciding any fictional transaction treatment.",
+      "source_reference_ids": [
+        "ferc-accounting-directory"
+      ]
+    },
+    {
+      "claim_id": "ferc-period-limit",
+      "article_section": "Sources and verification",
+      "category": "currentness-gap",
+      "severity": "warning",
+      "disposition": "explicit-snapshot-and-abstention",
+      "explanation": "The inspected eCFR current-through date is 2026-09-21, not an asserted full 2026-10-04 legal update or historical-period applicability result.",
+      "source_reference_ids": [
+        "ferc-accounting-directory"
+      ]
+    },
+    {
+      "claim_id": "ferc-form-gap",
+      "article_section": "Sources and verification",
+      "category": "primary-text-gap",
+      "severity": "warning",
+      "disposition": "explicitly-retained",
+      "explanation": "Forms index and dated media page were read, but linked detailed Form1 PDF was inaccessible. No form-line, deadline or taxonomy conclusion relies on that unavailable body.",
+      "source_reference_ids": [
+        "ferc-electric-forms-directory"
+      ]
+    },
+    {
+      "claim_id": "ferc-source-rights",
+      "article_section": "Sources and verification",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Reviewed site-specific security/use context; only short government facts and links plus original examples are included. No broad rights to hosted third-party material, logo, form or protected standard are asserted.",
+      "source_reference_ids": [
+        "ferc-accounting-directory"
+      ]
+    },
+    {
+      "claim_id": "original-analysis",
+      "article_section": "Filled mapping record; split mappings; change controls",
+      "category": "original-educational-content",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Added original 75-row/900-thousand mapping population, candidate-versus-accepted distinction, split/double-count example and exact-map review controls.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "numerical-checks",
+      "article_section": "Filled mapping record; split mappings; change controls",
+      "category": "arithmetic-and-dates",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Reperformed 8 deterministic arithmetic/date checks with explicit inputs and expected results; exact output hashes and body anchors are separately verified.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "actual-applicability-gap",
+      "article_section": "Scope, sources and review gates",
+      "category": "applicability-gap",
+      "severity": "warning",
+      "disposition": "retained-explicit-abstention",
+      "explanation": "Candidate destination coverage is not mapping correctness, filing acceptance or professional approval.",
+      "source_reference_ids": [
+        "ferc-accounting-directory",
+        "ferc-electric-forms-directory"
+      ]
+    },
+    {
+      "claim_id": "standard-premium-boundary",
+      "article_section": "Standard education and Premium execution",
+      "category": "licensing-and-professional-boundary",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Free CC BY 4.0 original education remains Standard. Premium means separately licensed/authorized private execution; no source rights, human CPA review, posting or workflow operation is claimed.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "row-total",
+      "actual": "75",
+      "expected": "75",
+      "result": "pass"
+    },
+    {
+      "check": "amount-total",
+      "actual": "900",
+      "expected": "900",
+      "result": "pass"
+    },
+    {
+      "check": "row-coverage",
+      "actual": "80.0",
+      "expected": "80",
+      "result": "pass"
+    },
+    {
+      "check": "amount-coverage",
+      "actual": "80.0",
+      "expected": "80",
+      "result": "pass"
+    },
+    {
+      "check": "unresolved-amount",
+      "actual": "180",
+      "expected": "180",
+      "result": "pass"
+    },
+    {
+      "check": "unresolved-rows",
+      "actual": "15",
+      "expected": "15",
+      "result": "pass"
+    },
+    {
+      "check": "supported-split",
+      "actual": "100",
+      "expected": "100",
+      "result": "pass"
+    },
+    {
+      "check": "double-counted-parent",
+      "actual": "200",
+      "expected": "200",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Added original 75-row/900-thousand mapping population, candidate-versus-accepted distinction, split/double-count example and exact-map review controls.",
+    "Preserved the original article bytes; new immutable version1.0.0 with explicit Free Standard/private Premium separation."
+  ],
+  "unresolved_gaps": [
+    "Candidate destination coverage is not mapping correctness, filing acceptance or professional approval.",
+    "No independent human accountant, CPA, auditor or legal attestation was performed. AI review does not grant source rights or Agent admission.",
+    "No real journal, filing, configuration change, private model call, recurring monitor or external integration was performed."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

@@ -4,8 +4,8 @@
   "questions": [
     {
       "id": "qa-001",
-      "question": "Does an ASC citation prove that the agent read the standard?",
-      "answer": "No. A citation identifies a location. Check the evidence record for whether primary text was actually accessed, which version was used, and whether it supports the proposition.",
+      "question": "Does an ASC citation prove that an Agent examined the standard?",
+      "answer": "No. A citation can identify a research location without proving access. Check the actual passage, version, access record and its support for the claim. Current primary ASC text was not accessed for this set.",
       "related_item_id": "authority-and-period",
       "source_ids": [
         "fasb-asc"
@@ -16,8 +16,8 @@
     },
     {
       "id": "qa-002",
-      "question": "Is the SEC Financial Reporting Manual itself authoritative?",
-      "answer": "The SEC describes it as non-authoritative. Use it as a research aid and resolve conflicts using applicable authoritative material.",
+      "question": "Is the SEC Financial Reporting Manual authoritative?",
+      "answer": "The SEC landing page inspected October 4, 2026 describes it as non-authoritative and says underlying authoritative material governs a conflict. Its latest page date does not establish that every technical section is current.",
       "related_item_id": "authority-and-period",
       "source_ids": [
         "sec-frm"
@@ -28,8 +28,8 @@
     },
     {
       "id": "qa-003",
-      "question": "Can a peer disclosure establish the correct accounting?",
-      "answer": "Not by itself. It describes a company’s practice under its own facts. Establish comparability and verify the governing criteria separately.",
+      "question": "Can a peer disclosure alone establish the correct accounting?",
+      "answer": "No. It records what that issuer disclosed in its own circumstances. Identify relevant differences and verify the governing criteria; common practice and similar wording are not regulatory approval.",
       "related_item_id": "authority-and-period",
       "source_ids": [
         "sec-frm"
@@ -40,8 +40,8 @@
     },
     {
       "id": "qa-004",
-      "question": "Does a nonrefundable implementation fee prove immediate revenue?",
-      "answer": "No conclusion follows from the billing label alone. Investigate whether a service transfers, whether promises are distinct, and the supported recognition pattern. Current ASC verification remains required.",
+      "question": "Does a nonrefundable implementation-fee label prove immediate revenue?",
+      "answer": "The billing label alone does not establish a recognition conclusion. Research what is promised, whether and when anything transfers, the applicable criteria and the complete agreement. This answer is an issue-spotting instruction, not a verified ASC 606 rule.",
       "related_item_id": "saas-implementation",
       "source_ids": [
         "fasb-asc"
@@ -52,8 +52,8 @@
     },
     {
       "id": "qa-005",
-      "question": "What evidence helps assess implementation services?",
-      "answer": "Collect the scope of work, deliverables, customer benefit, alternative providers, integration activities, acceptance terms, and when platform access begins. These are research inputs, not a decision rule.",
+      "question": "Which facts help frame implementation-service research?",
+      "answer": "Collect the scope of work, deliverables, customer use, possible alternative providers, integration activities, acceptance terms and platform-access timing. Explain what each fact might change. The list is original research design, not an authoritative decision checklist.",
       "related_item_id": "saas-implementation",
       "source_ids": [
         "fasb-asc"
@@ -64,8 +64,8 @@
     },
     {
       "id": "qa-006",
-      "question": "What is a relative-SSP allocation with an agreed 80:20 ratio and 90,000 price?",
-      "answer": "Under those stipulated arithmetic assumptions: 72,000 and 18,000. This does not establish distinct obligations, valid standalone prices, or the absence of an allocation exception.",
+      "question": "What allocation follows from a stipulated 80:20 ratio and USD 90000 total?",
+      "answer": "Pure arithmetic gives USD 72000 and USD 18000, which sum to USD 90000. The stipulated ratio is not evidence of valid standalone selling prices, distinct obligations or the absence of an accounting allocation exception.",
       "related_item_id": "case-ssp-allocation",
       "source_ids": [
         "fasb-asc"
@@ -76,8 +76,8 @@
     },
     {
       "id": "qa-007",
-      "question": "Does invoicing identify the revenue date?",
-      "answer": "No. Treat invoice dates as billing evidence; recognition needs a separate analysis of the applicable criteria and facts.",
+      "question": "Does an invoice date alone establish revenue timing?",
+      "answer": "No recognition conclusion follows from that date alone. It is billing evidence. The agreement, performance facts, framework and actual applicable recognition requirements remain separate research tasks.",
       "related_item_id": "revenue-research-map",
       "source_ids": [
         "fasb-asc"
@@ -88,8 +88,8 @@
     },
     {
       "id": "qa-008",
-      "question": "Can one generic percentage allocation be used for every contract?",
-      "answer": "Not on that basis alone. Establish the applicable method, support the inputs, and evaluate whether an exception affects the allocation.",
+      "question": "Can a convenient percentage be applied to every contract?",
+      "answer": "Not merely because it makes a schedule tie. Identify the actual model, support its inputs and research relevant exceptions. An arithmetic ratio without that work is only a stated assumption.",
       "related_item_id": "revenue-research-map",
       "source_ids": [
         "fasb-asc"
@@ -100,8 +100,8 @@
     },
     {
       "id": "qa-009",
-      "question": "How should a payment to a customer be researched?",
-      "answer": "Investigate the contractual purpose, recipient relationship, any distinct good or service received, pricing evidence, and Topic 606 references. Do not assume that a marketing label resolves classification.",
+      "question": "How should a payment to a customer be investigated?",
+      "answer": "Identify the recipient and arrangement, contractual purpose, goods or services said to be received, pricing evidence and the relevant reporting period. Research applicable customer-consideration guidance rather than classifying the payment from a marketing label. Primary ASC text remains unaccessed.",
       "related_item_id": "customer-payments",
       "source_ids": [
         "fasb-asc"
@@ -112,8 +112,8 @@
     },
     {
       "id": "qa-010",
-      "question": "What additional issue arises with equity paid to a customer?",
-      "answer": "The FASB has announced changes at the intersection of Topics 606 and 718. Verify the actual applicable update, effective dates, and award terms rather than applying a cash-payment template mechanically.",
+      "question": "What additional research is needed when customer consideration is share-based?",
+      "answer": "Examine how the customer arrangement and share-based terms interact, including scope, vesting conditions, applicable amendments and transition/election facts. The FASB customer-consideration announcement remains a research lead; the source list links only to the FASB homepage. Its direct page body and the complete ASU/current ASC text were not verified in this review; no effective-date or treatment conclusion is supplied.",
       "related_item_id": "customer-payments",
       "source_ids": [
         "fasb-customer-equity"
@@ -124,8 +124,8 @@
     },
     {
       "id": "qa-011",
-      "question": "Does a contract calling an arrangement a service exclude a lease?",
-      "answer": "The label is not enough. Research the identified asset, substitution rights, benefits, and direction-of-use facts against current applicable criteria.",
+      "question": "Does calling a contract a service rule out lease-related research?",
+      "answer": "No conclusion follows solely from the label. Establish the actual asset/use arrangement, relevant rights and other terms, then compare those facts with authorized current requirements. This answer does not decide whether a lease exists.",
       "related_item_id": "lease-identification",
       "source_ids": [
         "fasb-asc"
@@ -136,8 +136,8 @@
     },
     {
       "id": "qa-012",
-      "question": "Does a three-year lease schedule establish classification?",
-      "answer": "No. It is a calculation under assumptions. Classification, term, components, commencement, and rate each require their own support.",
+      "question": "Does a three-year payment schedule establish lease classification?",
+      "answer": "No. A schedule calculates stated inputs. Classification, contractual term, commencement, components and the rate need their own factual and authoritative support; none is established by the number of rows.",
       "related_item_id": "lease-measurement",
       "source_ids": [
         "fasb-asc"
@@ -148,8 +148,8 @@
     },
     {
       "id": "qa-013",
-      "question": "What is the PV of three year-end 10,000 payments at 6%?",
-      "answer": "Approximately 26,730.12 using 10,000/(1.06)^t for t = 1, 2, 3. Timing, rate, and payment inputs are stipulated for the exercise.",
+      "question": "What is the present value of three year-end USD 10000 payments at 6%?",
+      "answer": "Using annual compounding and the stipulated timing, 10000/1.06 + 10000/(1.06^2) + 10000/(1.06^3) rounds to USD 26730.12. Keep full precision until the final cent rounding. The exercise does not establish a lease discount rate or recognized liability.",
       "related_item_id": "case-lease-present-value",
       "source_ids": [
         "fasb-asc"
@@ -160,8 +160,8 @@
     },
     {
       "id": "qa-014",
-      "question": "Why might a displayed schedule differ by one cent?",
-      "answer": "Displayed figures may be rounded from higher-precision balances. Define a documented rounding method and reconcile the final amount; never conceal an unexplained difference.",
+      "question": "Why can displayed rows fail to sum exactly to a rounded total?",
+      "answer": "Individual rows and the total may be rounded at different stages. Define the method, retain unrounded values and reconcile the difference. Do not use rounding as an explanation until the actual discrepancy has been reproduced.",
       "related_item_id": "case-lease-present-value",
       "source_ids": [
         "fasb-asc"
@@ -172,8 +172,8 @@
     },
     {
       "id": "qa-015",
-      "question": "Is an award’s headline grant value enough to book compensation?",
-      "answer": "No. Assemble terms, grant and service facts, vesting conditions, settlement provisions, modifications, and valuation evidence before assessing treatment.",
+      "question": "Is an award’s headline value enough to book compensation?",
+      "answer": "No accounting amount is established by the label alone. Gather the actual award, grant/service chronology, conditions, settlement alternatives, modifications and valuation evidence. SEC Topic 14 Section C offers limited staff context on model fit and expertise; it does not verify the fictional award or replace unaccessed ASC text.",
       "related_item_id": "share-based-award-intake",
       "source_ids": [
         "fasb-asc",
@@ -185,8 +185,8 @@
     },
     {
       "id": "qa-016",
-      "question": "Does a modification automatically preserve the original expense pattern?",
-      "answer": "Do not assume that. Obtain both award versions, dates, approvals, valuation inputs, and the relevant current guidance.",
+      "question": "Can an amendment be assumed to leave the expense pattern unchanged?",
+      "answer": "No such conclusion is supplied. Preserve the original and amended terms, execution/effective-date evidence, recipient facts and valuation information, then research current applicable criteria. A text change alone does not establish its legal or accounting effect.",
       "related_item_id": "share-based-award-intake",
       "source_ids": [
         "fasb-asc"
@@ -197,8 +197,8 @@
     },
     {
       "id": "qa-017",
-      "question": "Can a legal-loss reserve be classified using an internal label alone?",
-      "answer": "No. Separate recognition, measurement, disclosure, and current/noncurrent presentation. Determine the nature and timing of the obligation and applicable presentation guidance.",
+      "question": "Can an internal reserve label establish current/noncurrent classification?",
+      "answer": "No. Separate recognition, measurement, disclosure and presentation questions. Identify the actual obligation, dates and settlement evidence, then verify the applicable classification criteria. This set did not access the governing ASC paragraphs.",
       "related_item_id": "loss-contingencies",
       "source_ids": [
         "fasb-asc"
@@ -209,8 +209,8 @@
     },
     {
       "id": "qa-018",
-      "question": "Should income-tax uncertainty and other loss contingencies be treated as identical?",
-      "answer": "No. Identify the scope first. An income-tax issue may belong under Topic 740; a non-income-tax or other contingency may require a different framework. Verify rather than generalize.",
+      "question": "Should every tax uncertainty and loss matter use one generic model?",
+      "answer": "No model can be selected from the word reserve alone. Identify the levy or obligation and the scope requiring research. Topic 740 and Topic 450 are candidate research locations, not verified scope conclusions for a particular matter.",
       "related_item_id": "loss-contingencies",
       "source_ids": [
         "fasb-asc"
@@ -222,7 +222,7 @@
     {
       "id": "qa-019",
       "question": "Is 5% an automatic immateriality rule?",
-      "answer": "No. SEC SAB 99 rejects exclusive reliance on a numerical threshold. Qualitative context matters.",
+      "answer": "No. SEC SAB 99, Topic 1.M.1, rejects exclusive reliance on a numerical cutoff. The staff discussion requires attention to relevant circumstances; it does not supply a universal alternative percentage. The official August 12, 1999 bulletin was inspected October 4, 2026.",
       "related_item_id": "materiality",
       "source_ids": [
         "sec-sab99"
@@ -233,8 +233,8 @@
     },
     {
       "id": "qa-020",
-      "question": "Is a small amount always immaterial?",
-      "answer": "No. Analyze the surrounding facts and qualitative effects, not just the amount in isolation.",
+      "question": "Does a small amount always make an error immaterial?",
+      "answer": "No. The quantitative and qualitative context still matters under SAB 99’s staff discussion. A small revenue percentage may coexist with a changed profit trend or another significant effect; the actual facts are needed before a conclusion.",
       "related_item_id": "materiality",
       "source_ids": [
         "sec-sab99"
@@ -245,8 +245,8 @@
     },
     {
       "id": "qa-021",
-      "question": "Why calculate errors in more than one way?",
-      "answer": "SAB 108 addresses both current-period and accumulated balance-sheet effects. Document both perspectives and then evaluate materiality and correction separately.",
+      "question": "Why reconcile both income effects and accumulated balance errors?",
+      "answer": "SAB 108 discusses both perspectives, including prior-year carryover and reversal effects. An ending balance corrected to zero can still leave a current-year income distortion. Keep measurement, materiality and the appropriate correction treatment separate.",
       "related_item_id": "error-measurement",
       "source_ids": [
         "sec-sab108"
@@ -257,8 +257,8 @@
     },
     {
       "id": "qa-022",
-      "question": "If a fictional error adds 12,000 per year for three years, what is accumulated?",
-      "answer": "36,000 at the third year-end, with 12,000 from the third year and 24,000 accumulated earlier, under the exercise assumptions. No materiality conclusion is implied.",
+      "question": "If an error adds USD 12000 in each of three years without reversal, what accumulates?",
+      "answer": "USD 36000 at the third year-end: USD 24000 from earlier years plus USD 12000 newly added. If all 36000 is released through current-year expense, the original +12000 expense error becomes 12000 - 36000 = -24000 under that stipulated path. Neither amount decides materiality or approves the release.",
       "related_item_id": "case-accumulated-error",
       "source_ids": [
         "sec-sab108"
@@ -269,11 +269,12 @@
     },
     {
       "id": "qa-023",
-      "question": "Does an ICFR deficiency require an actual misstatement?",
-      "answer": "Not necessarily. AS 2201’s severity analysis concerns the potential for misstatement, not just errors already found.",
+      "question": "Can an error-free sample alone resolve a control-deficiency question?",
+      "answer": "The observation alone does not establish the complete exposed population, risks, procedure quality or appropriate classification. Assemble that evidence and verify the applicable criteria. AS 2201 remains link-only here; current severity requirements were not freshly examined.",
       "related_item_id": "icfr-deficiencies",
       "source_ids": [
-        "pcaob-as2201"
+        "pcaob-as2201",
+        "pcaob-terms"
       ],
       "review_status": "unreviewed",
       "license": "CC-BY-4.0",
@@ -281,11 +282,12 @@
     },
     {
       "id": "qa-024",
-      "question": "Does a compensating control automatically eliminate a deficiency?",
-      "answer": "No. Evaluate whether the control operates at sufficient precision and addresses the relevant risk, with evidence of its effectiveness.",
+      "question": "What is needed before treating another activity as a compensating control?",
+      "answer": "Identify what it actually did, its timing, inputs, precision, coverage, exceptions and evidence. Do not assume a description or owner’s assurance resolves the original gap. This is an original evidence request, not a verified application of current AS 2201.",
       "related_item_id": "icfr-deficiencies",
       "source_ids": [
-        "pcaob-as2201"
+        "pcaob-as2201",
+        "pcaob-terms"
       ],
       "review_status": "unreviewed",
       "license": "CC-BY-4.0",
@@ -293,11 +295,12 @@
     },
     {
       "id": "qa-025",
-      "question": "Does installing a new control prove remediation?",
-      "answer": "No. Separate design, implementation, and demonstrated operation. The assessment must fit the relevant reporting date.",
+      "question": "Does approval of a redesigned control prove it operated?",
+      "answer": "No. Approval, implementation, execution and later review are distinct events. Preserve their true dates and supporting records. The resulting remediation/classification judgment requires applicable criteria and qualified review; this set does not supply it.",
       "related_item_id": "case-control-remediation",
       "source_ids": [
-        "pcaob-as2201"
+        "pcaob-as2201",
+        "pcaob-terms"
       ],
       "review_status": "unreviewed",
       "license": "CC-BY-4.0",
@@ -305,11 +308,12 @@
     },
     {
       "id": "qa-026",
-      "question": "Is more evidence always better evidence?",
-      "answer": "Quantity does not cure every quality problem. AS 1105 distinguishes sufficiency from appropriateness, including relevance and reliability.",
+      "question": "Do ten copies of one report provide ten independent observations?",
+      "answer": "No: under the stipulated exact-copy relationship there is one distinct report represented ten times. In real work, verify provenance before calling records duplicates. Assess relevant evidence qualities under authorized applicable guidance; current AS 1105 text was not freshly reviewed here.",
       "related_item_id": "electronic-audit-evidence",
       "source_ids": [
-        "pcaob-as1105"
+        "pcaob-as1105",
+        "pcaob-terms"
       ],
       "review_status": "unreviewed",
       "license": "CC-BY-4.0",
@@ -317,11 +321,12 @@
     },
     {
       "id": "qa-027",
-      "question": "What should be checked for an external electronic report supplied by management?",
-      "answer": "Examine its source and processing path, and determine what testing of the information or relevant controls is needed under applicable requirements.",
+      "question": "How can an externally produced electronic report be prepared for review?",
+      "answer": "Record who produced it, the original source/version, how it reached management, transformations, period, population and unexplained gaps. Preserve the original where permitted. The linked PCAOB electronic-information policy was not freshly retrieved after its site access restriction was identified, so no current policy requirement is presented as verified.",
       "related_item_id": "electronic-audit-evidence",
       "source_ids": [
-        "pcaob-electronic-policy"
+        "pcaob-electronic-policy",
+        "pcaob-terms"
       ],
       "review_status": "unreviewed",
       "license": "CC-BY-4.0",
@@ -330,7 +335,7 @@
     {
       "id": "qa-028",
       "question": "Can explanatory notes cure every misleading non-GAAP measure?",
-      "answer": "No. SEC staff interpretations identify circumstances in which explanation does not make an otherwise misleading measure acceptable. Evaluate the measure itself and applicable presentation rules.",
+      "answer": "No. SEC staff Question 100.06 explains that detailed disclosure may still leave a measure materially misleading. Review the measure and applicable presentation requirements; arithmetic and explanatory text alone do not establish compliance.",
       "related_item_id": "non-gaap-review",
       "source_ids": [
         "sec-nongaap"
@@ -341,8 +346,8 @@
     },
     {
       "id": "qa-029",
-      "question": "When does the 2024 Yellow Book generally apply?",
-      "answer": "Financial audits, attestation engagements, and reviews of financial statements for periods beginning on or after December 15, 2025; performance audits beginning on or after that date. Check early implementation and special quality-management timing notes separately.",
+      "question": "What dates does GAO state for the 2024 Yellow Book?",
+      "answer": "The GAO page inspected October 4, 2026 states that financial audits, attestation engagements and financial-statement reviews generally use periods beginning on or after December 15, 2025; performance audits use audits beginning on or after that date. Early implementation is permitted. The general quality-management design/implementation deadline is December 15, 2025, with evaluation by December 15, 2026. A separate federal-government-audit-organization note permits design/implementation deferral no later than March 16, 2026 and evaluation no later than one year after implementation. Do not apply that special quality-management note as a blanket deferral of all engagement-effective dates.",
       "related_item_id": "yellow-book-scope",
       "source_ids": [
         "gao-yellowbook"
@@ -353,8 +358,8 @@
     },
     {
       "id": "qa-030",
-      "question": "Does paying for Agent license proprietary accounting standards?",
-      "answer": "No. It unlocks application workflows under the hosted-service plan. Source access and reuse permissions remain separate; this repository does not include the ASC.",
+      "question": "Does paying for Agent execution license proprietary standards?",
+      "answer": "No. Ordinary subscription entitlement is one software-execution gate. Workflow enablement, source permissions, scope, budget and other controls remain separate. Reading original educational content stays free; no ASC body or publisher license is supplied by this study set.",
       "related_item_id": "source-onboarding-template",
       "source_ids": [
         "fasb-asc",
@@ -367,7 +372,7 @@
     {
       "id": "qa-031",
       "question": "What is the first research step for cash flows?",
-      "answer": "Establish the scope and facts before selecting a model. Obtain beginning and ending bank reconciliations, restricted-cash schedules, the cash general ledger, debt and lease rollforwards, acquisition records, and foreign-currency movements. Record the reporting entity, consolidation scope, currency, period, and which accounts are inside the cash reconciliation. A bank transfer between two included accounts should not be counted twice as an external receipt and payment in the working data.",
+      "answer": "Define the cash population, entity, currency and period. Gather bank reconciliations, restrictions, ledger detail and noncash/financing records. In an original transfer example, USD 100 moving between two included bank accounts is one internal transfer; the combined balance changes by zero. This does not classify every real transfer or establish ASC 230 compliance.",
       "related_item_id": "cash-flow-workbook",
       "source_ids": [
         "fasb-asc"
@@ -379,7 +384,7 @@
     {
       "id": "qa-032",
       "question": "What should the Agent deliver for the cash flows workbook?",
-      "answer": "Produce a reconciliation with unresolved amounts separately identified, a classification decision log, citations requiring primary-text verification, and disclosure questions. The reviewer should be able to trace every significant line to transactions and reproduce the tie-out. The Agent must stop short of declaring compliance when the opening balance, acquisition scope, or noncash population is missing. Any missing primary-text verification must remain visible.",
+      "answer": "Request a candidate reconciliation with unresolved differences, transaction locators, classification questions and an explicit record of checks actually performed. A tied subtotal is not a validated complete population. Missing opening balances, acquisition scope or noncash information must remain visible; no current primary ASC criterion was verified here.",
       "related_item_id": "cash-flow-workbook",
       "source_ids": [
         "fasb-asc"
@@ -391,7 +396,7 @@
     {
       "id": "qa-033",
       "question": "What is the first research step for receivable losses?",
-      "answer": "Establish the scope and facts before selecting a model. Identify the instruments and determine which measurement model needs research before importing historical loss percentages. Obtain invoice-level balances, contractual terms, write-offs, recoveries, credit notes, disputes, subsequent collections, customer concentrations, and credit enhancements. Separate credit risk from pricing concessions, billing errors, revenue reversals, and tax corrections.",
+      "answer": "Identify the actual receivable/instrument and relevant measurement model before borrowing a historical loss rate. Gather balances, terms, disputes, collections, write-offs, recoveries and enhancements. Separate candidate credit-loss questions from billing corrections or pricing issues; the categories require evidence and applicable-authority review.",
       "related_item_id": "receivable-loss-workbook",
       "source_ids": [
         "fasb-asc"
@@ -403,7 +408,7 @@
     {
       "id": "qa-034",
       "question": "What should the Agent deliver for the credit losses workbook?",
-      "answer": "Deliver a validated population, segmentation rationale, assumption register, sensitivity table, rollforward, and open judgment log. The reviewer should challenge data leakage from later periods and optimistic assumptions. The Agent may compute stipulated scenarios but must not independently set a probability of default or claim that a calculated amount satisfies GAAP. Any missing primary-text verification must remain visible.",
+      "answer": "Request the reconciled candidate population, segmentation rationale, rate/forecast assumptions, rollforward and sensitivity branches. Call a component validated only when the supporting procedure was actually performed and recorded. A stipulated rate calculation is not independent risk estimation or proof of GAAP compliance.",
       "related_item_id": "receivable-loss-workbook",
       "source_ids": [
         "fasb-asc"
@@ -415,7 +420,7 @@
     {
       "id": "qa-035",
       "question": "What is the first research step for inventory?",
-      "answer": "Establish the scope and facts before selecting a model. Obtain inventory by item and location, count instructions, count results, ownership terms, goods in transit, consignment arrangements, production records, cost layers, overhead allocations, aging, and subsequent selling information. Identify whether the inventory is manufactured, purchased, work in process, or held for a customer. Record the costing method and the scope of any specialized industry guidance.",
+      "answer": "Identify inventory items, locations, ownership evidence, count records, costing records, aging and later selling information. Distinguish manufactured, purchased, work-in-process and third-party-held populations without deciding ownership from location alone. The relevant costing and valuation guidance remains a research task.",
       "related_item_id": "inventory-workbook",
       "source_ids": [
         "fasb-asc"
@@ -427,7 +432,7 @@
     {
       "id": "qa-036",
       "question": "What should the Agent deliver for the inventory workbook?",
-      "answer": "Produce linked quantity, ownership, costing, and valuation schedules. Mark estimates and missing third-party confirmations separately. The reviewer should reconcile reserve movements and examine whether management offset unrelated gains and losses. The Agent should identify gaps and calculate explicitly assumed scenarios, not invent sales forecasts or substitute for inventory observation. Any missing primary-text verification must remain visible.",
+      "answer": "Request linked quantity, ownership, cost and valuation questions, with differences and missing confirmations separately shown. If a hypothetical count has 100 units and records show 108, the difference is 8 units; its cause and value are not established by subtraction. AI work does not replace actual inventory observation or professional conclusions.",
       "related_item_id": "inventory-workbook",
       "source_ids": [
         "fasb-asc"
@@ -439,7 +444,7 @@
     {
       "id": "qa-037",
       "question": "What is the first research step for impairment?",
-      "answer": "Establish the scope and facts before selecting a model. List the assets being evaluated, carrying amounts, allocation of associated balances, reporting units or asset groups proposed by management, useful lives, held-for-sale assertions, and relevant acquisition history. Identify goodwill, finite-lived intangibles, indefinite-lived intangibles, tangible long-lived assets, and assets governed by other guidance. Different labels may lead to different testing paths.",
+      "answer": "List the assets, carrying amounts, acquisition history, management’s proposed grouping and relevant operating facts. Distinguish goodwill, finite- or indefinite-lived intangibles and other assets as research categories. Do not apply one convenient impairment calculation before verifying the applicable model and unit of account.",
       "related_item_id": "impairment-workbook",
       "source_ids": [
         "fasb-asc"
@@ -451,7 +456,7 @@
     {
       "id": "qa-038",
       "question": "What should the Agent deliver for the impairment workbook?",
-      "answer": "Deliver a model map, evidence chronology, carrying-amount tie-out, forecast version register, sensitivities, and conditional conclusions. The reviewer should test whether favorable assumptions are consistent across budgets, disclosures, and the impairment calculation. The Agent must not label a valuation as independently appraised or professionally reviewed. Any missing primary-text verification must remain visible.",
+      "answer": "Request a model-selection question map, chronology, carrying-amount reconciliation, forecast versions and sensitivity assumptions. Compare inconsistent assumptions across budgets and disclosures. A scenario calculation is not an independent appraisal, verified fair value or approved impairment conclusion.",
       "related_item_id": "impairment-workbook",
       "source_ids": [
         "fasb-asc"
@@ -463,7 +468,7 @@
     {
       "id": "qa-039",
       "question": "What is the first research step for fair value?",
-      "answer": "Establish the scope and facts before selecting a model. Identify the instrument or asset, unit of account, relevant market participants, measurement date, transaction restrictions, valuation purpose, and the accounting standard requiring or permitting fair value. Gather quoted prices, transaction evidence, market data, model documentation, and management adjustments. Research scope rather than assuming that every internally estimated value is an ASC 820 measurement.",
+      "answer": "Identify the specific instrument, rights, unit, purpose and measurement date before using a price or valuation model. Preserve observed, adjusted and unobservable inputs with their provenance. A current quote for a different security does not automatically measure this instrument, and not every internal estimate is an ASC 820 measurement.",
       "related_item_id": "fair-value-workbook",
       "source_ids": [
         "fasb-asc"
@@ -475,7 +480,7 @@
     {
       "id": "qa-040",
       "question": "What should the Agent deliver for the fair value workbook?",
-      "answer": "Produce the valuation rationale, input lineage, unresolved quotes, assumption sensitivities, and required specialist questions. The Agent may test arithmetic and consistency but must not claim to have performed an independent specialist valuation. The reviewer should identify which inputs most affect the result and whether available contradictory information was addressed. Any missing primary-text verification must remain visible.",
+      "answer": "Request the proposed method, input lineage, unmatched quotes, alternative assumptions and specialist questions. In a hypothetical 100-unit position, prices 9 and 10 produce 900 and 1000, a 100 difference; neither price is validated by multiplication. No independent specialist valuation or current primary ASC review is supplied.",
       "related_item_id": "fair-value-workbook",
       "source_ids": [
         "fasb-asc"
@@ -487,7 +492,7 @@
     {
       "id": "qa-041",
       "question": "What is the first research step for acquisitions?",
-      "answer": "Establish the scope and facts before selecting a model. Obtain the complete purchase agreement, schedules, closing statement, side letters, financing agreements, ownership chart, service arrangements, valuation reports, and board approvals. Identify what was acquired and what activities and resources transferred. Determine which business-versus-asset and acquirer-identification questions require authoritative research.",
+      "answer": "Obtain the full permitted transaction packet, including agreement, schedules, side letters, closing evidence, financing and ownership records. Identify what transferred and when. Business-versus-asset and acquirer-identification questions require applicable primary criteria and the complete facts, not the transaction’s label.",
       "related_item_id": "acquisition-workbook",
       "source_ids": [
         "fasb-asc"
@@ -499,7 +504,7 @@
     {
       "id": "qa-042",
       "question": "What should the Agent deliver for the business combinations workbook?",
-      "answer": "Deliver a transaction map, issue register, payment reconciliation, valuation requests, draft entry alternatives, and a disclosure checklist. The reviewer should examine omitted schedules and related agreements before approving scope. The Agent must not allocate an unsupported residual to goodwill merely to make entries balance. Any missing primary-text verification must remain visible.",
+      "answer": "Request a transaction map, consideration reconciliation, missing-document list, valuation questions and conditional entry alternatives. Do not allocate an unexplained residual to goodwill solely to balance a journal. The completeness of the acquired population and the accounting model must be established separately.",
       "related_item_id": "acquisition-workbook",
       "source_ids": [
         "fasb-asc"
@@ -511,7 +516,7 @@
     {
       "id": "qa-043",
       "question": "What is the first research step for consolidation?",
-      "answer": "Establish the scope and facts before selecting a model. Obtain ownership records, governing documents, investor agreements, management contracts, financing arrangements, guarantees, options, related-party relationships, and amendments. Identify the purpose and activities of each legal entity. Document direct and indirect interests rather than relying only on a capitalization table.",
+      "answer": "Map legal entities, ownership, contractual rights, decision arrangements, financing, guarantees and amendments. Separate supported direct and indirect interests from assumptions. A capitalization percentage alone is not a complete consolidation analysis; the governing model and arrangement must be researched.",
       "related_item_id": "consolidation-workbook",
       "source_ids": [
         "fasb-asc"
@@ -523,7 +528,7 @@
     {
       "id": "qa-044",
       "question": "What should the Agent deliver for the consolidation workbook?",
-      "answer": "Produce a legal-entity map, clause-to-criterion matrix, evidence gaps, alternative-model discussion, and reassessment triggers. The reviewer should examine the entire arrangement, including guarantees outside the main agreement. The Agent should stop when material governing documents are absent and should never substitute generated summaries for legal interpretation of disputed rights. Any missing primary-text verification must remain visible.",
+      "answer": "Request the entity/right map, clause-to-criterion questions, alternatives and reassessment triggers. Preserve missing governing documents and disputed rights. Generated summaries are not a legal determination or proof that an entity should be consolidated.",
       "related_item_id": "consolidation-workbook",
       "source_ids": [
         "fasb-asc"
@@ -535,7 +540,7 @@
     {
       "id": "qa-045",
       "question": "What is the first research step for income taxes?",
-      "answer": "Establish the scope and facts before selecting a model. Gather pretax book income by legal entity and jurisdiction, tax returns or provision workpapers, permanent and temporary differences, tax bases, loss and credit carryforwards, expiry schedules, uncertain-position analyses, and changes in law. Identify whether a levy is an income tax within scope before selecting the accounting model. Do not classify payroll, sales, or marketplace taxes solely by the name of the department managing them.",
+      "answer": "Identify each jurisdiction, entity, levy, relevant period and accounting model requiring research. Gather tax bases, provision inputs, returns, differences, carryforwards, uncertainty records and actual law changes. A department name does not decide whether a levy is an income tax, and no enacted rate is supplied by this set.",
       "related_item_id": "income-tax-workbook",
       "source_ids": [
         "fasb-asc"
@@ -547,7 +552,7 @@
     {
       "id": "qa-046",
       "question": "What should the Agent deliver for the income taxes workbook?",
-      "answer": "Deliver a reconciled provision file, evidence register, open law/interpretation questions, draft disclosure questions, and reviewer sign-offs. Tax-law conclusions require appropriately qualified review. The Agent can cross-check totals and missing documentation but must not invent enacted rates or treat an ambiguous tax as automatically subject to ASC 740. Any missing primary-text verification must remain visible.",
+      "answer": "Request a candidate provision reconciliation, evidence register, actual law questions and a place for real reviewer decisions. Do not generate reviewer sign-offs. A formula can be checked under stipulated rates, but current law, scope, realization or uncertain-position judgments need authorized primary research and qualified review.",
       "related_item_id": "income-tax-workbook",
       "source_ids": [
         "fasb-asc"
@@ -559,7 +564,7 @@
     {
       "id": "qa-047",
       "question": "What is the first research step for foreign currency?",
-      "answer": "Establish the scope and facts before selecting a model. Identify each entity, its local books currency, asserted functional currency, presentation currency, transaction currencies, and consolidation path. Obtain transaction dates, settlement dates, rate sources, historical-rate records, monetary/nonmonetary classifications proposed by management, and changes in the economic environment. Record whether a proposed functional-currency change has actually been approved.",
+      "answer": "Distinguish books, asserted functional, presentation and transaction currencies; identify dates, rate sources and proposed monetary/nonmonetary classifications. Record management’s asserted currency decision and evidence. Internal approval is not by itself proof that the accounting criteria are met.",
       "related_item_id": "foreign-currency-workbook",
       "source_ids": [
         "fasb-asc"
@@ -571,7 +576,7 @@
     {
       "id": "qa-048",
       "question": "What should the Agent deliver for the foreign currency workbook?",
-      "answer": "Deliver a functional-currency fact file, rate-source register, rollforward, error-versus-policy analysis, and draft entries with explicit assumptions. The reviewer should trace every exchange difference to its cause. The Agent may perform unit-checked arithmetic but must not assign functional currency or post exchange entries autonomously. Any missing primary-text verification must remain visible.",
+      "answer": "Request a currency fact file, source-dated rate register, bridge and conditional entries. For an original USD-per-EUR rate example, EUR 100 at USD 1.10 per EUR is USD 110; reversing the units would answer another question. This does not assign functional currency or authorize a posting.",
       "related_item_id": "foreign-currency-workbook",
       "source_ids": [
         "fasb-asc"
@@ -583,7 +588,7 @@
     {
       "id": "qa-049",
       "question": "What is the first research step for going concern?",
-      "answer": "Establish the scope and facts before selecting a model. Record the financial-statement date, expected issuance or availability date, management's assessment period, audit-report date, reporting framework, and audit regime. Obtain forecasts, cash restrictions, debt maturities, covenant calculations, financing agreements, supplier terms, board plans, and support commitments. Do not collapse these dates into a single generic twelve-month window.",
+      "answer": "Record statement, issuance/availability and audit-report dates, entity/framework and the assessment horizon to verify. Gather unrestricted cash, dated obligations, forecasts, financing conditions and support evidence. Do not collapse management and auditor evaluation periods into a generic twelve-month window.",
       "related_item_id": "going-concern-workbook",
       "source_ids": [
         "fasb-asc"
@@ -595,7 +600,7 @@
     {
       "id": "qa-050",
       "question": "What should the Agent deliver for the going concern workbook?",
-      "answer": "Deliver a timeline, documented assumptions, funding-status matrix, scenario output, disclosure questions, and separate management/auditor responsibility maps. Escalate unsupported plans and date gaps. The reviewer must verify authoritative criteria and evaluate judgment; the Agent must not issue an assurance conclusion or predict solvency. Any missing primary-text verification must remain visible.",
+      "answer": "Request timed cash scenarios, funding-status evidence, assumptions, missing facts and separate accounting/audit questions. A positive final cash projection may conceal an earlier gap. AI arithmetic is not a solvency prediction, assurance opinion or completed going-concern assessment.",
       "related_item_id": "going-concern-workbook",
       "source_ids": [
         "fasb-asc"
@@ -607,7 +612,7 @@
     {
       "id": "qa-051",
       "question": "What is the first research step for subsequent events?",
-      "answer": "Establish the scope and facts before selecting a model. Collect the reporting date, issuance or availability date, audit-report date, and the date each event was discovered. Obtain legal updates, board minutes, financing agreements, settlements, customer failures, acquisitions, major casualty information, and relevant subsequent financial results. Distinguish when a condition existed from when someone learned of it.",
+      "answer": "Record the condition’s asserted onset, actual event, discovery, reporting and review dates separately. Obtain relevant subsequent records with provenance and conflicting evidence. A later document can describe an earlier condition, but the description must be evaluated rather than automatically accepted.",
       "related_item_id": "subsequent-events-workbook",
       "source_ids": [
         "fasb-asc"
@@ -619,7 +624,7 @@
     {
       "id": "qa-052",
       "question": "What should the Agent deliver for the subsequent events workbook?",
-      "answer": "Deliver an event register, candidate accounting treatment, factual uncertainties, proposed disclosure text only where justified, and a final update checklist. The reviewer should check completeness of the search period and whether contradictory evidence was omitted. The Agent must not mark the subsequent-event review complete when the evaluation endpoint remains unknown. Any missing primary-text verification must remain visible.",
+      "answer": "Request the event chronology, recognition/disclosure questions, factual uncertainties and the actual evaluation endpoint. Do not mark the required review period complete while its endpoint or coverage is unknown. Reissuance and later-discovered facts need their own applicable-authority analysis.",
       "related_item_id": "subsequent-events-workbook",
       "source_ids": [
         "fasb-asc"
@@ -631,7 +636,7 @@
     {
       "id": "qa-053",
       "question": "What is the first research step for related parties?",
-      "answer": "Establish the scope and facts before selecting a model. Obtain the ownership and management structure, beneficial-owner information available to the entity, conflict declarations, board minutes, intercompany balances, guarantees, unusual customers or vendors, and transaction agreements. Record the scope of the applicable definition before classifying a party. Family, affiliate, and management relationships require facts, not name matching alone.",
+      "answer": "Use permitted ownership, governance, conflict and transaction records to identify supported relationships and their dates. Apply the relevant definition only after primary research. Do not infer family ties, hidden interests or misconduct from names, social-media proximity or unsupported speculation.",
       "related_item_id": "related-party-workbook",
       "source_ids": [
         "fasb-asc"
@@ -643,7 +648,7 @@
     {
       "id": "qa-054",
       "question": "What should the Agent deliver for the related parties workbook?",
-      "answer": "Produce a dated party map, ledger reconciliation, missing confirmations, disclosure matrix, and exceptions requiring review. Protect personal data and use role-based access for sensitive relationship details. The Agent must not infer hidden personal relationships from names, social media, or unsupported speculation. Any missing primary-text verification must remain visible.",
+      "answer": "Request a dated supported-party map, gross transaction/balance reconciliation, disclosure questions and evidence gaps. Keep necessary personal details within the authorized audience. A workpaper label does not itself enforce access controls or establish a complete relationship search.",
       "related_item_id": "related-party-workbook",
       "source_ids": [
         "fasb-asc"
@@ -655,7 +660,7 @@
     {
       "id": "qa-055",
       "question": "What is the first research step for software costs?",
-      "answer": "Establish the scope and facts before selecting a model. Obtain project purpose, intended users, hosting and licensing arrangements, customer access rights, project phases, approvals, development milestones, time records, vendor invoices, abandoned features, and enhancement descriptions. Establish the reporting period and whether recently issued amendments are adopted. The label cloud or AI does not independently determine the accounting model.",
+      "answer": "Identify project purpose, users, contractual access, hosting/licensing, activities, milestones, costs and reporting period. Record which amendments and adoption choices require verification. A cloud or AI label does not determine the accounting model; later summaries do not replace contemporaneous project evidence.",
       "related_item_id": "software-cost-workbook",
       "source_ids": [
         "fasb-asc"
@@ -667,7 +672,7 @@
     {
       "id": "qa-056",
       "question": "What should the Agent deliver for the software costs workbook?",
-      "answer": "Deliver an arrangement map, cost/activity matrix, unsupported allocations, chronology, candidate accounting policies, and amortization assumptions. The reviewer should reconcile policy with approved project evidence. The Agent must not turn a project manager's retrospective estimate into verified time records. Any missing primary-text verification must remain visible.",
+      "answer": "Request an arrangement and cost/activity map, unsupported allocations, chronology and candidate policy questions. Proposed amortization assumptions remain conditional until the governing model and facts are established. A retrospective managerial estimate is not verified time-record evidence.",
       "related_item_id": "software-cost-workbook",
       "source_ids": [
         "fasb-asc"
@@ -679,7 +684,7 @@
     {
       "id": "qa-057",
       "question": "What is the first research step for debt and equity-linked instruments?",
-      "answer": "Establish the scope and facts before selecting a model. Obtain signed agreements, amendments, side letters, conversion terms, warrants, puts and calls, redemption provisions, covenant calculations, guarantees, fees, settlement alternatives, and board approvals. Record issuer and holder perspectives separately. A SAFE, note, preferred share, or warrant label is only an intake category.",
+      "answer": "Gather executed financing terms, amendments, side letters, conversion/redemption features, covenants, fees, guarantees and settlement alternatives. Keep issuer and holder perspectives separate. SAFE, note, preferred share and warrant labels are intake descriptions, not accounting classifications.",
       "related_item_id": "debt-workbook",
       "source_ids": [
         "fasb-asc"
@@ -691,7 +696,7 @@
     {
       "id": "qa-058",
       "question": "What should the Agent deliver for the debt and equity workbook?",
-      "answer": "Deliver a financing map, full-term extraction, candidate accounting paths, missing clauses, calculation requests, and proposed entries only after the model is established. The reviewer should challenge assumptions about settlement control and scope. Legal enforceability and specialist valuation questions need appropriate human review. Any missing primary-text verification must remain visible.",
+      "answer": "Request a financing map, cited selected terms, extraction-coverage gaps and candidate accounting paths. Do not promise complete term extraction from an incomplete packet. Entries, enforceability, settlement control and specialist valuation require the appropriate actual evidence and review.",
       "related_item_id": "debt-workbook",
       "source_ids": [
         "fasb-asc"

@@ -1,0 +1,580 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "research-study-questions",
+  "input_sha256": "2c25516d646e3464bccfdb5965e83a0a9750306e5608f98bccae1132493842c5",
+  "output_sha256": "e6bb5cea4459a478214e85e03024985e73fdb6717462bdb0d4e3d0978605b86e",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T08:03:44Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC text not accessed",
+      "access_state": "not_accessed_link_only",
+      "exact_locators": [
+        "Research locator only; no current recognition, measurement or disclosure paragraph verified"
+      ],
+      "checked_claim_ids": [
+        "qa-001",
+        "qa-004",
+        "qa-005",
+        "qa-006",
+        "qa-007",
+        "qa-008",
+        "qa-009",
+        "qa-011",
+        "qa-012",
+        "qa-013",
+        "qa-014",
+        "qa-015",
+        "qa-016",
+        "qa-017",
+        "qa-018",
+        "qa-030"
+      ]
+    },
+    {
+      "reference_id": "sec-frm",
+      "official_url": "https://www.sec.gov/about/divisions-offices/division-corporation-finance/financial-reporting-manual",
+      "source_version_or_date": "Landing-page update 2026-06-29; inspected 2026-10-04",
+      "access_state": "official_disclaimer_and_revision_notes_examined",
+      "exact_locators": [
+        "Non-authoritative status and underlying-source priority",
+        "Administrative changes versus technical section updates"
+      ],
+      "checked_claim_ids": [
+        "qa-002",
+        "qa-003"
+      ]
+    },
+    {
+      "reference_id": "fasb-customer-equity",
+      "official_url": "https://fasb.org/",
+      "source_version_or_date": "Retained customer-consideration announcement; direct page body unavailable on 2026-10-04",
+      "access_state": "historical_unusable_page_attempt_followed_by_homepage_only_link_boundary_no_new_fetch",
+      "exact_locators": [
+        "No full announcement, ASU or current ASC text verified; answer qa-010 reframed as research",
+        "October 4, 2026 correction: article and receipt use only the FASB homepage; no source body was newly accessed or verified."
+      ],
+      "checked_claim_ids": [
+        "qa-010"
+      ]
+    },
+    {
+      "reference_id": "sec-sab14",
+      "official_url": "https://www.sec.gov/interps/account/sabcodet14.htm",
+      "source_version_or_date": "Codified Topic 14; selected staff context inspected 2026-10-04",
+      "access_state": "selected_official_staff_sections_examined",
+      "exact_locators": [
+        "Section C Questions 2-4: model fit and expertise; embedded ASC quotations not reproduced"
+      ],
+      "checked_claim_ids": [
+        "qa-015"
+      ]
+    },
+    {
+      "reference_id": "sec-sab99",
+      "official_url": "https://www.sec.gov/interps/account/sab99.htm",
+      "source_version_or_date": "1999-08-12 issuance; inspected 2026-10-04",
+      "access_state": "official_staff_text_examined",
+      "exact_locators": [
+        "Introductory staff status",
+        "Topic 1.M.1 quantitative/qualitative and aggregation discussion"
+      ],
+      "checked_claim_ids": [
+        "qa-019",
+        "qa-020"
+      ]
+    },
+    {
+      "reference_id": "sec-sab108",
+      "official_url": "https://www.sec.gov/rules-regulations/staff-guidance/staff-accounting-bulletins/staff-accounting-bulletin-no-108",
+      "source_version_or_date": "2006-09-13 issuance; inspected 2026-10-04",
+      "access_state": "official_staff_text_examined",
+      "exact_locators": [
+        "Introductory staff status",
+        "Topic 1.N Questions 1-3: both measurements, reversals and historical transition"
+      ],
+      "checked_claim_ids": [
+        "qa-021",
+        "qa-022"
+      ]
+    },
+    {
+      "reference_id": "pcaob-as2201",
+      "official_url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2201",
+      "source_version_or_date": "Current body/version/applicability not freshly verified",
+      "access_state": "fresh_automated_retrieval_not_performed_due_to_publisher_restriction",
+      "exact_locators": [
+        "Retained reference link only; no current standard/policy body inspected"
+      ],
+      "checked_claim_ids": [
+        "qa-023",
+        "qa-024",
+        "qa-025"
+      ]
+    },
+    {
+      "reference_id": "pcaob-as1105",
+      "official_url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS1105",
+      "source_version_or_date": "Current body/version/applicability not freshly verified",
+      "access_state": "fresh_automated_retrieval_not_performed_due_to_publisher_restriction",
+      "exact_locators": [
+        "Retained reference link only; no current standard/policy body inspected"
+      ],
+      "checked_claim_ids": [
+        "qa-026"
+      ]
+    },
+    {
+      "reference_id": "pcaob-electronic-policy",
+      "official_url": "https://pcaobus.org/news-events/news-releases/news-release-detail/pcaob-posts-board-policy-statement-on-evaluating-the-reliability-of-external-electronic-information-provided-by-the-company",
+      "source_version_or_date": "Current body/version/applicability not freshly verified",
+      "access_state": "fresh_automated_retrieval_not_performed_due_to_publisher_restriction",
+      "exact_locators": [
+        "Retained reference link only; no current standard/policy body inspected"
+      ],
+      "checked_claim_ids": [
+        "qa-027"
+      ]
+    },
+    {
+      "reference_id": "sec-nongaap",
+      "official_url": "https://www.sec.gov/rules-regulations/staff-guidance/corporation-finance-interpretations/non-gaap-financial-measures",
+      "source_version_or_date": "Selected questions dated 2016-05-17 or 2022-12-13; inspected 2026-10-04",
+      "access_state": "selected_official_staff_text_examined",
+      "exact_locators": [
+        "Question 100.06 and Section 100 context"
+      ],
+      "checked_claim_ids": [
+        "qa-028"
+      ]
+    },
+    {
+      "reference_id": "gao-yellowbook",
+      "official_url": "https://www.gao.gov/yellowbook",
+      "source_version_or_date": "2024 Yellow Book current landing page inspected 2026-10-04",
+      "access_state": "official_timing_sections_examined",
+      "exact_locators": [
+        "Current Yellow Book: engagement-effective dates and general quality-management dates",
+        "Special Note for Federal Government Audit Organizations: deferral through 2026-03-16 and one-year evaluation timing"
+      ],
+      "checked_claim_ids": [
+        "qa-029"
+      ]
+    },
+    {
+      "reference_id": "pcaob-terms",
+      "official_url": "https://pcaobus.org/privacypolicy",
+      "source_version_or_date": "Terms last-updated label 2021-09-09; inspected 2026-10-04",
+      "access_state": "publisher_policy_examined_then_standard_retrieval_stopped",
+      "exact_locators": [
+        "Authorized Use automated-gathering restriction",
+        "Separate conditional Public Materials reuse allowance"
+      ],
+      "checked_claim_ids": [
+        "qa-023",
+        "qa-024",
+        "qa-025",
+        "qa-026",
+        "qa-027",
+        "qa-030",
+        "publisher-access"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "qa-001",
+      "article_section": "qa-001",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Citation versus actual passage/version access. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-002",
+      "article_section": "qa-002",
+      "category": "individual_answer_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "FRM authority and page-date scope. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "sec-frm"
+      ]
+    },
+    {
+      "claim_id": "qa-003",
+      "article_section": "qa-003",
+      "category": "individual_answer_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Peer practice versus authoritative conclusion. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "sec-frm"
+      ]
+    },
+    {
+      "claim_id": "qa-004",
+      "article_section": "qa-004",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Billing label does not settle model application. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-005",
+      "article_section": "qa-005",
+      "category": "individual_answer_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Original implementation fact collection. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-006",
+      "article_section": "qa-006",
+      "category": "individual_answer_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Stipulated allocation arithmetic and model limits. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-007",
+      "article_section": "qa-007",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Invoice date versus unverified recognition analysis. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-008",
+      "article_section": "qa-008",
+      "category": "individual_answer_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Unvalidated percentage/model selection. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-009",
+      "article_section": "qa-009",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Customer arrangement and primary-text gap. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-010",
+      "article_section": "qa-010",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Announcement access limitation and amendment research. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated. Correction: removed the announcement deep link from the revised article and receipt; the answer now explicitly identifies the homepage-only research entry point. No new source retrieval or technical conclusion occurred.",
+      "source_reference_ids": [
+        "fasb-customer-equity"
+      ]
+    },
+    {
+      "claim_id": "qa-011",
+      "article_section": "qa-011",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Service label versus actual use arrangement. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-012",
+      "article_section": "qa-012",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Schedule arithmetic versus lease classification. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-013",
+      "article_section": "qa-013",
+      "category": "individual_answer_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Three-payment PV with final cent rounding. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-014",
+      "article_section": "qa-014",
+      "category": "individual_answer_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Reproduce rounding instead of assuming it. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-015",
+      "article_section": "qa-015",
+      "category": "individual_answer_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Award facts and limited SEC model-fit context. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc",
+        "sec-sab14"
+      ]
+    },
+    {
+      "claim_id": "qa-016",
+      "article_section": "qa-016",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Amendment terms versus unverified legal/accounting effect. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-017",
+      "article_section": "qa-017",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Reserve label versus classification research. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-018",
+      "article_section": "qa-018",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Tax/loss scope and unaccessed topic criteria. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "qa-019",
+      "article_section": "qa-019",
+      "category": "individual_answer_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "SAB 99 rejects exclusive percentage cutoff. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "sec-sab99"
+      ]
+    },
+    {
+      "claim_id": "qa-020",
+      "article_section": "qa-020",
+      "category": "individual_answer_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "SAB 99 qualitative circumstances. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "sec-sab99"
+      ]
+    },
+    {
+      "claim_id": "qa-021",
+      "article_section": "qa-021",
+      "category": "individual_answer_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "SAB 108 carryover and reversal views. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "sec-sab108"
+      ]
+    },
+    {
+      "claim_id": "qa-022",
+      "article_section": "qa-022",
+      "category": "individual_answer_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Three-year accumulation and signed-release income effect. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "sec-sab108"
+      ]
+    },
+    {
+      "claim_id": "qa-023",
+      "article_section": "qa-023",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Error-free sample cannot establish complete deficiency evidence. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "pcaob-as2201",
+        "pcaob-terms"
+      ]
+    },
+    {
+      "claim_id": "qa-024",
+      "article_section": "qa-024",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Original compensating-activity evidence questions. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "pcaob-as2201",
+        "pcaob-terms"
+      ]
+    },
+    {
+      "claim_id": "qa-025",
+      "article_section": "qa-025",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Approval/implementation/operation chronology. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "pcaob-as2201",
+        "pcaob-terms"
+      ]
+    },
+    {
+      "claim_id": "qa-026",
+      "article_section": "qa-026",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Copies versus independent observations; AS 1105 gap. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "pcaob-as1105",
+        "pcaob-terms"
+      ]
+    },
+    {
+      "claim_id": "qa-027",
+      "article_section": "qa-027",
+      "category": "individual_answer_review",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Original electronic provenance questions; current policy gap. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "pcaob-electronic-policy",
+        "pcaob-terms"
+      ]
+    },
+    {
+      "claim_id": "qa-028",
+      "article_section": "qa-028",
+      "category": "individual_answer_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "SEC staff100.06 misleading measure not cured by explanation. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "sec-nongaap"
+      ]
+    },
+    {
+      "claim_id": "qa-029",
+      "article_section": "qa-029",
+      "category": "individual_answer_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "GAO engagement dates versus separate general/federal QM timing. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "gao-yellowbook"
+      ]
+    },
+    {
+      "claim_id": "qa-030",
+      "article_section": "qa-030",
+      "category": "individual_answer_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Subscription/software gate distinct from publisher rights. The exact revised answer was checked for factual/arithmetic scope, omitted assumptions and whether it claims unavailable primary text; it remains educational, not professionally adjudicated.",
+      "source_reference_ids": [
+        "fasb-asc",
+        "pcaob-terms"
+      ]
+    },
+    {
+      "claim_id": "publisher-access",
+      "article_section": "Sources and access limit",
+      "category": "rights_and_access",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "PCAOB Authorized Use restriction was inspected before deciding not to freshly fetch the standard/policy bodies. Separate reuse provisions are not treated as automated-acquisition permission.",
+      "source_reference_ids": [
+        "pcaob-terms"
+      ]
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "qa-006 stated allocation",
+      "actual": "(72000, 18000)",
+      "expected": "(72000, 18000)",
+      "result": "pass"
+    },
+    {
+      "check": "qa-013 present value",
+      "actual": "26730.12",
+      "expected": "26730.12",
+      "result": "pass"
+    },
+    {
+      "check": "qa-022 accumulation",
+      "actual": "(36000, 24000)",
+      "expected": "(36000, 24000)",
+      "result": "pass"
+    },
+    {
+      "check": "qa-022 release income effect",
+      "actual": "-24000",
+      "expected": "-24000",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Individually revised all 30 answers, preserving IDs.",
+    "Corrected unsupported validation/sign-off or primary-authority implications and checked worked arithmetic.",
+    "Proposed exact question-bank replacements separately; no shared-bank write or gold/human review transition.",
+    "Correction on October 4, 2026: replaced the newly added FASB announcement deep link with the homepage, clarified qa-010, and rebound this exact article revision. Unavailable-source and unverified applicability gaps remain open."
+  ],
+  "unresolved_gaps": [
+    "No human professional approval or complete entity-specific accounting/audit/legal determination.",
+    "Current primary ASC text not accessed; topic/model references are research leads.",
+    "Current PCAOB standard/policy body and amendment applicability not freshly verified because automated acquisition is restricted.",
+    "Question bank replacements are proposed only; existing shared bank and human/gold review state remain unchanged.",
+    "FASB customer-consideration direct page yielded no usable body; no full announcement/ASU/ASC verification."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

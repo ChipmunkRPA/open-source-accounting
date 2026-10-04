@@ -1,0 +1,28 @@
+{
+  "item_id": "receivable-loss-workbook",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "guides/receivable-loss-workbook-v1.md",
+    "version": "1.0.0",
+    "sha256": "7b71227d7e6e95e4ac40b22a695375ec4894a657d4380a79d05d65761119d5cb",
+    "source_ids": [
+      "fasb-asc",
+      "pcaob-as2501"
+    ]
+  },
+  "current": {
+    "path": "guides/receivable-loss-workbook-v2.md",
+    "version": "1.1.0",
+    "sha256": "377f14b7de202f551bc32a220e6bcc46f9faf3d2c8792766fb3656ed69de4e54",
+    "source_ids": [
+      "fasb-asc",
+      "pcaob-as2501",
+      "pcaob-terms"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

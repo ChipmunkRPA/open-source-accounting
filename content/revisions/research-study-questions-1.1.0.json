@@ -1,0 +1,47 @@
+{
+  "item_id": "research-study-questions",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "qa/research-study-questions.md",
+    "version": "0.5.0",
+    "sha256": "2c25516d646e3464bccfdb5965e83a0a9750306e5608f98bccae1132493842c5",
+    "source_ids": [
+      "fasb-asc",
+      "sec-frm",
+      "fasb-customer-equity",
+      "sec-sab14",
+      "sec-sab99",
+      "sec-sab108",
+      "pcaob-as2201",
+      "pcaob-as1105",
+      "pcaob-electronic-policy",
+      "sec-nongaap",
+      "gao-yellowbook",
+      "pcaob-terms"
+    ]
+  },
+  "current": {
+    "path": "qa/research-study-questions-v1.md",
+    "version": "1.1.0",
+    "sha256": "e6bb5cea4459a478214e85e03024985e73fdb6717462bdb0d4e3d0978605b86e",
+    "source_ids": [
+      "fasb-asc",
+      "sec-frm",
+      "fasb-customer-equity",
+      "sec-sab14",
+      "sec-sab99",
+      "sec-sab108",
+      "pcaob-as2201",
+      "pcaob-as1105",
+      "pcaob-electronic-policy",
+      "sec-nongaap",
+      "gao-yellowbook",
+      "pcaob-terms"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

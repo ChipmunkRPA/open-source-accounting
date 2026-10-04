@@ -1,0 +1,229 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "inventory-workbook",
+  "input_sha256": "6c0a6e0a5f1e987c18dfeddf37d772dd7376209e5d5534dfff729d6136752728",
+  "output_sha256": "70bef72117b1dd31b904a73e8d269ccdaaf1e1f586ff086edc17ebd75096b071",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T07:14:07Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC/ASU text not accessed; publisher boundary identified 2026-10-04",
+      "access_state": "not_accessed_link_only_rights_unresolved",
+      "exact_locators": [
+        "Research entry point only; no operative paragraph adopted as verified"
+      ],
+      "checked_claim_ids": [
+        "source-boundary"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "inventory-population",
+      "article_section": "1–2. Quantities and ownership",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Recorded 150 and candidate 150 total quantities conceal A-10/B+10. Physical 170 and excluded 20 are stipulated populations, not verified ownership/count results.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "inventory-costs",
+      "article_section": "3. Cost extensions",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Recorded 2500 versus candidate 2700, net 200 and absolute 400 all recalculate. Wrong supplier-owned inclusion yields 2900; no correcting entry is selected.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "inventory-cutoff",
+      "article_section": "4. Conditional cutoff branch",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Expected 110 and candidate 100 preserve-10 variance when the same 10 units are included on both sides. One-sided addition creates a false tie.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "inventory-uncertainty",
+      "article_section": "5. Stop conditions",
+      "category": "original_reasoning",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Missing 15-unit warehouse support is not replaced with zero; unit, identity, cutoff and valuation gaps remain explicit.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "embedded-question-1",
+      "article_section": "Embedded study question 1",
+      "category": "individual_question_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "150-to-150 total hides distinct A-10/B+10 exceptions.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "embedded-question-2",
+      "article_section": "Embedded study question 2",
+      "category": "individual_question_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "C 03/C 02 inclusion depends on stipulated ownership, not custody alone.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "embedded-question-3",
+      "article_section": "Embedded study question 3",
+      "category": "individual_question_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "-100+300 yields net 200 but absolute 400; neither is an approved entry.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "embedded-question-4",
+      "article_section": "Embedded study question 4",
+      "category": "individual_question_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Missing warehouse support cannot justify changing 15 to zero.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "embedded-question-5",
+      "article_section": "Embedded study question 5",
+      "category": "individual_question_review",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Both-sided cutoff branch leaves candidate 100 versus expected 110 and-10 variance.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "source-boundary",
+      "article_section": "Scope; Sources and verification",
+      "category": "source_access_and_rights",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Current primary ASC/ASU text, applicable amendments and source-operation permission remain unresolved. FASB restrictions identified October 4, 2026 prevented further retrieval. Original calculations do not verify current accounting requirements.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Original quantity rollforwards",
+      "actual": "[100, 50]",
+      "expected": "[100, 50]",
+      "result": "pass"
+    },
+    {
+      "check": "Aggregate opening/receipts/shipments/ending",
+      "actual": "[160, 60, 70, 150]",
+      "expected": "[160, 60, 70, 150]",
+      "result": "pass"
+    },
+    {
+      "check": "Physical records",
+      "actual": "170",
+      "expected": "170",
+      "result": "pass"
+    },
+    {
+      "check": "Candidate included population",
+      "actual": "150",
+      "expected": "150",
+      "result": "pass"
+    },
+    {
+      "check": "SKU candidates",
+      "actual": "[90, 60]",
+      "expected": "[90, 60]",
+      "result": "pass"
+    },
+    {
+      "check": "SKU differences and net",
+      "actual": "[-10, 10, 0]",
+      "expected": "[-10, 10, 0]",
+      "result": "pass"
+    },
+    {
+      "check": "Missing-warehouse unsupported-zero branch",
+      "actual": "[75, -25]",
+      "expected": "[75, -25]",
+      "result": "pass"
+    },
+    {
+      "check": "Recorded cost extensions",
+      "actual": "[1000, 1500, 2500]",
+      "expected": "[1000, 1500, 2500]",
+      "result": "pass"
+    },
+    {
+      "check": "Candidate cost extensions",
+      "actual": "[900, 1800, 2700]",
+      "expected": "[900, 1800, 2700]",
+      "result": "pass"
+    },
+    {
+      "check": "Item monetary differences",
+      "actual": "[-100, 300]",
+      "expected": "[-100, 300]",
+      "result": "pass"
+    },
+    {
+      "check": "Net and absolute monetary differences",
+      "actual": "[200, 400]",
+      "expected": "[200, 400]",
+      "result": "pass"
+    },
+    {
+      "check": "Wrong supplier-owned population",
+      "actual": "[110, 1100, 2900]",
+      "expected": "[110, 1100, 2900]",
+      "result": "pass"
+    },
+    {
+      "check": "Supplier-owned overstatement",
+      "actual": "200",
+      "expected": "200",
+      "result": "pass"
+    },
+    {
+      "check": "Both-sided cutoff branch",
+      "actual": "[110, 100, -10]",
+      "expected": "[110, 100, -10]",
+      "result": "pass"
+    },
+    {
+      "check": "One-sided cutoff false tie",
+      "actual": "0",
+      "expected": "0",
+      "result": "pass"
+    },
+    {
+      "check": "Carton conversion counterexample",
+      "actual": "150",
+      "expected": "150",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Preserved full original two-SKU packet and hypothetical ownership/cutoff branches.",
+    "Rechecked every quantity/cost table, net/absolute difference and embedded answer.",
+    "Emphasized that both sides change in the conditional ten-unit cutoff branch."
+  ],
+  "unresolved_gaps": [
+    "Current primary accounting/audit requirements and entity/reporting-period applicability are not verified.",
+    "Publisher source-operation rights remain unresolved; no restricted source body was acquired.",
+    "No actual client evidence, human professional review, posting, filing or Agent admission is supplied."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

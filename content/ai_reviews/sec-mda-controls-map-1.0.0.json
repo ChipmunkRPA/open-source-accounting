@@ -1,0 +1,200 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "sec-mda-controls-map",
+  "input_sha256": "e8da203ca079d253a62ece910d150c90f3ed545c53b14f5e69de6d1d873db385",
+  "output_sha256": "49d30eca518214b861200e7c7f5036b4861c4a9c63cab9f1c44769be6f831fb1",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T08:03:44Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "sec-item303-ecfr",
+      "official_url": "https://www.ecfr.gov/current/title-17/chapter-II/part-229/subpart-229.300/section-229.303",
+      "source_version_or_date": "eCFR Title 17 displayed current through 2026-10-01; inspected 2026-10-04",
+      "access_state": "selected_official_primary_sections_examined",
+      "exact_locators": [
+        "Item 303(a), (b)(1)-(3), Instructions 1-4 to (b), and (c)"
+      ],
+      "checked_claim_ids": [
+        "map-dates",
+        "map-mda"
+      ]
+    },
+    {
+      "reference_id": "sec-item307-ecfr",
+      "official_url": "https://www.ecfr.gov/current/title-17/chapter-II/part-229/subpart-229.300/section-229.307",
+      "source_version_or_date": "eCFR Title 17 displayed current through 2026-10-01; inspected 2026-10-04",
+      "access_state": "selected_official_primary_sections_examined",
+      "exact_locators": [
+        "Item 307, full paragraph"
+      ],
+      "checked_claim_ids": [
+        "map-dates",
+        "map-dcp",
+        "map-crossrefs"
+      ]
+    },
+    {
+      "reference_id": "sec-item308-ecfr",
+      "official_url": "https://www.ecfr.gov/current/title-17/chapter-II/part-229/subpart-229.300/section-229.308",
+      "source_version_or_date": "eCFR Title 17 displayed current through 2026-10-01; inspected 2026-10-04",
+      "access_state": "selected_official_primary_sections_examined",
+      "exact_locators": [
+        "Item 308(a)-(c), Instructions 1-2"
+      ],
+      "checked_claim_ids": [
+        "map-dates",
+        "map-icfr-report",
+        "map-crossrefs"
+      ]
+    },
+    {
+      "reference_id": "sec-rule13a15-ecfr",
+      "official_url": "https://www.ecfr.gov/current/title-17/chapter-II/part-240/subject-group-ECFR03b318d46549873/section-240.13a-15",
+      "source_version_or_date": "eCFR Title 17 displayed current through 2026-10-01; inspected 2026-10-04",
+      "access_state": "selected_official_primary_sections_examined",
+      "exact_locators": [
+        "Rule 13a-15(a)-(f); canonical page current-through banner"
+      ],
+      "checked_claim_ids": [
+        "map-dates",
+        "map-dcp",
+        "map-control-frequency",
+        "map-crossrefs"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "map-dates",
+      "article_section": "Scope and the date of the evidence",
+      "category": "source_identity_and_applicability",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Canonical eCFR pages displayed Title 17 current through October 1, 2026 when inspected October 4. The article distinguishes title-wide dates, historical 2025 readings and the unofficial eCFR legal edition.",
+      "source_reference_ids": [
+        "sec-item303-ecfr",
+        "sec-item307-ecfr",
+        "sec-item308-ecfr",
+        "sec-rule13a15-ecfr"
+      ]
+    },
+    {
+      "claim_id": "map-mda",
+      "article_section": "Item 303: explain the business effects behind the numbers",
+      "category": "substantive_claim",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Selected paragraph map matches annual/interim, offsetting change, cash horizon, estimate uncertainty and nonduplicative explanation provisions. It is explicitly not a complete checklist or materiality decision.",
+      "source_reference_ids": [
+        "sec-item303-ecfr"
+      ]
+    },
+    {
+      "claim_id": "map-dcp",
+      "article_section": "Items 307 and 308 ask different control questions",
+      "category": "substantive_claim",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Item 307 concerns officers’ disclosure-controls conclusions; Rule 13a-15(e) describes the disclosure information process while (f) defines ICFR. The revised scope expressly selects Section 12/Rule 13a-15 rather than implying every domestic reporting issuer follows that route.",
+      "source_reference_ids": [
+        "sec-item307-ecfr",
+        "sec-rule13a15-ecfr"
+      ]
+    },
+    {
+      "claim_id": "map-control-frequency",
+      "article_section": "Items 307 and 308 ask different control questions",
+      "category": "substantive_claim",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "For the expressly covered domestic case, Rule 13a-15 distinguishes quarterly disclosure-controls evaluation, annual ICFR evaluation and changes evaluation. Scope and special cases remain explicit.",
+      "source_reference_ids": [
+        "sec-rule13a15-ecfr"
+      ]
+    },
+    {
+      "claim_id": "map-icfr-report",
+      "article_section": "Items 307 and 308 ask different control questions",
+      "category": "substantive_claim",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Item 308(a)-(c) and Instructions 1-2 support separate management/attestation/change analysis, material-weakness limitation and new-issuer transition. No filer/EGC status is decided.",
+      "source_reference_ids": [
+        "sec-item308-ecfr"
+      ]
+    },
+    {
+      "claim_id": "map-original",
+      "article_section": "Original examples and chronology",
+      "category": "original_example",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Product movements, percentages, horizon sums and chronology were checked. These facts do not establish real materiality, funding sufficiency or effective controls.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "map-crossrefs",
+      "article_section": "Build a scope matrix; Sources and limits",
+      "category": "source_access_gap",
+      "severity": "warning",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Rule 12b-2, alternative Rule 15d-15, actual form requirements and all cross-references were not fully verified. Their application is clearly withheld.",
+      "source_reference_ids": [
+        "sec-item307-ecfr",
+        "sec-item308-ecfr",
+        "sec-rule13a15-ecfr"
+      ]
+    },
+    {
+      "claim_id": "original-rights",
+      "article_section": "Original-content footer",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "supported_with_stated_scope",
+      "explanation": "Only original explanation/examples and brief source descriptions are included. Government regulation sources are linked; no publisher branding, protected standard body or source rights grant is included.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "Revenue totals",
+      "actual": "(1000000, 1000000)",
+      "expected": "(1000000, 1000000)",
+      "result": "pass"
+    },
+    {
+      "check": "Revenue component changes",
+      "actual": "(180000, -180000)",
+      "expected": "(180000, -180000)",
+      "result": "pass"
+    },
+    {
+      "check": "Revenue component growth percentages",
+      "actual": "(45, -30)",
+      "expected": "(45, -30)",
+      "result": "pass"
+    },
+    {
+      "check": "Cash-horizon total",
+      "actual": "330000",
+      "expected": "330000",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Added an explicit Section 12/Rule 13a-15 scope assumption and left the Section 15(d)-only route for separate research.",
+    "Verified selected rule claims against dated official eCFR text and retained historical-2025 separation.",
+    "Checked original product-driver, cash-horizon and chronology examples without professional conclusions.",
+    "Correction on October 4, 2026: independently recalculated product growth as +45% and -30%, then serialized both verified tuples as (45, -30). The article bytes and substantive source-review scope are unchanged."
+  ],
+  "unresolved_gaps": [
+    "Actual filer/EGC status, Rule 12b-2 and alternative Rule 15d-15 applicability remain unverified.",
+    "No reconciliation of developments after the displayed October 1, 2026 current-through date or every cross-reference.",
+    "No human professional review, accounting/audit assessment, legal opinion or full compliance determination."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

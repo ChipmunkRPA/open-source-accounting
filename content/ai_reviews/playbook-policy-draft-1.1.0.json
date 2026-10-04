@@ -1,0 +1,96 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "playbook-policy-draft",
+  "input_sha256": "94a8d40cebfb5bcf18f8f9876753cab7149846891b2e0ca9de1b13e31f942c40",
+  "output_sha256": "1c768cbfc3c6ae2628e72c1e6176950b610e3d5c70a9f0c4911d6f89af941907",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T06:55:51Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://asc.fasb.org/",
+      "source_version_or_date": "Current primary ASC text not accessed; publisher restriction identified 2026-10-04",
+      "access_state": "not_accessed_link_only_rights_unresolved",
+      "exact_locators": [
+        "No operative ASC paragraph adopted as verified; research reference only"
+      ],
+      "checked_claim_ids": [
+        "source-authority-gap"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "policy-decisions",
+      "article_section": "Intake; Separate layers",
+      "category": "original_workflow",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Actual management decisions/elections are distinct from model-generated policy suggestions; prior policy is preserved.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "policy-example",
+      "article_section": "Original drafting example",
+      "category": "original_reasoning",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Unsupported invoice-equals-revenue policy is identified as missing facts/authority rather than polished into a universal rule.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "policy-review",
+      "article_section": "Requested output",
+      "category": "review_boundary",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Approval fields are for actual authorized people; no adoption or reviewer sign-off is fabricated.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "source-authority-gap",
+      "article_section": "Scope; Source and permission boundary",
+      "category": "source_access_and_rights",
+      "severity": "warning",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Current ASC criteria were not accessed. Publisher-use restrictions identified October 4, 2026 prevented further retrieval or adoption of source content. Original reasoning/math is not presented as verified current accounting authority.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "rights-original",
+      "article_section": "Original-content footer",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Only original educational prose/examples are licensed CC BY 4.0 here; no private standard body, publisher permission or Agent/source admission is supplied. Revised prose uses homepage references, not publisher deep links.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "workflow-state",
+      "article_section": "Purpose and availability",
+      "category": "product_scope",
+      "severity": "info",
+      "disposition": "supported_or_reframed_with_explicit_limits",
+      "explanation": "Actual catalogue and default gate checked: EXPERIMENTAL/disabled by default; policy draft minimum 0, revenue/lease workpaper minimum 1. Code/pure-helper checks are not live deployment or professional acceptance.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [],
+  "changes_summary": [
+    "Confirmed default-off experimental state and zero-document technical minimum.",
+    "Added original unsupported-policy example.",
+    "Separated principles, procedures, elections and real adoption."
+  ],
+  "unresolved_gaps": [
+    "Current primary ASC/ASU requirements, entity/period applicability and publisher-operation permissions remain unresolved.",
+    "AI editorial pass is limited to original reasoning, arithmetic and stated implementation scope; it is not a human professional or current-GAAP conclusion.",
+    "No live deployment, database/provider integration or posting/feature activation was performed."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

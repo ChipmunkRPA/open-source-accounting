@@ -1,0 +1,161 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "yellow-book-scope",
+  "input_sha256": "cf0dece7557f2a6f5daa7338c2bec21fc3f88978f114dcebd54ef4504c1369e4",
+  "output_sha256": "24e66fd1bf33ba9d0899f77f125add692bb66ed335fa3f2e51a2a4499c8e7462",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T05:56:58Z",
+  "outcome": "pass_ai_editorial_only",
+  "reviewed_sources": [
+    {
+      "reference_id": "gao-yellowbook",
+      "official_url": "https://www.gao.gov/yellowbook",
+      "source_version_or_date": "Current page inspected 2026-10-04",
+      "access_state": "Selected official text inspected on 2026-10-04; no full-source redistribution or product operation grant.",
+      "exact_locators": [
+        "About The Yellow Book",
+        "Current Yellow Book",
+        "Special Note for Federal Government Audit Organizations"
+      ],
+      "checked_claim_ids": [
+        "yellow-scope",
+        "yellow-qm"
+      ]
+    },
+    {
+      "reference_id": "gao-yellowbook-2024",
+      "official_url": "https://www.gao.gov/assets/gao-24-106786.pdf",
+      "source_version_or_date": "2024 revision; February 2024",
+      "access_state": "Selected official text inspected on 2026-10-04; no full-source redistribution or product operation grant.",
+      "exact_locators": [
+        "Physical page 2: introductory effective-date notice",
+        "Physical page 8 / printed vi: government-work reproduction notice"
+      ],
+      "checked_claim_ids": [
+        "yellow-trigger",
+        "yellow-rights"
+      ]
+    },
+    {
+      "reference_id": "gao-qm-faq",
+      "official_url": "https://files.gao.gov/reports/GAO-26-108710/index.html",
+      "source_version_or_date": "GAO-26-108710; 2025-12-15",
+      "access_state": "Selected official text inspected on 2026-10-04; no full-source redistribution or product operation grant.",
+      "exact_locators": [
+        "Introduction: interpretive guidance under GAGAS paragraph 2.06",
+        "Section I: Quality Management Risk Assessment Process"
+      ],
+      "checked_claim_ids": [
+        "yellow-faq"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "yellow-scope",
+      "article_section": "Scope and worked routing exercise",
+      "category": "scope",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Separates the basis for GAGAS work and actual engagement classification from a government-related client label.",
+      "source_reference_ids": [
+        "gao-yellowbook"
+      ]
+    },
+    {
+      "claim_id": "yellow-trigger",
+      "article_section": "Applicability note and timing exercise",
+      "category": "effective-date",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Checked different period/commencement triggers, early adoption and conditional July/January period examples.",
+      "source_reference_ids": [
+        "gao-yellowbook-2024"
+      ]
+    },
+    {
+      "claim_id": "yellow-qm",
+      "article_section": "Applicability note",
+      "category": "applicability",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Ordinary quality-management dates and federal-government-audit-organization exception are distinct; client identity does not establish qualification.",
+      "source_reference_ids": [
+        "gao-yellowbook"
+      ]
+    },
+    {
+      "claim_id": "yellow-faq",
+      "article_section": "Intake worksheet and Sources",
+      "category": "source-status",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Corrected companion-aid description to identify its GAGAS interpretive-guidance status.",
+      "source_reference_ids": [
+        "gao-qm-faq"
+      ]
+    },
+    {
+      "claim_id": "yellow-rights",
+      "article_section": "Sources; free/private boundary",
+      "category": "rights",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "No government diagrams or examples copied; original CC BY education and product permissions remain separate.",
+      "source_reference_ids": [
+        "gao-yellowbook-2024"
+      ]
+    },
+    {
+      "claim_id": "yellow-decisions",
+      "article_section": "Routing, applicability record and release checks",
+      "category": "original-analysis",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Added original engagement-intake, decision-chain, contradictory-label and exact-revision review material.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "yellow-applicability-gap",
+      "article_section": "Evidence and review",
+      "category": "applicability-gap",
+      "severity": "warning",
+      "disposition": "retained-explicit-abstention",
+      "explanation": "Actual agreement, companion standards, predecessor/early implementation and professional conformity are unverified.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "yellow-c-before",
+      "actual": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "check": "yellow-d-after",
+      "actual": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "check": "yellow-performance-before",
+      "actual": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "changes_summary": [
+    "Expanded short guide with original engagement routing and timing exercises, decision records and release-claim checks.",
+    "Verified limited official timing/status context and retained applicable-scope limits."
+  ],
+  "unresolved_gaps": [
+    "AI editorial checking only; no human CPA/auditor/legal attestation, source grant or Agent admission.",
+    "No real engagement procedures, postings, recovery, private model runs or integrations were performed.",
+    "Full standards/companion requirements and real engagement applicability are not comprehensively reviewed."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

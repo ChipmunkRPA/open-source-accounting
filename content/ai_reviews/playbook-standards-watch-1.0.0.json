@@ -1,0 +1,145 @@
+{
+  "schema": "ai-editorial-review-1",
+  "item_id": "playbook-standards-watch",
+  "input_sha256": "c6df5c0471bc24f3bd6ce85a0c59bed5aafe45dccc5975adaa5d807ee1f8c8a1",
+  "output_sha256": "daff5ae23e1cf976dc4c6da783f2d6311e903577f883d8a743980f9eba13de1d",
+  "model_id": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-04T07:06:32Z",
+  "outcome": "rights_scope_unresolved",
+  "reviewed_sources": [
+    {
+      "reference_id": "fasb-asc",
+      "official_url": "https://fasb.org/",
+      "source_version_or_date": "Current Codification edition/effective dates not inspected in this review",
+      "access_state": "No restricted body was fetched. Current project source reviewer reported verified FAF/FASB/GASB Terms v2.1 effective 2026-07-30, sections2,6(a),6(c),11. Those AI-use/automated-collection/link restrictions were honored; no alternate acquisition.",
+      "exact_locators": [
+        "Homepage research pointer only; no current accounting paragraph",
+        "Rights finding relayed from the current project source review, not a newly inspected standard body"
+      ],
+      "checked_claim_ids": [
+        "source-rights-gap"
+      ]
+    },
+    {
+      "reference_id": "gao-yellowbook",
+      "official_url": "https://www.gao.gov/yellowbook",
+      "source_version_or_date": "Current official page checked 2026-10-04",
+      "access_state": "Selected current timing/context read; no full Yellow Book or amendment review claimed.",
+      "exact_locators": [
+        "Current Yellow Book",
+        "Special Note for Federal Government Audit Organizations"
+      ],
+      "checked_claim_ids": [
+        "watch-gao-timing"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "claim_id": "source-rights-gap",
+      "article_section": "Sources and verification",
+      "category": "rights-and-primary-text-gap",
+      "severity": "warning",
+      "disposition": "acquisition-not-attempted-and-gap-retained",
+      "explanation": "Restricted FAF/FASB standard bodies were not fetched or paraphrased; article uses homepage-only research pointer and explicit unverified authority/effective-date conditions.",
+      "source_reference_ids": [
+        "fasb-asc"
+      ]
+    },
+    {
+      "claim_id": "watch-gao-timing",
+      "article_section": "Concrete government-source illustration",
+      "category": "effective-date-and-scope",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Verified different engagement trigger types, early implementation and separate federal-audit-organization quality-management exception; a government client alone is not eligibility.",
+      "source_reference_ids": [
+        "gao-yellowbook"
+      ]
+    },
+    {
+      "claim_id": "original-analysis",
+      "article_section": "Purpose/status; dates; GAO illustration; change detection",
+      "category": "original-educational-content",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Removed unsupported subscription/activation promises; added limited verified GAO timing illustration and original 20-to-22 inventory, status/date and coverage-gap reasoning.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "numerical-checks",
+      "article_section": "Purpose/status; dates; GAO illustration; change detection",
+      "category": "arithmetic-and-dates",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Reperformed 5 deterministic arithmetic/date checks with explicit inputs and expected results; exact output hashes and body anchors are separately verified.",
+      "source_reference_ids": []
+    },
+    {
+      "claim_id": "actual-applicability-gap",
+      "article_section": "Scope, sources and review gates",
+      "category": "applicability-gap",
+      "severity": "warning",
+      "disposition": "retained-explicit-abstention",
+      "explanation": "No monitor, unrestricted acquisition, external notification, policy change or complete current-law check was activated or performed.",
+      "source_reference_ids": [
+        "fasb-asc",
+        "gao-yellowbook"
+      ]
+    },
+    {
+      "claim_id": "standard-premium-boundary",
+      "article_section": "Standard education and Premium execution",
+      "category": "licensing-and-professional-boundary",
+      "severity": "info",
+      "disposition": "checked-and-corrected-in-this-revision",
+      "explanation": "Free CC BY 4.0 original education remains Standard. Premium means separately licensed/authorized private execution; no source rights, human CPA review, posting or workflow operation is claimed.",
+      "source_reference_ids": []
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "check": "prior-inventory",
+      "actual": "20",
+      "expected": "20",
+      "result": "pass"
+    },
+    {
+      "check": "new-inventory",
+      "actual": "22",
+      "expected": "22",
+      "result": "pass"
+    },
+    {
+      "check": "net-new-records",
+      "actual": "2",
+      "expected": "2",
+      "result": "pass"
+    },
+    {
+      "check": "period-trigger-comparison",
+      "actual": "True",
+      "expected": "True",
+      "result": "pass"
+    },
+    {
+      "check": "separate-federal-qm-date",
+      "actual": "True",
+      "expected": "True",
+      "result": "pass"
+    }
+  ],
+  "changes_summary": [
+    "Removed unsupported subscription/activation promises; added limited verified GAO timing illustration and original 20-to-22 inventory, status/date and coverage-gap reasoning.",
+    "Preserved the original article bytes; new immutable version1.0.0 with explicit Free Standard/private Premium separation."
+  ],
+  "unresolved_gaps": [
+    "No monitor, unrestricted acquisition, external notification, policy change or complete current-law check was activated or performed.",
+    "No independent human accountant, CPA, auditor or legal attestation was performed. AI review does not grant source rights or Agent admission.",
+    "No real journal, filing, configuration change, private model call, recurring monitor or external integration was performed."
+  ],
+  "professional_review": false,
+  "agent_admission": false,
+  "source_rights_granted": false
+}

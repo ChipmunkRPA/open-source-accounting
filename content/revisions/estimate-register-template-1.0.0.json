@@ -1,0 +1,25 @@
+{
+  "item_id": "estimate-register-template",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "templates/estimate-register-template.md",
+    "version": "0.6.0",
+    "sha256": "71925ce41328dd0bce8cc34f4ccd0b20ef8c10e39c261ce7b6d7db820750eca5",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "templates/estimate-register-template-v1.md",
+    "version": "1.0.0",
+    "sha256": "b940eb5c0a1e1bedce748e4eacc83273945f2780da38214e08a67b8e923c4bcd",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

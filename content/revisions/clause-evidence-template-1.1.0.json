@@ -1,0 +1,25 @@
+{
+  "item_id": "clause-evidence-template",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "templates/clause-evidence-template.md",
+    "version": "0.5.0",
+    "sha256": "fe8fd56dbbc00eb5dfca0ebe966963979e6bc3a099d52026722f17e51d2ded5f",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "templates/clause-evidence-template-v1.md",
+    "version": "1.1.0",
+    "sha256": "9c4e589107441260a8dce40f1af2ef0487256ad9641404a5308a8dc50792de92",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

@@ -1,0 +1,25 @@
+{
+  "item_id": "technical-memo-template",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "templates/technical-memo-template.md",
+    "version": "0.5.0",
+    "sha256": "abf80ddbfae5a2709166b4c68288afef867eee6e735398d481b6fbd38d4ecadf",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "templates/technical-memo-template-v1.md",
+    "version": "1.1.0",
+    "sha256": "abf42dbac7d4041c78dcba53fb28a9598a66b2f059078fdba97a1d0d5301daac",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}

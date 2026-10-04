@@ -1,0 +1,25 @@
+{
+  "item_id": "playbook-contract-compare",
+  "disposition": "supersede_active_original_draft_with_new_immutable_revision",
+  "previous": {
+    "path": "playbooks/playbook-contract-compare.md",
+    "version": "0.5.0",
+    "sha256": "a1c22fdb48a090bf959df09710c7f9a97488b7fcd2033daeac38dde580789aef",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "current": {
+    "path": "playbooks/playbook-contract-compare-v1.md",
+    "version": "1.1.0",
+    "sha256": "382a6fce10315d965a819f27922ff6573ab6d97b4fee99f897899ca664087385",
+    "source_ids": [
+      "fasb-asc"
+    ]
+  },
+  "date": "2026-10-04",
+  "original_bytes_preserved": true,
+  "independent_professional_review": false,
+  "agent_eligible": false,
+  "source_artifact_acquisition_import": false
+}
