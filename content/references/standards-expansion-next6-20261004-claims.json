@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-04",
+  "claim_count": 12,
+  "first_party_annotation": {
+    "label": "Ray Sang’s Annotation",
+    "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+    "scope": "New first-party descriptions and review notes only to the extent rights exist and are controlled; excludes facts, titles, third-party text, prior grants and legal/platform exceptions.",
+    "personal_or_professional_review_implied": false,
+    "terms_path": "../../CONTENT-TERMS.md"
+  },
+  "claims": [
+    {
+      "id": "custodial-1",
+      "article_id": "gasb-custodial-resource-flows",
+      "source_ids": [
+        "osa-texas-custodial-presentation"
+      ],
+      "bounded_premise": "The examined state guidance uses economic-resources/full-accrual reporting for fiduciary statements and separates additions and deductions from a cash-flow statement.",
+      "source_model_limit": "Selected presentation and resource-flow discussion only; classification is to be stipulated. Exclude local fund codes and dollar thresholds, enterprise exception, and component-unit classification rules."
+    },
+    {
+      "id": "custodial-2",
+      "article_id": "gasb-custodial-resource-flows",
+      "source_ids": [
+        "osa-texas-custodial-presentation"
+      ],
+      "bounded_premise": "A liability to a beneficiary depends on an event compelling disbursement; assumed receipt or available cash alone is not the teaching trigger.",
+      "source_model_limit": "Selected presentation and resource-flow discussion only; classification is to be stipulated. Exclude local fund codes and dollar thresholds, enterprise exception, and component-unit classification rules."
+    },
+    {
+      "id": "defeasance-1",
+      "article_id": "gasb-cash-defeasance-bridge",
+      "source_ids": [
+        "osa-texas-existing-resource-defeasance"
+      ],
+      "bounded_premise": "A qualifying in-substance defeasance funded only with existing resources removes the debt under the economic-resources focus and recognizes the carrying-versus-reacquisition difference.",
+      "source_model_limit": "Existing-resource in-substance defeasance only. Trust qualification requires separate evidence and will be stipulated, not inferred from payment. No new-debt refunding or Texas amortization thresholds."
+    },
+    {
+      "id": "defeasance-2",
+      "article_id": "gasb-cash-defeasance-bridge",
+      "source_ids": [
+        "osa-texas-existing-resource-defeasance"
+      ],
+      "bounded_premise": "The corresponding existing-resource payment is a debt-service expenditure under the current-financial-resources focus.",
+      "source_model_limit": "Existing-resource in-substance defeasance only. Trust qualification requires separate evidence and will be stipulated, not inferred from payment. No new-debt refunding or Texas amortization thresholds."
+    },
+    {
+      "id": "aro-1",
+      "article_id": "gasb-aro-current-value-rollforward",
+      "source_ids": [
+        "osa-texas-aro-current-outlays"
+      ],
+      "bounded_premise": "For an already qualifying obligation, the selected method measures expected outlays at current value, with a corresponding deferred outflow.",
+      "source_model_limit": "Economic-resources measurement for an already qualifying obligation only. Exclude source tank scenario and figures, local account codes/thresholds, conditional obligations, landfill and pollution-remediation scope decisions."
+    },
+    {
+      "id": "aro-2",
+      "article_id": "gasb-aro-current-value-rollforward",
+      "source_ids": [
+        "osa-texas-aro-current-outlays"
+      ],
+      "bounded_premise": "Later relevant current-cost changes adjust the obligation and, before retirement, the deferred outflow; that deferred amount is expensed systematically over the applicable asset-life period.",
+      "source_model_limit": "Economic-resources measurement for an already qualifying obligation only. Exclude source tank scenario and figures, local account codes/thresholds, conditional obligations, landfill and pollution-remediation scope decisions."
+    },
+    {
+      "id": "oreo-1",
+      "article_id": "fasb-oreo-holding-register",
+      "source_ids": [
+        "osa-occ-oreo-holding"
+      ],
+      "bounded_premise": "An already recognized OREO held-for-sale asset uses a cost-versus-fair-value-less-selling-costs measurement boundary.",
+      "source_model_limit": "Bank application guidance; selected initial/subsequent measurement and holding-cost rules only. Do not reproduce source foreclosure scenarios, figures, diagrams or report instructions; exclude residential-possession/legal-title tests and development exceptions."
+    },
+    {
+      "id": "oreo-2",
+      "article_id": "fasb-oreo-holding-register",
+      "source_ids": [
+        "osa-occ-oreo-holding"
+      ],
+      "bounded_premise": "Ordinary holding activity is separately reported; a valuation-allowance reversal and reversal of a direct write-off are different questions.",
+      "source_model_limit": "Bank application guidance; selected initial/subsequent measurement and holding-cost rules only. Do not reproduce source foreclosure scenarios, figures, diagrams or report instructions; exclude residential-possession/legal-title tests and development exceptions."
+    },
+    {
+      "id": "goodwill-1",
+      "article_id": "fasb-goodwill-test-order",
+      "source_ids": [
+        "osa-occ-goodwill-order-cap"
+      ],
+      "bounded_premise": "The selected reporting-unit model tests other assets first when tested at the same time.",
+      "source_model_limit": "Bank reporting-unit model with no private-company alternative or tax effects, separately stipulated. Other-asset tests precede goodwill and impairment cannot exceed goodwill. Do not copy the source acquisition scenario or figures."
+    },
+    {
+      "id": "goodwill-2",
+      "article_id": "fasb-goodwill-test-order",
+      "source_ids": [
+        "osa-occ-goodwill-order-cap"
+      ],
+      "bounded_premise": "The quantitative goodwill loss is limited by goodwill carrying amount; the proposed case excludes tax effects and private-company alternatives.",
+      "source_model_limit": "Bank reporting-unit model with no private-company alternative or tax effects, separately stipulated. Other-asset tests precede goodwill and impairment cannot exceed goodwill. Do not copy the source acquisition scenario or figures."
+    },
+    {
+      "id": "attestation-1",
+      "article_id": "aicpa-aup-examination-choice",
+      "source_ids": [
+        "osa-lla-aup-examination"
+      ],
+      "bounded_premise": "The selected government oversight page describes an agreed-upon-procedures report as procedures performed, results and exceptions.",
+      "source_model_limit": "Government oversight explanation of attestation choices, not the AICPA standard body. Use only procedure-results versus reasonable-assurance opinion distinction; exclude Louisiana provider/approval-law mandates and report templates."
+    },
+    {
+      "id": "attestation-2",
+      "article_id": "aicpa-aup-examination-choice",
+      "source_ids": [
+        "osa-lla-aup-examination"
+      ],
+      "bounded_premise": "It describes an examination as obtaining reasonable assurance about subject matter against criteria and expressing an opinion.",
+      "source_model_limit": "Government oversight explanation of attestation choices, not the AICPA standard body. Use only procedure-results versus reasonable-assurance opinion distinction; exclude Louisiana provider/approval-law mandates and report templates."
+    }
+  ],
+  "notices": [
+    "Factual concepts only; no source wording, numerical scenario, diagram or publisher standard body is included.",
+    "Assumptions and scope qualification must be restated before any future original example."
+  ]
+}

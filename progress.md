@@ -1,3 +1,29 @@
+## 2026-10-04 · Source-first checkpoint for six further original guides · #9/#10/#12/#22
+
+Collected **six scoped reference records across five official document URLs** and
+**12 bounded research premises** for six nonduplicative original-guide proposals:
+custodial funds, existing-resource debt defeasance, asset-retirement obligations,
+OREO holding activity, goodwill test order and AUP versus examination engagements.
+This checkpoint adds **zero article bodies and zero retained source bodies**.
+The existing **102 articles, 74 bound reference objects, 78 AI receipts and all
+36 IRS source-file hashes** remain unchanged. Source metadata is saved to Git
+before annotation drafting begins. No publisher standard text, report language,
+source numerical scenarios or diagrams are included.
+
+A separately counted GAO index observation identifies June 2026 FAM Volumes 1–2
+and July 2026 Volume 3 as superseding prior editions for FY/CY 2026 federal audits.
+The earlier guides preserve their explicit June 2025 citation and applicability
+gaps; this checkpoint does not silently alter their text or hashes. It does not
+claim that new FAM volume bodies were acquired in this workstream.
+
+Metadata checks passed for counts, unique IDs, claim/proposal bindings, official
+HTTPS links, scoped locators, draft labels and unchanged prior content. Public
+source and generated-asset boundary checks pass. The unchanged executable/content
+baseline immediately passed 79 Node tests, 21 Python tests, TypeScript, the full
+102-page build and all twelve newly published HTTP routes at parent 71dc214c.
+No source-body scraping job, Agent admission, human approval, runtime activation,
+Actions dispatch, paid action, integration, access change or deployment occurred.
+
 ## 2026-10-04 · Twelve additional original accounting guides · #9/#10/#22
 
 Added **12 original educational guides**, six governmental and six nongovernmental,

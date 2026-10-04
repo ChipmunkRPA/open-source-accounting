@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-04",
+  "state": "source_checkpoint_before_article_authoring",
+  "source_metadata_records": 6,
+  "distinct_document_urls": 5,
+  "new_article_bodies": 0,
+  "coverage_screen_count": 102,
+  "source_metadata_must_be_published_before_authoring": true,
+  "first_party_annotation": {
+    "label": "Ray Sang’s Annotation",
+    "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+    "scope": "New first-party descriptions and review notes only to the extent rights exist and are controlled; excludes facts, titles, third-party text, prior grants and legal/platform exceptions.",
+    "personal_or_professional_review_implied": false,
+    "terms_path": "../../CONTENT-TERMS.md"
+  },
+  "sources": [
+    {
+      "id": "osa-texas-custodial-presentation",
+      "title": "Texas AFR: Fiduciary Funds",
+      "publisher": "Texas Comptroller",
+      "url": "https://fmx.cpa.texas.gov/fmx/pubs/afrrptreq/gen_acct/index.php?page=fiduciary_fund&section=overview",
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-04",
+      "edition_date": null,
+      "verification": "publisher_page_examined",
+      "locator": "Financial Statements; Custodial Funds (FT22)",
+      "review_scope": "Selected presentation and resource-flow discussion only; classification is to be stipulated. Exclude local fund codes and dollar thresholds, enterprise exception, and component-unit classification rules.",
+      "full_text_included": false,
+      "source_body_included": false,
+      "acquisition": "metadata_and_link_only",
+      "automated_fetch_enabled": false,
+      "primary_publisher_standard_text_verified": false,
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party descriptions and review notes only to the extent rights exist and are controlled; excludes facts, titles, third-party text, prior grants and legal/platform exceptions.",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "id": "osa-texas-existing-resource-defeasance",
+      "title": "Texas AFR: Certain Debt Extinguishment Issues",
+      "publisher": "Texas Comptroller",
+      "url": "https://fmx.cpa.texas.gov/fmx/pubs/afrrptreq/special_acct/index.php?page=extinguishment&section=extinguishment",
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-04",
+      "edition_date": null,
+      "verification": "publisher_page_examined",
+      "locator": "Recognition in Financial Statements Using the Economic Resources Measurement Focus; current-financial-resources paragraph; Prepaid Insurance",
+      "review_scope": "Existing-resource in-substance defeasance only. Trust qualification requires separate evidence and will be stipulated, not inferred from payment. No new-debt refunding or Texas amortization thresholds.",
+      "full_text_included": false,
+      "source_body_included": false,
+      "acquisition": "metadata_and_link_only",
+      "automated_fetch_enabled": false,
+      "primary_publisher_standard_text_verified": false,
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party descriptions and review notes only to the extent rights exist and are controlled; excludes facts, titles, third-party text, prior grants and legal/platform exceptions.",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "id": "osa-texas-aro-current-outlays",
+      "title": "Texas AFR Note 5: Certain Asset Retirement Obligations",
+      "publisher": "Texas Comptroller",
+      "url": "https://fmx.cpa.texas.gov/fmx/pubs/afrrptreq/notes/index.php?menu=1&page=aro&section=note5",
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-04",
+      "edition_date": null,
+      "verification": "publisher_page_examined",
+      "locator": "Recognition of a Deferred Outflow; Initial Measurement; Subsequent Measurement",
+      "review_scope": "Economic-resources measurement for an already qualifying obligation only. Exclude source tank scenario and figures, local account codes/thresholds, conditional obligations, landfill and pollution-remediation scope decisions.",
+      "full_text_included": false,
+      "source_body_included": false,
+      "acquisition": "metadata_and_link_only",
+      "automated_fetch_enabled": false,
+      "primary_publisher_standard_text_verified": false,
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party descriptions and review notes only to the extent rights exist and are controlled; excludes facts, titles, third-party text, prior grants and legal/platform exceptions.",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "id": "osa-occ-oreo-holding",
+      "title": "OCC Bank Accounting Advisory Series: OREO holding measurement",
+      "publisher": "Office of the Comptroller of the Currency",
+      "url": "https://www.occ.treas.gov/publications-and-resources/publications/banker-education/files/pub-bank-accounting-advisory-series.pdf",
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-04",
+      "edition_date": "2026-08",
+      "verification": "publisher_page_examined",
+      "locator": "August 2026, Topic 5A, questions 1, 6-9; printed pages 81 and 84-85 / PDF pages 85 and 88-89",
+      "review_scope": "Bank application guidance; selected initial/subsequent measurement and holding-cost rules only. Do not reproduce source foreclosure scenarios, figures, diagrams or report instructions; exclude residential-possession/legal-title tests and development exceptions.",
+      "full_text_included": false,
+      "source_body_included": false,
+      "acquisition": "metadata_and_link_only",
+      "automated_fetch_enabled": false,
+      "primary_publisher_standard_text_verified": false,
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party descriptions and review notes only to the extent rights exist and are controlled; excludes facts, titles, third-party text, prior grants and legal/platform exceptions.",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "id": "osa-occ-goodwill-order-cap",
+      "title": "OCC Bank Accounting Advisory Series: goodwill ordering and loss cap",
+      "publisher": "Office of the Comptroller of the Currency",
+      "url": "https://www.occ.treas.gov/publications-and-resources/publications/banker-education/files/pub-bank-accounting-advisory-series.pdf",
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-04",
+      "edition_date": "2026-08",
+      "verification": "publisher_page_examined",
+      "locator": "August 2026, Topic 10B, questions 7 and 8 (excluding 7A); printed pages 162-164 / PDF pages 166-168",
+      "review_scope": "Bank reporting-unit model with no private-company alternative or tax effects, separately stipulated. Other-asset tests precede goodwill and impairment cannot exceed goodwill. Do not copy the source acquisition scenario or figures.",
+      "full_text_included": false,
+      "source_body_included": false,
+      "acquisition": "metadata_and_link_only",
+      "automated_fetch_enabled": false,
+      "primary_publisher_standard_text_verified": false,
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party descriptions and review notes only to the extent rights exist and are controlled; excludes facts, titles, third-party text, prior grants and legal/platform exceptions.",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "id": "osa-lla-aup-examination",
+      "title": "LLA Governmental Audit Guide 400-1110: Agreed-Upon Procedures and Examination Engagements",
+      "publisher": "Louisiana Legislative Auditor",
+      "url": "https://lla.la.gov/resources/local-government-reporting/louisiana-governmental-audit-guide/400-1110-agreed-upon-procedures-and-examination-engagements",
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-04",
+      "edition_date": null,
+      "verification": "publisher_page_examined",
+      "locator": "Opening engagement descriptions and Questions section",
+      "review_scope": "Government oversight explanation of attestation choices, not the AICPA standard body. Use only procedure-results versus reasonable-assurance opinion distinction; exclude Louisiana provider/approval-law mandates and report templates.",
+      "full_text_included": false,
+      "source_body_included": false,
+      "acquisition": "metadata_and_link_only",
+      "automated_fetch_enabled": false,
+      "primary_publisher_standard_text_verified": false,
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party descriptions and review notes only to the extent rights exist and are controlled; excludes facts, titles, third-party text, prior grants and legal/platform exceptions.",
+        "personal_or_professional_review_implied": false
+      }
+    }
+  ],
+  "proposals": [
+    {
+      "id": "gasb-custodial-resource-flows",
+      "family": "GASB",
+      "title": "Custodial funds: reconcile money held for other beneficiaries",
+      "source_ids": [
+        "osa-texas-custodial-presentation"
+      ],
+      "gap": "The existing 102-guide coverage includes governmental-fund and government-wide bridges but no worked fiduciary additions/deductions reconciliation.",
+      "plan": "An independently invented multi-beneficiary receipt/disbursement register, receivable and payable bridge, with custodial classification stipulated and no state code/threshold generalization."
+    },
+    {
+      "id": "gasb-cash-defeasance-bridge",
+      "family": "GASB",
+      "title": "Existing-resource debt defeasance: separate the fund payment from the liability exit",
+      "source_ids": [
+        "osa-texas-existing-resource-defeasance"
+      ],
+      "gap": "The existing lease and financing guides do not model a qualifying cash-funded defeasance with carrying adjustments.",
+      "plan": "An original economic-resources gain/loss bridge against a separately displayed governmental-fund expenditure, using stipulated qualifying trust evidence and no new refunding debt."
+    },
+    {
+      "id": "gasb-aro-current-value-rollforward",
+      "family": "GASB",
+      "title": "Asset retirement obligations: connect current outlays with deferred-resource expense",
+      "source_ids": [
+        "osa-texas-aro-current-outlays"
+      ],
+      "gap": "The existing capital-disposal guide does not measure a legal retirement obligation or deferred-outflow rollforward.",
+      "plan": "An original current-cost component register and later price-change bridge for an already qualifying economic-resources obligation, avoiding the source probability/tank example."
+    },
+    {
+      "id": "fasb-oreo-holding-register",
+      "family": "FASB",
+      "title": "Foreclosed property held for sale: reconcile carrying value and holding activity",
+      "source_ids": [
+        "osa-occ-oreo-holding"
+      ],
+      "gap": "The prior asset-sale guide concerns sales recognition; no existing guide tracks held-for-sale property and holding expenses.",
+      "plan": "An original two-property period-close register with independently supplied initial bases, separate holding cash flows and bounded valuation changes; no replication of the source acquisition/decline/recovery example."
+    },
+    {
+      "id": "fasb-goodwill-test-order",
+      "family": "FASB",
+      "title": "Goodwill testing: sequence other asset losses before applying the goodwill cap",
+      "source_ids": [
+        "osa-occ-goodwill-order-cap"
+      ],
+      "gap": "The existing impairment workbook routes models but does not provide this ordered, capped reporting-unit calculation.",
+      "plan": "An original multi-asset reporting-unit reconciliation with other losses already independently measured, then a bounded goodwill comparison and sensitivity; exclude private-company elections and tax effects."
+    },
+    {
+      "id": "aicpa-aup-examination-choice",
+      "family": "AICPA",
+      "title": "Agreed-upon procedures and examinations: match the report to the user’s question",
+      "source_ids": [
+        "osa-lla-aup-examination"
+      ],
+      "gap": "The prior service-selection guide covers audit, review, compilation and preparation; it does not work through an attestation procedure-results engagement versus an examination.",
+      "plan": "An original operational compliance question, measurable criteria, a deliberately bounded results register and alternative assurance scope. Do not draft official report wording, infer population assurance or reproduce state checklists."
+    }
+  ],
+  "separate_currentness_observation": {
+    "url": "https://www.gao.gov/financial-audit-manual",
+    "checked_at": "2026-10-04",
+    "observed_editions": [
+      "Volume 1 June 2026",
+      "Volume 2 June 2026",
+      "Volume 3 July 2026"
+    ],
+    "applicability_note": "Official index states these supersede prior editions and are effective for FY/CY 2026 federal financial-statement audits.",
+    "source_body_files_acquired": 0,
+    "use": "Existing articles retain their explicit June 2025 citation and later-amendment gap; future audit source collection should use verified 2026 material.",
+    "included_in_article_source_count": false
+  },
+  "excluded_alternatives": [
+    {
+      "topic": "component units",
+      "reason": "The selected pages are not sufficient to resolve all major/discrete/blended presentation and fiduciary exceptions; those questions are outside the proposed worked guides."
+    },
+    {
+      "topic": "bank nonaccrual",
+      "reason": "Regulatory reporting distinctions require separate bank-specific sourcing and should not be mislabeled as universal FASB requirements."
+    },
+    {
+      "topic": "new GAO-based audit procedures",
+      "reason": "Await separately coordinated current 2026 section evidence; index observation alone is insufficient for substantive teaching claims."
+    }
+  ]
+}
