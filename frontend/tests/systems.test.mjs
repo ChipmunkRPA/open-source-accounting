@@ -33,8 +33,8 @@ for(const url of ['javascript:alert(1)','data:text/html,hi','http://example.com'
 test('ordinary official HTTPS source is allowed',()=>assert.equal(safeURL('https://example.com/docs?q=finance&v=1'),true));
 for(const fragment of ['<script>alert(1)</script>','<image href="https://example.com/a"/>','<foreignObject/>','<path onclick="x()"/>','<path style="fill:url(https://example.com/a)"/>','<!DOCTYPE svg>','<use href="#x"/>','<animate/>'])test(`SVG refuses active or unapproved markup ${fragment.split(' ')[0]}`,()=>assert.throws(()=>validateSVG(`<svg xmlns="http://www.w3.org/2000/svg">${fragment}</svg>`)));
 test('official acquired SVGs remain exact and passive',async()=>{
- const logos=data.systems.filter(s=>s.logo.path);assert.equal(logos.length,2);
- assert.deepEqual((await readdir(resolve(root,'content/systems/logos'))).sort(),['chargebee.svg','ramp.svg']);
+ const logos=data.systems.filter(s=>s.logo.path);assert.equal(logos.length,3);
+ assert.deepEqual((await readdir(resolve(root,'content/systems/logos'))).sort(),['chargebee.svg','ramp.svg','xero.svg']);
  for(const s of logos){const bytes=await readFile(resolve(root,'content/systems',s.logo.path));validateSVG(bytes.toString());assert.equal(createHash('sha256').update(bytes).digest('hex'),s.logo.sha256);}
 });
 test('HTML escapes source descriptions, names and attributes',()=>{

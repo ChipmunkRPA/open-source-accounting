@@ -12,7 +12,7 @@ frontend/vendor/identity.mjs frontend/vendor/machine.mjs frontend/tests/identity
 frontend/src/main.ts frontend/src/api.ts frontend/src/authentication.ts frontend/src/entry.ts frontend/src/markdown.ts frontend/src/source-notices.ts frontend/src/types.ts frontend/src/ui.ts
 frontend/src/views/chat.ts frontend/src/views/library.ts frontend/src/views/open-library.ts frontend/src/views/source-reader.ts frontend/src/views/sec-core.ts frontend/src/views/asu-tracking.ts frontend/src/views/sec-comments.ts'''.split())
 def allowed(name):
-    return name in EXACT or name in {'content/systems/logos/ramp.svg','content/systems/logos/chargebee.svg'} or (name.startswith('content/') and Path(name).suffix in {'.md', '.json'})
+    return name in EXACT or name in {'content/systems/logos/ramp.svg','content/systems/logos/chargebee.svg','content/systems/logos/xero.svg'} or (name.startswith('content/') and Path(name).suffix in {'.md', '.json'})
 names = subprocess.check_output(['git','ls-files','-z','--cached','--others','--exclude-standard'],cwd=ROOT).decode().split('\0')
 errors=[]
 for name in set(names)-{''}:

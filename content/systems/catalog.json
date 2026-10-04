@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "last_checked": "2026-10-04",
   "title": "Accounting systems directory",
   "license": "CC-BY-4.0 for original editorial text only; vendor names and logo assets excluded",
@@ -1446,12 +1446,12 @@
         }
       ],
       "logo": {
-        "status": "pending_review",
+        "status": "official_media_asset",
         "source_page": "https://www.xero.com/us/media/downloads/",
-        "asset_url": null,
-        "path": null,
-        "sha256": null,
-        "usage_conditions": "The official media page links SVG/PNG files and requires the Xero logo guidelines. Those conditions have not been fully verified for this directory; the text name is used.",
+        "asset_url": "https://brandfolder.com/s/sv3tg7pcr55k8bv8jgggxtxn",
+        "path": "logos/xero.svg",
+        "sha256": "6bbec2b526e0703cbcb9f58f94f495254dcc974f841cc946c5f99bfd30a9ccf9",
+        "usage_conditions": "Official public media download, used under Xero logo guidelines modified May 2026. Use the supplied Midnight wordmark on a light background, maintain proportions and clear space at least the radius of the letter o, and retain a digital width of at least 40 px. The pill variant requires separate approval and is not used. Trademark rights remain with Xero. Guidelines: https://brandfolder.xero.com/NE531UQB/as/3kfmkhrbbq3h7cxpg3xc8t45/639193-xero-roundel-logo-guidelines-2024",
         "checked_on": "2026-10-04"
       }
     },
