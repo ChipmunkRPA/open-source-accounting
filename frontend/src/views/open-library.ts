@@ -21,7 +21,7 @@ export async function openLibraryView(app:App,id?:string){
       el('div',{class:'row-actions'},badge('FREE ORIGINAL CONTENT','free'),badge('AI-ASSISTED · UNREVIEWED','warning'),badge(item.license)),
       notice('This public editorial draft is not automatically available to research agents. Independent rights and technical approval are required before Agent use.','warning'),
       el('div',{class:'library-reading-layout'},el('div',{},body.element,sources),
-        el('aside',{},toc,card('Use this material',el('p',{},'Read, download, and adapt the original content under CC BY 4.0. Preserve attribution and identify changes.'),
+        el('aside',{},toc,card('Use this material',el('p',{},item.license==='CC-BY-4.0'?'Read, download, and adapt this original content under CC BY 4.0. Preserve attribution and identify changes.':'This new annotation uses '+item.license+'. Read the linked content terms for permitted uses; prior CC BY grants remain unchanged.'),
           el('p',{class:'muted'},'Third-party standards are linked, not licensed or reproduced by this pack.'),
           link(app,'General AI chat · Free','/chat')))));
     return;

@@ -1,3 +1,51 @@
+## 2026-10-04 · Twelve original standards explanations and worked scenarios · #9/#10/#12/#22
+
+Added **12 original educational articles**, four each for FASB, GASB and AICPA
+research families, taking the separately counted original library from **78 to 90**.
+The new material contains **7,298 words including notices**, with 12 independently
+authored teaching scenarios covering credit-loss estimates, loan fees, deferred tax,
+asset-sale recognition, governmental reporting bridges, fund balance, leases,
+software subscriptions, engagement assurance, assertions, analytics and sampling.
+It is labeled **Ray Sang’s Annotation**, with explicit AI-assisted authorship and
+no implied personal or professional review. All prior 78 article objects/bytes,
+credits, CC BY grants and AI editorial receipts remain unchanged.
+
+The source-first inventory is retained separately. This batch appends **10 source
+reference records** from official government/regulator application guidance and
+keeps publisher homepage references separate. Nine government guidance pages/PDFs
+were examined; the FDIC link remains discovery-only after direct access returned 403. It adds **zero acquired or reproduced
+FASB/GASB/AICPA standards bodies**, zero professional approvals and zero Agent
+admissions. The source pages are not claimed to verify every current standard or
+entity's applicability. The observed OCC PDF is August 2026, with a March 31, 2026
+issue-observation cutoff; undated state pages carry an observation date only.
+
+New expressly marked first-party articles use the prospective custom terms. A
+narrow public schema/display change accommodates their license and GASB framework
+without imposing new conditions on prior CC BY work. Private implementation stays
+out of Standard.
+
+Observed cloud checks: TypeScript typecheck; **79 Node tests**; **8 Python public
+boundary/HTTP tests**; **16 new original-content/provenance/arithmetic/nonduplication
+tests**; full build of **90 hash-verified article pages with 78 existing AI receipts**
+and 33 Systems profiles; all 12 new local HTTP routes; final generated public-file
+boundary. No new article-level AI-editorial receipt or human approval is claimed.
+A separate bounded model review checked all twelve articles, original-file
+preservation and source status, corrected three scope/wording issues and confirmed
+the final FDIC reference-only correction. That review is not professional approval.
+
+Hosted CI, native/Mac/release checks, visual browser acceptance, deployed website
+update and real integrations remain unrun. No Actions dispatch, paid service,
+credential/access change or deployment occurred. Next: preserve exact reviewed
+hashes during coordinated normal publication and expand source-backed original
+explanations without mislabeling them as publisher standards.
+
+Fresh publication integration uses IRS pilot head 38daa93e71a5287a6b372ac70af7f82122f53f73.
+All eighteen IRS source files, its checker and ten regression tests remain byte-exact;
+its complete progress entry and preceding history are preserved. Combined final
+checks pass 79 Node cases, 18 Python cases, TypeScript, the full 90-article build and
+the generated public boundary. Six unchanged large eCFR archive blobs are preserved
+by exact remote tree SHA rather than reacquired in this content-only workspace.
+
 ## 2026-10-04 · State/local tax acquisition and metadata catalog · #16/#20/#21
 
 Published a metadata-only initial SALT research catalog for **50 states plus DC**.

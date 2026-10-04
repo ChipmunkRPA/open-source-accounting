@@ -2116,6 +2116,321 @@
       "primary_text_gap": true,
       "public_visibility": "editorial_draft",
       "agent_eligible_by_default": false
+    },
+    {
+      "id": "fasb-credit-loss-pools",
+      "title": "Expected credit losses: build a pooled estimate and explain its movement",
+      "kind": "guide",
+      "topic": "fasb-credit-losses",
+      "framework": "US_GAAP",
+      "summary": "A two-pool numerical case separates exposure, forward-looking loss estimates, write-offs and provision expense.",
+      "path": "guides/fasb-credit-loss-pools-v1.md",
+      "version": "1.0.0",
+      "sha256": "946d4bcbd529001e4391b5db3ce4b4d0d3a9febc7282d962641bc5bfb7f51cb9",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-fed-acl-2026",
+        "osa-fdic-cecl-2026"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "fasb-loan-fee-yield",
+      "title": "Loan origination fees: distinguish cash collected from interest earned",
+      "kind": "guide",
+      "topic": "fasb-loan-fees",
+      "framework": "US_GAAP",
+      "summary": "A one-year loan shows how a qualifying deferred net fee changes the effective yield without changing contractual principal.",
+      "path": "guides/fasb-loan-fee-yield-v1.md",
+      "version": "1.0.0",
+      "sha256": "cb02e659aa63e62f7fb0648a1c74b177ee08ad74709e8991952c73c392834517",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-occ-baas-2026"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "fasb-deferred-tax-bridge",
+      "title": "Deferred tax assets: connect a future deduction to a realizability assessment",
+      "kind": "guide",
+      "topic": "fasb-income-taxes",
+      "framework": "US_GAAP",
+      "summary": "An assumed warranty deduction illustrates gross deferred tax, a valuation allowance and why a forecast is evidence rather than cash.",
+      "path": "guides/fasb-deferred-tax-bridge-v1.md",
+      "version": "1.0.0",
+      "sha256": "f6102358c26b51f196e6bfae848ea066c6ef86ebe0402a6d52bd42de8f52e67c",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-occ-baas-2026"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "fasb-sale-recognition-control",
+      "title": "Selling a nonfinancial asset: separate the bank deposit from the accounting sale",
+      "kind": "guide",
+      "topic": "fasb-recognition",
+      "framework": "US_GAAP",
+      "summary": "An original two-date asset-sale case shows why cash, legal paperwork and control evidence must be reconciled.",
+      "path": "guides/fasb-sale-recognition-control-v1.md",
+      "version": "1.0.0",
+      "sha256": "a6d8cf53df2bc7c57d166ff2d937ac6d3f2c28492615e21334e5f0e38acd5daf",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-occ-baas-2026"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "gasb-fund-governmentwide-bridge",
+      "title": "Governmental funds and government-wide reporting: one purchase, two perspectives",
+      "kind": "guide",
+      "topic": "gasb-reporting-model",
+      "framework": "GASB",
+      "summary": "A vehicle purchase and debt-principal repayment build an original bridge from fund-balance change to government-wide activity.",
+      "path": "guides/gasb-fund-governmentwide-bridge-v1.md",
+      "version": "1.0.0",
+      "sha256": "a49c8792e7c722e0a5293ca07acd7deef615cf70d02baa4fcff3577e7c2a5c1f",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-texas-modified-accrual",
+        "osa-texas-statement-scope"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "gasb-fund-balance-constraints",
+      "title": "Fund balance: identify the constraint before calling money available",
+      "kind": "guide",
+      "topic": "gasb-fund-balance",
+      "framework": "GASB",
+      "summary": "A $1 million general-fund example distinguishes five classifications and shows why classification is not cash forecasting.",
+      "path": "guides/gasb-fund-balance-constraints-v1.md",
+      "version": "1.0.0",
+      "sha256": "a362648d358861e2965afb28678616749cf00178f93a6d6c88cde04bbb280fff",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-texas-fund-balance"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "gasb-lease-two-statements",
+      "title": "Government leases: follow one payment through the liability and the fund",
+      "kind": "guide",
+      "topic": "gasb-leases",
+      "framework": "GASB",
+      "summary": "A deliberately simplified government lease links the liability, right-to-use asset, interest and modified-accrual presentation.",
+      "path": "guides/gasb-lease-two-statements-v1.md",
+      "version": "1.0.0",
+      "sha256": "b6f66c1d616cb17835476fbda664cf3d8230d5b1e28dbe68b9b62bb8dd7cf052",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-texas-lessee"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "gasb-sbita-implementation-costs",
+      "title": "Government software subscriptions: classify the work, not the invoice label",
+      "kind": "guide",
+      "topic": "gasb-sbita",
+      "framework": "GASB",
+      "summary": "An original implementation budget separates an assumed subscription asset from preliminary, training and operating costs.",
+      "path": "guides/gasb-sbita-implementation-costs-v1.md",
+      "version": "1.0.0",
+      "sha256": "4f923ca86647a91d5c930a754f7d4805c99dc5dcd644cf9f45123cbc0edb9cd6",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-texas-sbita-stages"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "aicpa-service-assurance-choice",
+      "title": "Audit, review, compilation and preparation: begin with the report the user needs",
+      "kind": "guide",
+      "topic": "aicpa-engagements",
+      "framework": "AUDIT",
+      "summary": "An original lender scenario distinguishes assurance from presentation and prevents substituting a compilation for an agreed review.",
+      "path": "guides/aicpa-service-assurance-choice-v1.md",
+      "version": "1.0.0",
+      "sha256": "a22d85578337fc3d2deeeb31a0ec3c05eba65331be0767714fa8060e56c62902",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-lla-report-types",
+        "osa-gao-fam1-2025"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "aicpa-assertion-direction",
+      "title": "Audit assertions: the direction of a test changes what it can show",
+      "kind": "guide",
+      "topic": "aicpa-audit-evidence",
+      "framework": "AUDIT",
+      "summary": "An original purchases cutoff case compares ledger-to-document testing with source-to-ledger testing and quantifies the unresolved gap.",
+      "path": "guides/aicpa-assertion-direction-v1.md",
+      "version": "1.0.0",
+      "sha256": "0cc7ced156a4cf5e6b0dc0135228c6a740f1b8168844b96f095ee9d4c2019f5e",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-gao-fam1-2025"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "aicpa-payroll-analytics",
+      "title": "Analytical procedures: make an expectation that can actually be challenged",
+      "kind": "guide",
+      "topic": "aicpa-analytical-procedures",
+      "framework": "AUDIT",
+      "summary": "An independently constructed payroll expectation separates an explained bonus from an unresolved payroll variance.",
+      "path": "guides/aicpa-payroll-analytics-v1.md",
+      "version": "1.0.0",
+      "sha256": "ac32ac7c21263f7bfc32d7da36619a8c05be2be44de4727db8c46f61f9750909",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-gao-fam1-2025"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "aicpa-selection-versus-sampling",
+      "title": "Selected items and audit samples: 60% coverage is not a population conclusion",
+      "kind": "guide",
+      "topic": "aicpa-sampling",
+      "framework": "AUDIT",
+      "summary": "A purchases population demonstrates the limits of large-item selection, exception rates and unsupported error projection.",
+      "path": "guides/aicpa-selection-versus-sampling-v1.md",
+      "version": "1.0.0",
+      "sha256": "36614e4e1e3147f55071699fca78a736afc63e62c7b692a4f17f2a69634e8efc",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-gao-fam1-2025"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
     }
   ]
 }

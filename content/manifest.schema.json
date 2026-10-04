@@ -40,7 +40,8 @@
             "AUDIT",
             "FASAB",
             "REGULATORY",
-            "SUSTAINABILITY"
+            "SUSTAINABILITY",
+            "GASB"
           ],
           "title": "Framework",
           "type": "string"
@@ -79,9 +80,12 @@
           "type": "string"
         },
         "license": {
-          "const": "CC-BY-4.0",
           "title": "License",
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "CC-BY-4.0",
+            "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0"
+          ]
         },
         "source_ids": {
           "items": {

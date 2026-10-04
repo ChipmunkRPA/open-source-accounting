@@ -1,7 +1,9 @@
 # Original content license
 
 The original educational prose, fictional examples, playbooks, templates, Q&A,
-and original arrangement/metadata in this directory are licensed under
+and original arrangement/metadata previously released under CC BY 4.0 retain that license.
+Except for new files explicitly marked `LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0`,
+original material in this directory is licensed under
 **Creative Commons Attribution 4.0 International (CC BY 4.0)**, to the extent
 copyright or similar rights apply.
 
@@ -35,3 +37,11 @@ training settings are operating controls, not additional restrictions on CC BY r
 ## Accounting systems directory exception
 
 Original editorial descriptions in `systems/catalog.json` follow CC BY 4.0. Vendor names, marks and `systems/logos/` assets are excluded. See `systems/NOTICE.md` and each logo provenance record; no trademark or blanket redistribution license is granted.
+
+## Explicitly marked new annotations
+
+New first-party files expressly carrying `LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0`
+use [CONTENT-TERMS.md](../CONTENT-TERMS.md), only to the extent rights exist and are
+controlled. The item manifest and file notice identify those files. They are not
+newly granted CC BY by this directory notice. All existing CC BY grants remain
+unchanged, including the 78 baseline articles and their immutable revisions.

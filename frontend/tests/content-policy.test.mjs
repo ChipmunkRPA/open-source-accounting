@@ -17,8 +17,10 @@ test('brand sidecar binds all originals without changing credits, hashes or exis
   assert.equal(policy.professional_review_implied,false);
   assert.equal(policy.source_text_is_annotation,false);
   assert.equal(policy.preserve_prior_licenses,true);
-  assert.deepEqual(policy.existing_library_items,manifest.items.map(({id,sha256,license,author})=>({id,sha256,license,author})));
-  for(const item of manifest.items){
+  const baselineIds=new Set(policy.existing_library_items.map(item=>item.id));
+  assert.equal(baselineIds.size,78);
+  assert.deepEqual(policy.existing_library_items,manifest.items.filter(item=>baselineIds.has(item.id)).map(({id,sha256,license,author})=>({id,sha256,license,author})));
+  for(const item of manifest.items.filter(item=>baselineIds.has(item.id))){
     assert.equal(createHash('sha256').update(await read('content/'+item.path)).digest('hex'),item.sha256);
     assert.equal(item.license,'CC-BY-4.0');
   }
@@ -78,4 +80,25 @@ test('robots advisory is rooted in both build output and local server routing',a
   assert.ok(robots.includes('preserves existing licenses'));
   assert.ok((await read('frontend/scripts/copy-assets.mjs')).includes("'robots.txt','content-terms.txt'"));
   assert.ok((await read('scripts/serve_public.py')).includes("{'/robots.txt', '/content-terms.txt'}"));
+});
+
+
+test('new original annotations have explicit custom terms and preserve authority gates',async()=>{
+  const manifest=JSON.parse(await read('content/manifest.json'));
+  const policy=JSON.parse(await read('content/annotation-policy.json'));
+  const baselineIds=new Set(policy.existing_library_items.map(item=>item.id));
+  const additions=manifest.items.filter(item=>!baselineIds.has(item.id));
+  assert.ok(additions.length>=12);
+  for(const item of additions){
+    const body=await read('content/'+item.path);
+    assert.equal(item.license,policy.new_explicit_license);
+    assert.ok(body.includes(item.license));
+    assert.ok(body.includes(brand));
+    assert.equal(item.agent_eligible_by_default,false);
+    assert.equal(item.technical_review.status,'unreviewed');
+    assert.equal(createHash('sha256').update(body).digest('hex'),item.sha256);
+  }
+  const schema=JSON.parse(await read('content/manifest.schema.json'));
+  assert.deepEqual(schema.$defs.Item.properties.license.enum,['CC-BY-4.0',policy.new_explicit_license]);
+  assert.ok((await read('frontend/src/views/open-library.ts')).includes("item.license==='CC-BY-4.0'"));
 });

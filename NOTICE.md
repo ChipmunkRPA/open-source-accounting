@@ -1,7 +1,7 @@
 # Licensing and source boundaries
 
 - Original application code and software documentation: MIT, see `LICENSE`.
-- Original educational materials in `content/`: CC BY 4.0, see `content/LICENSE.md`.
+- Original educational materials in `content/`: existing CC BY 4.0 grants remain; explicitly marked new annotations use their item-specific terms. See `content/LICENSE.md` and `CONTENT-TERMS.md`.
 - Exception: vendor names and logo files in `content/systems/` remain subject to their owners’ rights and the per-asset conditions in `content/systems/NOTICE.md`; they are not MIT or CC BY assets.
 - Runtime dependencies remain governed by their own licenses. Dependencies are
   installed separately; this project does not relicense them.

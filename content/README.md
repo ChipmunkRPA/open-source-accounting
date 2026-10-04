@@ -10,7 +10,7 @@
 
 42 original library items, approximately 16,800 words, 30 study questions, and 22 reference records. All content is AI-assisted and **not professionally reviewed**. The full text of proprietary standards is not included.
 
-Original material is CC BY 4.0. Read [LICENSE.md](LICENSE.md) and the [editorial roadmap](ROADMAP.md).
+Previously released original material retains CC BY 4.0. New annotations expressly marked with the custom first-party identifier use their item-specific terms. Read [LICENSE.md](LICENSE.md) and the [editorial roadmap](ROADMAP.md).
 
 ## Guides
 
