@@ -10,7 +10,20 @@ frontend/public/index.html frontend/public/styles.css frontend/public/systems.js
 frontend/scripts/build-vendor.mjs frontend/scripts/copy-assets.mjs frontend/scripts/clean.mjs frontend/scripts/build-library.mjs frontend/scripts/build-systems.mjs
 frontend/vendor/identity.mjs frontend/vendor/machine.mjs frontend/tests/identity.test.mjs frontend/tests/systems.test.mjs
 frontend/src/main.ts frontend/src/api.ts frontend/src/authentication.ts frontend/src/entry.ts frontend/src/markdown.ts frontend/src/source-notices.ts frontend/src/types.ts frontend/src/ui.ts
-frontend/src/views/chat.ts frontend/src/views/library.ts frontend/src/views/open-library.ts frontend/src/views/source-reader.ts frontend/src/views/sec-core.ts frontend/src/views/asu-tracking.ts frontend/src/views/sec-comments.ts'''.split())
+frontend/src/views/chat.ts frontend/src/views/library.ts frontend/src/views/open-library.ts frontend/src/views/source-reader.ts frontend/src/views/sec-core.ts frontend/src/views/asu-tracking.ts frontend/src/views/sec-comments.ts
+corpus/govinfo/ecfr/2026-10-04/README.md
+corpus/govinfo/ecfr/2026-10-04/ecfr-title-12.jsonl.gz
+corpus/govinfo/ecfr/2026-10-04/ecfr-title-17.jsonl.gz
+corpus/govinfo/ecfr/2026-10-04/ecfr-title-26.jsonl.gz.part01
+corpus/govinfo/ecfr/2026-10-04/ecfr-title-26.jsonl.gz.part02
+corpus/govinfo/ecfr/2026-10-04/ecfr-title-31.jsonl.gz
+corpus/govinfo/ecfr/2026-10-04/ecfr-title-48.jsonl.gz
+corpus/govinfo/ecfr/2026-10-04/manifest.json
+tools/govinfo/collect_ecfr.py
+tools/govinfo/export_ecfr.py
+tools/govinfo/index_ecfr.py
+tools/govinfo/load_snapshot.py
+tools/govinfo/search_corpus.py'''.split())
 def allowed(name):
     return name in EXACT or name in {'content/systems/logos/ramp.svg','content/systems/logos/chargebee.svg','content/systems/logos/xero.svg'} or (name.startswith('content/') and Path(name).suffix in {'.md', '.json'})
 names = subprocess.check_output(['git','ls-files','-z','--cached','--others','--exclude-standard'],cwd=ROOT).decode().split('\0')

@@ -19,7 +19,7 @@ Open http://127.0.0.1:8080/assets/library/index.html for the hash-verified origi
 
 ## Scope and rights
 
-General AI chat and public educational/source-reading content remain free. Hosted Agent operations are US$89.99/year; no monthly plan or usage allowance is promised here. ASU tracking and SEC comment-letter reading interfaces remain public, but their live feeds require the hosted service. Current inventories are drafts and selected references, not complete acquired or professionally approved corpora. See `content/manifest.json` and `progress.md`.
+General AI chat and public educational/source-reading content remain free. Hosted Agent operations are US$89.99/year; no monthly plan or usage allowance is promised here. ASU tracking and SEC comment-letter reading interfaces remain public, but their live feeds require the hosted service. The inventories distinguish original articles, selected references and bounded acquired government-source snapshots; they are not a complete or professionally approved accounting corpus. See `content/manifest.json` and `progress.md`.
 
 Public code remains MIT. Original educational material uses its stated content license; third-party sources retain their own rights. The private migration does not revoke licenses on code already published in public Git history. Do not place proprietary implementation, private prompts, credentials, client documents or licensed corpora here.
 
@@ -28,3 +28,17 @@ Public code remains MIT. Original educational material uses its stated content l
 The Standard client includes 33 researched system profiles across 13 finance workflows: AP, procurement, expenses, AR, billing/revenue, close, consolidation, FP&A, treasury, tax, audit/controls/reporting, data integration and core accounting/ERP. Build the frontend and open `/assets/systems/index.html`. It works without an API or sign-in and links from the free library and app navigation. Profiles contain original introductions, editorial company-size fit, integration questions, current official sources and logo provenance.
 
 Three official media-kit logos are included; 30 profiles use text while brand-asset conditions remain unresolved. Vendor names and marks are excluded from MIT and CC BY. See [directory documentation](content/systems/README.md) and [third-party notices](content/systems/NOTICE.md). No working integration or vendor endorsement is implied.
+
+## Downloadable federal regulatory corpus
+
+The [2026-10-04 GovInfo eCFR snapshot](corpus/govinfo/ecfr/2026-10-04/README.md)
+contains 31,604 dated regulatory section records from Titles 12, 17, 26, 31 and 48,
+representing 31,603 distinct normalized texts. Five compressed shards and a local
+search loader are included. These come from five source XML containers, not 31,604
+independent publications or original articles. Ten notice/ownership-review sections
+and 2,215 metadata-only entries are excluded from the public shards.
+
+Each record retains its source, exact hashes, per-volume amendment date and rendering
+limits. The dataset does not claim current-law completeness, an official certified
+edition, professional review or Agent admission. It is available for local research;
+publishing this repository snapshot does not deploy the hosted library.

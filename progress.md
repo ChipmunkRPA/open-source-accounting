@@ -1,3 +1,41 @@
+# 2026-10-04 — Publish a bounded GovInfo regulatory text snapshot
+
+Retained five official bulk eCFR XML containers for Titles 12, 17, 26, 31 and 48:
+175,207,199 source bytes. Their 33,829 section elements yield 31,604 exported source
+records, 31,603 distinct normalized text hashes, 2,215 metadata-only entries and ten
+sections withheld for copyright-notice or ownership-wording review. One identical
+Title 48 text occurs at two distinct official nodes; both locators remain explicit.
+These are five source documents and regulatory section records, not additional
+original articles or 31,604 separate publications.
+
+The public snapshot contains only five compressed searchable-text shards, their
+manifest/documentation and bounded original collector/index/export/load/search tools.
+Raw XML, generated SQLite databases, excluded entries and private implementation
+are outside the publication. The largest physical transfer file is 10 MiB. Title 26 uses two ordered parts
+whose concatenation preserves the exact reviewed logical gzip hash. A narrow exact-path
+addition to scripts/check_public.py permits only the reviewed snapshot/tool files.
+Systems and its three official logos remain preserved on the current public base.
+
+Source amendment dates are kept per volume, separately from listing and retrieval
+times. Whitespace-normalized XML projections flag missing graphics and tabular/math
+layout. Incorporated external standards and source graphics were not acquired.
+No official-edition, current-law, professional-review or Agent-admission claim is made.
+
+A separate automated audit reconciled every exported row to retained XML and identified an
+ANSI attribution missed by the initial screen. The corrected conservative screen
+withholds that section and all other matched notices; all ten held sections are
+absent from export. Four full source/count/identity/query checks passed, as did an
+actual local load of the public snapshot; automated malformed-input probes refuse
+text/source tampering, forbidden categories/grants, duplicates, count/hash errors and
+path traversal. The first review and superseded counts remain local evidence only.
+
+Commands: python -m unittest -v test_ecfr_pipeline; python load_snapshot.py --snapshot
+public-candidate/corpus/govinfo/ecfr/2026-10-04 --database derived/public-search-rights-corrected.sqlite;
+python scripts/check_public.py in the materialized final public tree. Hosted Actions,
+site deployment, browser/native and real Agent integration are not executed by this
+content publication. Next: separately dated Federal Register document acquisition,
+with issue containers, canonical document IDs and source projections counted apart.
+
 ## 2026-10-04 · Current official Xero wordmark · #22/#35
 
 Directory release 1.0.1 resolves one more logo record using Xero's current official public media download and logo guidelines modified May 2026. It uses the intact Midnight wordmark on a light background, preserves proportions and clear space, exceeds the 40 px minimum, and excludes the separately restricted pill variant. The media page's logo-guideline conditions are followed; no blanket sublicense or open-license claim is made. Current directory scope is **33 profiles / 13 workflows / 3 official logos / 30 text-only logo records**. All 33 editorial profile texts, source records and the original 78-article library stay unchanged.

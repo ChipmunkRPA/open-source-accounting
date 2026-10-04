@@ -1,0 +1,390 @@
+{
+  "schema": "govinfo-ecfr-research-snapshot-1",
+  "built_at": "2026-10-04T15:42:14.896739+00:00",
+  "downloaded_xml_documents": 5,
+  "source_bytes": 175207199,
+  "counts": {
+    "section_elements": 33829,
+    "searchable_text": 31604,
+    "reserved_headings": 1158,
+    "substantive_sections": 31614,
+    "sections_with_missing_graphics": 203,
+    "sections_with_tables_or_math": 1095,
+    "metadata_only": 2215,
+    "rights_quarantine": 10
+  },
+  "original_article_count": 0,
+  "live_website_ingested_count": 0,
+  "agent_admitted_count": 0,
+  "professional_approved_count": 0,
+  "distinct_searchable_text_sha256_count": 31603,
+  "same_text_additional_source_records": 1,
+  "snapshot_is_current_law_claim": false,
+  "documents": [
+    {
+      "schema": "accounting-official-bulk-receipt-1",
+      "collection": "ECFR",
+      "title": 12,
+      "source_url": "https://www.govinfo.gov/bulkdata/ECFR/title-12/ECFR-title12.xml",
+      "source_listing_url": "https://www.govinfo.gov/bulkdata/json/ECFR/title-12",
+      "source_listing_sha256": "c4487957ed2d180ffbc29aad0152f8f3b8197723802c3d64626559409727f392",
+      "listed_last_modified_gmt": "02-Oct-2026 22:11",
+      "retrieval_started_at": "2026-10-04T15:13:08.804376+00:00",
+      "retrieved_at": "2026-10-04T15:13:23.048814+00:00",
+      "status": 200,
+      "response_content_type": "text/xml",
+      "response_last_modified": "Fri, 02 Oct 2026 22:11:23 GMT",
+      "response_etag": null,
+      "sha256": "c6d9f54ba79e961eab925ec2e6530fd9b91c3018ff8c472577bffe2bd6dcd892",
+      "bytes": 39448241,
+      "downloaded_document_count": 1,
+      "rights_basis_url": "https://www.govinfo.gov/about/policies",
+      "bulk_access_documentation": "https://www.govinfo.gov/developers",
+      "rights_scope": "Official bulk research acquisition; embedded third-party components require separate filtering",
+      "publicly_published": false,
+      "agent_admission": false,
+      "professional_review": false,
+      "document_id": "govinfo-ecfr-title-12-c6d9f54ba79e961e",
+      "counts": {
+        "section_elements": 7199,
+        "searchable_text": 6932,
+        "reserved_headings": 266,
+        "substantive_sections": 6933,
+        "sections_with_missing_graphics": 71,
+        "sections_with_tables_or_math": 130,
+        "metadata_only": 266,
+        "rights_quarantine": 1
+      },
+      "amendment_dates_raw": [
+        "Jan. 1, 2026",
+        "July 21, 2026",
+        "Oct. 1, 2026",
+        "Sept. 14, 2026",
+        "Sept. 30, 2026"
+      ],
+      "derived_shard": "ecfr-title-12.jsonl.gz",
+      "derived_shard_sha256": "1d04e1c2fc41538ed471fd3a215e08c27f4473f499fda139e3e3f3e97f6da307",
+      "derived_shard_bytes": 6861828,
+      "raw_xml_retained_locally_only": true,
+      "exported_section_texts": 6932
+    },
+    {
+      "schema": "accounting-official-bulk-receipt-1",
+      "collection": "ECFR",
+      "title": 17,
+      "source_url": "https://www.govinfo.gov/bulkdata/ECFR/title-17/ECFR-title17.xml",
+      "source_listing_url": "https://www.govinfo.gov/bulkdata/json/ECFR/title-17",
+      "source_listing_sha256": "df582e9d4160acb9afa0b912115ddcab97fa8e93604e8f1ed0197956aefa9daa",
+      "listed_last_modified_gmt": "02-Oct-2026 22:07",
+      "retrieval_started_at": "2026-10-04T15:12:58.391681+00:00",
+      "retrieved_at": "2026-10-04T15:13:08.803823+00:00",
+      "status": 200,
+      "response_content_type": "text/xml",
+      "response_last_modified": "Fri, 02 Oct 2026 22:07:36 GMT",
+      "response_etag": null,
+      "sha256": "eea3452bfa8a38425c59c21d352e351a8b09a439a254f04ce2db00bf60162422",
+      "bytes": 17366929,
+      "downloaded_document_count": 1,
+      "rights_basis_url": "https://www.govinfo.gov/about/policies",
+      "bulk_access_documentation": "https://www.govinfo.gov/developers",
+      "rights_scope": "Official bulk research acquisition; embedded third-party components require separate filtering",
+      "publicly_published": false,
+      "agent_admission": false,
+      "professional_review": false,
+      "document_id": "govinfo-ecfr-title-17-eea3452bfa8a3842",
+      "counts": {
+        "section_elements": 3528,
+        "metadata_only": 210,
+        "reserved_headings": 210,
+        "substantive_sections": 3318,
+        "sections_with_missing_graphics": 9,
+        "sections_with_tables_or_math": 80,
+        "searchable_text": 3318
+      },
+      "amendment_dates_raw": [
+        "Aug. 17, 2026",
+        "July 26, 2026",
+        "June 1, 2026",
+        "Oct. 1, 2026"
+      ],
+      "derived_shard": "ecfr-title-17.jsonl.gz",
+      "derived_shard_sha256": "d8359ce04b8b0304a7955dca18984b9e6decccd59251d6d7b681f8b325e5bf7c",
+      "derived_shard_bytes": 3803605,
+      "raw_xml_retained_locally_only": true,
+      "exported_section_texts": 3318
+    },
+    {
+      "schema": "accounting-official-bulk-receipt-1",
+      "collection": "ECFR",
+      "title": 26,
+      "source_url": "https://www.govinfo.gov/bulkdata/ECFR/title-26/ECFR-title26.xml",
+      "source_listing_url": "https://www.govinfo.gov/bulkdata/json/ECFR/title-26",
+      "source_listing_sha256": "b024e75194a2475abda7aa0e0165df0aba4f42de1be7a337221080273324d240",
+      "listed_last_modified_gmt": "01-Oct-2026 22:03",
+      "retrieval_started_at": "2026-10-04T15:13:23.050148+00:00",
+      "retrieved_at": "2026-10-04T15:13:47.569745+00:00",
+      "status": 200,
+      "response_content_type": "text/xml",
+      "response_last_modified": "Thu, 01 Oct 2026 22:03:39 GMT",
+      "response_etag": null,
+      "sha256": "4c820620ecb64c52bfc737eb196fea187f4e5335466d3b32bb89eca0c5965648",
+      "bytes": 88092568,
+      "downloaded_document_count": 1,
+      "rights_basis_url": "https://www.govinfo.gov/about/policies",
+      "bulk_access_documentation": "https://www.govinfo.gov/developers",
+      "rights_scope": "Official bulk research acquisition; embedded third-party components require separate filtering",
+      "publicly_published": false,
+      "agent_admission": false,
+      "professional_review": false,
+      "document_id": "govinfo-ecfr-title-26-4c820620ecb64c52",
+      "counts": {
+        "section_elements": 6160,
+        "searchable_text": 6013,
+        "reserved_headings": 145,
+        "substantive_sections": 6015,
+        "sections_with_missing_graphics": 103,
+        "sections_with_tables_or_math": 675,
+        "metadata_only": 145,
+        "rights_quarantine": 2
+      },
+      "amendment_dates_raw": [
+        "Aug. 10, 2026",
+        "Aug. 21, 2026",
+        "Aug. 28, 2026",
+        "Dec. 15, 2025",
+        "Dec. 18, 2025(fm)",
+        "Dec. 30, 2024",
+        "Jan. 17, 2025 (fm)",
+        "Jan. 19, 2025",
+        "July 24, 2026",
+        "July 9, 2026",
+        "June 12, 2026",
+        "Mar. 13, 2002",
+        "May 1, 2026 (fm)",
+        "May 20, 2025",
+        "May 4, 2026,fm",
+        "Nov. 17, 2025",
+        "Nov. 24, 2025",
+        "Sept. 17, 2024,fm",
+        "Sept. 25, 2026",
+        "Sept. 30, 2026",
+        "Sept. 8, 2026"
+      ],
+      "derived_shard": "ecfr-title-26.jsonl.gz",
+      "derived_shard_sha256": "6ba9a4471195dc81a39e7ea2040f021137e321135d3dd73a07e247259f393612",
+      "derived_shard_bytes": 16499000,
+      "raw_xml_retained_locally_only": true,
+      "derived_parts": [
+        {
+          "file": "ecfr-title-26.jsonl.gz.part01",
+          "offset": 0,
+          "bytes": 10485760,
+          "sha256": "acf03352d41686fb6e79b26e3bb4766078b3ae13a4e96e19a077a68b64bdacf7"
+        },
+        {
+          "file": "ecfr-title-26.jsonl.gz.part02",
+          "offset": 10485760,
+          "bytes": 6013240,
+          "sha256": "e7533c9823660038cc047c124eb0be735693ceeb8c63c75ac6a7050a51a10d0f"
+        }
+      ],
+      "exported_section_texts": 6013
+    },
+    {
+      "schema": "accounting-official-bulk-receipt-1",
+      "collection": "ECFR",
+      "title": 31,
+      "source_url": "https://www.govinfo.gov/bulkdata/ECFR/title-31/ECFR-title31.xml",
+      "source_listing_url": "https://www.govinfo.gov/bulkdata/json/ECFR/title-31",
+      "source_listing_sha256": "64234b5f175fed0df05fa7d1376f76d8fce0731157dca10b33ec28bc33cf6f2e",
+      "listed_last_modified_gmt": "02-Oct-2026 22:06",
+      "retrieval_started_at": "2026-10-04T15:13:47.570206+00:00",
+      "retrieved_at": "2026-10-04T15:13:55.188648+00:00",
+      "status": 200,
+      "response_content_type": "text/xml",
+      "response_last_modified": "Fri, 02 Oct 2026 22:06:17 GMT",
+      "response_etag": null,
+      "sha256": "8215637376b782c9f3748b943be0890abd74c13e04f0897d69af36902767a5e8",
+      "bytes": 9878571,
+      "downloaded_document_count": 1,
+      "rights_basis_url": "https://www.govinfo.gov/about/policies",
+      "bulk_access_documentation": "https://www.govinfo.gov/developers",
+      "rights_scope": "Official bulk research acquisition; embedded third-party components require separate filtering",
+      "publicly_published": false,
+      "agent_admission": false,
+      "professional_review": false,
+      "document_id": "govinfo-ecfr-title-31-8215637376b782c9",
+      "counts": {
+        "section_elements": 5398,
+        "searchable_text": 5234,
+        "reserved_headings": 162,
+        "substantive_sections": 5235,
+        "sections_with_missing_graphics": 2,
+        "sections_with_tables_or_math": 31,
+        "metadata_only": 163,
+        "rights_quarantine": 1
+      },
+      "amendment_dates_raw": [
+        "July 6, 2026",
+        "Oct. 1, 2026",
+        "Sept. 30, 2026"
+      ],
+      "derived_shard": "ecfr-title-31.jsonl.gz",
+      "derived_shard_sha256": "a7fba2f92cb47bd4f0bd81aa51d42ed9cf5a8c3313ea9991cfe66ecad6f4ccd5",
+      "derived_shard_bytes": 2752975,
+      "raw_xml_retained_locally_only": true,
+      "exported_section_texts": 5234
+    },
+    {
+      "schema": "accounting-official-bulk-receipt-1",
+      "collection": "ECFR",
+      "title": 48,
+      "source_url": "https://www.govinfo.gov/bulkdata/ECFR/title-48/ECFR-title48.xml",
+      "source_listing_url": "https://www.govinfo.gov/bulkdata/json/ECFR/title-48",
+      "source_listing_sha256": "6fb987374b6aa3f0e755c4dd25af30911f532e56b54c3a2250db43af1690f38a",
+      "listed_last_modified_gmt": "02-Oct-2026 22:24",
+      "retrieval_started_at": "2026-10-04T15:13:55.189196+00:00",
+      "retrieved_at": "2026-10-04T15:14:06.761689+00:00",
+      "status": 200,
+      "response_content_type": "text/xml",
+      "response_last_modified": "Fri, 02 Oct 2026 22:24:33 GMT",
+      "response_etag": null,
+      "sha256": "82f42eb4da4cb842718fc4e3d3f13200a5dff9778b661c751bfb0a5559e2955e",
+      "bytes": 20420890,
+      "downloaded_document_count": 1,
+      "rights_basis_url": "https://www.govinfo.gov/about/policies",
+      "bulk_access_documentation": "https://www.govinfo.gov/developers",
+      "rights_scope": "Official bulk research acquisition; embedded third-party components require separate filtering",
+      "publicly_published": false,
+      "agent_admission": false,
+      "professional_review": false,
+      "document_id": "govinfo-ecfr-title-48-82f42eb4da4cb842",
+      "counts": {
+        "section_elements": 11544,
+        "searchable_text": 10107,
+        "reserved_headings": 375,
+        "substantive_sections": 10113,
+        "sections_with_missing_graphics": 18,
+        "sections_with_tables_or_math": 179,
+        "metadata_only": 1431,
+        "rights_quarantine": 6
+      },
+      "amendment_dates_raw": [
+        "Apr. 2, 2026,fm",
+        "Dec. 2, 2025",
+        "Mar. 13, 2026 (fm)",
+        "Mar. 13, 2026,fm",
+        "May 26, 2025(fm)",
+        "May 7, 2026 (fm)",
+        "Oct. 1, 2026"
+      ],
+      "derived_shard": "ecfr-title-48.jsonl.gz",
+      "derived_shard_sha256": "7d7a412573c376f658e13f2529760e280e3bce93233e49e445b614157271cc20",
+      "derived_shard_bytes": 5904659,
+      "raw_xml_retained_locally_only": true,
+      "exported_section_texts": 10107
+    }
+  ],
+  "search_checks": [
+    {
+      "query": "materiality",
+      "hits": [
+        {
+          "id": "ecfr-t48-5be0af00b33bdb3403c0d19e",
+          "heading": "30.602 Materiality."
+        },
+        {
+          "id": "ecfr-t31-b8209e3c978214a4d5a9ac70",
+          "heading": "§ 800.603 Materiality."
+        },
+        {
+          "id": "ecfr-t31-9c43363aee973ace16b7dcee",
+          "heading": "§ 802.603 Materiality."
+        }
+      ]
+    },
+    {
+      "query": "revenue",
+      "hits": [
+        {
+          "id": "ecfr-t26-467c276f94b693276e0692ce",
+          "heading": "§ 301.7514-1 Seals of office."
+        },
+        {
+          "id": "ecfr-t26-19efbcfd311a28ecbf0764ed",
+          "heading": "§ 1.0-1 Internal Revenue Code of 1954 and regulations."
+        },
+        {
+          "id": "ecfr-t26-8c1d7232d800770ef85b4c1b",
+          "heading": "§ 601.101 Introduction."
+        }
+      ]
+    },
+    {
+      "query": "income tax",
+      "hits": [
+        {
+          "id": "ecfr-t26-d1dd8742725e71e16ed7a15d",
+          "heading": "§ 1.903-1 Taxes in lieu of income taxes."
+        },
+        {
+          "id": "ecfr-t26-b881038f674f63887d335be3",
+          "heading": "§ 1.901-3 Reduction in amount of foreign taxes on foreign mineral income allowed as a credit."
+        },
+        {
+          "id": "ecfr-t26-1fb252b6ff3a5c2b2fcfef79",
+          "heading": "§ 1.597-6 Limitation on collection of federal income tax."
+        }
+      ]
+    },
+    {
+      "query": "internal control",
+      "hits": [
+        {
+          "id": "ecfr-t17-09cfd18eec41a650a31bf421",
+          "heading": "§ 229.308 (Item 308) Internal control over financial reporting."
+        },
+        {
+          "id": "ecfr-t12-2a26d1ec0b2437bb7b3fbbe2",
+          "heading": "§ 618.8430 Internal controls."
+        },
+        {
+          "id": "ecfr-t12-b2d5dea094b502cc55a82fa0",
+          "heading": "§ 704.15 Audit and reporting requirements."
+        }
+      ]
+    },
+    {
+      "query": "cost accounting",
+      "hits": [
+        {
+          "id": "ecfr-t48-8a36340c107d3147794411ba",
+          "heading": "9903.302-1 Cost accounting practice."
+        },
+        {
+          "id": "ecfr-t48-8dd278516a6d631f886006fa",
+          "heading": "9903.302-2 Change to a cost accounting practice."
+        },
+        {
+          "id": "ecfr-t48-7aec874c5203666781787abc",
+          "heading": "9904.406-50 Techniques for application."
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Amendment dates are per volume and distinct from listing/download dates.",
+    "Section units are not separate source publications or original articles.",
+    "Metadata-only/reserved and copyright-quarantined units have no searchable body.",
+    "External graphics and incorporated proprietary documents were not downloaded.",
+    "Machine text projection does not verify visual, accounting or legal correctness.",
+    "Local index and derived artifacts are not a deployed website or Agent grant."
+  ],
+  "exported_section_texts": 31604,
+  "distinct_exported_text_sha256_count": 31603,
+  "metadata_only_records_in_export": 0,
+  "quarantined_records_in_export": 0,
+  "raw_xml_in_export": false,
+  "sqlite_index_in_export": false,
+  "publication_status": "versioned_repository_dataset"
+}
