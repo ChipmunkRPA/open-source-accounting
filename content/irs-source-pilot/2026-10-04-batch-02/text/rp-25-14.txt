@@ -1,0 +1,250 @@
+Part III
+
+
+Administrative, Procedural, and Miscellaneous
+
+
+
+26 CFR 601.601: Rules and regulations.
+(Also Part I, §§ 45Y, 48E; 1.45Y-5(g).)
+
+
+
+
+Rev. Proc. 2025-14
+
+
+
+SECTION 1. PURPOSE
+
+
+    This revenue procedure, issued pursuant to § 45Y(b)(2)(C)(i) of the Internal Revenue
+
+Code (Code) and § 1.45Y-5(g) 1, contains in Table 1 of this revenue procedure the
+
+annual table (Annual Table) that sets forth the greenhouse gas (GHG) emissions rates
+
+for certain types or categories of facilities. Taxpayers must use this Annual Table for
+
+the purpose of determining eligibility for a clean electricity production credit determined
+
+under § 45Y (§ 45Y credit) or a clean electricity investment tax credit under § 48E
+
+(§ 48E credit) for any facility that is of a type or category described in this Annual Table.
+
+
+1
+ Unless otherwise specified, all “Section” or “§” references are to sections of the Code or the Income Tax
+Regulations (26 CFR part 1).
+                                             -2-
+
+SECTION 2. BACKGROUND
+
+   .01 Statutory Background. Sections 13701(a) and 13702(a) of Public Law 117-169,
+
+136 Stat. 1818, 1982-1987 (August 16, 2022), commonly referred to as the Inflation
+
+Reduction Act of 2022 (IRA), added §§ 45Y and 48E, respectively, to the Code. Section
+
+45Y(b)(1)(A) and § 48E(b)(3)(A) provide, in part, that a qualified facility must have a
+
+GHG emissions rate that is not greater than zero. Section 45Y(b)(2) provides rules for
+
+determining GHG emissions rates and § 48E(b)(3)(B)(ii) provides that rules similar to
+
+the rules of § 45Y(b)(2) apply for purposes of § 48E.
+
+   .02 Regulations governing GHG emissions rates. Section 1.45Y-5 provides rules for
+
+determining the GHG emissions rate of a facility used for the generation of electricity for
+
+purposes of determining a § 45Y credit. Section 1.48E-5(g) provides that the rules
+
+provided in § 1.45Y-5(g) regarding this Annual Table apply for purposes of § 48E and
+
+§ 1.48E-5.
+
+     (1) Additions or Removals of Facilities. Future Annual Tables may add or remove
+
+certain types or categories of facilities, and any such change must be accompanied by
+
+an expert analysis, as required in § 1.45Y-5(g)(2). Section 1.45Y-5(g)(2) provides that,
+
+in connection with the publication of the Annual Table, the Secretary must publish an
+
+accompanying expert analysis that addresses any types or categories of facilities added
+
+or removed from the Annual Table, as well as any changes to emissions determinations
+
+for any types or categories of facilities in the Annual Table, since its last publication.
+
+For facilities that do not produce electricity through combustion or gasification, as
+
+described in § 1.45Y-5(b)(7) (Non-C&G Facilities), the applicable technical assessment,
+
+described in § 1.45Y-5(c)(1)(ii), will constitute this expert analysis as provided in
+                                                 -3-
+
+§ 1.45Y-5(c)(1), 2 and for facilities that do produce electricity through combustion or
+
+gasification, as described in § 1.45Y-5(d) (C&G Facilities), a lifecycle analysis (LCA)
+
+that is compliant with the requirements of § 1.45Y-5(d), (e), and (f) will constitute the
+
+expert analysis. This expert analysis must be prepared by one or more of the National
+
+Laboratories, in consultation with other Federal agency experts as appropriate, and
+
+must address whether the addition or removal of types or categories of facilities from
+
+the Annual Table complies with § 45Y(b)(2)(A) and (B) and § 1.45Y-5(g)(2). The
+
+Department of the Treasury (Treasury Department) and the Internal Revenue Service
+
+(IRS) view the requirement to publish an expert analysis prepared by the National
+
+Laboratories of changes to the Annual Table as essential to ensuring public
+
+accountability and adherence to sound scientific principles. This requirement would
+
+also ensure that the Secretary has a robust record from foremost experts in LCA
+
+assessment to inform any changes to the Annual Table. If there are no changes to the
+
+Annual Table in a future iteration, the Treasury Department and the IRS will notify
+
+taxpayers accordingly.
+
+     (2) Emissions rates greater than zero. To provide clarity and certainty to taxpayers
+
+regarding eligibility, the Treasury Department and the IRS may also include in future
+
+Annual Tables the types or categories of facilities that have a GHG emissions rate that
+
+is greater than zero and therefore do not meet the definition of a qualified facility with
+
+respect to which a taxpayer may claim a credit under §§ 45Y or 48E.
+
+     (3) Timing rule. Under § 1.45Y-5(g)(1), and except as provided in § 1.45Y-5(h), a
+
+
+
+
+2
+  Section 1.45Y-5(c)(1)(iii) provides an example of such a determination. The Treasury Department and
+the IRS anticipate that expert analyses for Non-C&G Facilities will be similar to this example.
+                                            -4-
+
+taxpayer that owns a facility described in the Annual Table on the first day of the taxable
+
+year in which the taxpayer’s § 45Y credit or § 48E credit is determined with respect to
+
+that facility must use the most recent Annual Table published as of that date to
+
+determine the facility’s GHG emissions rate for the taxable year.
+
+     (4) Reliance on Annual Table. For purposes of § 45Y, notwithstanding the timing
+
+rule provided in § 1.45Y-5(g)(1), § 1.45Y-5(i) provides that taxpayers may rely on the
+
+Annual Table in effect as of the date a taxpayer began construction on a facility to
+
+determine the facility’s GHG emissions rate for any taxable year that is within the 10-
+
+year period described in § 45Y(b)(1)(B), provided that the facility continues to operate
+
+as a type of facility that is described in the Annual Table for the entire taxable year. For
+
+purposes of § 48E, § 1.48E-5(j) provides that taxpayers may rely on the Annual Table in
+
+effect as of the date a taxpayer began construction on a facility to determine the
+
+facility’s GHG emissions rate, provided that the facility continues to operate as a type of
+
+facility that is described in the Annual Table for the entire taxable year.
+
+SECTION 3. THE ANNUAL TABLE
+
+   .01 First Annual Table. Table 1 of this revenue procedure is the first Annual Table
+
+and enumerates the following types or categories of facilities with a GHG emissions rate
+
+that is not greater than zero, consistent with § 1.45Y-5(c)(2).
+
+     (1) Wind (including small wind properties).
+
+     (2) Hydropower.
+
+     (3) Marine and hydrokinetic.
+
+     (4) Solar (including photovoltaic and concentrated solar power).
+
+     (5) Geothermal (including flash and binary plants).
+                                            -5-
+
+     (6) Nuclear fission.
+
+     (7) Fusion energy.
+
+     (8) Waste energy recovery property (WERP) that derives energy from a source
+
+described in section 3.01(1) through (7) of this revenue procedure.
+
+   .02 Background on table. This first Annual Table includes information about the
+
+types or categories of facilities that the Secretary has determined have a GHG
+
+emissions rate of not greater than zero. The types or categories of facilities listed in this
+
+first Annual Table are those listed in § 1.45Y-5(c)(2), which identifies certain types or
+
+categories of facilities that are categorically Non-C&G Facilities with a GHG emissions
+
+rate that is not greater than zero. Section 1.45Y-5(c)(2) was finalized after the Treasury
+
+Department and the IRS considered public comments during the rulemaking process
+
+and consulted extensively with scientific and technical experts from across the Federal
+
+government.
+
+SECTION 4. EFFECTIVE DATE
+
+   This revenue procedure is effective beginning on January 15, 2025, and until the
+
+effective date of a subsequent Annual Table.
+
+SECTION 5. DRAFTING INFORMATION
+
+   The principal author of this revenue procedure is the Office of the Associate Chief
+
+Counsel (Energy, Credits, and Excise Tax). For further information regarding this
+
+revenue ruling, contact the Office of the Associate Chief Counsel (Energy Credits and
+
+Excise Tax) at (202) 317-6853 (not a toll-free call).
+                                                           6
+
+
+
+                                     REV. PROC. 2025-14 TABLE 1
+
+                              GREENHOUSE GAS EMISSIONS RATES
+  (Effective beginning on January 15, 2025, and until the effective date of a subsequent Annual Table.)
+
+
+Type or Category of Facility                              Greenhouse Gas Emissions Rate
+
+Wind                                                              Not Greater than Zero
+Hydropower                                                        Not Greater than Zero
+Marine and Hydrokinetic                                           Not Greater than Zero
+Solar                                                             Not Greater than Zero
+Geothermal                                                        Not Greater than Zero
+Nuclear fission                                                   Not Greater than Zero
+Fusion energy                                                     Not Greater than Zero
+Waste energy recovery property*                                   Not Greater than Zero
+
+
+* Waste energy recovery property that derives energy from a source that is a type or category of facility
+  described in this table.
+

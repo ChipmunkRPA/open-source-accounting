@@ -24,10 +24,44 @@ class IRSSourcePilotTests(unittest.TestCase):
     def setUpClass(cls):
         cls.policy=policy_namespace()
         cls.manifest=json.loads((ROOT/PREFIX/'manifest.json').read_text())
-    def test_exact_eighteen_path_allowlist(self):
-        self.assertEqual(18,len(self.policy['IRS_SOURCE_FILES']))
+    def test_exact_eighteen_original_and_thirty_six_total_paths(self):
+        self.assertEqual(18, sum(name.startswith(PREFIX) for name in self.policy['IRS_SOURCE_FILES']))
+        self.assertEqual(36, len(self.policy['IRS_SOURCE_FILES']))
         for name in self.policy['IRS_SOURCE_FILES']:
             self.assertTrue(self.policy['allowed'](name))
+    def test_second_batch_eight_complete_documents(self):
+        prefix='content/irs-source-pilot/2026-10-04-batch-02/'
+        self.assertEqual(18,sum(name.startswith(prefix) for name in self.policy['IRS_SOURCE_FILES']))
+        manifest=json.loads((ROOT/prefix/'manifest.json').read_text())
+        self.assertEqual(8,len(manifest['documents']))
+        self.assertEqual(6,sum(d['document_type']=='notice' for d in manifest['documents']))
+        self.assertEqual(2,sum(d['document_type']=='revenue_procedure' for d in manifest['documents']))
+        for d in manifest['documents']:
+            for key in ['original_pdf','full_text']:
+                data=(ROOT/prefix/d[key]['path']).read_bytes()
+                self.assertEqual(d[key]['bytes'],len(data))
+                self.assertEqual(d[key]['sha256'],hashlib.sha256(data).hexdigest())
+            self.assertFalse(d['rights']['government_text_relicensed'])
+            self.assertFalse(d['rights']['first_party_noncommercial_terms_apply_to_government_text'])
+            self.assertEqual('Ray Sang’s Annotation',d['annotation']['label'])
+            for key in ['current_law_claim','current_applicability_reviewed','professionally_reviewed','agent_admitted','original_authored_article']:
+                self.assertFalse(d[key])
+    def test_second_batch_unknown_and_tampered_source_rejected(self):
+        prefix='content/irs-source-pilot/2026-10-04-batch-02/'
+        with tempfile.TemporaryDirectory() as directory:
+            r=Path(directory);(r/'scripts').mkdir();(r/'scripts/check_public.py').write_bytes(CHECKER.read_bytes())
+            subprocess.run(['git','init','-q',str(r)],check=True)
+            p=r/prefix/'originals/n-25-22.pdf';p.parent.mkdir(parents=True);p.write_bytes(b'%PDF-1.7 tampered')
+            result=subprocess.run(['python',str(r/'scripts/check_public.py')],capture_output=True,text=True)
+            self.assertNotEqual(0,result.returncode)
+            self.assertIn('IRS source hash mismatch',result.stderr)
+            p.rename(p.with_name('unapproved.pdf'))
+            result=subprocess.run(['python',str(r/'scripts/check_public.py')],capture_output=True,text=True)
+            self.assertNotEqual(0,result.returncode)
+            self.assertIn('unapproved.pdf',result.stderr)
+    def test_second_batch_sibling_unknown_files_denied(self):
+        for name in ['unapproved.md','unapproved.json','originals/unapproved.pdf','text/unapproved.txt','premium_private/manifest.json']:
+            self.assertFalse(self.policy['allowed']('content/irs-source-pilot/2026-10-04-batch-02/'+name))
     def test_unknown_pdf_and_text_denied(self):
         for name in ['originals/unreviewed.pdf','text/unreviewed.txt','unreviewed.md','manifest.json.extra','later/manifest.json']:
             self.assertFalse(self.policy['allowed'](PREFIX+name))

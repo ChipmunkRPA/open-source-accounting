@@ -1,3 +1,38 @@
+## 2026-10-04 · Second bounded IRS primary-source batch · #20
+
+Added eight complete IRS source originals and eight complete extracted texts:
+six Notices and two Revenue Procedures, totaling 37 PDF pages, 930,356 original
+bytes and 55,297 text bytes. The two batches now preserve 16 whole IRS documents
+in this repository. These are source documents, not original articles. The separately
+saved recollection archive contains 616 distinct PDFs/texts; this repository batch
+uses already retained bytes and adds zero newly acquired documents.
+
+The source topics cover express obsolescence, basis-shifting disclosure relief,
+state paid-leave federal tax transition rules, retirement amendments, remittance
+excise-tax relief, Employee Plans application procedures and a historical
+clean-electricity emissions table. Metadata retains narrow scope and timing caveats,
+including proposed-versus-final rule distinctions and the paired remittance notices'
+express modification relationship. Final IRB textual reconciliation and broader
+later-law review remain pending. No current-law or professional approval is claimed.
+
+Exact-item AI source/material screening read all extracted pages, confirmed IRS
+Chief Counsel drafting evidence, and found no private treatise/headnote material or
+embedded raster images. IRS attribution remains intact; first-party noncommercial
+terms do not relicense government text. The public gate adds only 18 exact
+path/SHA256 pairs, for 36 across the two IRS batches, with no wildcard PDF/text grant.
+All first-batch IRS bytes, 90 article bodies, 55 bound source objects, existing policy
+and unrelated public-tree leaves remain unchanged.
+
+Observed cloud checks passed TypeScript 5.9.3 typecheck, 79 Node tests, 21 Python
+tests (including 13 IRS positive/negative integrity cases), the complete 90-article/
+33-System build and scripts/check_public.py --dist. The first local HTTP-policy test
+attempt ran before generated assets existed and returned three 404 failures;
+after building, all 21 tests passed without weakening assertions. Six unchanged
+large eCFR archives are preserved by remote Git blob SHA and were not rematerialized.
+Application import, Agent admissions and original articles added: zero.
+Hosted CI/native/Mac/release checks, deployment and real integrations remain unrun;
+no Actions dispatch, paid service or access change occurred.
+
 ## 2026-10-04 · Source-first checkpoint for twelve more original guides · #9/#10/#22
 
 Collected **19 section-scoped metadata references / 15 distinct source-document

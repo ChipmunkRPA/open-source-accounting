@@ -1,0 +1,244 @@
+Application Procedures for Letter Rulings and Nonbank Trustee Approval Letters
+from IRS Employee Plans
+
+Rev. Proc. 2026-30
+
+
+
+SECTION 1. PURPOSE
+
+      This revenue procedure modifies the procedures in Rev. Proc. 2026-4,
+
+2026-1 IRB 160, for requesting letter rulings and nonbank trustee approval letters
+
+(collectively, Letter Rulings) under the jurisdiction of the Commissioner, Tax Exempt and
+
+Government Entities Division, Employee Plans Rulings and Agreements Office
+
+(Employee Plans Rulings and Agreements). This revenue procedure provides that,
+
+effective September 4, 2026, requests for Letter Rulings under Rev. Proc. 2026-4 must
+
+be submitted using Form 15662, Application for Private Letter Rulings. Additionally, this
+
+revenue procedure requires the use of an electronic submission process on the pay.gov
+
+website for all such Letter Ruling requests submitted on or after September 4, 2026.
+
+SECTION 2. BACKGROUND
+
+      .01 Rev. Proc. 2026-4 provides detailed instructions on how taxpayers can
+
+submit requests for Letter Rulings from the Internal Revenue Service (IRS) on issues
+
+under the jurisdiction of Employee Plans Rulings and Agreements. Although the IRS
+
+issued Form 15662 in 2025 to simplify and standardize the submission process for
+
+Letter Rulings requested from Employee Plans Rulings and Agreements,
+
+Rev. Proc. 2026-4 does not require the use of a single, standardized form for all Letter
+
+Ruling submissions, nor does that revenue procedure provide for payment of user fees
+
+for Letter Rulings through the www.pay.gov portal.
+
+
+                                            1
+       .02 Rev. Proc. 2026-4 generally requires taxpayers to mail or hand deliver
+
+requests for Letter Rulings to a specified address along with a paper check for the
+
+applicable user fee. This revenue procedure amends the submission process to require
+
+that a request for a Letter Ruling (including Form 15662, information required by
+
+Rev. Proc. 2026-4 or any successor thereto, and the applicable user fee) be submitted
+
+using pay.gov.
+
+SECTION 3. MODIFICATIONS TO REVENUE PROCEDURE 2026-4
+
+   .01 The third paragraph of section 6.03(3) of Rev. Proc. 2026-4 is modified to read as
+
+follows:
+
+         A request for expedited handling of a request for a letter ruling will not be
+       forwarded to the appropriate group for action until the user fee, in the correct
+       amount, is received.
+
+
+   .02 Section 27.08 of Rev. Proc. 2026-4 is modified to read as follows:
+
+         Additional information can be sent by fax, Taxpayer Digital Communications
+       Secure Messaging, the IRS Document Upload Tool, or to the address provided
+       by the Service representative who requested the information. The additional
+       information should include the name and room number of the Service
+       representative who requested the information and the taxpayer’s name and the
+       case control number (which the Employee Plans Rulings and Agreements
+       representative can provide).
+
+
+   .03 Section 30.07(4) of Rev. Proc. 2026-4 is deleted in its entirety and replaced with
+
+the following:
+
+         (4) Payment of user fees for letter ruling and nonbank trustee approval letter
+       requests. User fees for letter ruling and nonbank trustee approval letter requests
+       must be paid using www.pay.gov. The Service no longer accepts checks for letter
+       ruling and nonbank trustee approval letter submissions.
+
+
+                                             2
+   .04 Section 30.08 of Rev. Proc. 2026-4 is modified to add the following paragraph
+
+after section 30.08(2):
+
+         (3) Letter ruling and nonbank trustee approval letter requests must be made to
+       the Service on www.pay.gov using Form 15662, Application for Private Letter
+       Rulings.
+
+   .05 The first sentence of section 31.01 of Rev. Proc. 2026-4 is modified to read as
+
+follows:
+
+       .01 Requests should be submitted in the manner prescribed in section 31.01(1),
+       mailed to the address provided in section 31.01(2), or mailed or hand delivered to
+       the appropriate address provided in section 31.01(3).
+
+   .06 Section 31.01(1) is modified to read as follows:
+
+         (1) Employee plans letter rulings and nonbank trustee approval letters under
+       Rev. Procs. 87-50, 90-49, 2003-16, 2010-52, 2017-57, 2024-32, or this revenue
+       procedure:
+
+                Requests for letter rulings and nonbank trustee approval letters must be
+              submitted on www.pay.gov and may not be mailed to the Service. If a
+              paper submission is mailed, the submission will be returned to the
+              applicant, including any submitted paper checks.
+
+                Requests for reconsideration of user fees under section 30.11 for letter
+              rulings and nonbank trustee approval letters should be mailed to:
+
+              Internal Revenue Service
+              Attention: EP Letter Rulings
+              SE:T:EP:RA:T:A2, IR-6213
+              1111 Constitution Avenue, NW
+              Washington, DC 20224-0002
+
+   .07 Section 31.01(3) is modified to read as follows:
+
+         (3) Requests for employee plans opinion letters described in section 31.01(2)
+       of this revenue procedure that are shipped by Express Mail or a delivery service
+       should be sent to:
+
+
+                                            3
+              Internal Revenue Service
+              Attention: EP Opinion Letters
+              TE/GE Stop 31A Team 105
+              7940 Kentucky Drive
+              Florence, KY 41042
+
+         Note: Hand-delivered requests must be marked OPINION LETTER
+       SUBMISSION. The delivery should be made to the following address between
+       the hours of 8:30 a.m. and 4:00 p.m., where a receipt will be given:
+
+              Courier’s Desk
+              Internal Revenue Service
+              Attention: EP Opinion Letters
+              TE/GE Stop 31A Team 105
+              7940 Kentucky Drive
+              Florence, KY 41042
+
+   .08 Appendix D of Rev. Proc. 2026-4 is modified to delete the following address
+
+information appearing toward the top center of the Appendix:
+
+       P.O. Box 12192
+
+       TE/GE Stop 31A Team 105
+
+       Covington, KY 41012-0192
+
+   .09 On the second page of Appendix D, section F.2.c is modified to read as follows:
+
+       c. The required user fee has been paid through pay.gov. [See section 6.02(15).]
+
+   .10 The first paragraph of Appendix E of Rev. Proc. 2026-4 is modified to read as
+
+follows:
+
+       The Service will be able to respond more quickly to your letter ruling request if it
+       is carefully prepared and complete. To ensure that your request is in order, use
+       this checklist. Complete the four items of information requested before the
+       checklist. Answer each question by circling “Yes,” “No,” or “N/A.” If a question
+       contains a place for a page number, insert the page number (or numbers) of the
+       request that gives the information called for by a yes answer to a question. Sign
+
+
+                                              4
+       and date the checklist (as taxpayer or authorized representative) and attach
+       it as the first document of your request.
+
+
+   .11 Question 23 of the checklist of Appendix E of Rev. Proc. 2026-4 is modified to
+
+read as follows:
+
+       Have you included the correct user fee with the request? See section 6.02(15)
+       and section 30 and Appendix A for the correct amount and additional information
+       on user fees.
+
+
+SECTION 4. EFFECT ON OTHER DOCUMENTS
+
+       Rev. Proc. 2026-4 is modified.
+
+SECTION 5. EFFECTIVE DATE
+
+       The effective date of this revenue procedure is September 4, 2026.
+
+SECTION 6. PAPERWORK REDUCTION ACT
+
+       The Paperwork Reduction Act of 1995 (44 U.S.C. §§ 3501-3520) requires that a
+
+Federal agency obtain the approval of the Office of Management and Budget (OMB)
+
+before collecting information from the public, whether such collection of information is
+
+mandatory, voluntary, or required to obtain or retain a benefit. A Federal agency may not
+
+conduct or sponsor, and a person is not required to respond to, a collection of
+
+information unless the collection of information displays a valid control number.
+
+       Section 3.04 of this revenue procedure mentions the submission of Form 15662.
+
+Form 15662 is approved by the OMB under control number 1545-1520. This revenue
+
+procedure requires Form 15662 to be used and requires it to be submitted electronically
+
+
+
+
+                                            5
+but does not change the information collected by Form 15662. Therefore, this revenue
+
+procedure does not change the existing OMB approval for control number 1545-1520.
+
+SECTION 7. DRAFTING INFORMATION
+
+      The principal author of this revenue procedure is Jordan D. Kohl of the Office of
+
+the Associate Chief Counsel (Employee Benefits, Exempt Organizations, and
+
+Employment Taxes). For further information regarding this revenue procedure, please
+
+contact IRS Employee Plans at (202) 317-5984.
+
+
+
+
+                                           6
+

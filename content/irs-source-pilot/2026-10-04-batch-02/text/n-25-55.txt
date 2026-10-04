@@ -1,0 +1,207 @@
+Part III — Administrative, Procedural, and Miscellaneous
+
+
+
+
+Relief from Penalty for Failure to Deposit Remittance Excise Tax
+
+
+Notice 2025-55
+
+
+SECTION 1. PURPOSE
+
+        This notice provides relief from failure to deposit penalties under section 6656 of
+
+the Internal Revenue Code (Code) 1 in connection with the new excise tax imposed on
+
+certain remittance transfers under section 4475 (remittance transfer tax) for the first,
+
+second, and third calendar quarters of 2026. This notice also provides that a remittance
+
+transfer provider’s ability to use the deposit safe harbor under § 40.6302(c)-1(b)(2) will
+
+not be affected by a failure during the first three calendar quarters of 2026 to make
+
+deposits of the remittance transfer tax as required under part 40, provided the
+
+remittance transfer provider satisfies certain requirements.
+
+SECTION 2. BACKGROUND
+
+        Section 4475 was added to chapter 36 of the Code (chapter 36) by section
+
+70604 of Public Law No. 119-21, 139 Stat. 72 (July 4, 2025), commonly known as the
+
+One, Big, Beautiful Bill Act (OBBBA). Section 4475 imposes a 1 percent tax on the
+
+amount of certain remittance transfers that occur after December 31, 2025. Pursuant to
+
+
+
+1 Unless otherwise specified, all “section” or “§” references are to sections of the Code or the Excise Tax
+
+Procedural Regulations in 26 CFR part 40 (part 40).
+                                              -2-
+
+
+section 4475(c), the remittance transfer tax applies only to remittance transfers for
+
+which the sender provides cash, a money order, a cashier’s check, or any other similar
+
+physical instrument to the remittance transfer provider. Section 4475(b)(1) and (2)
+
+provide that the remittance transfer tax is paid by the sender, and the remittance
+
+transfer provider collects and remits the remittance transfer tax quarterly to the
+
+Secretary of the Treasury or the Secretary’s delegate (Secretary) at the time and in the
+
+manner provided by the Secretary. Pursuant to section 4475(b)(3), if the remittance
+
+transfer tax is not collected at the time of the remittance transfer, the tax must be paid
+
+by the remittance transfer provider. Section 4475(e)(1) defines the terms “remittance
+
+transfer,” “remittance transfer provider,” and “sender” to have the meanings given to
+
+these terms by section 919(g) of the Electronic Fund Transfer Act (15 U.S.C. 1693o-
+
+1(g)).
+
+         The remittance transfer tax is codified in chapter 36, titled “Certain Other Excise
+
+Taxes.” Chapter 36 taxes are reported on Form 720, Quarterly Federal Excise Tax
+
+Return. See §§ 40.0-1(a) and 40.6011(a)-1(a)(1). Section 6302 authorizes the
+
+Secretary to establish the mode and time for collecting certain taxes, including the taxes
+
+imposed by chapter 36. Section 40.6302(c)-1(a)(1) requires each person that is
+
+required to file Form 720 to make deposits of tax for each semimonthly period in which
+
+tax liability is incurred. Pursuant to § 40.0-1(c), a semimonthly period is the first 15 days
+
+of a calendar month or the portion of a calendar month following the 15th day of the
+
+month.
+
+         Section 40.6302(c)-1(b)(1) provides that the tax deposit for each semimonthly
+
+period must not be less than 95 percent of the amount of net tax liability incurred during
+                                              -3-
+
+
+the semimonthly period unless a deposit safe harbor in § 40.6302(c)-1(b)(2) applies
+
+(deposit safe harbor). Under the deposit safe harbor, any person that filed Form 720 for
+
+the second preceding calendar quarter (look-back quarter) is considered to have met
+
+the semimonthly deposit requirement for the current quarter if: (i) the deposit for each
+
+semimonthly period in the current calendar quarter is not less than 1/6 of the net tax
+
+liability reported for the look-back quarter; (ii) each deposit is made on time; (iii) the
+
+amount of any underpayment is paid by the due date of Form 720; and (iv) the person’s
+
+liability does not include any tax that was not imposed during the look-back quarter.
+
+Section 40.6302(c)-1(b)(2)(v) provides that if a person fails to make deposits as
+
+required under part 40, the Internal Revenue Service (IRS) may withdraw the person’s
+
+right to use the deposit safe harbor.
+
+       Section 40.6302(c)-1(c)(1) provides that, in general, the deposit of tax for any
+
+semimonthly period must be made by the 14th day of the following semimonthly period
+
+unless such day is a Saturday, Sunday, or legal holiday in the District of Columbia, in
+
+which case the immediately preceding day which is not a Saturday, Sunday, or legal
+
+holiday in the District of Columbia is treated as the 14th day. Thus, generally, the
+
+deposit of tax for the first semimonthly period in a month is due by the 29th day of that
+
+month and the deposit of tax for the second semimonthly period in a month is due on
+
+the 14th day of the following month. See § 40.6302(c)-2 for special deposit rules for
+
+September.
+
+       Section 6656(a) imposes a penalty in the case of any person’s failure to make
+
+timely deposits as required by section 6302, including as required by §§ 40.6302(c)-1
+                                             -4-
+
+
+and 40.6302(c)-2. Section 6656 does not apply if the person can show that the failure is
+
+due to reasonable cause and not due to willful neglect (reasonable cause standard).
+
+       As the remittance transfer tax is effective beginning January 1, 2026, the first
+
+deposit, covering the first 15 days of January 2026, is due by January 29, 2026.
+
+Because the deposit safe harbor rules in § 40.6302(c)-1(b)(2) require a look-back
+
+quarter in which the same taxes are imposed to determine deposit amounts in the
+
+current quarter, a remittance transfer provider will be unable to use the deposit safe
+
+harbor to calculate semimonthly deposits of the tax until the third calendar quarter of
+
+2026. See § 40.6302(c)-1(b)(2)(ii) and (iii). For purposes of the deposit safe harbor,
+
+the first calendar quarter of 2026 is the look-back quarter for the semimonthly periods
+
+during the third calendar quarter of 2026.
+
+SECTION 3. GRANT OF RELIEF
+
+       To provide a transition period for remittance transfer providers to familiarize
+
+themselves with the new tax and its reporting and deposit requirements, the Department
+
+of the Treasury and the IRS have determined that it is in the interest of sound tax
+
+administration to provide relief from the section 6656 penalty with respect to remittance
+
+transfer tax deposits for the first three calendar quarters of 2026. Specifically, for
+
+semimonthly periods in the first three calendar quarters of 2026, a remittance transfer
+
+provider will be deemed to have satisfied the reasonable cause standard under section
+
+6656 if: (i) the remittance transfer provider makes timely deposits of the applicable
+
+remittance transfer tax, even if the deposit amounts are computed incorrectly, and
+
+(ii) the amount of any underpayment of the applicable remittance transfer tax for each
+
+calendar quarter is paid in full by the due date for filing the Form 720 for that quarter.
+                                            -5-
+
+
+       In addition, a remittance transfer provider’s ability to use the deposit safe harbor
+
+under § 40.6302(c)-1(b)(2) will not be affected by a failure during the first three calendar
+
+quarters of 2026 to make deposits of the remittance transfer tax as required under
+
+part 40, provided the remittance transfer provider satisfies the reasonable cause
+
+standard for those quarters.
+
+SECTION 4. DRAFTING INFORMATION
+
+       The principal author of this notice is the Office of the Associate Chief Counsel
+
+(Energy, Credits, and Excise Tax). For questions regarding this notice, contact the
+
+office at (202) 317-6855 (not a toll-free number).
+

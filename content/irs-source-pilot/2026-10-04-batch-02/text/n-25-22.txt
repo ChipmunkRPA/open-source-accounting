@@ -1,0 +1,234 @@
+Part III - Administrative, Procedural, and Miscellaneous
+
+
+
+
+Eliminating Unnecessary IRS Internal Revenue Bulletin Guidance
+
+
+
+
+Notice 2025-22
+
+      This notice starts the process of eliminating extraneous and unnecessary Internal
+
+Revenue Bulletin (IRB) guidance by identifying and obsoleting nine IRB guidance
+
+documents.
+
+BACKGROUND
+
+      On February 19, 2025, the President issued Executive Order 14219, Ensuring
+
+Lawful Governance and Implementing the President’s ‘Department of Government
+
+Efficiency’ Deregulatory Initiative (Executive Order). The purpose of the Executive
+
+Order includes focusing the executive branch’s limited enforcement resources on
+
+regulations and other guidance documents “squarely authorized by constitutional
+
+Federal statutes,” eliminating “overbearing and burdensome” regulations and other
+
+guidance documents, and “ending Federal overreach.” To further these goals, the
+
+Executive Order directs agency heads to coordinate with the Department of
+
+Government Efficiency (DOGE) Team Leads and the Office of Management and Budget
+
+to identify regulations and other guidance documents to be eliminated.
+
+      Consistent with the Executive Order, the Department of the Treasury (Treasury
+
+Department) and the Internal Revenue Service (IRS), in conjunction with DOGE, have
+
+
+
+                                        1
+undertaken a review of regulations and IRB guidance issued under the Internal
+
+Revenue Code (Code) 1 to identify guidance to be eliminated. This review is ongoing.
+
+In this notice, nine IRB guidance documents are being obsoleted. These guidance
+
+documents no longer provide useful information and clarifying their status as obsolete
+
+will streamline administration of the tax laws; reduce the volume of guidance that
+
+taxpayers and their advisors need to review for compliance with the tax laws; and
+
+increase clarity of the tax law. The Treasury Department and the IRS anticipate
+
+revoking or obsoleting hundreds of similar guidance documents in the near future.
+
+GUIDANCE TO BE ELIMINATED
+
+        .01 The following document relates to a listed transaction identified by a notice
+
+issued under § 1.6011-4:
+
+                Notice 2015-73, Listing Notice – Basket Option Contracts, 2015-46 IRB
+
+ 660 (11-16-2015). Notice 2015-73 identifies as a listed transaction a type of structured
+
+ financial transaction in which a taxpayer attempts to defer and treat ordinary income
+
+ and short-term capital gain (earned under a contract denominated as an option
+
+ contract that references a basket of securities) as long-term capital gain. The IRS will
+
+ no longer defend this listed transaction notice in accordance with Action on Decision
+
+ 2024-1, 2024-52 IRB 1354 (12-24-2024).
+
+        .02 The following notice applied to the Troubled Asset Relief Program, which is
+
+no longer operative:
+
+                Notice 2009-49, Guidance Under § 409A(a)(2)(A)(v) on Certain
+
+Transactions Pursuant to the Emergency Economic Stabilization Act of 2008, 2009-25
+
+
+1 Unless otherwise specified, all “Section” or “§” references are to sections of the Code or the Income Tax
+
+Regulations (26 CFR part 1).
+
+                                                 2
+IRB 1093 (6-22-2009). This notice provides that, if the Treasury Department acquires
+
+preferred stock, common stock, warrants to purchase common stock or other types of
+
+equity of a financial institution or other entity pursuant to the Emergency Economic
+
+Stabilization Act of 2008, Public Law 110-343, 122 Stat. 3765 (October 3, 2008), then
+
+such acquisition is not a change in control event with respect to which a payment can
+
+be made under a nonqualified deferred compensation plan pursuant to
+
+§ 409A(a)(2)(A)(v).
+
+
+      .03 The following guidance relates to repealed Code provisions:
+
+             (1) Notice 2018-10, Medical Device Excise Tax Deposit Penalty Relief,
+
+2018-8 IRB 359 (2-20-2018). This notice provides guidance relating to the excise tax
+
+on medical devices imposed by § 4191 by providing temporary relief, for the first three
+
+calendar quarters of 2018, to medical device manufacturers, producers, and importers
+
+from the failure to deposit penalties imposed by § 6656, where the taxpayer
+
+demonstrates good faith.
+
+             (2) Announcement 2013-23, Taxable Medical Devices; Correction, 2013-
+
+16 IRB 940 (4-15-2013). This document republishes corrections to final regulations
+
+(T.D. 9604, 2012-52 IRB 730) that provide guidance on the excise tax imposed on the
+
+sale of certain medical devices.
+
+             (3) Announcement 2013-19, Taxable Medical Devices; Correction, 2013-
+
+14 IRB 760 (4-1-2013). This document republishes corrections to final regulations (T.D.
+
+9604, 2012-52 IRB 730) that provide guidance on the excise tax imposed on the sale of
+
+certain medical devices.
+
+             (4) Notice 2015-16, Excise Tax on High Cost Employer-Sponsored Health
+
+
+                                         3
+Coverage, 2015-10 IRB 732 (3-9-2015). This notice describes potential approaches
+
+with regard to a number of issues under § 4980I, including the definition of applicable
+
+coverage, the determination of the cost of applicable coverage, and the application of
+
+the annual statutory dollar limit to the cost of applicable coverage.
+
+              (5) Notice 2015-52, Section 4980l – Excise Tax on High Cost Employer-
+
+Sponsored Health Coverage, 2015-35 IRB 227 (8-31-2015). This notice addresses
+
+additional issues under § 4980l, including the identification of taxpayers who may be
+
+liable for the excise tax, employer aggregation, exclusion from the cost of applicable
+
+coverage amounts attributable to the excise tax, age and gender adjustment to the
+
+dollar limit, the allocation of the tax among applicable taxpayers, and payment of the
+
+applicable tax.
+
+       .04 The following guidance relates to outdated Code provisions:
+
+              Notice 2005-64, Foreign Tax Credit and Other Guidance Under Section
+
+965, 2005-36 IRB 471 (9-6-2005). This notice provides guidance on the one-time
+
+dividends received deduction under former § 965 for certain cash dividends from
+
+controlled foreign corporations that are invested in the United States, foreign tax credit
+
+and related issues, foreign currency translation, the alternative minimum tax, and the
+
+credit for prior year minimum tax.
+
+       .05 The following guidance relates to a topic now squarely addressed by
+
+amendments made to the Code by Public Law 115-97, 131 Stat. 2054 (December 22,
+
+2017), commonly known as the Tax Cuts and Jobs Act.
+
+              Rev. Rul. 91-32, Partnership Effectively Connected Income Lookthrough,
+
+199-20 IRB 20 (5-20-1991). This revenue ruling addresses the United States tax
+
+
+
+                                          4
+consequences of the disposition of a foreign partner's interest in a domestic or foreign
+
+partnership that conducts a trade or business through a fixed place of business or has a
+
+permanent establishment in the United States.
+
+EFFECT ON OTHER DOCUMENTS
+
+      Notice 2015-73 is obsoleted.
+
+      Notice 2009-49 is obsoleted.
+
+      Notice 2018-10 is obsoleted.
+
+      Announcement 2013-23 is obsoleted.
+
+      Announcement 2013-19 is obsoleted.
+
+      Notice 2015-16 is obsoleted.
+
+      Notice 2015-52 is obsoleted.
+
+      Notice 2005-64 is obsoleted.
+
+      Rev. Rul. 91-32 is obsoleted.
+
+DRAFTING INFORMATION
+
+      This notice was drafted by the Office of the Associate Chief Counsel (Procedure
+
+and Administration). For further information, contact the Office of the Associate Chief
+
+Counsel (Procedure and Administration) at (202) 317-3400 (not a toll-free call).
+
+
+
+
+                                         5
+
