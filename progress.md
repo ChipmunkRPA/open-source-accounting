@@ -1,3 +1,15 @@
+# 2026-10-04 — Original federal tax case-law catalog · #16/#20/#22
+
+Add a separately counted Standard catalog of **32 original decision briefs across 14 topics**: 21 Supreme Court, seven appellate decisions from five circuits, and four Tax Court decisions. Each includes citation/docket/court/date, material facts, issue, holding, reasoning, authority/jurisdiction, limitations and a dated bounded history check. Versions of decisions in the same litigation are separate entries, not unrelated matters. Source opinions, original summaries, IRS guidance and existing accounting articles remain distinct.
+
+The research batch actually retained **32 official PDF containers, 27,723,893 source bytes, 1,268 container pages and 2,892,369 extracted-text bytes**. Three PDFs are multi-case Tax Court report pamphlets; one further Boechler post-remand opinion supplies history without a separate brief. Some historical case granules contain adjacent opinion fragments. These page and container counts do not inflate the 32 selected briefs. Public additions are only original prose, topic/catalog metadata and official links. Raw PDFs, full source text, SQLite, acquisition logs and internal review reports are excluded.
+
+Bounded primary-source/model review caught and corrected the 2026 Maniktala multi-circuit §6213 developments, Safdieh assessment authority and cert-filing extension, and Boechler’s actual denial of tolling after remand. Farhy and 3M Tax Court reversals, Loper Bright’s methodology-versus-prior-holdings distinction, Moore’s narrow attribution holding, and historical transfer-pricing limits remain explicit. **3M’s later Supreme Court-review disposition remains unresolved**. Professional approvals, complete-citator certification, source redistribution grants, production index changes and Agent admissions added: **zero**. Review is automated/model-assisted, not human legal approval; current House U.S. Code pages were unavailable during research.
+
+Actual checks: python scripts/seed_sources.py --check (32 retained source entries); python scripts/verify_cases.py (11 tests, all pass); independent verification of all 64 PDF/text hashes; Python compilation; brief-only SQLite query smoke check; public overlay semantic/source-link/count preservation and exact-path boundary positives/negatives. The catalog body matches the reviewed original briefs. Original article, Systems/Xero and GovInfo snapshot blobs are preserved, except the three deliberately amended discovery/progress files and the narrowly scoped public boundary. This is a content-only change: app build, browser/native/release acceptance and hosted CI are unrun. No Actions dispatch, deployments, paid services, access changes or real integration.
+
+Next: continue a separately versioned, source-grounded case-law acquisition batch and resolve remaining history/rights/professional-review gaps without treating this starter catalog as complete.
+
 # 2026-10-04 — Publish a bounded GovInfo regulatory text snapshot
 
 Retained five official bulk eCFR XML containers for Titles 12, 17, 26, 31 and 48:

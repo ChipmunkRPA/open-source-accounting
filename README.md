@@ -42,3 +42,7 @@ Each record retains its source, exact hashes, per-volume amendment date and rend
 limits. The dataset does not claim current-law completeness, an official certified
 edition, professional review or Agent admission. It is available for local research;
 publishing this repository snapshot does not deploy the hosted library.
+
+## Important U.S. federal tax cases
+
+The [tax case-law catalog](content/tax-case-law/README.md) adds 32 original educational decision briefs and official opinion links across 14 topics. It includes dated reversal, jurisdiction and 2026 procedural-history warnings. Raw judicial PDFs are retained separately, not included in this catalog. No complete-citator, current-law or professional-review claim is made.

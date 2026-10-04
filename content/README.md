@@ -66,3 +66,7 @@ Original material is CC BY 4.0. Read [LICENSE.md](LICENSE.md) and the [editorial
 ## What is not represented
 
 No content item has been approved for professional reliance. No live model/standard feed is tested by this content release. Current ASC paragraphs and IFRS requirements were not verified directly. Government landing pages and source metadata are not a full government-standards corpus.
+
+## Tax case-law catalog · 2026-10-04
+
+[Read 32 original federal tax decision briefs](tax-case-law/README.md) with official sources, court/docket identifiers, holdings, limits and dated history checks. This separately counted catalog preserves reversals and recent procedural developments; it is not a complete citator or professional legal opinion.

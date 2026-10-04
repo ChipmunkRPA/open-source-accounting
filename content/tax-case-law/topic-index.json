@@ -1,0 +1,82 @@
+{
+  "income-realization": [
+    "eisner",
+    "glenshaw",
+    "james",
+    "horst",
+    "moore"
+  ],
+  "constitutional-tax": [
+    "eisner",
+    "moore"
+  ],
+  "penalties-criminal": [
+    "james",
+    "bittner",
+    "farhy-dc",
+    "farhy-tc",
+    "green-valley",
+    "safdieh-ca2"
+  ],
+  "basis-debt": [
+    "crane",
+    "tufts"
+  ],
+  "entity-tax": [
+    "tufts",
+    "moline",
+    "bollinger",
+    "moore"
+  ],
+  "capital-ordinary": [
+    "arkansas-best"
+  ],
+  "deductions-capitalization": [
+    "welch",
+    "indopco",
+    "knetsch",
+    "frank-lyon"
+  ],
+  "substance-step-transaction": [
+    "gregory",
+    "knetsch",
+    "frank-lyon"
+  ],
+  "assignment-income": [
+    "lucas-earl",
+    "horst"
+  ],
+  "deference-administrative": [
+    "mayo",
+    "loper-bright",
+    "altera-ca9",
+    "3m-ca8",
+    "green-valley",
+    "3m-tc"
+  ],
+  "employment-tax": [
+    "mayo"
+  ],
+  "procedure-jurisdiction": [
+    "boechler",
+    "zuch",
+    "farhy-dc",
+    "culp-ca3",
+    "farhy-tc",
+    "hallmark",
+    "maniktala-ca8",
+    "safdieh-ca2"
+  ],
+  "international-reporting": [
+    "bittner",
+    "farhy-dc",
+    "farhy-tc",
+    "safdieh-ca2"
+  ],
+  "transfer-pricing": [
+    "altera-ca9",
+    "amazon-ca9",
+    "3m-ca8",
+    "3m-tc"
+  ]
+}

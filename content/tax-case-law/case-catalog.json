@@ -1,0 +1,1833 @@
+{
+  "schema": "accounting-tax-case-catalog-v1",
+  "as_of": "2026-10-04",
+  "case_count": 32,
+  "cases": [
+    {
+      "case_id": "eisner",
+      "case_name": "Eisner v. Macomber",
+      "citation": "252 U.S. 189 (1920)",
+      "dockets": [
+        "318"
+      ],
+      "decision_date": "1920-03-08",
+      "year": 1920,
+      "court": "Supreme Court of the United States",
+      "topics": [
+        "income-realization",
+        "constitutional-tax"
+      ],
+      "material_facts": "A shareholder received a proportional stock dividend that left her ownership share unchanged. Congress had sought to tax that distribution as income.",
+      "issue": "Could this proportional stock dividend be taxed as income without apportionment?",
+      "holding": "The Court held that the stock dividend before it was not taxable income under the Sixteenth Amendment.",
+      "reasoning": "The distribution represented the same proportional corporate interest rather than a separate gain available to the shareholder.",
+      "application_limits": "Do not extrapolate this stock-dividend result into a rule invalidating every tax on undistributed income. Modern statutory exceptions and later decisions require separate analysis.",
+      "opinion_pinpoint": "252 U.S. 199–219",
+      "source_id": "eisner",
+      "related_case_ids": [
+        "glenshaw",
+        "moore"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Glenshaw Glass limited the usefulness of Macomber’s income formulation outside its facts. Moore (2024) upheld attribution of entity-realized income and expressly left the broader constitutional realization question unresolved.",
+        "sources_checked": [
+          "eisner",
+          "glenshaw",
+          "moore"
+        ],
+        "primary_history_urls": [],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "eisner",
+        "url": "https://www.govinfo.gov/content/pkg/USREPORTS-252/pdf/USREPORTS-252-189.pdf",
+        "sha256": "1b753b5055386215c02e56c12f463ba937e05ab83d3e425bc40e9d70332f149f",
+        "bytes": 4595600,
+        "text_sha256": "163833c663b5720eebc377860217da3b9284ce3f2e4bb7d060b19da73a373e62",
+        "text_bytes": 104939,
+        "pdf_pages": 50,
+        "source_kind": "single_case_official_report",
+        "retrieved_at": "2026-10-04T16:00:24.802108+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Nationwide federal precedent, subject to the holding and later law",
+        "status_warning": "Glenshaw Glass limited the usefulness of Macomber’s income formulation outside its facts. Moore (2024) upheld attribution of entity-realized income and expressly left the broader constitutional realization question unresolved."
+      }
+    },
+    {
+      "case_id": "glenshaw",
+      "case_name": "Commissioner v. Glenshaw Glass Co.",
+      "citation": "348 U.S. 426 (1955)",
+      "dockets": [
+        "199"
+      ],
+      "decision_date": "1955-03-28",
+      "year": 1955,
+      "court": "Supreme Court of the United States",
+      "topics": [
+        "income-realization"
+      ],
+      "material_facts": "Businesses received punitive damages or the punitive part of antitrust recoveries and excluded the amounts from income.",
+      "issue": "Does the broad gross-income provision reach punitive recoveries?",
+      "holding": "The receipts were includible in gross income.",
+      "reasoning": "The recipients obtained realized economic gains under their control, and no applicable exclusion removed them from the broad statutory income base.",
+      "application_limits": "The inclusion inquiry still requires checking specific statutory exclusions and the character of each component of a settlement.",
+      "opinion_pinpoint": "348 U.S. 429–433",
+      "source_id": "glenshaw",
+      "related_case_ids": [
+        "eisner",
+        "james"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Original opinion reviewed. No comprehensive subsequent-history or statutory-amendment search completed; absence of a warning is not a finding that this is currently controlling law.",
+        "sources_checked": [
+          "glenshaw",
+          "eisner",
+          "james"
+        ],
+        "primary_history_urls": [],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "glenshaw",
+        "url": "https://www.govinfo.gov/content/pkg/USREPORTS-348/pdf/USREPORTS-348-426.pdf",
+        "sha256": "8ea488617859214b2d45c52a9091721b8ae83343c6e35498d77149e13ef471bc",
+        "bytes": 875808,
+        "text_sha256": "354b4563ff7deceb75ba2c2d8e116856d368cd17364df04042c18a45d9153c95",
+        "text_bytes": 14838,
+        "pdf_pages": 8,
+        "source_kind": "single_case_official_report",
+        "retrieved_at": "2026-10-04T16:00:21.115965+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Nationwide federal precedent, subject to the holding and later law",
+        "status_warning": "Original opinion reviewed. No comprehensive subsequent-history or statutory-amendment search completed; absence of a warning is not a finding that this is currently controlling law."
+      }
+    },
+    {
+      "case_id": "james",
+      "case_name": "James v. United States",
+      "citation": "366 U.S. 213 (1961)",
+      "dockets": [
+        "63"
+      ],
+      "decision_date": "1961-05-15",
+      "year": 1961,
+      "court": "Supreme Court of the United States",
+      "topics": [
+        "income-realization",
+        "penalties-criminal"
+      ],
+      "material_facts": "An embezzler omitted misappropriated funds from his returns during years when Wilcox had treated such funds as outside taxable income.",
+      "issue": "Are embezzled funds income, and could the prior contrary precedent support his criminal conviction?",
+      "holding": "Embezzled funds are income; Wilcox was overruled. The conviction nevertheless was reversed and the indictment ordered dismissed.",
+      "reasoning": "The income rule covers unlawful gains. The prior legal rule prevented establishing the required willfulness on the theory used in this prosecution.",
+      "application_limits": "Keep the substantive income holding distinct from the case-specific criminal disposition; a legal uncertainty defense is not automatic.",
+      "opinion_pinpoint": "366 U.S. 213–222",
+      "source_id": "james",
+      "related_case_ids": [
+        "glenshaw"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "The retained opinion expressly overrules Commissioner v. Wilcox, 327 U.S. 404. Later history and current criminal-law developments were not exhaustively checked.",
+        "sources_checked": [
+          "james",
+          "glenshaw"
+        ],
+        "primary_history_urls": [],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "james",
+        "url": "https://www.govinfo.gov/content/pkg/USREPORTS-366/pdf/USREPORTS-366-213.pdf",
+        "sha256": "7690745d746f30c9bf292f270b9114181cd20c7cff9b8970c5837185531aa730",
+        "bytes": 2858371,
+        "text_sha256": "8ee04cad89de614679fc94b484af9a8978227e1a17922b72e79c52b55d04835b",
+        "text_bytes": 98472,
+        "pdf_pages": 46,
+        "source_kind": "single_case_official_report",
+        "retrieved_at": "2026-10-04T16:00:23.145124+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Nationwide federal precedent, subject to the holding and later law",
+        "status_warning": "The retained opinion expressly overrules Commissioner v. Wilcox, 327 U.S. 404. Later history and current criminal-law developments were not exhaustively checked."
+      }
+    },
+    {
+      "case_id": "crane",
+      "case_name": "Crane v. Commissioner",
+      "citation": "331 U.S. 1 (1947)",
+      "dockets": [
+        "68"
+      ],
+      "decision_date": "1947-04-14",
+      "year": 1947,
+      "court": "Supreme Court of the United States",
+      "topics": [
+        "basis-debt"
+      ],
+      "material_facts": "A taxpayer inherited an apartment building subject to a mortgage, took depreciation, then sold the property subject to the debt.",
+      "issue": "Is basis limited to equity, and is debt relief included in amount realized?",
+      "holding": "Basis was not reduced by the mortgage merely because the taxpayer lacked personal liability; the disposition included the mortgage in amount realized.",
+      "reasoning": "The statute addresses the property interest, not only the owner’s net equity. Debt’s treatment must be consistent with the benefits included in basis.",
+      "application_limits": "Crane reserved the problem of debt exceeding property value; Tufts later addressed that nonrecourse-debt issue.",
+      "opinion_pinpoint": "331 U.S. 6–14 and n.37",
+      "source_id": "crane",
+      "related_case_ids": [
+        "tufts"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Read with Tufts (1983), which resolved the debt-exceeds-value issue reserved in Crane. Current debt-discharge and basis provisions still need transaction-specific review.",
+        "sources_checked": [
+          "crane",
+          "tufts"
+        ],
+        "primary_history_urls": [],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "crane",
+        "url": "https://www.govinfo.gov/content/pkg/USREPORTS-331/pdf/USREPORTS-331-1.pdf",
+        "sha256": "8b99dd21e702840eb7bb459fffbd17b2e8b2eb3f4014203154b37714d01897d2",
+        "bytes": 2103075,
+        "text_sha256": "11193a29ca08639b6c16b3528bb6c1eaa9604574c753a3300e891291290ca4fe",
+        "text_bytes": 36378,
+        "pdf_pages": 17,
+        "source_kind": "single_case_official_report",
+        "retrieved_at": "2026-10-04T16:00:27.523345+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Nationwide federal precedent, subject to the holding and later law",
+        "status_warning": "Read with Tufts (1983), which resolved the debt-exceeds-value issue reserved in Crane. Current debt-discharge and basis provisions still need transaction-specific review."
+      }
+    },
+    {
+      "case_id": "tufts",
+      "case_name": "Commissioner v. Tufts",
+      "citation": "461 U.S. 300 (1983)",
+      "dockets": [
+        "81-1536"
+      ],
+      "decision_date": "1983-05-02",
+      "year": 1983,
+      "court": "Supreme Court of the United States",
+      "topics": [
+        "basis-debt",
+        "entity-tax"
+      ],
+      "material_facts": "Partners disposed of interests in property whose nonrecourse mortgage exceeded its fair market value after prior depreciation deductions.",
+      "issue": "Does amount realized include the entire nonrecourse obligation despite the lower property value?",
+      "holding": "The full unpaid nonrecourse debt entered amount realized.",
+      "reasoning": "The borrowed proceeds had been reflected in basis without income at borrowing; disposal requires accounting for the entire obligation, independently of the collateral’s current value.",
+      "application_limits": "Do not transfer this result wholesale to recourse debt, where disposition gain and cancellation-of-debt income may require separate treatment.",
+      "opinion_pinpoint": "461 U.S. 307–317",
+      "source_id": "tufts",
+      "related_case_ids": [
+        "crane"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Original opinion reviewed. No comprehensive subsequent-history or statutory-amendment search completed; absence of a warning is not a finding that this is currently controlling law.",
+        "sources_checked": [
+          "tufts",
+          "crane"
+        ],
+        "primary_history_urls": [],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "tufts",
+        "url": "https://www.govinfo.gov/content/pkg/USREPORTS-461/pdf/USREPORTS-461-300.pdf",
+        "sha256": "7f4a5656ecd66b57e6f725f02bfc9a4810c678da884cd083d31c34c169e6c715",
+        "bytes": 1525835,
+        "text_sha256": "5987afb7630056ab47d00f2ae6f13aff369552b8199b74644d93f7ea98fbcda5",
+        "text_bytes": 49504,
+        "pdf_pages": 21,
+        "source_kind": "single_case_official_report",
+        "retrieved_at": "2026-10-04T16:00:26.915117+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Nationwide federal precedent, subject to the holding and later law",
+        "status_warning": "Original opinion reviewed. No comprehensive subsequent-history or statutory-amendment search completed; absence of a warning is not a finding that this is currently controlling law."
+      }
+    },
+    {
+      "case_id": "arkansas-best",
+      "case_name": "Arkansas Best Corp. v. Commissioner",
+      "citation": "485 U.S. 212 (1988)",
+      "dockets": [
+        "86-751"
+      ],
+      "decision_date": "1988-03-07",
+      "year": 1988,
+      "court": "Supreme Court of the United States",
+      "topics": [
+        "capital-ordinary"
+      ],
+      "material_facts": "A holding company sold bank stock at a loss and argued that shares bought to protect business reputation should generate an ordinary loss.",
+      "issue": "Does a business motive alone take stock outside the capital-asset definition?",
+      "holding": "The stock loss was capital; business purpose alone did not create a nonstatutory exception.",
+      "reasoning": "The statutory definition and its enumerated exceptions control. Corn Products was tied to the inventory-related exception, rather than a general motive test.",
+      "application_limits": "Check current exceptions, hedging rules and asset-specific provisions; do not treat all business property as capital.",
+      "opinion_pinpoint": "485 U.S. 216–223",
+      "source_id": "arkansas-best",
+      "related_case_ids": [],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Original opinion reviewed. No comprehensive subsequent-history or statutory-amendment search completed; absence of a warning is not a finding that this is currently controlling law.",
+        "sources_checked": [
+          "arkansas-best"
+        ],
+        "primary_history_urls": [],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "arkansas-best",
+        "url": "https://www.govinfo.gov/content/pkg/USREPORTS-485/pdf/USREPORTS-485-212.pdf",
+        "sha256": "5e5ce87c5951789bc50c768fdfbd2a39c31e97e8c5fb0c5954d041b8457bce35",
+        "bytes": 1089869,
+        "text_sha256": "f51d9e8e49f02411610d46fa427b0eec0998e90e916fc29b668548e6be20c560",
+        "text_bytes": 28275,
+        "pdf_pages": 12,
+        "source_kind": "single_case_official_report",
+        "retrieved_at": "2026-10-04T16:00:30.991281+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Nationwide federal precedent, subject to the holding and later law",
+        "status_warning": "Original opinion reviewed. No comprehensive subsequent-history or statutory-amendment search completed; absence of a warning is not a finding that this is currently controlling law."
+      }
+    },
+    {
+      "case_id": "welch",
+      "case_name": "Welch v. Helvering",
+      "citation": "290 U.S. 111 (1933)",
+      "dockets": [
+        "33"
+      ],
+      "decision_date": "1933-11-06",
+      "year": 1933,
+      "court": "Supreme Court of the United States",
+      "topics": [
+        "deductions-capitalization"
+      ],
+      "material_facts": "A former corporate officer voluntarily paid debts of a bankrupt former employer to rebuild his own business reputation and credit.",
+      "issue": "Were those payments ordinary and necessary business expenses?",
+      "holding": "The claimed deductions were denied on this record.",
+      "reasoning": "An expenditure can be helpful or appropriate without being ordinary in the relevant business; building reputation resembles creating a lasting business asset.",
+      "application_limits": "This is a contextual ordinary-expense analysis, not a categorical rule that every unusual expense is nondeductible.",
+      "opinion_pinpoint": "290 U.S. 113–116",
+      "source_id": "welch",
+      "related_case_ids": [],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Original opinion reviewed. No comprehensive subsequent-history or statutory-amendment search completed; absence of a warning is not a finding that this is currently controlling law.",
+        "sources_checked": [
+          "welch"
+        ],
+        "primary_history_urls": [],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "welch",
+        "url": "https://www.govinfo.gov/content/pkg/USREPORTS-290/pdf/USREPORTS-290-111.pdf",
+        "sha256": "7fe6db585158ec7a73f0ee76b6818b25673128e8e8054bcde6b1950c359c8b0b",
+        "bytes": 788707,
+        "text_sha256": "8b8055e8f542b7c485b61d8516743bfb27ff005eac890986289548581e861ab8",
+        "text_bytes": 12590,
+        "pdf_pages": 6,
+        "source_kind": "single_case_official_report",
+        "retrieved_at": "2026-10-04T16:00:30.708314+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Nationwide federal precedent, subject to the holding and later law",
+        "status_warning": "Original opinion reviewed. No comprehensive subsequent-history or statutory-amendment search completed; absence of a warning is not a finding that this is currently controlling law."
+      }
+    },
+    {
+      "case_id": "indopco",
+      "case_name": "INDOPCO, Inc. v. Commissioner",
+      "citation": "503 U.S. 79 (1992)",
+      "dockets": [
+        "90-1278"
+      ],
+      "decision_date": "1992-02-26",
+      "year": 1992,
+      "court": "Supreme Court of the United States",
+      "topics": [
+        "deductions-capitalization"
+      ],
+      "material_facts": "A target corporation incurred investment-banking and legal costs in a friendly acquisition that made it a subsidiary.",
+      "issue": "Must transaction costs be deductible if they do not create a distinct new asset?",
+      "holding": "The acquisition expenses at issue required capitalization.",
+      "reasoning": "A separate asset is sufficient but not necessary for capitalization; significant benefits extending beyond the current year supported capital treatment.",
+      "application_limits": "An incidental future benefit alone is not enough. Later detailed capitalization regulations and their exceptions must be applied to the relevant cost and period.",
+      "opinion_pinpoint": "503 U.S. 84–90",
+      "source_id": "indopco",
+      "related_case_ids": [],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Original opinion reviewed. No comprehensive subsequent-history or statutory-amendment search completed; absence of a warning is not a finding that this is currently controlling law.",
+        "sources_checked": [
+          "indopco"
+        ],
+        "primary_history_urls": [],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "indopco",
+        "url": "https://www.govinfo.gov/content/pkg/USREPORTS-503/pdf/USREPORTS-503-79.pdf",
+        "sha256": "4715857e2440564c1d40f2496989f3cfefca15e0f016e00ba267ee86cc63ce87",
+        "bytes": 156416,
+        "text_sha256": "affee92fd53f42c1756d8f1a20b18646ae320eec5a16d6ad10b7ca3a691c3778",
+        "text_bytes": 28203,
+        "pdf_pages": 12,
+        "source_kind": "single_case_official_report",
+        "retrieved_at": "2026-10-04T16:00:30.040704+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Nationwide federal precedent, subject to the holding and later law",
+        "status_warning": "Original opinion reviewed. No comprehensive subsequent-history or statutory-amendment search completed; absence of a warning is not a finding that this is currently controlling law."
+      }
+    },
+    {
+      "case_id": "gregory",
+      "case_name": "Gregory v. Helvering",
+      "citation": "293 U.S. 465 (1935)",
+      "dockets": [
+        "127"
+      ],
+      "decision_date": "1935-01-07",
+      "year": 1935,
+      "court": "Supreme Court of the United States",
+      "topics": [
+        "substance-step-transaction"
+      ],
+      "material_facts": "A shareholder created a short-lived corporation to move appreciated stock out of another corporation and immediately liquidated it before selling the stock.",
+      "issue": "Did the arrangement qualify as a tax-favored corporate reorganization?",
+      "holding": "The arrangement did not fall within the statutory reorganization provision.",
+      "reasoning": "Formal steps met isolated words but lacked the corporate-reorganization character Congress intended; the intermediary performed no real reorganization function.",
+      "application_limits": "Tax minimization is not itself prohibited. Identify the governing statute, integrated facts and business substance rather than applying a free-floating anti-tax motive test.",
+      "opinion_pinpoint": "293 U.S. 467–470",
+      "source_id": "gregory",
+      "related_case_ids": [
+        "knetsch",
+        "frank-lyon"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Modern economic-substance legislation in §7701(o) is a separate statutory overlay. This brief does not represent a completed current-version statutory review.",
+        "sources_checked": [
+          "gregory",
+          "knetsch",
+          "frank-lyon"
+        ],
+        "primary_history_urls": [],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "gregory",
+        "url": "https://www.govinfo.gov/content/pkg/USREPORTS-293/pdf/USREPORTS-293-465.pdf",
+        "sha256": "e753ee5f7d8ba802c92e0d4af8d2c59e848db2a0be400ec3968a722f30714981",
+        "bytes": 1345700,
+        "text_sha256": "aa007159093614593b7bb35adaf205c98ae288a042431adda6e0293e112015bc",
+        "text_bytes": 12169,
+        "pdf_pages": 6,
+        "source_kind": "single_case_official_report",
+        "retrieved_at": "2026-10-04T16:00:35.198181+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Nationwide federal precedent, subject to the holding and later law",
+        "status_warning": "Modern economic-substance legislation in §7701(o) is a separate statutory overlay. This brief does not represent a completed current-version statutory review."
+      }
+    },
+    {
+      "case_id": "knetsch",
+      "case_name": "Knetsch v. United States",
+      "citation": "364 U.S. 361 (1960)",
+      "dockets": [
+        "23"
+      ],
+      "decision_date": "1960-11-14",
+      "year": 1960,
+      "court": "Supreme Court of the United States",
+      "topics": [
+        "substance-step-transaction",
+        "deductions-capitalization"
+      ],
+      "material_facts": "A taxpayer used heavily financed annuity contracts and repeated borrowing to claim interest deductions while retaining only a minimal net annuity value.",
+      "issue": "Was the purported interest paid on genuine indebtedness for the deduction provision?",
+      "holding": "The claimed interest deductions were disallowed.",
+      "reasoning": "The arrangement did not meaningfully change the taxpayer’s economic position apart from tax reduction; the supposed borrowing lacked the substance necessary for the claimed deduction.",
+      "application_limits": "Distinguish this sham arrangement from a genuine financed investment. Current §7701(o), interest restrictions and insurance rules need separate review.",
+      "opinion_pinpoint": "364 U.S. 365–370",
+      "source_id": "knetsch",
+      "related_case_ids": [
+        "gregory",
+        "frank-lyon"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Original opinion reviewed. No comprehensive subsequent-history or statutory-amendment search completed; absence of a warning is not a finding that this is currently controlling law.",
+        "sources_checked": [
+          "knetsch",
+          "gregory",
+          "frank-lyon"
+        ],
+        "primary_history_urls": [],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "knetsch",
+        "url": "https://www.govinfo.gov/content/pkg/USREPORTS-364/pdf/USREPORTS-364-361.pdf",
+        "sha256": "318febbcde436b50b4c9578029dcab4af98298b46c541a0ce1e6a6f35b7833c9",
+        "bytes": 860501,
+        "text_sha256": "1e5e091de1dd00d70c41ab2ec39bfa11a26e1902e7b3667f5003deef19111b03",
+        "text_bytes": 22721,
+        "pdf_pages": 11,
+        "source_kind": "single_case_official_report",
+        "retrieved_at": "2026-10-04T16:00:34.764123+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Nationwide federal precedent, subject to the holding and later law",
+        "status_warning": "Original opinion reviewed. No comprehensive subsequent-history or statutory-amendment search completed; absence of a warning is not a finding that this is currently controlling law."
+      }
+    },
+    {
+      "case_id": "frank-lyon",
+      "case_name": "Frank Lyon Co. v. United States",
+      "citation": "435 U.S. 561 (1978)",
+      "dockets": [
+        "76-624"
+      ],
+      "decision_date": "1978-04-18",
+      "year": 1978,
+      "court": "Supreme Court of the United States",
+      "topics": [
+        "substance-step-transaction",
+        "deductions-capitalization"
+      ],
+      "material_facts": "Banking restrictions led a bank and an independent investor to structure a building transaction as a sale and leaseback with outside financing.",
+      "issue": "Should the investor be treated as owner for the claimed depreciation and interest deductions?",
+      "holding": "The Court respected the transaction and allowed the investor’s deductions.",
+      "reasoning": "The multi-party arrangement reflected genuine regulatory and business constraints and left the investor with significant ownership attributes; tax considerations did not erase those facts.",
+      "application_limits": "The holding is fact-specific, not a safe harbor for all sale-leasebacks or tax-motivated structures. Apply later statutes and actual risks and control.",
+      "opinion_pinpoint": "435 U.S. 580–584",
+      "source_id": "frank-lyon",
+      "related_case_ids": [
+        "gregory",
+        "knetsch"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Original opinion reviewed. No comprehensive subsequent-history or statutory-amendment search completed; absence of a warning is not a finding that this is currently controlling law.",
+        "sources_checked": [
+          "frank-lyon",
+          "gregory",
+          "knetsch"
+        ],
+        "primary_history_urls": [],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "frank-lyon",
+        "url": "https://www.govinfo.gov/content/pkg/USREPORTS-435/pdf/USREPORTS-435-561.pdf",
+        "sha256": "591709d8fb420a24dfd8cddec993e287d0b039cc857edb3b0195d7db2d3ef49b",
+        "bytes": 2329917,
+        "text_sha256": "f3912fce48c6727c4338d5672ee93cb4ef2929fffb5174fe740afa842a3f327d",
+        "text_bytes": 62637,
+        "pdf_pages": 28,
+        "source_kind": "single_case_official_report",
+        "retrieved_at": "2026-10-04T16:00:36.171161+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Nationwide federal precedent, subject to the holding and later law",
+        "status_warning": "Original opinion reviewed. No comprehensive subsequent-history or statutory-amendment search completed; absence of a warning is not a finding that this is currently controlling law."
+      }
+    },
+    {
+      "case_id": "lucas-earl",
+      "case_name": "Lucas v. Earl",
+      "citation": "281 U.S. 111 (1930)",
+      "dockets": [
+        "99"
+      ],
+      "decision_date": "1930-03-17",
+      "year": 1930,
+      "court": "Supreme Court of the United States",
+      "topics": [
+        "assignment-income"
+      ],
+      "material_facts": "A lawyer and his wife had contracted to own their earnings jointly, and he sought to report only half of his salary and fees.",
+      "issue": "Can a private anticipatory assignment shift tax on compensation away from the earner?",
+      "holding": "The full compensation was taxable to the person who earned it.",
+      "reasoning": "The federal income-tax statute reaches earned compensation despite an anticipatory arrangement about ownership after it is earned.",
+      "application_limits": "Distinguish assignment contracts from community-property law, genuine business ownership and later joint-return rules.",
+      "opinion_pinpoint": "281 U.S. 114–115",
+      "source_id": "lucas-earl",
+      "related_case_ids": [
+        "horst"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Original opinion reviewed. No comprehensive subsequent-history or statutory-amendment search completed; absence of a warning is not a finding that this is currently controlling law.",
+        "sources_checked": [
+          "lucas-earl",
+          "horst"
+        ],
+        "primary_history_urls": [],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "lucas-earl",
+        "url": "https://www.govinfo.gov/content/pkg/USREPORTS-281/pdf/USREPORTS-281-111.pdf",
+        "sha256": "a3668129f1ee5f933a1991fa3d5b2008377dc49f5c082e6c58e3b569547bf2de",
+        "bytes": 662345,
+        "text_sha256": "292f68f51ca9803539e64a26a2168162ba275c203fb9578e3bfe9eff3f917fbc",
+        "text_bytes": 10187,
+        "pdf_pages": 5,
+        "source_kind": "single_case_official_report",
+        "retrieved_at": "2026-10-04T16:00:40.136807+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Nationwide federal precedent, subject to the holding and later law",
+        "status_warning": "Original opinion reviewed. No comprehensive subsequent-history or statutory-amendment search completed; absence of a warning is not a finding that this is currently controlling law."
+      }
+    },
+    {
+      "case_id": "horst",
+      "case_name": "Helvering v. Horst",
+      "citation": "311 U.S. 112 (1940)",
+      "dockets": [
+        "27"
+      ],
+      "decision_date": "1940-11-25",
+      "year": 1940,
+      "court": "Supreme Court of the United States",
+      "topics": [
+        "assignment-income",
+        "income-realization"
+      ],
+      "material_facts": "A bond owner detached interest coupons and gave them to his son, who collected them, while the donor retained the bonds.",
+      "issue": "Could the owner avoid income tax by giving away the right to imminent interest?",
+      "holding": "The donor was taxable on the interest collected by the donee.",
+      "reasoning": "Using control over income to direct its enjoyment to another is a realization of its economic benefit; the income-producing property remained with the donor.",
+      "application_limits": "A transfer of the underlying property requires separate analysis. The result is not a rule taxing every gift to the donor.",
+      "opinion_pinpoint": "311 U.S. 116–120",
+      "source_id": "horst",
+      "related_case_ids": [
+        "lucas-earl",
+        "moore"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Original opinion reviewed. No comprehensive subsequent-history or statutory-amendment search completed; absence of a warning is not a finding that this is currently controlling law.",
+        "sources_checked": [
+          "horst",
+          "lucas-earl",
+          "moore"
+        ],
+        "primary_history_urls": [],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "horst",
+        "url": "https://www.govinfo.gov/content/pkg/USREPORTS-311/pdf/USREPORTS-311-112.pdf",
+        "sha256": "6bcd82b1263aa40d9477fe59bd9362f30004c5064dceb7c84ed56425c0f565b0",
+        "bytes": 1057228,
+        "text_sha256": "757cf18621281a525bcaa8d30e59bf17d16ba4f8bcb292f684902a437894ecf2",
+        "text_bytes": 21907,
+        "pdf_pages": 11,
+        "source_kind": "single_case_official_report",
+        "retrieved_at": "2026-10-04T16:00:40.562723+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Nationwide federal precedent, subject to the holding and later law",
+        "status_warning": "Original opinion reviewed. No comprehensive subsequent-history or statutory-amendment search completed; absence of a warning is not a finding that this is currently controlling law."
+      }
+    },
+    {
+      "case_id": "moline",
+      "case_name": "Moline Properties, Inc. v. Commissioner",
+      "citation": "319 U.S. 436 (1943)",
+      "dockets": [
+        "660"
+      ],
+      "decision_date": "1943-06-01",
+      "year": 1943,
+      "court": "Supreme Court of the United States",
+      "topics": [
+        "entity-tax"
+      ],
+      "material_facts": "A sole shareholder used a corporation to hold and deal with real estate, then sought to attribute its gains directly to himself.",
+      "issue": "When must a corporation be respected as a separate taxable entity?",
+      "holding": "The corporation’s separate tax existence was respected.",
+      "reasoning": "A business purpose or actual business activity generally suffices; sole ownership does not make the corporation merely the shareholder’s agent.",
+      "application_limits": "Do not apply the corporate rule mechanically to modern entity-classification elections, statutory pass-throughs or a proven agency relationship.",
+      "opinion_pinpoint": "319 U.S. 438–440",
+      "source_id": "moline",
+      "related_case_ids": [
+        "bollinger"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Original opinion reviewed. No comprehensive subsequent-history or statutory-amendment search completed; absence of a warning is not a finding that this is currently controlling law.",
+        "sources_checked": [
+          "moline",
+          "bollinger"
+        ],
+        "primary_history_urls": [],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "moline",
+        "url": "https://www.govinfo.gov/content/pkg/USREPORTS-319/pdf/USREPORTS-319-436.pdf",
+        "sha256": "88e42b26d62e84036ceebf6155738d54fa88f39c61ec9460bad95bcb0e420c82",
+        "bytes": 725644,
+        "text_sha256": "faca6a26292721925e5b277ab50d7e383639a5e4551d606ce9d5b71346f62056",
+        "text_bytes": 11922,
+        "pdf_pages": 6,
+        "source_kind": "single_case_official_report",
+        "retrieved_at": "2026-10-04T16:00:40.243274+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Nationwide federal precedent, subject to the holding and later law",
+        "status_warning": "Original opinion reviewed. No comprehensive subsequent-history or statutory-amendment search completed; absence of a warning is not a finding that this is currently controlling law."
+      }
+    },
+    {
+      "case_id": "bollinger",
+      "case_name": "Commissioner v. Bollinger",
+      "citation": "485 U.S. 340 (1988)",
+      "dockets": [
+        "86-1672"
+      ],
+      "decision_date": "1988-03-22",
+      "year": 1988,
+      "court": "Supreme Court of the United States",
+      "topics": [
+        "entity-tax"
+      ],
+      "material_facts": "Partnerships used a corporation as record owner and borrower to satisfy lenders and local usury constraints while written arrangements and dealings treated it only as agent.",
+      "issue": "Could the partnerships remain tax owners despite corporate record title?",
+      "holding": "The genuine agency arrangement was respected, and the partnerships were treated as owners.",
+      "reasoning": "The written agency existed when assets were acquired, the corporation functioned as agent rather than principal, and it was represented as agent in relevant third-party dealings.",
+      "application_limits": "A label or shareholder-controlled corporation alone is insufficient. Preserve evidence of actual conduct and the applicable entity rules.",
+      "opinion_pinpoint": "485 U.S. 345–350",
+      "source_id": "bollinger",
+      "related_case_ids": [
+        "moline"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Original opinion reviewed. No comprehensive subsequent-history or statutory-amendment search completed; absence of a warning is not a finding that this is currently controlling law.",
+        "sources_checked": [
+          "bollinger",
+          "moline"
+        ],
+        "primary_history_urls": [],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "bollinger",
+        "url": "https://www.govinfo.gov/content/pkg/USREPORTS-485/pdf/USREPORTS-485-340.pdf",
+        "sha256": "6e8ad668db05e635b811f6d9f10b42c478926950d15e29498c71005ed356a59c",
+        "bytes": 918980,
+        "text_sha256": "46334ff01cda4b7edbf48e009304ab04cae590f58f0a59bcf469e4b78d62d3e4",
+        "text_bytes": 22890,
+        "pdf_pages": 11,
+        "source_kind": "single_case_official_report",
+        "retrieved_at": "2026-10-04T16:00:47.223288+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Nationwide federal precedent, subject to the holding and later law",
+        "status_warning": "Original opinion reviewed. No comprehensive subsequent-history or statutory-amendment search completed; absence of a warning is not a finding that this is currently controlling law."
+      }
+    },
+    {
+      "case_id": "mayo",
+      "case_name": "Mayo Foundation for Medical Education and Research v. United States",
+      "citation": "562 U.S. 44 (2011)",
+      "dockets": [
+        "09-837"
+      ],
+      "decision_date": "2011-01-11",
+      "year": 2011,
+      "court": "Supreme Court of the United States",
+      "topics": [
+        "deference-administrative",
+        "employment-tax"
+      ],
+      "material_facts": "Medical residency programs disputed a Treasury rule treating full-time employees, including residents working at least forty hours, as outside the FICA student exception.",
+      "issue": "Was the Treasury rule valid, and did tax regulations receive a special standard of review?",
+      "holding": "The Court upheld the rule under the then-governing Chevron framework and rejected tax exceptionalism in that review.",
+      "reasoning": "The rule reasonably distinguished full-time employment from student service under the framework then used.",
+      "application_limits": "Do not teach Chevron as the current statutory-interpretation test. The student-exception disposition is not automatically erased by the change in review methodology.",
+      "opinion_pinpoint": "562 U.S. 52–60",
+      "source_id": "mayo",
+      "related_case_ids": [
+        "loper-bright",
+        "altera-ca9"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Loper Bright (2024) overruled Chevron but preserved ordinary statutory stare decisis for prior holdings validating agency actions. This changes Mayo’s deference methodology, not automatically every substantive outcome.",
+        "sources_checked": [
+          "mayo",
+          "loper-bright",
+          "altera-ca9"
+        ],
+        "primary_history_urls": [],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "mayo",
+        "url": "https://www.govinfo.gov/content/pkg/USREPORTS-562/pdf/USREPORTS-562-44.pdf",
+        "sha256": "a3b68e4c8133aa5a41b7768d8ae468b5bff62bc3800e51dd25d28a28090e2205",
+        "bytes": 282782,
+        "text_sha256": "6ca25fbfc744f0f15efe140dc509a03c9b5760fdffd6bb9e427e73c351e5f660",
+        "text_bytes": 38948,
+        "pdf_pages": 17,
+        "source_kind": "single_case_official_report",
+        "retrieved_at": "2026-10-04T16:00:46.614345+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Nationwide federal precedent, subject to the holding and later law",
+        "status_warning": "Loper Bright (2024) overruled Chevron but preserved ordinary statutory stare decisis for prior holdings validating agency actions. This changes Mayo’s deference methodology, not automatically every substantive outcome."
+      }
+    },
+    {
+      "case_id": "loper-bright",
+      "case_name": "Loper Bright Enterprises v. Raimondo",
+      "citation": "603 U.S. 369 (2024)",
+      "dockets": [
+        "22-451",
+        "22-1219"
+      ],
+      "decision_date": "2024-06-28",
+      "year": 2024,
+      "court": "Supreme Court of the United States",
+      "topics": [
+        "deference-administrative"
+      ],
+      "material_facts": "Fishing businesses challenged a rule requiring them to bear observer costs; lower courts used Chevron deference to sustain the agency’s statutory interpretation.",
+      "issue": "May courts defer to an agency’s statutory interpretation solely because the statute is ambiguous?",
+      "holding": "Chevron was overruled; courts must independently determine statutory meaning under the APA.",
+      "reasoning": "Judicial responsibility under §706 includes interpreting the statute. Agency expertise can persuade, and actual statutory delegations remain effective within their boundaries.",
+      "application_limits": "This is administrative law relevant to tax, not itself an IRS merits case. It does not abolish agency rulemaking, factual review standards, or automatically reopen settled holdings.",
+      "opinion_pinpoint": "603 U.S. 391–396, 412–413",
+      "source_id": "loper-bright",
+      "related_case_ids": [
+        "mayo",
+        "altera-ca9",
+        "3m-ca8"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "The opinion expressly preserves statutory stare decisis for prior holdings that specific agency actions are lawful. 3M (8th Cir. 2025), separately retained, illustrates application to a tax regulation.",
+        "sources_checked": [
+          "loper-bright",
+          "mayo",
+          "altera-ca9",
+          "3m-ca8"
+        ],
+        "primary_history_urls": [
+          "https://www.supremecourt.gov/opinions/23pdf/603us1r54_o7jp.pdf"
+        ],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "loper-bright",
+        "url": "https://www.supremecourt.gov/opinions/23pdf/603us1r54_o7jp.pdf",
+        "sha256": "c497dcce12d9831f9e59879c2133a9ffd7732f7110db9bf051cb37e5dfee7c89",
+        "bytes": 615553,
+        "text_sha256": "0233dbdd877d4424c813f19cb875abc6ea8339ed4acd2a9a098d35b3584c804f",
+        "text_bytes": 259828,
+        "pdf_pages": 113,
+        "source_kind": "single_case_preliminary_print",
+        "retrieved_at": "2026-10-04T16:00:45.981856+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Nationwide federal precedent, subject to the holding and later law",
+        "status_warning": "The opinion expressly preserves statutory stare decisis for prior holdings that specific agency actions are lawful. 3M (8th Cir. 2025), separately retained, illustrates application to a tax regulation."
+      }
+    },
+    {
+      "case_id": "moore",
+      "case_name": "Moore v. United States",
+      "citation": "602 U.S. 572 (2024)",
+      "dockets": [
+        "22-800"
+      ],
+      "decision_date": "2024-06-20",
+      "year": 2024,
+      "court": "Supreme Court of the United States",
+      "topics": [
+        "income-realization",
+        "constitutional-tax",
+        "entity-tax"
+      ],
+      "material_facts": "U.S. shareholders were assessed the mandatory repatriation tax on their share of income already realized but not distributed by a controlled foreign corporation.",
+      "issue": "Could Congress attribute that entity-realized income to shareholders and tax it without apportionment?",
+      "holding": "The mandatory repatriation tax was sustained as applied to the income attribution at issue.",
+      "reasoning": "Longstanding pass-through and foreign-corporation precedents permit taxing owners on attributed income realized by the entity.",
+      "application_limits": "The Court expressly did not decide whether realization is constitutionally required for income taxation or approve a general wealth tax; the narrow attribution holding must remain visible.",
+      "opinion_pinpoint": "602 U.S. 585–600",
+      "source_id": "moore",
+      "related_case_ids": [
+        "eisner",
+        "horst"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Retained 2024 opinion distinguishes Macomber and explicitly reserves broader realization and hypothetical wealth-tax questions. Later negative history was not comprehensively checked.",
+        "sources_checked": [
+          "moore",
+          "eisner",
+          "horst"
+        ],
+        "primary_history_urls": [],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "moore",
+        "url": "https://www.supremecourt.gov/opinions/23pdf/602us1r41_h3dj.pdf",
+        "sha256": "34798d5ebee5d35746e0131ec1e738f32ebec87e1b7b23887f7b6801fe2b323b",
+        "bytes": 505694,
+        "text_sha256": "24eb91b4e3dd07b971fd09d213ed8735bf210876bf2e732af46791823b5b1871",
+        "text_bytes": 183243,
+        "pdf_pages": 83,
+        "source_kind": "single_case_preliminary_print",
+        "retrieved_at": "2026-10-04T16:00:52.917541+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Nationwide federal precedent, subject to the holding and later law",
+        "status_warning": "Retained 2024 opinion distinguishes Macomber and explicitly reserves broader realization and hypothetical wealth-tax questions. Later negative history was not comprehensively checked."
+      }
+    },
+    {
+      "case_id": "boechler",
+      "case_name": "Boechler, P.C. v. Commissioner",
+      "citation": "596 U.S. 199 (2022)",
+      "dockets": [
+        "20-1472"
+      ],
+      "decision_date": "2022-04-21",
+      "year": 2022,
+      "court": "Supreme Court of the United States",
+      "topics": [
+        "procedure-jurisdiction"
+      ],
+      "material_facts": "A taxpayer petitioned for review of a collection-due-process determination one day after the statutory thirty-day period.",
+      "issue": "Is §6330(d)(1)’s filing deadline jurisdictional and immune from equitable tolling?",
+      "holding": "The deadline is nonjurisdictional and may be equitably tolled.",
+      "reasoning": "The text did not clearly attach the filing deadline to jurisdiction, and the ordinary presumption favoring tolling was not displaced.",
+      "application_limits": "Tolling was not automatically granted. This holding concerns collection-due-process review, not every Tax Court deadline.",
+      "opinion_pinpoint": "596 U.S. 203–211",
+      "source_id": "boechler",
+      "related_case_ids": [
+        "culp-ca3",
+        "hallmark",
+        "maniktala-ca8",
+        "zuch"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "After remand, Boechler, No. 25-2620 (8th Cir. Aug. 10, 2026), affirmed denial of tolling on the actual record; that supplemental opinion is retained. Culp, Buller (2d Cir. 2025), Oquendo (6th Cir. 2025), and Maniktala (8th Cir. 2026) apply a related nonjurisdictional/tolling analysis to §6213(a). The retained Maniktala opinion identifies those authorities and older contrary circuit decisions. Do not collapse the statutes or assume nationally uniform treatment.",
+        "sources_checked": [
+          "boechler",
+          "zuch",
+          "culp-ca3",
+          "tc159-novdec",
+          "maniktala-ca8",
+          "boechler-ca8-2026"
+        ],
+        "primary_history_urls": [
+          "https://ecf.ca8.uscourts.gov/opndir/26/08/252620P.pdf"
+        ],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "boechler",
+        "url": "https://www.supremecourt.gov/opinions/21pdf/20-1472_6j37.pdf",
+        "sha256": "4c2bdffa99245390f394306526a23e50144a60476588249287f107ef5770b553",
+        "bytes": 112058,
+        "text_sha256": "d2601bfdc784e1f3d1dfc232bdaaa52eb08a60dd382ac02dc3ed1cae436d7b6e",
+        "text_bytes": 30729,
+        "pdf_pages": 14,
+        "source_kind": "single_case_slip_opinion",
+        "retrieved_at": "2026-10-04T16:01:32.408974+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Nationwide federal precedent, subject to the holding and later law",
+        "status_warning": "After remand, Boechler, No. 25-2620 (8th Cir. Aug. 10, 2026), affirmed denial of tolling on the actual record; that supplemental opinion is retained. Culp, Buller (2d Cir. 2025), Oquendo (6th Cir. 2025), and Maniktala (8th Cir. 2026) apply a related nonjurisdictional/tolling analysis to §6213(a). The retained Maniktala opinion identifies those authorities and older contrary circuit decisions. Do not collapse the statutes or assume nationally uniform treatment."
+      }
+    },
+    {
+      "case_id": "bittner",
+      "case_name": "Bittner v. United States",
+      "citation": "598 U.S. 85 (2023)",
+      "dockets": [
+        "21-1195"
+      ],
+      "decision_date": "2023-02-28",
+      "year": 2023,
+      "court": "Supreme Court of the United States",
+      "topics": [
+        "penalties-criminal",
+        "international-reporting"
+      ],
+      "material_facts": "A filer corrected five annual foreign-account reports covering many accounts. The government assessed nonwillful penalties separately for each unreported account.",
+      "issue": "For nonwillful FBAR violations, is the penalty unit each report or each account?",
+      "holding": "The nonwillful reporting penalty applies per report, not per account.",
+      "reasoning": "The statutory duty is to submit the required report; the Court distinguished the separate language used for willful violations.",
+      "application_limits": "FBAR is a Bank Secrecy Act obligation, not an income-tax return. The decision does not resolve willful penalties or freeze inflation-adjusted dollar amounts.",
+      "opinion_pinpoint": "598 U.S. 91–103",
+      "source_id": "bittner",
+      "related_case_ids": [],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "The Court’s lenity discussion in Part II-C did not command a majority. Preserve that vote distinction; later penalty amendments and inflation adjustments were not exhaustively reviewed.",
+        "sources_checked": [
+          "bittner"
+        ],
+        "primary_history_urls": [],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "bittner",
+        "url": "https://www.supremecourt.gov/opinions/22pdf/598us1r6_k53l.pdf",
+        "sha256": "bce69fe62fa9098b69f55130a1a4856f88b290beb3566ab31914af8bc8f232c6",
+        "bytes": 302735,
+        "text_sha256": "8557731a3daadf34809267e6af7af1fdba3e551bfc757a6c475d257247950512",
+        "text_bytes": 71251,
+        "pdf_pages": 32,
+        "source_kind": "single_case_preliminary_print",
+        "retrieved_at": "2026-10-04T16:01:32.656424+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Nationwide federal precedent, subject to the holding and later law",
+        "status_warning": "The Court’s lenity discussion in Part II-C did not command a majority. Preserve that vote distinction; later penalty amendments and inflation adjustments were not exhaustively reviewed."
+      }
+    },
+    {
+      "case_id": "zuch",
+      "case_name": "Commissioner v. Zuch",
+      "citation": "605 U.S. 422 (2025)",
+      "dockets": [
+        "24-416"
+      ],
+      "decision_date": "2025-06-12",
+      "year": 2025,
+      "court": "Supreme Court of the United States",
+      "topics": [
+        "procedure-jurisdiction"
+      ],
+      "material_facts": "During a levy challenge, the IRS used later overpayments to eliminate the disputed balance and stopped pursuing the levy; the taxpayer still disputed the allocation of an earlier payment.",
+      "issue": "Does §6330 permit the Tax Court to continue deciding the liability dispute after there is no levy to review?",
+      "holding": "The Tax Court lacked jurisdiction under §6330 once the IRS no longer pursued a levy.",
+      "reasoning": "The review authorized by the provision concerns the collection determination; it is not an independent general power to decide tax liability or order a refund.",
+      "application_limits": "Other refund remedies have their own payment, claim and limitations requirements. The holding does not settle the merits of the taxpayer’s requested credit.",
+      "opinion_pinpoint": "Slip majority pp. 5–9; official citation 605 U.S. 422",
+      "source_id": "zuch",
+      "related_case_ids": [
+        "boechler"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Supreme Court docket 24-416 records reversal and remand on June 12, 2025 and judgment issuance July 14, 2025. No comprehensive later case-treatment search completed.",
+        "sources_checked": [
+          "zuch",
+          "boechler"
+        ],
+        "primary_history_urls": [
+          "https://www.supremecourt.gov/docket/docketfiles/html/public/24-416.html"
+        ],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "zuch",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/24-416_l5gm.pdf",
+        "sha256": "d8553821e71f691d8f82f47f01a26cbd6b4da5dd1c2c9dd8ff4661c9420ee618",
+        "bytes": 152559,
+        "text_sha256": "5140a8b690efb4cd1be419f5d7ba3c264038a01386a14815498e95b4cbd7a797",
+        "text_bytes": 48500,
+        "pdf_pages": 23,
+        "source_kind": "single_case_slip_opinion",
+        "retrieved_at": "2026-10-04T16:00:52.859546+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Nationwide federal precedent, subject to the holding and later law",
+        "status_warning": "Supreme Court docket 24-416 records reversal and remand on June 12, 2025 and judgment issuance July 14, 2025. No comprehensive later case-treatment search completed."
+      }
+    },
+    {
+      "case_id": "altera-ca9",
+      "case_name": "Altera Corp. & Subsidiaries v. Commissioner",
+      "citation": "926 F.3d 1061 (9th Cir. 2019)",
+      "dockets": [
+        "16-70496",
+        "16-70497"
+      ],
+      "decision_date": "2019-06-07",
+      "year": 2019,
+      "court": "United States Court of Appeals for the Ninth Circuit",
+      "topics": [
+        "transfer-pricing",
+        "deference-administrative"
+      ],
+      "material_facts": "Related companies excluded stock-based compensation from a cost-sharing pool and challenged Treasury’s rule requiring its inclusion.",
+      "issue": "Was the stock-compensation cost-sharing regulation authorized by §482 and adequately reasoned under the APA?",
+      "holding": "The Ninth Circuit reversed the Tax Court and upheld the challenged regulation.",
+      "reasoning": "The panel read the commensurate-with-income authority broadly and found Treasury had adequately explained and considered the relevant comments, under then-applicable deference doctrine.",
+      "application_limits": "This is Ninth Circuit precedent concerning a particular regulatory regime. Do not substitute the withdrawn 2018 panel opinion for the 2019 decision.",
+      "opinion_pinpoint": "Published opinion pp. 18–54",
+      "source_id": "altera-ca9",
+      "related_case_ids": [
+        "mayo",
+        "loper-bright",
+        "amazon-ca9"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "2018 panel opinion was withdrawn; 2019 opinion is retained. Supreme Court docket 19-1009 records certiorari denial June 22, 2020. Loper Bright changes Chevron methodology but does not automatically overturn prior holdings.",
+        "sources_checked": [
+          "altera-ca9",
+          "mayo",
+          "loper-bright",
+          "amazon-ca9"
+        ],
+        "primary_history_urls": [
+          "https://www.supremecourt.gov/docket/docketfiles/html/public/19-1009.html",
+          "https://cdn.ca9.uscourts.gov/datastore/opinions/2018/08/07/16-70496.pdf"
+        ],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "altera-ca9",
+        "url": "https://cdn.ca9.uscourts.gov/datastore/opinions/2019/06/07/16-70496.pdf",
+        "sha256": "8849b4aad3775c616f59ff278d0620350238d86118de9dc1799fb4c26723ed3a",
+        "bytes": 350688,
+        "text_sha256": "63cd82cd4b2f8f4465d4eda05ccc9a043890fc5803f5c6326e54be9d9e721380",
+        "text_bytes": 144427,
+        "pdf_pages": 81,
+        "source_kind": "single_case_published_opinion",
+        "retrieved_at": "2026-10-04T16:00:53.841468+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Circuit precedent within the applicable appellate hierarchy; not nationally uniform by default",
+        "status_warning": "2018 panel opinion was withdrawn; 2019 opinion is retained. Supreme Court docket 19-1009 records certiorari denial June 22, 2020. Loper Bright changes Chevron methodology but does not automatically overturn prior holdings."
+      }
+    },
+    {
+      "case_id": "amazon-ca9",
+      "case_name": "Amazon.com, Inc. & Subsidiaries v. Commissioner",
+      "citation": "934 F.3d 976 (9th Cir. 2019)",
+      "dockets": [
+        "17-72922"
+      ],
+      "decision_date": "2019-08-16",
+      "year": 2019,
+      "court": "United States Court of Appeals for the Ninth Circuit",
+      "topics": [
+        "transfer-pricing"
+      ],
+      "material_facts": "An offshore cost-sharing affiliate paid for access to pre-existing intangibles. The IRS valued the contribution using an approach that included residual business attributes.",
+      "issue": "Did the then-applicable definition include goodwill, going-concern value and similar residual business assets?",
+      "holding": "The court affirmed exclusion of those residual assets from the buy-in valuation under the regulations governing 2005–2006.",
+      "reasoning": "The regulation’s history and structure limited the relevant intangible-property category to independently transferable assets.",
+      "application_limits": "This is expressly historical-regime authority. The opinion states that the 2009 regulations and 2017 statutory amendment would change the outcome on the disputed definition.",
+      "opinion_pinpoint": "Published opinion pp. 6 n.1, 17–35",
+      "source_id": "amazon-ca9",
+      "related_case_ids": [
+        "altera-ca9",
+        "3m-ca8"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "The retained opinion itself identifies the 2009 regulatory change and 2017 statutory amendment. Do not market its historical definition as the current transfer-pricing rule.",
+        "sources_checked": [
+          "amazon-ca9",
+          "altera-ca9",
+          "3m-ca8"
+        ],
+        "primary_history_urls": [],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "amazon-ca9",
+        "url": "https://cdn.ca9.uscourts.gov/datastore/opinions/2019/08/16/17-72922.pdf",
+        "sha256": "8c26a127f0358f29667994684cd883c3dec7ddda93f48b1af3942186f3af0751",
+        "bytes": 176357,
+        "text_sha256": "e6d3ad34b7cf599bd9fe98b5f53f3e6bb47d020cb6bf246a7ebd3ee3a7acba7a",
+        "text_bytes": 62588,
+        "pdf_pages": 35,
+        "source_kind": "single_case_published_opinion",
+        "retrieved_at": "2026-10-04T16:00:53.812174+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Circuit precedent within the applicable appellate hierarchy; not nationally uniform by default",
+        "status_warning": "The retained opinion itself identifies the 2009 regulatory change and 2017 statutory amendment. Do not market its historical definition as the current transfer-pricing rule."
+      }
+    },
+    {
+      "case_id": "farhy-dc",
+      "case_name": "Farhy v. Commissioner",
+      "citation": "100 F.4th 223 (D.C. Cir. 2024)",
+      "dockets": [
+        "23-1179"
+      ],
+      "decision_date": "2024-05-03",
+      "year": 2024,
+      "court": "United States Court of Appeals for the District of Columbia Circuit",
+      "topics": [
+        "international-reporting",
+        "procedure-jurisdiction",
+        "penalties-criminal"
+      ],
+      "material_facts": "A taxpayer failed to supply foreign-corporation information; the IRS assessed §6038(b) penalties and proposed collection by levy.",
+      "issue": "Does the statutory scheme authorize administrative assessment of §6038(b) penalties?",
+      "holding": "The D.C. Circuit held the penalties assessable and reversed the Tax Court.",
+      "reasoning": "The text, structure and operation of the assessment and information-reporting provisions supported administrative assessment rather than collection solely through a civil suit.",
+      "application_limits": "The decision is circuit authority. Related Tax Court decisions and appeal venue must be checked before treating its reasoning as nationally settled.",
+      "opinion_pinpoint": "Published opinion pp. 6–23",
+      "source_id": "farhy-dc",
+      "related_case_ids": [
+        "farhy-tc",
+        "safdieh-ca2"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Reverses Farhy, 160 T.C. 399. Safdieh, No. 25-501-cv (2d Cir. Feb. 27, 2026), joins the assessment holding. Mukhi, 163 T.C. 150 (2024), declined to follow Farhy outside controlling venue; its further appellate status was not verified.",
+        "sources_checked": [
+          "farhy-dc",
+          "tc160-april",
+          "safdieh-ca2"
+        ],
+        "primary_history_urls": [
+          "https://ustaxcourt.gov/files/documents/163_TC_150-200.pdf"
+        ],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "farhy-dc",
+        "url": "https://www.govinfo.gov/content/pkg/USCOURTS-caDC-23-01179/pdf/USCOURTS-caDC-23-01179-0.pdf",
+        "sha256": "2d091e5ba71fae3209ada8d81df7c0b6a392d6f74285b35daa6c4cacb4181899",
+        "bytes": 311791,
+        "text_sha256": "406058217f00744b5f262716a487c8b8d7cb1f325dae8140ff07110455a167d8",
+        "text_bytes": 54040,
+        "pdf_pages": 23,
+        "source_kind": "single_case_published_opinion",
+        "retrieved_at": "2026-10-04T16:00:58.065042+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Circuit precedent within the applicable appellate hierarchy; not nationally uniform by default",
+        "status_warning": "Reverses Farhy, 160 T.C. 399. Safdieh, No. 25-501-cv (2d Cir. Feb. 27, 2026), joins the assessment holding. Mukhi, 163 T.C. 150 (2024), declined to follow Farhy outside controlling venue; its further appellate status was not verified."
+      }
+    },
+    {
+      "case_id": "culp-ca3",
+      "case_name": "Culp v. Commissioner",
+      "citation": "75 F.4th 196 (3d Cir. 2023)",
+      "dockets": [
+        "22-1789"
+      ],
+      "decision_date": "2023-07-19",
+      "year": 2023,
+      "court": "United States Court of Appeals for the Third Circuit",
+      "topics": [
+        "procedure-jurisdiction"
+      ],
+      "material_facts": "Taxpayers filed a deficiency petition after the ninety-day period and the Tax Court dismissed for lack of jurisdiction.",
+      "issue": "Is the §6213(a) deficiency-petition deadline jurisdictional, and can it be equitably tolled?",
+      "holding": "The Third Circuit held the deadline nonjurisdictional and eligible for equitable tolling, remanding for the factual tolling inquiry.",
+      "reasoning": "Congress did not clearly make the filing deadline jurisdictional, and the ordinary tolling presumption was not rebutted.",
+      "application_limits": "The circuit split matters. Boechler involved another statute, and tolling still requires qualifying circumstances.",
+      "opinion_pinpoint": "Published opinion pp. 7–17",
+      "source_id": "culp-ca3",
+      "related_case_ids": [
+        "boechler",
+        "hallmark",
+        "maniktala-ca8"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Supreme Court docket 23-1037 records certiorari denial June 24, 2024. The retained Maniktala opinion (8th Cir. Aug. 11, 2026) joins Culp, Buller (2d Cir. 2025), and Oquendo (6th Cir. 2025), and identifies older contrary circuit decisions. Sanders describes historical Tax Court disagreement, not a current all-other-circuits rule.",
+        "sources_checked": [
+          "culp-ca3",
+          "boechler",
+          "tc159-novdec",
+          "maniktala-ca8"
+        ],
+        "primary_history_urls": [
+          "https://www.supremecourt.gov/docket/docketfiles/html/public/23-1037.html",
+          "https://ustaxcourt.gov/files/documents/161_TC_112-328.pdf"
+        ],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "culp-ca3",
+        "url": "https://www.govinfo.gov/content/pkg/USCOURTS-ca3-22-01789/pdf/USCOURTS-ca3-22-01789-0.pdf",
+        "sha256": "01543c4ceaed9dab8f4af99bc303ee58ab47942908acd7d6773678fd4db39404",
+        "bytes": 291753,
+        "text_sha256": "c9c9f9369ffa855c6bc684014c326f71cf81a144000cbca64ca384db36e4e016",
+        "text_bytes": 29616,
+        "pdf_pages": 17,
+        "source_kind": "single_case_published_opinion",
+        "retrieved_at": "2026-10-04T16:00:58.083611+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Circuit precedent within the applicable appellate hierarchy; not nationally uniform by default",
+        "status_warning": "Supreme Court docket 23-1037 records certiorari denial June 24, 2024. The retained Maniktala opinion (8th Cir. Aug. 11, 2026) joins Culp, Buller (2d Cir. 2025), and Oquendo (6th Cir. 2025), and identifies older contrary circuit decisions. Sanders describes historical Tax Court disagreement, not a current all-other-circuits rule."
+      }
+    },
+    {
+      "case_id": "3m-ca8",
+      "case_name": "3M Company & Subsidiaries v. Commissioner",
+      "citation": "No. 23-3772 (8th Cir. Oct. 1, 2025)",
+      "dockets": [
+        "23-3772"
+      ],
+      "decision_date": "2025-10-01",
+      "year": 2025,
+      "court": "United States Court of Appeals for the Eighth Circuit",
+      "topics": [
+        "transfer-pricing",
+        "deference-administrative"
+      ],
+      "material_facts": "Brazilian restrictions limited royalties a subsidiary could remit; the IRS applied §482 and a regulation to allocate additional royalty income to the U.S. group.",
+      "issue": "Could the regulation permit an allocation inconsistent with the court’s reading of §482 and existing blocked-income precedent?",
+      "holding": "The court reversed and remanded for redetermination of the group’s 2006 taxes.",
+      "reasoning": "Applying independent statutory interpretation after Loper Bright, the court concluded the regulation could not override the governing statute and blocked-income authorities.",
+      "application_limits": "Keep the year, foreign restrictions, statutory reasoning and appellate venue visible; this is not an all-purpose rule excusing related-party royalties.",
+      "opinion_pinpoint": "Published opinion pp. 2, 6–15",
+      "source_id": "3m-ca8",
+      "related_case_ids": [
+        "3m-tc",
+        "loper-bright",
+        "amazon-ca9"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Reverses 160 T.C. 50. Supreme Court docket 25A1233 shows a certiorari-filing extension granted May 11, 2026 to June 19, 2026. A later petition/disposition was not established; final Supreme Court-review status remains unresolved in this batch.",
+        "sources_checked": [
+          "3m-ca8",
+          "loper-bright",
+          "amazon-ca9",
+          "tc160-february"
+        ],
+        "primary_history_urls": [
+          "https://www.supremecourt.gov/docket/docketfiles/html/public/25A1233.html"
+        ],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "3m-ca8",
+        "url": "https://ecf.ca8.uscourts.gov/opndir/25/10/233772P.pdf",
+        "sha256": "f8148ad9182e7a7d4bf4222d2336b967291ede64f551b2aebb4e994492862886",
+        "bytes": 92577,
+        "text_sha256": "bf688963d80abf0147cfef01f9790ead706250918471f055ae9859c482f010a7",
+        "text_bytes": 30626,
+        "pdf_pages": 15,
+        "source_kind": "single_case_published_opinion",
+        "retrieved_at": "2026-10-04T16:01:32.484287+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Circuit precedent within the applicable appellate hierarchy; not nationally uniform by default",
+        "status_warning": "Reverses 160 T.C. 50. Supreme Court docket 25A1233 shows a certiorari-filing extension granted May 11, 2026 to June 19, 2026. A later petition/disposition was not established; final Supreme Court-review status remains unresolved in this batch."
+      }
+    },
+    {
+      "case_id": "farhy-tc",
+      "case_name": "Farhy v. Commissioner",
+      "citation": "160 T.C. 399 (2023)",
+      "dockets": [
+        "10647-21L"
+      ],
+      "decision_date": "2023-04-03",
+      "year": 2023,
+      "court": "United States Tax Court",
+      "topics": [
+        "international-reporting",
+        "procedure-jurisdiction",
+        "penalties-criminal"
+      ],
+      "material_facts": "The IRS assessed foreign-information-reporting penalties after Forms 5471 were not filed and proposed a levy.",
+      "issue": "Did the Code authorize assessment of the §6038(b) penalties?",
+      "holding": "The Tax Court held assessment unauthorized and prohibited the proposed collection on that basis.",
+      "reasoning": "The court distinguished liability for a penalty from statutory authority to assess it administratively, finding no sufficient assessment provision.",
+      "application_limits": "This holding was reversed on appeal. Retain it to explain the dispute and history, not as the unqualified governing rule.",
+      "opinion_pinpoint": "160 T.C. 403–413",
+      "source_id": "tc160-april",
+      "related_case_ids": [
+        "farhy-dc",
+        "safdieh-ca2"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "REVERSED by Farhy, 100 F.4th 223 (D.C. Cir. 2024). Safdieh (Second Circuit, Feb. 27, 2026), also retained, agrees penalties are assessable. Mukhi’s Tax Court disagreement does not reinstate the judgment in Farhy.",
+        "sources_checked": [
+          "tc160-april",
+          "farhy-dc",
+          "safdieh-ca2"
+        ],
+        "primary_history_urls": [],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "tc160-april",
+        "url": "https://ustaxcourt.gov/files/documents/160_TC_399-470.pdf",
+        "sha256": "8e8bdf2ff0a7f8da04dfbb35c44c3fa74f8b23b7fdf141f15ce451434732bb83",
+        "bytes": 411899,
+        "text_sha256": "7aed51d347091fcb8ddee39a92bae11c28d244b6315482017bb9471da87a7121",
+        "text_bytes": 174595,
+        "pdf_pages": 78,
+        "source_kind": "multi_case_official_pamphlet",
+        "retrieved_at": "2026-10-04T16:00:59.207302+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "Tax Court reviewed/division opinion",
+        "geographic_scope": "Tax Court precedent subject to governing appellate authority; not a Summary or bench opinion",
+        "status_warning": "REVERSED by Farhy, 100 F.4th 223 (D.C. Cir. 2024). Safdieh (Second Circuit, Feb. 27, 2026), also retained, agrees penalties are assessable. Mukhi’s Tax Court disagreement does not reinstate the judgment in Farhy."
+      }
+    },
+    {
+      "case_id": "hallmark",
+      "case_name": "Hallmark Research Collective v. Commissioner",
+      "citation": "159 T.C. 126 (2022)",
+      "dockets": [
+        "21284-21"
+      ],
+      "decision_date": "2022-11-29",
+      "year": 2022,
+      "court": "United States Tax Court",
+      "topics": [
+        "procedure-jurisdiction"
+      ],
+      "material_facts": "A taxpayer filed a deficiency petition one day after the ninety-day period and relied on Boechler to challenge dismissal.",
+      "issue": "Did Boechler make the §6213(a) deficiency-petition period nonjurisdictional?",
+      "holding": "The reviewed Tax Court opinion continued to treat the deadline as jurisdictional and not subject to equitable tolling.",
+      "reasoning": "The court relied on this provision’s text, statutory context and history, distinguishing the collection-due-process provision at issue in Boechler.",
+      "application_limits": "Later appellate decisions reached the contrary conclusion in the Second, Third, Sixth and Eighth Circuits. Determine appeal venue and subsequent authority before using this historical deadline analysis.",
+      "opinion_pinpoint": "159 T.C. 130–166",
+      "source_id": "tc159-novdec",
+      "related_case_ids": [
+        "boechler",
+        "culp-ca3",
+        "maniktala-ca8"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Later contrary appellate authorities include Culp (Third Circuit), Buller (Second Circuit), Oquendo (Sixth Circuit), and the retained Maniktala (Eighth Circuit, Aug. 11, 2026). Sanders reaffirmed Hallmark in 2023, but its outside-Third framing is historically dated. This is not a complete current circuit or legislative map.",
+        "sources_checked": [
+          "tc159-novdec",
+          "boechler",
+          "culp-ca3",
+          "maniktala-ca8"
+        ],
+        "primary_history_urls": [
+          "https://ustaxcourt.gov/files/documents/161_TC_112-328.pdf"
+        ],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "tc159-novdec",
+        "url": "https://ustaxcourt.gov/files/documents/159_TC_80-183.pdf",
+        "sha256": "f20f657c3facb89441962fd92a37489a678d495de31a50d0e6b4af2f5b5539b7",
+        "bytes": 559786,
+        "text_sha256": "aa81bece24b752bf355fadd55fe16fa980458e1893d7eeb463c5a740c78935bb",
+        "text_bytes": 267501,
+        "pdf_pages": 111,
+        "source_kind": "multi_case_official_pamphlet",
+        "retrieved_at": "2026-10-04T16:00:59.089270+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "Tax Court reviewed/division opinion",
+        "geographic_scope": "Tax Court precedent subject to governing appellate authority; not a Summary or bench opinion",
+        "status_warning": "Later contrary appellate authorities include Culp (Third Circuit), Buller (Second Circuit), Oquendo (Sixth Circuit), and the retained Maniktala (Eighth Circuit, Aug. 11, 2026). Sanders reaffirmed Hallmark in 2023, but its outside-Third framing is historically dated. This is not a complete current circuit or legislative map."
+      }
+    },
+    {
+      "case_id": "green-valley",
+      "case_name": "Green Valley Investors, LLC v. Commissioner",
+      "citation": "159 T.C. 80 (2022)",
+      "dockets": [
+        "17379-19",
+        "17380-19",
+        "17381-19",
+        "17382-19"
+      ],
+      "decision_date": "2022-11-09",
+      "year": 2022,
+      "court": "United States Tax Court",
+      "topics": [
+        "deference-administrative",
+        "penalties-criminal"
+      ],
+      "material_facts": "Partnerships contesting conservation-easement adjustments also disputed penalties arising from a notice identifying listed transactions.",
+      "issue": "Was Notice 2017-10 a legislative rule requiring notice-and-comment procedures?",
+      "holding": "The Tax Court set aside the notice for procedural invalidity and barred the §6662A penalties at issue.",
+      "reasoning": "The notice imposed substantive reporting consequences backed by penalties and therefore required the APA’s legislative-rule procedures.",
+      "application_limits": "The decision did not approve the deductions’ valuation or immunize the transactions from other penalties. Later regulations and legislation require separate applicability analysis.",
+      "opinion_pinpoint": "159 T.C. 88–109",
+      "source_id": "tc159-novdec",
+      "related_case_ids": [],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Treasury issued final listed-transaction regulations in T.D. 10007, effective October 8, 2024, with their own applicability provisions. The historical notice decision is not a current exemption from all disclosure duties.",
+        "sources_checked": [
+          "tc159-novdec"
+        ],
+        "primary_history_urls": [
+          "https://www.irs.gov/irb/2024-43_IRB"
+        ],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "tc159-novdec",
+        "url": "https://ustaxcourt.gov/files/documents/159_TC_80-183.pdf",
+        "sha256": "f20f657c3facb89441962fd92a37489a678d495de31a50d0e6b4af2f5b5539b7",
+        "bytes": 559786,
+        "text_sha256": "aa81bece24b752bf355fadd55fe16fa980458e1893d7eeb463c5a740c78935bb",
+        "text_bytes": 267501,
+        "pdf_pages": 111,
+        "source_kind": "multi_case_official_pamphlet",
+        "retrieved_at": "2026-10-04T16:00:59.089270+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "Tax Court reviewed/division opinion",
+        "geographic_scope": "Tax Court precedent subject to governing appellate authority; not a Summary or bench opinion",
+        "status_warning": "Treasury issued final listed-transaction regulations in T.D. 10007, effective October 8, 2024, with their own applicability provisions. The historical notice decision is not a current exemption from all disclosure duties."
+      }
+    },
+    {
+      "case_id": "3m-tc",
+      "case_name": "3M Company & Subsidiaries v. Commissioner",
+      "citation": "160 T.C. 50 (2023)",
+      "dockets": [
+        "5816-13"
+      ],
+      "decision_date": "2023-02-09",
+      "year": 2023,
+      "court": "United States Tax Court",
+      "topics": [
+        "transfer-pricing",
+        "deference-administrative"
+      ],
+      "material_facts": "A U.S. group disputed a §482 royalty allocation because Brazilian law constrained payments from its subsidiary.",
+      "issue": "Was Treasury’s rule for recognizing foreign legal restrictions valid, and did those restrictions meet it?",
+      "holding": "The divided Tax Court sustained the challenged regulatory requirements and the adjustment at issue.",
+      "reasoning": "The prevailing analysis used Chevron and APA reasoning and found the claimed restrictions insufficient under the regulation.",
+      "application_limits": "This holding was reversed by the Eighth Circuit. Separate majority, concurring and dissenting reasoning in the unusually lengthy report.",
+      "opinion_pinpoint": "160 T.C. 50–370",
+      "source_id": "tc160-february",
+      "related_case_ids": [
+        "3m-ca8",
+        "loper-bright"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "REVERSED AND REMANDED by 3M, No. 23-3772 (8th Cir. Oct. 1, 2025), retained here. That opinion applies Loper Bright. Later Supreme Court-review disposition remains unverified.",
+        "sources_checked": [
+          "tc160-february",
+          "loper-bright",
+          "3m-ca8"
+        ],
+        "primary_history_urls": [
+          "https://ecf.ca8.uscourts.gov/opndir/25/10/233772P.pdf"
+        ],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "tc160-february",
+        "url": "https://ustaxcourt.gov/files/documents/160_TC_50-388.pdf",
+        "sha256": "f6cbcd2729dbe771e86d1f71cc313fee19f0f25112d3aa5ac18af1ac2b7897cc",
+        "bytes": 1352086,
+        "text_sha256": "abe904aafd9b7268db59b83a65b6df0b0a4f538696f9c51fd3032cc23e0c37d6",
+        "text_bytes": 901946,
+        "pdf_pages": 346,
+        "source_kind": "multi_case_official_pamphlet",
+        "retrieved_at": "2026-10-04T16:01:04.894012+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "Tax Court reviewed/division opinion",
+        "geographic_scope": "Tax Court precedent subject to governing appellate authority; not a Summary or bench opinion",
+        "status_warning": "REVERSED AND REMANDED by 3M, No. 23-3772 (8th Cir. Oct. 1, 2025), retained here. That opinion applies Loper Bright. Later Supreme Court-review disposition remains unverified."
+      }
+    },
+    {
+      "case_id": "maniktala-ca8",
+      "case_name": "Maniktala v. Commissioner",
+      "citation": "No. 25-1366 (8th Cir. Aug. 11, 2026)",
+      "dockets": [
+        "25-1366"
+      ],
+      "decision_date": "2026-08-11",
+      "year": 2026,
+      "court": "United States Court of Appeals for the Eighth Circuit",
+      "topics": [
+        "procedure-jurisdiction"
+      ],
+      "material_facts": "Taxpayers received a deficiency notice months after its stated filing deadline and filed a petition shortly after actual receipt. The Tax Court dismissed it as untimely.",
+      "issue": "Is the §6213(a) petition deadline jurisdictional, and is equitable tolling available?",
+      "holding": "The Eighth Circuit held the deadline nonjurisdictional and subject to equitable tolling, reversing and remanding.",
+      "reasoning": "The clear-statement rule did not tie the filing period to jurisdiction. Nothing in the statutory scheme displaced the presumption that equitable tolling is available.",
+      "application_limits": "Tolling is not automatic: the Tax Court must decide whether these taxpayers meet their burden. Check appeal venue, later docket activity and other circuit authority before applying the rule.",
+      "opinion_pinpoint": "Published opinion pp. 5–9",
+      "source_id": "maniktala-ca8",
+      "related_case_ids": [
+        "boechler",
+        "culp-ca3",
+        "hallmark"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "The retained opinion expressly joins Buller, 160 F.4th 266 (2d Cir. 2025), Culp, 75 F.4th 196 (3d Cir. 2023), and Oquendo, 148 F.4th 820 (6th Cir. 2025); it identifies older contrary Seventh/Ninth Circuit cases. No full post-decision docket or all-circuit audit was completed.",
+        "sources_checked": [
+          "maniktala-ca8",
+          "boechler",
+          "culp-ca3",
+          "tc159-novdec"
+        ],
+        "primary_history_urls": [],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "maniktala-ca8",
+        "url": "https://ecf.ca8.uscourts.gov/opndir/26/08/251366P.pdf",
+        "sha256": "076ef8e9a6b3dc540b8f49bb5adfc33b0fca1a6b645b97f83b0a71cfe0303327",
+        "bytes": 71291,
+        "text_sha256": "e0118aefd131fe80bf0dcc7d0c1f41aeea1e24f8a1b961ac9b00f3d9bc30bafd",
+        "text_bytes": 19989,
+        "pdf_pages": 9,
+        "source_kind": "single_case_published_opinion",
+        "retrieved_at": "2026-10-04T16:09:30.519204+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Circuit precedent within the applicable appellate hierarchy; not nationally uniform by default",
+        "status_warning": "The retained opinion expressly joins Buller, 160 F.4th 266 (2d Cir. 2025), Culp, 75 F.4th 196 (3d Cir. 2023), and Oquendo, 148 F.4th 820 (6th Cir. 2025); it identifies older contrary Seventh/Ninth Circuit cases. No full post-decision docket or all-circuit audit was completed."
+      }
+    },
+    {
+      "case_id": "safdieh-ca2",
+      "case_name": "Safdieh v. Commissioner",
+      "citation": "No. 25-501-cv (2d Cir. Feb. 27, 2026)",
+      "dockets": [
+        "25-501-cv"
+      ],
+      "decision_date": "2026-02-27",
+      "year": 2026,
+      "court": "United States Court of Appeals for the Second Circuit",
+      "topics": [
+        "international-reporting",
+        "procedure-jurisdiction",
+        "penalties-criminal"
+      ],
+      "material_facts": "The IRS assessed foreign-information-reporting penalties and filed a lien. The Tax Court granted the taxpayer summary judgment solely because it found administrative assessment unauthorized.",
+      "issue": "Does the statutory scheme allow the IRS to assess §6038(b) penalties without first obtaining a district-court judgment?",
+      "holding": "The Second Circuit held assessment authorized, vacated summary judgment and remanded.",
+      "reasoning": "The court relied on the provision’s history, purpose and structure, including the coordination of penalties with foreign-tax-credit consequences, and agreed with the D.C. Circuit’s Farhy result.",
+      "application_limits": "The ruling resolves assessment authority, not every defense to the particular penalty. Appeal venue and further Supreme Court proceedings must be checked.",
+      "opinion_pinpoint": "Published opinion pp. 4–17",
+      "source_id": "safdieh-ca2",
+      "related_case_ids": [
+        "farhy-dc",
+        "farhy-tc"
+      ],
+      "negative_history_and_change_check": {
+        "checked_on": "2026-10-04",
+        "status": "limited_primary_source_review_not_a_citator",
+        "finding": "Supreme Court application 26A314 was granted September 8, 2026, extending the deadline to seek certiorari to November 23, 2026. This is a filing extension, not a grant of merits review; a final review disposition is not established.",
+        "sources_checked": [
+          "safdieh-ca2",
+          "farhy-dc",
+          "tc160-april"
+        ],
+        "primary_history_urls": [
+          "https://www.supremecourt.gov/search.aspx?filename=/docket/docketfiles/html/public/26a314.html"
+        ],
+        "scope": "Retained original opinion plus specifically linked cases/primary materials only. Not a complete citator, appeal-docket audit, or current-law certification. Current House U.S. Code pages returned maintenance notices during this batch."
+      },
+      "editorial_origin": "Original educational synthesis, not a publisher headnote",
+      "professional_review": false,
+      "current_applicability_certified": false,
+      "source": {
+        "source_id": "safdieh-ca2",
+        "url": "https://ww3.ca2.uscourts.gov/decisions/OPN/25-501_opn.pdf",
+        "sha256": "3f24eaa4b39afca4a3f1ea63da794ee6a769255f4edb235755e1da67bc759386",
+        "bytes": 202423,
+        "text_sha256": "ec5cc22a92276927aeb80d2b41fcf8dccd350d76012a8539129cdd25fd9f9dda",
+        "text_bytes": 29795,
+        "pdf_pages": 17,
+        "source_kind": "single_case_published_opinion",
+        "retrieved_at": "2026-10-04T16:10:35.961566+00:00"
+      },
+      "jurisdiction_and_precedential_status": {
+        "opinion_type": "published judicial opinion",
+        "geographic_scope": "Circuit precedent within the applicable appellate hierarchy; not nationally uniform by default",
+        "status_warning": "Supreme Court application 26A314 was granted September 8, 2026, extending the deadline to seek certiorari to November 23, 2026. This is a filing extension, not a grant of merits review; a final review disposition is not established."
+      }
+    }
+  ],
+  "citator_complete": false,
+  "legal_advice": false,
+  "professional_review": false,
+  "source_distribution_approved": false,
+  "publication_state": "original_educational_catalog_raw_corpus_excluded",
+  "catalog_version": "1.0.0",
+  "original_content_license": "CC BY 4.0; see ../LICENSE.md; excludes third-party sources"
+}
