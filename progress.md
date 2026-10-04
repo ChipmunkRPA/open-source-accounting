@@ -1,3 +1,34 @@
+## 2026-10-04 · Twelve additional original accounting guides · #9/#10/#22
+
+Added **12 original educational guides**, six governmental and six nongovernmental,
+with **10,515 words including notices**, bringing the public library from **90 to
+102 articles**. The substantial worked scenarios cover grant eligibility, earned
+leave, capital-asset exits, estimates and errors, interfund activity, pension timing,
+securities and OCI, purchased-bond yield, equity-method movements, debt replacement,
+private bank grants and operating cash-flow presentation. All are explicitly
+**Ray Sang’s Annotation**, AI-assisted, professionally unreviewed and non-authoritative.
+The source-first metadata checkpoint was published as commit
+24af0325fc43bd0163c9934a9ea49a6d9aa9c616 before annotation drafting began.
+
+The main reference registry now appends the **19 committed section-scoped records**
+covering **15 distinct source-document URLs**, for **74 total reference objects**.
+These are source metadata, not acquired standards. No publisher standard bodies,
+new source-body files, human approvals, article-level AI review receipts or Agent
+admissions were added. State-specific, dated regulator and staff guidance retains
+its stated scope; conflicting and unexamined passages remain excluded. All prior
+90 article objects/bytes, 55 source objects, 78 AI receipts, historical licenses,
+36 IRS pilot source files from both batches and publication guards are preserved.
+
+Observed checks: 79 Node tests, 21 Python tests, TypeScript, the full 102-page and
+33-System build, public boundary checks, exact new-body rendering and all 12 local
+HTTP article routes passed. Author arithmetic checks passed 257 assertions; a
+separate bounded AI editorial check independently reconstructed 183 assertions and
+found no required corrections. That model cross-check is not human professional
+review, a publisher-rights clearance or an article-level admission receipt. New
+manifest entries remain editorial drafts with primary-text gaps and default Agent
+exclusion. No hosted deployment, native/release or visual browser acceptance was
+performed; no Actions dispatch, paid build, real integration or access change.
+
 ## 2026-10-04 · Second bounded IRS primary-source batch · #20
 
 Added eight complete IRS source originals and eight complete extracted texts:

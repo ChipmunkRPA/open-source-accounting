@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-04",
+  "source_checkpoint_commit": "24af0325fc43bd0163c9934a9ea49a6d9aa9c616",
+  "source_collection_precedes_article_authoring": true,
+  "baseline_original_article_count": 90,
+  "new_original_article_count": 12,
+  "total_original_article_count": 102,
+  "new_word_count": 10515,
+  "word_count_method": "Whitespace-separated units including Markdown table content and notices, consistent with the existing library report.",
+  "counts_by_family": {
+    "GASB": 6,
+    "FASB": 6
+  },
+  "new_section_scoped_source_records": 19,
+  "distinct_source_document_urls": 15,
+  "publisher_standard_bodies_acquired": 0,
+  "publisher_standard_bodies_reproduced": 0,
+  "professional_approvals": 0,
+  "new_ai_editorial_receipts": 0,
+  "new_agent_admissions": 0,
+  "article_records": [
+    {
+      "id": "gasb-grant-eligibility-cash",
+      "family": "GASB",
+      "path": "guides/gasb-grant-eligibility-cash-v1.md",
+      "sha256": "8ea0b4ddea7531cb61efa3e8a300f75dc12b84baa4943526ff120e572d1b2adf",
+      "word_count": 809
+    },
+    {
+      "id": "gasb-compensated-absence-liability",
+      "family": "GASB",
+      "path": "guides/gasb-compensated-absence-liability-v1.md",
+      "sha256": "7e05cbde140c89a706ec6f1079a26bdbccb7650de808f796e62ad0bab90a7528",
+      "word_count": 848
+    },
+    {
+      "id": "gasb-capital-asset-exit-donation",
+      "family": "GASB",
+      "path": "guides/gasb-capital-asset-exit-donation-v1.md",
+      "sha256": "ada473734d2d4ebf9d464140014dfdf60f9c65ef9e5f869fa4092003900cd4e7",
+      "word_count": 865
+    },
+    {
+      "id": "gasb-estimate-error-periods",
+      "family": "GASB",
+      "path": "guides/gasb-estimate-error-periods-v1.md",
+      "sha256": "7957cb6f2bbce6dac16af7d4d477864732618a1fef68caa60b81cbf9897465bc",
+      "word_count": 888
+    },
+    {
+      "id": "gasb-interfund-loan-transfer-reimbursement",
+      "family": "GASB",
+      "path": "guides/gasb-interfund-loan-transfer-reimbursement-v1.md",
+      "sha256": "8b4536ff9c50afea7bf0894539196a02ba229393483340142f592aebe3189e8d",
+      "word_count": 887
+    },
+    {
+      "id": "gasb-pension-expense-contribution",
+      "family": "GASB",
+      "path": "guides/gasb-pension-expense-contribution-v1.md",
+      "sha256": "68dc6454da94318fc3fb0410aa7ad5908e16e44adefc6c8d155ed2a37a6f5f2b",
+      "word_count": 886
+    },
+    {
+      "id": "fasb-securities-measurement-oci",
+      "family": "FASB",
+      "path": "guides/fasb-securities-measurement-oci-v1.md",
+      "sha256": "a1df48970f60ca5211ec122de4207d088ae15e75a26ead064abb9d16624bac13",
+      "word_count": 886
+    },
+    {
+      "id": "fasb-bond-premium-yield",
+      "family": "FASB",
+      "path": "guides/fasb-bond-premium-yield-v1.md",
+      "sha256": "688ea9919f9b41cb8c4e2f662573be4045782f10d302cce3314e5ab32d253671",
+      "word_count": 871
+    },
+    {
+      "id": "fasb-equity-method-income-distributions",
+      "family": "FASB",
+      "path": "guides/fasb-equity-method-income-distributions-v1.md",
+      "sha256": "68407ce781c636f2f016fdfb9275a6f39ffa89db131dbd04dcdc7f6e10cb7ab4",
+      "word_count": 892
+    },
+    {
+      "id": "fasb-debt-replacement-test",
+      "family": "FASB",
+      "path": "guides/fasb-debt-replacement-test-v1.md",
+      "sha256": "11743d55d23a39f38eff40f2dd32943ad171a4be98a8c5b75b29bd6ff524c112",
+      "word_count": 890
+    },
+    {
+      "id": "fasb-private-grant-conditions",
+      "family": "FASB",
+      "path": "guides/fasb-private-grant-conditions-v1.md",
+      "sha256": "0962435c4df4f7c86fb6a791b0eb39d4f75f7c23b4a1a9f964ce816c657c7f40",
+      "word_count": 897
+    },
+    {
+      "id": "fasb-operating-cash-direct-indirect",
+      "family": "FASB",
+      "path": "guides/fasb-operating-cash-direct-indirect-v1.md",
+      "sha256": "56cd7c425b3331a93fffa7519a320b504c989c3880d8204aae1bd7f4dde6ea72",
+      "word_count": 896
+    }
+  ],
+  "review_status": "bounded second-AI editorial and arithmetic cross-check passed; all manifest items remain professionally unreviewed",
+  "bounded_ai_cross_check": {
+    "independent_arithmetic_assertions": 183,
+    "author_arithmetic_assertions": 257,
+    "report_sha256": "235a2e81389e46d93d8b359277a7e50ebdb3b19e53ba64eaa06b9bd520cbfd65",
+    "professional_review": false,
+    "article_level_ai_receipts_created": 0,
+    "agent_admissions_created": 0
+  }
+}

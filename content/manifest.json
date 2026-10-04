@@ -2431,6 +2431,325 @@
       "primary_text_gap": true,
       "public_visibility": "editorial_draft",
       "agent_eligible_by_default": false
+    },
+    {
+      "id": "gasb-grant-eligibility-cash",
+      "title": "Government grants: separate eligibility, timing and cash",
+      "kind": "guide",
+      "topic": "gasb-grants",
+      "framework": "GASB",
+      "summary": "An original reimbursement-award calculation separates eligible costs, receivables, cash, fund availability and purpose restrictions.",
+      "path": "guides/gasb-grant-eligibility-cash-v1.md",
+      "version": "1.0.0",
+      "sha256": "8ea0b4ddea7531cb61efa3e8a300f75dc12b84baa4943526ff120e572d1b2adf",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-texas-nonexchange-eligibility"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "gasb-compensated-absence-liability",
+      "title": "Compensated absences: measure earned leave at the reporting date",
+      "kind": "guide",
+      "topic": "gasb-compensated-absences",
+      "framework": "GASB",
+      "summary": "A qualifying annual-leave register and liability roll-forward distinguish earned leave, settlement, reporting-date rates and governmental-fund recognition.",
+      "path": "guides/gasb-compensated-absence-liability-v1.md",
+      "version": "1.0.0",
+      "sha256": "7e05cbde140c89a706ec6f1079a26bdbccb7650de808f796e62ad0bab90a7528",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-texas-compensable-leave",
+        "osa-texas-leave-methodology"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "gasb-capital-asset-exit-donation",
+      "title": "Government capital assets: reconcile disposals, proceeds and donations",
+      "kind": "guide",
+      "topic": "gasb-capital-assets",
+      "framework": "GASB",
+      "summary": "Asset exits and a qualifying donation reconcile gross cost, accumulated depreciation, proceeds, gains and government-wide net position.",
+      "path": "guides/gasb-capital-asset-exit-donation-v1.md",
+      "version": "1.0.0",
+      "sha256": "ada473734d2d4ebf9d464140014dfdf60f9c65ef9e5f869fa4092003900cd4e7",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-texas-capital-disposal",
+        "osa-texas-capital-sale",
+        "osa-texas-capital-donations"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "gasb-estimate-error-periods",
+      "title": "New estimate or old error: identify which reporting periods change",
+      "kind": "guide",
+      "topic": "gasb-accounting-changes",
+      "framework": "GASB",
+      "summary": "Two original asset histories distinguish prospective revisions based on new information from restatement of prior-period spreadsheet errors.",
+      "path": "guides/gasb-estimate-error-periods-v1.md",
+      "version": "1.0.0",
+      "sha256": "7957cb6f2bbce6dac16af7d4d477864732618a1fef68caa60b81cbf9897465bc",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-texas-estimate-change",
+        "osa-texas-error-correction"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "gasb-interfund-loan-transfer-reimbursement",
+      "title": "Interfund funding: distinguish loans, transfers and reimbursements",
+      "kind": "guide",
+      "topic": "gasb-interfund-activity",
+      "framework": "GASB",
+      "summary": "Two governmental funds reconcile loans, transfers, reimbursements, reciprocal balances and a later nonrepayable funding decision.",
+      "path": "guides/gasb-interfund-loan-transfer-reimbursement-v1.md",
+      "version": "1.0.0",
+      "sha256": "8b4536ff9c50afea7bf0894539196a02ba229393483340142f592aebe3189e8d",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-texas-interfund-activity",
+        "osa-texas-transfers-funds"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "gasb-pension-expense-contribution",
+      "title": "Government pensions: reconcile expense, contributions and measurement dates",
+      "kind": "guide",
+      "topic": "gasb-pensions",
+      "framework": "GASB",
+      "summary": "An explicitly supplied fictional employer pension package reconciles contribution cash, expense, deferred resources and measurement dates.",
+      "path": "guides/gasb-pension-expense-contribution-v1.md",
+      "version": "1.0.0",
+      "sha256": "68dc6454da94318fc3fb0410aa7ad5908e16e44adefc6c8d155ed2a37a6f5f2b",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-ny-pension-report",
+        "osa-connecticut-acfr-2025-pensions"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "fasb-securities-measurement-oci",
+      "title": "Debt securities: separate market movement from amortized cost and credit loss",
+      "kind": "guide",
+      "topic": "fasb-investment-securities",
+      "framework": "US_GAAP",
+      "summary": "An original two-year comparison separates AFS fair-value changes, HTM amortized cost, coupons and accumulated OCI.",
+      "path": "guides/fasb-securities-measurement-oci-v1.md",
+      "version": "1.0.0",
+      "sha256": "a1df48970f60ca5211ec122de4207d088ae15e75a26ead064abb9d16624bac13",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-fed-fr2886b-2025-securities-measurement",
+        "osa-occ-baas-2026-12a-securities-oci"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "fasb-bond-premium-yield",
+      "title": "Purchased bond premiums: reconcile coupon cash with effective interest",
+      "kind": "guide",
+      "topic": "fasb-investment-yield",
+      "framework": "US_GAAP",
+      "summary": "A four-year purchased-bond schedule reconciles coupon cash, effective interest and premium amortization, with a discount variation.",
+      "path": "guides/fasb-bond-premium-yield-v1.md",
+      "version": "1.0.0",
+      "sha256": "688ea9919f9b41cb8c4e2f662573be4045782f10d302cce3314e5ab32d253671",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-occ-baas-2026-1a-bond-premium"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "fasb-equity-method-income-distributions",
+      "title": "Equity-method investments: income and cash distributions move different balances",
+      "kind": "guide",
+      "topic": "fasb-equity-method",
+      "framework": "US_GAAP",
+      "summary": "An original investment rollforward separates investee earnings, investor income and cash distributions after stipulated equity-method eligibility.",
+      "path": "guides/fasb-equity-method-income-distributions-v1.md",
+      "version": "1.0.0",
+      "sha256": "68407ce781c636f2f016fdfb9275a6f39ffa89db131dbd04dcdc7f6e10cb7ab4",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-fed-fr2886b-2025-equity-method"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "fasb-debt-replacement-test",
+      "title": "Debt replacement: compare revised cash flows before choosing a gain or loss",
+      "kind": "guide",
+      "topic": "fasb-debt",
+      "framework": "US_GAAP",
+      "summary": "Two original revised payment schedules illustrate the debt present-value comparison and the limits of a numerical threshold.",
+      "path": "guides/fasb-debt-replacement-test-v1.md",
+      "version": "1.0.0",
+      "sha256": "11743d55d23a39f38eff40f2dd32943ad171a4be98a8c5b75b29bd6ff524c112",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-occ-baas-2026-6b-debt-replacement"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "fasb-private-grant-conditions",
+      "title": "Private grants received by banks: separate the receipt date from the recognition condition",
+      "kind": "guide",
+      "topic": "fasb-contributions",
+      "framework": "US_GAAP",
+      "summary": "A private-donor bank grant case separates cash receipt, program expense and condition satisfaction, excluding nonprofit restriction-release accounting.",
+      "path": "guides/fasb-private-grant-conditions-v1.md",
+      "version": "1.0.0",
+      "sha256": "0962435c4df4f7c86fb6a791b0eb39d4f75f7c23b4a1a9f964ce816c657c7f40",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-occ-baas-2026-11e-private-grants"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "fasb-operating-cash-direct-indirect",
+      "title": "Operating cash flow: reconcile gross cash receipts with the indirect bridge",
+      "kind": "guide",
+      "topic": "fasb-cash-flows",
+      "framework": "US_GAAP",
+      "summary": "Original receivable, inventory and payable bridges produce the same operating cash amount through gross-cash and indirect presentations.",
+      "path": "guides/fasb-operating-cash-direct-indirect-v1.md",
+      "version": "1.0.0",
+      "sha256": "56cd7c425b3331a93fffa7519a320b504c989c3880d8204aae1bd7f4dde6ea72",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-sec-cash-flows-2023-direct-indirect"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
     }
   ]
 }
