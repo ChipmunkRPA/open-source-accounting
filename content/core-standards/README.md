@@ -1,5 +1,10 @@
 # Core standards research directory
 
+**Ray Sang’s Annotation** · Original AI-assisted explanation; no personal
+professional review is implied. Official titles, citations, source text and
+third-party notices remain attributed to their original sources. Existing CC BY
+4.0 rights are unchanged.
+
 This package provides five original research maps and twenty manually curated research tracks across FASB, GASB, AICPA, sustainability/ESG and IRS literature. It is a navigation and research-planning resource. It contains no FASB, GASB, AICPA, IFRS, SASB, GRI or GHG Protocol standard bodies. No protected publisher site was bulk-scraped to create this directory.
 
 - [FASB research map](fasb-research-map.md)

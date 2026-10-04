@@ -1,0 +1,532 @@
+{
+  "schema_version": 1,
+  "annotation_brand": "Ray Sang’s Annotation",
+  "original_content_purpose": "original_annotation",
+  "professional_review_implied": false,
+  "preserve_creator_attribution": true,
+  "preserve_prior_licenses": true,
+  "source_text_is_annotation": false,
+  "fictional_content_purpose": "fictional_copyright_detection",
+  "fictional_storage_scope": "premium_private",
+  "fictional_authoritative_eligible": false,
+  "new_explicit_license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+  "terms_path": "CONTENT-TERMS.md",
+  "existing_library_items": [
+    {
+      "id": "authority-and-period",
+      "sha256": "0bfaa27a31e0abc364455a814adbf21876ff0bf55eda457754e138d11f294743",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "revenue-research-map",
+      "sha256": "a6edcf13e48c1c63a6c95c5e51c23e89d3c0b39c23e9b169a9e29054ea778e00",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "saas-implementation",
+      "sha256": "9cb177e6ceb41c585b7cde7200d1382e42755680ee3c23b98c87b7d973ad92e5",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "customer-payments",
+      "sha256": "76c02cc5ccc58bd6541d9f0ce68703fd0550f34eabe26bc91fef814c33bbef50",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "lease-identification",
+      "sha256": "352bb93d8471f2a0a003d2c1baa50d9a53a89c043ff8aa0d9d16ee0ba34ab4d5",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "lease-measurement",
+      "sha256": "4dd251fafb6c9b45ae5ffb7ec9f0d51035abf623d8c2d8f0303f9e0b95fd46df",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "share-based-award-intake",
+      "sha256": "b90c0ba452422960ada6c7e9ebc41d5ad8d49b3ac0dc90518c9e26930e4f044d",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "loss-contingencies",
+      "sha256": "7b1c04fb96f9d150491d12b3a7fe84901a5738649cb3981641b21b04cc40faa9",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "materiality",
+      "sha256": "0a687640e5b7dc25484f4c0a775671d11aad640a5073f253efe4dd3c9ec47f82",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "error-measurement",
+      "sha256": "fd1097006a9e64e4fdb729bc81313158b175fbbb2a31fff7f5ff8d8c3df47ced",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "icfr-deficiencies",
+      "sha256": "b22d4f457b8806655bbaa3ff459454714b471e8535586d42ea37061a4017f511",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "electronic-audit-evidence",
+      "sha256": "9553a213000c05a06d7dea5c6b1235fc03b8317f6a4b0df4206a3ba3e8b00d2e",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "non-gaap-review",
+      "sha256": "82bf79f9fae0bf1e44ad0aa6c14f8eeb1dd354f13ec5f6e29aab63b0c4d5a3ae",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "yellow-book-scope",
+      "sha256": "24e66fd1bf33ba9d0899f77f125add692bb66ed335fa3f2e51a2a4499c8e7462",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "case-ssp-allocation",
+      "sha256": "dbe625a9de40b6ae716e718bdafc5e0aa1d8cde8ba6a96a46b165638e62c41c4",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "case-lease-present-value",
+      "sha256": "1b07da25dfc0fcb7d6e04870b159545a51bb9ebf3b55f5b3c3ec215244c61c93",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "case-implementation-alternatives",
+      "sha256": "2081a4f5be730d7bec3964ae597fb92e32aeb732bdcb77381795d0a2e9bd38bd",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "case-accumulated-error",
+      "sha256": "0dd8dcac3cc79523b86ec91780c303ac043699fa13e1cba9b136102901dd590b",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "case-control-remediation",
+      "sha256": "d666ec2a8c565f65621e828bc6fb1cb02fc6cdc837280a5d1b973d88ee40a89d",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "technical-memo-template",
+      "sha256": "abf42dbac7d4041c78dcba53fb28a9598a66b2f059078fdba97a1d0d5301daac",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "clause-evidence-template",
+      "sha256": "9c4e589107441260a8dce40f1af2ef0487256ad9641404a5308a8dc50792de92",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "audit-evidence-template",
+      "sha256": "cfbf9595c4c32fdbdc3a30a96c590edb1f118f42631ca26ec40bbef4951055c9",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "disclosure-review-template",
+      "sha256": "3df8fd6653aea96920a476f6224c2f0a7264587b413e60b8d862bfd7f1e2abc6",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "content-review-template",
+      "sha256": "f4520e015cb6893187cf1919b02857a07cf20f74c330266d5be8d161da267551",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "source-onboarding-template",
+      "sha256": "0a05eade8ea3676d44666840614f3635e5b4f5b8105c4d17e2a42bfcd6c19778",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "playbook-deep-research",
+      "sha256": "b92eeecaa3a6a30904f4783a7f2ee19bba60f308ff03ed68e911552fbe157aef",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "playbook-memo",
+      "sha256": "7db93e460bf5482ddd3f4d748f3ed4fae402e38d7be3cbe4a0c241e517ed96c5",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "playbook-document-gaap",
+      "sha256": "9ca1d3a7ba02a89e60bb5a4abb69eefeedb85328280d6a74193fe6e9d5e81806",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "playbook-contract-compare",
+      "sha256": "382a6fce10315d965a819f27922ff6573ab6d97b4fee99f897899ca664087385",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "playbook-memo-review",
+      "sha256": "ecab5b34b537c489f90e24d126067890fae2e49c0dd62b140c64f91eccea1fcb",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "playbook-disclosure-review",
+      "sha256": "e253a18c546bfaf740cfaa0f9e6f5754d2fcdc0fd5526394a6874415aab53aea",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "playbook-policy-draft",
+      "sha256": "1c768cbfc3c6ae2628e72c1e6176950b610e3d5c70a9f0c4911d6f89af941907",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "playbook-revenue-workpaper",
+      "sha256": "8ba8fb9c04bae0023c9bf12994765444d4dd931d0fbd75bd1c8a4808b9a58b24",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "playbook-lease-workpaper",
+      "sha256": "c4e9c0433a24a8a5009732cd8f57e1f76239c3d04820d33ecdab2aeb39b5ad2d",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "playbook-disclosure-benchmark",
+      "sha256": "1b9f8b5beb47271c5c3fce0f68544319e3ab2481918928a48bc4303963e60ffa",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "playbook-sec-response",
+      "sha256": "52facd83f14f5e2b8b3e575d19c553984d92eba365108555533ad8f7a5e50b43",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "playbook-audit-prep",
+      "sha256": "c43fa077daa0963372e59db72f661c836567ee77cd1e51ac4344b2033c2d4045",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "playbook-controls-review",
+      "sha256": "ebe9158a308adb6abd1df3f154517e55329fba2c98a6c521d14f9597e273aaac",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "playbook-close-pack",
+      "sha256": "bf76a908a09551ee9bc0542004afaeeec90548cf797fac14d535ed1bab67bbc6",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "playbook-framework-compare",
+      "sha256": "b2462b4579d8cb67a2d171278c309a646ebbf78c6dced16e5daaf5f9b12eef15",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "playbook-standards-watch",
+      "sha256": "daff5ae23e1cf976dc4c6da783f2d6311e903577f883d8a743980f9eba13de1d",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "research-study-questions",
+      "sha256": "e6bb5cea4459a478214e85e03024985e73fdb6717462bdb0d4e3d0978605b86e",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "cash-flow-workbook",
+      "sha256": "e45323f7759266d7b16ada741dbd4e110e00fb6b4a20cc7450334a6e208e3fa9",
+      "license": "CC-BY-4.0",
+      "author": "Open Source Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "receivable-loss-workbook",
+      "sha256": "377f14b7de202f551bc32a220e6bcc46f9faf3d2c8792766fb3656ed69de4e54",
+      "license": "CC-BY-4.0",
+      "author": "Open Source Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "inventory-workbook",
+      "sha256": "70bef72117b1dd31b904a73e8d269ccdaaf1e1f586ff086edc17ebd75096b071",
+      "license": "CC-BY-4.0",
+      "author": "Open Source Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "impairment-workbook",
+      "sha256": "586427813ea3d34e65f1bf1f6033411cf5cf443aff0b07c4daab7ae0d1c2519a",
+      "license": "CC-BY-4.0",
+      "author": "Open Source Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "fair-value-workbook",
+      "sha256": "cf404f1a491599fb4ba07567f85487dae29b6f1f7673deb533eeeb24b6b86a6e",
+      "license": "CC-BY-4.0",
+      "author": "Open Source Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "acquisition-workbook",
+      "sha256": "bf67a08bc7fc91fc83f24c6dc24f5a3c3a7fa56e2dbe95116f15d62c9291efcc",
+      "license": "CC-BY-4.0",
+      "author": "Open Source Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "consolidation-workbook",
+      "sha256": "ad72436c2ad5d0a3f02db8c78a0f6a7cd3ff11d3f14c57186251ac258cf7aa86",
+      "license": "CC-BY-4.0",
+      "author": "Open Source Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "income-tax-workbook",
+      "sha256": "7346c3474c5b5806790f7f0d751538e6473613cb4c0a4c30fc6af381d97316ca",
+      "license": "CC-BY-4.0",
+      "author": "Open Source Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "foreign-currency-workbook",
+      "sha256": "2de7c3a87e7d672d4c93aad8d6ec9cc7e44fe29a957040ef17a4518b9d6d3b34",
+      "license": "CC-BY-4.0",
+      "author": "Open Source Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "going-concern-workbook",
+      "sha256": "d82fafd7d78a646dcb8ea1a0a0385a0883ed36ac078f0ed2e6a6a689b4a95a8e",
+      "license": "CC-BY-4.0",
+      "author": "Open Source Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "subsequent-events-workbook",
+      "sha256": "8723d13b7789f5697833505f797b454fc315a4ee2d3b5247987f0169585c2942",
+      "license": "CC-BY-4.0",
+      "author": "Open Source Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "related-party-workbook",
+      "sha256": "932f4477ef39c9776b538b442f8dabe06965336d9db20109dc08f8f5163a863d",
+      "license": "CC-BY-4.0",
+      "author": "Open Source Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "software-cost-workbook",
+      "sha256": "2e5edadea588c1fb77576d7fac540a28cb1112a1adb3ba6b7feb1cbb4fc98921",
+      "license": "CC-BY-4.0",
+      "author": "Open Source Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "debt-workbook",
+      "sha256": "77288c98b4170e278558941724bb3c9ff35285d5bfc62845dbeef7da8cd99ed4",
+      "license": "CC-BY-4.0",
+      "author": "Open Source Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "case-cash-flow-bridge",
+      "sha256": "5589d5dc04ddbb6e9424080a583a9d4af758164ce8dc43d5c8a47d0747fa4959",
+      "license": "CC-BY-4.0",
+      "author": "Open Source Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "case-fx-payable",
+      "sha256": "2a7a24b9a3529619620be8cd3ed356e3963fdf958e7bfbaecf6b251e786a2d6a",
+      "license": "CC-BY-4.0",
+      "author": "Open Source Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "case-liquidity-timing",
+      "sha256": "6ac33ff39832ad4f67b848593c6732b61f634ecef90c93c799a6521e38a5f017",
+      "license": "CC-BY-4.0",
+      "author": "Open Source Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "estimate-register-template",
+      "sha256": "b940eb5c0a1e1bedce748e4eacc83273945f2780da38214e08a67b8e923c4bcd",
+      "license": "CC-BY-4.0",
+      "author": "Open Source Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "subsequent-event-register-template",
+      "sha256": "d368f9e3d86443929ca69f41c48b9b88260d75112664043a46592f08f57c0437",
+      "license": "CC-BY-4.0",
+      "author": "Open Source Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "currency-policy-template",
+      "sha256": "be3e53a1fa35bd5528dc775a062d30549c915a66ed1311bd002f9c5998671e73",
+      "license": "CC-BY-4.0",
+      "author": "Open Source Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "research-study-questions-v06",
+      "sha256": "83938424b2691f15e32c9570a4645a20ce71c6951ac562ecf26be51ee575b869",
+      "license": "CC-BY-4.0",
+      "author": "Open Source Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "itgc-evidence-workbook",
+      "sha256": "8a4693fdf81c76ff48a70671fbbe87009aa1c8c5ebdeaf0aeb14ec58bab3261b",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "federal-igt-reconciliation",
+      "sha256": "4831425f410b136125cbf7813a43fadc9f1935d34d992409633157a63e91c812",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "federal-mda-evidence",
+      "sha256": "8e85e23fd7d96f4a5c5169e9b5522b0678c41e21d2424e2388c3019469c82ccc",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "audit-proxy-measurement",
+      "sha256": "2c94f2712d4edf2b7f797d0e5ac3355dcc6e25d5a0b0709af89b2a4cd732c11f",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "recovery-reconciliation",
+      "sha256": "9bed04435d557f2b4a4b6c55d1fddad391c240a282604cf21610e931350bb6d8",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "federal-budget-cost-bridge",
+      "sha256": "5c3eef6a4fe0ca7086b3978ea01237f196db01acca10f600e75eec4302699c52",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "government-audit-evidence",
+      "sha256": "862a19213aa05cde116abcd61f20570846b1e2547610bbdea0a8127df71141dc",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "esg-evidence-boundaries",
+      "sha256": "4077149d6d53fc669253ccd8e271cadd1ced0ce284f7ee76e82747f3f1771128",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "case-esg-units-and-boundary",
+      "sha256": "9adf1f2efda555e800f57aa4cb86217776bcdc89a91474b8f70c175414f95297",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "esg-evidence-worksheet",
+      "sha256": "af82bb9211b952fabdc09acccd11ffeb3810c09ba089de68e0268c60be10a1e7",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "ferc-research-and-reconciliation",
+      "sha256": "027a170684a558b756bab341ae673a97b9347cd30cc7904fc2e9b18e158b14a2",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "case-ferc-reconciliation-gaps",
+      "sha256": "e4096fa98cfe9d411cc66da9d23146b4071bf78effe431f38c5f50703ce5a0a7",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "ferc-mapping-evidence-template",
+      "sha256": "0e427011c11c2f1527714978340c5aa5add18fd315486ac3702dee8b1d9344ca",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "sec-mda-controls-map",
+      "sha256": "49d30eca518214b861200e7c7f5036b4861c4a9c63cab9f1c44769be6f831fb1",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    },
+    {
+      "id": "sec-nongaap-communication-scope",
+      "sha256": "ecef494f822d2226170591759c0d17d10cd23ff058b98efc7bff90a369972d3a",
+      "license": "CC-BY-4.0",
+      "author": "Open Accounting contributors (AI-assisted)"
+    }
+  ],
+  "original_description_scopes": [
+    {
+      "path": "systems/catalog.json",
+      "fields": [
+        "disclaimer",
+        "categories[].description",
+        "systems[].introduction",
+        "systems[].use_cases",
+        "systems[].company_fit",
+        "systems[].integration_context",
+        "systems[].evaluation_questions"
+      ],
+      "retained_license": "CC-BY-4.0"
+    },
+    {
+      "path": "references/sources.json",
+      "fields": [
+        "sources[].summary",
+        "sources[].review_scope",
+        "sources[].reading_guidance"
+      ],
+      "exclude": [
+        "official titles",
+        "publisher text",
+        "government text",
+        "third-party notices"
+      ]
+    },
+    {
+      "path": "core-standards/",
+      "fields": [
+        "original research maps and descriptions"
+      ]
+    },
+    {
+      "path": "tax-case-law/",
+      "fields": [
+        "original briefs, descriptions and interpretations"
+      ]
+    },
+    {
+      "path": "salt/",
+      "fields": [
+        "original collection descriptions and notes"
+      ]
+    }
+  ],
+  "prior_grants_notice": "All material previously distributed under MIT/CC BY retains those grants; branding and this policy impose no additional restriction on it."
+}

@@ -58,3 +58,24 @@ source-operation grants or professional approvals are included.
 ## State and local tax source coverage
 
 The [SALT research catalog](content/salt/2026-10-04/README.md) adds a dated 51-jurisdiction coverage matrix, representative state/city sources and explicit acquisition gaps. It publishes metadata only, with IRS referrals, pages, whole PDFs and candidate links counted separately; no current-rate or exhaustive-coverage claim is made.
+
+## Ray Sang’s Annotation and prospective content terms
+
+Our original descriptions, standards/law/case interpretations and examples are
+branded **Ray Sang’s Annotation**. This is a presentation label, not a claim of
+personal authorship or professional review. Publisher/government text and original
+creator credits remain distinct. `content/annotation-policy.json` records the
+original-library revision bindings without altering retained article bytes.
+
+[CONTENT-TERMS.md](CONTENT-TERMS.md) applies the custom noncommercial/no-unapproved-AI
+license only to explicitly marked NEW first-party material within our rights.
+All prior MIT, CC BY, third-party, public-domain, statutory and platform grants
+remain intact. Existing Standard content is not retrospectively restricted. These
+custom terms are not an OSI-open-source license. The Standard repository remains
+public. `robots.txt` is advisory and does not control GitHub's domain robots,
+cloning, APIs or existing forks; it cannot block access or override agreements.
+
+New copyright-detection fiction is private-Premium source only, even when displayed
+on the Standard-access website. It is visibly labeled per item, belongs in the same
+standards category/list, is not secret after display, and never counts as authoritative
+coverage or enters authoritative retrieval, Agent citations or conclusions.

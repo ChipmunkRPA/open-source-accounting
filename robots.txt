@@ -1,0 +1,4 @@
+# Advisory only; preserves existing licenses, platform grants and legal exceptions.
+# This repository file does not control GitHub domain robots or prevent copying.
+User-agent: *
+Disallow: /

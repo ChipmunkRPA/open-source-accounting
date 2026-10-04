@@ -1,3 +1,4 @@
+import {annotationNotice} from '../annotation.js';
 import {api} from '../api.js';
 import {el,button,heading,notice,badge,field,input,select,table,modal,busy} from '../ui.js';
 import type {App} from '../types.js';
@@ -16,7 +17,7 @@ export async function secCoreView(app:App){
  function detail(item:Passage){
   const a=el('a',{href:item.url,target:'_blank',rel:'noopener noreferrer'},'Open official source');
   modal(item.locator,badge(item.authority_type.replaceAll('_',' ')),notice('Selected official-source excerpt. Independent professional review is pending; not admitted as Agent evidence.'),
-   el('p',{},item.context_note),el('pre',{class:'sec-text'},item.text),
+   el('section',{},annotationNotice('Our context note, separate from the official excerpt'),el('p',{},item.context_note)),el('pre',{class:'sec-text'},item.text),
    el('dl',{},el('dt',{},'Source checked / transcription recorded'),el('dd',{},item.retrieved_at),
       el('dt',{},'Source as-of, not effective date'),el('dd',{},item.source_as_of||'Not established'),
       el('dt',{},'Verification locator'),el('dd',{},item.verification_locator),

@@ -1,3 +1,4 @@
+import {annotationNotice} from '../annotation.js';
 import {api} from '../api.js';
 import {el,button,heading,notice,badge,field,input,select,busy} from '../ui.js';
 import type {App} from '../types.js';
@@ -32,7 +33,7 @@ export async function asuTrackingView(app:App){
    if(!alive||n!==materialRequest)return;
    results.replaceChildren(el('p',{},`${data.total} matching materials`),notice(data.notice),
     ...data.items.map(f=>el('article',{class:'card'},el('h3',{},f.company),badge(label(f.status)),badge(f.kind==='reference_only'?'Reference link · no retained artifact':'Detected mention · unreviewed'),
-      el('p',{},f.observation),el('p',{class:'muted'},`${f.form||'Form unverified'} · Period ${f.period_end||'unverified'} · Filed ${f.filed_on||'unverified'} · CIK ${f.cik}`),
+      el('section',{},annotationNotice('Our filing observation, separate from the original filing'),el('p',{},f.observation)),el('p',{class:'muted'},`${f.form||'Form unverified'} · Period ${f.period_end||'unverified'} · Filed ${f.filed_on||'unverified'} · CIK ${f.cik}`),
       el('p',{},f.locator),el('p',{class:'muted'},`Accession ${f.accession} · Reference checked ${f.checked_on}`),
       f.raw_sha256?el('details',{},el('summary',{},'Artifact provenance'),el('p',{class:'sec-hash'},`SHA-256 ${f.raw_sha256}`),el('p',{},`Parser ${f.parser_version}`)):null,
       external(f.url,'Read SEC filing disclosure'))));

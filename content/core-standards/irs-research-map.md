@@ -1,5 +1,10 @@
 # IRS tax research map
 
+**Ray Sang’s Annotation** · Original AI-assisted explanation; no personal
+professional review is implied. Official titles, citations, source text and
+third-party notices remain attributed to their original sources. Existing CC BY
+4.0 rights are unchanged.
+
 Editorial research outline · 2026-10-04 · No publisher standards text included
 
 Start with the taxpayer facts, transaction, tax year and tax issue. A large tax library should preserve dated versions and the relationships among statutes, regulations, rulings, procedures, notices and informal publications. The outlines here are original research questions and do not provide a tax position or a filing instruction.

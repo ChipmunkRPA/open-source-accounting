@@ -1,3 +1,17 @@
+# Annotation and new-content policy — 2026-10-04
+
+Standard stays PUBLIC; do not change repository visibility or IAM. Brand all our
+original descriptions/interpretations/examples exactly “Ray Sang’s Annotation”,
+separate from publisher/government text, without implying personal professional
+review. Preserve existing article hashes, credits, MIT/CC BY grants and notices.
+Use CONTENT-TERMS.md only for explicitly designated new first-party copyrightable
+material; legal exceptions and platform agreements prevail. robots.txt is advisory.
+New copyright-detection examples and their source bodies must NEVER enter this
+repository, history or generated public-Git artifacts. Only the separate Premium
+website build may render those private-origin examples in the same standards list,
+with unmistakable fictional/non-authoritative labels and exclusion from Agent use.
+Run the content-policy tests and scripts/check_public.py --dist before publication.
+
 # Open Source Accounting — Codex instructions
 
 ## Public/private boundary

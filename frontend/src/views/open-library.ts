@@ -1,3 +1,4 @@
+import {annotationNotice} from '../annotation.js';
 import {api,saveBlob} from '../api.js';
 import {el,button,link,heading,badge,field,notice,card,select,input,empty,textarea,checkbox,modal} from '../ui.js';
 import {markdown} from '../markdown.js';
@@ -16,6 +17,7 @@ export async function openLibraryView(app:App,id?:string){
       el('p',{class:'muted'},s.review_scope),badge(s.verification==='publisher_page_examined'?'Publisher page examined':'Reference only','neutral'))));
     app.content.replaceChildren(link(app,'← Open library','/library'),
       heading(item.title,item.summary,button('Download original Markdown',()=>saveMarkdown(item.id+'.md',item.body),'secondary')),
+      annotationNotice(),
       el('div',{class:'row-actions'},badge('FREE ORIGINAL CONTENT','free'),badge('AI-ASSISTED · UNREVIEWED','warning'),badge(item.license)),
       notice('This public editorial draft is not automatically available to research agents. Independent rights and technical approval are required before Agent use.','warning'),
       el('div',{class:'library-reading-layout'},el('div',{},body.element,sources),
@@ -32,6 +34,7 @@ export async function openLibraryView(app:App,id?:string){
   function draw(result:Json){
     count.textContent=`${result.total} matching items · all ${initial.total} starter items are editorial drafts`;
     grid.replaceChildren(...result.items.map((item:Json)=>card(item.title,
+      annotationNotice(),
       el('div',{class:'row-actions'},badge(labels[item.kind]||item.kind),badge(item.topic),badge('DRAFT','warning')),
       el('p',{class:'muted'},item.summary),link(app,'Read '+(item.kind==='case'?'case':'article')+' →','/library/'+item.id))));
     if(!result.items.length)grid.append(empty('No matching articles','Try fewer words or remove a filter.'));

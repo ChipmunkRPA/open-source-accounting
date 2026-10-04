@@ -1,5 +1,10 @@
 # Sustainability and ESG research map
 
+**Ray Sang’s Annotation** · Original AI-assisted explanation; no personal
+professional review is implied. Official titles, citations, source text and
+third-party notices remain attributed to their original sources. Existing CC BY
+4.0 rights are unchanged.
+
 Editorial research outline · 2026-10-04 · No publisher standards text included
 
 ESG is a collection of reporting and measurement systems, not a single interchangeable standard. Identify the intended users, the jurisdiction and legal basis, the reporting entity boundary, the reporting period, the materiality approach and the nature of the metric. Keep requirements, voluntary frameworks, calculation methodologies and assurance separate. These original research prompts do not reproduce the named standards or establish that a particular company must report.

@@ -1,10 +1,17 @@
 # Important U.S. federal tax decisions
 
+**Ray Sang’s Annotation** · Original AI-assisted explanation; no personal
+professional review is implied. Official titles, citations, source text and
+third-party notices remain attributed to their original sources. Existing CC BY
+4.0 rights are unchanged.
+
 Version 1.0.0 · checked October 4, 2026 · Original educational synthesis, CC BY 4.0 under [the content license](../LICENSE.md). Not legal advice, a complete citator, or professional review.
 
 This readable collection matches the 32 structured briefs in [case-catalog.json](case-catalog.json). Judicial holdings are distinguished from syllabi, concurrences and dissents. Linked source opinions retain their own rights and notices.
 
 ## Eisner v. Macomber
+
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
 
 252 U.S. 189 (1920) · Supreme Court of the United States · 1920-03-08
 
@@ -32,6 +39,8 @@ Topics: income-realization, constitutional-tax
 
 ## Commissioner v. Glenshaw Glass Co.
 
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
+
 348 U.S. 426 (1955) · Supreme Court of the United States · 1955-03-28
 
 Docket: 199
@@ -57,6 +66,8 @@ Topics: income-realization
 [Official opinion: 348 U.S. 429–433](https://www.govinfo.gov/content/pkg/USREPORTS-348/pdf/USREPORTS-348-426.pdf)
 
 ## James v. United States
+
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
 
 366 U.S. 213 (1961) · Supreme Court of the United States · 1961-05-15
 
@@ -84,6 +95,8 @@ Topics: income-realization, penalties-criminal
 
 ## Crane v. Commissioner
 
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
+
 331 U.S. 1 (1947) · Supreme Court of the United States · 1947-04-14
 
 Docket: 68
@@ -109,6 +122,8 @@ Topics: basis-debt
 [Official opinion: 331 U.S. 6–14 and n.37](https://www.govinfo.gov/content/pkg/USREPORTS-331/pdf/USREPORTS-331-1.pdf)
 
 ## Commissioner v. Tufts
+
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
 
 461 U.S. 300 (1983) · Supreme Court of the United States · 1983-05-02
 
@@ -136,6 +151,8 @@ Topics: basis-debt, entity-tax
 
 ## Arkansas Best Corp. v. Commissioner
 
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
+
 485 U.S. 212 (1988) · Supreme Court of the United States · 1988-03-07
 
 Docket: 86-751
@@ -161,6 +178,8 @@ Topics: capital-ordinary
 [Official opinion: 485 U.S. 216–223](https://www.govinfo.gov/content/pkg/USREPORTS-485/pdf/USREPORTS-485-212.pdf)
 
 ## Welch v. Helvering
+
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
 
 290 U.S. 111 (1933) · Supreme Court of the United States · 1933-11-06
 
@@ -188,6 +207,8 @@ Topics: deductions-capitalization
 
 ## INDOPCO, Inc. v. Commissioner
 
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
+
 503 U.S. 79 (1992) · Supreme Court of the United States · 1992-02-26
 
 Docket: 90-1278
@@ -213,6 +234,8 @@ Topics: deductions-capitalization
 [Official opinion: 503 U.S. 84–90](https://www.govinfo.gov/content/pkg/USREPORTS-503/pdf/USREPORTS-503-79.pdf)
 
 ## Gregory v. Helvering
+
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
 
 293 U.S. 465 (1935) · Supreme Court of the United States · 1935-01-07
 
@@ -240,6 +263,8 @@ Topics: substance-step-transaction
 
 ## Knetsch v. United States
 
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
+
 364 U.S. 361 (1960) · Supreme Court of the United States · 1960-11-14
 
 Docket: 23
@@ -265,6 +290,8 @@ Topics: substance-step-transaction, deductions-capitalization
 [Official opinion: 364 U.S. 365–370](https://www.govinfo.gov/content/pkg/USREPORTS-364/pdf/USREPORTS-364-361.pdf)
 
 ## Frank Lyon Co. v. United States
+
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
 
 435 U.S. 561 (1978) · Supreme Court of the United States · 1978-04-18
 
@@ -292,6 +319,8 @@ Topics: substance-step-transaction, deductions-capitalization
 
 ## Lucas v. Earl
 
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
+
 281 U.S. 111 (1930) · Supreme Court of the United States · 1930-03-17
 
 Docket: 99
@@ -317,6 +346,8 @@ Topics: assignment-income
 [Official opinion: 281 U.S. 114–115](https://www.govinfo.gov/content/pkg/USREPORTS-281/pdf/USREPORTS-281-111.pdf)
 
 ## Helvering v. Horst
+
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
 
 311 U.S. 112 (1940) · Supreme Court of the United States · 1940-11-25
 
@@ -344,6 +375,8 @@ Topics: assignment-income, income-realization
 
 ## Moline Properties, Inc. v. Commissioner
 
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
+
 319 U.S. 436 (1943) · Supreme Court of the United States · 1943-06-01
 
 Docket: 660
@@ -369,6 +402,8 @@ Topics: entity-tax
 [Official opinion: 319 U.S. 438–440](https://www.govinfo.gov/content/pkg/USREPORTS-319/pdf/USREPORTS-319-436.pdf)
 
 ## Commissioner v. Bollinger
+
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
 
 485 U.S. 340 (1988) · Supreme Court of the United States · 1988-03-22
 
@@ -396,6 +431,8 @@ Topics: entity-tax
 
 ## Mayo Foundation for Medical Education and Research v. United States
 
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
+
 562 U.S. 44 (2011) · Supreme Court of the United States · 2011-01-11
 
 Docket: 09-837
@@ -421,6 +458,8 @@ Topics: deference-administrative, employment-tax
 [Official opinion: 562 U.S. 52–60](https://www.govinfo.gov/content/pkg/USREPORTS-562/pdf/USREPORTS-562-44.pdf)
 
 ## Loper Bright Enterprises v. Raimondo
+
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
 
 603 U.S. 369 (2024) · Supreme Court of the United States · 2024-06-28
 
@@ -450,6 +489,8 @@ Topics: deference-administrative
 
 ## Moore v. United States
 
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
+
 602 U.S. 572 (2024) · Supreme Court of the United States · 2024-06-20
 
 Docket: 22-800
@@ -475,6 +516,8 @@ Topics: income-realization, constitutional-tax, entity-tax
 [Official opinion: 602 U.S. 585–600](https://www.supremecourt.gov/opinions/23pdf/602us1r41_h3dj.pdf)
 
 ## Boechler, P.C. v. Commissioner
+
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
 
 596 U.S. 199 (2022) · Supreme Court of the United States · 2022-04-21
 
@@ -504,6 +547,8 @@ Topics: procedure-jurisdiction
 
 ## Bittner v. United States
 
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
+
 598 U.S. 85 (2023) · Supreme Court of the United States · 2023-02-28
 
 Docket: 21-1195
@@ -529,6 +574,8 @@ Topics: penalties-criminal, international-reporting
 [Official opinion: 598 U.S. 91–103](https://www.supremecourt.gov/opinions/22pdf/598us1r6_k53l.pdf)
 
 ## Commissioner v. Zuch
+
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
 
 605 U.S. 422 (2025) · Supreme Court of the United States · 2025-06-12
 
@@ -557,6 +604,8 @@ Topics: procedure-jurisdiction
 [Additional primary history source](https://www.supremecourt.gov/docket/docketfiles/html/public/24-416.html)
 
 ## Altera Corp. & Subsidiaries v. Commissioner
+
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
 
 926 F.3d 1061 (9th Cir. 2019) · United States Court of Appeals for the Ninth Circuit · 2019-06-07
 
@@ -588,6 +637,8 @@ Topics: transfer-pricing, deference-administrative
 
 ## Amazon.com, Inc. & Subsidiaries v. Commissioner
 
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
+
 934 F.3d 976 (9th Cir. 2019) · United States Court of Appeals for the Ninth Circuit · 2019-08-16
 
 Docket: 17-72922
@@ -613,6 +664,8 @@ Topics: transfer-pricing
 [Official opinion: Published opinion pp. 6 n.1, 17–35](https://cdn.ca9.uscourts.gov/datastore/opinions/2019/08/16/17-72922.pdf)
 
 ## Farhy v. Commissioner
+
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
 
 100 F.4th 223 (D.C. Cir. 2024) · United States Court of Appeals for the District of Columbia Circuit · 2024-05-03
 
@@ -641,6 +694,8 @@ Topics: international-reporting, procedure-jurisdiction, penalties-criminal
 [Additional primary history source](https://ustaxcourt.gov/files/documents/163_TC_150-200.pdf)
 
 ## Culp v. Commissioner
+
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
 
 75 F.4th 196 (3d Cir. 2023) · United States Court of Appeals for the Third Circuit · 2023-07-19
 
@@ -672,6 +727,8 @@ Topics: procedure-jurisdiction
 
 ## 3M Company & Subsidiaries v. Commissioner
 
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
+
 No. 23-3772 (8th Cir. Oct. 1, 2025) · United States Court of Appeals for the Eighth Circuit · 2025-10-01
 
 Docket: 23-3772
@@ -700,6 +757,8 @@ Topics: transfer-pricing, deference-administrative
 
 ## Farhy v. Commissioner
 
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
+
 160 T.C. 399 (2023) · United States Tax Court · 2023-04-03
 
 Docket: 10647-21L
@@ -725,6 +784,8 @@ Topics: international-reporting, procedure-jurisdiction, penalties-criminal
 [Official opinion: 160 T.C. 403–413](https://ustaxcourt.gov/files/documents/160_TC_399-470.pdf)
 
 ## Hallmark Research Collective v. Commissioner
+
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
 
 159 T.C. 126 (2022) · United States Tax Court · 2022-11-29
 
@@ -754,6 +815,8 @@ Topics: procedure-jurisdiction
 
 ## Green Valley Investors, LLC v. Commissioner
 
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
+
 159 T.C. 80 (2022) · United States Tax Court · 2022-11-09
 
 Docket: 17379-19, 17380-19, 17381-19, 17382-19
@@ -781,6 +844,8 @@ Topics: deference-administrative, penalties-criminal
 [Additional primary history source](https://www.irs.gov/irb/2024-43_IRB)
 
 ## 3M Company & Subsidiaries v. Commissioner
+
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
 
 160 T.C. 50 (2023) · United States Tax Court · 2023-02-09
 
@@ -810,6 +875,8 @@ Topics: transfer-pricing, deference-administrative
 
 ## Maniktala v. Commissioner
 
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
+
 No. 25-1366 (8th Cir. Aug. 11, 2026) · United States Court of Appeals for the Eighth Circuit · 2026-08-11
 
 Docket: 25-1366
@@ -835,6 +902,8 @@ Topics: procedure-jurisdiction
 [Official opinion: Published opinion pp. 5–9](https://ecf.ca8.uscourts.gov/opndir/26/08/251366P.pdf)
 
 ## Safdieh v. Commissioner
+
+**Ray Sang’s Annotation** · Original decision brief, not the court’s text
 
 No. 25-501-cv (2d Cir. Feb. 27, 2026) · United States Court of Appeals for the Second Circuit · 2026-02-27
 

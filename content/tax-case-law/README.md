@@ -1,5 +1,10 @@
 # Important U.S. federal tax case law
 
+**Ray Sang’s Annotation** · Original AI-assisted explanation; no personal
+professional review is implied. Official titles, citations, source text and
+third-party notices remain attributed to their original sources. Existing CC BY
+4.0 rights are unchanged.
+
 Version 1.0.0 · October 4, 2026
 
 [Read the 32 original case briefs](BRIEFS.md), inspect the [structured catalog](case-catalog.json), or browse the [14-topic index](topic-index.json).

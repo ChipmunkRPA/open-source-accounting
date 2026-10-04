@@ -1,3 +1,4 @@
+import {annotationNotice} from '../annotation.js';
 import {sourceNotices} from '../source-notices.js';
 import {api} from '../api.js';
 import {el,button,link,heading,badge,textarea,field,notice,card,select,input,checkbox,table,modal,textBlock,dateText,empty} from '../ui.js';
@@ -20,7 +21,7 @@ export async function topicsView(app:App){
   const rows=(await api('/topics')).items;
   app.content.replaceChildren(heading('Learn the research process.','Original educational material. No proprietary standards have been copied into the starter corpus.'),
     link(app,'Browse the full open library →','/library'),
-    el('div',{class:'grid two'},...rows.map((r:Json)=>card(r.title,badge('ORIGINAL CONTENT','free'),el('p',{class:'muted'},r.summary),sourceNotices(r.source_attributions),button('Read guide',async()=>{const s=await api('/sources/'+r.id);modal(s.title,textBlock(s.text||''),sourceNotices(s.source_attributions));},'secondary')))));
+    el('div',{class:'grid two'},...rows.map((r:Json)=>card(r.title,annotationNotice(),badge('ORIGINAL CONTENT','free'),el('p',{class:'muted'},r.summary),sourceNotices(r.source_attributions),button('Read guide',async()=>{const s=await api('/sources/'+r.id);modal(s.title,annotationNotice(),textBlock(s.text||''),sourceNotices(s.source_attributions));},'secondary')))));
 }
 
 export async function settingsView(app:App,logout:()=>void){

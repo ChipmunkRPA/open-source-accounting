@@ -11,7 +11,9 @@ class Handler(SimpleHTTPRequestHandler):
         if path.startswith('/api/'):
             self.send_response(503); self.send_header('Content-Type','application/json'); self.end_headers()
             self.wfile.write(b'{"error":{"code":"API_UNAVAILABLE","message":"Hosted API is not configured in the local public preview"}}'); return
-        if path.startswith('/assets/'):
+        if path in {'/robots.txt', '/content-terms.txt'}:
+            path=path.lstrip('/')
+        elif path.startswith('/assets/'):
             path=path[len('/assets/'):]
         else:
             path='index.html'

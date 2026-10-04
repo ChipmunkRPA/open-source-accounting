@@ -114,15 +114,15 @@ function reviewSection(item){
  const outcome={pass_ai_editorial_only:'Bounded AI editorial checks passed',changes_required:'Changes required',primary_text_unavailable:'Primary text unavailable',rights_scope_unresolved:'Source-rights scope unresolved'}[r.outcome];
  return `<section aria-label="AI editorial review"><h2>AI editorial review</h2><p>${escape(outcome)} for version ${escape(item.version)}. Not professional accounting or legal approval; no source rights or Agent admission granted.</p><p>Model: ${escape(r.model_id??'not recorded')}; reasoning: ${escape(r.reasoning_effort??'not recorded')}; completed: ${escape(r.reviewed_at_utc)}.</p><p>Article SHA-256: ${escape(item.sha256)}</p><h3>Recorded changes</h3><ul>${r.changes_summary.map(s=>`<li>${escape(s)}</li>`).join('')}</ul><h3>Unresolved gaps</h3><ul>${r.unresolved_gaps.map(s=>`<li>${escape(s)}</li>`).join('')||'<li>None recorded; professional review and reporting-period applicability remain separate.</li>'}</ul></section>`;
 }
-const page=(title,body)=>`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(title)}</title><link rel="stylesheet" href="/assets/styles.css"><main class="content"><h1>${escape(title)}</h1><p>Original educational draft · Not professionally reviewed · CC BY 4.0</p>${body}</main></html>`;
+const page=(title,body)=>`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(title)}</title><link rel="stylesheet" href="/assets/styles.css"><main class="content"><h1>${escape(title)}</h1><section aria-label="Original annotation"><p><strong>Ray Sang’s Annotation</strong></p><p>AI-assisted original educational draft · Not professionally reviewed · Existing CC BY 4.0 rights and creator credits preserved. This label does not mean Ray Sang personally reviewed it.</p><p><a href="/content-terms.txt">Content rights and automated-access terms</a></p></section>${body}</main></html>`;
 await mkdir('dist/library',{recursive:true});
 const rows=[];
 for(const item of manifest.items){
  if(!/^[a-z0-9-]+$/.test(item.id))throw Error('Invalid public item ID');
  const bytes=await content(item.path);
  if(hash(bytes)!==item.sha256)throw Error('Content hash mismatch: '+item.id);
- await writeFile(`dist/library/${item.id}.html`,page(item.title,`<p><a href="index.html">All library items</a></p>${reviewSection(item)}<pre class="source-passage-text">${escape(bytes.toString('utf8'))}</pre>`));
- rows.push(`<li><a href="${item.id}.html">${escape(item.title)}</a> — ${escape(item.summary)}${reviews.has(item.id)?' · AI editorial record available':''}</li>`);
+ await writeFile(`dist/library/${item.id}.html`,page(item.title,`<p><a href="index.html">All library items</a></p><p>Original credit: ${escape(item.author)} · Version ${escape(item.version)} · ${escape(item.license)}</p>${reviewSection(item)}<pre class="source-passage-text">${escape(bytes.toString('utf8'))}</pre>`));
+ rows.push(`<li><strong>Ray Sang’s Annotation</strong> · <a href="${item.id}.html">${escape(item.title)}</a> — ${escape(item.summary)}${reviews.has(item.id)?' · AI editorial record available':''}</li>`);
 }
 await writeFile('dist/library/index.html',page('Free original accounting library',`<p><a href="../systems/index.html">Explore the free accounting systems directory</a></p><p>${rows.length} original items; ${reviews.size} revision-bound AI editorial records. Third-party publications retain their own rights. Links and drafts are not approved authoritative evidence.</p><ul>${rows.join('')}</ul>`));
 console.log(`Built ${rows.length} hash-verified offline library pages with ${reviews.size} AI editorial records.`);

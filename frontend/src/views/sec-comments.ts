@@ -1,3 +1,4 @@
+import {annotationNotice} from '../annotation.js';
 import {api} from '../api.js';
 import {el,button,heading,notice,badge,field,input,select,busy} from '../ui.js';
 import type {App} from '../types.js';
@@ -18,6 +19,7 @@ export async function secCommentsView(app:App){
    el('p',{},r.reviewed_filing),el('p',{class:'muted'},`CIK ${r.cik} · Accession ${r.accession} · Checked ${r.checked_on}`),el('p',{},r.locator),
    el('a',{href:r.url,target:'_blank',rel:'noopener noreferrer'},'Read official SEC record'),
    el('details',{},el('summary',{},'Analysis and correspondence context'),
+    annotationNotice('Our correspondence summaries, analysis and follow-up questions'),
     notice('Draft analysis · Independent review pending · Outcome not established'),
     r.analysis_partial?notice('Analysis display limit reached; review the complete artifact.','warning'):null,
     el('h3',{},'Staff concern'),el('p',{},r.staff_concern),el('h3',{},'Company response'),el('p',{},r.company_response),

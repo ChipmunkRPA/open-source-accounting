@@ -1,5 +1,10 @@
 # GASB research map
 
+**Ray Sang’s Annotation** · Original AI-assisted explanation; no personal
+professional review is implied. Official titles, citations, source text and
+third-party notices remain attributed to their original sources. Existing CC BY
+4.0 rights are unchanged.
+
 Editorial research outline · 2026-10-04 · No publisher standards text included
 
 Begin with the governmental reporting entity and the statements being prepared. A single transaction may need to be understood in more than one reporting presentation. Record entity type, component-unit questions, fund type, reporting year and the relevant statement before researching a conclusion. These are original research prompts, not a reproduction of GASB literature.

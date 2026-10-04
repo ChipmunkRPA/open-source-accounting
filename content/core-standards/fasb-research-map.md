@@ -1,5 +1,10 @@
 # FASB research map
 
+**Ray Sang’s Annotation** · Original AI-assisted explanation; no personal
+professional review is implied. Official titles, citations, source text and
+third-party notices remain attributed to their original sources. Existing CC BY
+4.0 rights are unchanged.
+
 Editorial research outline · 2026-10-04 · No publisher standards text included
 
 Start with a specific nongovernmental financial-reporting question. Record the entity, relevant transaction, contract dates and reporting period before choosing a research source. The outlines here are original questions and work-product designs; they do not restate or replace the Codification.

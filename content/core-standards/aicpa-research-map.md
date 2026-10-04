@@ -1,5 +1,10 @@
 # AICPA audit and professional literature map
 
+**Ray Sang’s Annotation** · Original AI-assisted explanation; no personal
+professional review is implied. Official titles, citations, source text and
+third-party notices remain attributed to their original sources. Existing CC BY
+4.0 rights are unchanged.
+
 Editorial research outline · 2026-10-04 · No publisher standards text included
 
 Select the engagement framework before collecting procedures. Record whether the engagement is an audit, review, compilation, preparation, examination or agreed-upon procedures engagement; the entity type; the subject matter; and the engagement period. Different service types require different research and do not carry the same reporting conclusion. These original prompts are not an AICPA standard, audit program or assurance opinion.

@@ -1,3 +1,9 @@
+> **Ray Sang’s Annotation** labels our original explanations, interpretations and
+> examples in this library. It does not label underlying publisher/government
+> text or imply personal professional review. Existing authors, notices and
+> CC BY grants remain intact; see [the presentation policy](annotation-policy.json)
+> and [prospective new-content terms](../CONTENT-TERMS.md).
+
 # Open Accounting — content index
 
 **Release 0.5.0 · 2026-09-27**

@@ -258,3 +258,23 @@ Next resumable task: observe both repositories' CI, then continue premium projec
 Public implementation [ee683f2](https://github.com/ChipmunkRPA/open-source-accounting/commit/ee683f22e30a5f5f68d45db892cc4624d533a710) passed [CI 36640431495](https://github.com/ChipmunkRPA/open-source-accounting/actions/runs/36640431495): clean install, typecheck, 16 identity tests, real frontend build with 63 hash-verified original pages and public source/generated-file boundary checks. Private full-application CI remains separately recorded in the private repository. This receipt does not claim live source refresh, professional review or GCP deployment.
 
 Private implementation f3cc579 passed [CI 36639925532](https://github.com/ChipmunkRPA/open-source-accounting-premium/actions/runs/36639925532), including Python 3.11/3.13 regression jobs, PostgreSQL migrations/contracts, numerical/retrieval evaluation and container build. Public receipt d515414 passed [CI 36640562114](https://github.com/ChipmunkRPA/open-source-accounting/actions/runs/36640562114). Next: implement the recorded premium project/context/evidence UX privately; Accordance research remains on request only.
+
+
+## 2026-10-04 · Ray Sang’s Annotation presentation and prospective terms
+
+Added display-only branding for original articles, descriptions, standards maps,
+case briefs and Systems profiles, retaining original credits and all prior MIT/CC BY
+rights. New custom noncommercial/no-unapproved-AI terms apply only to explicitly
+designated new first-party work. Public-domain/government text, legal exceptions,
+third-party rights and GitHub platform grants are untouched; Standard stays public.
+Root robots and terms are served locally; robots is advisory, not access control.
+Private copyright-detection source data is barred from Standard export, including
+nested markers, duplicate-key JSON and generated-page IDs.
+
+Fresh post-recovery Node24.19.0/TypeScript5.9.3 identity build,78 Node cases,8 Python
+HTTP/boundary cases and generated public boundary pass. Original78 article bytes,
+license fields and review receipts are preserved. Actual browser/native, hosted CI,
+image/deployment and full-app live integration remain unrun. No public fixture body,
+visibility/IAM change, Actions dispatch, paid resource or deployment was performed.
+
+Independent bounded AI code/policy review repeated the same public checks and found no blocking finding in the exact 34-file overlay. Existing 78 articles remain under their prior grants; the branding does not relicense them. Source publication uses the real remote parent and preserves unrelated files. Systems hosted-preview re-pin/rebuild remains a separate release gate.

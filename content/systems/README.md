@@ -1,5 +1,10 @@
 # Free accounting systems directory
 
+**Ray Sang’s Annotation** · Original AI-assisted explanation; no personal
+professional review is implied. Official titles, citations, source text and
+third-party notices remain attributed to their original sources. Existing CC BY
+4.0 rights are unchanged.
+
 The Standard directory covers the finance stack beyond ERP: payables, procurement, employee expenses, receivables, billing/revenue, close, consolidation, planning, treasury, tax, audit/controls/reporting and integration. Release 1.0.1 contains 33 profiles in 13 overlapping workflow categories. This is a representative starting set, not an exhaustive market list.
 
 `catalog.json` is the reviewed source. All descriptions are original editorial summaries, with official primary URLs and a check date. Company-size fit, examples and evaluation questions are explicitly editorial guidance. No product trial, performance benchmark, working connector, compliance certification or vendor endorsement is claimed. Vendor prices and commercial promises are intentionally omitted.

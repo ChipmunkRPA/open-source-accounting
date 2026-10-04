@@ -1,5 +1,10 @@
 # U.S. state and local tax source coverage — 2026-10-04
 
+**Ray Sang’s Annotation** · Original AI-assisted explanation; no personal
+professional review is implied. Official titles, citations, source text and
+third-party notices remain attributed to their original sources. Existing CC BY
+4.0 rights are unchanged.
+
 This is an initial research/source-acquisition catalog for all 50 states and the District of Columbia, with representative local coverage. It is **not a complete tax library, current-rate service, legal opinion, or filing tool**.
 
 ## What was actually retained
