@@ -1,0 +1,314 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-04",
+  "purpose": "bounded_research_premises_for_planned_original_examples",
+  "claim_count": 30,
+  "first_party_annotation": {
+    "label": "Ray Sang’s Annotation",
+    "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+    "scope": "New first-party editorial gap descriptions and source-review notes only, to the extent rights exist and are controlled. Excludes facts, titles, publisher/government text, existing licenses and statutory/platform rights.",
+    "terms_path": "../../CONTENT-TERMS.md",
+    "personal_or_professional_review_implied": false
+  },
+  "claims": [
+    {
+      "claim_id": "grant-1",
+      "article_id": "gasb-grant-eligibility-cash",
+      "claim": "For an expenditure-driven nonexchange award, incurring allowable costs is an eligibility condition; receiving cash is a separate event.",
+      "source_ids": [
+        "osa-texas-nonexchange-eligibility"
+      ],
+      "exact_locator": "Eligibility Requirements",
+      "boundary": "Restrict to stipulated nonexchange award and other eligibility already met."
+    },
+    {
+      "claim_id": "grant-2",
+      "article_id": "gasb-grant-eligibility-cash",
+      "claim": "A permitted-use period and a required purpose ask different questions: purpose restrictions alone do not postpone recognition.",
+      "source_ids": [
+        "osa-texas-nonexchange-eligibility"
+      ],
+      "exact_locator": "Time Requirements and Purpose Restrictions",
+      "boundary": "No inference about the legality or satisfaction of an actual grant clause."
+    },
+    {
+      "claim_id": "grant-3",
+      "article_id": "gasb-grant-eligibility-cash",
+      "claim": "Governmental-fund recognition also requires revenue availability; a state’s local availability convention is not a universal deadline.",
+      "source_ids": [
+        "osa-texas-nonexchange-eligibility"
+      ],
+      "exact_locator": "Revenue Recognition Using the Modified Accrual Basis of Accounting",
+      "boundary": "Future example supplies its own justified availability assumption."
+    },
+    {
+      "claim_id": "leave-1",
+      "article_id": "gasb-compensated-absence-liability",
+      "claim": "Unused leave analysis considers service already performed, accumulation and expected use or settlement; used leave awaiting payment is separately recognized.",
+      "source_ids": [
+        "osa-texas-compensable-leave"
+      ],
+      "exact_locator": "Opening recognition criteria; Comptroller’s Office Methodology for the Liability Calculation",
+      "boundary": "Qualifying annual leave only; no quantitative probability threshold claimed."
+    },
+    {
+      "claim_id": "leave-2",
+      "article_id": "gasb-compensated-absence-liability",
+      "claim": "Measurement uses reporting-date compensation and applicable incremental salary-related amounts; defined-benefit pension/OPEB salary-related payments are excluded from that leave measure.",
+      "source_ids": [
+        "osa-texas-compensable-leave"
+      ],
+      "exact_locator": "Salary-Related Payments; Comptroller’s Office Methodology for the Liability Calculation",
+      "boundary": "Example rates and expected qualifying hours must be explicit assumptions."
+    },
+    {
+      "claim_id": "leave-3",
+      "article_id": "gasb-compensated-absence-liability",
+      "claim": "Governmental-fund expenditure recognition and economic-resources liability recognition require separate analyses.",
+      "source_ids": [
+        "osa-texas-leave-methodology"
+      ],
+      "exact_locator": "Opening measurement-focus comparison",
+      "boundary": "Do not turn a current/noncurrent split into a governmental-fund recognition rule."
+    },
+    {
+      "claim_id": "leave-4",
+      "article_id": "gasb-compensated-absence-liability",
+      "claim": "Later salary or tax-rate changes affect the current period’s salary-related liability measurement.",
+      "source_ids": [
+        "osa-texas-leave-methodology"
+      ],
+      "exact_locator": "Salary-Related Payments",
+      "boundary": "No automatic universal tax percentage; apply supported facts."
+    },
+    {
+      "claim_id": "capital-1",
+      "article_id": "gasb-capital-asset-exit-donation",
+      "claim": "A fully depreciated asset removed without proceeds requires removing gross asset cost and its accumulated depreciation.",
+      "source_ids": [
+        "osa-texas-capital-disposal"
+      ],
+      "exact_locator": "Governmental Activities – Basis Conversion (Fund Type 11)",
+      "boundary": "Narrow Texas disposal route; local label is not universal."
+    },
+    {
+      "claim_id": "capital-2",
+      "article_id": "gasb-capital-asset-exit-donation",
+      "claim": "A governmental-fund sale is presented as a financing source; accrual conversion also removes asset/depreciation balances and recognizes the gain or loss.",
+      "source_ids": [
+        "osa-texas-capital-sale"
+      ],
+      "exact_locator": "Governmental Funds > Modified to Full Accrual Adjustments for Capital Assets; Governmental Activities – Basis Conversion (Fund Type 11)",
+      "boundary": "Assume no sale costs and provide original arithmetic rather than reproducing state examples."
+    },
+    {
+      "claim_id": "capital-3",
+      "article_id": "gasb-capital-asset-exit-donation",
+      "claim": "A qualifying donated capital asset is measured at acquisition value; after receipt and satisfaction of eligibility, the government-wide entry recognizes asset and revenue.",
+      "source_ids": [
+        "osa-texas-capital-donations"
+      ],
+      "exact_locator": "Opening acquisition-value instruction; Donations",
+      "boundary": "Assume operational use and capitalization criteria; no fair-value substitution."
+    },
+    {
+      "claim_id": "estimate-1",
+      "article_id": "gasb-estimate-error-periods",
+      "claim": "A revision arising from new information or changed circumstances is handled prospectively; a changed measurement method needs support for why it is preferable.",
+      "source_ids": [
+        "osa-texas-estimate-change"
+      ],
+      "exact_locator": "Opening input/methodology discussion; Reporting",
+      "boundary": "Not a rule permitting correction of known mistakes through current expense."
+    },
+    {
+      "claim_id": "estimate-2",
+      "article_id": "gasb-estimate-error-periods",
+      "claim": "Significant estimate changes require an explanation identifying their nature and affected financial-statement lines.",
+      "source_ids": [
+        "osa-texas-estimate-change"
+      ],
+      "exact_locator": "Disclosure",
+      "boundary": "No claim that every small input revision needs a standalone note."
+    },
+    {
+      "claim_id": "error-1",
+      "article_id": "gasb-estimate-error-periods",
+      "claim": "A mistake or misuse of facts available when prior statements were issued can be an error rather than a new estimate.",
+      "source_ids": [
+        "osa-texas-error-correction"
+      ],
+      "exact_locator": "Opening error discussion",
+      "boundary": "Evidence timeline must distinguish what was knowable then from what emerged later."
+    },
+    {
+      "claim_id": "error-2",
+      "article_id": "gasb-estimate-error-periods",
+      "claim": "The basic-statement correction model restates affected prior periods; effects before the earliest presented period enter that period’s opening balance.",
+      "source_ids": [
+        "osa-texas-error-correction"
+      ],
+      "exact_locator": "Reporting",
+      "boundary": "Materiality and the presented periods are stipulated; supplementary schedules excluded."
+    },
+    {
+      "claim_id": "interfund-1",
+      "article_id": "gasb-interfund-loan-transfer-reimbursement",
+      "claim": "A repayable interfund loan creates a receivable for one fund and a payable for the other, rather than a financing-source/use flow.",
+      "source_ids": [
+        "osa-texas-interfund-activity"
+      ],
+      "exact_locator": "Reciprocal Interfund Activity",
+      "boundary": "Repayment requirement and realistic collection expectation are explicit facts."
+    },
+    {
+      "claim_id": "interfund-2",
+      "article_id": "gasb-interfund-loan-transfer-reimbursement",
+      "claim": "A nonrepayable transfer is distinct from a loan; governmental funds separate transfer flows from revenue and expenditure.",
+      "source_ids": [
+        "osa-texas-interfund-activity",
+        "osa-texas-transfers-funds"
+      ],
+      "exact_locator": "Nonreciprocal Interfund Activity; Fund-Level Reporting > In Governmental Funds",
+      "boundary": "Exclude contested proprietary-fund subsidy presentation."
+    },
+    {
+      "claim_id": "interfund-3",
+      "article_id": "gasb-interfund-loan-transfer-reimbursement",
+      "claim": "Reimbursement moves the expenditure to the responsible fund and reduces it in the fund that initially paid.",
+      "source_ids": [
+        "osa-texas-interfund-activity"
+      ],
+      "exact_locator": "Nonreciprocal Interfund Activity",
+      "boundary": "Different from charging for services at an exchange price."
+    },
+    {
+      "claim_id": "interfund-4",
+      "article_id": "gasb-interfund-loan-transfer-reimbursement",
+      "claim": "Amounts no longer expected to be repaid within a reasonable time require reassessing the loan balance and transfer classification.",
+      "source_ids": [
+        "osa-texas-interfund-activity"
+      ],
+      "exact_locator": "Reciprocal Interfund Activity",
+      "boundary": "No unsupported legal forgiveness or automatic aging cutoff."
+    },
+    {
+      "claim_id": "pension-1",
+      "article_id": "gasb-pension-expense-contribution",
+      "claim": "A plan’s employer-contribution measure, allocated net pension liability and pension expense represent different accounting quantities.",
+      "source_ids": [
+        "osa-ny-pension-report"
+      ],
+      "exact_locator": "Employer’s Contribution; Net Pension Liability (NPL); Pension Expense",
+      "boundary": "NYSLRS definitions are local implementation context, not a universal formula."
+    },
+    {
+      "claim_id": "pension-2",
+      "article_id": "gasb-pension-expense-contribution",
+      "claim": "A measurement date identifies when a pension amount was measured and need not be the employer’s statement date.",
+      "source_ids": [
+        "osa-ny-pension-report",
+        "osa-connecticut-acfr-2025-pensions"
+      ],
+      "exact_locator": "Measurement Date; Note 10, printed pages 71–73",
+      "boundary": "Article must label both dates and supplied plan-type assumptions."
+    },
+    {
+      "claim_id": "pension-3",
+      "article_id": "gasb-pension-expense-contribution",
+      "claim": "Connecticut’s fiscal 2025 note separately presents employer contributions and pension expense, and identifies post-measurement contributions among deferred outflows.",
+      "source_ids": [
+        "osa-connecticut-acfr-2025-pensions"
+      ],
+      "exact_locator": "Note 10, printed pages 71–72 (PDF pages 76–77)",
+      "boundary": "Historical reporting application; source numbers not copied into a fictional scenario."
+    },
+    {
+      "claim_id": "pension-4",
+      "article_id": "gasb-pension-expense-contribution",
+      "claim": "That report states post-measurement state contributions reduce the reported net pension liability in the following year; other pension deferrals have expense-recognition schedules.",
+      "source_ids": [
+        "osa-connecticut-acfr-2025-pensions"
+      ],
+      "exact_locator": "Note 10, printed page 73 (PDF page 78)",
+      "boundary": "Distinguish subsequent-contribution deferrals from other deferred-resource categories."
+    },
+    {
+      "claim_id": "fasb-securities-measurement-oci-1",
+      "article_id": "fasb-securities-measurement-oci",
+      "claim": "The selected reporting instructions use amortized cost net of allowance for HTM holdings and fair value for AFS holdings.",
+      "source_ids": [
+        "osa-fed-fr2886b-2025-securities-measurement"
+      ],
+      "boundary": "Government/regulator application guidance only; preserve article-specific assumptions and scope limits. No complete current publisher-standard review."
+    },
+    {
+      "claim_id": "fasb-securities-measurement-oci-2",
+      "article_id": "fasb-securities-measurement-oci",
+      "claim": "OCC separates AFS credit-loss expense from noncredit loss in accumulated OCI; intended sale or a more-likely-than-not forced sale changes the analysis.",
+      "source_ids": [
+        "osa-occ-baas-2026-12a-securities-oci"
+      ],
+      "boundary": "Government/regulator application guidance only; preserve article-specific assumptions and scope limits. No complete current publisher-standard review."
+    },
+    {
+      "claim_id": "fasb-bond-premium-yield-1",
+      "article_id": "fasb-bond-premium-yield",
+      "claim": "OCC treats a purchased-security premium or discount as a yield adjustment using the interest method, with separate call and prepayment exceptions.",
+      "source_ids": [
+        "osa-occ-baas-2026-1a-bond-premium"
+      ],
+      "boundary": "Government/regulator application guidance only; preserve article-specific assumptions and scope limits. No complete current publisher-standard review."
+    },
+    {
+      "claim_id": "fasb-equity-method-income-distributions-1",
+      "article_id": "fasb-equity-method-income-distributions",
+      "claim": "Under the described equity method, the investor recognizes its share of investee earnings or losses and reduces the investment for cash distributions.",
+      "source_ids": [
+        "osa-fed-fr2886b-2025-equity-method"
+      ],
+      "boundary": "Government/regulator application guidance only; preserve article-specific assumptions and scope limits. No complete current publisher-standard review."
+    },
+    {
+      "claim_id": "fasb-debt-replacement-test-1",
+      "article_id": "fasb-debt-replacement-test",
+      "claim": "OCC distinguishes debt modification from extinguishment; a present-value difference of at least 10%, discounted at the original effective rate, is one substantially-different indicator.",
+      "source_ids": [
+        "osa-occ-baas-2026-6b-debt-replacement"
+      ],
+      "boundary": "Government/regulator application guidance only; preserve article-specific assumptions and scope limits. No complete current publisher-standard review."
+    },
+    {
+      "claim_id": "fasb-private-grant-conditions-1",
+      "article_id": "fasb-private-grant-conditions",
+      "claim": "For the selected bank grant guidance, received conditional grant amounts remain deferred until the donor-imposed conditions are substantially met.",
+      "source_ids": [
+        "osa-occ-baas-2026-11e-private-grants"
+      ],
+      "boundary": "Government/regulator application guidance only; preserve article-specific assumptions and scope limits. No complete current publisher-standard review."
+    },
+    {
+      "claim_id": "fasb-operating-cash-direct-indirect-1",
+      "article_id": "fasb-operating-cash-direct-indirect",
+      "claim": "SEC staff encourages considering direct-method or additional gross operating cash information and warns that a classification-only error can still matter.",
+      "source_ids": [
+        "osa-sec-cash-flows-2023-direct-indirect"
+      ],
+      "boundary": "Government/regulator application guidance only; preserve article-specific assumptions and scope limits. No complete current publisher-standard review."
+    },
+    {
+      "claim_id": "fasb-operating-cash-direct-indirect-2",
+      "article_id": "fasb-operating-cash-direct-indirect",
+      "claim": "Staff highlights specific cash-flow classification controls and noncash disclosures beyond reconciliation to other statements.",
+      "source_ids": [
+        "osa-sec-cash-flows-2023-direct-indirect"
+      ],
+      "boundary": "Government/regulator application guidance only; preserve article-specific assumptions and scope limits. No complete current publisher-standard review."
+    }
+  ],
+  "notices": [
+    "These are bounded factual research notes, not official standards or completed articles.",
+    "Embedded publisher quotations, source numerical example patterns and unexamined diagrams are excluded.",
+    "Conflicting state guidance is excluded from supported teaching premises rather than silently reconciled."
+  ]
+}

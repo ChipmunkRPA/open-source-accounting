@@ -1,0 +1,771 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-04",
+  "purpose": "source_collection_checkpoint_before_new_annotation_bodies",
+  "baseline_public_commit": "9ebf63eeffb0b3b581ea7498deebb1f4554c0bab",
+  "metadata_reference_count": 19,
+  "distinct_source_document_urls": 15,
+  "newly_referenced_document_urls": 14,
+  "source_body_files_retained_or_published": 0,
+  "new_article_bodies": 0,
+  "professional_approvals": 0,
+  "agent_admissions": 0,
+  "counting_note": "Section-scoped metadata references are not acquired standards or original explanatory articles. Existing official-source URLs can support more than one precisely scoped reference. No current publisher-standard or entity-applicability certification is claimed.",
+  "first_party_annotation": {
+    "label": "Ray Sang’s Annotation",
+    "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+    "scope": "New first-party editorial gap descriptions and source-review notes only, to the extent rights exist and are controlled. Excludes facts, titles, publisher/government text, existing licenses and statutory/platform rights.",
+    "terms_path": "../../CONTENT-TERMS.md",
+    "personal_or_professional_review_implied": false
+  },
+  "sources": [
+    {
+      "id": "osa-texas-nonexchange-eligibility",
+      "title": "Non-Exchange Transactions",
+      "publisher": "Texas Comptroller of Public Accounts",
+      "url": "https://fmx.cpa.texas.gov/fmx/pubs/afrrptreq/special_acct/index.php?page=transactions&section=transactions",
+      "kind": "government_application_guidance",
+      "exact_sections": [
+        "Eligibility Requirements",
+        "Time Requirements and Purpose Restrictions",
+        "Revenue Recognition Using the Modified Accrual Basis of Accounting"
+      ],
+      "edition": "unknown",
+      "issued_at": null,
+      "effective_at": null,
+      "checked_at": "2026-10-04T19:07:45+00:00",
+      "access_status": "official_page_retrieved",
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "automated_fetch_enabled": false,
+      "acquisition": "metadata_and_link_only",
+      "review_scope": "Recognition conditions and cash timing only. Local 60-day availability is not universal. Inconsistent advance-receipt wording elsewhere on this page is not a basis for classifying early receipts. Bounded factual review of government-authored application guidance only. Source prose, tables, examples, embedded publisher quotations and publisher-linked standards are excluded. Not comprehensive verification of current GASB standards, amendments, effective dates or entity applicability. No professional review or Agent admission.",
+      "date_status_note": "Live undated page examined. Check date is not publication or effective date; no complete revision history verified.",
+      "examination_scope": "selected official source text sections only",
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "source_body_included": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party editorial gap descriptions and source-review notes only, to the extent rights exist and are controlled. Excludes facts, titles, publisher/government text, existing licenses and statutory/platform rights.",
+        "terms_path": "../../CONTENT-TERMS.md",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "id": "osa-texas-compensable-leave",
+      "title": "Employee Compensable Leave",
+      "publisher": "Texas Comptroller of Public Accounts",
+      "url": "https://fmx.cpa.texas.gov/fmx/pubs/afrrptreq/notes/index.php?menu=1&page=leave&section=note5",
+      "kind": "government_application_guidance",
+      "exact_sections": [
+        "Opening recognition criteria",
+        "Annual Leave",
+        "Salary-Related Payments",
+        "Comptroller’s Office Methodology for the Liability Calculation"
+      ],
+      "edition": "unknown",
+      "issued_at": null,
+      "effective_at": null,
+      "checked_at": "2026-10-04T19:07:45+00:00",
+      "access_status": "official_page_retrieved",
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "automated_fetch_enabled": false,
+      "acquisition": "metadata_and_link_only",
+      "review_scope": "Unused annual leave, used-but-unpaid leave, reporting-date pay and incremental salary-related costs only. Exclude probability parenthetical, local sick-leave flow assumptions and state-specific no-accrual conclusion. Bounded factual review of government-authored application guidance only. Source prose, tables, examples, embedded publisher quotations and publisher-linked standards are excluded. Not comprehensive verification of current GASB standards, amendments, effective dates or entity applicability. No professional review or Agent admission.",
+      "date_status_note": "Undated live page includes fiscal 2026 sick-leave determination; this establishes page content context, not a universal edition or effective date.",
+      "examination_scope": "selected official source text sections only",
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "source_body_included": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party editorial gap descriptions and source-review notes only, to the extent rights exist and are controlled. Excludes facts, titles, publisher/government text, existing licenses and statutory/platform rights.",
+        "terms_path": "../../CONTENT-TERMS.md",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "id": "osa-texas-leave-methodology",
+      "title": "Compensable Leave Liability Methodology",
+      "publisher": "Texas Comptroller of Public Accounts",
+      "url": "https://fmx.cpa.texas.gov/fmx/pubs/afrrptreq/notes/index.php?menu=1&page=absences&section=note5",
+      "kind": "government_application_guidance",
+      "exact_sections": [
+        "Opening measurement-focus comparison",
+        "Salary-Related Payments"
+      ],
+      "edition": "unknown",
+      "issued_at": null,
+      "effective_at": null,
+      "checked_at": "2026-10-04T19:07:45+00:00",
+      "access_status": "official_page_retrieved",
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "automated_fetch_enabled": false,
+      "acquisition": "metadata_and_link_only",
+      "review_scope": "Measurement-focus distinction and changes in salary-related measurement only. No state leave entitlements, tax percentages, numerical examples, ORP materiality options or local allocation formulas reused. Bounded factual review of government-authored application guidance only. Source prose, tables, examples, embedded publisher quotations and publisher-linked standards are excluded. Not comprehensive verification of current GASB standards, amendments, effective dates or entity applicability. No professional review or Agent admission.",
+      "date_status_note": "Live undated page examined. Check date is not publication or effective date; no complete revision history verified.",
+      "examination_scope": "selected official source text sections only",
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "source_body_included": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party editorial gap descriptions and source-review notes only, to the extent rights exist and are controlled. Excludes facts, titles, publisher/government text, existing licenses and statutory/platform rights.",
+        "terms_path": "../../CONTENT-TERMS.md",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "id": "osa-texas-capital-donations",
+      "title": "Capital Asset Donations",
+      "publisher": "Texas Comptroller of Public Accounts",
+      "url": "https://fmx.cpa.texas.gov/fmx/pubs/afrrptreq/cap_assets/index.php?page=donations&section=donations",
+      "kind": "government_application_guidance",
+      "exact_sections": [
+        "Opening acquisition-value instruction",
+        "Donations"
+      ],
+      "edition": "unknown",
+      "issued_at": null,
+      "effective_at": null,
+      "checked_at": "2026-10-04T19:07:45+00:00",
+      "access_status": "official_page_retrieved",
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "automated_fetch_enabled": false,
+      "acquisition": "metadata_and_link_only",
+      "review_scope": "Acquisition value and receipt with eligibility satisfied only. Does not support donor-basis carryover or extending local state interagency treatment to every separate government. Bounded factual review of government-authored application guidance only. Source prose, tables, examples, embedded publisher quotations and publisher-linked standards are excluded. Not comprehensive verification of current GASB standards, amendments, effective dates or entity applicability. No professional review or Agent admission.",
+      "date_status_note": "Live undated page examined. Check date is not publication or effective date; no complete revision history verified.",
+      "examination_scope": "selected official source text sections only",
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "source_body_included": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party editorial gap descriptions and source-review notes only, to the extent rights exist and are controlled. Excludes facts, titles, publisher/government text, existing licenses and statutory/platform rights.",
+        "terms_path": "../../CONTENT-TERMS.md",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "id": "osa-texas-capital-disposal",
+      "title": "Recording Disposal of Capital Assets",
+      "publisher": "Texas Comptroller of Public Accounts",
+      "url": "https://fmx.cpa.texas.gov/fmx/pubs/afrrptreq/cap_assets/index.php?page=disposal&section=transfer",
+      "kind": "government_application_guidance",
+      "exact_sections": [
+        "Opening disposal definition",
+        "Governmental Activities – Basis Conversion (Fund Type 11)"
+      ],
+      "edition": "unknown",
+      "issued_at": null,
+      "effective_at": null,
+      "checked_at": "2026-10-04T19:07:45+00:00",
+      "access_status": "official_page_retrieved",
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "automated_fetch_enabled": false,
+      "acquisition": "metadata_and_link_only",
+      "review_scope": "Only the removal of fully depreciated, no-proceeds assets and associated accumulated depreciation. Texas labels this narrow path disposal; this label is not presented as a universal accounting definition. Bounded factual review of government-authored application guidance only. Source prose, tables, examples, embedded publisher quotations and publisher-linked standards are excluded. Not comprehensive verification of current GASB standards, amendments, effective dates or entity applicability. No professional review or Agent admission.",
+      "date_status_note": "Live undated page examined. Check date is not publication or effective date; no complete revision history verified.",
+      "examination_scope": "selected official source text sections only",
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "source_body_included": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party editorial gap descriptions and source-review notes only, to the extent rights exist and are controlled. Excludes facts, titles, publisher/government text, existing licenses and statutory/platform rights.",
+        "terms_path": "../../CONTENT-TERMS.md",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "id": "osa-texas-capital-sale",
+      "title": "Recording Sale of Capital Assets",
+      "publisher": "Texas Comptroller of Public Accounts",
+      "url": "https://fmx.cpa.texas.gov/fmx/pubs/afrrptreq/cap_assets/index.php?page=sale&section=transfer",
+      "kind": "government_application_guidance",
+      "exact_sections": [
+        "Governmental Funds > Modified to Full Accrual Adjustments for Capital Assets",
+        "Governmental Activities – Basis Conversion (Fund Type 11)"
+      ],
+      "edition": "unknown",
+      "issued_at": null,
+      "effective_at": null,
+      "checked_at": "2026-10-04T19:07:45+00:00",
+      "access_status": "official_page_retrieved",
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "automated_fetch_enabled": false,
+      "acquisition": "metadata_and_link_only",
+      "review_scope": "Cash proceeds as a governmental-fund financing source, asset/depreciation removal, and gain or loss in accrual conversion. State system codes, commission fees and numerical examples excluded. Bounded factual review of government-authored application guidance only. Source prose, tables, examples, embedded publisher quotations and publisher-linked standards are excluded. Not comprehensive verification of current GASB standards, amendments, effective dates or entity applicability. No professional review or Agent admission.",
+      "date_status_note": "Live undated page examined. Check date is not publication or effective date; no complete revision history verified.",
+      "examination_scope": "selected official source text sections only",
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "source_body_included": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party editorial gap descriptions and source-review notes only, to the extent rights exist and are controlled. Excludes facts, titles, publisher/government text, existing licenses and statutory/platform rights.",
+        "terms_path": "../../CONTENT-TERMS.md",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "id": "osa-texas-estimate-change",
+      "title": "Change in Accounting Estimate",
+      "publisher": "Texas Comptroller of Public Accounts",
+      "url": "https://fmx.cpa.texas.gov/fmx/pubs/afrrptreq/notes/index.php?menu=2&page=changes_estimate&section=note14",
+      "kind": "government_application_guidance",
+      "exact_sections": [
+        "Opening input/methodology discussion",
+        "Reporting",
+        "Disclosure"
+      ],
+      "edition": "unknown",
+      "issued_at": null,
+      "effective_at": null,
+      "checked_at": "2026-10-04T19:07:45+00:00",
+      "access_status": "official_page_retrieved",
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "automated_fetch_enabled": false,
+      "acquisition": "metadata_and_link_only",
+      "review_scope": "New information versus prior information, prospective recognition and significant-change disclosure. No source depreciation example or numerical pattern reused. Bounded factual review of government-authored application guidance only. Source prose, tables, examples, embedded publisher quotations and publisher-linked standards are excluded. Not comprehensive verification of current GASB standards, amendments, effective dates or entity applicability. No professional review or Agent admission.",
+      "date_status_note": "Live undated page examined. Check date is not publication or effective date; no complete revision history verified.",
+      "examination_scope": "selected official source text sections only",
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "source_body_included": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party editorial gap descriptions and source-review notes only, to the extent rights exist and are controlled. Excludes facts, titles, publisher/government text, existing licenses and statutory/platform rights.",
+        "terms_path": "../../CONTENT-TERMS.md",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "id": "osa-texas-error-correction",
+      "title": "Error Corrections",
+      "publisher": "Texas Comptroller of Public Accounts",
+      "url": "https://fmx.cpa.texas.gov/fmx/pubs/afrrptreq/notes/index.php?menu=2&page=error_corrections&section=note14",
+      "kind": "government_application_guidance",
+      "exact_sections": [
+        "Opening error discussion",
+        "Reporting",
+        "Disclosure"
+      ],
+      "edition": "unknown",
+      "issued_at": null,
+      "effective_at": null,
+      "checked_at": "2026-10-04T19:07:45+00:00",
+      "access_status": "official_page_retrieved",
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "automated_fetch_enabled": false,
+      "acquisition": "metadata_and_link_only",
+      "review_scope": "Mistakes or misuse of existing facts, prior-period restatement, earliest presented opening balance and explanation of affected lines/periods. Supplementary-information practicability and transition exceptions are outside the proposed article. Bounded factual review of government-authored application guidance only. Source prose, tables, examples, embedded publisher quotations and publisher-linked standards are excluded. Not comprehensive verification of current GASB standards, amendments, effective dates or entity applicability. No professional review or Agent admission.",
+      "date_status_note": "Live undated page examined. Check date is not publication or effective date; no complete revision history verified.",
+      "examination_scope": "selected official source text sections only",
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "source_body_included": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party editorial gap descriptions and source-review notes only, to the extent rights exist and are controlled. Excludes facts, titles, publisher/government text, existing licenses and statutory/platform rights.",
+        "terms_path": "../../CONTENT-TERMS.md",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "id": "osa-texas-interfund-activity",
+      "title": "Reporting Interfund Activity",
+      "publisher": "Texas Comptroller of Public Accounts",
+      "url": "https://fmx.cpa.texas.gov/fmx/pubs/afrrptreq/interfund/index.php?page=reporting&section=reporting",
+      "kind": "government_application_guidance",
+      "exact_sections": [
+        "Reciprocal Interfund Activity",
+        "Nonreciprocal Interfund Activity"
+      ],
+      "edition": "unknown",
+      "issued_at": null,
+      "effective_at": null,
+      "checked_at": "2026-10-04T19:07:45+00:00",
+      "access_status": "official_page_retrieved",
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "automated_fetch_enabled": false,
+      "acquisition": "metadata_and_link_only",
+      "review_scope": "Repayable loans, governmental-fund transfers and reimbursements only. Exclude proprietary-fund subsidies and universal assertions about transfers because current Texas pages are inconsistent. Bounded factual review of government-authored application guidance only. Source prose, tables, examples, embedded publisher quotations and publisher-linked standards are excluded. Not comprehensive verification of current GASB standards, amendments, effective dates or entity applicability. No professional review or Agent admission.",
+      "date_status_note": "Live undated page examined. Check date is not publication or effective date; no complete revision history verified.",
+      "examination_scope": "selected official source text sections only",
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "source_body_included": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party editorial gap descriptions and source-review notes only, to the extent rights exist and are controlled. Excludes facts, titles, publisher/government text, existing licenses and statutory/platform rights.",
+        "terms_path": "../../CONTENT-TERMS.md",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "id": "osa-texas-transfers-funds",
+      "title": "Transfers Between Agencies or Funds",
+      "publisher": "Texas Comptroller of Public Accounts",
+      "url": "https://fmx.cpa.texas.gov/fmx/pubs/afrrptreq/interfund/index.php?page=transfers_agencies&section=transfers",
+      "kind": "government_application_guidance",
+      "exact_sections": [
+        "Fund-Level Reporting > In Governmental Funds",
+        "Recognition and Measurement"
+      ],
+      "edition": "unknown",
+      "issued_at": null,
+      "effective_at": null,
+      "checked_at": "2026-10-04T19:07:45+00:00",
+      "access_status": "official_page_retrieved",
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "automated_fetch_enabled": false,
+      "acquisition": "metadata_and_link_only",
+      "review_scope": "Corroborates governmental-fund transfer presentation and reciprocal amounts. Proprietary-fund subsidy classification is excluded owing to disagreement with the interfund overview. Bounded factual review of government-authored application guidance only. Source prose, tables, examples, embedded publisher quotations and publisher-linked standards are excluded. Not comprehensive verification of current GASB standards, amendments, effective dates or entity applicability. No professional review or Agent admission.",
+      "date_status_note": "Live undated page examined. Check date is not publication or effective date; no complete revision history verified.",
+      "examination_scope": "selected official source text sections only",
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "source_body_included": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party editorial gap descriptions and source-review notes only, to the extent rights exist and are controlled. Excludes facts, titles, publisher/government text, existing licenses and statutory/platform rights.",
+        "terms_path": "../../CONTENT-TERMS.md",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "id": "osa-ny-pension-report",
+      "title": "Understanding Your GASB Report",
+      "publisher": "Office of the New York State Comptroller",
+      "url": "https://www.osc.ny.gov/retirement/employers/gasb/understanding-your-gasb-report",
+      "kind": "government_application_guidance",
+      "exact_sections": [
+        "Employer’s Contribution",
+        "Measurement Date",
+        "Net Pension Liability (NPL)",
+        "Pension Expense"
+      ],
+      "edition": "Revision marker 9/26 (September 2026)",
+      "issued_at": null,
+      "effective_at": null,
+      "checked_at": "2026-10-04T19:07:45+00:00",
+      "access_status": "official_page_retrieved",
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "automated_fetch_enabled": false,
+      "acquisition": "metadata_and_link_only",
+      "review_scope": "Plan-specific employer contribution, measurement date, allocated pension liability and pension expense are separate measures. Do not universalize NYSLRS allocation methods, March 31 date, discount rate or insurance inclusion. Bounded factual review of government-authored application guidance only. Source prose, tables, examples, embedded publisher quotations and publisher-linked standards are excluded. Not comprehensive verification of current GASB standards, amendments, effective dates or entity applicability. No professional review or Agent admission.",
+      "date_status_note": "Page footer displays Rev. 9/26; revision day and standard effective-date verification unknown.",
+      "examination_scope": "selected official source text sections only",
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "source_body_included": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party editorial gap descriptions and source-review notes only, to the extent rights exist and are controlled. Excludes facts, titles, publisher/government text, existing licenses and statutory/platform rights.",
+        "terms_path": "../../CONTENT-TERMS.md",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "id": "osa-connecticut-acfr-2025-pensions",
+      "title": "State of Connecticut Annual Comprehensive Financial Report, 2025",
+      "publisher": "Connecticut Office of the State Comptroller",
+      "url": "https://osc.ct.gov/wp-content/uploads/2026/03/State-of-Connecticut-ACFR-2-27-26_Final.pdf",
+      "kind": "government_financial_report",
+      "exact_sections": [
+        "Note 10 — State Retirement Systems, printed pages 71–73 (PDF pages 76–78)",
+        "Employer Contributions",
+        "Pension Expense",
+        "Deferred Outflows and Inflows of Resources"
+      ],
+      "edition": "Fiscal year ended June 30, 2025; report dated February 27, 2026",
+      "issued_at": "2026-02-27",
+      "effective_at": null,
+      "checked_at": "2026-10-04T19:07:45+00:00",
+      "access_status": "official_pdf_text_retrieved_visual_validation_unavailable",
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "automated_fetch_enabled": false,
+      "acquisition": "metadata_and_link_only",
+      "review_scope": "Historical primary-government reporting application only: separate contributions and expense, measurement/reporting dates, deferral of post-measurement contributions and subsequent liability reduction. Parsed text verified; PDF screenshots failed, so no table images or numeric source data are included. Bounded factual review of government-authored application guidance only. Source prose, tables, examples, embedded publisher quotations and publisher-linked standards are excluded. Not comprehensive verification of current GASB standards, amendments, effective dates or entity applicability. No professional review or Agent admission.",
+      "date_status_note": "Reporting period June 30, 2025 and audit-report date February 27, 2026 observed inside PDF. URL upload month is not treated as its issue date; not evidence of all current standards.",
+      "examination_scope": "selected official source text sections only",
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "source_body_included": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party editorial gap descriptions and source-review notes only, to the extent rights exist and are controlled. Excludes facts, titles, publisher/government text, existing licenses and statutory/platform rights.",
+        "terms_path": "../../CONTENT-TERMS.md",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-04",
+      "verification": "publisher_page_examined",
+      "access_status": "official_text_accessible",
+      "full_text_included": false,
+      "automated_fetch_enabled": false,
+      "acquisition": "metadata_and_link_only",
+      "technical_review": "AI_editorial_research_only_no_human_professional_review",
+      "primary_standard_text_acquired": false,
+      "id": "osa-occ-baas-2026-12a-securities-oci",
+      "title": "Bank Accounting Advisory Series — August 2026 — debt-security loss and OCI boundary",
+      "publisher": "Office of the Comptroller of the Currency",
+      "url": "https://www.occ.treas.gov/publications-and-resources/publications/banker-education/files/pub-bank-accounting-advisory-series.pdf",
+      "exact_sections": [
+        {
+          "section": "12A. Credit Losses on Debt Securities",
+          "questions": [
+            "1",
+            "2"
+          ],
+          "printed_pages": "193–194",
+          "pdf_pages_one_based": [
+            197,
+            198
+          ]
+        }
+      ],
+      "edition": "August 2026",
+      "review_scope": "Selected staff responses only. Exclude numerical examples, quoted publisher text, and the source-derived factor list in question 3.",
+      "document_page_count": 244,
+      "issue_observation_cutoff": "2026-03-31",
+      "existing_document_reference_id": "osa-occ-baas-2026",
+      "relation_to_existing_reference": "New section-scoped reference; do not edit or widen the existing bound source object.",
+      "authority_status": "OCC Office of the Chief Accountant staff interpretation; not OCC rules or regulations, and not acquired Codification text.",
+      "examination_scope": "selected official source text sections only",
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "source_body_included": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party editorial gap descriptions and source-review notes only, to the extent rights exist and are controlled. Excludes facts, titles, publisher/government text, existing licenses and statutory/platform rights.",
+        "terms_path": "../../CONTENT-TERMS.md",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-04",
+      "verification": "publisher_page_examined",
+      "access_status": "official_text_accessible",
+      "full_text_included": false,
+      "automated_fetch_enabled": false,
+      "acquisition": "metadata_and_link_only",
+      "technical_review": "AI_editorial_research_only_no_human_professional_review",
+      "primary_standard_text_acquired": false,
+      "id": "osa-occ-baas-2026-1a-bond-premium",
+      "title": "Bank Accounting Advisory Series — August 2026 — purchased-security premiums and discounts",
+      "publisher": "Office of the Comptroller of the Currency",
+      "url": "https://www.occ.treas.gov/publications-and-resources/publications/banker-education/files/pub-bank-accounting-advisory-series.pdf",
+      "exact_sections": [
+        {
+          "section": "1A. Investments in Debt and Equity Securities",
+          "questions": [
+            "16",
+            "17"
+          ],
+          "printed_pages": "8–9",
+          "pdf_pages_one_based": [
+            12,
+            13
+          ]
+        }
+      ],
+      "edition": "August 2026",
+      "review_scope": "Question 16 and the non-example portions of question 17 only. Question 17 is reviewed to bound exclusions; do not reuse its callable-bond example or numbers.",
+      "document_page_count": 244,
+      "issue_observation_cutoff": "2026-03-31",
+      "existing_document_reference_id": "osa-occ-baas-2026",
+      "relation_to_existing_reference": "New section-scoped reference; do not edit or widen the existing bound source object.",
+      "authority_status": "OCC Office of the Chief Accountant staff interpretation; not OCC rules or regulations, and not acquired Codification text.",
+      "examination_scope": "selected official source text sections only",
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "source_body_included": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party editorial gap descriptions and source-review notes only, to the extent rights exist and are controlled. Excludes facts, titles, publisher/government text, existing licenses and statutory/platform rights.",
+        "terms_path": "../../CONTENT-TERMS.md",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-04",
+      "verification": "publisher_page_examined",
+      "access_status": "official_text_accessible",
+      "full_text_included": false,
+      "automated_fetch_enabled": false,
+      "acquisition": "metadata_and_link_only",
+      "technical_review": "AI_editorial_research_only_no_human_professional_review",
+      "primary_standard_text_acquired": false,
+      "id": "osa-occ-baas-2026-6b-debt-replacement",
+      "title": "Bank Accounting Advisory Series — August 2026 — borrowing replacement and modification",
+      "publisher": "Office of the Comptroller of the Currency",
+      "url": "https://www.occ.treas.gov/publications-and-resources/publications/banker-education/files/pub-bank-accounting-advisory-series.pdf",
+      "exact_sections": [
+        {
+          "section": "6B. Other Borrowings",
+          "questions": [
+            "1",
+            "2"
+          ],
+          "printed_pages": "116–117",
+          "pdf_pages_one_based": [
+            120,
+            121
+          ]
+        }
+      ],
+      "edition": "August 2026",
+      "review_scope": "Staff response mechanics only. Do not reuse the FHLB advance, rolled-penalty scenario, source rates, term pattern or numbers.",
+      "document_page_count": 244,
+      "issue_observation_cutoff": "2026-03-31",
+      "existing_document_reference_id": "osa-occ-baas-2026",
+      "relation_to_existing_reference": "New section-scoped reference; do not edit or widen the existing bound source object.",
+      "authority_status": "OCC Office of the Chief Accountant staff interpretation; not OCC rules or regulations, and not acquired Codification text.",
+      "examination_scope": "selected official source text sections only",
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "source_body_included": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party editorial gap descriptions and source-review notes only, to the extent rights exist and are controlled. Excludes facts, titles, publisher/government text, existing licenses and statutory/platform rights.",
+        "terms_path": "../../CONTENT-TERMS.md",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-04",
+      "verification": "publisher_page_examined",
+      "access_status": "official_text_accessible",
+      "full_text_included": false,
+      "automated_fetch_enabled": false,
+      "acquisition": "metadata_and_link_only",
+      "technical_review": "AI_editorial_research_only_no_human_professional_review",
+      "primary_standard_text_acquired": false,
+      "id": "osa-occ-baas-2026-11e-private-grants",
+      "title": "Bank Accounting Advisory Series — August 2026 — nongovernmental grant receipts",
+      "publisher": "Office of the Comptroller of the Currency",
+      "url": "https://www.occ.treas.gov/publications-and-resources/publications/banker-education/files/pub-bank-accounting-advisory-series.pdf",
+      "exact_sections": [
+        {
+          "section": "11E. Grants Received by Banks",
+          "questions": [
+            "1: both adoption-status versions, nongovernmental-grants passages only",
+            "2"
+          ],
+          "printed_pages": "189–191",
+          "pdf_pages_one_based": [
+            193,
+            194,
+            195
+          ],
+          "exclusions": [
+            "Governmental-grant recognition under question 3",
+            "Flowchart on printed page 191; visual content not examined"
+          ]
+        }
+      ],
+      "edition": "August 2026",
+      "review_scope": "Private-donor grants received by banks only. Do not extend this bounded review to nonprofit donor restrictions, promises to give, or government grants. Source worked examples and embedded publisher quotations excluded.",
+      "adoption_boundary": "The section has separate government-grant adoption-status branches. This proposed article excludes governmental grants and does not claim verification of the newer publisher standard.",
+      "document_page_count": 244,
+      "issue_observation_cutoff": "2026-03-31",
+      "existing_document_reference_id": "osa-occ-baas-2026",
+      "relation_to_existing_reference": "New section-scoped reference; do not edit or widen the existing bound source object.",
+      "authority_status": "OCC Office of the Chief Accountant staff interpretation; not OCC rules or regulations, and not acquired Codification text.",
+      "examination_scope": "selected official source text sections only",
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "source_body_included": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party editorial gap descriptions and source-review notes only, to the extent rights exist and are controlled. Excludes facts, titles, publisher/government text, existing licenses and statutory/platform rights.",
+        "terms_path": "../../CONTENT-TERMS.md",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-04",
+      "verification": "publisher_page_examined",
+      "access_status": "official_text_accessible",
+      "full_text_included": false,
+      "automated_fetch_enabled": false,
+      "acquisition": "metadata_and_link_only",
+      "technical_review": "AI_editorial_research_only_no_human_professional_review",
+      "primary_standard_text_acquired": false,
+      "id": "osa-fed-fr2886b-2025-securities-measurement",
+      "title": "Instructions for the Preparation of Consolidated Report of Condition and Income for Edge and Agreement Corporations — FR 2886b — securities measurement",
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "url": "https://www.federalreserve.gov/apps/reportingforms/Download/DownloadAttachment?guid=27d8cae3-18fc-40a8-99a2-dd9bc523a6a4",
+      "exact_sections": [
+        {
+          "section": "Schedule RC, item 2(a) and item 2(b)",
+          "printed_pages": "RC-1",
+          "pdf_pages_one_based": [
+            23
+          ],
+          "page_revision": "March 2024"
+        },
+        {
+          "section": "Schedule RC-B, General Instructions",
+          "printed_pages": "RC-B-1",
+          "pdf_pages_one_based": [
+            35
+          ],
+          "page_revision": "March 2024"
+        },
+        {
+          "section": "Schedule RI-A, item 5",
+          "printed_pages": "RI-A-1",
+          "pdf_pages_one_based": [
+            19
+          ],
+          "page_revision": "December 2020; mixed-date compilation"
+        }
+      ],
+      "edition": "Cover: Effective September 2025; selected securities pages: March 2024",
+      "review_scope": "Selected measurement and presentation passages only. Exclude quoted publisher language and all source examples. The AFS discussion must be bounded for credit losses and sale-intent exceptions with the OCC reference. Do not use the adjacent RC-B-2 total instructions or extend this review to unrelated mixed-date pages.",
+      "document_page_count": 97,
+      "discovered_via": "https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_2886b",
+      "discovery_status": "The official index Current Instructions link resolved to this PDF on 2026-10-04.",
+      "authority_status": "Federal Reserve regulatory reporting instructions for Edge and agreement corporations; not a general entity-scope determination or acquired Codification text.",
+      "examination_scope": "selected official source text sections only",
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "source_body_included": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party editorial gap descriptions and source-review notes only, to the extent rights exist and are controlled. Excludes facts, titles, publisher/government text, existing licenses and statutory/platform rights.",
+        "terms_path": "../../CONTENT-TERMS.md",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-04",
+      "verification": "publisher_page_examined",
+      "access_status": "official_text_accessible",
+      "full_text_included": false,
+      "automated_fetch_enabled": false,
+      "acquisition": "metadata_and_link_only",
+      "technical_review": "AI_editorial_research_only_no_human_professional_review",
+      "primary_standard_text_acquired": false,
+      "id": "osa-fed-fr2886b-2025-equity-method",
+      "title": "Instructions for the Preparation of Consolidated Report of Condition and Income for Edge and Agreement Corporations — FR 2886b — equity-method investment movement",
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "url": "https://www.federalreserve.gov/apps/reportingforms/Download/DownloadAttachment?guid=27d8cae3-18fc-40a8-99a2-dd9bc523a6a4",
+      "exact_sections": [
+        {
+          "section": "Schedule RC, item 8, Other assets; equity-method paragraph",
+          "printed_pages": "RC-5",
+          "pdf_pages_one_based": [
+            27
+          ],
+          "page_revision": "March 2024"
+        }
+      ],
+      "edition": "Cover: Effective September 2025; selected page: March 2024",
+      "review_scope": "Investment movement paragraph only. The proposed exercise stipulates a previously supported equity-method scope conclusion; do not infer it from percentage ownership alone. No source example is reused.",
+      "document_page_count": 97,
+      "discovered_via": "https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_2886b",
+      "discovery_status": "The official index Current Instructions link resolved to this PDF on 2026-10-04.",
+      "authority_status": "Federal Reserve regulatory reporting instructions for Edge and agreement corporations; not a general entity-scope determination or acquired Codification text.",
+      "examination_scope": "selected official source text sections only",
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "source_body_included": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party editorial gap descriptions and source-review notes only, to the extent rights exist and are controlled. Excludes facts, titles, publisher/government text, existing licenses and statutory/platform rights.",
+        "terms_path": "../../CONTENT-TERMS.md",
+        "personal_or_professional_review_implied": false
+      }
+    },
+    {
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-04",
+      "verification": "publisher_page_examined",
+      "access_status": "official_text_accessible",
+      "full_text_included": false,
+      "automated_fetch_enabled": false,
+      "acquisition": "metadata_and_link_only",
+      "technical_review": "AI_editorial_research_only_no_human_professional_review",
+      "primary_standard_text_acquired": false,
+      "id": "osa-sec-cash-flows-2023-direct-indirect",
+      "title": "The Statement of Cash Flows: Improving the Quality of Cash Flow Information Provided to Investors",
+      "publisher": "U.S. Securities and Exchange Commission, Office of the Chief Accountant; Paul Munter",
+      "url": "https://www.sec.gov/newsroom/speeches-statements/munter-statement-cash-flows-120423",
+      "exact_sections": [
+        {
+          "section": "Key Reminders of Professional Responsibilities around the Statement of Cash Flows — Materiality; Presentation and Disclosure; Internal Controls"
+        },
+        {
+          "section": "Improving Cash Flow Information for Investors",
+          "paragraphs": "Discussion of direct-method information and gross customer, employee and supplier cash flows"
+        },
+        {
+          "section": "Footnote 1",
+          "purpose": "Status of staff statement; publisher quotations and other footnotes excluded from content reuse"
+        }
+      ],
+      "edition": "Statement dated December 4, 2023",
+      "review_scope": "Original SEC staff discussion only. Exclude embedded quotations and referenced publisher material. The article must treat transaction categories as explicit scope assumptions rather than claim an exhaustive current ASC 230 classification review.",
+      "publication_date": "2023-12-04",
+      "authority_status": "Official-capacity Chief Accountant staff statement, not a Commission rule or statement; no legal force or new obligations.",
+      "examination_scope": "selected official source text sections only",
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "source_body_included": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party editorial gap descriptions and source-review notes only, to the extent rights exist and are controlled. Excludes facts, titles, publisher/government text, existing licenses and statutory/platform rights.",
+        "terms_path": "../../CONTENT-TERMS.md",
+        "personal_or_professional_review_implied": false
+      }
+    }
+  ],
+  "discovery_pages": [
+    {
+      "url": "https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_2886b",
+      "included_in_source_document_count": false
+    }
+  ]
+}

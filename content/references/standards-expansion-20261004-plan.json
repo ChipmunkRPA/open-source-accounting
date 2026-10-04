@@ -1,0 +1,291 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-04",
+  "baseline_public_commit": "9ebf63eeffb0b3b581ea7498deebb1f4554c0bab",
+  "baseline_manifest_sha256": "6139a83e5ff67b350aa4bcb31d23a9dec46bf62d937ed6a5405ce97b2ec1a3b3",
+  "baseline_original_article_count": 90,
+  "planned_new_article_count": 12,
+  "new_article_bodies_at_this_checkpoint": 0,
+  "source_metadata_must_be_published_before_authoring": true,
+  "first_party_annotation": {
+    "label": "Ray Sang’s Annotation",
+    "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+    "scope": "New first-party editorial gap descriptions and source-review notes only, to the extent rights exist and are controlled. Excludes facts, titles, publisher/government text, existing licenses and statutory/platform rights.",
+    "terms_path": "../../CONTENT-TERMS.md",
+    "personal_or_professional_review_implied": false
+  },
+  "articles": [
+    {
+      "id": "gasb-grant-eligibility-cash",
+      "title": "Government grants: separate eligibility, timing and cash",
+      "family": "GASB",
+      "framework": "GASB",
+      "kind": "guide",
+      "gap_rationale": "A fund-balance constraint article does not teach when a nonexchange grant first becomes receivable or revenue. Existing federal budget/IGT pieces do not cover state/local nonexchange eligibility.",
+      "source_ids": [
+        "osa-texas-nonexchange-eligibility"
+      ],
+      "planned_learning_outcomes": [
+        "Compare a cost-reimbursement grant with a purpose-only restriction after time eligibility is satisfied",
+        "Calculate eligible revenue and receivable from verified allowable costs and a cap, separating collections",
+        "Show modified-accrual availability as an additional, explicitly assumed filter"
+      ],
+      "scope_limits": [
+        "Exclude early-cash liability versus deferred-inflow classification unless another consistent authorized source resolves it",
+        "Do not assume every item called a grant is nonexchange",
+        "Avoid source school-district/library/community-college scenarios"
+      ],
+      "status": "planned_only_no_article_body_at_this_checkpoint"
+    },
+    {
+      "id": "gasb-compensated-absence-liability",
+      "title": "Compensated absences: measure earned leave at the reporting date",
+      "family": "GASB",
+      "framework": "GASB",
+      "kind": "guide",
+      "gap_rationale": "No existing article explains unused leave recognition or why earned leave and unpaid payroll can produce liabilities before cash payment.",
+      "source_ids": [
+        "osa-texas-compensable-leave",
+        "osa-texas-leave-methodology"
+      ],
+      "planned_learning_outcomes": [
+        "Use a fictional annual-leave register with separately supported qualifying hours and expected settlement",
+        "Reconcile current-rate leave amount, stipulated incremental employer costs, used-but-unpaid leave and closing liability",
+        "Distinguish an economic-resources liability from the amount recognized in a governmental fund"
+      ],
+      "scope_limits": [
+        "Assume qualifying annual leave and supported hours rather than calculating a percentage cutoff",
+        "Exclude sick-leave LIFO methods, Texas entitlements and automatic 7.65 percent gross-up",
+        "Special leave and pension-settlement exceptions need separate review"
+      ],
+      "status": "planned_only_no_article_body_at_this_checkpoint"
+    },
+    {
+      "id": "gasb-capital-asset-exit-donation",
+      "title": "Government capital assets: reconcile disposals, proceeds and donations",
+      "family": "GASB",
+      "framework": "GASB",
+      "kind": "guide",
+      "gap_rationale": "The existing bridge covers an acquisition, depreciation and debt principal. It does not remove old cost/depreciation on exit or explain a qualifying donated asset without a purchase.",
+      "source_ids": [
+        "osa-texas-capital-disposal",
+        "osa-texas-capital-sale",
+        "osa-texas-capital-donations"
+      ],
+      "planned_learning_outcomes": [
+        "Contrast fully depreciated no-proceeds retirement with a sale of an asset with remaining carrying amount",
+        "Reconcile gross cost, accumulated depreciation, carrying amount, cash proceeds and gain/loss using original inputs",
+        "Add a separately stipulated qualifying donation at acquisition value to the asset roll-forward"
+      ],
+      "scope_limits": [
+        "Assume no disposal fees, impairment, interagency transfer or held-for-sale classification",
+        "Use a donation intended for operational use with all eligibility met",
+        "Do not describe donor historical cost or a generic appraisal label as acquisition value"
+      ],
+      "status": "planned_only_no_article_body_at_this_checkpoint"
+    },
+    {
+      "id": "gasb-estimate-error-periods",
+      "title": "New estimate or old error: identify which reporting periods change",
+      "family": "GASB",
+      "framework": "GASB",
+      "kind": "guide",
+      "gap_rationale": "Existing generic error measurement and estimate-register work does not teach the governmental distinction between revised information and a mistake using facts available earlier.",
+      "source_ids": [
+        "osa-texas-estimate-change",
+        "osa-texas-error-correction"
+      ],
+      "planned_learning_outcomes": [
+        "Build two evidence chronologies with identical revised ending amounts but different information availability",
+        "Calculate an original prospective asset estimate revision and contrast a separate prior-period spreadsheet mistake",
+        "Reconcile opening-balance restatement and current-period effects without double counting"
+      ],
+      "scope_limits": [
+        "Assume materiality and presented periods explicitly",
+        "Do not reuse the source 35-to-25-year example",
+        "Do not generalize supplementary-information restatement or transition provisions"
+      ],
+      "status": "planned_only_no_article_body_at_this_checkpoint"
+    },
+    {
+      "id": "gasb-interfund-loan-transfer-reimbursement",
+      "title": "Interfund funding: distinguish loans, transfers and reimbursements",
+      "family": "GASB",
+      "framework": "GASB",
+      "kind": "guide",
+      "gap_rationale": "No existing article explains reciprocal fund balances, transfer flows, or correction of the fund initially charged for another fund’s expenditure.",
+      "source_ids": [
+        "osa-texas-interfund-activity",
+        "osa-texas-transfers-funds"
+      ],
+      "planned_learning_outcomes": [
+        "Use one fictional government with two governmental funds and separately documented repayment terms",
+        "Reconcile each fund’s cash, due-to/from balances and financing-source/use effects",
+        "Contrast a repayable cash advance, a nonrepayable transfer and reimbursement of an identified expenditure"
+      ],
+      "scope_limits": [
+        "Keep proprietary subsidy classification outside scope",
+        "Do not imply that naming a receivable makes collection probable",
+        "Government-wide eliminations or transactions with component units require a distinct supported analysis"
+      ],
+      "status": "planned_only_no_article_body_at_this_checkpoint"
+    },
+    {
+      "id": "gasb-pension-expense-contribution",
+      "title": "Government pensions: reconcile expense, contributions and measurement dates",
+      "family": "GASB",
+      "framework": "GASB",
+      "kind": "guide",
+      "gap_rationale": "The existing fund/government-wide bridge mentions pension items only as possible adjustments. No article separates funding cash, pension expense, liability measurement and deferred resources.",
+      "source_ids": [
+        "osa-ny-pension-report",
+        "osa-connecticut-acfr-2025-pensions"
+      ],
+      "planned_learning_outcomes": [
+        "Use explicitly supplied fictional plan schedules rather than inventing an actuarial valuation",
+        "Compare contributions, reported expense and post-measurement-date deferral as separate numbers",
+        "Create a dated inventory of reporting date, measurement date, plan inputs and contribution reconciliation"
+      ],
+      "scope_limits": [
+        "Do not compute expense simply as the unadjusted change in net pension liability",
+        "Do not call post-measurement contributions permanently deferred or immediately amortized pension expense",
+        "State the assumed plan type; do not transfer NYSLRS allocations or Connecticut figures into another plan"
+      ],
+      "status": "planned_only_no_article_body_at_this_checkpoint"
+    },
+    {
+      "id": "fasb-securities-measurement-oci",
+      "title": "Debt securities: separate market movement from amortized cost and credit loss",
+      "family": "FASB",
+      "framework": "US_GAAP",
+      "kind": "guide",
+      "gap_rationale": "No current manifest item explains AFS versus HTM measurement or OCI. The existing fair-value workbook collects valuation inputs and the recent CECL article concerns a pooled receivable estimate, not security-category presentation.",
+      "source_ids": [
+        "osa-fed-fr2886b-2025-securities-measurement",
+        "osa-occ-baas-2026-12a-securities-oci"
+      ],
+      "planned_learning_outcomes": [
+        "Use independently designed parallel ledgers for an already-classified AFS holding and HTM holding, then a small no-credit-loss market-price sensitivity. Reconcile carrying amount, earnings and accumulated OCI without recycling an allowance rollforward."
+      ],
+      "scope_limits": [
+        "Assume supported category eligibility, no transfer, no sale requirement, no foreign currency and zero credit loss for the main arithmetic.",
+        "Flag credit-loss and sale-intent exceptions separately; fair-value loss is not automatically all OCI.",
+        "Do not present the bank reporting framework as universal entity-specific advice."
+      ],
+      "status": "planned_only_no_article_body_at_this_checkpoint"
+    },
+    {
+      "id": "fasb-bond-premium-yield",
+      "title": "Purchased bond premiums: reconcile coupon cash with effective interest",
+      "family": "FASB",
+      "framework": "US_GAAP",
+      "kind": "guide",
+      "gap_rationale": "No article covers premium or discount on a purchased debt security. The recent loan-fee article is a one-year originated-loan illustration; this would add a multi-period purchased-bond carrying-value schedule.",
+      "source_ids": [
+        "osa-occ-baas-2026-1a-bond-premium"
+      ],
+      "planned_learning_outcomes": [
+        "Design a fresh noncallable fixed-coupon bond schedule with independently solved purchase price and effective yield; demonstrate declining premium and maturity reconciliation."
+      ],
+      "scope_limits": [
+        "No callable or prepayable security, origination fee, transaction cost, impairment or foreign currency in the primary example.",
+        "Call and prepayment exceptions are only scope warnings; do not reproduce the source callable-bond fact pattern."
+      ],
+      "status": "planned_only_no_article_body_at_this_checkpoint"
+    },
+    {
+      "id": "fasb-equity-method-income-distributions",
+      "title": "Equity-method investments: income and cash distributions move different balances",
+      "family": "FASB",
+      "framework": "US_GAAP",
+      "kind": "guide",
+      "gap_rationale": "The consolidation workbook explores rights and economic percentages; no current item contains equity-method investment movement or separates investee earnings from distributions.",
+      "source_ids": [
+        "osa-fed-fr2886b-2025-equity-method"
+      ],
+      "planned_learning_outcomes": [
+        "Create a fresh investment rollforward using stipulated ownership, earnings and distributions in separate periods; trace the cash, investment and income effects and a double-counted-dividend error."
+      ],
+      "scope_limits": [
+        "Stipulate equity-method applicability after a separate supported assessment; percentage alone does not decide it.",
+        "Exclude basis differences, intercompany eliminations, investee OCI, impairments, loss limits, changes in ownership and tax.",
+        "This source supports investment movement, not cash-flow-statement classification of distributions."
+      ],
+      "status": "planned_only_no_article_body_at_this_checkpoint"
+    },
+    {
+      "id": "fasb-debt-replacement-test",
+      "title": "Debt replacement: compare revised cash flows before choosing a gain or loss",
+      "family": "FASB",
+      "framework": "US_GAAP",
+      "kind": "guide",
+      "gap_rationale": "The debt workbook reconciles closing cash and a conditional conversion calculation but explicitly leaves modification and extinguishment unresolved. No existing item works through a borrowing cash-flow comparison.",
+      "source_ids": [
+        "osa-occ-baas-2026-6b-debt-replacement"
+      ],
+      "planned_learning_outcomes": [
+        "Design two alternative revised schedules for a plain nonconvertible term borrowing, with a maturity shortening and partial principal repayment rather than the source FHLB rolled-penalty scenario. Compute both present values at the original effective rate and identify what the comparison can and cannot settle."
+      ],
+      "scope_limits": [
+        "A 10% comparison is not a complete ASC 470 scope or qualitative-features assessment.",
+        "Exclude troubled-borrower restructuring, third-party fees, new-lender replacement, issuance-cost allocation, embedded features and accrued-interest ambiguity.",
+        "Do not duplicate source fact pattern or infer that a result below 10% alone establishes modification accounting."
+      ],
+      "status": "planned_only_no_article_body_at_this_checkpoint"
+    },
+    {
+      "id": "fasb-private-grant-conditions",
+      "title": "Private grants received by banks: separate the receipt date from the recognition condition",
+      "family": "FASB",
+      "framework": "US_GAAP",
+      "kind": "guide",
+      "gap_rationale": "No current item addresses donor-imposed grant conditions. Broader nonprofit donor-restriction treatment is not supported by the selected regulator source, so the proposal is deliberately bank-recipient and private-donor scoped.",
+      "source_ids": [
+        "osa-occ-baas-2026-11e-private-grants"
+      ],
+      "planned_learning_outcomes": [
+        "Design a fresh dated private-grant receipt and a single measurable donor condition, stipulated to be a substantive condition, with separate satisfaction and cash dates; reconcile a deferred amount and later recognition."
+      ],
+      "scope_limits": [
+        "Not a nonprofit restriction-release model and not government-grant accounting.",
+        "No equity exchanged, customer consideration, promises to give, or partly satisfied condition in the example.",
+        "Determine enforceability and the full agreement separately; labels and budgets alone do not prove a condition."
+      ],
+      "status": "planned_only_no_article_body_at_this_checkpoint"
+    },
+    {
+      "id": "fasb-operating-cash-direct-indirect",
+      "title": "Operating cash flow: reconcile gross cash receipts with the indirect bridge",
+      "family": "FASB",
+      "framework": "US_GAAP",
+      "kind": "guide",
+      "gap_rationale": "The workbook establishes bank-population identity and leaves cash-flow classifications unresolved; the short case establishes that balance changes are not automatically cash flows. No current item derives gross customer, supplier and employee cash amounts and independently reconciles them to the indirect result.",
+      "source_ids": [
+        "osa-sec-cash-flows-2023-direct-indirect"
+      ],
+      "planned_learning_outcomes": [
+        "Build fresh miniature income and balance schedules with explicit ordinary-operating assumptions, derive cash collected and paid, and independently reach the same operating cash total through the indirect bridge; add a balanced classification-error sensitivity."
+      ],
+      "scope_limits": [
+        "The arithmetic uses explicitly stipulated transaction classifications and excludes acquisitions, foreign exchange, taxes, interest, supplier finance, restricted cash and noncash investing/financing.",
+        "SEC staff encouragement and control observations are not a new mandatory direct-method rule.",
+        "A balanced total does not establish that a classification error is immaterial."
+      ],
+      "status": "planned_only_no_article_body_at_this_checkpoint"
+    }
+  ],
+  "remaining_source_gaps": [
+    {
+      "topic": "Borrower debt issuance costs",
+      "reason": "Bounded source discovery did not produce a directly examined, current official application passage adequate for the requested scope; tax regulations and company filings would not establish financial-reporting treatment."
+    },
+    {
+      "topic": "Nonprofit conditions versus donor restrictions",
+      "reason": "The bank grant source does not support a complete nonprofit donor-restriction/release explanation; preserve the gap rather than overgeneralize."
+    },
+    {
+      "topic": "Current versus noncurrent debt",
+      "reason": "No suitable independently authored official application guidance was examined during this bounded pass."
+    }
+  ]
+}

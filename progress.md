@@ -1,3 +1,30 @@
+## 2026-10-04 · Source-first checkpoint for twelve more original guides · #9/#10/#22
+
+Collected **19 section-scoped metadata references / 15 distinct source-document
+URLs**, including **14 newly referenced URLs**, plus one separately counted official
+discovery index. Two parallel bounded source passes identified **12 nonduplicative
+planned explanations** and **30 factual research premises** across governmental and
+nongovernmental accounting. This metadata-only checkpoint adds **zero article
+bodies**: the current 90-article library, all 55 bound source objects, article hashes,
+AI receipts, licenses, IRS source hashes and publication guards remain unchanged.
+
+Sources are published before new annotation drafting. The proposed teaching work
+covers grants, leave, capital assets, estimates/errors, interfund activity, pensions,
+securities/OCI, bond yield, equity-method movement, debt replacement, bank private
+grants and direct/indirect cash flow. Source-body acquisition/publication, complete
+current-standard verification, human approvals and Agent admissions added: zero.
+Conflicting state details, embedded publisher material, source example patterns and
+unexamined diagrams are explicitly excluded. Check dates are not effective dates.
+
+Observed metadata checks validate counts, unique IDs, all source/claim/proposal
+bindings, credential-free official HTTPS links, declared source limits and unchanged
+90 article hashes/55 source objects. Observed cloud runs passed TypeScript 5.9.3 typecheck, 79 Node tests, 18 Python
+tests including the preserved IRS guard, the full 90-article/33-System build with
+78 unchanged AI receipts, and scripts/check_public.py --dist. No Actions dispatch, deployment, native
+run, paid action, real integration or access change. Next: author the twelve original
+worked explanations from the committed source checkpoint, then independently
+review calculations, scope and attribution before article publication.
+
 ## 2026-10-04 · Twelve original standards explanations and worked scenarios · #9/#10/#12/#22
 
 Added **12 original educational articles**, four each for FASB, GASB and AICPA
