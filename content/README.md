@@ -76,3 +76,7 @@ No content item has been approved for professional reliance. No live model/stand
 [Five original research maps](core-standards/README.md) cover 20 tracks across FASB,
 GASB, AICPA, ESG and IRS literature. The tracks are research prompts, not acquired
 standards, publisher source bodies or professional approval.
+
+## State and local tax sources
+
+[Explore the dated fifty-state-plus-DC SALT catalog](salt/2026-10-04/README.md), including income, sales, use, excise, franchise and gross-receipts research dimensions and representative local layers. Source bodies remain outside public distribution pending rights review.

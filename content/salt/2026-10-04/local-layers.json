@@ -1,0 +1,56 @@
+[
+  {
+    "jurisdiction_id": "US-WA-Seattle",
+    "jurisdiction_level": "city",
+    "scope": "Municipal business tax/B&O source distinct from Washington state DOR",
+    "source_ids": [
+      "salt:969926f4c44dde5b9f91a8a0",
+      "salt:a683a7a3f89e98490ff82faf"
+    ],
+    "status": "link_only_robots_403_no_source_body_acquired",
+    "rates_verified": false
+  },
+  {
+    "jurisdiction_id": "US-NY-New_York_City",
+    "jurisdiction_level": "city",
+    "scope": "NYC Department of Finance municipal business and excise tax sources; not substituted for NY State DTF",
+    "source_ids": [
+      "salt:066c907f46f64107061fbecf",
+      "salt:087c5aaae9d521cae016fa31",
+      "salt:35f44b5f730f3cdd8c686401",
+      "salt:38346473c0d6e88183487d1e",
+      "salt:3b7ff5450b01ea1204c9de61",
+      "salt:637830d5fd912c7a183e87f1",
+      "salt:b270d353066b0a8f54dd44b7",
+      "salt:c2ba99422e8d28260ce29291",
+      "salt:d41a8fdfbb9ba615e5d52942",
+      "salt:e9a891df1fd9aedcca7986e3"
+    ],
+    "status": "representative_official_pages_retained_review_pending",
+    "rates_verified": false
+  },
+  {
+    "jurisdiction_id": "US-WA-Covington",
+    "jurisdiction_level": "city",
+    "administering_authority": "Washington Department of Revenue",
+    "scope": "Dated city lodging sales/use tax notice; city scope separate from state administrator",
+    "source_ids": [
+      "salt:9c6b9fd3ca3a3292085d2a73"
+    ],
+    "effective_from": "2026-07-01",
+    "status": "dated_official_pdf_retained_subsequent_amendments_unreviewed",
+    "rates_verified": false
+  },
+  {
+    "jurisdiction_id": "US-WA-Maple_Valley",
+    "jurisdiction_level": "city",
+    "administering_authority": "Washington Department of Revenue",
+    "scope": "Dated city lodging sales/use tax notice; city scope separate from state administrator",
+    "source_ids": [
+      "salt:4826d67151932116b17a18bc"
+    ],
+    "effective_from": "2026-07-01",
+    "status": "dated_official_pdf_retained_subsequent_amendments_unreviewed",
+    "rates_verified": false
+  }
+]

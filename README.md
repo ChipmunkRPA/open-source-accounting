@@ -54,3 +54,7 @@ research outlines with 20 manually curated tracks across FASB, GASB, AICPA, ESG 
 IRS literature. These are research questions and work-product designs, not acquired
 standards or a publisher index. No publisher standard bodies, automated collection,
 source-operation grants or professional approvals are included.
+
+## State and local tax source coverage
+
+The [SALT research catalog](content/salt/2026-10-04/README.md) adds a dated 51-jurisdiction coverage matrix, representative state/city sources and explicit acquisition gaps. It publishes metadata only, with IRS referrals, pages, whole PDFs and candidate links counted separately; no current-rate or exhaustive-coverage claim is made.

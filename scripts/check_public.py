@@ -34,7 +34,10 @@ CORE_STANDARDS_FILES = {
     'content/core-standards/esg-research-map.md',
     'content/core-standards/irs-research-map.md',
 }
+SALT_FILES = {'content/salt/2026-10-04/sources.json', 'content/salt/2026-10-04/README.md', 'content/salt/2026-10-04/local-layers.json', 'content/salt/2026-10-04/manifest.json', 'content/salt/2026-10-04/source-links.json', 'content/salt/2026-10-04/jurisdictions.json'}
 def allowed(name):
+    if name.startswith('content/salt/'):
+        return name in SALT_FILES
     if name.startswith('content/core-standards/'):
         return name in CORE_STANDARDS_FILES
     if name.startswith('content/tax-case-law/'):

@@ -1,3 +1,50 @@
+## 2026-10-04 · State/local tax acquisition and metadata catalog · #16/#20/#21
+
+Published a metadata-only initial SALT research catalog for **50 states plus DC**.
+The bounded acquisition recorded **175 source URLs**, retaining **154 distinct original
+HTTP artifacts / 154 hashes** and recording **21 blocked/deferred URLs**. Units stay
+separate: **52 IRS referral/index pages**; **102 state/local publisher artifacts**, comprising
+**12 whole official PDFs / 206 pages** and **90 HTML pages/indexes**; **56 observed
+agency referrals** and **560 additional discovery links**. Agency landing pages were
+retained for **30 jurisdictions**. The other baseline rows are observed IRS referrals and
+explicit gaps, not independently verified state-law coverage.
+
+The six-file public directory contains only reference metadata and original coverage
+descriptions. **Zero original source bodies, legal sections, original briefs, current
+rates, professional approvals or Agent admissions** are published/claimed by this batch.
+All retained originals remain outside public Git pending operation-specific state/local
+rights, third-party/codifier and substantive applicability review. Every family tracks
+income/sales/use/excise/franchise/gross-receipts separately across authority, base,
+rates, filing, administrative and case-law research dimensions. State/county/city/
+special-district layers carry source IDs; discovery jurisdiction is separate from
+target scope, excluding federal/unknown candidates from state-family coverage.
+
+Representative sources cover WA/Seattle, CA FTB/CDTFA, NY State/NYC, plus broader
+state administrative/case indexes and franchise/gross-receipts pages. Seattle robots
+403 was respected; no city body was requested. A CDTFA canonical-host redirect was
+reviewed rather than treating a host-allowlist failure as an HTTP access denial.
+Five California form/table tax years and two WA city notices' July 1, 2026 effective
+dates were checked against retained originals. NY 2011/2015 publication editions are
+explicitly historical/unreviewed for supersession. No numeric rate is asserted.
+
+Observed checks: **28 offline SALT tests** passed, retained hash/length reconciliation
+passed, all 51 jurisdiction/family/dimension references validated, and four prohibited
+SALT paths were rejected. Separate bounded AI review corrected inherited issuer/tax
+family fields, proposed-rule treatment, geographic evidence and federal-link leakage;
+this is not human professional approval. TypeScript, **16 identity tests**, **55 Systems
+tests**, full public build (**78 articles, 33 Systems profiles**) and final generated
+public boundary passed. An initial boundary check correctly rejected a temporary
+existing-dependency symlink; it was removed and the unchanged boundary rerun passed.
+No new dependencies, model downloads, Mac/native/release run, hosted Actions,
+deployment, paid service or real integration occurred.
+
+Publication preserves fresh main c1ebcb78aa9c9a3ddd34d42a7907c04f8e643110 and its
+GovInfo, tax-case, Systems and core-standards bytes, using a normal fast-forward only.
+The [skip ci] marker respects the existing no-Actions direction; branch/rules checks
+are rechecked before ref mutation. Next: verify remaining official canonical links,
+expand dated state/local authorities and whole publications, and obtain source-body
+rights plus supersession/applicability review without inflating coverage counts.
+
 # 2026-10-04 — Original core standards research maps · #9/#10/#12/#13/#20/#22
 
 Added exactly seven public files: five original AI-assisted research maps, a

@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "collection_id": "us-salt-2026-10-04",
+  "generated_at": "2026-10-04T16:35:59+00:00",
+  "scope": "Initial fifty-state-plus-DC research coverage and representative local source acquisition; not exhaustive legal coverage",
+  "counts": {
+    "source_url_records": 175,
+    "retained_url_records": 154,
+    "blocked_url_records": 21,
+    "unique_retained_body_sha256": 154,
+    "retained_original_bytes": 18188700,
+    "federal_referral_index_pages": 52,
+    "state_local_publisher_records": 102,
+    "whole_official_pdf_documents": 12,
+    "pdf_pages": 206,
+    "official_html_pages": 90,
+    "discovered_tax_authority_links": 560,
+    "baseline_jurisdictions": 51,
+    "state_agency_referral_links": 56,
+    "states_with_retained_agency_landing_page": 30,
+    "source_bodies_published": 0,
+    "parsed_legal_sections_published": 0,
+    "original_briefs": 0,
+    "current_rates_verified": 0,
+    "professionally_reviewed_items": 0,
+    "agent_admissions": 0
+  },
+  "counting_notes": [
+    "IRS referral indexes are not substantive state/local authority",
+    "An index/page is not a whole publication or legal section",
+    "A retained original PDF counts once; PDF pages are separate units",
+    "Discovered links count separately from acquired target documents",
+    "No current rate is asserted and no unreviewed source body is redistributed"
+  ],
+  "source_files": [
+    "sources.json",
+    "jurisdictions.json",
+    "source-links.json",
+    "local-layers.json"
+  ],
+  "rights": "Public projection contains source-reference metadata and original coverage descriptions only; original bodies remain held for source-specific rights and substantive review"
+}
