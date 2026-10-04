@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-04",
+  "source_checkpoint_commit": "0b994814543dd79371e4ff3564d400b480fb8adb",
+  "source_publication_preceded_authoring": true,
+  "baseline_articles": 102,
+  "new_articles": 6,
+  "total_articles": 108,
+  "new_words_whitespace_including_notices": 6272,
+  "source_records_added": 6,
+  "distinct_source_document_urls": 5,
+  "total_reference_objects": 80,
+  "source_body_files_added": 0,
+  "publisher_standard_bodies_added": 0,
+  "professional_approvals": 0,
+  "agent_admissions": 0,
+  "article_ai_review_receipts_added": 0,
+  "author_deterministic_checks": 115,
+  "independent_ai_review": {
+    "status": "bounded_ai_cross_check_passed",
+    "total_assertions": 541,
+    "arithmetic_logic_assertions": 114,
+    "policy_assertions": 31,
+    "preservation_assertions": 372,
+    "binding_assertions": 24,
+    "report_sha256": "d7644900c1873264f4f8fd538532af2c1e502fd4488a8ffaa607bd061e1a519d",
+    "human_professional_approval": false,
+    "article_level_ai_receipts_created": 0
+  },
+  "articles": [
+    {
+      "id": "gasb-custodial-resource-flows",
+      "path": "guides/gasb-custodial-resource-flows-v1.md",
+      "sha256": "4584a2b69a2588fbb211d3529dd5261c07ea46b494f4b9bf5e63d35162b5ca5d",
+      "word_count_whitespace": 996
+    },
+    {
+      "id": "gasb-cash-defeasance-bridge",
+      "path": "guides/gasb-cash-defeasance-bridge-v1.md",
+      "sha256": "081db42181f7c7d33a95947fb885e20d7a61ecb869edb09dbadaa443f9c711ed",
+      "word_count_whitespace": 1023
+    },
+    {
+      "id": "gasb-aro-current-value-rollforward",
+      "path": "guides/gasb-aro-current-value-rollforward-v1.md",
+      "sha256": "c98ab89f5b9dd81dbb2c9bed3a41b3418cbcfcc18c30c82f045de67be98b7077",
+      "word_count_whitespace": 1069
+    },
+    {
+      "id": "fasb-oreo-holding-register",
+      "path": "guides/fasb-oreo-holding-register-v1.md",
+      "sha256": "0562384c5f381c88bdaf1d5dc9ecf0953d9ad3ad0bac5dededcdc9142fc7c3b1",
+      "word_count_whitespace": 1009
+    },
+    {
+      "id": "fasb-goodwill-test-order",
+      "path": "guides/fasb-goodwill-test-order-v1.md",
+      "sha256": "ee8855475d18a5d50d2b6822cf52a89966f02bfc3da23567d577f57d94cfc4ed",
+      "word_count_whitespace": 1086
+    },
+    {
+      "id": "aicpa-aup-examination-choice",
+      "path": "guides/aicpa-aup-examination-choice-v1.md",
+      "sha256": "bcb83a8aa716a18dc9b6f4d039f3e12cc61bcde25f6333cbe65f7f9bb7e0ae46",
+      "word_count_whitespace": 1089
+    }
+  ]
+}

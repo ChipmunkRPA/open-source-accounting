@@ -2750,6 +2750,162 @@
       "primary_text_gap": true,
       "public_visibility": "editorial_draft",
       "agent_eligible_by_default": false
+    },
+    {
+      "id": "gasb-custodial-resource-flows",
+      "title": "Custodial funds: reconcile money held for other beneficiaries",
+      "kind": "guide",
+      "topic": "gasb-fiduciary",
+      "framework": "GASB",
+      "summary": "An original three-beneficiary register reconciles accrual additions and deductions, receivables, payables, cash and fiduciary net position.",
+      "path": "guides/gasb-custodial-resource-flows-v1.md",
+      "version": "1.0.0",
+      "sha256": "4584a2b69a2588fbb211d3529dd5261c07ea46b494f4b9bf5e63d35162b5ca5d",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-texas-custodial-presentation"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "gasb-cash-defeasance-bridge",
+      "title": "Existing-resource debt defeasance: separate the fund payment from the liability exit",
+      "kind": "guide",
+      "topic": "gasb-debt",
+      "framework": "GASB",
+      "summary": "An original existing-resource defeasance reconciles debt, premium, prior-refunding deferred outflow and prepaid insurance with a separate governmental-fund payment.",
+      "path": "guides/gasb-cash-defeasance-bridge-v1.md",
+      "version": "1.0.0",
+      "sha256": "081db42181f7c7d33a95947fb885e20d7a61ecb869edb09dbadaa443f9c711ed",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-texas-existing-resource-defeasance"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "gasb-aro-current-value-rollforward",
+      "title": "Asset retirement obligations: connect current outlays with deferred-resource expense",
+      "kind": "guide",
+      "topic": "gasb-asset-retirement",
+      "framework": "GASB",
+      "summary": "An original retirement-work register connects current outlay remeasurement, deferred-resource expense and remaining-service-life sensitivity.",
+      "path": "guides/gasb-aro-current-value-rollforward-v1.md",
+      "version": "1.0.0",
+      "sha256": "c98ab89f5b9dd81dbb2c9bed3a41b3418cbcfcc18c30c82f045de67be98b7077",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-texas-aro-current-outlays"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "fasb-oreo-holding-register",
+      "title": "Foreclosed property held for sale: reconcile carrying value and holding activity",
+      "kind": "guide",
+      "topic": "fasb-oreo",
+      "framework": "US_GAAP",
+      "summary": "An original two-property closing register separates property-level valuation allowances, a direct-write-off alternative, holding expenses and cash effects.",
+      "path": "guides/fasb-oreo-holding-register-v1.md",
+      "version": "1.0.0",
+      "sha256": "0562384c5f381c88bdaf1d5dc9ecf0953d9ad3ad0bac5dededcdc9142fc7c3b1",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-occ-oreo-holding"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "fasb-goodwill-test-order",
+      "title": "Goodwill testing: sequence other asset losses before applying the goodwill cap",
+      "kind": "guide",
+      "topic": "fasb-goodwill",
+      "framework": "US_GAAP",
+      "summary": "An original reporting-unit bridge recognizes independently stipulated other-asset losses before a capped goodwill calculation and four fair-value sensitivities.",
+      "path": "guides/fasb-goodwill-test-order-v1.md",
+      "version": "1.0.0",
+      "sha256": "ee8855475d18a5d50d2b6822cf52a89966f02bfc3da23567d577f57d94cfc4ed",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-occ-goodwill-order-cap"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "aicpa-aup-examination-choice",
+      "title": "Agreed-upon procedures and examinations: match the report to the user’s question",
+      "kind": "guide",
+      "topic": "aicpa-attestation",
+      "framework": "AUDIT",
+      "summary": "An original repair-work-order case distinguishes bounded procedure results from an examination assurance objective, with explicit criteria and no population extrapolation.",
+      "path": "guides/aicpa-aup-examination-choice-v1.md",
+      "version": "1.0.0",
+      "sha256": "bcb83a8aa716a18dc9b6f4d039f3e12cc61bcde25f6333cbe65f7f9bb7e0ae46",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-lla-aup-examination"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
     }
   ]
 }

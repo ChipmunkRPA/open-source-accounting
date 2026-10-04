@@ -1,3 +1,38 @@
+## 2026-10-04 · Six more original accounting and attestation guides · #9/#10/#12/#22
+
+Added **six original guides / 6,272 words including notices**: three governmental
+accounting guides, two bank-accounting guides and one attestation guide. This takes
+the public library from **102 to 108 articles** and the bound reference registry
+from **74 to 80 objects**. The new worked scenarios cover custodial resource flows,
+existing-resource debt defeasance, current-value asset-retirement obligations,
+OREO holding activity, ordered/capped goodwill testing and AUP versus examination
+scope. Source metadata was published first at
+0b994814543dd79371e4ff3564d400b480fb8adb, before annotation drafting began.
+
+All 102 prior article rows and body hashes, 74 prior source objects, 78 indexed AI
+review records and 36 IRS source-file hashes remain unchanged. The six appended
+source records are the previously committed metadata, not newly acquired documents.
+Publisher standard bodies, source numerical scenarios and diagrams are not included.
+All new first-party text is clearly labeled **Ray Sang’s Annotation**, AI-assisted,
+with LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0 and its stated rights boundaries.
+Professional review remains unperformed; primary-text gaps, editorial-draft status
+and default Agent exclusion remain intact. No article-level AI receipt is added.
+
+Observed cloud checks: 79 Node tests, 21 Python tests, TypeScript, full 108-page /
+33-System build, public boundary checks and all six local HTTP article routes pass.
+Author scripts pass 115 arithmetic/logic/metadata checks. A separate bounded AI
+cross-check passes 541 assertions, comprising 114 arithmetic/logic, 31 policy,
+372 preservation and 24 binding checks, with no corrections required. It verifies
+78 indexed article review records; the larger directory-file count includes schema
+and index documents and is not a count of reviewed articles. This model pass is not
+human professional approval or Agent admission.
+
+No hosted site deployment, native/release or visual browser acceptance was run.
+No Actions dispatch, paid build, real integration, credential/access change, model
+inference or runtime activation occurred. The private Premium content pack remains
+at its separately published 102-item sync until an independently reconciled later
+addition; this public commit does not silently update that private repository.
+
 ## 2026-10-04 · Source-first checkpoint for six further original guides · #9/#10/#12/#22
 
 Collected **six scoped reference records across five official document URLs** and
