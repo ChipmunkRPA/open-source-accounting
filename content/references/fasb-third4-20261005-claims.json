@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-05",
+  "claims": [
+    {
+      "id": "fasb-loan-sale-classification-bridge",
+      "source_id": "osa-occ-loan-hfs-noncredit-transfers",
+      "locator": "Topic 2E Q10,11,13",
+      "paraphrase": "For a supported noncredit decline, OCC reverses the credit allowance on HFS transfer, uses a separate valuation allowance, and reverses that valuation allowance on return to HFI before reassessing credit losses.",
+      "exclusions": "Use a new multi-loan ledger with a stipulated, objectively supported interest-rate-only decline. Exclude credit-driven regulatory charge-offs, mortgage loans, origination, sale recognition, interest accrual, fees, taxes and source examples. Include a separately stipulated return-to-hold decision."
+    },
+    {
+      "id": "fasb-loss-range-accrual-bridge",
+      "source_id": "osa-occ-loss-contingency-range",
+      "locator": "Topic 6A Q1",
+      "paraphrase": "For a probable, reasonably estimable loss, OCC uses the better estimate within a range or its minimum when no point is better.",
+      "exclusions": "Use fictional independent matters with supplied probable-loss and reasonable-estimate conclusions, a best estimate or no better point, later updated estimates and settlement cash. Exclude appeals, court judgments, legal advice, gain/insurance contingencies, discounting, tax and source scenarios."
+    },
+    {
+      "id": "fasb-equipment-useful-life-reset",
+      "source_id": "osa-occ-equipment-shortened-life",
+      "locator": "Topic 5C Q4",
+      "paraphrase": "OCC keeps equipment classified as held for use while still used and shortens its depreciation horizon to reach residual value when use ends.",
+      "exclusions": "Use a new three-asset service-retirement schedule with stipulated straight-line policy, residual values and an independently supplied conclusion that no separate impairment adjustment is required. Exclude outsourcing contract terms, sale, held-for-sale classification, leases, software, impairment measurement, tax and source examples."
+    },
+    {
+      "id": "fasb-stock-offering-cost-bridge",
+      "source_id": "osa-occ-stock-offering-costs",
+      "locator": "Topic 8A Q2,3",
+      "paraphrase": "OCC puts costs directly related to a successful stock offering against offering proceeds in equity; unsuccessful-offering costs affect current expense.",
+      "exclusions": "Use a fictional offering register with supplied cost-eligibility conclusions, two independently completed common-stock issues and a separately abandoned proposal. Exclude deferred interim cost policy, debt/convertible instruments, mixed securities, warrants, employee awards, SEC registrant-specific rules, tax and source examples."
+    }
+  ],
+  "raw_source_text_included": false,
+  "professional_review": "not_performed",
+  "first_party_annotation": {
+    "label": "Ray Sang’s Annotation",
+    "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+    "scope": "New first-party descriptions only to the extent rights exist and are controlled; excludes facts, titles, source text, prior grants and statutory/platform exceptions.",
+    "personal_or_professional_review_implied": false
+  }
+}

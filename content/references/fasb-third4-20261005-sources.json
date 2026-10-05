@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-05",
+  "baseline_commit": "f4d8fd2dc87f987ea2fc4d362af5e9ef008a37e5",
+  "unit": "section-scoped reference metadata, not acquired full source bodies or standards",
+  "source_metadata_records": 4,
+  "distinct_document_urls": 1,
+  "new_article_bodies": 0,
+  "source_body_files": 0,
+  "protected_publisher_full_texts": 0,
+  "professional_reviews": 0,
+  "agent_admissions": 0,
+  "coverage_screen_items": 120,
+  "coverage_screen_guides": 74,
+  "authoring_gate": "Persist this source-only checkpoint to GitHub before writing article bodies.",
+  "sources": [
+    {
+      "id": "osa-occ-loan-hfs-noncredit-transfers",
+      "title": "OCC Bank Accounting Advisory Series: noncredit loan transfers between held-for-investment and held-for-sale",
+      "publisher": "Office of the Comptroller of the Currency",
+      "url": "https://www.occ.treas.gov/publications-and-resources/publications/banker-education/files/pub-bank-accounting-advisory-series.pdf",
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-05",
+      "retrieved_at": "2026-10-05T10:50:35Z",
+      "retrieval_method": "official_url_examined_with_web_tool",
+      "http_status": null,
+      "raw_sha256": null,
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "source_body_included": false,
+      "acquisition": "metadata_and_link_only",
+      "automated_fetch_enabled": false,
+      "primary_publisher_standard_text_verified": false,
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party descriptions only to the extent rights exist and are controlled; excludes facts, titles, source text, prior grants and statutory/platform exceptions.",
+        "personal_or_professional_review_implied": false
+      },
+      "edition_date": null,
+      "edition_label": "August 2026",
+      "edition_date_precision": "month",
+      "document_page_count": 244,
+      "issue_observation_cutoff": "2026-03-31",
+      "authority_status": "OCC staff interpretation for banks; not OCC rules/regulations, FASB-authored text or acquired Codification.",
+      "locator": "Topic 2E, questions 10, 11, 13; printed pages 51–52 / PDF pages 55, 56",
+      "exact_sections": [
+        {
+          "section": "2E",
+          "questions": [
+            "10",
+            "11",
+            "13"
+          ],
+          "printed_pages": "51–52",
+          "pdf_pages_one_based": [
+            55,
+            56
+          ]
+        }
+      ],
+      "standard_locator_reference_only": "ASC 310 and ASC 326: topic pointers only; no particular current paragraph verified",
+      "existing_document_reference_id": "osa-occ-baas-2026",
+      "review_scope": "Use a new multi-loan ledger with a stipulated, objectively supported interest-rate-only decline. Exclude credit-driven regulatory charge-offs, mortgage loans, origination, sale recognition, interest accrual, fees, taxes and source examples. Include a separately stipulated return-to-hold decision.",
+      "date_note": "Edition month and issue-observation cutoff are separate from issuance, adoption and effective dates; no current-applicability conclusion."
+    },
+    {
+      "id": "osa-occ-loss-contingency-range",
+      "title": "OCC Bank Accounting Advisory Series: loss-contingency range measurement",
+      "publisher": "Office of the Comptroller of the Currency",
+      "url": "https://www.occ.treas.gov/publications-and-resources/publications/banker-education/files/pub-bank-accounting-advisory-series.pdf",
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-05",
+      "retrieved_at": "2026-10-05T10:50:35Z",
+      "retrieval_method": "official_url_examined_with_web_tool",
+      "http_status": null,
+      "raw_sha256": null,
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "source_body_included": false,
+      "acquisition": "metadata_and_link_only",
+      "automated_fetch_enabled": false,
+      "primary_publisher_standard_text_verified": false,
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party descriptions only to the extent rights exist and are controlled; excludes facts, titles, source text, prior grants and statutory/platform exceptions.",
+        "personal_or_professional_review_implied": false
+      },
+      "edition_date": null,
+      "edition_label": "August 2026",
+      "edition_date_precision": "month",
+      "document_page_count": 244,
+      "issue_observation_cutoff": "2026-03-31",
+      "authority_status": "OCC staff interpretation for banks; not OCC rules/regulations, FASB-authored text or acquired Codification.",
+      "locator": "Topic 6A, questions 1; printed pages 113 / PDF pages 117",
+      "exact_sections": [
+        {
+          "section": "6A",
+          "questions": [
+            "1"
+          ],
+          "printed_pages": "113",
+          "pdf_pages_one_based": [
+            117
+          ]
+        }
+      ],
+      "standard_locator_reference_only": "ASC 450-20-25, as cited by OCC; reference only",
+      "existing_document_reference_id": "osa-occ-baas-2026",
+      "review_scope": "Use fictional independent matters with supplied probable-loss and reasonable-estimate conclusions, a best estimate or no better point, later updated estimates and settlement cash. Exclude appeals, court judgments, legal advice, gain/insurance contingencies, discounting, tax and source scenarios.",
+      "date_note": "Edition month and issue-observation cutoff are separate from issuance, adoption and effective dates; no current-applicability conclusion."
+    },
+    {
+      "id": "osa-occ-equipment-shortened-life",
+      "title": "OCC Bank Accounting Advisory Series: equipment useful-life shortening while still in use",
+      "publisher": "Office of the Comptroller of the Currency",
+      "url": "https://www.occ.treas.gov/publications-and-resources/publications/banker-education/files/pub-bank-accounting-advisory-series.pdf",
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-05",
+      "retrieved_at": "2026-10-05T10:50:35Z",
+      "retrieval_method": "official_url_examined_with_web_tool",
+      "http_status": null,
+      "raw_sha256": null,
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "source_body_included": false,
+      "acquisition": "metadata_and_link_only",
+      "automated_fetch_enabled": false,
+      "primary_publisher_standard_text_verified": false,
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party descriptions only to the extent rights exist and are controlled; excludes facts, titles, source text, prior grants and statutory/platform exceptions.",
+        "personal_or_professional_review_implied": false
+      },
+      "edition_date": null,
+      "edition_label": "August 2026",
+      "edition_date_precision": "month",
+      "document_page_count": 244,
+      "issue_observation_cutoff": "2026-03-31",
+      "authority_status": "OCC staff interpretation for banks; not OCC rules/regulations, FASB-authored text or acquired Codification.",
+      "locator": "Topic 5C, questions 4; printed pages 109–110 / PDF pages 113, 114",
+      "exact_sections": [
+        {
+          "section": "5C",
+          "questions": [
+            "4"
+          ],
+          "printed_pages": "109–110",
+          "pdf_pages_one_based": [
+            113,
+            114
+          ]
+        }
+      ],
+      "standard_locator_reference_only": "ASC 360-10, as cited by OCC; reference only",
+      "existing_document_reference_id": "osa-occ-baas-2026",
+      "review_scope": "Use a new three-asset service-retirement schedule with stipulated straight-line policy, residual values and an independently supplied conclusion that no separate impairment adjustment is required. Exclude outsourcing contract terms, sale, held-for-sale classification, leases, software, impairment measurement, tax and source examples.",
+      "date_note": "Edition month and issue-observation cutoff are separate from issuance, adoption and effective dates; no current-applicability conclusion."
+    },
+    {
+      "id": "osa-occ-stock-offering-costs",
+      "title": "OCC Bank Accounting Advisory Series: completed and unsuccessful equity-offering costs",
+      "publisher": "Office of the Comptroller of the Currency",
+      "url": "https://www.occ.treas.gov/publications-and-resources/publications/banker-education/files/pub-bank-accounting-advisory-series.pdf",
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-05",
+      "retrieved_at": "2026-10-05T10:50:35Z",
+      "retrieval_method": "official_url_examined_with_web_tool",
+      "http_status": null,
+      "raw_sha256": null,
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "source_body_included": false,
+      "acquisition": "metadata_and_link_only",
+      "automated_fetch_enabled": false,
+      "primary_publisher_standard_text_verified": false,
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party descriptions only to the extent rights exist and are controlled; excludes facts, titles, source text, prior grants and statutory/platform exceptions.",
+        "personal_or_professional_review_implied": false
+      },
+      "edition_date": null,
+      "edition_label": "August 2026",
+      "edition_date_precision": "month",
+      "document_page_count": 244,
+      "issue_observation_cutoff": "2026-03-31",
+      "authority_status": "OCC staff interpretation for banks; not OCC rules/regulations, FASB-authored text or acquired Codification.",
+      "locator": "Topic 8A, questions 2, 3; printed pages 128–129 / PDF pages 132, 133",
+      "exact_sections": [
+        {
+          "section": "8A",
+          "questions": [
+            "2",
+            "3"
+          ],
+          "printed_pages": "128–129",
+          "pdf_pages_one_based": [
+            132,
+            133
+          ]
+        }
+      ],
+      "standard_locator_reference_only": "AICPA Technical Questions and Answers Section 4110 cited by OCC; reference only, not FASB-authored material",
+      "existing_document_reference_id": "osa-occ-baas-2026",
+      "review_scope": "Use a fictional offering register with supplied cost-eligibility conclusions, two independently completed common-stock issues and a separately abandoned proposal. Exclude deferred interim cost policy, debt/convertible instruments, mixed securities, warrants, employee awards, SEC registrant-specific rules, tax and source examples.",
+      "date_note": "Edition month and issue-observation cutoff are separate from issuance, adoption and effective dates; no current-applicability conclusion."
+    }
+  ],
+  "proposals": [
+    {
+      "id": "fasb-loan-sale-classification-bridge",
+      "title": "Loan sale plans: reconcile the credit allowance and the held-for-sale valuation account",
+      "family": "FASB",
+      "source_ids": [
+        "osa-occ-loan-hfs-noncredit-transfers"
+      ],
+      "source_category": "US GAAP educational coverage using government application commentary; not FASB primary text",
+      "original_case_plan": "Use a new multi-loan ledger with a stipulated, objectively supported interest-rate-only decline. Exclude credit-driven regulatory charge-offs, mortgage loans, origination, sale recognition, interest accrual, fees, taxes and source examples. Include a separately stipulated return-to-hold decision."
+    },
+    {
+      "id": "fasb-loss-range-accrual-bridge",
+      "title": "Loss contingencies: turn supported estimates into a liability rollforward",
+      "family": "FASB",
+      "source_ids": [
+        "osa-occ-loss-contingency-range"
+      ],
+      "source_category": "US GAAP educational coverage using government application commentary; not FASB primary text",
+      "original_case_plan": "Use fictional independent matters with supplied probable-loss and reasonable-estimate conclusions, a best estimate or no better point, later updated estimates and settlement cash. Exclude appeals, court judgments, legal advice, gain/insurance contingencies, discounting, tax and source scenarios."
+    },
+    {
+      "id": "fasb-equipment-useful-life-reset",
+      "title": "Equipment retirement plans: rebuild depreciation from the remaining service period",
+      "family": "FASB",
+      "source_ids": [
+        "osa-occ-equipment-shortened-life"
+      ],
+      "source_category": "US GAAP educational coverage using government application commentary; not FASB primary text",
+      "original_case_plan": "Use a new three-asset service-retirement schedule with stipulated straight-line policy, residual values and an independently supplied conclusion that no separate impairment adjustment is required. Exclude outsourcing contract terms, sale, held-for-sale classification, leases, software, impairment measurement, tax and source examples."
+    },
+    {
+      "id": "fasb-stock-offering-cost-bridge",
+      "title": "Equity offering costs: reconcile cash, paid-in capital and an abandoned attempt",
+      "family": "FASB",
+      "source_ids": [
+        "osa-occ-stock-offering-costs"
+      ],
+      "source_category": "US GAAP educational coverage using government application commentary; not FASB primary text",
+      "original_case_plan": "Use a fictional offering register with supplied cost-eligibility conclusions, two independently completed common-stock issues and a separately abandoned proposal. Exclude deferred interim cost policy, debt/convertible instruments, mixed securities, warrants, employee awards, SEC registrant-specific rules, tax and source examples."
+    }
+  ]
+}
