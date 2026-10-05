@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-05",
+  "source_checkpoint_commit": "568028d5b778a1a94127da2537182926cc6e1ef8",
+  "source_metadata_published_before_authoring": true,
+  "source_checkpoint_category": "four section-scoped reference metadata records from one official OCC document; not complete source bodies",
+  "baseline_manifest_items": 116,
+  "baseline_manifest_guides": 70,
+  "new_original_guides": 4,
+  "new_bound_section_references": 4,
+  "total_manifest_items": 120,
+  "total_manifest_guides": 74,
+  "total_bound_references": 93,
+  "separate_tax_case_briefs": 32,
+  "tax_briefs_in_manifest": false,
+  "source_body_files_added": 0,
+  "protected_standard_full_texts_added": 0,
+  "professional_reviews_added": 0,
+  "article_ai_receipts_added": 0,
+  "agent_admissions_added": 0,
+  "publication_state": "editorial_draft",
+  "items": [
+    {
+      "id": "fasb-mutual-fund-sale-bridge",
+      "path": "guides/fasb-mutual-fund-sale-bridge-v1.md",
+      "sha256": "fa1e773e6b6664511c64f4ae0c12021be83bd6c2e3db2bda6605d109245d6c8a",
+      "source_ids": [
+        "osa-occ-mutual-fund-earnings-sale"
+      ]
+    },
+    {
+      "id": "fasb-unfunded-commitment-liability",
+      "path": "guides/fasb-unfunded-commitment-liability-v1.md",
+      "sha256": "555e33f783c442b96869c80ae8042bacbb7bf2ab6340e8b362f8495a2dd937b2",
+      "source_ids": [
+        "osa-occ-unfunded-commitment-losses"
+      ]
+    },
+    {
+      "id": "fasb-boli-premium-cash-value",
+      "path": "guides/fasb-boli-premium-cash-value-v1.md",
+      "sha256": "2314a7c9cba0edf993975c150dc158d6051042ffce6eeb72ae72a31eebb4efd6",
+      "source_ids": [
+        "osa-occ-boli-premium-cash-value"
+      ]
+    },
+    {
+      "id": "fasb-startup-cost-close",
+      "path": "guides/fasb-startup-cost-close-v1.md",
+      "sha256": "b54bfdb5f05787ba06a54a2a8934d7ff01d89cad24658dc8c8fa5909b8319ca3",
+      "source_ids": [
+        "osa-occ-startup-fixed-asset-boundary"
+      ]
+    }
+  ],
+  "limits": "OCC staff application commentary and original examples; no FASB primary-standard bodies, current-applicability certification, human technical review, deployment or Agent admission."
+}

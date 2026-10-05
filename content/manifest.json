@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "0.6.8",
+  "release": "0.6.9",
   "generated_at": "2026-10-05",
   "publication_state": "public_editorial_draft",
   "items": [
@@ -3106,6 +3106,110 @@
       "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
       "source_ids": [
         "osa-ny-opeb-nontrust-bridge"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "fasb-mutual-fund-sale-bridge",
+      "title": "Mutual funds: reconcile periodic marks and a partial sale",
+      "kind": "guide",
+      "topic": "fasb-mutual-fund-measurement",
+      "framework": "US_GAAP",
+      "summary": "An original unit-price register reconciles two reporting dates, a partial sale, sale-date marks and a downside-price sensitivity.",
+      "path": "guides/fasb-mutual-fund-sale-bridge-v1.md",
+      "version": "1.0.0",
+      "sha256": "fa1e773e6b6664511c64f4ae0c12021be83bd6c2e3db2bda6605d109245d6c8a",
+      "published_at": "2026-10-05",
+      "updated_at": "2026-10-05",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-occ-mutual-fund-earnings-sale"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "fasb-unfunded-commitment-liability",
+      "title": "Unfunded commitments: connect expected draws to a separate loss liability",
+      "kind": "guide",
+      "topic": "fasb-off-balance-sheet-credit-losses",
+      "framework": "US_GAAP",
+      "summary": "An original commitment portfolio separates contract scope, conditional expected funding, lifetime losses and liability movements from funded-loan allowances.",
+      "path": "guides/fasb-unfunded-commitment-liability-v1.md",
+      "version": "1.0.0",
+      "sha256": "555e33f783c442b96869c80ae8042bacbb7bf2ab6340e8b362f8495a2dd937b2",
+      "published_at": "2026-10-05",
+      "updated_at": "2026-10-05",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-occ-unfunded-commitment-losses"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "fasb-boli-premium-cash-value",
+      "title": "Bank-owned life insurance: reconcile premiums, cash value and period income",
+      "kind": "guide",
+      "topic": "fasb-bank-owned-life-insurance",
+      "framework": "US_GAAP",
+      "summary": "An original policy register reconciles premiums, realizable cash values and period expense or income with separate sensitivities.",
+      "path": "guides/fasb-boli-premium-cash-value-v1.md",
+      "version": "1.0.0",
+      "sha256": "2314a7c9cba0edf993975c150dc158d6051042ffce6eeb72ae72a31eebb4efd6",
+      "published_at": "2026-10-05",
+      "updated_at": "2026-10-05",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-occ-boli-premium-cash-value"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "fasb-startup-cost-close",
+      "title": "Startup costs: separate launch spending from the equipment rollforward",
+      "kind": "guide",
+      "topic": "fasb-startup-costs",
+      "framework": "US_GAAP",
+      "summary": "An original launch-cost register separates startup expense from supplied equipment capitalization, depreciation and balanced closing entries.",
+      "path": "guides/fasb-startup-cost-close-v1.md",
+      "version": "1.0.0",
+      "sha256": "b54bfdb5f05787ba06a54a2a8934d7ff01d89cad24658dc8c8fa5909b8319ca3",
+      "published_at": "2026-10-05",
+      "updated_at": "2026-10-05",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-occ-startup-fixed-asset-boundary"
       ],
       "technical_review": {
         "status": "unreviewed",
