@@ -8,7 +8,8 @@
     "build": "node scripts/clean.mjs && tsc -p tsconfig.json && node scripts/build-vendor.mjs && node scripts/copy-assets.mjs && node scripts/build-library.mjs && node scripts/build-systems.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test:auth": "node --test tests/identity.test.mjs",
-    "test:systems": "node --test tests/systems.test.mjs"
+    "test:systems": "node --test tests/systems.test.mjs",
+    "test:content": "node --test tests/content-policy.test.mjs tests/reader-editions.test.mjs tests/reader-rendering.test.mjs"
   },
   "devDependencies": {
     "typescript": "5.9.3",

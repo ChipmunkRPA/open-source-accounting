@@ -8,12 +8,13 @@ import {renderDirectory} from '../scripts/build-systems.mjs';
 
 const root=resolve(fileURLToPath(new URL('../..',import.meta.url)));
 const read=path=>readFile(resolve(root,path),'utf8');
-const brand='Ray Sang’s Annotation';
+const brand='Ray Sang Annotation';
+const canonicalBrand='Ray Sang’s Annotation';
 
 test('brand sidecar binds all originals without changing credits, hashes or existing CC BY',async()=>{
   const manifest=JSON.parse(await read('content/manifest.json'));
   const policy=JSON.parse(await read('content/annotation-policy.json'));
-  assert.equal(policy.annotation_brand,brand);
+  assert.equal(policy.annotation_brand,canonicalBrand);
   assert.equal(policy.professional_review_implied,false);
   assert.equal(policy.source_text_is_annotation,false);
   assert.equal(policy.preserve_prior_licenses,true);
@@ -45,7 +46,7 @@ test('every system card and detail labels our prose without relicensing vendor m
 test('original article pages and list prominently label annotations and retain creator credit',async()=>{
   const source=await read('frontend/scripts/build-library.mjs');
   assert.ok(source.includes(`<strong>${brand}</strong>`));
-  assert.ok(source.includes('Original credit: ${escape(item.author)}'));
+  assert.ok(source.includes('Original credit: ${escape(reader.reader_author)}'));
   assert.ok(source.includes('Existing CC BY 4.0 rights and creator credits preserved'));
 });
 
@@ -93,7 +94,7 @@ test('new original annotations have explicit custom terms and preserve authority
     const body=await read('content/'+item.path);
     assert.equal(item.license,policy.new_explicit_license);
     assert.ok(body.includes(item.license));
-    assert.ok(body.includes(brand));
+    assert.ok(body.includes(canonicalBrand));
     assert.equal(item.agent_eligible_by_default,false);
     assert.equal(item.technical_review.status,'unreviewed');
     assert.equal(createHash('sha256').update(body).digest('hex'),item.sha256);

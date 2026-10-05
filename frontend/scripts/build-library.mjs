@@ -1,3 +1,4 @@
+import {loadReaderEditions,readerPayload} from './read-reader-editions.mjs';
 import {readFile,writeFile,mkdir,realpath} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {resolve,relative,isAbsolute} from 'node:path';
@@ -61,7 +62,8 @@ function valid(s,v,defs){
  }
  return true;
 }
-const manifest=parse(await content('manifest.json'));
+const manifestBytes=await content('manifest.json');
+const manifest=parse(manifestBytes);
 const manifestSchema=parse(await content('manifest.schema.json'));
 if(!valid(manifestSchema,manifest,manifestSchema.$defs))throw Error('Invalid public manifest');
 const items=new Map(manifest.items.map(item=>[item.id,item]));
@@ -74,6 +76,7 @@ const indexSchema=parse(await content('ai_reviews/index.schema.json'));
 const receiptSchema=parse(await content('ai_reviews/receipt.schema.json'));
 if(!valid(indexSchema,index,indexSchema.$defs))throw Error('Invalid AI editorial index');
 const reviews=new Map();
+const readerEditions=await loadReaderEditions(content,manifest,manifestBytes,parse);
 for(const entry of index.reviews){
  const item=items.get(entry.item_id);
  if(!item||reviews.has(item.id)||entry.version!==item.version||entry.content_sha256!==item.sha256)throw Error('AI editorial article mismatch');
@@ -110,19 +113,23 @@ for(const entry of index.reviews){
 }
 function reviewSection(item){
  const r=reviews.get(item.id);
- if(!r)return '<section aria-label="AI editorial review"><h2>AI editorial review</h2><p>No AI editorial review is recorded for this revision.</p></section>';
- const outcome={pass_ai_editorial_only:'Bounded AI editorial checks passed',changes_required:'Changes required',primary_text_unavailable:'Primary text unavailable',rights_scope_unresolved:'Source-rights scope unresolved'}[r.outcome];
- return `<section aria-label="AI editorial review"><h2>AI editorial review</h2><p>${escape(outcome)} for version ${escape(item.version)}. Not professional accounting or legal approval; no source rights or Agent admission granted.</p><p>Model: ${escape(r.model_id??'not recorded')}; reasoning: ${escape(r.reasoning_effort??'not recorded')}; completed: ${escape(r.reviewed_at_utc)}.</p><p>Article SHA-256: ${escape(item.sha256)}</p><h3>Recorded changes</h3><ul>${r.changes_summary.map(s=>`<li>${escape(s)}</li>`).join('')}</ul><h3>Unresolved gaps</h3><ul>${r.unresolved_gaps.map(s=>`<li>${escape(s)}</li>`).join('')||'<li>None recorded; professional review and reporting-period applicability remain separate.</li>'}</ul></section>`;
+ if(!r)return '<section aria-label="Editorial checks"><h2>Editorial checks</h2><p>No editorial-check record is available for the original article revision. No professional review is claimed.</p></section>';
+ const outcome={pass_ai_editorial_only:'Bounded editorial checks recorded',changes_required:'Changes required',primary_text_unavailable:'Primary text unavailable',rights_scope_unresolved:'Source-rights scope unresolved'}[r.outcome];
+ return `<section aria-label="Editorial checks"><h2>Editorial checks</h2><p>${escape(outcome)} for original version ${escape(item.version)}. Reader-edition changes are limited to labels and notices. No professional accounting or legal approval, source rights or Agent admission is granted.</p></section>`;
 }
-const page=(title,body)=>`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(title)}</title><link rel="stylesheet" href="/assets/styles.css"><main class="content"><h1>${escape(title)}</h1><section aria-label="Original annotation"><p><strong>Ray Sang’s Annotation</strong></p><p>AI-assisted original educational draft · Not professionally reviewed · Existing CC BY 4.0 rights and creator credits preserved; new items use the license stated on each article. This label does not mean Ray Sang personally reviewed it.</p><p><a href="/content-terms.txt">Content rights and automated-access terms</a></p></section>${body}</main></html>`;
+const page=(title,body)=>`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(title)}</title><link rel="stylesheet" href="/assets/styles.css"><main class="content"><h1>${escape(title)}</h1><section aria-label="Original annotation"><p><strong>Ray Sang Annotation</strong></p><p>Original educational draft · Not professionally reviewed · Existing CC BY 4.0 rights and creator credits preserved; new items use the license stated on each article. This label does not mean Ray Sang personally reviewed it.</p><p><a href="/content-terms.txt">Content rights and automated-access terms</a></p></section>${body}</main></html>`;
 await mkdir('dist/library',{recursive:true});
+await mkdir('dist/reader-editions',{recursive:true});
 const rows=[];
 for(const item of manifest.items){
  if(!/^[a-z0-9-]+$/.test(item.id))throw Error('Invalid public item ID');
  const bytes=await content(item.path);
  if(hash(bytes)!==item.sha256)throw Error('Content hash mismatch: '+item.id);
- await writeFile(`dist/library/${item.id}.html`,page(item.title,`<p><a href="index.html">All library items</a></p><p>Original credit: ${escape(item.author)} · Version ${escape(item.version)} · ${escape(item.license)}</p>${reviewSection(item)}<pre class="source-passage-text">${escape(bytes.toString('utf8'))}</pre>`));
- rows.push(`<li><strong>Ray Sang’s Annotation</strong> · <a href="${item.id}.html">${escape(item.title)}</a> — ${escape(item.summary)}${reviews.has(item.id)?' · AI editorial record available':''}</li>`);
+ const reader=readerEditions.get(item.id);
+ await writeFile(`dist/reader-editions/${item.id}.md`,reader.body);
+ await writeFile(`dist/reader-editions/${item.id}.json`,JSON.stringify(readerPayload(item,reader))+'\n');
+ await writeFile(`dist/library/${item.id}.html`,page(item.title,`<p><a href="index.html">All library items</a></p><p>Original credit: ${escape(reader.reader_author)} · Original version ${escape(item.version)} · Reader edition ${escape(reader.reader_edition)} · ${escape(item.license)}</p>${reviewSection(item)}<p><a href="../reader-editions/${item.id}.md" download>Download Markdown</a></p><pre class="source-passage-text">${escape(reader.body)}</pre>`));
+ rows.push(`<li><strong>Ray Sang Annotation</strong> · <a href="${item.id}.html">${escape(item.title)}</a> — ${escape(item.summary)}${reviews.has(item.id)?' · Editorial-check record available':''}</li>`);
 }
-await writeFile('dist/library/index.html',page('Free original accounting library',`<p><a href="../systems/index.html">Explore the free accounting systems directory</a></p><p>${rows.length} original items; ${reviews.size} revision-bound AI editorial records. Third-party publications retain their own rights. Links and drafts are not approved authoritative evidence.</p><ul>${rows.join('')}</ul>`));
+await writeFile('dist/library/index.html',page('Free original accounting library',`<p><a href="../systems/index.html">Explore the free accounting systems directory</a></p><p>${rows.length} original items; ${reviews.size} original-revision editorial-check records. Third-party publications retain their own rights. Links and drafts are not approved authoritative evidence.</p><ul>${rows.join('')}</ul>`));
 console.log(`Built ${rows.length} hash-verified offline library pages with ${reviews.size} AI editorial records.`);
