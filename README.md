@@ -11,11 +11,14 @@ npm --prefix frontend ci --ignore-scripts
 npm --prefix frontend run typecheck
 npm --prefix frontend run test:auth
 npm --prefix frontend run build
+npm --prefix frontend run test:content
 python3 scripts/check_public.py --dist
 python3 scripts/serve_public.py
 ```
 
-Open http://127.0.0.1:8080/assets/library/index.html for the hash-verified original library. The application root explains that hosted APIs are unavailable locally. No simulated chat, signed-in account, source acquisition or professional approval is supplied. In hosted operation `/api` must be routed to the separately operated service, which enforces verified email, MFA, permissions and source rights.
+Open http://127.0.0.1:8080/assets/library/index.html for the hash-verified reader editions. The application root explains that hosted APIs are unavailable locally. No simulated chat, signed-in account, source acquisition or professional approval is supplied. In hosted operation `/api` must be routed to the separately operated service, which enforces verified email, MFA, permissions and source rights.
+
+For reading and Markdown downloads on GitHub, use the [current 124-item reader index](content/README.md). Historical canonical article and review records remain preserved separately from the active reader links.
 
 ## Scope and rights
 
@@ -59,10 +62,10 @@ source-operation grants or professional approvals are included.
 
 The [SALT research catalog](content/salt/2026-10-04/README.md) adds a dated 51-jurisdiction coverage matrix, representative state/city sources and explicit acquisition gaps. It publishes metadata only, with IRS referrals, pages, whole PDFs and candidate links counted separately; no current-rate or exhaustive-coverage claim is made.
 
-## Ray Sang’s Annotation and prospective content terms
+## Ray Sang Annotation and prospective content terms
 
 Our original descriptions, standards/law/case interpretations and examples are
-branded **Ray Sang’s Annotation**. This is a presentation label, not a claim of
+branded **Ray Sang Annotation**. This is a presentation label, not a claim of
 personal authorship or professional review. Publisher/government text and original
 creator credits remain distinct. `content/annotation-policy.json` records the
 original-library revision bindings without altering retained article bytes.
