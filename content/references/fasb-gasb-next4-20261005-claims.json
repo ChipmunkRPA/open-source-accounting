@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-05",
+  "claims": [
+    {
+      "id": "mortgage-commitment-measurement",
+      "source_id": "osa-occ-mortgage-commitment-derivatives",
+      "locator": "2C Q5-10",
+      "paraphrase": "The OCC distinguishes sale-intended mortgage origination commitments from excluded commitments; eligible commitments use fair-value balances and earnings changes. Notional reporting is separate from pull-through weighting.",
+      "exclusions": "Origination commitments for mortgage loans intended for sale; fair-value balances, earnings movement, scoped exclusions and notional reconciliation. Exclude hedge accounting, actual valuation model construction, settled originations and source scenarios."
+    },
+    {
+      "id": "servicing-election",
+      "source_id": "osa-occ-servicing-subsequent-measurement",
+      "locator": "9A Q2",
+      "paraphrase": "OCC staff guidance describes class-level amortization with impairment or fair-value-through-earnings measurement; the fair-value election is irreversible.",
+      "exclusions": "Already recognized servicing assets and separately stipulated class elections; distinguish amortization/impairment from fair-value measurement. Exclude initial transfer qualification, interest-only strips, source sale scenario and figures."
+    },
+    {
+      "id": "capital-impairment",
+      "source_id": "osa-texas-impairment-service-utility",
+      "locator": "Opening and Temporary Impairments",
+      "paraphrase": "Texas distinguishes permanent service-utility loss from reduced utilization; recognized losses are not reversed merely because service utility returns.",
+      "exclusions": "Permanent service-utility loss versus temporary underutilization; recognized impairment amount will be independently stipulated. Exclude measurement-method derivation, leased-asset details, local thresholds and source examples."
+    },
+    {
+      "id": "insurance-timing",
+      "source_id": "osa-texas-impairment-insurance-timing",
+      "locator": "Government-wide/proprietary paragraphs",
+      "paraphrase": "Texas separates recovery from restoration and distinguishes a realized or realizable recovery in the loss year from one recognized later.",
+      "exclusions": "Ordinary government-wide impairment, realized/realizable recovery, separate restoration transaction and timing comparison. Exclude unusual/infrequent classification, governmental-fund recognition and local codes."
+    },
+    {
+      "id": "opeb-bridge",
+      "source_id": "osa-ny-opeb-nontrust-bridge",
+      "locator": "Pages 2-3 and footnote 8",
+      "paraphrase": "The historical bulletin addresses accrual reporting of nontrust single-employer OPEB, including total liability, expense and deferred resources; measurement-period benefit payments reduce liability.",
+      "exclusions": "Single-employer defined-benefit nontrust arrangement; supplied actuarial outputs, benefit-payment reduction and deferred-resource reconciliation. Exclude New York trust authority, implementation dates, transition, administrative-expense treatment, actuarial model construction and source appendices."
+    }
+  ],
+  "raw_source_text_included": false,
+  "professional_review": "not_performed",
+  "first_party_annotation": {
+    "label": "Ray Sang’s Annotation",
+    "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+    "scope": "New first-party descriptions only to the extent rights exist and are controlled; excludes facts, titles, source text, prior grants and statutory/platform exceptions.",
+    "personal_or_professional_review_implied": false
+  }
+}

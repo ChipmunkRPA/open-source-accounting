@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-05",
+  "baseline_commit": "9035d61b7c75b5916c3885a032ac0e025306f0bd",
+  "unit": "section-scoped reference metadata, not whole acquired standards",
+  "source_metadata_records": 5,
+  "distinct_document_urls": 4,
+  "new_article_bodies": 0,
+  "source_body_files": 0,
+  "protected_publisher_full_texts": 0,
+  "professional_reviews": 0,
+  "agent_admissions": 0,
+  "coverage_screen_items": 112,
+  "coverage_screen_guides": 66,
+  "authoring_gate": "Persist this source-only checkpoint to GitHub before writing article bodies.",
+  "sources": [
+    {
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-05",
+      "retrieved_at": "2026-10-05T00:14:45Z",
+      "retrieval_method": "official_url_examined_with_web_tool",
+      "http_status": null,
+      "raw_sha256": null,
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "source_body_included": false,
+      "acquisition": "metadata_and_link_only",
+      "automated_fetch_enabled": false,
+      "primary_publisher_standard_text_verified": false,
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party descriptions only to the extent rights exist and are controlled; excludes facts, titles, source text, prior grants and statutory/platform exceptions.",
+        "personal_or_professional_review_implied": false
+      },
+      "id": "osa-occ-mortgage-commitment-derivatives",
+      "title": "OCC Bank Accounting Advisory Series: mortgage commitment derivatives",
+      "publisher": "Office of the Comptroller of the Currency",
+      "url": "https://www.occ.treas.gov/publications-and-resources/publications/banker-education/files/pub-bank-accounting-advisory-series.pdf",
+      "edition_date": null,
+      "edition_label": "August 2026",
+      "edition_date_precision": "month",
+      "locator": "Topic 2C, questions 5-10; printed pages 38-40 / PDF pages 42-44",
+      "review_scope": "Origination commitments for mortgage loans intended for sale; fair-value balances, earnings movement, scoped exclusions and notional reconciliation. Exclude hedge accounting, actual valuation model construction, settled originations and source scenarios.",
+      "date_note": "Month-only source edition retained in edition_label; exact issuance/effective day not inferred."
+    },
+    {
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-05",
+      "retrieved_at": "2026-10-05T00:14:45Z",
+      "retrieval_method": "official_url_examined_with_web_tool",
+      "http_status": null,
+      "raw_sha256": null,
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "source_body_included": false,
+      "acquisition": "metadata_and_link_only",
+      "automated_fetch_enabled": false,
+      "primary_publisher_standard_text_verified": false,
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party descriptions only to the extent rights exist and are controlled; excludes facts, titles, source text, prior grants and statutory/platform exceptions.",
+        "personal_or_professional_review_implied": false
+      },
+      "id": "osa-occ-servicing-subsequent-measurement",
+      "title": "OCC Bank Accounting Advisory Series: subsequent servicing-asset measurement",
+      "publisher": "Office of the Comptroller of the Currency",
+      "url": "https://www.occ.treas.gov/publications-and-resources/publications/banker-education/files/pub-bank-accounting-advisory-series.pdf",
+      "edition_date": null,
+      "edition_label": "August 2026",
+      "edition_date_precision": "month",
+      "locator": "Topic 9A, question 2; printed pages 134-135 / PDF pages 138-139",
+      "review_scope": "Already recognized servicing assets and separately stipulated class elections; distinguish amortization/impairment from fair-value measurement. Exclude initial transfer qualification, interest-only strips, source sale scenario and figures.",
+      "date_note": "Month-only edition; no invented day or adoption conclusion."
+    },
+    {
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-05",
+      "retrieved_at": "2026-10-05T00:14:45Z",
+      "retrieval_method": "official_url_examined_with_web_tool",
+      "http_status": null,
+      "raw_sha256": null,
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "source_body_included": false,
+      "acquisition": "metadata_and_link_only",
+      "automated_fetch_enabled": false,
+      "primary_publisher_standard_text_verified": false,
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party descriptions only to the extent rights exist and are controlled; excludes facts, titles, source text, prior grants and statutory/platform exceptions.",
+        "personal_or_professional_review_implied": false
+      },
+      "id": "osa-texas-impairment-service-utility",
+      "title": "Texas AFR: impairment of capital/leased assets",
+      "publisher": "Texas Comptroller",
+      "url": "https://fmx.cpa.texas.gov/fmx/pubs/afrrptreq/cap_assets/index.php?page=impairment&section=impairment",
+      "edition_date": null,
+      "edition_label": "Undated web guidance examined October 5, 2026",
+      "edition_date_precision": "unknown",
+      "locator": "Impairment of Capital/Leased Assets and Insurance Recoveries; Temporary Impairments",
+      "review_scope": "Permanent service-utility loss versus temporary underutilization; recognized impairment amount will be independently stipulated. Exclude measurement-method derivation, leased-asset details, local thresholds and source examples.",
+      "date_note": "Page does not provide an exact issue date; checked_at is an observation date."
+    },
+    {
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-05",
+      "retrieved_at": "2026-10-05T00:14:45Z",
+      "retrieval_method": "official_url_examined_with_web_tool",
+      "http_status": null,
+      "raw_sha256": null,
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "source_body_included": false,
+      "acquisition": "metadata_and_link_only",
+      "automated_fetch_enabled": false,
+      "primary_publisher_standard_text_verified": false,
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party descriptions only to the extent rights exist and are controlled; excludes facts, titles, source text, prior grants and statutory/platform exceptions.",
+        "personal_or_professional_review_implied": false
+      },
+      "id": "osa-texas-impairment-insurance-timing",
+      "title": "Texas AFR: insurance recoveries for impaired assets",
+      "publisher": "Texas Comptroller",
+      "url": "https://fmx.cpa.texas.gov/fmx/pubs/afrrptreq/cap_assets/index.php?page=recoveries&section=impairment",
+      "edition_date": null,
+      "edition_label": "Undated web guidance examined October 5, 2026",
+      "edition_date_precision": "unknown",
+      "locator": "Insurance Recoveries; proprietary-fund and government-wide same-year/later-year paragraphs",
+      "review_scope": "Ordinary government-wide impairment, realized/realizable recovery, separate restoration transaction and timing comparison. Exclude unusual/infrequent classification, governmental-fund recognition and local codes.",
+      "date_note": "No exact issue date observed. No GASB 103 adoption or current reporting-period applicability inferred."
+    },
+    {
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-05",
+      "retrieved_at": "2026-10-05T00:14:45Z",
+      "retrieval_method": "official_url_examined_with_web_tool",
+      "http_status": null,
+      "raw_sha256": null,
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "source_body_included": false,
+      "acquisition": "metadata_and_link_only",
+      "automated_fetch_enabled": false,
+      "primary_publisher_standard_text_verified": false,
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party descriptions only to the extent rights exist and are controlled; excludes facts, titles, source text, prior grants and statutory/platform exceptions.",
+        "personal_or_professional_review_implied": false
+      },
+      "id": "osa-ny-opeb-nontrust-bridge",
+      "title": "New York OSC: Accounting and Financial Reporting for Other Postemployment Benefits as Required by GASB Statement 75",
+      "publisher": "New York State Office of the State Comptroller",
+      "url": "https://www.osc.ny.gov/files/local-government/publications/pdf/GASB-75-OPEB.pdf",
+      "edition_date": null,
+      "edition_label": "July 2018 bulletin",
+      "edition_date_precision": "month",
+      "locator": "Printed/PDF pages 2-3: Accounting and Reporting Requirements; GAAP Reporting; Total OPEB Liability; OPEB Expense; Deferred Inflows/Outflows; footnote 8",
+      "review_scope": "Single-employer defined-benefit nontrust arrangement; supplied actuarial outputs, benefit-payment reduction and deferred-resource reconciliation. Exclude New York trust authority, implementation dates, transition, administrative-expense treatment, actuarial model construction and source appendices.",
+      "date_note": "Historical July 2018 application guidance, still accessible at its official URL. Exact date and later amendments not verified; no current legal status or completeness claim."
+    }
+  ],
+  "proposals": [
+    {
+      "id": "fasb-mortgage-commitment-register",
+      "family": "FASB",
+      "title": "Mortgage commitments: separate notional, fair value and earnings",
+      "source_ids": [
+        "osa-occ-mortgage-commitment-derivatives"
+      ],
+      "plan": "Original multi-cohort commitment register with signed fair-value changes, separate asset/liability totals, exclusion routing and closing-rate sensitivity; values stipulated, not a valuation recipe."
+    },
+    {
+      "id": "fasb-servicing-measurement-bridge",
+      "family": "FASB",
+      "title": "Servicing assets: keep the measurement election separate from cash collected",
+      "source_ids": [
+        "osa-occ-servicing-subsequent-measurement"
+      ],
+      "plan": "Original two-class closing register with separately stipulated elections, supplied amortization and impairment, fair-value changes, servicing cash and alternative-value sensitivity."
+    },
+    {
+      "id": "gasb-impairment-insurance-timing",
+      "family": "GASB",
+      "title": "Capital impairment and insurance: separate the asset loss from the recovery timeline",
+      "source_ids": [
+        "osa-texas-impairment-service-utility",
+        "osa-texas-impairment-insurance-timing"
+      ],
+      "plan": "Original multi-period government-wide asset and recovery bridge with independently measured impairment, received versus unsupported claims, separate restoration work and no automatic reversal."
+    },
+    {
+      "id": "gasb-opeb-nontrust-rollforward",
+      "family": "GASB",
+      "title": "Nontrust OPEB: reconcile the liability, deferred resources and benefit payments",
+      "source_ids": [
+        "osa-ny-opeb-nontrust-bridge"
+      ],
+      "plan": "Original supplied-actuarial-output ledger bridge for a no-trust plan with coincident measurement/reporting dates; separate liability movement, expense, benefit cash and remaining deferred amounts."
+    }
+  ],
+  "first_party_annotation": {
+    "label": "Ray Sang’s Annotation",
+    "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+    "scope": "New first-party descriptions only to the extent rights exist and are controlled; excludes facts, titles, source text, prior grants and statutory/platform exceptions.",
+    "personal_or_professional_review_implied": false
+  }
+}
