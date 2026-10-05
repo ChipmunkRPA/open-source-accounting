@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "release": "0.6.7",
-  "generated_at": "2026-10-04",
+  "release": "0.6.8",
+  "generated_at": "2026-10-05",
   "publication_state": "public_editorial_draft",
   "items": [
     {
@@ -3001,6 +3001,111 @@
       "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
       "source_ids": [
         "irs:rev-rul:2021-2"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "fasb-mortgage-commitment-register",
+      "title": "Mortgage commitments: separate notional, fair value and earnings",
+      "kind": "guide",
+      "topic": "fasb-derivative-commitments",
+      "framework": "US_GAAP",
+      "summary": "An original mortgage-commitment register reconciles gross notional, signed fair values, asset/liability movements and a separate expected-funding sensitivity.",
+      "path": "guides/fasb-mortgage-commitment-register-v1.md",
+      "version": "1.0.0",
+      "sha256": "7c66df1851fc0d3032a07ee6e563300d3df64cb7cee3f81c7bbab8b12133a0a5",
+      "published_at": "2026-10-05",
+      "updated_at": "2026-10-05",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-occ-mortgage-commitment-derivatives"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "fasb-servicing-measurement-bridge",
+      "title": "Servicing assets: keep the measurement election separate from cash collected",
+      "kind": "guide",
+      "topic": "fasb-servicing-assets",
+      "framework": "US_GAAP",
+      "summary": "An original two-class servicing register separates amortization, allowance movements, fair-value changes and operating cash with a parallel sensitivity.",
+      "path": "guides/fasb-servicing-measurement-bridge-v1.md",
+      "version": "1.0.0",
+      "sha256": "c0ea3de245fa0a5b11b32397c9902d4459b0471e4f80c79600aa3c6763d7cce3",
+      "published_at": "2026-10-05",
+      "updated_at": "2026-10-05",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-occ-servicing-subsequent-measurement"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "gasb-impairment-insurance-timing",
+      "title": "Capital impairment and insurance: separate the asset loss from the recovery timeline",
+      "kind": "guide",
+      "topic": "gasb-capital-impairment",
+      "framework": "GASB",
+      "summary": "An original government-wide bridge separates capital impairment, supported insurance recovery, restoration spending and recognition across reporting years.",
+      "path": "guides/gasb-impairment-insurance-timing-v1.md",
+      "version": "1.0.0",
+      "sha256": "a702178f4a550c362021b028f5d6ea03b8594ca63fffd496b5c0650eaf7227ec",
+      "published_at": "2026-10-05",
+      "updated_at": "2026-10-05",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-texas-impairment-service-utility",
+        "osa-texas-impairment-insurance-timing"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "gasb-opeb-nontrust-rollforward",
+      "title": "Nontrust OPEB: reconcile the liability, deferred resources and benefit payments",
+      "kind": "guide",
+      "topic": "gasb-opeb",
+      "framework": "GASB",
+      "summary": "An original nontrust OPEB rollforward connects supplied actuarial outputs, benefit payments, deferred resources and expense through two independent reconciliations.",
+      "path": "guides/gasb-opeb-nontrust-rollforward-v1.md",
+      "version": "1.0.0",
+      "sha256": "68e026cc32d6c0026328a71f3f00e9db747f0cbf36f11d55ac4ce0eb78c8251d",
+      "published_at": "2026-10-05",
+      "updated_at": "2026-10-05",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-ny-opeb-nontrust-bridge"
       ],
       "technical_review": {
         "status": "unreviewed",

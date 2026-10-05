@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-05",
+  "source_checkpoint_commit": "78d6aae0ba9e16b0f9d8266c8296dfadcc0b2272",
+  "source_metadata_published_before_authoring": true,
+  "baseline_manifest_items": 112,
+  "baseline_manifest_guides": 66,
+  "new_original_guides": 4,
+  "new_bound_section_references": 5,
+  "total_manifest_items": 116,
+  "total_manifest_guides": 70,
+  "total_bound_references": 89,
+  "separate_tax_case_briefs": 32,
+  "tax_briefs_in_manifest": false,
+  "source_body_files_added": 0,
+  "protected_standard_full_texts_added": 0,
+  "professional_reviews_added": 0,
+  "article_ai_receipts_added": 0,
+  "agent_admissions_added": 0,
+  "publication_state": "prepared_editorial_draft",
+  "items": [
+    {
+      "id": "fasb-mortgage-commitment-register",
+      "path": "guides/fasb-mortgage-commitment-register-v1.md",
+      "sha256": "7c66df1851fc0d3032a07ee6e563300d3df64cb7cee3f81c7bbab8b12133a0a5",
+      "source_ids": [
+        "osa-occ-mortgage-commitment-derivatives"
+      ]
+    },
+    {
+      "id": "fasb-servicing-measurement-bridge",
+      "path": "guides/fasb-servicing-measurement-bridge-v1.md",
+      "sha256": "c0ea3de245fa0a5b11b32397c9902d4459b0471e4f80c79600aa3c6763d7cce3",
+      "source_ids": [
+        "osa-occ-servicing-subsequent-measurement"
+      ]
+    },
+    {
+      "id": "gasb-impairment-insurance-timing",
+      "path": "guides/gasb-impairment-insurance-timing-v1.md",
+      "sha256": "a702178f4a550c362021b028f5d6ea03b8594ca63fffd496b5c0650eaf7227ec",
+      "source_ids": [
+        "osa-texas-impairment-service-utility",
+        "osa-texas-impairment-insurance-timing"
+      ]
+    },
+    {
+      "id": "gasb-opeb-nontrust-rollforward",
+      "path": "guides/gasb-opeb-nontrust-rollforward-v1.md",
+      "sha256": "68e026cc32d6c0026328a71f3f00e9db747f0cbf36f11d55ac4ce0eb78c8251d",
+      "source_ids": [
+        "osa-ny-opeb-nontrust-bridge"
+      ]
+    }
+  ],
+  "limits": "Government application guidance and invented examples; no official FASB/GASB standard bodies or current-applicability certification. Publication requires final parent review; no website deployment is claimed."
+}
