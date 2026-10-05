@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-05",
+  "claims": [
+    {
+      "id": "fasb-mutual-fund-sale-bridge",
+      "source_id": "osa-occ-mutual-fund-earnings-sale",
+      "locator": "Topic 1A Q4,5",
+      "paraphrase": "OCC generally routes mutual funds through equity-investment measurement and earnings, including fair-value changes before sale.",
+      "exclusions": "Use a new unit-price register and partial sale. Exclude fund distributions, transaction costs, equity-method/consolidation analysis, tax and source examples."
+    },
+    {
+      "id": "fasb-unfunded-commitment-liability",
+      "source_id": "osa-occ-unfunded-commitment-losses",
+      "locator": "Topic 12E Q1,2,3",
+      "paraphrase": "OCC scopes out unconditionally cancellable commitments; covered expected losses incorporate expected funding and are recorded in a liability with an earnings charge.",
+      "exclusions": "Use a fictional portfolio with stipulated scope and cancellation conclusions. Exclude guarantees, letters of credit, derivatives, insurance, fair-value-option contracts, HELOC legal analysis, loan funding and source scenarios."
+    },
+    {
+      "id": "fasb-boli-premium-cash-value",
+      "source_id": "osa-occ-boli-premium-cash-value",
+      "locator": "Topic 5B Q2",
+      "paraphrase": "OCC measures the stipulated bank-beneficiary policy asset by its realizable cash surrender value; the period change offsets premiums in calculating income or expense.",
+      "exclusions": "Use a multi-policy reconciliation and independent cash-value sensitivities. Exclude split-dollar arrangements, employee benefits, death claims, policy sales, taxes, source fact-pattern details and source numerical examples."
+    },
+    {
+      "id": "fasb-startup-cost-close",
+      "source_id": "osa-occ-startup-fixed-asset-boundary",
+      "locator": "Topic 9C Q1,2",
+      "paraphrase": "OCC expenses startup and organization activities as incurred while separating fixed-asset acquisition/readiness costs; startup use of an asset does not itself defer depreciation.",
+      "exclusions": "Use an invented launch cost register, supplied equipment conclusions, depreciation and double-entry reconciliation. Exclude debt/equity issuance, acquisitions, software, leases, entity reimbursements, taxes and source lists/examples."
+    }
+  ],
+  "raw_source_text_included": false,
+  "professional_review": "not_performed",
+  "first_party_annotation": {
+    "label": "Ray Sang’s Annotation",
+    "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+    "scope": "New first-party descriptions only to the extent rights exist and are controlled; excludes facts, titles, source text, prior grants and statutory/platform exceptions.",
+    "personal_or_professional_review_implied": false
+  }
+}

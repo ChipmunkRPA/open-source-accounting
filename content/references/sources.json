@@ -1995,6 +1995,208 @@
       "locator": "Printed/PDF pages 2-3: Accounting and Reporting Requirements; GAAP Reporting; Total OPEB Liability; OPEB Expense; Deferred Inflows/Outflows; footnote 8",
       "review_scope": "Single-employer defined-benefit nontrust arrangement; supplied actuarial outputs, benefit-payment reduction and deferred-resource reconciliation. Exclude New York trust authority, implementation dates, transition, administrative-expense treatment, actuarial model construction and source appendices.",
       "date_note": "Historical July 2018 application guidance, still accessible at its official URL. Exact date and later amendments not verified; no current legal status or completeness claim."
+    },
+    {
+      "id": "osa-occ-mutual-fund-earnings-sale",
+      "title": "OCC Bank Accounting Advisory Series: mutual-fund measurement and sale",
+      "publisher": "Office of the Comptroller of the Currency",
+      "url": "https://www.occ.treas.gov/publications-and-resources/publications/banker-education/files/pub-bank-accounting-advisory-series.pdf",
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-05",
+      "retrieved_at": "2026-10-05T05:30:10Z",
+      "retrieval_method": "official_url_examined_with_web_tool",
+      "http_status": null,
+      "raw_sha256": null,
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "source_body_included": false,
+      "acquisition": "metadata_and_link_only",
+      "automated_fetch_enabled": false,
+      "primary_publisher_standard_text_verified": false,
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party descriptions only to the extent rights exist and are controlled; excludes facts, titles, source text, prior grants and statutory/platform exceptions.",
+        "personal_or_professional_review_implied": false
+      },
+      "edition_date": null,
+      "edition_label": "August 2026",
+      "edition_date_precision": "month",
+      "document_page_count": 244,
+      "issue_observation_cutoff": "2026-03-31",
+      "authority_status": "OCC staff interpretation for banks; not OCC rules/regulations, FASB-authored text or acquired Codification.",
+      "locator": "Topic 1A, questions 4, 5; printed pages 2–3 / PDF pages 6, 7",
+      "exact_sections": [
+        {
+          "section": "1A",
+          "questions": [
+            "4",
+            "5"
+          ],
+          "printed_pages": "2–3",
+          "pdf_pages_one_based": [
+            6,
+            7
+          ]
+        }
+      ],
+      "standard_locator_reference_only": "ASC 321",
+      "existing_document_reference_id": "osa-occ-baas-2026",
+      "review_scope": "Use a new unit-price register and partial sale. Exclude fund distributions, transaction costs, equity-method/consolidation analysis, tax and source examples.",
+      "date_note": "Edition month and issue-observation cutoff are separate from issuance, adoption and effective dates; no current-applicability conclusion."
+    },
+    {
+      "id": "osa-occ-unfunded-commitment-losses",
+      "title": "OCC Bank Accounting Advisory Series: unfunded-commitment credit-loss liability",
+      "publisher": "Office of the Comptroller of the Currency",
+      "url": "https://www.occ.treas.gov/publications-and-resources/publications/banker-education/files/pub-bank-accounting-advisory-series.pdf",
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-05",
+      "retrieved_at": "2026-10-05T05:30:10Z",
+      "retrieval_method": "official_url_examined_with_web_tool",
+      "http_status": null,
+      "raw_sha256": null,
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "source_body_included": false,
+      "acquisition": "metadata_and_link_only",
+      "automated_fetch_enabled": false,
+      "primary_publisher_standard_text_verified": false,
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party descriptions only to the extent rights exist and are controlled; excludes facts, titles, source text, prior grants and statutory/platform exceptions.",
+        "personal_or_professional_review_implied": false
+      },
+      "edition_date": null,
+      "edition_label": "August 2026",
+      "edition_date_precision": "month",
+      "document_page_count": 244,
+      "issue_observation_cutoff": "2026-03-31",
+      "authority_status": "OCC staff interpretation for banks; not OCC rules/regulations, FASB-authored text or acquired Codification.",
+      "locator": "Topic 12E, questions 1, 2, 3; printed pages 236–237 / PDF pages 240, 241",
+      "exact_sections": [
+        {
+          "section": "12E",
+          "questions": [
+            "1",
+            "2",
+            "3"
+          ],
+          "printed_pages": "236–237",
+          "pdf_pages_one_based": [
+            240,
+            241
+          ]
+        }
+      ],
+      "standard_locator_reference_only": "ASC 326-20 and ASC 326-20-30-11",
+      "existing_document_reference_id": "osa-occ-baas-2026",
+      "review_scope": "Use a fictional portfolio with stipulated scope and cancellation conclusions. Exclude guarantees, letters of credit, derivatives, insurance, fair-value-option contracts, HELOC legal analysis, loan funding and source scenarios.",
+      "date_note": "Edition month and issue-observation cutoff are separate from issuance, adoption and effective dates; no current-applicability conclusion."
+    },
+    {
+      "id": "osa-occ-boli-premium-cash-value",
+      "title": "OCC Bank Accounting Advisory Series: bank-owned life-insurance premium and cash-value bridge",
+      "publisher": "Office of the Comptroller of the Currency",
+      "url": "https://www.occ.treas.gov/publications-and-resources/publications/banker-education/files/pub-bank-accounting-advisory-series.pdf",
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-05",
+      "retrieved_at": "2026-10-05T05:30:10Z",
+      "retrieval_method": "official_url_examined_with_web_tool",
+      "http_status": null,
+      "raw_sha256": null,
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "source_body_included": false,
+      "acquisition": "metadata_and_link_only",
+      "automated_fetch_enabled": false,
+      "primary_publisher_standard_text_verified": false,
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party descriptions only to the extent rights exist and are controlled; excludes facts, titles, source text, prior grants and statutory/platform exceptions.",
+        "personal_or_professional_review_implied": false
+      },
+      "edition_date": null,
+      "edition_label": "August 2026",
+      "edition_date_precision": "month",
+      "document_page_count": 244,
+      "issue_observation_cutoff": "2026-03-31",
+      "authority_status": "OCC staff interpretation for banks; not OCC rules/regulations, FASB-authored text or acquired Codification.",
+      "locator": "Topic 5B, questions 2; printed pages 103 / PDF pages 107",
+      "exact_sections": [
+        {
+          "section": "5B",
+          "questions": [
+            "2"
+          ],
+          "printed_pages": "103",
+          "pdf_pages_one_based": [
+            107
+          ]
+        }
+      ],
+      "standard_locator_reference_only": "ASC 325-30",
+      "existing_document_reference_id": "osa-occ-baas-2026",
+      "review_scope": "Use a multi-policy reconciliation and independent cash-value sensitivities. Exclude split-dollar arrangements, employee benefits, death claims, policy sales, taxes, source fact-pattern details and source numerical examples.",
+      "date_note": "Edition month and issue-observation cutoff are separate from issuance, adoption and effective dates; no current-applicability conclusion."
+    },
+    {
+      "id": "osa-occ-startup-fixed-asset-boundary",
+      "title": "OCC Bank Accounting Advisory Series: startup expense and fixed-asset boundary",
+      "publisher": "Office of the Comptroller of the Currency",
+      "url": "https://www.occ.treas.gov/publications-and-resources/publications/banker-education/files/pub-bank-accounting-advisory-series.pdf",
+      "kind": "government_application_guidance",
+      "checked_at": "2026-10-05",
+      "retrieved_at": "2026-10-05T05:30:10Z",
+      "retrieval_method": "official_url_examined_with_web_tool",
+      "http_status": null,
+      "raw_sha256": null,
+      "verification": "publisher_page_examined",
+      "full_text_included": false,
+      "source_body_included": false,
+      "acquisition": "metadata_and_link_only",
+      "automated_fetch_enabled": false,
+      "primary_publisher_standard_text_verified": false,
+      "professional_review": "not_performed",
+      "agent_admitted": false,
+      "first_party_annotation": {
+        "label": "Ray Sang’s Annotation",
+        "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+        "scope": "New first-party descriptions only to the extent rights exist and are controlled; excludes facts, titles, source text, prior grants and statutory/platform exceptions.",
+        "personal_or_professional_review_implied": false
+      },
+      "edition_date": null,
+      "edition_label": "August 2026",
+      "edition_date_precision": "month",
+      "document_page_count": 244,
+      "issue_observation_cutoff": "2026-03-31",
+      "authority_status": "OCC staff interpretation for banks; not OCC rules/regulations, FASB-authored text or acquired Codification.",
+      "locator": "Topic 9C, questions 1, 2; printed pages 146 / PDF pages 150",
+      "exact_sections": [
+        {
+          "section": "9C",
+          "questions": [
+            "1",
+            "2"
+          ],
+          "printed_pages": "146",
+          "pdf_pages_one_based": [
+            150
+          ]
+        }
+      ],
+      "standard_locator_reference_only": "ASC 720-15",
+      "existing_document_reference_id": "osa-occ-baas-2026",
+      "review_scope": "Use an invented launch cost register, supplied equipment conclusions, depreciation and double-entry reconciliation. Exclude debt/equity issuance, acquisitions, software, leases, entity reimbursements, taxes and source lists/examples.",
+      "date_note": "Edition month and issue-observation cutoff are separate from issuance, adoption and effective dates; no current-applicability conclusion."
     }
   ]
 }
