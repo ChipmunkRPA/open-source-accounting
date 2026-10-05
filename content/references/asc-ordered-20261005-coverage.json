@@ -1,0 +1,1328 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-05",
+  "baseline_commit": "4ffc83f154a152c453438eafe63e8b6b77f27a93",
+  "title": "ASC numeric-order original-writing coverage ledger",
+  "scope": "Verified partial starting range105–280 plus historical removal markers; not a complete current ASC inventory",
+  "full_topic_denominator": null,
+  "full_subtopic_denominator": null,
+  "full_section_denominator": null,
+  "order_rule": "Ascending numeric real Topic identifiers; absent numbers are not invented or called reserved; unresolved status remains a verification gate.",
+  "writing_sequence": [
+    105,
+    205,
+    210
+  ],
+  "source_first_gate": "Remote source-only Git checkpoint and readback before new guide authoring",
+  "whole_topics_completed": 0,
+  "coverage_definitions": {
+    "introductory_research_or_bounded_workpaper": "Research prompts or a limited earlier exercise; not substantive coverage of an entire Topic.",
+    "bounded_substantive_original_application": "Original reasoning/example on a named limited issue, with direct-primary-text and professional-review gaps.",
+    "complete_current_topic": "Reserved for verified complete defined Topic/Subtopic/Section scope and applicable review gates; never inferred from guide count."
+  },
+  "baseline_counts": {
+    "manifest_items": 124,
+    "all_guides": 78,
+    "fasb_linked_guide_category": 44,
+    "gasb_guides": 15,
+    "bound_reference_records": 97
+  },
+  "starting_topics": [
+    {
+      "topic": 105,
+      "title": "Generally Accepted Accounting Principles",
+      "order": 105,
+      "existence_evidence": "official_historical_list_as_of_late_2010",
+      "source_ids": [
+        "osa-asc-order-historical-topics"
+      ],
+      "current_status": "topic_confirmed_by_official_public_authority_metadata",
+      "whole_topic_complete": false,
+      "subtopics": [
+        {
+          "locator": "105-10",
+          "title": "Overall",
+          "identifier_status": "official_metadata_verified_identifier",
+          "section_nodes": [
+            {
+              "locator": "105-10-05",
+              "label": "Overview and Background",
+              "source_ids": [
+                "osa-asc105-fasb-concepts-context",
+                "osa-asc-order-notice-2022"
+              ],
+              "coverage": "not_yet_written_in_ordered_series",
+              "current_primary_text_verified": false
+            },
+            {
+              "locator": "105-10-70",
+              "label": "Grandfathered Guidance",
+              "source_ids": [
+                "osa-asc105-fasb-concepts-context",
+                "osa-asc-order-notice-2022"
+              ],
+              "coverage": "not_yet_written_in_ordered_series",
+              "current_primary_text_verified": false
+            }
+          ],
+          "source_ids": [
+            "osa-asc105-fasb-concepts-context",
+            "osa-asc-order-notice-2022"
+          ],
+          "whole_subtopic_complete": false
+        }
+      ],
+      "existing_guide_ids": [
+        "authority-and-period"
+      ],
+      "ordered_series_status": "first_queued",
+      "next_step": "Author bounded105-10 authority reasoning after source-only Git checkpoint"
+    },
+    {
+      "topic": 205,
+      "title": "Presentation of Financial Statements",
+      "order": 205,
+      "existence_evidence": "official_historical_list_as_of_late_2010",
+      "source_ids": [
+        "osa-asc-order-historical-topics"
+      ],
+      "current_status": "topic_confirmed_by_official_public_metadata",
+      "whole_topic_complete": false,
+      "subtopics": [
+        {
+          "locator": "205-10",
+          "title": "Overall",
+          "identifier_status": "official_tentative_board_metadata_identifier_only_current_text_unverified",
+          "section_nodes": [
+            {
+              "locator": "205-10-45",
+              "label": "Other Presentation Matters",
+              "source_ids": [
+                "osa-asc205-fasb-board-navigation",
+                "osa-asc-order-notice-2022"
+              ],
+              "coverage": "not_yet_written_in_ordered_series",
+              "current_primary_text_verified": false
+            }
+          ],
+          "source_ids": [
+            "osa-asc205-fasb-board-navigation",
+            "osa-asc-order-notice-2022"
+          ],
+          "whole_subtopic_complete": false
+        },
+        {
+          "locator": "205-20",
+          "title": "Discontinued Operations",
+          "identifier_status": "official_metadata_verified_identifier",
+          "section_nodes": [],
+          "source_ids": [
+            "osa-asc205-sec-discontinued-navigation"
+          ],
+          "whole_subtopic_complete": false
+        },
+        {
+          "locator": "205-30",
+          "title": "Liquidation Basis of Accounting",
+          "identifier_status": "candidate_locator_not_independently_verified",
+          "section_nodes": [],
+          "source_ids": [],
+          "whole_subtopic_complete": false
+        },
+        {
+          "locator": "205-40",
+          "title": "Going Concern",
+          "identifier_status": "official_metadata_verified_identifier",
+          "section_nodes": [
+            {
+              "locator": "205-40-05",
+              "label": "Overview and Background",
+              "source_ids": [
+                "osa-asc205-sec-going-concern-navigation"
+              ],
+              "coverage": "not_yet_written_in_ordered_series",
+              "current_primary_text_verified": false
+            },
+            {
+              "locator": "205-40-50",
+              "label": "Disclosure",
+              "source_ids": [
+                "osa-asc205-sec-going-concern-navigation"
+              ],
+              "coverage": "not_yet_written_in_ordered_series",
+              "current_primary_text_verified": false
+            }
+          ],
+          "source_ids": [
+            "osa-asc205-sec-going-concern-navigation"
+          ],
+          "whole_subtopic_complete": false
+        }
+      ],
+      "existing_guide_ids": [
+        "going-concern-workbook"
+      ],
+      "ordered_series_status": "second_queued",
+      "next_step": "Begin205-10 statement presentation; leave205-20/30/40 incomplete"
+    },
+    {
+      "topic": 210,
+      "title": "Balance Sheet",
+      "order": 210,
+      "existence_evidence": "official_historical_list_as_of_late_2010",
+      "source_ids": [
+        "osa-asc-order-historical-topics"
+      ],
+      "current_status": "topic_confirmed_by_official_taxonomy_navigation",
+      "whole_topic_complete": false,
+      "subtopics": [
+        {
+          "locator": "210-20",
+          "title": "Offsetting",
+          "identifier_status": "official_metadata_verified_identifier",
+          "section_nodes": [],
+          "source_ids": [
+            "osa-asc210-fasb-offset-navigation"
+          ],
+          "whole_subtopic_complete": false
+        }
+      ],
+      "existing_guide_ids": [],
+      "ordered_series_status": "next_distinct_topic_after_first_batch",
+      "next_step": "Research general presentation and scope before offsetting; do not treat a210-20 snippet as all210"
+    },
+    {
+      "topic": 215,
+      "title": "Statement of Shareholder Equity",
+      "order": 215,
+      "existence_evidence": "official_historical_list_as_of_late_2010",
+      "source_ids": [
+        "osa-asc-order-historical-topics"
+      ],
+      "current_status": "historical_topic_current_status_unresolved",
+      "whole_topic_complete": false,
+      "subtopics": [],
+      "existing_guide_ids": [],
+      "ordered_series_status": "not_started",
+      "next_step": "Verify current official relocation/removal/retention before authoring; neither active nor reserved is asserted"
+    },
+    {
+      "topic": 220,
+      "title": "Comprehensive Income (historical title)",
+      "order": 220,
+      "existence_evidence": "official_historical_list_as_of_late_2010",
+      "source_ids": [
+        "osa-asc-order-historical-topics"
+      ],
+      "current_status": "current_inventory_not_exhaustively_verified",
+      "whole_topic_complete": false,
+      "subtopics": [],
+      "existing_guide_ids": [],
+      "ordered_series_status": "not_started",
+      "next_step": "Verify current identifiers and permissible scope before sequential authoring"
+    },
+    {
+      "topic": 225,
+      "title": "Income Statement",
+      "order": 225,
+      "existence_evidence": "official_historical_list_as_of_late_2010",
+      "source_ids": [
+        "osa-asc-order-historical-topics"
+      ],
+      "current_status": "current_inventory_not_exhaustively_verified",
+      "whole_topic_complete": false,
+      "subtopics": [],
+      "existing_guide_ids": [],
+      "ordered_series_status": "not_started",
+      "next_step": "Verify current identifiers and permissible scope before sequential authoring"
+    },
+    {
+      "topic": 230,
+      "title": "Statement of Cash Flows",
+      "order": 230,
+      "existence_evidence": "official_historical_list_as_of_late_2010",
+      "source_ids": [
+        "osa-asc-order-historical-topics"
+      ],
+      "current_status": "current_inventory_not_exhaustively_verified",
+      "whole_topic_complete": false,
+      "subtopics": [],
+      "existing_guide_ids": [
+        "cash-flow-workbook",
+        "fasb-operating-cash-direct-indirect"
+      ],
+      "ordered_series_status": "not_started",
+      "next_step": "Verify current identifiers and permissible scope before sequential authoring"
+    },
+    {
+      "topic": 235,
+      "title": "Notes to Financial Statements",
+      "order": 235,
+      "existence_evidence": "official_historical_list_as_of_late_2010",
+      "source_ids": [
+        "osa-asc-order-historical-topics"
+      ],
+      "current_status": "current_inventory_not_exhaustively_verified",
+      "whole_topic_complete": false,
+      "subtopics": [],
+      "existing_guide_ids": [],
+      "ordered_series_status": "not_started",
+      "next_step": "Verify current identifiers and permissible scope before sequential authoring"
+    },
+    {
+      "topic": 250,
+      "title": "Accounting Changes and Error Corrections",
+      "order": 250,
+      "existence_evidence": "official_historical_list_as_of_late_2010",
+      "source_ids": [
+        "osa-asc-order-historical-topics"
+      ],
+      "current_status": "current_inventory_not_exhaustively_verified",
+      "whole_topic_complete": false,
+      "subtopics": [],
+      "existing_guide_ids": [
+        "error-measurement"
+      ],
+      "ordered_series_status": "not_started",
+      "next_step": "Verify current identifiers and permissible scope before sequential authoring"
+    },
+    {
+      "topic": 255,
+      "title": "Changing Prices",
+      "order": 255,
+      "existence_evidence": "official_historical_list_as_of_late_2010",
+      "source_ids": [
+        "osa-asc-order-historical-topics"
+      ],
+      "current_status": "current_inventory_not_exhaustively_verified",
+      "whole_topic_complete": false,
+      "subtopics": [],
+      "existing_guide_ids": [],
+      "ordered_series_status": "not_started",
+      "next_step": "Verify current identifiers and permissible scope before sequential authoring"
+    },
+    {
+      "topic": 260,
+      "title": "Earnings Per Share",
+      "order": 260,
+      "existence_evidence": "official_historical_list_as_of_late_2010",
+      "source_ids": [
+        "osa-asc-order-historical-topics"
+      ],
+      "current_status": "current_inventory_not_exhaustively_verified",
+      "whole_topic_complete": false,
+      "subtopics": [],
+      "existing_guide_ids": [],
+      "ordered_series_status": "not_started",
+      "next_step": "Verify current identifiers and permissible scope before sequential authoring"
+    },
+    {
+      "topic": 270,
+      "title": "Interim Reporting",
+      "order": 270,
+      "existence_evidence": "official_historical_list_as_of_late_2010",
+      "source_ids": [
+        "osa-asc-order-historical-topics"
+      ],
+      "current_status": "current_inventory_not_exhaustively_verified",
+      "whole_topic_complete": false,
+      "subtopics": [],
+      "existing_guide_ids": [],
+      "ordered_series_status": "not_started",
+      "next_step": "Verify current identifiers and permissible scope before sequential authoring"
+    },
+    {
+      "topic": 272,
+      "title": "Limited Liability Entities",
+      "order": 272,
+      "existence_evidence": "official_historical_list_as_of_late_2010",
+      "source_ids": [
+        "osa-asc-order-historical-topics"
+      ],
+      "current_status": "current_inventory_not_exhaustively_verified",
+      "whole_topic_complete": false,
+      "subtopics": [],
+      "existing_guide_ids": [],
+      "ordered_series_status": "not_started",
+      "next_step": "Verify current identifiers and permissible scope before sequential authoring"
+    },
+    {
+      "topic": 274,
+      "title": "Personal Financial Statements",
+      "order": 274,
+      "existence_evidence": "official_historical_list_as_of_late_2010",
+      "source_ids": [
+        "osa-asc-order-historical-topics"
+      ],
+      "current_status": "current_inventory_not_exhaustively_verified",
+      "whole_topic_complete": false,
+      "subtopics": [],
+      "existing_guide_ids": [],
+      "ordered_series_status": "not_started",
+      "next_step": "Verify current identifiers and permissible scope before sequential authoring"
+    },
+    {
+      "topic": 275,
+      "title": "Risks and Uncertainties",
+      "order": 275,
+      "existence_evidence": "official_historical_list_as_of_late_2010",
+      "source_ids": [
+        "osa-asc-order-historical-topics"
+      ],
+      "current_status": "current_inventory_not_exhaustively_verified",
+      "whole_topic_complete": false,
+      "subtopics": [],
+      "existing_guide_ids": [],
+      "ordered_series_status": "not_started",
+      "next_step": "Verify current identifiers and permissible scope before sequential authoring"
+    },
+    {
+      "topic": 280,
+      "title": "Segment Reporting",
+      "order": 280,
+      "existence_evidence": "official_historical_list_as_of_late_2010",
+      "source_ids": [
+        "osa-asc-order-historical-topics"
+      ],
+      "current_status": "current_inventory_not_exhaustively_verified",
+      "whole_topic_complete": false,
+      "subtopics": [],
+      "existing_guide_ids": [],
+      "ordered_series_status": "not_started",
+      "next_step": "Verify current identifiers and permissible scope before sequential authoring"
+    }
+  ],
+  "unlisted_number_policy": "Unknown/unassigned/reserved status is not inferred; do not create phantom topics for numeric gaps.",
+  "historical_status_markers": [
+    {
+      "topic": 915,
+      "title": "Development Stage Entities",
+      "status": "historically_superseded",
+      "source_id": "osa-asc915-removal-reference",
+      "locator": "ASU2014-10 amendment3",
+      "active_writing_target": false
+    },
+    {
+      "topic": 995,
+      "title": "U.S. Steamship Entities",
+      "status": "historically_eliminated",
+      "source_id": "osa-asc995-removal-reference",
+      "locator": "ASU2017-15 title",
+      "active_writing_target": false
+    }
+  ],
+  "existing_fasb_guide_map": [
+    {
+      "id": "revenue-research-map",
+      "path": "guides/revenue-research-map-v1.md",
+      "sha256": "a6edcf13e48c1c63a6c95c5e51c23e89d3c0b39c23e9b169a9e29054ea778e00",
+      "topic_candidates": [
+        606
+      ],
+      "explicit_article_locators": [],
+      "mapping_basis": "editorial_subject_mapping_requires_authoritative_locator_verification",
+      "coverage": "introductory_research_or_bounded_workpaper",
+      "scope": "A practical evidence plan for customer contracts, performance obligations, pricing, allocation, and recognition.",
+      "source_ids": [
+        "fasb-revenue-project",
+        "fasb-asc"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "saas-implementation",
+      "path": "guides/saas-implementation-v1.md",
+      "sha256": "9cb177e6ceb41c585b7cde7200d1382e42755680ee3c23b98c87b7d973ad92e5",
+      "topic_candidates": [
+        606
+      ],
+      "explicit_article_locators": [],
+      "mapping_basis": "editorial_subject_mapping_requires_authoritative_locator_verification",
+      "coverage": "introductory_research_or_bounded_workpaper",
+      "scope": "Distinguish customer deliverables from setup activity and build a conditional performance-obligation analysis.",
+      "source_ids": [
+        "fasb-asc",
+        "fasb-revenue-project"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "customer-payments",
+      "path": "guides/customer-payments-v1.md",
+      "sha256": "76c02cc5ccc58bd6541d9f0ce68703fd0550f34eabe26bc91fef814c33bbef50",
+      "topic_candidates": [
+        606,
+        718
+      ],
+      "explicit_article_locators": [],
+      "mapping_basis": "editorial_subject_mapping_requires_authoritative_locator_verification",
+      "coverage": "introductory_research_or_bounded_workpaper",
+      "scope": "Organize rebates, marketing payments, and customer equity incentives without assuming their classification.",
+      "source_ids": [
+        "fasb-asc",
+        "fasb-customer-equity"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "lease-identification",
+      "path": "guides/lease-identification-v1.md",
+      "sha256": "352bb93d8471f2a0a003d2c1baa50d9a53a89c043ff8aa0d9d16ee0ba34ab4d5",
+      "topic_candidates": [
+        842
+      ],
+      "explicit_article_locators": [],
+      "mapping_basis": "editorial_subject_mapping_requires_authoritative_locator_verification",
+      "coverage": "introductory_research_or_bounded_workpaper",
+      "scope": "A contract-reading checklist for potential embedded leases and service arrangements.",
+      "source_ids": [
+        "fasb-asc",
+        "fasb-leases-pir"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "lease-measurement",
+      "path": "guides/lease-measurement-v1.md",
+      "sha256": "4dd251fafb6c9b45ae5ffb7ec9f0d51035abf623d8c2d8f0303f9e0b95fd46df",
+      "topic_candidates": [
+        842
+      ],
+      "explicit_article_locators": [],
+      "mapping_basis": "editorial_subject_mapping_requires_authoritative_locator_verification",
+      "coverage": "introductory_research_or_bounded_workpaper",
+      "scope": "Separate a payment present-value calculation from the broader lease-accounting analysis.",
+      "source_ids": [
+        "fasb-asc",
+        "fasb-leases-pir"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "share-based-award-intake",
+      "path": "guides/share-based-award-intake-v2.md",
+      "sha256": "b90c0ba452422960ada6c7e9ebc41d5ad8d49b3ac0dc90518c9e26930e4f044d",
+      "topic_candidates": [
+        718
+      ],
+      "explicit_article_locators": [
+        "718"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "introductory_research_or_bounded_workpaper",
+      "scope": "Reconcile fictional recorded award units by event identity, keep issued shares and pending items separate, and carry chronology and input gaps into an evidence worksheet.",
+      "source_ids": [
+        "fasb-asc",
+        "sec-sab14"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "loss-contingencies",
+      "path": "guides/loss-contingencies-v1.md",
+      "sha256": "7b1c04fb96f9d150491d12b3a7fe84901a5738649cb3981641b21b04cc40faa9",
+      "topic_candidates": [
+        450
+      ],
+      "explicit_article_locators": [
+        "450"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "introductory_research_or_bounded_workpaper",
+      "scope": "Build an issue register that separates probability, estimation, disclosure, and expected settlement.",
+      "source_ids": [
+        "fasb-asc",
+        "sec-sab99"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "error-measurement",
+      "path": "guides/error-measurement-v1.md",
+      "sha256": "fd1097006a9e64e4fdb729bc81313158b175fbbb2a31fff7f5ff8d8c3df47ced",
+      "topic_candidates": [
+        250
+      ],
+      "explicit_article_locators": [],
+      "mapping_basis": "editorial_subject_mapping_requires_authoritative_locator_verification",
+      "coverage": "introductory_research_or_bounded_workpaper",
+      "scope": "A practical SAB 108 worksheet with a separate prior-period assessment.",
+      "source_ids": [
+        "sec-sab108",
+        "sec-sab99",
+        "fasb-asc"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "cash-flow-workbook",
+      "path": "guides/cash-flow-workbook-v2.md",
+      "sha256": "e45323f7759266d7b16ada741dbd4e110e00fb6b4a20cc7450334a6e208e3fa9",
+      "topic_candidates": [
+        230
+      ],
+      "explicit_article_locators": [
+        "230"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "introductory_research_or_bounded_workpaper",
+      "scope": "Build a transaction-level classification file rather than infer cash flows from balance-sheet changes.",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "receivable-loss-workbook",
+      "path": "guides/receivable-loss-workbook-v2.md",
+      "sha256": "377f14b7de202f551bc32a220e6bcc46f9faf3d2c8792766fb3656ed69de4e54",
+      "topic_candidates": [
+        326
+      ],
+      "explicit_article_locators": [
+        "326"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "introductory_research_or_bounded_workpaper",
+      "scope": "Prepare the inputs and judgments for a credit-loss analysis without treating an aging matrix as an automatic GAAP conclusion.",
+      "source_ids": [
+        "fasb-asc",
+        "pcaob-as2501",
+        "pcaob-terms"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "inventory-workbook",
+      "path": "guides/inventory-workbook-v2.md",
+      "sha256": "70bef72117b1dd31b904a73e8d269ccdaaf1e1f586ff086edc17ebd75096b071",
+      "topic_candidates": [
+        330
+      ],
+      "explicit_article_locators": [
+        "330"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "introductory_research_or_bounded_workpaper",
+      "scope": "Build a reviewable inventory workpaper that distinguishes existence, ownership, cost, and valuation questions.",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "impairment-workbook",
+      "path": "guides/impairment-workbook-v1.md",
+      "sha256": "586427813ea3d34e65f1bf1f6033411cf5cf443aff0b07c4daab7ae0d1c2519a",
+      "topic_candidates": [
+        350,
+        360
+      ],
+      "explicit_article_locators": [
+        "350",
+        "360"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "introductory_research_or_bounded_workpaper",
+      "scope": "Separate asset type, unit of account, triggering events, and measurement before generating an impairment conclusion.",
+      "source_ids": [
+        "fasb-asc",
+        "pcaob-as2501",
+        "pcaob-terms"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fair-value-workbook",
+      "path": "guides/fair-value-workbook-v1.md",
+      "sha256": "cf404f1a491599fb4ba07567f85487dae29b6f1f7673deb533eeeb24b6b86a6e",
+      "topic_candidates": [
+        820
+      ],
+      "explicit_article_locators": [
+        "820"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "introductory_research_or_bounded_workpaper",
+      "scope": "Distinguish the reason for fair-value measurement from the valuation method and the reliability of its inputs.",
+      "source_ids": [
+        "fasb-asc",
+        "pcaob-as2501",
+        "sec-private-assets-fair-value-2026-09-28",
+        "pcaob-terms"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "acquisition-workbook",
+      "path": "guides/acquisition-workbook-v1.md",
+      "sha256": "bf67a08bc7fc91fc83f24c6dc24f5a3c3a7fa56e2dbe95116f15d62c9291efcc",
+      "topic_candidates": [
+        805
+      ],
+      "explicit_article_locators": [
+        "805"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "introductory_research_or_bounded_workpaper",
+      "scope": "Organize acquisition facts, scope decisions, measurement questions, and disclosures without turning a purchase agreement into an automatic journal entry.",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "consolidation-workbook",
+      "path": "guides/consolidation-workbook-v1.md",
+      "sha256": "ad72436c2ad5d0a3f02db8c78a0f6a7cd3ff11d3f14c57186251ac258cf7aa86",
+      "topic_candidates": [
+        810
+      ],
+      "explicit_article_locators": [
+        "810"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "introductory_research_or_bounded_workpaper",
+      "scope": "Prepare a rights-and-economics record before selecting a consolidation conclusion.",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "income-tax-workbook",
+      "path": "guides/income-tax-workbook-v1.md",
+      "sha256": "7346c3474c5b5806790f7f0d751538e6473613cb4c0a4c30fc6af381d97316ca",
+      "topic_candidates": [
+        740
+      ],
+      "explicit_article_locators": [
+        "740"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "introductory_research_or_bounded_workpaper",
+      "scope": "Build a jurisdiction-specific accounting evidence file and keep income-tax accounting distinct from unrelated tax obligations.",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "foreign-currency-workbook",
+      "path": "guides/foreign-currency-workbook-v1.md",
+      "sha256": "2de7c3a87e7d672d4c93aad8d6ec9cc7e44fe29a957040ef17a4518b9d6d3b34",
+      "topic_candidates": [
+        830
+      ],
+      "explicit_article_locators": [
+        "830"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "introductory_research_or_bounded_workpaper",
+      "scope": "Create a currency map before explaining exchange differences or proposing reclassification entries.",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "going-concern-workbook",
+      "path": "guides/going-concern-workbook-v1.md",
+      "sha256": "d82fafd7d78a646dcb8ea1a0a0385a0883ed36ac078f0ed2e6a6a689b4a95a8e",
+      "topic_candidates": [
+        205
+      ],
+      "explicit_article_locators": [
+        "205-40"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "introductory_research_or_bounded_workpaper",
+      "scope": "Build a dated liquidity evidence file and distinguish the responsibilities and evaluation horizons of management and auditors.",
+      "source_ids": [
+        "fasb-asc",
+        "pcaob-as2415",
+        "pcaob-terms"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "subsequent-events-workbook",
+      "path": "guides/subsequent-events-workbook-v1.md",
+      "sha256": "8723d13b7789f5697833505f797b454fc315a4ee2d3b5247987f0169585c2942",
+      "topic_candidates": [
+        855
+      ],
+      "explicit_article_locators": [
+        "855"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "introductory_research_or_bounded_workpaper",
+      "scope": "Organize evidence about post-period events while keeping recognition, disclosure, and audit responsibilities distinct.",
+      "source_ids": [
+        "fasb-asc",
+        "pcaob-as2801",
+        "pcaob-terms"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "related-party-workbook",
+      "path": "guides/related-party-workbook-v1.md",
+      "sha256": "932f4477ef39c9776b538b442f8dabe06965336d9db20109dc08f8f5163a863d",
+      "topic_candidates": [
+        850
+      ],
+      "explicit_article_locators": [
+        "850"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "introductory_research_or_bounded_workpaper",
+      "scope": "Build a relationship map and assess evidence without assuming that management labels establish arm’s-length terms.",
+      "source_ids": [
+        "fasb-asc",
+        "pcaob-as2410",
+        "pcaob-terms"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "software-cost-workbook",
+      "path": "guides/software-cost-workbook-v1.md",
+      "sha256": "2e5edadea588c1fb77576d7fac540a28cb1112a1adb3ba6b7feb1cbb4fc98921",
+      "topic_candidates": [
+        350,
+        985
+      ],
+      "explicit_article_locators": [
+        "350-40",
+        "985-20"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "introductory_research_or_bounded_workpaper",
+      "scope": "Separate internal-use software, software for sale, and hosted-service arrangements before analyzing cost treatment.",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "debt-workbook",
+      "path": "guides/debt-workbook-v2.md",
+      "sha256": "77288c98b4170e278558941724bb3c9ff35285d5bfc62845dbeef7da8cd99ed4",
+      "topic_candidates": [
+        470,
+        480,
+        815
+      ],
+      "explicit_article_locators": [
+        "470",
+        "480",
+        "815"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "introductory_research_or_bounded_workpaper",
+      "scope": "Build a term-level research file for financing arrangements without classifying instruments from their names.",
+      "source_ids": [
+        "fasb-asc"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fasb-credit-loss-pools",
+      "path": "guides/fasb-credit-loss-pools-v1.md",
+      "sha256": "946d4bcbd529001e4391b5db3ce4b4d0d3a9febc7282d962641bc5bfb7f51cb9",
+      "topic_candidates": [
+        326
+      ],
+      "explicit_article_locators": [],
+      "mapping_basis": "editorial_subject_mapping_requires_authoritative_locator_verification",
+      "coverage": "bounded_substantive_original_application",
+      "scope": "A two-pool numerical case separates exposure, forward-looking loss estimates, write-offs and provision expense.",
+      "source_ids": [
+        "osa-fed-acl-2026",
+        "osa-fdic-cecl-2026"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fasb-loan-fee-yield",
+      "path": "guides/fasb-loan-fee-yield-v1.md",
+      "sha256": "cb02e659aa63e62f7fb0648a1c74b177ee08ad74709e8991952c73c392834517",
+      "topic_candidates": [
+        310
+      ],
+      "explicit_article_locators": [
+        "310-20"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "bounded_substantive_original_application",
+      "scope": "A one-year loan shows how a qualifying deferred net fee changes the effective yield without changing contractual principal.",
+      "source_ids": [
+        "osa-occ-baas-2026"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fasb-deferred-tax-bridge",
+      "path": "guides/fasb-deferred-tax-bridge-v1.md",
+      "sha256": "f6102358c26b51f196e6bfae848ea066c6ef86ebe0402a6d52bd42de8f52e67c",
+      "topic_candidates": [
+        740
+      ],
+      "explicit_article_locators": [
+        "740"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "bounded_substantive_original_application",
+      "scope": "An assumed warranty deduction illustrates gross deferred tax, a valuation allowance and why a forecast is evidence rather than cash.",
+      "source_ids": [
+        "osa-occ-baas-2026"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fasb-sale-recognition-control",
+      "path": "guides/fasb-sale-recognition-control-v1.md",
+      "sha256": "a6d8cf53df2bc7c57d166ff2d937ac6d3f2c28492615e21334e5f0e38acd5daf",
+      "topic_candidates": [
+        606,
+        610
+      ],
+      "explicit_article_locators": [
+        "606",
+        "610-20"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "bounded_substantive_original_application",
+      "scope": "An original two-date asset-sale case shows why cash, legal paperwork and control evidence must be reconciled.",
+      "source_ids": [
+        "osa-occ-baas-2026"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fasb-securities-measurement-oci",
+      "path": "guides/fasb-securities-measurement-oci-v1.md",
+      "sha256": "a1df48970f60ca5211ec122de4207d088ae15e75a26ead064abb9d16624bac13",
+      "topic_candidates": [
+        320
+      ],
+      "explicit_article_locators": [
+        "320"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "bounded_substantive_original_application",
+      "scope": "An original two-year comparison separates AFS fair-value changes, HTM amortized cost, coupons and accumulated OCI.",
+      "source_ids": [
+        "osa-fed-fr2886b-2025-securities-measurement",
+        "osa-occ-baas-2026-12a-securities-oci"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fasb-bond-premium-yield",
+      "path": "guides/fasb-bond-premium-yield-v1.md",
+      "sha256": "688ea9919f9b41cb8c4e2f662573be4045782f10d302cce3314e5ab32d253671",
+      "topic_candidates": [
+        310
+      ],
+      "explicit_article_locators": [
+        "310-20"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "bounded_substantive_original_application",
+      "scope": "A four-year purchased-bond schedule reconciles coupon cash, effective interest and premium amortization, with a discount variation.",
+      "source_ids": [
+        "osa-occ-baas-2026-1a-bond-premium"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fasb-equity-method-income-distributions",
+      "path": "guides/fasb-equity-method-income-distributions-v1.md",
+      "sha256": "68407ce781c636f2f016fdfb9275a6f39ffa89db131dbd04dcdc7f6e10cb7ab4",
+      "topic_candidates": [
+        323
+      ],
+      "explicit_article_locators": [
+        "323"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "bounded_substantive_original_application",
+      "scope": "An original investment rollforward separates investee earnings, investor income and cash distributions after stipulated equity-method eligibility.",
+      "source_ids": [
+        "osa-fed-fr2886b-2025-equity-method"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fasb-debt-replacement-test",
+      "path": "guides/fasb-debt-replacement-test-v1.md",
+      "sha256": "11743d55d23a39f38eff40f2dd32943ad171a4be98a8c5b75b29bd6ff524c112",
+      "topic_candidates": [
+        470
+      ],
+      "explicit_article_locators": [
+        "470",
+        "470-50"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "bounded_substantive_original_application",
+      "scope": "Two original revised payment schedules illustrate the debt present-value comparison and the limits of a numerical threshold.",
+      "source_ids": [
+        "osa-occ-baas-2026-6b-debt-replacement"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fasb-private-grant-conditions",
+      "path": "guides/fasb-private-grant-conditions-v1.md",
+      "sha256": "0962435c4df4f7c86fb6a791b0eb39d4f75f7c23b4a1a9f964ce816c657c7f40",
+      "topic_candidates": [
+        958
+      ],
+      "explicit_article_locators": [
+        "958-605"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "bounded_substantive_original_application",
+      "scope": "A private-donor bank grant case separates cash receipt, program expense and condition satisfaction, excluding nonprofit restriction-release accounting.",
+      "source_ids": [
+        "osa-occ-baas-2026-11e-private-grants"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fasb-operating-cash-direct-indirect",
+      "path": "guides/fasb-operating-cash-direct-indirect-v1.md",
+      "sha256": "56cd7c425b3331a93fffa7519a320b504c989c3880d8204aae1bd7f4dde6ea72",
+      "topic_candidates": [
+        230
+      ],
+      "explicit_article_locators": [
+        "230"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "bounded_substantive_original_application",
+      "scope": "Original receivable, inventory and payable bridges produce the same operating cash amount through gross-cash and indirect presentations.",
+      "source_ids": [
+        "osa-sec-cash-flows-2023-direct-indirect"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fasb-oreo-holding-register",
+      "path": "guides/fasb-oreo-holding-register-v1.md",
+      "sha256": "0562384c5f381c88bdaf1d5dc9ecf0953d9ad3ad0bac5dededcdc9142fc7c3b1",
+      "topic_candidates": [
+        310,
+        360
+      ],
+      "explicit_article_locators": [
+        "310",
+        "360"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "bounded_substantive_original_application",
+      "scope": "An original two-property closing register separates property-level valuation allowances, a direct-write-off alternative, holding expenses and cash effects.",
+      "source_ids": [
+        "osa-occ-oreo-holding"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fasb-goodwill-test-order",
+      "path": "guides/fasb-goodwill-test-order-v1.md",
+      "sha256": "ee8855475d18a5d50d2b6822cf52a89966f02bfc3da23567d577f57d94cfc4ed",
+      "topic_candidates": [
+        350
+      ],
+      "explicit_article_locators": [
+        "350-20-35"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "bounded_substantive_original_application",
+      "scope": "An original reporting-unit bridge recognizes independently stipulated other-asset losses before a capped goodwill calculation and four fair-value sensitivities.",
+      "source_ids": [
+        "osa-occ-goodwill-order-cap"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fasb-mortgage-commitment-register",
+      "path": "guides/fasb-mortgage-commitment-register-v1.md",
+      "sha256": "7c66df1851fc0d3032a07ee6e563300d3df64cb7cee3f81c7bbab8b12133a0a5",
+      "topic_candidates": [
+        815
+      ],
+      "explicit_article_locators": [],
+      "mapping_basis": "editorial_subject_mapping_requires_authoritative_locator_verification",
+      "coverage": "bounded_substantive_original_application",
+      "scope": "An original mortgage-commitment register reconciles gross notional, signed fair values, asset/liability movements and a separate expected-funding sensitivity.",
+      "source_ids": [
+        "osa-occ-mortgage-commitment-derivatives"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fasb-servicing-measurement-bridge",
+      "path": "guides/fasb-servicing-measurement-bridge-v1.md",
+      "sha256": "c0ea3de245fa0a5b11b32397c9902d4459b0471e4f80c79600aa3c6763d7cce3",
+      "topic_candidates": [
+        860
+      ],
+      "explicit_article_locators": [],
+      "mapping_basis": "editorial_subject_mapping_requires_authoritative_locator_verification",
+      "coverage": "bounded_substantive_original_application",
+      "scope": "An original two-class servicing register separates amortization, allowance movements, fair-value changes and operating cash with a parallel sensitivity.",
+      "source_ids": [
+        "osa-occ-servicing-subsequent-measurement"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fasb-mutual-fund-sale-bridge",
+      "path": "guides/fasb-mutual-fund-sale-bridge-v1.md",
+      "sha256": "fa1e773e6b6664511c64f4ae0c12021be83bd6c2e3db2bda6605d109245d6c8a",
+      "topic_candidates": [
+        321
+      ],
+      "explicit_article_locators": [
+        "321"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "bounded_substantive_original_application",
+      "scope": "An original unit-price register reconciles two reporting dates, a partial sale, sale-date marks and a downside-price sensitivity.",
+      "source_ids": [
+        "osa-occ-mutual-fund-earnings-sale"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fasb-unfunded-commitment-liability",
+      "path": "guides/fasb-unfunded-commitment-liability-v1.md",
+      "sha256": "555e33f783c442b96869c80ae8042bacbb7bf2ab6340e8b362f8495a2dd937b2",
+      "topic_candidates": [
+        326
+      ],
+      "explicit_article_locators": [
+        "326",
+        "326-20"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "bounded_substantive_original_application",
+      "scope": "An original commitment portfolio separates contract scope, conditional expected funding, lifetime losses and liability movements from funded-loan allowances.",
+      "source_ids": [
+        "osa-occ-unfunded-commitment-losses"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fasb-boli-premium-cash-value",
+      "path": "guides/fasb-boli-premium-cash-value-v1.md",
+      "sha256": "2314a7c9cba0edf993975c150dc158d6051042ffce6eeb72ae72a31eebb4efd6",
+      "topic_candidates": [
+        325
+      ],
+      "explicit_article_locators": [
+        "325-30"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "bounded_substantive_original_application",
+      "scope": "An original policy register reconciles premiums, realizable cash values and period expense or income with separate sensitivities.",
+      "source_ids": [
+        "osa-occ-boli-premium-cash-value"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fasb-startup-cost-close",
+      "path": "guides/fasb-startup-cost-close-v1.md",
+      "sha256": "b54bfdb5f05787ba06a54a2a8934d7ff01d89cad24658dc8c8fa5909b8319ca3",
+      "topic_candidates": [
+        720
+      ],
+      "explicit_article_locators": [
+        "720-15"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "bounded_substantive_original_application",
+      "scope": "An original launch-cost register separates startup expense from supplied equipment capitalization, depreciation and balanced closing entries.",
+      "source_ids": [
+        "osa-occ-startup-fixed-asset-boundary"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fasb-loan-sale-classification-bridge",
+      "path": "guides/fasb-loan-sale-classification-bridge-v1.md",
+      "sha256": "327e18d7aae0d0558c77fa5e6e74afb2c60b9e9a013828ae0877ff8dd298fd0b",
+      "topic_candidates": [
+        310,
+        326
+      ],
+      "explicit_article_locators": [
+        "310",
+        "326"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "bounded_substantive_original_application",
+      "scope": "An original loan register separates credit-allowance releases, held-for-sale valuation balances, market-only evidence and a later return to held-for-investment.",
+      "source_ids": [
+        "osa-occ-loan-hfs-noncredit-transfers"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fasb-loss-range-accrual-bridge",
+      "path": "guides/fasb-loss-range-accrual-bridge-v1.md",
+      "sha256": "a7821e10c0974cb17dbd69343bfb0f372dadce987ba580f6026ec9ff69877f88",
+      "topic_candidates": [
+        450
+      ],
+      "explicit_article_locators": [
+        "450-20-25"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "bounded_substantive_original_application",
+      "scope": "An original matter register reconciles supplied probable-loss estimates, range endpoints, revised accruals, settlement payments and unsupported midpoint errors.",
+      "source_ids": [
+        "osa-occ-loss-contingency-range"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fasb-equipment-useful-life-reset",
+      "path": "guides/fasb-equipment-useful-life-reset-v1.md",
+      "sha256": "5184d5c4abfd326385dc6dc5079a88d67ee4f36f980979c27b5ff4e72a165b7a",
+      "topic_candidates": [
+        360
+      ],
+      "explicit_article_locators": [
+        "360-10"
+      ],
+      "mapping_basis": "explicit_article_locator",
+      "coverage": "bounded_substantive_original_application",
+      "scope": "An original three-asset schedule recomputes remaining depreciation from supported retirement dates and residual values, then tests a later timing change.",
+      "source_ids": [
+        "osa-occ-equipment-shortened-life"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    },
+    {
+      "id": "fasb-stock-offering-cost-bridge",
+      "path": "guides/fasb-stock-offering-cost-bridge-v1.md",
+      "sha256": "ac373a8dcf593410440b930f50554ce56ee178ed22ed837b3f80284abd1ddf6e",
+      "topic_candidates": [
+        505
+      ],
+      "explicit_article_locators": [],
+      "mapping_basis": "editorial_subject_mapping_requires_authoritative_locator_verification",
+      "coverage": "bounded_substantive_original_application",
+      "scope": "An original offering register separates two completed stock issues and an abandoned attempt, reconciling share counts, cash, paid-in capital and expense.",
+      "source_ids": [
+        "osa-occ-stock-offering-costs"
+      ],
+      "current_asc_primary_text_verified": false,
+      "whole_topic_complete": false,
+      "technical_review": "unreviewed"
+    }
+  ],
+  "other_relevant_guides": [
+    {
+      "id": "authority-and-period",
+      "coverage": "introductory_cross_framework_authority_map",
+      "topic_candidate": 105,
+      "current_primary_text_verified": false
+    }
+  ],
+  "professional_reviews": 0,
+  "agent_admissions": 0,
+  "source_body_files_added": 0
+}

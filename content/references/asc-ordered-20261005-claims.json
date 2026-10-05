@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-05",
+  "claims": [
+    {
+      "id": "ASC105-A",
+      "source_ids": [
+        "osa-asc105-fasb-standards",
+        "osa-asc105-fasb-asu-index",
+        "osa-asc105-sec-codification-release"
+      ],
+      "scope": "Authority architecture and source provenance; no transaction-specific recognition rule.",
+      "claim": "For nongovernmental US GAAP, the Codification and applicable SEC requirements have different issuer/source roles. An ASU or a Concepts Statement cannot simply be treated as the current codified requirement."
+    },
+    {
+      "id": "ASC105-B",
+      "source_ids": [
+        "osa-asc105-fasb-concepts-context"
+      ],
+      "scope": "Reasoning aid grounded in a dated official staff explanation, not current ASC paragraph verification.",
+      "claim": "Investigate direct authoritative coverage before analogy; document why a candidate analogy fits and does not conflict with scope or exclusions. Use nonauthoritative material as a later research aid, not an override."
+    },
+    {
+      "id": "ASC205-A",
+      "source_ids": [
+        "osa-asc205-sec-statement-relations"
+      ],
+      "scope": "Original hypothetical articulation and comparative mapping only; balances, accounting treatments and reporting perimeter explicitly stipulated.",
+      "claim": "A set of statements has linked balances and flows. Reconciling cash and equity detects some inconsistencies while leaving recognition, measurement, scope, completeness and disclosures to separate review."
+    },
+    {
+      "id": "ASC205-B",
+      "source_ids": [
+        "osa-asc205-fasb-2025-improvements"
+      ],
+      "scope": "Version alert and a dated applicability exercise, not an assertion of early adoption.",
+      "claim": "For the stated annual-period effective-date rule, a calendar-year entity without early adoption first reaches a January 1, 2027 start; a July-year entity first reaches July 1, 2027. Verify the entity, issue-specific election and applicable transition."
+    }
+  ],
+  "raw_source_text_included": false,
+  "first_party_annotation": {
+    "label": "Ray Sang’s Annotation",
+    "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+    "personal_or_professional_review_implied": false
+  }
+}
