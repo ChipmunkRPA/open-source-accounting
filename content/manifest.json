@@ -2906,6 +2906,110 @@
       "primary_text_gap": true,
       "public_visibility": "editorial_draft",
       "agent_eligible_by_default": false
+    },
+    {
+      "id": "irs-crypto-receipt-control",
+      "title": "Cryptocurrency hard forks: distinguish a ledger event from receipt and control",
+      "kind": "guide",
+      "topic": "irs-digital-assets",
+      "framework": "REGULATORY",
+      "summary": "An original custody-delay and lot-reconciliation case separates fork, ledger and control dates under a retained 2019 IRS ruling.",
+      "path": "guides/irs-crypto-receipt-control-v1.md",
+      "version": "1.0.0",
+      "sha256": "89ecd313b411398bfc49f96e20f5126702b91feee357f7240c359971c3e7db9f",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "irs:rev-rul:2019-24"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "irs-replacement-check-bridge",
+      "title": "Replacement retirement checks: reconcile prior withholding before treating cash as new income",
+      "kind": "guide",
+      "topic": "irs-retirement-distributions",
+      "framework": "REGULATORY",
+      "summary": "An original replacement-check bridge separates prior withholding, new excess distributions and year-specific reporting under a retained 2025 IRS ruling.",
+      "path": "guides/irs-replacement-check-bridge-v1.md",
+      "version": "1.0.0",
+      "sha256": "c0d6ab675bbdf3a3fa1beb6bf9c0830b67a6358e5bd696f7c2a2bf882daad120",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "irs:rev-rul:2025-15"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "irs-medicaid-rebate-gross-receipts",
+      "title": "Medicaid rebates: trace the price adjustment through a tax gross-receipts bridge",
+      "kind": "guide",
+      "topic": "irs-business-income",
+      "framework": "REGULATORY",
+      "summary": "An original Medicaid rebate bridge shows why a bottom-line tie can hide gross-receipts classification errors and duplicated deductions.",
+      "path": "guides/irs-medicaid-rebate-gross-receipts-v1.md",
+      "version": "1.0.0",
+      "sha256": "3837ae892a1344c5d3ac0f07a477f74fa6655798d353b1a29e4bda87bdd429bb",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "irs:rev-rul:2008-26"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "irs-ppp-obsolescence-timeline",
+      "title": "PPP expense research: replace an obsolete conclusion without erasing the evidence trail",
+      "kind": "guide",
+      "topic": "irs-authority-history",
+      "framework": "REGULATORY",
+      "summary": "An original PPP revision workpaper distinguishes obsolete disallowance guidance, statutory tax-year scope and independent expense-deduction evidence.",
+      "path": "guides/irs-ppp-obsolescence-timeline-v1.md",
+      "version": "1.0.0",
+      "sha256": "55342d489af7fa36f19b7fbbde06bee510da2618651f5e37a5d6aea7d7abc44e",
+      "published_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "irs:rev-rul:2021-2"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
     }
   ]
 }
