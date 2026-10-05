@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-05",
+  "source_checkpoint_commit": "24de566737c9ba14960c946739805fa0308dc891",
+  "source_metadata_published_before_authoring": true,
+  "source_checkpoint_category": "four section-scoped reference metadata records from one official OCC document; not complete source bodies",
+  "baseline_manifest_items": 120,
+  "baseline_manifest_guides": 74,
+  "new_original_guides": 4,
+  "new_bound_section_references": 4,
+  "total_manifest_items": 124,
+  "total_manifest_guides": 78,
+  "total_bound_references": 97,
+  "separate_tax_case_briefs": 32,
+  "tax_briefs_in_manifest": false,
+  "source_body_files_added": 0,
+  "protected_standard_full_texts_added": 0,
+  "professional_reviews_added": 0,
+  "article_ai_receipts_added": 0,
+  "agent_admissions_added": 0,
+  "publication_state": "editorial_draft",
+  "items": [
+    {
+      "id": "fasb-loan-sale-classification-bridge",
+      "path": "guides/fasb-loan-sale-classification-bridge-v1.md",
+      "sha256": "327e18d7aae0d0558c77fa5e6e74afb2c60b9e9a013828ae0877ff8dd298fd0b",
+      "source_ids": [
+        "osa-occ-loan-hfs-noncredit-transfers"
+      ]
+    },
+    {
+      "id": "fasb-loss-range-accrual-bridge",
+      "path": "guides/fasb-loss-range-accrual-bridge-v1.md",
+      "sha256": "a7821e10c0974cb17dbd69343bfb0f372dadce987ba580f6026ec9ff69877f88",
+      "source_ids": [
+        "osa-occ-loss-contingency-range"
+      ]
+    },
+    {
+      "id": "fasb-equipment-useful-life-reset",
+      "path": "guides/fasb-equipment-useful-life-reset-v1.md",
+      "sha256": "5184d5c4abfd326385dc6dc5079a88d67ee4f36f980979c27b5ff4e72a165b7a",
+      "source_ids": [
+        "osa-occ-equipment-shortened-life"
+      ]
+    },
+    {
+      "id": "fasb-stock-offering-cost-bridge",
+      "path": "guides/fasb-stock-offering-cost-bridge-v1.md",
+      "sha256": "ac373a8dcf593410440b930f50554ce56ee178ed22ed837b3f80284abd1ddf6e",
+      "source_ids": [
+        "osa-occ-stock-offering-costs"
+      ]
+    }
+  ],
+  "limits": "OCC staff application commentary for banks and original examples; stock-offering source cites AICPA technical material. No FASB primary-standard bodies, current-applicability certification, human technical review, deployment or Agent admission."
+}
