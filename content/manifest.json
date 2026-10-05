@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "0.6.9",
+  "release": "0.6.10",
   "generated_at": "2026-10-05",
   "publication_state": "public_editorial_draft",
   "items": [
@@ -3210,6 +3210,110 @@
       "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
       "source_ids": [
         "osa-occ-startup-fixed-asset-boundary"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "fasb-loan-sale-classification-bridge",
+      "title": "Loan sale plans: reconcile the credit allowance and the held-for-sale valuation account",
+      "kind": "guide",
+      "topic": "fasb-loans-held-for-sale",
+      "framework": "US_GAAP",
+      "summary": "An original loan register separates credit-allowance releases, held-for-sale valuation balances, market-only evidence and a later return to held-for-investment.",
+      "path": "guides/fasb-loan-sale-classification-bridge-v1.md",
+      "version": "1.0.0",
+      "sha256": "327e18d7aae0d0558c77fa5e6e74afb2c60b9e9a013828ae0877ff8dd298fd0b",
+      "published_at": "2026-10-05",
+      "updated_at": "2026-10-05",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-occ-loan-hfs-noncredit-transfers"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "fasb-loss-range-accrual-bridge",
+      "title": "Loss contingencies: turn supported estimates into a liability rollforward",
+      "kind": "guide",
+      "topic": "fasb-loss-contingency-measurement",
+      "framework": "US_GAAP",
+      "summary": "An original matter register reconciles supplied probable-loss estimates, range endpoints, revised accruals, settlement payments and unsupported midpoint errors.",
+      "path": "guides/fasb-loss-range-accrual-bridge-v1.md",
+      "version": "1.0.0",
+      "sha256": "a7821e10c0974cb17dbd69343bfb0f372dadce987ba580f6026ec9ff69877f88",
+      "published_at": "2026-10-05",
+      "updated_at": "2026-10-05",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-occ-loss-contingency-range"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "fasb-equipment-useful-life-reset",
+      "title": "Equipment retirement plans: rebuild depreciation from the remaining service period",
+      "kind": "guide",
+      "topic": "fasb-depreciation-estimate-change",
+      "framework": "US_GAAP",
+      "summary": "An original three-asset schedule recomputes remaining depreciation from supported retirement dates and residual values, then tests a later timing change.",
+      "path": "guides/fasb-equipment-useful-life-reset-v1.md",
+      "version": "1.0.0",
+      "sha256": "5184d5c4abfd326385dc6dc5079a88d67ee4f36f980979c27b5ff4e72a165b7a",
+      "published_at": "2026-10-05",
+      "updated_at": "2026-10-05",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-occ-equipment-shortened-life"
+      ],
+      "technical_review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "primary_text_gap": true,
+      "public_visibility": "editorial_draft",
+      "agent_eligible_by_default": false
+    },
+    {
+      "id": "fasb-stock-offering-cost-bridge",
+      "title": "Equity offering costs: reconcile cash, paid-in capital and an abandoned attempt",
+      "kind": "guide",
+      "topic": "fasb-equity-issuance-costs",
+      "framework": "US_GAAP",
+      "summary": "An original offering register separates two completed stock issues and an abandoned attempt, reconciling share counts, cash, paid-in capital and expense.",
+      "path": "guides/fasb-stock-offering-cost-bridge-v1.md",
+      "version": "1.0.0",
+      "sha256": "ac373a8dcf593410440b930f50554ce56ee178ed22ed837b3f80284abd1ddf6e",
+      "published_at": "2026-10-05",
+      "updated_at": "2026-10-05",
+      "author": "Open Source Accounting contributors (AI-assisted)",
+      "license": "LicenseRef-Ray-Sang-Noncommercial-NoAI-1.0",
+      "source_ids": [
+        "osa-occ-stock-offering-costs"
       ],
       "technical_review": {
         "status": "unreviewed",
