@@ -1,3 +1,4 @@
+import {loadReaderEdition,readerSourceScope} from '../reader-edition.js';
 import {annotationNotice} from '../annotation.js';
 import {api,saveBlob} from '../api.js';
 import {el,button,link,heading,badge,field,notice,card,select,input,empty,textarea,checkbox,modal} from '../ui.js';
@@ -9,16 +10,22 @@ function saveMarkdown(name:string,text:string){const url=URL.createObjectURL(new
 const labels:Record<string,string>={guide:'Guides',case:'Worked cases',template:'Templates',playbook:'Agent playbooks',qa_set:'Study questions'};
 export async function openLibraryView(app:App,id?:string){
   if(id){
-    const item:Json=await api('/library/'+encodeURIComponent(id));const body=markdown(item.body.replace(/^# [^\n]*\n+/,''));
+    let cancelled=false;app.cleanup=()=>{cancelled=true;};
+    let item:Json;let reader;
+    try{
+      item=await api('/library/'+encodeURIComponent(id));if(cancelled)return;
+      reader=await loadReaderEdition(item as {id:string;body:string;title:string;license:string;version?:string;sha256?:string});if(cancelled)return;
+    }catch(error){if(cancelled)return;throw error;}
+    const body=markdown(reader.body.replace(/^# [^\n]*\n+/,''));
     const toc=el('nav',{'aria-label':'Article sections',class:'library-toc'},el('h2',{},'In this article'),
       ...body.headings.map(h=>el('a',{href:'#'+h.id},h.text)));
     const sources=card('Source provenance',...item.sources.map((s:Json)=>el('div',{class:'library-reference'},
       el('a',{href:s.url,target:'_blank',rel:'noopener noreferrer'},s.title+' ↗'),
-      el('p',{class:'muted'},s.review_scope),badge(s.verification==='publisher_page_examined'?'Publisher page examined':'Reference only','neutral'))));
+      el('p',{class:'muted'},readerSourceScope(s.review_scope)),badge(s.verification==='publisher_page_examined'?'Publisher page examined':'Reference only','neutral'))));
     app.content.replaceChildren(link(app,'← Open library','/library'),
-      heading(item.title,item.summary,button('Download original Markdown',()=>saveMarkdown(item.id+'.md',item.body),'secondary')),
+      heading(item.title,item.summary,button('Download Markdown',()=>saveMarkdown(item.id+'.md',reader.body),'secondary')),
       annotationNotice(),
-      el('div',{class:'row-actions'},badge('FREE ORIGINAL CONTENT','free'),badge('AI-ASSISTED · UNREVIEWED','warning'),badge(item.license)),
+      el('div',{class:'row-actions'},badge('FREE ORIGINAL CONTENT','free'),badge('EDUCATIONAL DRAFT · UNREVIEWED','warning'),badge(item.license)),
       notice('This public editorial draft is not automatically available to research agents. Independent rights and technical approval are required before Agent use.','warning'),
       el('div',{class:'library-reading-layout'},el('div',{},body.element,sources),
         el('aside',{},toc,card('Use this material',el('p',{},item.license==='CC-BY-4.0'?'Read, download, and adapt this original content under CC BY 4.0. Preserve attribution and identify changes.':'This new annotation uses '+item.license+'. Read the linked content terms for permitted uses; prior CC BY grants remain unchanged.'),
@@ -47,7 +54,7 @@ export async function openLibraryView(app:App,id?:string){
   q.oninput=()=>{offset=0;clearTimeout(timer);timer=window.setTimeout(()=>void refresh(),200);};
   kind.onchange=topic.onchange=()=>{offset=0;void refresh();};app.cleanup=()=>{clearTimeout(timer);sequence++;};
   app.content.replaceChildren(heading('An open library. Built for careful research.','Original guides, worked examples, reusable templates, and Agent playbooks. Free to read and download.'),
-    notice('Original guides, cases, templates and study questions. AI-assisted drafts, not professionally reviewed accounting guidance.','warning'),
+    notice('Original guides, cases, templates and study questions. Educational drafts, not professionally reviewed accounting guidance.','warning'),
     el('div',{class:'filters'},field('Search library',q),field('Content type',kind),field('Topic',topic)),count,grid,pager,
     card('What is—and is not—in this release',el('p',{},'The library contains original explanations and fictional cases. It does not include the ASC, DART, AICPA, IFRS, company filings, or a complete government-standards corpus.'),
       el('p',{},'The source directory and Agent evidence store have independent approval controls. Reading an article does not mean a research run used it.'),link(app,'Inspect the source directory →','/sources')));

@@ -18,4 +18,5 @@ jobs:
       - run: npm --prefix frontend run test:auth
       - run: npm --prefix frontend run test:systems
       - run: npm --prefix frontend run build
+      - run: npm --prefix frontend run test:content
       - run: python3 scripts/check_public.py --dist

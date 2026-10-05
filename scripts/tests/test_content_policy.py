@@ -113,7 +113,7 @@ class RootRouteTests(unittest.TestCase):
                      '/assets/systems/index.html', '/assets/systems/xero.html']:
             status, _, body = self.get(path)
             self.assertEqual(status, 200)
-            self.assertIn('Ray Sang’s Annotation', body)
+            self.assertIn('Ray Sang Annotation', body)
         self.assertEqual(self.get('/assets/../../CONTENT-TERMS.md')[0], 404)
 
 

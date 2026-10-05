@@ -5,12 +5,12 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 EXACT = set('''AGENTS.md LICENSE NOTICE.md license-notice.md .gitignore .dockerignore README.md CONTRIBUTING.md SECURITY.md PUBLISHING.md progress.md
 CONTENT-TERMS.md robots.txt
-frontend/src/annotation.ts frontend/public/robots.txt frontend/public/content-terms.txt
-frontend/tests/content-policy.test.mjs scripts/tests/test_content_policy.py scripts/tests/test_irs_source_pilot.py
+frontend/src/annotation.ts frontend/src/reader-edition.ts frontend/src/reader-registry.ts frontend/public/robots.txt frontend/public/content-terms.txt
+frontend/tests/content-policy.test.mjs frontend/tests/reader-editions.test.mjs frontend/tests/reader-rendering.test.mjs scripts/tests/test_content_policy.py scripts/tests/test_irs_source_pilot.py
 .github/workflows/public.yml scripts/check_public.py scripts/serve_public.py
 frontend/package.json frontend/package-lock.json frontend/tsconfig.json
 frontend/public/index.html frontend/public/styles.css frontend/public/systems.js frontend/public/systems.css
-frontend/scripts/build-vendor.mjs frontend/scripts/copy-assets.mjs frontend/scripts/clean.mjs frontend/scripts/build-library.mjs frontend/scripts/build-systems.mjs
+frontend/scripts/build-vendor.mjs frontend/scripts/copy-assets.mjs frontend/scripts/clean.mjs frontend/scripts/build-library.mjs frontend/scripts/read-reader-editions.mjs frontend/scripts/build-systems.mjs
 frontend/vendor/identity.mjs frontend/vendor/machine.mjs frontend/tests/identity.test.mjs frontend/tests/systems.test.mjs
 frontend/src/main.ts frontend/src/api.ts frontend/src/authentication.ts frontend/src/entry.ts frontend/src/markdown.ts frontend/src/source-notices.ts frontend/src/types.ts frontend/src/ui.ts
 frontend/src/views/chat.ts frontend/src/views/library.ts frontend/src/views/open-library.ts frontend/src/views/source-reader.ts frontend/src/views/sec-core.ts frontend/src/views/asu-tracking.ts frontend/src/views/sec-comments.ts
@@ -98,6 +98,7 @@ if '--dist' in sys.argv:
     import json
     manifest=json.loads((ROOT/'content/manifest.json').read_text())
     expected |= {'library/index.html'} | {'library/'+i['id']+'.html' for i in manifest['items']}
+    expected |= {'reader-editions/'+i['id']+suffix for i in manifest['items'] for suffix in ('.md','.json')}
     systems=json.loads((ROOT/'content/systems/catalog.json').read_text())
     expected |= {'systems/index.html','systems/methodology.html','systems/systems.js','systems/systems.css'}
     expected |= {'systems/'+s['id']+'.html' for s in systems['systems']}
