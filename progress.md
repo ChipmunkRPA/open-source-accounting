@@ -21,8 +21,20 @@ test:systems` (55 passed), and `npm --prefix frontend run test:content` (23
 passed, including three navigation scenarios) passed. The full content test
 includes all 124 existing reader render/download callbacks. `python3 scripts/check_public.py --dist` and `python3 -m unittest discover -s
 scripts/tests` (21 passed) also passed.
-No real browser, hosted API, deployment or professional review was performed.
+At the time of those checks, no real browser, hosted API, deployment or
+professional review had been performed.
 Next: coordinate the independent API snapshot contract and test it end to end.
+
+### 2026-10-31 · Later local-browser verification
+
+After the checks above, headless Chromium 154 and Playwright exercised the built
+client using a local asset server, synthetic API responses and an existing
+hash-verified article fixture. List-to-detail-to-return, browser Back/Forward,
+repeated navigation, query and filter changes, delayed responses, leaving a
+pending list request, and direct detail entry passed. Article URLs and history
+state contained no search text; no browser page errors occurred. External
+requests were blocked, and none were attempted. This was not a hosted API
+test, a deployment, or a claim of server-side snapshot consistency.
 
 ## 2026-10-05 · Neutral reader editions for 124 active articles · #22/#35
 
