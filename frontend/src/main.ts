@@ -17,7 +17,7 @@ export async function mount(root:HTMLElement){
   const banner=el('div',{class:'global-banner','aria-live':'polite'});
   const content=el('main',{id:'main',class:'content',tabindex:-1});
   const app:App={config,me:null,workspaces:[],content,banner,
-    navigate(path){if(!path.startsWith('/')||path.startsWith('//'))return;if(app.canLeave && !app.canLeave())return;history.pushState({},'',path);void render();},
+    navigate(path,state={}){if(!path.startsWith('/')||path.startsWith('//'))return;if(app.canLeave && !app.canLeave())return;history.pushState(state,'',path);void render();},
     async refreshAccount(){app.me=await api<Account>('/me');app.workspaces=[];updateAccount();},
     showError(error){
       const message=error instanceof Error?error.message:'The request could not be completed.';

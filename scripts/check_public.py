@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 EXACT = set('''AGENTS.md LICENSE NOTICE.md license-notice.md .gitignore .dockerignore README.md CONTRIBUTING.md SECURITY.md PUBLISHING.md progress.md
 CONTENT-TERMS.md robots.txt
 frontend/src/annotation.ts frontend/src/reader-edition.ts frontend/src/reader-registry.ts frontend/public/robots.txt frontend/public/content-terms.txt
-frontend/tests/content-policy.test.mjs frontend/tests/reader-editions.test.mjs frontend/tests/reader-rendering.test.mjs scripts/tests/test_content_policy.py scripts/tests/test_irs_source_pilot.py
+frontend/tests/content-policy.test.mjs frontend/tests/reader-editions.test.mjs frontend/tests/reader-rendering.test.mjs frontend/tests/library-navigation.test.mjs scripts/tests/test_content_policy.py scripts/tests/test_irs_source_pilot.py
 .github/workflows/public.yml scripts/check_public.py scripts/serve_public.py
 frontend/package.json frontend/package-lock.json frontend/tsconfig.json
 frontend/public/index.html frontend/public/styles.css frontend/public/systems.js frontend/public/systems.css

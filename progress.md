@@ -1,3 +1,29 @@
+## 2026-10-31 · Preserve Library navigation context · #35
+
+The public Library client now retains the search text, content type, topic and
+page when navigating from a result to its reader and back, including browser
+Back/Forward. Each history entry stores an opaque token only; the associated
+state lives in the current app instance's memory and is discarded on reload.
+Article URLs remain clean. Changed inputs immediately invalidate earlier
+requests; leaving the view suppresses late list successes and failures.
+
+Scope: client navigation only. No source inventory, acquisition, parsing, rights
+clearance, human or applicability review, indexing, evaluation corpus, articles,
+references, models, source versions or admission states were added or changed.
+The separately operated Library API is absent from this public repository;
+content-snapshot consistency across requests remains unverified and is not
+provided by this change. Controlled UI tests use synthetic list results and
+the repository's existing hash-verified article fixture, not a live service.
+
+Checks: `npm --prefix frontend run typecheck`, `npm --prefix frontend run build`,
+`npm --prefix frontend run test:auth` (16 passed), `npm --prefix frontend run
+test:systems` (55 passed), and `npm --prefix frontend run test:content` (23
+passed, including three navigation scenarios) passed. The full content test
+includes all 124 existing reader render/download callbacks. `python3 scripts/check_public.py --dist` and `python3 -m unittest discover -s
+scripts/tests` (21 passed) also passed.
+No real browser, hosted API, deployment or professional review was performed.
+Next: coordinate the independent API snapshot contract and test it end to end.
+
 ## 2026-10-05 · Neutral reader editions for 124 active articles · #22/#35
 
 Prepared 124 hash-bound reader editions with the exact display brand **Ray Sang Annotation** and neutral educational-draft/editorial-check wording. The existing 124 canonical article bodies and manifest, 78 original revision-bound review records, source metadata, rights policies, licenses and Agent-admission states remain unchanged. Earlier check statements refer to the original article revision; no new professional review or authoritative verification is represented.
