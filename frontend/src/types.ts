@@ -16,7 +16,7 @@ export interface Workspace {id:string; name:string; role:string}
 export interface App {
   config: Config; me: Account|null; workspaces: Workspace[];
   content: HTMLElement; banner: HTMLElement;
-  navigate: (path:string)=>void;
+  navigate: (path:string,state?:Record<string,unknown>)=>void;
   refreshAccount: ()=>Promise<void>;
   showError: (error:unknown)=>void;
   upgrade: (task?:string)=>void;
